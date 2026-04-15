@@ -2594,6 +2594,47 @@ button {
     color: var(--text-primary);
 }
 
+.quick-pricing-calendar-link {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.quick-pricing-calendar-link:hover {
+    color: var(--primary-dark);
+}
+
+.price-calculator-prompt-link {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    max-width: 28rem;
+}
+
+.price-calculator-prompt-link:hover {
+    color: var(--primary-dark);
+}
+
 .quick-pricing-deposit {
     font-size: 0.8125rem;
     color: var(--text-secondary);

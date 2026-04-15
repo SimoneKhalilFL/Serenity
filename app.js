@@ -569,11 +569,15 @@ function closeContactModalThenScrollToProperties() {
 function closeContactModalThenScrollToCalendar() {
     closeContactModal();
     requestAnimationFrame(() => {
-        const el = document.getElementById('property-availability');
-        if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        scrollToPropertyCalendar();
     });
+}
+
+function scrollToPropertyCalendar() {
+    const el = document.getElementById('property-availability');
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function showContactModal() {
@@ -1328,9 +1332,7 @@ function renderPropertyDetail(property) {
                                         ${formatCurrency(property.baseNightlyRate)}
                                         <span>/ night</span>
                                     </div>
-                                    <p style="font-size: 0.875rem; color: var(--text-secondary);">
-                                        Select dates above to see total pricing
-                                    </p>
+                                    <button type="button" class="quick-pricing-calendar-link" onclick="scrollToPropertyCalendar()">Select dates above to see total pricing</button>
                                     ${renderListingTrustSidebar(property)}
                                 </div>
                             </div>
@@ -2074,8 +2076,8 @@ function renderPriceCalculator(property) {
     
     if (!selectedStartDate || !selectedEndDate) {
         container.innerHTML = `
-            <p style="text-align: center; color: var(--text-secondary); padding: 2rem 0;">
-                Select check-in and check-out dates on the calendar to calculate pricing.
+            <p style="text-align: center; padding: 2rem 0;">
+                <button type="button" class="price-calculator-prompt-link" onclick="scrollToPropertyCalendar()">Select check-in and check-out dates on the calendar to calculate pricing.</button>
             </p>
             <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)}</p>
         `;
@@ -2087,9 +2089,7 @@ function renderPriceCalculator(property) {
                     ${formatCurrency(property.baseNightlyRate)}
                     <span>/ night</span>
                 </div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary);">
-                    Select dates above to see total pricing
-                </p>
+                <button type="button" class="quick-pricing-calendar-link" onclick="scrollToPropertyCalendar()">Select dates above to see total pricing</button>
                 ${trustSidebar}
             `;
         }
