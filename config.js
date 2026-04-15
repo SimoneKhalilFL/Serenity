@@ -9,6 +9,11 @@
 // Live site URL (GitHub Pages). Use your custom domain here when DNS is ready (no trailing slash). Meta tags sync from this in app.js.
 // Social/email alignment: reserve hello@ / stays@ on that domain; @SerenityRentalsPCB or @SerenityGulfStays on IG/Facebook.
 const SITE_BASE_URL = 'https://simonekhalilfl.github.io/Serenity';
+
+// Contact form: POSTs in the browser (no mail app). Create a free form at https://formspree.io,
+// confirm your email in their link, then paste the form URL here (e.g. https://formspree.io/f/xyzabc).
+const SITE_FORM_ENDPOINT = '';
+
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
     phoneTel: '+18504049822',
@@ -878,5 +883,5 @@ const REVIEWS = {
 
 // Export for use in app.js
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { PROPERTIES, REVIEWS, SITE_BASE_URL, SITE_CONTACT };
+    module.exports = { PROPERTIES, REVIEWS, SITE_BASE_URL, SITE_CONTACT, SITE_FORM_ENDPOINT };
 }

@@ -29,6 +29,15 @@ function getSiteContact() {
     };
 }
 
+/** Formspree (or compatible) POST URL from config.js — empty means form is not wired yet. */
+function getSiteFormEndpoint() {
+    if (typeof SITE_FORM_ENDPOINT !== 'undefined' && typeof SITE_FORM_ENDPOINT === 'string') {
+        const u = SITE_FORM_ENDPOINT.trim();
+        return u || '';
+    }
+    return '';
+}
+
 // Helper function to get first image from either flat array or categorized object
 function getFirstImage(images) {
     if (Array.isArray(images)) {
@@ -448,6 +457,10 @@ function showContactModal() {
     }
     
     const contact = getSiteContact();
+    const formEndpoint = getSiteFormEndpoint();
+    const formConfigWarning = formEndpoint
+        ? ''
+        : `<p class="form-config-warning" role="alert">Contact form email is not connected yet. Add <code>SITE_FORM_ENDPOINT</code> in <code>config.js</code> (free setup at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>). Until then, submissions cannot be sent from this page.</p>`;
     const primaryCta = (selectedStartDate && selectedEndDate && currentProperty)
         ? 'Email to Reserve These Dates'
         : 'Email the Owner';
@@ -458,9 +471,10 @@ function showContactModal() {
         <div class="contact-modal contact-form-modal">
             <button class="contact-modal-close" onclick="closeContactModal()">&times;</button>
             <h3>Contact the Owner to Book</h3>
+            ${formConfigWarning}
             ${bookingDetails}
             <form id="contact-form" onsubmit="submitContactForm(event)">
-                <input type="hidden" id="form-subject" value="${subjectLine}">
+                <input type="hidden" id="form-subject" value="${escapeHtml(subjectLine)}">
                 <div class="form-group">
                     <label for="user-email">Your Email <span class="required">*</span></label>
                     <input type="email" id="user-email" name="email" required placeholder="your@email.com">
@@ -471,10 +485,11 @@ function showContactModal() {
                     <input type="tel" id="user-phone" name="phone" placeholder="(555) 123-4567">
                 </div>
                 <div class="form-group">
-                    <label for="user-message">Your message</label>
+                    <label for="user-message">Your Message</label>
                     <textarea id="user-message" name="message" rows="3" placeholder="Tell us about your trip, how many guests you're bringing, and any questions or special requests..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <p class="form-submit-status" id="form-submit-status" role="status" aria-live="polite"></p>
+                <button type="submit" class="btn btn-primary btn-contact-submit" style="width: 100%;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px; margin-right: 0.5rem;">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
@@ -495,7 +510,7 @@ function showContactModal() {
     setTimeout(() => document.getElementById('user-email').focus(), 100);
 }
 
-function submitContactForm(event) {
+async function submitContactForm(event) {
     event.preventDefault();
     
     const emailInput = document.getElementById('user-email');
@@ -503,6 +518,8 @@ function submitContactForm(event) {
     const messageInput = document.getElementById('user-message');
     const subjectInput = document.getElementById('form-subject');
     const emailError = document.getElementById('email-error');
+    const statusEl = document.getElementById('form-submit-status');
+    const submitBtn = event.target.querySelector('.btn-contact-submit');
     
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -514,8 +531,20 @@ function submitContactForm(event) {
     }
     emailError.textContent = '';
     emailInput.classList.remove('invalid');
+    if (statusEl) statusEl.textContent = '';
     
-    // Build email body
+    const endpoint = getSiteFormEndpoint();
+    const ownerEmail = getSiteContact().email;
+    if (!endpoint) {
+        if (statusEl) {
+            statusEl.textContent = `Add SITE_FORM_ENDPOINT in config.js (see Formspree). For now, email ${ownerEmail} directly.`;
+        } else {
+            alert(`Contact form is not connected. Add SITE_FORM_ENDPOINT in config.js, or email ${ownerEmail}.`);
+        }
+        return;
+    }
+    
+    // Build message body (plain text delivered to your inbox)
     let body = '';
     
     if (selectedStartDate && selectedEndDate && currentProperty) {
@@ -562,12 +591,60 @@ function submitContactForm(event) {
         body += messageInput.value;
     }
     
-    // Open mailto link
-    const mailtoLink = `mailto:${getSiteContact().email}?subject=${encodeURIComponent(subjectInput.value)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    const subject = subjectInput ? subjectInput.value : 'Booking Inquiry';
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending…';
+    }
     
-    // Close modal after short delay
-    setTimeout(closeContactModal, 500);
+    try {
+        const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                _replyto: emailInput.value,
+                _subject: subject,
+                email: emailInput.value,
+                phone: phoneInput.value || '',
+                message: body
+            })
+        });
+        let data = {};
+        try {
+            data = await res.json();
+        } catch (e) {
+            /* non-JSON response */
+        }
+        
+        if (res.ok) {
+            closeContactModal();
+            const c = getSiteContact();
+            alert(`Thanks! Your message was sent. We usually reply within ${c.replyWithinHours} hours.`);
+            return;
+        }
+        
+        const errMsg = (data && (data.error || data.message)) ? String(data.error || data.message) : `Could not send (HTTP ${res.status}).`;
+        if (statusEl) {
+            statusEl.textContent = `${errMsg} You can also email ${ownerEmail}.`;
+        } else {
+            alert(`${errMsg} You can also email ${ownerEmail}.`);
+        }
+    } catch (e) {
+        if (statusEl) {
+            statusEl.textContent = `Network error. Try again or email ${ownerEmail}.`;
+        } else {
+            alert(`Network error. Email ${ownerEmail}.`);
+        }
+    } finally {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+        }
+    }
 }
 
 function closeContactModal() {
