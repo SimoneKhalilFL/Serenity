@@ -2214,7 +2214,30 @@ function refreshHomeLocationsMapSize() {
 // ==========================================
 // Initialization
 // ==========================================
+/** Keep canonical, Open Graph, and JSON-LD url aligned with config.js SITE_BASE_URL (single source of truth). */
+function syncSiteMetaFromBaseUrl() {
+    if (typeof SITE_BASE_URL !== 'string' || !SITE_BASE_URL.trim()) return;
+    const base = SITE_BASE_URL.replace(/\/$/, '');
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', base);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', base);
+    const ldEl = document.getElementById('site-schema-jsonld');
+    if (ldEl && ldEl.textContent) {
+        try {
+            const data = JSON.parse(ldEl.textContent);
+            if (data && typeof data === 'object') {
+                data.url = base;
+                ldEl.textContent = JSON.stringify(data, null, 4);
+            }
+        } catch (e) {
+            /* keep static JSON if parse fails */
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    syncSiteMetaFromBaseUrl();
     renderPropertyListings();
     initHomeLocationsMap();
 });

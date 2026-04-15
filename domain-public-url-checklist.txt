@@ -1,0 +1,27 @@
+Memorable public domain — registrar & branding checklist
+==========================================================
+
+1) Candidate stems (brainstorm — search .com availability for each you like)
+   Brand: serenityrentals, serenitygulf, serenitygulfstays, gulfserenity,
+          serenitypcb, serenityemerald
+   Place: pcbdestinstays, emeralddirectstays, gulfcoastbyowner, twogulfhomes
+   Direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
+
+2) Phone-test finalists (pick 2–3, say aloud: "visit ______ dot com")
+   - serenitygulf
+   - serenitypcb
+   - gulfdirectstays
+
+3) Availability (you must run this at your registrar — e.g. Cloudflare, Namecheap, Google Domains)
+   - Search each finalist + .com
+   - Prefer no hyphen in the primary domain
+   - If .com is taken, try small variants or secure .com + redirect from .vacations later
+
+4) After purchase — single source of truth in code
+   - Edit config.js: SITE_BASE_URL = 'https://YourDomain.com' (no trailing slash)
+   - Reload the site; canonical, og:url, and JSON-LD url update automatically via app.js
+
+5) Align email & social (manual reservation at provider)
+   Suggested email prefixes on your domain: hello@, stays@, info@
+   Social handles (check Instagram/Facebook/TikTok): e.g. @SerenityRentalsPCB,
+   @SerenityGulfStays — use the same name everywhere when possible.

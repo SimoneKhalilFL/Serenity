@@ -1,6 +1,13 @@
 // ==========================================
 // Site-wide contact & URLs (edit for production)
 // ==========================================
+// Public domain naming (memorable .com candidates — verify availability at your registrar):
+// Brand: serenityrentals, serenitygulf, serenitygulfstays, gulfserenity, serenitypcb, serenityemerald
+// Geography: pcbdestinstays, emeralddirectstays, gulfcoastbyowner, twogulfhomes
+// Owner-direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
+// Phone-test finalists (say "visit [name] dot com"): serenitygulf, serenitypcb, gulfdirectstays
+// After you buy a domain: set SITE_BASE_URL below (no trailing slash). Meta tags sync from this in app.js.
+// Social/email alignment: reserve hello@ / stays@ on that domain; @SerenityRentalsPCB or @SerenityGulfStays on IG/Facebook.
 const SITE_BASE_URL = 'https://serenityrentals.com';
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
