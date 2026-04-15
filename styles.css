@@ -1152,12 +1152,6 @@ button {
     padding: 3rem 0;
 }
 
-.property-overview-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-}
-
 .property-description {
     font-size: 1.125rem;
     line-height: 1.8;
@@ -1685,6 +1679,13 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    align-items: start;
+}
+
+.availability-calendar-sticky {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
 }
 
 .calendar-container,
@@ -2277,12 +2278,13 @@ button {
    Responsive Design
    ========================================== */
 @media (max-width: 1024px) {
-    .property-overview-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .availability-pricing-grid {
         grid-template-columns: 1fr;
+    }
+
+    .availability-calendar-sticky {
+        position: static;
+        order: -1;
     }
 }
 
@@ -2594,25 +2596,25 @@ button {
     color: var(--text-primary);
 }
 
-.quick-pricing-calendar-link {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    background: none;
-    border: none;
-    font: inherit;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: var(--primary-color);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    cursor: pointer;
+.price-calculator-starting-rate {
+    margin-bottom: 0.5rem;
 }
 
-.quick-pricing-calendar-link:hover {
-    color: var(--primary-dark);
+.price-calculator-starting-rate .property-price {
+    margin-bottom: 0.35rem;
+}
+
+.price-calculator-starting-hint {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.price-calculator-jump-wrap {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    text-align: center;
 }
 
 .price-calculator-prompt-link {

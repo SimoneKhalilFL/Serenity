@@ -1297,10 +1297,6 @@ function renderPropertyDetail(property) {
                     <h2 class="section-title">Availability & Pricing</h2>
                     ${renderKeyPolicyChips(property)}
                     <div class="availability-pricing-grid">
-                        <div class="calendar-container">
-                            <h3>Select Your Dates</h3>
-                            <div id="calendar-widget"></div>
-                        </div>
                         <div class="pricing-container">
                             <h3>Price Calculator</h3>
                             <div class="pricing-disclaimer">
@@ -1308,6 +1304,13 @@ function renderPropertyDetail(property) {
                             </div>
                             <p class="cancellation-snippet">${getSiteContact().cancellationNote}</p>
                             <div id="price-calculator"></div>
+                            ${renderListingTrustSidebar(property)}
+                        </div>
+                        <div class="availability-calendar-sticky">
+                            <div class="calendar-container">
+                                <h3>Select Your Dates</h3>
+                                <div id="calendar-widget"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1315,28 +1318,12 @@ function renderPropertyDetail(property) {
             
             <div class="property-overview-section" id="property-overview">
                 <div class="container">
-                    <div class="property-overview-grid">
-                        <div id="property-stay-details" class="property-stay-details-wrap">
-                            <h2 class="section-title property-stay-details-heading">Stay Details</h2>
-                            ${renderStayDetailsAtAGlance(property)}
-                            ${renderGroupedAmenities(property)}
-                            ${renderFormattedDescription(property, isFlorida, city)}
-                            ${renderHouseRules(property)}
-                        </div>
-                        
-                        <div>
-                            <div style="position: sticky; top: 100px;">
-                                <div class="pricing-container" id="quick-pricing">
-                                    <h3>Quick Pricing</h3>
-                                    <div class="property-price" style="margin-bottom: 1rem;">
-                                        ${formatCurrency(property.baseNightlyRate)}
-                                        <span>/ night</span>
-                                    </div>
-                                    <button type="button" class="quick-pricing-calendar-link" onclick="scrollToPropertyCalendar()">Select dates above to see total pricing</button>
-                                    ${renderListingTrustSidebar(property)}
-                                </div>
-                            </div>
-                        </div>
+                    <div id="property-stay-details" class="property-stay-details-wrap">
+                        <h2 class="section-title property-stay-details-heading">Stay Details</h2>
+                        ${renderStayDetailsAtAGlance(property)}
+                        ${renderGroupedAmenities(property)}
+                        ${renderFormattedDescription(property, isFlorida, city)}
+                        ${renderHouseRules(property)}
                     </div>
                 </div>
             </div>
@@ -2070,29 +2057,22 @@ function nextMonth() {
 // ==========================================
 function renderPriceCalculator(property) {
     const container = document.getElementById('price-calculator');
-    const quickPricing = document.getElementById('quick-pricing');
     const c = getSiteContact();
-    const trustSidebar = renderListingTrustSidebar(property);
-    
+
     if (!selectedStartDate || !selectedEndDate) {
         container.innerHTML = `
-            <p style="text-align: center; padding: 2rem 0;">
-                <button type="button" class="price-calculator-prompt-link" onclick="scrollToPropertyCalendar()">Select check-in and check-out dates on the calendar to calculate pricing.</button>
-            </p>
-            <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)}</p>
-        `;
-        // Reset quick pricing to default
-        if (quickPricing) {
-            quickPricing.innerHTML = `
-                <h3>Quick Pricing</h3>
-                <div class="property-price" style="margin-bottom: 1rem;">
+            <div class="price-calculator-starting-rate">
+                <div class="property-price">
                     ${formatCurrency(property.baseNightlyRate)}
                     <span>/ night</span>
                 </div>
-                <button type="button" class="quick-pricing-calendar-link" onclick="scrollToPropertyCalendar()">Select dates above to see total pricing</button>
-                ${trustSidebar}
-            `;
-        }
+                <p class="price-calculator-starting-hint">Starting rate — choose check-in and check-out on the calendar for a full quote.</p>
+            </div>
+            <p class="price-calculator-jump-wrap">
+                <button type="button" class="price-calculator-prompt-link" onclick="scrollToPropertyCalendar()">Jump to calendar</button>
+            </p>
+            <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)}</p>
+        `;
         updateListingStickyCta(property);
         return;
     }
@@ -2115,7 +2095,11 @@ function renderPriceCalculator(property) {
     const total = subtotal + tax;
     
     const avgNightlyRate = Math.round(nightlyTotal / nights);
-    
+    const damageDeposit = getRefundableDamageDeposit(property);
+    const depositLine = damageDeposit > 0
+        ? `<p class="quick-pricing-deposit"><span class="quick-pricing-deposit-amount">${formatCurrency(damageDeposit)}</span> Refundable damage deposit</p>`
+        : '';
+
     container.innerHTML = `
         <div class="price-breakdown">
             <div class="price-line">
@@ -2135,40 +2119,13 @@ function renderPriceCalculator(property) {
                 <span class="price-total">${formatCurrency(total)}</span>
             </div>
         </div>
+        ${depositLine}
         <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)} Final details are confirmed by email.</p>
         <button class="btn btn-primary" style="width: 100%;" onclick="showContactModal()">
             Email to Reserve These Dates
         </button>
     `;
-    
-    // Update Quick Pricing sidebar with calculated total
-    if (quickPricing) {
-        const checkInStr = selectedStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        const checkOutStr = selectedEndDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        const damageDeposit = getRefundableDamageDeposit(property);
-        const depositLine = damageDeposit > 0
-            ? `<p class="quick-pricing-deposit"><span class="quick-pricing-deposit-amount">${formatCurrency(damageDeposit)}</span> Refundable damage deposit</p>`
-            : '';
-        
-        quickPricing.innerHTML = `
-            <h3>Your Stay</h3>
-            <div class="quick-pricing-dates" style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-                ${checkInStr} – ${checkOutStr} (${nights} ${nights === 1 ? 'night' : 'nights'})
-            </div>
-            <div class="property-price" style="margin-bottom: 0.5rem;">
-                ${formatCurrency(total)}
-                <span style="font-size: 0.875rem; font-weight: normal;">total</span>
-            </div>
-            <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-                ${formatCurrency(avgNightlyRate)}/night avg (before fees & tax)
-            </div>
-            ${depositLine}
-            <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="showContactModal()">
-                Email to Reserve These Dates
-            </button>
-            ${trustSidebar}
-        `;
-    }
+
     updateListingStickyCta(property);
 }
 
