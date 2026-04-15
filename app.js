@@ -363,6 +363,21 @@ function scrollToSection(event, sectionId) {
     if (event) event.preventDefault();
     
     const section = document.getElementById(sectionId);
+    const detailPage = document.getElementById('property-detail-page');
+    const onPropertyListing = detailPage && detailPage.classList.contains('active');
+    // #properties and #contact live inside #home-page, which is hidden on listing pages — go home first.
+    const homeOnlyIds = ['properties', 'contact'];
+    const needsHomeFirst = section && homeOnlyIds.includes(sectionId) && onPropertyListing;
+    
+    if (needsHomeFirst) {
+        navigateHome(null);
+        setTimeout(() => {
+            const el = document.getElementById(sectionId);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+        return;
+    }
+    
     if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
