@@ -10,9 +10,8 @@
 // Social/email alignment: reserve hello@ / stays@ on that domain; @SerenityRentalsPCB or @SerenityGulfStays on IG/Facebook.
 const SITE_BASE_URL = 'https://simonekhalilfl.github.io/Serenity';
 
-// Contact form: POSTs in the browser (no mail app). Create a free form at https://formspree.io,
-// confirm your email in their link, then paste the form URL here (e.g. https://formspree.io/f/xyzabc).
-const SITE_FORM_ENDPOINT = '';
+// Contact form via Web3Forms (https://web3forms.com) — access key is safe to use in frontend; restrict domain in their dashboard.
+const WEB3FORMS_ACCESS_KEY = 'd1ccaac2-d8a0-43d6-8615-5551586541d4';
 
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
@@ -883,5 +882,5 @@ const REVIEWS = {
 
 // Export for use in app.js
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { PROPERTIES, REVIEWS, SITE_BASE_URL, SITE_CONTACT, SITE_FORM_ENDPOINT };
+    module.exports = { PROPERTIES, REVIEWS, SITE_BASE_URL, SITE_CONTACT, WEB3FORMS_ACCESS_KEY };
 }

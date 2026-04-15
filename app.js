@@ -29,11 +29,12 @@ function getSiteContact() {
     };
 }
 
-/** Formspree (or compatible) POST URL from config.js — empty means form is not wired yet. */
-function getSiteFormEndpoint() {
-    if (typeof SITE_FORM_ENDPOINT !== 'undefined' && typeof SITE_FORM_ENDPOINT === 'string') {
-        const u = SITE_FORM_ENDPOINT.trim();
-        return u || '';
+const WEB3FORMS_SUBMIT_URL = 'https://api.web3forms.com/submit';
+
+/** Web3Forms access key from config.js — empty means form is not wired yet. */
+function getWeb3FormsAccessKey() {
+    if (typeof WEB3FORMS_ACCESS_KEY !== 'undefined' && typeof WEB3FORMS_ACCESS_KEY === 'string') {
+        return WEB3FORMS_ACCESS_KEY.trim();
     }
     return '';
 }
@@ -457,10 +458,10 @@ function showContactModal() {
     }
     
     const contact = getSiteContact();
-    const formEndpoint = getSiteFormEndpoint();
-    const formConfigWarning = formEndpoint
+    const formKey = getWeb3FormsAccessKey();
+    const formConfigWarning = formKey
         ? ''
-        : `<p class="form-config-warning" role="alert">Contact form email is not connected yet. Add <code>SITE_FORM_ENDPOINT</code> in <code>config.js</code> (free setup at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>). Until then, submissions cannot be sent from this page.</p>`;
+        : `<p class="form-config-warning" role="alert">Contact form is not connected yet. Add <code>WEB3FORMS_ACCESS_KEY</code> in <code>config.js</code> (free at <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">web3forms.com</a>). Until then, submissions cannot be sent from this page.</p>`;
     const primaryCta = (selectedStartDate && selectedEndDate && currentProperty)
         ? 'Email to Reserve These Dates'
         : 'Email the Owner';
@@ -533,13 +534,13 @@ async function submitContactForm(event) {
     emailInput.classList.remove('invalid');
     if (statusEl) statusEl.textContent = '';
     
-    const endpoint = getSiteFormEndpoint();
+    const accessKey = getWeb3FormsAccessKey();
     const ownerEmail = getSiteContact().email;
-    if (!endpoint) {
+    if (!accessKey) {
         if (statusEl) {
-            statusEl.textContent = `Add SITE_FORM_ENDPOINT in config.js (see Formspree). For now, email ${ownerEmail} directly.`;
+            statusEl.textContent = `Add WEB3FORMS_ACCESS_KEY in config.js (see web3forms.com). For now, email ${ownerEmail} directly.`;
         } else {
-            alert(`Contact form is not connected. Add SITE_FORM_ENDPOINT in config.js, or email ${ownerEmail}.`);
+            alert(`Contact form is not connected. Add WEB3FORMS_ACCESS_KEY in config.js, or email ${ownerEmail}.`);
         }
         return;
     }
@@ -599,18 +600,19 @@ async function submitContactForm(event) {
     }
     
     try {
-        const res = await fetch(endpoint, {
+        const res = await fetch(WEB3FORMS_SUBMIT_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json'
             },
             body: JSON.stringify({
-                _replyto: emailInput.value,
-                _subject: subject,
+                access_key: accessKey,
+                subject: subject,
+                name: emailInput.value.split('@')[0] || 'Guest',
                 email: emailInput.value,
-                phone: phoneInput.value || '',
-                message: body
+                message: body,
+                phone: phoneInput.value || ''
             })
         });
         let data = {};
@@ -620,7 +622,8 @@ async function submitContactForm(event) {
             /* non-JSON response */
         }
         
-        if (res.ok) {
+        const ok = res.ok && data && (data.success === true || data.success === 'true');
+        if (ok) {
             closeContactModal();
             const c = getSiteContact();
             alert(`Thanks! Your message was sent. We usually reply within ${c.replyWithinHours} hours.`);
