@@ -2212,6 +2212,32 @@ button {
     color: white;
 }
 
+.footer-social {
+    margin-top: 1.25rem;
+}
+
+.footer-section .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.footer-section .footer-social-link:hover {
+    color: #fff;
+}
+
+.footer-social-icon {
+    flex-shrink: 0;
+    color: #1877f2;
+}
+
+.footer-section .footer-social-link:hover .footer-social-icon {
+    color: #42a5ff;
+}
+
 .legal-disclaimer {
     font-size: 0.875rem;
 }
