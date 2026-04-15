@@ -7,6 +7,7 @@
 // Owner-direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
 // Phone-test finalists (say "visit [name] dot com"): serenitygulf, serenitypcb, gulfdirectstays
 // Live site URL (GitHub Pages). Use your custom domain here when DNS is ready (no trailing slash). Meta tags sync from this in app.js.
+// When you add or remove PROPERTIES, update sitemap.xml listing URLs (?listing=id) to match.
 // Social/email alignment: reserve hello@ / stays@ on that domain; @SerenityRentalsPCB or @SerenityGulfStays on IG/Facebook.
 const SITE_BASE_URL = 'https://simonekhalilfl.github.io/Serenity';
 

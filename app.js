@@ -12,9 +12,56 @@ let currentCalendarMonth = new Date();
 // ==========================================
 const SEO_CONFIG = {
     siteName: 'Serenity Rentals',
-    defaultTitle: 'Serenity Rentals | Owner-direct beach stays in Florida',
-    defaultDescription: 'Book PCB and Destin-area condos directly from the owner—no OTA fees. Transparent pricing, real people, Gulf-front stays.'
+    defaultTitle: 'Serenity Rentals | Panama City Beach & Destin Vacation Rentals by Owner',
+    defaultDescription: 'Book Panama City Beach and Destin-area condos directly from the owner—no OTA service fees. Transparent pricing on Gulf-front beach rentals. Florida STR and weekly stays.',
+    defaultOgImage: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80'
 };
+
+/** Absolute URL for an asset path or full URL (uses SITE_BASE_URL from config.js). */
+function absoluteUrl(pathOrUrl) {
+    if (pathOrUrl == null || pathOrUrl === '') return '';
+    const s = String(pathOrUrl).trim();
+    if (/^https?:\/\//i.test(s)) return s;
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const path = s.startsWith('/') ? s : `/${s}`;
+    return base ? `${base}${path}` : s;
+}
+
+function getSiteBaseHref() {
+    return typeof SITE_BASE_URL === 'string' ? `${SITE_BASE_URL.replace(/\/$/, '')}/` : '/';
+}
+
+function getListingCanonicalUrl(propertyId) {
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    return base ? `${base}/?listing=${encodeURIComponent(propertyId)}` : `/?listing=${encodeURIComponent(propertyId)}`;
+}
+
+function getListingIdFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('listing');
+    if (q != null && q !== '') {
+        const id = parseInt(q, 10);
+        if (!Number.isNaN(id)) return id;
+    }
+    const m = /^#property-(\d+)$/.exec(window.location.hash || '');
+    if (m) return parseInt(m[1], 10);
+    return null;
+}
+
+function pushListingHistoryState(propertyId) {
+    const u = new URL(window.location.href);
+    u.searchParams.set('listing', String(propertyId));
+    u.hash = '';
+    history.pushState({ listing: propertyId }, '', `${u.pathname}${u.search}${u.hash}`);
+}
+
+function pushHomeHistoryState() {
+    const u = new URL(window.location.href);
+    u.searchParams.delete('listing');
+    u.hash = '';
+    const search = u.searchParams.toString();
+    history.pushState({ page: 'home' }, '', `${u.pathname}${search ? `?${search}` : ''}${u.hash}`);
+}
 
 function getSiteContact() {
     if (typeof SITE_CONTACT !== 'undefined' && SITE_CONTACT) {
@@ -82,59 +129,107 @@ function generatePropertySEO(property) {
     const city = extractCity(property.location);
     const state = extractState(property.location);
     const isFlorida = isFloridaProperty(property.location);
-    
-    // Generate SEO-optimized title
+    const headline = property.listingHeadline || property.title;
+    const amenitySlice = property.amenities && property.amenities.length
+        ? property.amenities.slice(0, 4).map(a => a.name)
+        : ['WiFi', 'full kitchen', 'beach access'];
+    const amenityText = amenitySlice.join(', ');
+    const areaPhrase = isFlorida
+        ? (city.toLowerCase().includes('panama')
+            ? 'Panama City Beach, FL vacation rental'
+            : (city.toLowerCase().includes('destin') || city.toLowerCase().includes('miramar'))
+                ? 'Destin area & Miramar Beach, FL'
+                : `${city}, Florida vacation rental`)
+        : `${city} vacation rental`;
+
     let title;
     if (isFlorida) {
-        title = `${property.title} | ${city} vacation rental | Serenity Rentals`;
+        title = `${headline} | ${city} | Book Direct | Serenity Rentals`;
     } else {
-        title = `${property.title} | Vacation rental in ${city} | Serenity Rentals`;
+        title = `${headline} | ${city} Vacation Rental | Serenity Rentals`;
     }
-    
-    // Generate SEO-optimized description
-    let description;
-    if (isFlorida) {
-        description = `${property.bedrooms} bedroom${property.bedrooms === 1 ? '' : 's'} · sleeps ${property.maxGuests} · ${property.amenities.slice(0, 3).map(a => a.name).join(', ')}. Book owner-direct in ${city} from $${property.baseNightlyRate}/night—no OTA markup.`;
-    } else {
-        description = `${property.bedrooms} bedroom${property.bedrooms === 1 ? '' : 's'}, sleeps ${property.maxGuests}. ${property.amenities.slice(0, 3).map(a => a.name).join(', ')}. From $${property.baseNightlyRate}/night. Book direct with Serenity Rentals.`;
+    if (title.length > 70) {
+        title = `${property.title} | ${city} | Serenity Rentals`;
     }
-    
+
+    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct rates from $${property.baseNightlyRate}/night—no OTA fees. ${areaPhrase}. VRBO/Airbnb alternative with Serenity Rentals.`;
+    if (description.length > 168) {
+        description = `${description.slice(0, 165).trim()}…`;
+    }
+
     return { title, description, city, state, isFlorida };
 }
 
 function updatePageMeta(title, description) {
     document.title = title;
-    
-    // Update meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-        metaDesc.setAttribute('content', description);
-    }
-    
-    // Update Open Graph tags
-    let ogTitle = document.querySelector('meta[property="og:title"]');
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', description);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute('content', title);
-    
-    let ogDesc = document.querySelector('meta[property="og:description"]');
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', description);
+
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', title);
+
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', description);
 }
 
 function resetPageMeta() {
     updatePageMeta(SEO_CONFIG.defaultTitle, SEO_CONFIG.defaultDescription);
 }
 
+/** Canonical, Open Graph URL/image, and Twitter card image for home vs listing. */
+function setCanonicalAndSocial(property) {
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    const twImage = document.querySelector('meta[name="twitter:image"]');
+
+    if (property) {
+        const url = getListingCanonicalUrl(property.id);
+        if (canonical) canonical.setAttribute('href', url);
+        if (ogUrl) ogUrl.setAttribute('content', url);
+        const img = absoluteUrl(getFirstImage(property.images));
+        if (ogImage && img) ogImage.setAttribute('content', img);
+        if (twImage && img) twImage.setAttribute('content', img);
+    } else {
+        const url = base ? `${base}/` : window.location.origin + window.location.pathname;
+        if (canonical) canonical.setAttribute('href', url);
+        if (ogUrl) ogUrl.setAttribute('content', url);
+        const def = SEO_CONFIG.defaultOgImage;
+        if (ogImage) ogImage.setAttribute('content', def);
+        if (twImage) twImage.setAttribute('content', def);
+    }
+}
+
+function getSchemaImageList(property) {
+    const flat = getAllImages(property.images);
+    const urls = flat.slice(0, 12).map(absoluteUrl).filter(Boolean);
+    return urls.length ? urls : (absoluteUrl(getFirstImage(property.images)) ? [absoluteUrl(getFirstImage(property.images))] : []);
+}
+
 function generatePropertySchema(property, reviews) {
     const seo = generatePropertySEO(property);
-    const avgRating = reviews.length > 0 
+    const avgRating = reviews.length > 0
         ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
         : null;
-    
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const listingUrl = getListingCanonicalUrl(property.id);
+    const images = getSchemaImageList(property);
+
     const schema = {
         "@context": "https://schema.org",
-        "@type": "LodgingBusiness",
+        "@type": "VacationRental",
         "name": property.title,
         "description": seo.description,
-        "image": getFirstImage(property.images),
+        "url": listingUrl,
+        "image": images.length > 1 ? images : (images[0] || undefined),
         "address": {
             "@type": "PostalAddress",
             "addressLocality": seo.city,
@@ -145,16 +240,21 @@ function generatePropertySchema(property, reviews) {
             "@type": "GeoCoordinates",
             "latitude": property.coordinates.lat,
             "longitude": property.coordinates.lng
-        } : {
-            "@type": "GeoCoordinates"
-        },
+        } : undefined,
         "amenityFeature": property.amenities.map(a => ({
             "@type": "LocationFeatureSpecification",
             "name": a.name
         })),
-        "priceRange": `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`
+        "priceRange": `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`,
+        "parentOrganization": Object.assign(
+            {
+                "@type": "Organization",
+                "name": SEO_CONFIG.siteName
+            },
+            base ? { url: `${base}/` } : {}
+        )
     };
-    
+
     if (avgRating && reviews.length > 0) {
         schema.aggregateRating = {
             "@type": "AggregateRating",
@@ -164,8 +264,38 @@ function generatePropertySchema(property, reviews) {
             "worstRating": "1"
         };
     }
-    
+
     return schema;
+}
+
+function generateListingBreadcrumbSchema(property) {
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const home = base ? `${base}/` : getSiteBaseHref();
+    const city = extractCity(property.location);
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": home
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Florida vacation rentals",
+                "item": `${home}#properties`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": property.title,
+                "item": getListingCanonicalUrl(property.id)
+            }
+        ]
+    };
 }
 
 function generateImageAlt(property, imageIndex) {
@@ -310,15 +440,18 @@ function initListingDetailMap(property) {
 // ==========================================
 // Navigation Functions
 // ==========================================
-function navigateHome(event) {
+function navigateHome(event, options = {}) {
     if (event) event.preventDefault();
-    
+
     document.getElementById('home-page').classList.add('active');
     document.getElementById('property-detail-page').classList.remove('active');
-    
-    // Reset SEO meta tags to homepage defaults
+
     resetPageMeta();
-    
+    setCanonicalAndSocial(null);
+    if (!options.skipHistory) {
+        pushHomeHistoryState();
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
     currentProperty = null;
     document.body.classList.remove('has-listing-sticky');
@@ -329,21 +462,24 @@ function navigateHome(event) {
 function navigateToProperty(propertyId, options = {}) {
     const property = PROPERTIES.find(p => p.id === propertyId);
     if (!property) return;
-    
+
     currentProperty = property;
     currentGalleryIndex = 0;
     selectedStartDate = null;
     selectedEndDate = null;
-    
-    // Update SEO meta tags for this property
+
     const seo = generatePropertySEO(property);
     updatePageMeta(seo.title, seo.description);
-    
+    setCanonicalAndSocial(property);
+    if (!options.skipHistory) {
+        pushListingHistoryState(propertyId);
+    }
+
     document.getElementById('home-page').classList.remove('active');
     document.getElementById('property-detail-page').classList.add('active');
-    
+
     renderPropertyDetail(property);
-    
+
     const scrollToCalendar = options.scrollToCalendar === true;
     if (scrollToCalendar) {
         requestAnimationFrame(() => {
@@ -705,7 +841,7 @@ function createPropertyCard(property, isFeatured = false) {
         </div>
         <div class="property-card-content">
             <div class="property-card-header">
-                <h3 class="property-card-title">${property.title}</h3>
+                <h3 class="property-card-title"><a class="property-card-title-link" href="?listing=${property.id}" onclick="event.preventDefault(); event.stopPropagation(); navigateToProperty(${property.id});">${property.title}</a></h3>
                 <div class="property-card-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1079,10 +1215,23 @@ function renderPropertyDetail(property) {
     const displaySubtitle = property.listingTagline || (isFlorida
         ? `${city}, Florida`
         : `Vacation rental in ${city}`);
-    
+    const breadcrumbSchema = generateListingBreadcrumbSchema(property);
+    const homeHref = escapeHtml(getSiteBaseHref());
+    const propsHref = `${escapeHtml(getSiteBaseHref().replace(/\/$/, ''))}#properties`;
+
     container.innerHTML = `
         <script type="application/ld+json">${JSON.stringify(schema)}</script>
+        <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
         <div class="property-detail">
+            <div class="container listing-breadcrumb-wrap">
+                <nav class="listing-breadcrumb" aria-label="Breadcrumb">
+                    <ol class="listing-breadcrumb-list">
+                        <li><a href="${homeHref}">Home</a></li>
+                        <li><a href="${propsHref}">Florida rentals</a></li>
+                        <li aria-current="page">${escapeHtml(city)}</li>
+                    </ol>
+                </nav>
+            </div>
             ${renderHeroCarousel(property)}
             
             <div class="container">
@@ -2309,30 +2458,83 @@ function refreshHomeLocationsMapSize() {
 // ==========================================
 // Initialization
 // ==========================================
-/** Keep canonical, Open Graph, and JSON-LD url aligned with config.js SITE_BASE_URL (single source of truth). */
+/** Homepage Organization + WebSite + ItemList JSON-LD (listing URLs use ?listing=id). */
+function buildHomepageSchema() {
+    if (typeof SITE_BASE_URL !== 'string' || !SITE_BASE_URL.trim()) return null;
+    const base = SITE_BASE_URL.replace(/\/$/, '');
+    const org = {
+        '@type': 'Organization',
+        '@id': `${base}/#organization`,
+        name: SEO_CONFIG.siteName,
+        url: `${base}/`,
+        description: 'Owner-direct beach vacation rentals in Panama City Beach and Destin, Florida. Transparent pricing and no OTA service fees on Gulf-front condos.',
+        areaServed: [
+            { '@type': 'City', name: 'Panama City Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
+            { '@type': 'City', name: 'Miramar Beach', containedInPlace: { '@type': 'State', name: 'Florida' } }
+        ]
+    };
+    const website = {
+        '@type': 'WebSite',
+        '@id': `${base}/#website`,
+        name: SEO_CONFIG.siteName,
+        url: `${base}/`,
+        description: SEO_CONFIG.defaultDescription,
+        inLanguage: 'en-US',
+        publisher: { '@id': `${base}/#organization` }
+    };
+    const itemList = {
+        '@type': 'ItemList',
+        name: 'Florida Gulf Coast vacation rentals',
+        numberOfItems: PROPERTIES.length,
+        itemListElement: PROPERTIES.map((p, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: p.title,
+            url: `${base}/?listing=${p.id}`
+        }))
+    };
+    return {
+        '@context': 'https://schema.org',
+        '@graph': [org, website, itemList]
+    };
+}
+
+function refreshHomepageJsonLd() {
+    const el = document.getElementById('site-schema-jsonld');
+    if (!el) return;
+    const data = buildHomepageSchema();
+    if (data) {
+        el.textContent = JSON.stringify(data, null, 4);
+    }
+}
+
+/** Keep canonical, Open Graph URL, and homepage JSON-LD aligned with config.js SITE_BASE_URL. */
 function syncSiteMetaFromBaseUrl() {
     if (typeof SITE_BASE_URL !== 'string' || !SITE_BASE_URL.trim()) return;
     const base = SITE_BASE_URL.replace(/\/$/, '');
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', base);
+    if (canonical) canonical.setAttribute('href', `${base}/`);
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute('content', base);
-    const ldEl = document.getElementById('site-schema-jsonld');
-    if (ldEl && ldEl.textContent) {
-        try {
-            const data = JSON.parse(ldEl.textContent);
-            if (data && typeof data === 'object') {
-                data.url = base;
-                ldEl.textContent = JSON.stringify(data, null, 4);
-            }
-        } catch (e) {
-            /* keep static JSON if parse fails */
-        }
-    }
+    if (ogUrl) ogUrl.setAttribute('content', `${base}/`);
+    refreshHomepageJsonLd();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     syncSiteMetaFromBaseUrl();
+    setCanonicalAndSocial(null);
     renderPropertyListings();
     initHomeLocationsMap();
+    const lid = getListingIdFromUrl();
+    if (lid != null && PROPERTIES.some(p => p.id === lid)) {
+        navigateToProperty(lid, { skipHistory: true });
+    }
+});
+
+window.addEventListener('popstate', () => {
+    const lid = getListingIdFromUrl();
+    if (lid != null && PROPERTIES.some(p => p.id === lid)) {
+        navigateToProperty(lid, { skipHistory: true });
+    } else {
+        navigateHome(null, { skipHistory: true });
+    }
 });

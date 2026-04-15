@@ -1,0 +1,5 @@
+# Serenity Rentals — allow all crawlers; sitemap lists homepage and listing URLs (?listing=id).
+User-agent: *
+Allow: /
+
+Sitemap: https://simonekhalilfl.github.io/Serenity/sitemap.xml
