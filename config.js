@@ -176,7 +176,7 @@ const PROPERTIES = [
     {
         id: 4,
         title: "Tidewater Beach Resort - 3BR Beachfront Condo",
-        listingHeadline: "Gulf-front Tidewater condo — space for the whole crew",
+        listingHeadline: "Beachfront Tidewater Condo—Space for Families and Groups",
         listingTagline: "Resort pools, beach access, and Pier Park within easy reach.",
         location: "Panama City Beach, Florida",
         description: `Experience Panama City Beach from Tidewater Beach Resort—Gulf-front living with space for families and groups. This beachfront condo features cool tile throughout, a bright living area with comfortable seating and a smart TV, and a balcony with sweeping Gulf views.
@@ -394,8 +394,8 @@ From Tidewater you're minutes from the best of PCB:
     {
         id: 5,
         title: "Majestic Sun 811",
-        listingHeadline: "8th-floor Gulf views at Majestic Sun",
-        listingTagline: "Boardwalk to the beach — Seascape pools, golf, and dining nearby.",
+        listingHeadline: "8th-Floor Gulf Views at Majestic Sun",
+        listingTagline: "Boardwalk to the beach—Seascape pools, golf, and dining nearby.",
         location: "Destin, Florida",
         description: `Experience the best of Destin at Majestic Sun, where Gulf-front living meets comfort and convenience. This beautifully appointed 8th-floor beachfront condo offers breathtaking panoramic views of the emerald waters and sugar-white sands of the Gulf of Mexico. Step onto your private balcony to enjoy morning coffee, afternoon sea breezes, or unforgettable sunsets over the water.
 

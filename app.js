@@ -438,7 +438,7 @@ function showContactModal() {
         const damageDeposit = getRefundableDamageDeposit(currentProperty);
         const depositRow = damageDeposit > 0
             ? `<div class="booking-summary-row booking-summary-deposit">
-                    <span>Refundable damage deposit:</span>
+                    <span>Refundable Damage Deposit:</span>
                     <span>${formatCurrency(damageDeposit)}</span>
                 </div>`
             : '';
