@@ -1,0 +1,73 @@
+{
+  "images": [
+    "https://media.vrbo.com/lodging/103000000/102380000/102370100/102370092/b16027df.jpg",
+    "https://media.vrbo.com/lodging/103000000/102380000/102370100/102370092/0327edd4.jpg",
+    "https://media.vrbo.com/lodging/103000000/102380000/102370100/102370092/ab71f25e.jpg",
+    "https://media.vrbo.com/lodging/103000000/102380000/102370100/102370092/35a299f6.jpg",
+    "https://media.vrbo.com/lodging/103000000/102380000/102370100/102370092/ec8dbbfb.jpg"
+  ],
+  "reviews": [
+    {
+      "reviewer": "Guest",
+      "date": "2024-11-15",
+      "rating": 5,
+      "comment": "Absolutely loved our stay at Tidewater! The condo was clean, modern, and had everything we needed. The views from the balcony were stunning, and the resort amenities were top-notch. The pools and hot tubs were perfect for relaxing after a day at the beach. Walking distance to Pier Park was a huge plus. Highly recommend!"
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-10-22",
+      "rating": 5,
+      "comment": "Perfect location right on the beach! The condo was spacious and well-maintained. We especially enjoyed the gulf views and the convenience of having beach access right from the building. The kitchen was fully equipped, which made it easy to prepare meals. Would definitely stay here again."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-09-30",
+      "rating": 5,
+      "comment": "Great property with beautiful ocean views. The resort has excellent amenities including multiple pools, fitness center, and even a movie theater. The condo was comfortable and clean. Only minor issue was elevator wait times during peak hours, but overall a wonderful experience."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-08-18",
+      "rating": 5,
+      "comment": "This was our second time staying at this property and it did not disappoint! The beds were very comfortable, the kitchen had all the cookware we needed, and the balcony was our favorite spot for morning coffee with ocean views. Beach setup service made our days on the beach hassle-free."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-07-25",
+      "rating": 5,
+      "comment": "Beautiful condo in a great location. The resort is well-maintained and has tons of amenities. We loved the indoor pool for rainy days. The beach was stunning with white sand and clear water. Close to restaurants and shopping at Pier Park. Minor improvement needed on cleaning but overall excellent stay."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-06-12",
+      "rating": 5,
+      "comment": "Outstanding vacation rental! Everything was exactly as described. The condo is modern, spacious, and beautifully decorated. We enjoyed the resort's pools and hot tubs daily. The location can't be beat - right on the beach with easy access to everything Panama City Beach has to offer."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-05-20",
+      "rating": 5,
+      "comment": "We had an amazing family vacation here! The condo easily accommodated our family of 6. Kids loved the pools and beach access. Adults appreciated the well-stocked kitchen and comfortable beds. The resort grounds are beautiful and well-maintained. Will definitely be back!"
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-04-15",
+      "rating": 5,
+      "comment": "Very nice property with great amenities. The gulf-front view was breathtaking. We enjoyed having laundry in the unit and a full kitchen. The resort's fitness center was a nice bonus. Check-in process was smooth and host communication was excellent throughout our stay."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-03-28",
+      "rating": 5,
+      "comment": "Perfect spring break getaway! The condo exceeded our expectations. Clean, comfortable, and beautifully furnished. The balcony had incredible views of the ocean. Resort amenities were fantastic - multiple pools, hot tubs, and beach access made it feel like a luxury resort experience."
+    },
+    {
+      "reviewer": "Guest",
+      "date": "2024-02-14",
+      "rating": 5,
+      "comment": "Great property for a beach vacation. The location is ideal - right on the gulf with beautiful sunsets. The condo was well-equipped with everything we needed. We appreciated the secure parking and easy elevator access. Would recommend to anyone looking for a quality beach rental in Panama City Beach."
+    }
+  ],
+  "totalReviews": 10,
+  "averageRating": 5.0
+}

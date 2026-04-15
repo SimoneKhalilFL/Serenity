@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Serenity Rentals | Owner-direct beach stays in Florida</title>
+    <meta name="description" content="Book PCB and Destin-area condos directly from the owner—no OTA fees. Transparent pricing, Gulf-front stays.">
+    <meta name="keywords" content="Florida short term rentals, Florida vacation rentals, vacation rentals by owner Florida, beach vacation rentals Florida, Florida condo rentals, Florida weekly rentals, family-friendly vacation rentals Florida, beachfront vacation rental">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Serenity Rentals | Owner-direct beach stays">
+    <meta property="og:description" content="Gulf-front condos in PCB and Destin—book direct, no OTA markup.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80">
+    <meta property="og:url" content="https://serenityrentals.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Serenity Rentals | Owner-direct beach stays">
+    <meta name="twitter:description" content="Gulf-front condos—book direct with the owner.">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Serenity Rentals">
+    <meta name="geo.region" content="US-FL">
+    <meta name="geo.placename" content="Florida">
+    <link rel="canonical" href="https://serenityrentals.com">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VacationRental",
+        "name": "Serenity Rentals",
+        "description": "Owner-direct beach vacation rentals on the Florida Gulf Coast.",
+        "url": "https://serenityrentals.com",
+        "areaServed": {
+            "@type": "State",
+            "name": "Florida",
+            "containedInPlace": {
+                "@type": "Country",
+                "name": "United States"
+            }
+        },
+        "priceRange": "$$-$$$",
+        "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Beach Access"},
+            {"@type": "LocationFeatureSpecification", "name": "Pool"},
+            {"@type": "LocationFeatureSpecification", "name": "WiFi"},
+            {"@type": "LocationFeatureSpecification", "name": "Kitchen"}
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo" onclick="navigateHome(event)">
+                    <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
+                        <!-- Sun/sunset -->
+                        <circle cx="24" cy="18" r="8" fill="#F59E0B" opacity="0.9"/>
+                        <circle cx="24" cy="18" r="5" fill="#FBBF24"/>
+                        <!-- Ocean waves -->
+                        <path d="M4 28 Q10 24, 16 28 T28 28 T40 28 T52 28" stroke="#0EA5E9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M2 34 Q8 30, 14 34 T26 34 T38 34 T50 34" stroke="#0EA5E9" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+                        <path d="M6 40 Q12 36, 18 40 T30 40 T42 40" stroke="#0EA5E9" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+                        <!-- Palm tree silhouette -->
+                        <path d="M36 28 L36 18" stroke="#065F46" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M36 18 Q32 14, 28 16" stroke="#065F46" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M36 18 Q34 12, 30 12" stroke="#065F46" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M36 18 Q38 12, 42 13" stroke="#065F46" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M36 18 Q40 14, 44 16" stroke="#065F46" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span>Serenity Rentals</span>
+                </a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links">
+                    <a href="#" onclick="navigateHome(event)">Home</a>
+                    <a href="#properties" onclick="scrollToSection(event, 'properties')">Properties</a>
+                    <a href="#" onclick="event.preventDefault(); showContactModal()">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="app">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://media.scurto.net/2060/uploads/video/homepage-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Beach stays, booked with the owner</h1>
+                    <p>Gulf views, resort pools, and real people—not a faceless OTA. Pick dates, see transparent pricing, then email to reserve.</p>
+                    <a href="#properties" class="btn btn-primary" onclick="scrollToSection(event, 'properties')">See our properties</a>
+                </div>
+            </section>
+
+            <!-- Property Listings -->
+            <section id="properties" class="properties-section" aria-label="Florida vacation rental listings">
+                <div class="container">
+                    <h2 class="section-title">Two Gulf-coast homes</h2>
+                    <p class="section-description">Tidewater in Panama City Beach and Majestic Sun in Miramar Beach—both owner-managed with clear rates and direct contact.</p>
+                    <div id="property-grid" class="property-grid"></div>
+                </div>
+            </section>
+
+            <section class="home-locations-map-section" aria-labelledby="home-locations-map-heading">
+                <div class="container">
+                    <h2 id="home-locations-map-heading" class="section-title">Where you'll stay</h2>
+                    <p class="section-description">Tidewater Beach Resort in Panama City Beach and Majestic Sun in Miramar Beach (Destin area).</p>
+                    <div id="home-locations-map" class="home-locations-map" role="img" aria-label="Map showing Tidewater Beach Resort and Majestic Sun locations in Florida"></div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section" aria-label="Contact us about Florida vacation rentals">
+                <div class="container">
+                    <h2 class="section-title">Questions? Talk to the owner</h2>
+                    <div class="contact-content">
+                        <p>Ask about dates, parking, or what to pack—we usually reply within a day.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <a href="mailto:FloridaVacationRental2020@gmail.com">FloridaVacationRental2020@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <a href="tel:+18505550142">(850) 555-0142</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Property Detail Page -->
+        <div id="property-detail-page" class="page"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Serenity Rentals</h3>
+                    <p>Owner-direct Gulf Coast stays—honest photos, transparent math, no OTA service fees.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Florida Rental Destinations</h4>
+                    <a href="#properties" onclick="scrollToSection(event, 'properties')">Panama City Beach Rentals</a>
+                    <a href="#properties" onclick="scrollToSection(event, 'properties')">Beach Vacation Rentals</a>
+                    <a href="#properties" onclick="scrollToSection(event, 'properties')">Florida Condo Rentals</a>
+                    <a href="#" onclick="event.preventDefault(); showContactModal()">Contact Owner</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Why Book Direct?</h4>
+                    <p class="legal-disclaimer">Rates come from the owner; calendars may sync with VRBO, Airbnb, or Booking.com. Final details are confirmed when you book direct.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Serenity Rentals - Florida Vacation Rentals by Owner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+</html>
