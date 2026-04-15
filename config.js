@@ -6,13 +6,13 @@
 // Geography: pcbdestinstays, emeralddirectstays, gulfcoastbyowner, twogulfhomes
 // Owner-direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
 // Phone-test finalists (say "visit [name] dot com"): serenitygulf, serenitypcb, gulfdirectstays
-// After you buy a domain: set SITE_BASE_URL below (no trailing slash). Meta tags sync from this in app.js.
+// Live site URL (GitHub Pages). Use your custom domain here when DNS is ready (no trailing slash). Meta tags sync from this in app.js.
 // Social/email alignment: reserve hello@ / stays@ on that domain; @SerenityRentalsPCB or @SerenityGulfStays on IG/Facebook.
-const SITE_BASE_URL = 'https://serenityrentals.com';
+const SITE_BASE_URL = 'https://simonekhalilfl.github.io/Serenity';
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
-    phoneTel: '+18505550142',
-    phoneDisplay: '(850) 555-0142',
+    phoneTel: '+18504049822',
+    phoneDisplay: '(850) 404-9822',
     replyWithinHours: 24,
     cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book. Ask about flexibility if your plans change.'
 };
