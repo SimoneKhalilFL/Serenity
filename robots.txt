@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://simonekhalilfl.github.io/Serenity/sitemap.xml
+Sitemap: https://www.serenityrentals.com/sitemap.xml
