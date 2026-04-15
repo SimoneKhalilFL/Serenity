@@ -549,6 +549,33 @@ function escapeHtml(str) {
         .replace(/"/g, '&quot;');
 }
 
+function closeContactModalThenScrollToProperties() {
+    closeContactModal();
+    requestAnimationFrame(() => {
+        const detail = document.getElementById('property-detail-page');
+        if (detail && detail.classList.contains('active')) {
+            navigateHome(null);
+            setTimeout(() => {
+                const el = document.getElementById('properties');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 80);
+        } else {
+            const el = document.getElementById('properties');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+}
+
+function closeContactModalThenScrollToCalendar() {
+    closeContactModal();
+    requestAnimationFrame(() => {
+        const el = document.getElementById('property-availability');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+}
+
 function showContactModal() {
     // Get booking details if dates are selected
     let bookingDetails = '';
@@ -616,13 +643,31 @@ function showContactModal() {
     const primaryCta = (selectedStartDate && selectedEndDate && currentProperty)
         ? 'Email to Reserve These Dates'
         : 'Email the Owner';
-    
+
+    const onListing = !!currentProperty;
+    const hasDates = !!(selectedStartDate && selectedEndDate && currentProperty);
+    let dateTipHtml = '';
+    if (!onListing) {
+        dateTipHtml = `
+            <div class="contact-modal-tip" role="region" aria-label="Book with dates">
+                <p class="contact-modal-tip-text">To see pricing for specific nights, open a rental below and choose your check-in and check-out on the calendar—then email us from there. You can still send a general question here.</p>
+                <button type="button" class="btn btn-primary contact-modal-tip-btn" onclick="closeContactModalThenScrollToProperties()">Browse vacation rentals</button>
+            </div>`;
+    } else if (!hasDates) {
+        dateTipHtml = `
+            <div class="contact-modal-tip contact-modal-tip--listing" role="region" aria-label="Select stay dates">
+                <p class="contact-modal-tip-text">Select your <strong>check-in</strong> and <strong>check-out</strong> on this page&rsquo;s calendar so your email can include your stay and estimated total.</p>
+                <button type="button" class="btn btn-primary contact-modal-tip-btn" onclick="closeContactModalThenScrollToCalendar()">Select dates</button>
+            </div>`;
+    }
+
     const modal = document.createElement('div');
     modal.className = 'contact-modal-overlay';
     modal.innerHTML = `
         <div class="contact-modal contact-form-modal">
             <button class="contact-modal-close" onclick="closeContactModal()">&times;</button>
             <h3>Contact the Owner to Book</h3>
+            ${dateTipHtml}
             ${formConfigWarning}
             ${bookingDetails}
             <form id="contact-form" onsubmit="submitContactForm(event)">

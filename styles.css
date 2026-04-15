@@ -967,6 +967,30 @@ button {
     max-width: 480px;
 }
 
+.contact-modal-tip {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+    border: 1px solid #bfdbfe;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.125rem;
+    margin-bottom: 1.25rem;
+}
+
+.contact-modal-tip--listing {
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+    border-color: #99f6e4;
+}
+
+.contact-modal-tip-text {
+    margin: 0 0 0.875rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.contact-modal-tip-btn {
+    width: 100%;
+}
+
 .booking-summary {
     background: var(--bg-light);
     border: 1px solid var(--border-color);
