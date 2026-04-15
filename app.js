@@ -84,9 +84,9 @@ function generatePropertySEO(property) {
     // Generate SEO-optimized description
     let description;
     if (isFlorida) {
-        description = `${property.bedrooms} bed · sleeps ${property.maxGuests} · ${property.amenities.slice(0, 3).map(a => a.name).join(', ')}. Book owner-direct in ${city} from $${property.baseNightlyRate}/night—no OTA markup.`;
+        description = `${property.bedrooms} bedroom${property.bedrooms === 1 ? '' : 's'} · sleeps ${property.maxGuests} · ${property.amenities.slice(0, 3).map(a => a.name).join(', ')}. Book owner-direct in ${city} from $${property.baseNightlyRate}/night—no OTA markup.`;
     } else {
-        description = `${property.bedrooms} bed, sleeps ${property.maxGuests}. ${property.amenities.slice(0, 3).map(a => a.name).join(', ')}. From $${property.baseNightlyRate}/night. Book direct with Serenity Rentals.`;
+        description = `${property.bedrooms} bedroom${property.bedrooms === 1 ? '' : 's'}, sleeps ${property.maxGuests}. ${property.amenities.slice(0, 3).map(a => a.name).join(', ')}. From $${property.baseNightlyRate}/night. Book direct with Serenity Rentals.`;
     }
     
     return { title, description, city, state, isFlorida };
@@ -449,15 +449,15 @@ function showContactModal() {
     
     const contact = getSiteContact();
     const primaryCta = (selectedStartDate && selectedEndDate && currentProperty)
-        ? 'Email to reserve these dates'
-        : 'Email Owner';
+        ? 'Email to Reserve These Dates'
+        : 'Email the Owner';
     
     const modal = document.createElement('div');
     modal.className = 'contact-modal-overlay';
     modal.innerHTML = `
         <div class="contact-modal contact-form-modal">
             <button class="contact-modal-close" onclick="closeContactModal()">&times;</button>
-            <h3>Contact Owner to Book</h3>
+            <h3>Contact the Owner to Book</h3>
             ${bookingDetails}
             <form id="contact-form" onsubmit="submitContactForm(event)">
                 <input type="hidden" id="form-subject" value="${subjectLine}">
@@ -779,7 +779,7 @@ function renderListingSubNav(hasReviews, hasLocation) {
     return `
         <nav class="listing-subnav container" aria-label="Listing sections">
             <a href="#property-photos">Photos</a>
-            <a href="#property-stay-details">Stay details</a>
+            <a href="#property-stay-details">Stay Details</a>
             <a href="#property-availability">Availability</a>
             ${hasReviews ? '<a href="#property-reviews">Reviews</a>' : ''}
             ${hasLocation ? '<a href="#property-location">Location</a>' : ''}
@@ -856,7 +856,7 @@ function renderStayDetailsAtAGlance(property) {
     const bullets = picks.slice(0, 7);
     return `
         <div class="stay-at-a-glance">
-            <h3 class="stay-details-subheading">At a glance</h3>
+            <h3 class="stay-details-subheading">At a Glance</h3>
             <ul class="stay-at-a-glance-list">
                 <li>Sleeps up to <strong>${property.maxGuests}</strong> · ${property.bedrooms} bed · ${property.bathrooms} bath</li>
                 ${bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('')}
@@ -1044,7 +1044,7 @@ function renderPropertyDetail(property) {
                 <div class="container">
                     <div class="property-overview-grid">
                         <div id="property-stay-details" class="property-stay-details-wrap">
-                            <h2 class="section-title property-stay-details-heading">Stay details</h2>
+                            <h2 class="section-title property-stay-details-heading">Stay Details</h2>
                             ${renderStayDetailsAtAGlance(property)}
                             ${renderGroupedAmenities(property)}
                             ${renderFormattedDescription(property, isFlorida, city)}
@@ -1078,7 +1078,7 @@ function renderPropertyDetail(property) {
                 <div class="listing-sticky-cta-inner container">
                     <div class="listing-sticky-cta-estimate" id="listing-sticky-cta-estimate"></div>
                     <div class="listing-sticky-cta-actions">
-                        <a class="btn btn-primary btn-sticky" href="#" onclick="event.preventDefault(); showContactModal();">Email to book</a>
+                        <a class="btn btn-primary btn-sticky" href="#" onclick="event.preventDefault(); showContactModal();">Email to Book</a>
                         ${getSiteContact().phoneTel ? `<a class="btn btn-secondary btn-sticky" href="#" data-sticky-tel>Call</a>` : ''}
                     </div>
                 </div>
@@ -1269,7 +1269,7 @@ function renderFormattedDescription(property, isFlorida, city) {
         <h2>About ${property.title}</h2>
         <p class="property-description">${description}</p>
         ${property.webcam ? renderWebcam(property.webcam, property.title) : ''}
-        ${isFlorida ? `<details class="seo-more"><summary>More about booking direct in ${escapeHtml(city)}</summary><p class="seo-text">Owner-direct—no OTA service fees. Final rates confirmed with the host.</p></details>` : ''}
+        ${isFlorida ? `<details class="seo-more"><summary>More About Booking Direct in ${escapeHtml(city)}</summary><p class="seo-text">Owner-direct stays: no OTA service fees. Final rates are confirmed with the host.</p></details>` : ''}
     `;
 }
 
@@ -1483,8 +1483,8 @@ function renderRichDescription(property, description, isFlorida, city) {
     if (isFlorida) {
         html += `
             <details class="seo-more">
-                <summary>More about booking direct in ${escapeHtml(city)}</summary>
-                <p class="seo-text">Owner-direct stay—no OTA service fees. Rates and availability are confirmed with the host when you book.</p>
+                <summary>More About Booking Direct in ${escapeHtml(city)}</summary>
+                <p class="seo-text">Owner-direct stays: no OTA service fees. Rates and availability are confirmed with the host when you book.</p>
             </details>`;
     }
     
@@ -1868,7 +1868,7 @@ function renderPriceCalculator(property) {
         </div>
         <p class="calculator-reply-hint">We usually reply within ${c.replyWithinHours} hours. Final details are confirmed by email.</p>
         <button class="btn btn-primary" style="width: 100%;" onclick="showContactModal()">
-            Email to reserve these dates
+            Email to Reserve These Dates
         </button>
     `;
     
@@ -1895,7 +1895,7 @@ function renderPriceCalculator(property) {
             </div>
             ${depositLine}
             <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="showContactModal()">
-                Email to reserve these dates
+                Email to Reserve These Dates
             </button>
             ${trustSidebar}
         `;
