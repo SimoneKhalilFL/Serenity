@@ -71,7 +71,7 @@ function getSiteContact() {
         email: 'FloridaVacationRental2020@gmail.com',
         phoneTel: '',
         phoneDisplay: '',
-        replyWithinHours: 24,
+        replyBlurb: 'We usually reply within 24 hours. For a quicker answer, feel free to text us.',
         cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book.'
     };
 }
@@ -152,7 +152,7 @@ function generatePropertySEO(property) {
         title = `${property.title} | ${city} | Serenity Rentals`;
     }
 
-    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct rates from $${property.baseNightlyRate}/night—no OTA fees. ${areaPhrase}. VRBO/Airbnb alternative with Serenity Rentals.`;
+    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct rates from $${property.baseNightlyRate}/night—no OTA fees. ${areaPhrase}. Book direct with Serenity Rentals.`;
     if (description.length > 168) {
         description = `${description.slice(0, 165).trim()}…`;
     }
@@ -649,7 +649,7 @@ function showContactModal() {
                     ${primaryCta}
                 </button>
             </form>
-            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">We usually reply within ${contact.replyWithinHours} hours</p>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 1rem; text-align: center;">${escapeHtml(contact.replyBlurb)}</p>
         </div>
     `;
     modal.onclick = function(e) {
@@ -777,7 +777,7 @@ async function submitContactForm(event) {
         if (ok) {
             closeContactModal();
             const c = getSiteContact();
-            alert(`Thanks! Your message was sent. We usually reply within ${c.replyWithinHours} hours.`);
+            alert(`Thanks! Your message was sent. ${c.replyBlurb}`);
             return;
         }
         
@@ -1004,7 +1004,7 @@ function heroCarouselPrev() {
 }
 
 // ==========================================
-// Listing page: sub-nav, trust, OTA links
+// Listing page: sub-nav, trust sidebar
 // ==========================================
 function renderListingSubNav(hasReviews, hasLocation) {
     return `
@@ -1162,34 +1162,14 @@ function renderKeyPolicyChips(property) {
     `;
 }
 
-function renderPropertyBookingLinksHtml(property) {
-    const bl = property.bookingLinks;
-    if (!bl || (!bl.vrbo && !bl.airbnb)) return '';
-    const parts = [];
-    if (bl.vrbo) {
-        parts.push(`<a class="booking-ota-link" href="${bl.vrbo}" target="_blank" rel="noopener noreferrer">VRBO</a>`);
-    }
-    if (bl.airbnb) {
-        parts.push(`<a class="booking-ota-link" href="${bl.airbnb}" target="_blank" rel="noopener noreferrer">Airbnb</a>`);
-    }
-    if (!parts.length) return '';
-    return `
-        <div class="property-booking-links">
-            <span class="booking-links-label">Also book on</span>
-            ${parts.join('')}
-        </div>
-    `;
-}
-
 function renderListingTrustSidebar(property) {
     const c = getSiteContact();
     const phoneHtml = c.phoneTel && c.phoneDisplay
         ? `<p class="listing-trust-line"><span class="listing-trust-label">Call or text</span> <a class="listing-trust-phone" href="tel:${c.phoneTel}">${c.phoneDisplay}</a></p>`
         : '';
     const emailHtml = `<p class="listing-trust-line"><span class="listing-trust-label">Email</span> <a class="listing-trust-email" href="mailto:${c.email}">${c.email}</a></p>`;
-    const ota = renderPropertyBookingLinksHtml(property);
-    const reply = `<p class="listing-reply-note">We usually reply within ${c.replyWithinHours} hours.</p>`;
-    return `<div class="listing-sidebar-trust">${phoneHtml}${emailHtml}${ota}${reply}</div>`;
+    const reply = `<p class="listing-reply-note">${escapeHtml(c.replyBlurb)}</p>`;
+    return `<div class="listing-sidebar-trust">${phoneHtml}${emailHtml}${reply}</div>`;
 }
 
 // ==========================================
@@ -1275,7 +1255,7 @@ function renderPropertyDetail(property) {
                         <div class="pricing-container">
                             <h3>Price Calculator</h3>
                             <div class="pricing-disclaimer">
-                                Prices shown reflect owner-configured rates. Availability synced from third-party platforms. Final pricing confirmed directly with the owner.
+                                Prices shown reflect owner-configured rates. Availability may reflect external calendar sync. Final pricing is confirmed directly with the owner.
                             </div>
                             <p class="cancellation-snippet">${getSiteContact().cancellationNote}</p>
                             <div id="price-calculator"></div>
@@ -2052,7 +2032,7 @@ function renderPriceCalculator(property) {
             <p style="text-align: center; color: var(--text-secondary); padding: 2rem 0;">
                 Select check-in and check-out dates on the calendar to calculate pricing.
             </p>
-            <p class="calculator-reply-hint">We usually reply within ${c.replyWithinHours} hours after you reach out.</p>
+            <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)}</p>
         `;
         // Reset quick pricing to default
         if (quickPricing) {
@@ -2110,7 +2090,7 @@ function renderPriceCalculator(property) {
                 <span class="price-total">${formatCurrency(total)}</span>
             </div>
         </div>
-        <p class="calculator-reply-hint">We usually reply within ${c.replyWithinHours} hours. Final details are confirmed by email.</p>
+        <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)} Final details are confirmed by email.</p>
         <button class="btn btn-primary" style="width: 100%;" onclick="showContactModal()">
             Email to Reserve These Dates
         </button>

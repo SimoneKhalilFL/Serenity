@@ -18,7 +18,7 @@ const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
     phoneTel: '+18504049822',
     phoneDisplay: '(850) 404-9822',
-    replyWithinHours: 24,
+    replyBlurb: 'We usually reply within 24 hours. For a quicker answer, feel free to text us.',
     cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book. Ask about flexibility if your plans change.'
 };
 
@@ -388,9 +388,6 @@ From Tidewater you're minutes from the best of PCB:
         // VRBO: http://www.vrbo.com/icalendar/2024eca45f854672b712124668878a90.ics?nonTentative
         // Airbnb: https://www.airbnb.com/calendar/ical/1102297481087079379.ics?s=90116a99e75615dcf80171ddb4905286
         // Booking: https://ical.booking.com/v1/export?t=35b688fc-4684-44a0-8867-82a2e361b18e
-        bookingLinks: {
-            airbnb: 'https://www.airbnb.com/rooms/1102297481087079379'
-        }
     },
     {
         id: 5,
@@ -658,9 +655,6 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
         // VRBO: http://www.vrbo.com/icalendar/26c67d2c183648a9acc205117158b231.ics?nonTentative
         // Airbnb: https://www.airbnb.com/calendar/ical/42299567.ics?s=1ae773f2ff4da71a9023b1e6b5583af9
         // Booking: https://ical.booking.com/v1/export?t=729c6e15-03da-4978-8674-e357f2fd5897
-        bookingLinks: {
-            vrbo: 'https://www.vrbo.com/1892927'
-        }
     }
 ];
 
