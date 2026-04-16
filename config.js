@@ -6,10 +6,10 @@
 // Geography: pcbdestinstays, emeralddirectstays, gulfcoastbyowner, twogulfhomes
 // Owner-direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
 // Phone-test finalists (say "visit [name] dot com"): serenitygulf, serenitypcb, gulfdirectstays
-// Live site URL (GitHub Pages). Use your custom domain here when DNS is ready (no trailing slash). Meta tags sync from this in app.js.
+// Live site URL (no trailing slash). Canonical / JSON-LD follow this via app.js.
 // When you add or remove PROPERTIES, update sitemap.xml listing URLs (?listing=id) to match.
-// Social/email alignment: reserve hello@ / stays@ on that domain; @SerenityRentalsPCB or @SerenityGulfStays on IG/Facebook.
-const SITE_BASE_URL = 'https://simonekhalilfl.github.io/Serenity';
+// Web3Forms: add this domain in their dashboard. Social/email: hello@ / stays@ on this domain when ready.
+const SITE_BASE_URL = 'https://stayatflorida.com';
 
 // Contact form via Web3Forms (https://web3forms.com) — access key is safe to use in frontend; restrict domain in their dashboard.
 const WEB3FORMS_ACCESS_KEY = 'd1ccaac2-d8a0-43d6-8615-5551586541d4';

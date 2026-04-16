@@ -12,7 +12,8 @@ let currentCalendarMonth = new Date();
 // ==========================================
 const SEO_CONFIG = {
     siteName: 'Serenity Rentals',
-    defaultTitle: 'Serenity Rentals | Panama City Beach & Destin Vacation Rentals by Owner',
+    /** Browser tab + bookmark title (always; listing pages still use property titles for og/twitter). */
+    defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
     defaultDescription: 'Book Panama City Beach and Destin-area condos directly from the owner—no OTA service fees. Transparent pricing on Gulf-front beach rentals. Florida STR and weekly stays.',
     defaultOgImage: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80'
 };
@@ -152,7 +153,7 @@ function generatePropertySEO(property) {
         title = `${property.title} | ${city} | Serenity Rentals`;
     }
 
-    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct rates from $${property.baseNightlyRate}/night—no OTA fees. ${areaPhrase}. Book direct with Serenity Rentals.`;
+    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct pricing—no OTA fees. ${areaPhrase}. Book direct with Serenity Rentals.`;
     if (description.length > 168) {
         description = `${description.slice(0, 165).trim()}…`;
     }
@@ -160,20 +161,21 @@ function generatePropertySEO(property) {
     return { title, description, city, state, isFlorida };
 }
 
-function updatePageMeta(title, description) {
-    document.title = title;
+/** @param socialTitle Title for og/twitter/meta when sharing (listing-specific or site default). */
+function updatePageMeta(socialTitle, description) {
+    document.title = SEO_CONFIG.defaultTitle;
 
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', description);
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
+    if (ogTitle) ogTitle.setAttribute('content', socialTitle);
 
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', description);
 
     const twTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twTitle) twTitle.setAttribute('content', title);
+    if (twTitle) twTitle.setAttribute('content', socialTitle);
 
     const twDesc = document.querySelector('meta[name="twitter:description"]');
     if (twDesc) twDesc.setAttribute('content', description);
@@ -738,9 +740,8 @@ async function submitContactForm(event) {
     const ownerEmail = getSiteContact().email;
     if (!accessKey) {
         if (statusEl) {
+            statusEl.className = 'form-submit-status';
             statusEl.textContent = `Add WEB3FORMS_ACCESS_KEY in config.js (see web3forms.com). For now, email ${ownerEmail} directly.`;
-        } else {
-            alert(`Contact form is not connected. Add WEB3FORMS_ACCESS_KEY in config.js, or email ${ownerEmail}.`);
         }
         return;
     }
@@ -794,6 +795,7 @@ async function submitContactForm(event) {
     
     const subject = subjectInput ? subjectInput.value : 'Booking Inquiry';
     const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+    let submissionSucceeded = false;
     if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Sending…';
@@ -824,26 +826,42 @@ async function submitContactForm(event) {
         
         const ok = res.ok && data && (data.success === true || data.success === 'true');
         if (ok) {
-            closeContactModal();
+            submissionSucceeded = true;
             const c = getSiteContact();
-            alert(`Thanks! Your message was sent. ${c.replyBlurb}`);
+            if (statusEl) {
+                statusEl.className = 'form-submit-status form-submit-status--success';
+                statusEl.textContent = `Thanks! Your message was sent. ${c.replyBlurb}`;
+                statusEl.setAttribute('tabindex', '-1');
+                statusEl.focus();
+            }
+            if (emailInput) emailInput.disabled = true;
+            if (phoneInput) phoneInput.disabled = true;
+            if (messageInput) messageInput.disabled = true;
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.type = 'button';
+                submitBtn.innerHTML = 'Close';
+                submitBtn.style.width = '100%';
+                submitBtn.onclick = function (e) {
+                    e.preventDefault();
+                    closeContactModal();
+                };
+            }
             return;
         }
         
         const errMsg = (data && (data.error || data.message)) ? String(data.error || data.message) : `Could not send (HTTP ${res.status}).`;
         if (statusEl) {
+            statusEl.className = 'form-submit-status';
             statusEl.textContent = `${errMsg} You can also email ${ownerEmail}.`;
-        } else {
-            alert(`${errMsg} You can also email ${ownerEmail}.`);
         }
     } catch (e) {
         if (statusEl) {
+            statusEl.className = 'form-submit-status';
             statusEl.textContent = `Network error. Try again or email ${ownerEmail}.`;
-        } else {
-            alert(`Network error. Email ${ownerEmail}.`);
         }
     } finally {
-        if (submitBtn) {
+        if (!submissionSucceeded && submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHtml;
         }
@@ -926,10 +944,6 @@ function createPropertyCard(property, isFeatured = false) {
                 </div>
             </div>
             <div class="property-card-footer">
-                <div class="property-price">
-                    ${formatCurrency(property.baseNightlyRate)}
-                    <span>/ night</span>
-                </div>
                 <button type="button" class="btn btn-primary property-card-cta">Check Availability</button>
             </div>
         </div>
@@ -1077,7 +1091,6 @@ function renderListingRibbon(property, avgRating, reviewCount) {
                 <li><span class="listing-ribbon-value">${property.maxGuests}</span> <span class="listing-ribbon-label">guests</span></li>
                 <li><span class="listing-ribbon-value">${property.bedrooms}</span> <span class="listing-ribbon-label">bedrooms</span></li>
                 <li><span class="listing-ribbon-value">${property.bathrooms}</span> <span class="listing-ribbon-label">baths</span></li>
-                <li class="listing-ribbon-from"><span class="listing-ribbon-label">From</span> <span class="listing-ribbon-value">${formatCurrency(property.baseNightlyRate)}</span><span class="listing-ribbon-suffix">/night</span></li>
             </ul>
             ${ratingHtml}
         </div>
@@ -1183,7 +1196,6 @@ function updateListingStickyCta(property) {
     } else {
         estimateEl.innerHTML = `
             <span class="listing-sticky-placeholder">Select dates for an estimated total</span>
-            <span class="listing-sticky-from">From ${formatCurrency(property.baseNightlyRate)}/night</span>
         `;
     }
     const phoneBtn = bar.querySelector('[data-sticky-tel]');
@@ -1328,10 +1340,7 @@ function renderPropertyDetail(property) {
                             <div style="position: sticky; top: 100px;">
                                 <div class="pricing-container" id="quick-pricing">
                                     <h3>Quick Pricing</h3>
-                                    <div class="property-price" style="margin-bottom: 1rem;">
-                                        ${formatCurrency(property.baseNightlyRate)}
-                                        <span>/ night</span>
-                                    </div>
+                                    <p class="quick-pricing-lead">Rates vary by season—select dates for an estimate.</p>
                                     <button type="button" class="quick-pricing-calendar-link" onclick="scrollToPropertyCalendar()">Select dates above to see total pricing</button>
                                     ${renderListingTrustSidebar(property)}
                                 </div>
@@ -2085,10 +2094,7 @@ function renderPriceCalculator(property) {
         if (quickPricing) {
             quickPricing.innerHTML = `
                 <h3>Quick Pricing</h3>
-                <div class="property-price" style="margin-bottom: 1rem;">
-                    ${formatCurrency(property.baseNightlyRate)}
-                    <span>/ night</span>
-                </div>
+                <p class="quick-pricing-lead">Rates vary by season—select dates for an estimate.</p>
                 <button type="button" class="quick-pricing-calendar-link" onclick="scrollToPropertyCalendar()">Select dates above to see total pricing</button>
                 ${trustSidebar}
             `;
@@ -2119,7 +2125,7 @@ function renderPriceCalculator(property) {
     container.innerHTML = `
         <div class="price-breakdown">
             <div class="price-line">
-                <span class="price-label">${formatCurrency(avgNightlyRate)} × ${nights} ${nights === 1 ? 'night' : 'nights'}</span>
+                <span class="price-label">Lodging (${nights} ${nights === 1 ? 'night' : 'nights'})</span>
                 <span class="price-value">${formatCurrency(nightlyTotal)}</span>
             </div>
             <div class="price-line">
@@ -2158,9 +2164,6 @@ function renderPriceCalculator(property) {
             <div class="property-price" style="margin-bottom: 0.5rem;">
                 ${formatCurrency(total)}
                 <span style="font-size: 0.875rem; font-weight: normal;">total</span>
-            </div>
-            <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
-                ${formatCurrency(avgNightlyRate)}/night avg (before fees & tax)
             </div>
             ${depositLine}
             <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="showContactModal()">
