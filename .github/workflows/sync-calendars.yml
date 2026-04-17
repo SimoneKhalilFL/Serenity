@@ -47,6 +47,19 @@ jobs:
             echo "No availability changes to commit."
           else
             git commit -m "chore(data): sync availability from iCal"
-            git pull --rebase origin main
-            git push
+            # Remote can move between checkout and push (e.g. deploy workflow). Retry fetch/rebase/push.
+            for i in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main || exit 1
+              if git push origin main; then
+                echo "Pushed availability update."
+                break
+              fi
+              if [ "$i" -eq 5 ]; then
+                echo "::error::git push failed after 5 attempts (remote kept moving)."
+                exit 1
+              fi
+              echo "Push rejected, retrying ($i/5)..."
+              sleep 3
+            done
           fi
