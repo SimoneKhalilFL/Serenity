@@ -3,7 +3,8 @@ name: Sync iCal availability
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # Every 30 minutes (UTC). GitHub may delay runs slightly under load.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
