@@ -44,8 +44,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://media.scurto.net" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <!-- Leaflet CSS only styles the maps; load non-blocking so it doesn't delay first paint. Fallback for no-JS is below. -->
+    <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""></noscript>
+    <!-- Preload the hero poster so it paints before the video downloads (improves LCP). -->
+    <link rel="preload" as="image" href="images/lodging/0327edd4.jpg" fetchpriority="high">
     <script src="config.js"></script>
     <script>
     (function () {
@@ -109,7 +114,7 @@
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-video">
-                    <video autoplay muted loop playsinline>
+                    <video autoplay muted loop playsinline preload="metadata" poster="images/lodging/0327edd4.jpg" aria-hidden="true">
                         <source src="https://media.scurto.net/2060/uploads/video/homepage-video.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -194,6 +199,11 @@
                 <div class="footer-section">
                     <h4>Why Book Direct?</h4>
                     <p class="legal-disclaimer">Rates come from the owner; availability may sync with external calendars. Final details are confirmed when you book direct.</p>
+                    <p class="footer-legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <span aria-hidden="true"> &middot; </span>
+                        <a href="terms.html">Terms of Use</a>
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
