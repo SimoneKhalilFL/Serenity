@@ -493,18 +493,27 @@ function getSelectedStayPricing(property) {
 
 let listingDetailMapInstance = null;
 
-/** Leaflet tile <img> elements have no alt by default; crawlers flag them. */
+/** Leaflet injects <img> for tiles and default markers without alt; crawlers flag them (e.g. 2 markers on home map). */
 function patchLeafletTileAlts(map) {
     if (!map || typeof map.getContainer !== 'function') return;
     const mark = () => {
-        map.getContainer().querySelectorAll('img.leaflet-tile').forEach((img) => {
+        const c = map.getContainer();
+        c.querySelectorAll('img.leaflet-tile').forEach((img) => {
             if (!img.getAttribute('alt')) img.setAttribute('alt', 'OpenStreetMap map tile');
+        });
+        c.querySelectorAll('img.leaflet-marker-icon').forEach((img) => {
+            if (!img.getAttribute('alt')) img.setAttribute('alt', 'Vacation rental location on map');
+        });
+        c.querySelectorAll('img.leaflet-marker-shadow').forEach((img) => {
+            if (!img.getAttribute('alt')) img.setAttribute('alt', 'Map marker shadow');
         });
     };
     map.on('tileload', mark);
+    map.on('layeradd', mark);
     map.whenReady(() => {
         mark();
         setTimeout(mark, 0);
+        setTimeout(mark, 200);
     });
 }
 
