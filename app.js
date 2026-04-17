@@ -1591,10 +1591,17 @@ function renderPropertyDetail(property) {
         </div>
         
         <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <button type="button" class="lightbox-nav lightbox-nav-prev" aria-label="Previous photo" onclick="event.stopPropagation(); lightboxPrev();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
             <div class="lightbox-content" onclick="event.stopPropagation()">
-                <button class="lightbox-close" onclick="closeLightbox()">×</button>
+                <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
                 <img id="lightbox-image" class="lightbox-image" src="" alt="Enlarged property photo">
+                <div id="lightbox-counter" class="lightbox-counter" aria-live="polite"></div>
             </div>
+            <button type="button" class="lightbox-nav lightbox-nav-next" aria-label="Next photo" onclick="event.stopPropagation(); lightboxNext();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
         </div>
     `;
     
@@ -2478,21 +2485,37 @@ function nextImage() {
 
 let lastFocusedBeforeLightbox = null;
 
-function openLightbox(index) {
-    if (!currentProperty) return;
-    
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    
+function getGalleryTotal() {
+    if (!currentProperty) return 0;
     const hasCategories = window.categorizedImages && window.categorizedImages.length > 0;
+    return hasCategories ? window.categorizedImages.length : currentProperty.images.length;
+}
+
+function updateLightboxImage(index) {
+    if (!currentProperty) return;
+    const lightboxImage = document.getElementById('lightbox-image');
+    const counter = document.getElementById('lightbox-counter');
+    const hasCategories = window.categorizedImages && window.categorizedImages.length > 0;
+    const total = getGalleryTotal();
     if (hasCategories) {
         const item = window.categorizedImages[index];
         lightboxImage.src = item.url;
         lightboxImage.alt = `${currentProperty.title} — ${item.category} photo (${index + 1})`;
+        if (counter) counter.textContent = `${index + 1} / ${total} · ${item.category}`;
     } else {
         lightboxImage.src = currentProperty.images[index];
         lightboxImage.alt = generateImageAlt(currentProperty, index);
+        if (counter) counter.textContent = `${index + 1} / ${total}`;
     }
+}
+
+function openLightbox(index) {
+    if (!currentProperty) return;
+
+    const lightbox = document.getElementById('lightbox');
+    currentGalleryIndex = index;
+    updateLightboxImage(index);
+
     lastFocusedBeforeLightbox = document.activeElement;
     lightbox.setAttribute('role', 'dialog');
     lightbox.setAttribute('aria-modal', 'true');
@@ -2500,6 +2523,22 @@ function openLightbox(index) {
     lightbox.classList.add('active');
     const closeBtn = lightbox.querySelector('.lightbox-close');
     if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+}
+
+function lightboxPrev() {
+    const total = getGalleryTotal();
+    if (!total) return;
+    currentGalleryIndex = (currentGalleryIndex - 1 + total) % total;
+    updateLightboxImage(currentGalleryIndex);
+    selectGalleryImage(currentGalleryIndex);
+}
+
+function lightboxNext() {
+    const total = getGalleryTotal();
+    if (!total) return;
+    currentGalleryIndex = (currentGalleryIndex + 1) % total;
+    updateLightboxImage(currentGalleryIndex);
+    selectGalleryImage(currentGalleryIndex);
 }
 
 function closeLightbox() {
@@ -2837,6 +2876,14 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'Tab') {
         const contactModal = document.querySelector('.contact-modal-overlay');
         if (contactModal) trapFocusWithin(contactModal, event);
+    }
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.classList.contains('active')) {
+            event.preventDefault();
+            if (event.key === 'ArrowLeft') lightboxPrev();
+            else lightboxNext();
+        }
     }
 });
 
