@@ -299,11 +299,22 @@ function main() {
         throw new Error('PROPERTIES missing or empty in config.js');
     }
 
-    const homeSchema = buildHomepageGraph();
-    const blocks = [
-        `<script type="application/ld+json" data-schema="site">${safeJsonForScript(serialize(homeSchema))}</script>`
-    ];
+    const htmlPath = path.join(ROOT, 'index.html');
+    let html = fs.readFileSync(htmlPath, 'utf8');
 
+    // 1. Populate the existing #site-schema-jsonld element with the homepage graph.
+    //    We reuse the same element that app.js refreshHomepageJsonLd() overwrites at runtime
+    //    so Googlebot sees the graph in raw HTML AND there is no duplicate ItemList on the page.
+    const homeSchema = buildHomepageGraph();
+    const homeJson = safeJsonForScript(serialize(homeSchema));
+    const siteRe = /<script type="application\/ld\+json" id="site-schema-jsonld">[\s\S]*?<\/script>/;
+    if (!siteRe.test(html)) {
+        throw new Error('index.html is missing <script id="site-schema-jsonld"> — add it back so this script can populate it.');
+    }
+    html = html.replace(siteRe, `<script type="application/ld+json" id="site-schema-jsonld">${homeJson}</script>`);
+
+    // 2. Inject per-listing VacationRental + BreadcrumbList blocks between the markers.
+    const blocks = [];
     for (const p of PROPERTIES) {
         if (!p || typeof p.id === 'undefined') continue;
         const vr = buildVacationRentalSchema(p);
@@ -314,18 +325,15 @@ function main() {
 
     const injected = `${MARKER_START}\n    ${blocks.join('\n    ')}\n    ${MARKER_END}`;
 
-    const htmlPath = path.join(ROOT, 'index.html');
-    let html = fs.readFileSync(htmlPath, 'utf8');
-
     if (!html.includes(MARKER_START) || !html.includes(MARKER_END)) {
         throw new Error(`index.html is missing ${MARKER_START} and/or ${MARKER_END} markers. Add them inside <head> so this script knows where to inject.`);
     }
-
     const re = new RegExp(`${MARKER_START}[\\s\\S]*?${MARKER_END}`);
     html = html.replace(re, injected);
+
     fs.writeFileSync(htmlPath, html, 'utf8');
 
-    console.log(`Injected static JSON-LD: 1 homepage graph + ${PROPERTIES.length} listings × 2 (VacationRental + BreadcrumbList).`);
+    console.log(`Injected static JSON-LD: 1 homepage graph (in #site-schema-jsonld) + ${PROPERTIES.length} listings × 2 (VacationRental + BreadcrumbList).`);
 }
 
 main();

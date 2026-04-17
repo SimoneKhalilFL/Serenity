@@ -1476,20 +1476,18 @@ function renderPropertyDetail(property) {
     const isFlorida = seo.isFlorida;
     const hasLocation = !!(property.coordinates && typeof property.coordinates.lat === 'number');
     
-    // Generate and inject structured data
-    const schema = generatePropertySchema(property, reviews);
-    
+    // Listing JSON-LD is pre-rendered into <head> at deploy by scripts/generate-listing-schema.cjs,
+    // so we intentionally do NOT inject more ld+json here. Avoids "Multiple VacationRental"/"Multiple ItemList"
+    // errors in Google Rich Results when navigating client-side.
+
     const displayTitle = property.listingHeadline || property.title;
     const displaySubtitle = property.listingTagline || (isFlorida
         ? `${city}, Florida`
         : `Vacation rental in ${city}`);
-    const breadcrumbSchema = generateListingBreadcrumbSchema(property);
     const homeHref = escapeHtml(getSiteBaseHref());
     const propsHref = `${escapeHtml(getSiteBaseHref().replace(/\/$/, ''))}#properties`;
 
     container.innerHTML = `
-        <script type="application/ld+json">${JSON.stringify(schema)}</script>
-        <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
         <div class="property-detail">
             <div class="container listing-breadcrumb-wrap">
                 <nav class="listing-breadcrumb" aria-label="Breadcrumb">
