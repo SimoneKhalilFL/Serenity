@@ -7,7 +7,7 @@
 // Owner-direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
 // Phone-test finalists (say "visit [name] dot com"): serenitygulf, serenitypcb, gulfdirectstays
 // Live site URL (no trailing slash). Canonical / JSON-LD follow this via app.js.
-// When you add or remove PROPERTIES, update sitemap.xml listing URLs (?listing=id) to match.
+// sitemap.xml is regenerated from PROPERTIES at deploy (scripts/generate-sitemap.cjs); no manual edit needed.
 // Web3Forms: add this domain in their dashboard. Social/email: hello@ / stays@ on this domain when ready.
 const SITE_BASE_URL = 'https://stayatflorida.com';
 

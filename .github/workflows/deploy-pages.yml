@@ -34,6 +34,13 @@ jobs:
           fi
           python3 -c "import os; from pathlib import Path; k=os.environ['WEB3FORMS_ACCESS_KEY'].strip(); assert k; p=Path('config.js'); t=p.read_text(encoding='utf-8'); assert '__WEB3FORMS_ACCESS_KEY__' in t; p.write_text(t.replace('__WEB3FORMS_ACCESS_KEY__', k), encoding='utf-8')"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate sitemap.xml from PROPERTIES
+        run: node scripts/generate-sitemap.cjs
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3

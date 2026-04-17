@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "sync-calendars": "node scripts/sync-calendars.cjs",
+    "generate-sitemap": "node scripts/generate-sitemap.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
