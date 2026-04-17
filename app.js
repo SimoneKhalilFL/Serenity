@@ -78,6 +78,31 @@ function getSiteContact() {
     };
 }
 
+/** Public profile URL(s) for Organization sameAs (footer / brand). */
+const ORGANIZATION_SAME_AS = ['https://www.facebook.com/FloridaRental2020'];
+
+function amPmToIsoTime(hourStr, minuteStr, ampm) {
+    let h = parseInt(hourStr, 10);
+    const mm = String(parseInt(minuteStr, 10)).padStart(2, '0');
+    const ap = ampm.toUpperCase();
+    if (ap === 'PM' && h < 12) h += 12;
+    if (ap === 'AM' && h === 12) h = 0;
+    return `${String(h).padStart(2, '0')}:${mm}:00`;
+}
+
+function extractCheckInOutFromProperty(property) {
+    let checkinTime = '16:00:00';
+    let checkoutTime = '10:00:00';
+    for (const r of property.houseRules || []) {
+        const n = (r.name || '').trim();
+        const mi = /Check-in:\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(n);
+        const mo = /Check-out:\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(n);
+        if (mi) checkinTime = amPmToIsoTime(mi[1], mi[2], mi[3]);
+        if (mo) checkoutTime = amPmToIsoTime(mo[1], mo[2], mo[3]);
+    }
+    return { checkinTime, checkoutTime };
+}
+
 const WEB3FORMS_SUBMIT_URL = 'https://api.web3forms.com/submit';
 
 /** Web3Forms access key from config.js — empty means form is not wired yet. */
@@ -285,6 +310,8 @@ function generatePropertySchema(property, reviews) {
     }));
     const bedDetails = buildAccommodationBedDetails(property);
     const reviewItems = buildVacationRentalReviews(reviews);
+    const { checkinTime, checkoutTime } = extractCheckInOutFromProperty(property);
+    const logoUrl = base ? `${base}/favicon.svg` : undefined;
 
     const schema = {
         "@context": "https://schema.org",
@@ -295,6 +322,9 @@ function generatePropertySchema(property, reviews) {
         "description": seo.description,
         "url": listingUrl,
         "image": images.length > 1 ? images : (images[0] || undefined),
+        "knowsLanguage": ["en-US"],
+        "checkinTime": checkinTime,
+        "checkoutTime": checkoutTime,
         "containsPlace": {
             "@type": "Accommodation",
             "additionalType": "EntirePlace",
@@ -319,13 +349,16 @@ function generatePropertySchema(property, reviews) {
             "longitude": property.coordinates.lng
         } : undefined,
         "priceRange": `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`,
-        "parentOrganization": Object.assign(
-            {
-                "@type": "Organization",
-                "name": SEO_CONFIG.siteName
-            },
-            base ? { url: `${base}/` } : {}
-        )
+        "parentOrganization": base ? {
+            "@type": "Organization",
+            "@id": `${base}/#organization`,
+            "name": SEO_CONFIG.siteName,
+            "url": `${base}/`,
+            "logo": { "@type": "ImageObject", "url": logoUrl }
+        } : {
+            "@type": "Organization",
+            "name": SEO_CONFIG.siteName
+        }
     };
 
     if (contact.phoneTel) {
@@ -2602,17 +2635,22 @@ function refreshHomeLocationsMapSize() {
 function buildHomepageSchema() {
     if (typeof SITE_BASE_URL !== 'string' || !SITE_BASE_URL.trim()) return null;
     const base = SITE_BASE_URL.replace(/\/$/, '');
+    const contact = getSiteContact();
     const org = {
         '@type': 'Organization',
         '@id': `${base}/#organization`,
         name: SEO_CONFIG.siteName,
         url: `${base}/`,
+        logo: { '@type': 'ImageObject', url: `${base}/favicon.svg` },
         description: 'Owner-direct beach vacation rentals in Panama City Beach and Destin, Florida. Transparent pricing and no OTA service fees on Gulf-front condos.',
+        sameAs: ORGANIZATION_SAME_AS,
         areaServed: [
             { '@type': 'City', name: 'Panama City Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
             { '@type': 'City', name: 'Miramar Beach', containedInPlace: { '@type': 'State', name: 'Florida' } }
         ]
     };
+    if (contact.email) org.email = contact.email;
+    if (contact.phoneTel) org.telephone = contact.phoneTel;
     const website = {
         '@type': 'WebSite',
         '@id': `${base}/#website`,
