@@ -21,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Needed so rebase before push can integrate remote commits (avoids rejected push).
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -44,5 +47,6 @@ jobs:
             echo "No availability changes to commit."
           else
             git commit -m "chore(data): sync availability from iCal"
+            git pull --rebase origin main
             git push
           fi
