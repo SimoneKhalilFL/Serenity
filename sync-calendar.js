@@ -1,10 +1,7 @@
 /**
- * Calendar Sync Script for Tidewater Beach Resort
- * 
- * Fetches availability from VRBO, Airbnb, and Booking.com iCal feeds
- * and outputs the blocked dates for updating config.js
- * 
- * Usage: node sync-calendar.js
+ * @deprecated Use `npm run sync-calendars` (scripts/sync-calendars.cjs) which writes data/availability-{id}.json.
+ *
+ * Legacy script — kept for reference only.
  */
 
 const https = require('https');

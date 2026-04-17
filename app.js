@@ -7,6 +7,9 @@ let selectedStartDate = null;
 let selectedEndDate = null;
 let currentCalendarMonth = new Date();
 
+/** Synced nights from data/availability-{id}.json (iCal); merged with config unavailableDates. */
+const syncedUnavailableByListingId = {};
+
 // ==========================================
 // SEO Helper Functions
 // ==========================================
@@ -479,7 +482,48 @@ function isPastCalendarDay(date) {
 
 function isDateUnavailable(date, property) {
     const dateStr = dateToString(date);
-    return property.unavailableDates.includes(dateStr);
+    return getMergedUnavailableDates(property).includes(dateStr);
+}
+
+function getMergedUnavailableDates(property) {
+    if (!property) return [];
+    const manual = property.unavailableDates || [];
+    const synced = syncedUnavailableByListingId[property.id];
+    const fromFile = Array.isArray(synced) ? synced : [];
+    return [...new Set([...manual, ...fromFile])].sort();
+}
+
+/** True if any booked night falls strictly between check-in and check-out (nights are [checkIn, checkOut)). */
+function stayRangeCrossesUnavailable(checkIn, checkOut, property) {
+    if (!checkIn || !checkOut || checkOut <= checkIn) return false;
+    const merged = getMergedUnavailableDates(property);
+    const cur = new Date(checkIn);
+    const end = new Date(checkOut);
+    while (cur < end) {
+        if (merged.includes(dateToString(cur))) return true;
+        cur.setDate(cur.getDate() + 1);
+    }
+    return false;
+}
+
+async function fetchAvailabilityForListing(propertyId) {
+    if (Object.prototype.hasOwnProperty.call(syncedUnavailableByListingId, propertyId)) {
+        return;
+    }
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const url = base ? `${base}/data/availability-${propertyId}.json` : `/data/availability-${propertyId}.json`;
+    try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (!r.ok) {
+            syncedUnavailableByListingId[propertyId] = [];
+            return;
+        }
+        const data = await r.json();
+        const arr = Array.isArray(data.unavailableDates) ? data.unavailableDates.filter(Boolean) : [];
+        syncedUnavailableByListingId[propertyId] = arr;
+    } catch {
+        syncedUnavailableByListingId[propertyId] = [];
+    }
 }
 
 function getAdjustedRate(date, property) {
@@ -598,7 +642,7 @@ function navigateHome(event, options = {}) {
     refreshHomeLocationsMapSize();
 }
 
-function navigateToProperty(propertyId, options = {}) {
+async function navigateToProperty(propertyId, options = {}) {
     const property = PROPERTIES.find(p => p.id === propertyId);
     if (!property) return;
 
@@ -606,6 +650,8 @@ function navigateToProperty(propertyId, options = {}) {
     currentGalleryIndex = 0;
     selectedStartDate = null;
     selectedEndDate = null;
+
+    await fetchAvailabilityForListing(property.id);
 
     const seo = generatePropertySEO(property);
     updatePageMeta(seo.title, seo.description);
@@ -2124,7 +2170,7 @@ function renderCalendar(property) {
         const date = new Date(year, month, day);
         const dateStr = dateToString(date);
         const isPast = isPastCalendarDay(date);
-        const isUnavailable = !isPast && property.unavailableDates.includes(dateStr);
+        const isUnavailable = !isPast && getMergedUnavailableDates(property).includes(dateStr);
         
         let classes = 'calendar-day';
         if (isPast) {
@@ -2180,7 +2226,7 @@ function selectDate(date) {
     }
     
     const dateStr = dateToString(date);
-    if (currentProperty.unavailableDates.includes(dateStr)) {
+    if (getMergedUnavailableDates(currentProperty).includes(dateStr)) {
         return;
     }
     
@@ -2196,7 +2242,16 @@ function selectDate(date) {
         // Completing the range
         selectedEndDate = date;
     }
-    
+
+    if (selectedStartDate && selectedEndDate) {
+        const lo = selectedStartDate < selectedEndDate ? selectedStartDate : selectedEndDate;
+        const hi = selectedStartDate < selectedEndDate ? selectedEndDate : selectedStartDate;
+        if (stayRangeCrossesUnavailable(lo, hi, currentProperty)) {
+            selectedStartDate = null;
+            selectedEndDate = null;
+        }
+    }
+
     renderCalendar(currentProperty);
     renderPriceCalculator(currentProperty);
 }
@@ -2702,22 +2757,26 @@ function syncSiteMetaFromBaseUrl() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    syncSiteMetaFromBaseUrl();
-    const lid = getListingIdFromUrl();
-    if (lid != null && PROPERTIES.some(p => p.id === lid)) {
-        navigateToProperty(lid, { skipHistory: true });
-    } else {
-        setCanonicalAndSocial(null);
-    }
-    renderPropertyListings();
-    initHomeLocationsMap();
+    void (async () => {
+        syncSiteMetaFromBaseUrl();
+        const lid = getListingIdFromUrl();
+        if (lid != null && PROPERTIES.some(p => p.id === lid)) {
+            await navigateToProperty(lid, { skipHistory: true });
+        } else {
+            setCanonicalAndSocial(null);
+        }
+        renderPropertyListings();
+        initHomeLocationsMap();
+    })();
 });
 
 window.addEventListener('popstate', () => {
     const lid = getListingIdFromUrl();
-    if (lid != null && PROPERTIES.some(p => p.id === lid)) {
-        navigateToProperty(lid, { skipHistory: true });
-    } else {
-        navigateHome(null, { skipHistory: true });
-    }
+    void (async () => {
+        if (lid != null && PROPERTIES.some(p => p.id === lid)) {
+            await navigateToProperty(lid, { skipHistory: true });
+        } else {
+            navigateHome(null, { skipHistory: true });
+        }
+    })();
 });

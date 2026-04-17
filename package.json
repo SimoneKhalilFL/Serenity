@@ -1,0 +1,25 @@
+{
+  "name": "std",
+  "version": "1.0.0",
+  "description": "A fully responsive, modern vacation rental website built with vanilla JavaScript, HTML, and CSS. Features include property listings, detailed property pages, interactive calendar with availability tracking, dynamic pricing calculator with hidden seasonal adjustments, image gallery with lightbox, and guest reviews system.",
+  "main": "app.js",
+  "scripts": {
+    "sync-calendars": "node scripts/sync-calendars.cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimoneKhalilFL/Serenity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SimoneKhalilFL/Serenity/issues"
+  },
+  "homepage": "https://github.com/SimoneKhalilFL/Serenity#readme",
+  "dependencies": {
+    "node-ical": "^0.26.0"
+  }
+}

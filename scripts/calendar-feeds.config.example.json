@@ -1,0 +1,17 @@
+{
+  "listings": {
+    "4": {
+      "feeds": [
+        "https://www.vrbo.com/icalendar/YOUR_VRBO_ICAL.ics?nonTentative",
+        "https://www.airbnb.com/calendar/ical/YOUR_AIRBNB_ID.ics?s=YOUR_SECRET",
+        "https://ical.booking.com/v1/export?t=YOUR_BOOKING_TOKEN"
+      ]
+    },
+    "5": {
+      "feeds": [
+        "https://www.vrbo.com/icalendar/YOUR_VRBO_ICAL.ics?nonTentative",
+        "https://www.airbnb.com/calendar/ical/YOUR_AIRBNB_ID.ics?s=YOUR_SECRET"
+      ]
+    }
+  }
+}

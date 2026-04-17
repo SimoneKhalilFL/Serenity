@@ -356,6 +356,7 @@ From Tidewater you're minutes from the best of PCB:
             { startDate: "2026-11-29", endDate: "2026-12-16", adjustment: 1.0 },   // Dec: $225/night
             { startDate: "2026-12-17", endDate: "2026-12-31", adjustment: 1.5 }    // Holidays: ~$340/night
         ],
+        // Manual/ad-hoc blocks; merged in the app with data/availability-{id}.json (npm run sync-calendars / GitHub Action).
         unavailableDates: [
             // 2025 - From VRBO
             "2025-02-14", "2025-02-15", "2025-02-16",
@@ -588,6 +589,7 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
             { startDate: "2026-12-01", endDate: "2026-12-12", adjustment: 0.90 },   // Early Dec: $180/night
             { startDate: "2026-12-13", endDate: "2026-12-31", adjustment: 1.125 }   // Holiday: $225/night
         ],
+        // Manual/ad-hoc blocks; merged in the app with data/availability-{id}.json (npm run sync-calendars / GitHub Action).
         unavailableDates: [
             // 2025 - From VRBO (Jan-Feb blocked)
             "2025-01-01", "2025-01-02", "2025-01-03", "2025-01-04", "2025-01-05", "2025-01-06", "2025-01-07",
