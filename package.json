@@ -28,5 +28,8 @@
   "homepage": "https://github.com/SimoneKhalilFL/Serenity#readme",
   "dependencies": {
     "node-ical": "^0.26.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
