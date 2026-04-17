@@ -326,7 +326,7 @@ function generatePropertySchema(property, reviews) {
         "name": property.title,
         "description": seo.description,
         "url": listingUrl,
-        "image": images.length > 1 ? images : (images[0] || undefined),
+        "image": images.length ? images : undefined,
         "knowsLanguage": ["en-US"],
         "checkinTime": checkinTime,
         "checkoutTime": checkoutTime,
