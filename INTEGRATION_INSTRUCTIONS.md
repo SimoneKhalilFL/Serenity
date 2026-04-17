@@ -183,10 +183,27 @@ In the `REVIEWS` object in `config.js`, add your property's reviews using the ID
 - Any specific house rules
 - Blocked/unavailable dates
 
-### 5. Syncing with VRBO
-To keep availability synchronized with VRBO:
-- Manually update the `unavailableDates` array when bookings are made
-- Or consider implementing an iCal feed sync (requires backend development)
+### 5. Syncing calendars (VRBO / Airbnb / Booking)
+Availability is driven by **`data/availability-{listingId}.json`**, updated by the **Sync iCal availability** GitHub Action (`scripts/sync-calendars.cjs`). Block dates on your OTA calendars; the workflow merges iCal feeds from the **`CALENDAR_FEEDS_JSON`** repository secret. Optional manual dates in `config.js` `unavailableDates` are only needed if a night is blocked *outside* every iCal feed.
+
+---
+
+## GitHub Actions: monitor usage (Step 3 — billing & minutes)
+
+The sync workflow runs on a **schedule** (currently every **30 minutes**, UTC). Each run uses **Actions minutes** (Linux `ubuntu-latest` + `npm ci` + fetch). Rough order of magnitude: **~48 runs/day** if all fire on time.
+
+**Where to check usage**
+
+1. **Repository:** **Settings → Actions → General** — overview of Actions for this repo.  
+2. **Organization or account billing:** **Settings → Billing and plans** (personal: **Settings → Billing**) — **Actions** / **GitHub Actions** minutes and included allowance for your plan.  
+3. **Usage this month:** GitHub docs: [Billing and usage for GitHub Actions](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+
+**If you want fewer runs** (lower minute usage), edit **`.github/workflows/sync-calendars.yml`** and change the `cron` line—for example hourly: `0 * * * *`, or every 6 hours: `0 */6 * * *`. You can still run **Actions → Sync iCal availability → Run workflow** manually anytime.
+
+**What to watch for**
+
+- Sudden **minute spikes** → a failing job that retries, or a very long `npm ci` (unusual here).  
+- **Skipped schedules** → GitHub can delay scheduled workflows during high load; occasional gaps are normal.
 
 ---
 

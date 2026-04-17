@@ -1,9 +1,11 @@
 # Fetches OTA iCal feeds and commits data/availability-{id}.json (requires CALENDAR_FEEDS_JSON secret).
+# Uses GitHub Actions minutes — monitor: repo Settings → Actions; account Billing → Actions usage.
+# Docs: https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions
 name: Sync iCal availability
 
 on:
   schedule:
-    # Every 30 minutes (UTC). GitHub may delay runs slightly under load.
+    # Every 30 minutes (UTC) ≈ 48 runs/day; reduce cron if you need fewer minutes.
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
