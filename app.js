@@ -213,8 +213,60 @@ function setCanonicalAndSocial(property) {
 
 function getSchemaImageList(property) {
     const flat = getAllImages(property.images);
-    const urls = flat.slice(0, 12).map(absoluteUrl).filter(Boolean);
-    return urls.length ? urls : (absoluteUrl(getFirstImage(property.images)) ? [absoluteUrl(getFirstImage(property.images))] : []);
+    const seen = new Set();
+    const out = [];
+    for (let i = 0; i < flat.length; i++) {
+        const u = absoluteUrl(flat[i]);
+        if (u && !seen.has(u)) {
+            seen.add(u);
+            out.push(u);
+            if (out.length >= 12) break;
+        }
+    }
+    if (out.length === 0) {
+        const one = absoluteUrl(getFirstImage(property.images));
+        return one ? [one] : [];
+    }
+    return out;
+}
+
+/** Google recommends BedDetails under containsPlace; inferred from bedroom count + guest capacity. */
+function buildAccommodationBedDetails(property) {
+    const n = Math.min(Math.max(0, property.bedrooms || 0), 6);
+    const types = ['King', 'Queen', 'Full', 'Queen', 'Single', 'Full'];
+    const beds = [];
+    for (let i = 0; i < n; i++) {
+        beds.push({
+            '@type': 'BedDetails',
+            numberOfBeds: 1,
+            typeOfBed: types[Math.min(i, types.length - 1)]
+        });
+    }
+    const cap = property.maxGuests || 0;
+    if (n > 0 && cap > n * 2) {
+        beds.push({
+            '@type': 'BedDetails',
+            numberOfBeds: 1,
+            typeOfBed: 'Queen'
+        });
+    }
+    return beds;
+}
+
+function buildVacationRentalReviews(reviews) {
+    if (!reviews || !reviews.length) return [];
+    return reviews.slice(0, 5).map((r) => ({
+        '@type': 'Review',
+        datePublished: r.date,
+        reviewBody: r.comment,
+        author: { '@type': 'Person', name: r.author },
+        reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+        }
+    }));
 }
 
 function generatePropertySchema(property, reviews) {
@@ -231,6 +283,8 @@ function generatePropertySchema(property, reviews) {
         "name": a.name,
         "value": true
     }));
+    const bedDetails = buildAccommodationBedDetails(property);
+    const reviewItems = buildVacationRentalReviews(reviews);
 
     const schema = {
         "@context": "https://schema.org",
@@ -250,6 +304,7 @@ function generatePropertySchema(property, reviews) {
             },
             "numberOfBedrooms": property.bedrooms,
             "numberOfBathroomsTotal": property.bathrooms,
+            "bed": bedDetails.length ? bedDetails : undefined,
             "amenityFeature": amenityFeature
         },
         "address": {
@@ -285,6 +340,10 @@ function generatePropertySchema(property, reviews) {
             "bestRating": "5",
             "worstRating": "1"
         };
+    }
+
+    if (reviewItems.length) {
+        schema.review = reviewItems;
     }
 
     return schema;
