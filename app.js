@@ -852,12 +852,16 @@ function showContactModal() {
             </div>`;
     }
 
+    lastFocusedBeforeModal = document.activeElement;
     const modal = document.createElement('div');
     modal.className = 'contact-modal-overlay';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'contact-modal-title');
     modal.innerHTML = `
         <div class="contact-modal contact-form-modal">
-            <button class="contact-modal-close" onclick="closeContactModal()">&times;</button>
-            <h3>Contact the Owner to Book</h3>
+            <button class="contact-modal-close" type="button" aria-label="Close contact form" onclick="closeContactModal()">&times;</button>
+            <h3 id="contact-modal-title">Contact the Owner to Book</h3>
             ${dateTipHtml}
             ${formConfigWarning}
             ${bookingDetails}
@@ -1053,17 +1057,54 @@ async function submitContactForm(event) {
     }
 }
 
+let lastFocusedBeforeModal = null;
+
 function closeContactModal() {
     const modal = document.querySelector('.contact-modal-overlay');
     if (modal) {
         modal.remove();
         document.body.style.overflow = '';
     }
+    if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === 'function') {
+        try { lastFocusedBeforeModal.focus(); } catch (e) { /* element may be gone */ }
+    }
+    lastFocusedBeforeModal = null;
 }
 
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+function toggleMobileMenu(btn) {
+    const navLinks = document.getElementById('primary-nav') || document.querySelector('.nav-links');
+    if (!navLinks) return;
+    const isOpen = navLinks.classList.toggle('active');
+    const button = btn || document.querySelector('.mobile-menu-btn');
+    if (button) button.setAttribute('aria-expanded', String(isOpen));
+}
+
+function closeMobileMenu() {
+    const navLinks = document.getElementById('primary-nav') || document.querySelector('.nav-links');
+    if (navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        const button = document.querySelector('.mobile-menu-btn');
+        if (button) button.setAttribute('aria-expanded', 'false');
+    }
+}
+
+/** Keeps Tab focus cycling inside the active modal/dialog for keyboard users. */
+function trapFocusWithin(container, event) {
+    if (!container) return;
+    const focusable = container.querySelectorAll(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+    if (event.shiftKey && active === first) {
+        event.preventDefault();
+        last.focus();
+    } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+    }
 }
 
 // ==========================================
@@ -2436,6 +2477,8 @@ function nextImage() {
     selectGalleryImage(currentGalleryIndex);
 }
 
+let lastFocusedBeforeLightbox = null;
+
 function openLightbox(index) {
     if (!currentProperty) return;
     
@@ -2451,12 +2494,22 @@ function openLightbox(index) {
         lightboxImage.src = currentProperty.images[index];
         lightboxImage.alt = generateImageAlt(currentProperty, index);
     }
+    lastFocusedBeforeLightbox = document.activeElement;
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', `${currentProperty.title} photo gallery`);
     lightbox.classList.add('active');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
 }
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     lightbox.classList.remove('active');
+    if (lastFocusedBeforeLightbox && typeof lastFocusedBeforeLightbox.focus === 'function') {
+        try { lastFocusedBeforeLightbox.focus(); } catch (e) { /* element may be gone */ }
+    }
+    lastFocusedBeforeLightbox = null;
 }
 
 // ==========================================
@@ -2770,6 +2823,22 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPropertyListings();
         initHomeLocationsMap();
     })();
+});
+
+// Keyboard a11y: Esc closes topmost modal/menu; Tab traps focus inside open dialog.
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const contactModal = document.querySelector('.contact-modal-overlay');
+        if (contactModal) { closeContactModal(); return; }
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.classList.contains('active')) { closeLightbox(); return; }
+        const navLinks = document.getElementById('primary-nav') || document.querySelector('.nav-links');
+        if (navLinks && navLinks.classList.contains('active')) { closeMobileMenu(); return; }
+    }
+    if (event.key === 'Tab') {
+        const contactModal = document.querySelector('.contact-modal-overlay');
+        if (contactModal) trapFocusWithin(contactModal, event);
+    }
 });
 
 window.addEventListener('popstate', () => {

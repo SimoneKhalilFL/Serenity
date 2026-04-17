@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy: limits what resources the page can load.
+         Allows self, inline scripts/styles (current app uses onclick/style attrs), Web3Forms submit, OSM tiles,
+         Unsplash/media.scurto.net images, Google Fonts, and Leaflet from unpkg. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https://media.scurto.net; connect-src 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action https://api.web3forms.com">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="favicon.svg">
     <meta name="application-name" content="Majestic Sun 811 | Tidewater 2111 | Serenity Rentals">
@@ -93,12 +98,12 @@
                     </svg>
                     <span>Serenity Rentals</span>
                 </a>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav" onclick="toggleMobileMenu(this)">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
-                <div class="nav-links">
+                <div id="primary-nav" class="nav-links">
                     <a href="#" onclick="navigateHome(event)">Home</a>
                     <a href="#properties" onclick="scrollToSection(event, 'properties')">Properties</a>
                     <a href="#" onclick="event.preventDefault(); showContactModal()">Contact</a>
