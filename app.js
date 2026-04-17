@@ -285,7 +285,8 @@ function buildAccommodationBedDetails(property) {
 
 function buildVacationRentalReviews(reviews) {
     if (!reviews || !reviews.length) return [];
-    return reviews.slice(0, 5).map((r) => ({
+    // Surface up to 20 reviews in JSON-LD so Google sees the full set (aggregateRating.reviewCount still reflects reviews.length).
+    return reviews.slice(0, 20).map((r) => ({
         '@type': 'Review',
         datePublished: r.date,
         reviewBody: r.comment,
