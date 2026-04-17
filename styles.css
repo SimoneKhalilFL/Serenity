@@ -386,12 +386,13 @@ button {
     width: 100%;
     height: 250px;
     overflow: hidden;
+    background-color: var(--bg-light, #f5f5f5);
 }
 
 .property-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
@@ -585,12 +586,13 @@ button {
     border-radius: var(--radius-md);
     overflow: hidden;
     cursor: pointer;
+    background-color: var(--bg-light, #f5f5f5);
 }
 
 .hero-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -689,7 +691,7 @@ button {
 .gallery-main img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .gallery-controls {
@@ -744,6 +746,7 @@ button {
     cursor: pointer;
     border: 3px solid transparent;
     transition: var(--transition);
+    background-color: var(--bg-light, #f5f5f5);
 }
 
 .gallery-thumbnail.active {
@@ -757,7 +760,7 @@ button {
 .gallery-thumbnail img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .gallery-indicator {
@@ -1261,12 +1264,13 @@ button {
     border-radius: var(--radius-lg);
     overflow: hidden;
     margin-bottom: 1.5rem;
+    background-color: var(--bg-light, #f5f5f5);
 }
 
 .section-image img {
     width: 100%;
     height: 220px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .section-map {
@@ -1382,12 +1386,13 @@ button {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    background-color: var(--bg-light, #f5f5f5);
 }
 
 .webcam-preview img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -1984,12 +1989,13 @@ button {
     width: 100%;
     aspect-ratio: 16 / 10;
     overflow: hidden;
+    background-color: var(--bg-light, #f5f5f5);
 }
 
 .explore-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 

@@ -448,7 +448,7 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
         mapImage: "https://maps.googleapis.com/maps/api/staticmap?center=30.3759919,-86.3686236&zoom=15&size=600x400&maptype=roadmap&markers=color:red%7C30.3759919,-86.3686236",
         webcam: "https://www.youtube.com/embed/TyX02EtQcYI",
         images: [
-            "images/lodging/02c6975d.jpg",
+            "images/lodging/60f18eb1.jpg",
             "images/lodging/02c6975d.jpg",
             "images/lodging/130850e8.jpg",
             "images/lodging/145de5db.jpg",
@@ -468,8 +468,6 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
             "images/lodging/4c733aa2.jpg",
             "images/lodging/523b06b4.jpg",
             "images/lodging/53fc2fa5.jpg",
-            "images/lodging/60f18eb1.jpg",
-            "images/lodging/60f18eb1.jpg",
             "images/lodging/64995824.jpg",
             "images/lodging/651d5007.jpg",
             "images/lodging/64995824.jpg",
