@@ -3196,23 +3196,31 @@ body.has-listing-sticky {
     box-shadow: var(--shadow-md);
 }
 
+.why-book-direct-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
 .why-book-direct-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     background: rgba(15, 118, 110, 0.1);
     color: var(--accent-cta);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .why-book-direct-card h3 {
     font-size: 1.125rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin: 0;
     color: var(--text-primary);
+    line-height: 1.25;
 }
 
 .why-book-direct-card p {
