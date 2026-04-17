@@ -224,26 +224,32 @@ function generatePropertySchema(property, reviews) {
     const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
     const listingUrl = getListingCanonicalUrl(property.id);
     const images = getSchemaImageList(property);
+    const contact = getSiteContact();
+    const amenityFeature = (property.amenities || []).map(a => ({
+        "@type": "LocationFeatureSpecification",
+        "name": a.name,
+        "value": true
+    }));
 
     const schema = {
         "@context": "https://schema.org",
         "@type": "VacationRental",
+        "additionalType": "VacationRental",
         "identifier": listingUrl,
         "name": property.title,
         "description": seo.description,
         "url": listingUrl,
         "image": images.length > 1 ? images : (images[0] || undefined),
         "containsPlace": {
-            "@type": "City",
-            "name": seo.city,
-            "containedInPlace": {
-                "@type": "State",
-                "name": seo.state,
-                "containedInPlace": {
-                    "@type": "Country",
-                    "name": "US"
-                }
-            }
+            "@type": "Accommodation",
+            "additionalType": "EntirePlace",
+            "occupancy": {
+                "@type": "QuantitativeValue",
+                "value": property.maxGuests
+            },
+            "numberOfBedrooms": property.bedrooms,
+            "numberOfBathroomsTotal": property.bathrooms,
+            "amenityFeature": amenityFeature
         },
         "address": {
             "@type": "PostalAddress",
@@ -256,11 +262,6 @@ function generatePropertySchema(property, reviews) {
             "latitude": property.coordinates.lat,
             "longitude": property.coordinates.lng
         } : undefined,
-        "amenityFeature": property.amenities.map(a => ({
-            "@type": "LocationFeatureSpecification",
-            "name": a.name,
-            "value": true
-        })),
         "priceRange": `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`,
         "parentOrganization": Object.assign(
             {
@@ -270,6 +271,10 @@ function generatePropertySchema(property, reviews) {
             base ? { url: `${base}/` } : {}
         )
     };
+
+    if (contact.phoneTel) {
+        schema.telephone = contact.phoneTel;
+    }
 
     if (avgRating && reviews.length > 0) {
         schema.aggregateRating = {
