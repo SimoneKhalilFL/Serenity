@@ -14,7 +14,8 @@ const SEO_CONFIG = {
     siteName: 'Serenity Rentals',
     /** Browser tab + bookmark title (always; listing pages still use property titles for og/twitter). */
     defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
-    defaultDescription: 'Book Panama City Beach and Destin-area condos directly from the owner—no OTA service fees. Transparent pricing on Gulf-front beach rentals. Florida STR and weekly stays.',
+    /** ~155 chars — Bing/Google tools expect roughly 25–160 for meta description. */
+    defaultDescription: 'Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.',
     defaultOgImage: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80'
 };
 
@@ -433,6 +434,21 @@ function getSelectedStayPricing(property) {
 
 let listingDetailMapInstance = null;
 
+/** Leaflet tile <img> elements have no alt by default; crawlers flag them. */
+function patchLeafletTileAlts(map) {
+    if (!map || typeof map.getContainer !== 'function') return;
+    const mark = () => {
+        map.getContainer().querySelectorAll('img.leaflet-tile').forEach((img) => {
+            if (!img.getAttribute('alt')) img.setAttribute('alt', 'OpenStreetMap map tile');
+        });
+    };
+    map.on('tileload', mark);
+    map.whenReady(() => {
+        mark();
+        setTimeout(mark, 0);
+    });
+}
+
 function destroyListingDetailMap() {
     if (listingDetailMapInstance) {
         listingDetailMapInstance.remove();
@@ -452,6 +468,7 @@ function initListingDetailMap(property) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
         maxZoom: 19
     }).addTo(map);
+    patchLeafletTileAlts(map);
     const ll = [property.coordinates.lat, property.coordinates.lng];
     L.marker(ll).addTo(map).bindPopup(`<strong>${escapeHtml(property.title)}</strong><br>${escapeHtml(property.location)}`);
     map.setView(ll, 14);
@@ -1025,7 +1042,7 @@ function renderHeroCarousel(property) {
                 <div class="hero-carousel-track" id="hero-carousel-track">
                     ${carouselImages.map((img, idx) => `
                         <div class="hero-slide" data-index="${idx}">
-                            <img src="${img.url}" alt="${property.title}">
+                            <img src="${img.url}" alt="${escapeHtml(property.title)} — photo ${idx + 1}">
                         </div>
                     `).join('')}
                 </div>
@@ -1387,7 +1404,7 @@ function renderPropertyDetail(property) {
         <div id="lightbox" class="lightbox" onclick="closeLightbox()">
             <div class="lightbox-content" onclick="event.stopPropagation()">
                 <button class="lightbox-close" onclick="closeLightbox()">×</button>
-                <img id="lightbox-image" class="lightbox-image" src="" alt="">
+                <img id="lightbox-image" class="lightbox-image" src="" alt="Enlarged property photo">
             </div>
         </div>
     `;
@@ -2268,7 +2285,14 @@ function openLightbox(index) {
     const lightboxImage = document.getElementById('lightbox-image');
     
     const hasCategories = window.categorizedImages && window.categorizedImages.length > 0;
-    lightboxImage.src = hasCategories ? window.categorizedImages[index].url : currentProperty.images[index];
+    if (hasCategories) {
+        const item = window.categorizedImages[index];
+        lightboxImage.src = item.url;
+        lightboxImage.alt = `${currentProperty.title} — ${item.category} photo (${index + 1})`;
+    } else {
+        lightboxImage.src = currentProperty.images[index];
+        lightboxImage.alt = generateImageAlt(currentProperty, index);
+    }
     lightbox.classList.add('active');
 }
 
@@ -2477,6 +2501,7 @@ function initHomeLocationsMap() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
         maxZoom: 19
     }).addTo(map);
+    patchLeafletTileAlts(map);
 
     const latLngs = [];
     points.forEach(pt => {
@@ -2559,22 +2584,27 @@ function refreshHomepageJsonLd() {
 function syncSiteMetaFromBaseUrl() {
     if (typeof SITE_BASE_URL !== 'string' || !SITE_BASE_URL.trim()) return;
     const base = SITE_BASE_URL.replace(/\/$/, '');
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', `${base}/`);
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute('content', `${base}/`);
+    const lid = getListingIdFromUrl();
+    const isListing = lid != null && typeof PROPERTIES !== 'undefined' && PROPERTIES.some(p => p.id === lid);
+    if (!isListing) {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', `${base}/`);
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', `${base}/`);
+    }
     refreshHomepageJsonLd();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     syncSiteMetaFromBaseUrl();
-    setCanonicalAndSocial(null);
-    renderPropertyListings();
-    initHomeLocationsMap();
     const lid = getListingIdFromUrl();
     if (lid != null && PROPERTIES.some(p => p.id === lid)) {
         navigateToProperty(lid, { skipHistory: true });
+    } else {
+        setCanonicalAndSocial(null);
     }
+    renderPropertyListings();
+    initHomeLocationsMap();
 });
 
 window.addEventListener('popstate', () => {

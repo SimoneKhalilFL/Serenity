@@ -10,7 +10,7 @@
     
     <!-- Primary SEO Meta Tags -->
     <title>Majestic Sun 811 | Tidewater 2111 | Serenity Rentals</title>
-    <meta name="description" content="Book Panama City Beach and Destin-area condos directly from the owner—no OTA service fees. Transparent pricing on Gulf-front beach rentals, PCB &amp; Emerald Coast weekly stays.">
+    <meta name="description" content="Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.">
     <meta name="keywords" content="Panama City Beach vacation rental by owner, Destin vacation rental, Miramar Beach condo rental, Florida Gulf Coast STR, PCB beachfront condo, book direct Florida, vacation rental by owner Florida, Florida weekly rental, Tidewater Beach Resort rental, Majestic Sun rental, Emerald Coast vacation rental, no OTA fees">
     
     <!-- Open Graph / Social Media Meta Tags -->
@@ -18,14 +18,14 @@
     <meta property="og:site_name" content="Serenity Rentals">
     <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Majestic Sun 811 | Tidewater 2111 | Serenity Rentals">
-    <meta property="og:description" content="Gulf-front condos in PCB and Destin—book direct with the owner. No OTA markup; clear rates and real contact.">
+    <meta property="og:description" content="Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&amp;q=80">
     <meta property="og:url" content="https://stayatflorida.com/">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Majestic Sun 811 | Tidewater 2111 | Serenity Rentals">
-    <meta name="twitter:description" content="Gulf-front condos—book direct with the owner. No OTA service fees.">
+    <meta name="twitter:description" content="Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&amp;q=80">
     
     <!-- Additional SEO Meta Tags -->
@@ -46,6 +46,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <script src="config.js"></script>
+    <script>
+    (function () {
+        if (typeof SITE_BASE_URL !== 'string' || typeof PROPERTIES === 'undefined') return;
+        var base = SITE_BASE_URL.replace(/\/$/, '');
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get('listing');
+        if (q == null || q === '') return;
+        var id = parseInt(q, 10);
+        if (isNaN(id) || !PROPERTIES.some(function (p) { return p.id === id; })) return;
+        var url = base + '/?listing=' + id;
+        var link = document.querySelector('link[rel="canonical"]');
+        if (link) link.setAttribute('href', url);
+        var og = document.querySelector('meta[property="og:url"]');
+        if (og) og.setAttribute('content', url);
+    })();
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#properties">Skip to vacation rental listings</a>
@@ -185,7 +202,6 @@
         </div>
     </footer>
 
-    <script src="config.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="app.js"></script>
 </body>
