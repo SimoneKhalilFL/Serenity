@@ -108,10 +108,12 @@ function extractCheckInOutFromProperty(property) {
 
 const WEB3FORMS_SUBMIT_URL = 'https://api.web3forms.com/submit';
 
-/** Web3Forms access key from config.js — empty means form is not wired yet. */
+/** Web3Forms access key from config.js (injected at deploy from Actions secret). Placeholder = not wired. */
 function getWeb3FormsAccessKey() {
     if (typeof WEB3FORMS_ACCESS_KEY !== 'undefined' && typeof WEB3FORMS_ACCESS_KEY === 'string') {
-        return WEB3FORMS_ACCESS_KEY.trim();
+        const k = WEB3FORMS_ACCESS_KEY.trim();
+        if (!k || k === '__WEB3FORMS_ACCESS_KEY__') return '';
+        return k;
     }
     return '';
 }
@@ -828,7 +830,7 @@ function showContactModal() {
     const formKey = getWeb3FormsAccessKey();
     const formConfigWarning = formKey
         ? ''
-        : `<p class="form-config-warning" role="alert">Contact form is not connected yet. Add <code>WEB3FORMS_ACCESS_KEY</code> in <code>config.js</code> (free at <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">web3forms.com</a>). Until then, submissions cannot be sent from this page.</p>`;
+        : `<p class="form-config-warning" role="alert">Contact form is not connected yet. For the live site, add repository secret <code>WEB3FORMS_ACCESS_KEY</code> (see <code>SECURITY.md</code>). For local testing, put your key in <code>config.js</code> (free at <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">web3forms.com</a>). Until then, submissions cannot be sent from this page.</p>`;
     const primaryCta = (selectedStartDate && selectedEndDate && currentProperty)
         ? 'Email to Reserve These Dates'
         : 'Email the Owner';
@@ -924,7 +926,7 @@ async function submitContactForm(event) {
     if (!accessKey) {
         if (statusEl) {
             statusEl.className = 'form-submit-status';
-            statusEl.textContent = `Add WEB3FORMS_ACCESS_KEY in config.js (see web3forms.com). For now, email ${ownerEmail} directly.`;
+            statusEl.textContent = `Configure WEB3FORMS_ACCESS_KEY (Actions secret for deploy, or config.js locally). For now, email ${ownerEmail} directly.`;
         }
         return;
     }

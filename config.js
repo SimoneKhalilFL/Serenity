@@ -11,8 +11,8 @@
 // Web3Forms: add this domain in their dashboard. Social/email: hello@ / stays@ on this domain when ready.
 const SITE_BASE_URL = 'https://stayatflorida.com';
 
-// Contact form via Web3Forms (https://web3forms.com) — access key is safe to use in frontend; restrict domain in their dashboard.
-const WEB3FORMS_ACCESS_KEY = 'd1ccaac2-d8a0-43d6-8615-5551586541d4';
+// Injected at deploy by GitHub Actions from secret WEB3FORMS_ACCESS_KEY (not stored in git). Placeholder must match deploy workflow.
+const WEB3FORMS_ACCESS_KEY = '__WEB3FORMS_ACCESS_KEY__';
 
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',

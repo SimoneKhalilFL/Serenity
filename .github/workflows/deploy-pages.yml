@@ -24,6 +24,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Inject Web3Forms key from Actions secret
+        env:
+          WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+        run: |
+          if [ -z "${WEB3FORMS_ACCESS_KEY:-}" ]; then
+            echo "::error::Add repository secret WEB3FORMS_ACCESS_KEY (Web3Forms dashboard → Access Key) under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          python3 -c "import os; from pathlib import Path; k=os.environ['WEB3FORMS_ACCESS_KEY'].strip(); assert k; p=Path('config.js'); t=p.read_text(encoding='utf-8'); assert '__WEB3FORMS_ACCESS_KEY__' in t; p.write_text(t.replace('__WEB3FORMS_ACCESS_KEY__', k), encoding='utf-8')"
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
