@@ -356,7 +356,7 @@ From Tidewater you're minutes from the best of PCB:
             { startDate: "2026-11-29", endDate: "2026-12-16", adjustment: 1.0 },   // Dec: $225/night
             { startDate: "2026-12-17", endDate: "2026-12-31", adjustment: 1.5 }    // Holidays: ~$340/night
         ],
-        // OTA blocks: data/availability-4.json (sync). Add dates here only for manual holds not in iCal.
+        // Booked/blocked nights: data/availability-4.json (iCal from VRBO/Airbnb/Booking). Block on the OTA calendar—no need to list dates here unless a rare edge case is not on any feed.
         unavailableDates: [],
         // iCal sync URLs for future reference:
         // VRBO: http://www.vrbo.com/icalendar/2024eca45f854672b712124668878a90.ics?nonTentative
@@ -562,7 +562,7 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
             { startDate: "2026-12-01", endDate: "2026-12-12", adjustment: 0.90 },   // Early Dec: $180/night
             { startDate: "2026-12-13", endDate: "2026-12-31", adjustment: 1.125 }   // Holiday: $225/night
         ],
-        // OTA blocks: data/availability-5.json (sync). Add dates here only for manual holds not in iCal.
+        // Booked/blocked nights: data/availability-5.json (iCal from VRBO/Airbnb/Booking). Block on the OTA calendar—no need to list dates here unless a rare edge case is not on any feed.
         unavailableDates: [],
         // iCal sync URLs:
         // VRBO: http://www.vrbo.com/icalendar/26c67d2c183648a9acc205117158b231.ics?nonTentative
