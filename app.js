@@ -228,10 +228,23 @@ function generatePropertySchema(property, reviews) {
     const schema = {
         "@context": "https://schema.org",
         "@type": "VacationRental",
+        "identifier": listingUrl,
         "name": property.title,
         "description": seo.description,
         "url": listingUrl,
         "image": images.length > 1 ? images : (images[0] || undefined),
+        "containsPlace": {
+            "@type": "City",
+            "name": seo.city,
+            "containedInPlace": {
+                "@type": "State",
+                "name": seo.state,
+                "containedInPlace": {
+                    "@type": "Country",
+                    "name": "US"
+                }
+            }
+        },
         "address": {
             "@type": "PostalAddress",
             "addressLocality": seo.city,
@@ -245,7 +258,8 @@ function generatePropertySchema(property, reviews) {
         } : undefined,
         "amenityFeature": property.amenities.map(a => ({
             "@type": "LocationFeatureSpecification",
-            "name": a.name
+            "name": a.name,
+            "value": true
         })),
         "priceRange": `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`,
         "parentOrganization": Object.assign(
