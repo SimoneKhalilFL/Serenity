@@ -6,6 +6,7 @@
   "scripts": {
     "sync-calendars": "node scripts/sync-calendars.cjs",
     "generate-sitemap": "node scripts/generate-sitemap.cjs",
+    "generate-listing-schema": "node scripts/generate-listing-schema.cjs",
     "serve": "npx --yes serve -l 3000 .",
     "lint:js": "node scripts/lint-js.cjs",
     "lint:html": "npx --yes htmlhint@1 \"**/*.html\" --ignore \"node_modules/**\"",

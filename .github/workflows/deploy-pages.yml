@@ -41,6 +41,9 @@ jobs:
       - name: Generate sitemap.xml from PROPERTIES
         run: node scripts/generate-sitemap.cjs
 
+      - name: Inject static per-listing VacationRental JSON-LD into index.html
+        run: node scripts/generate-listing-schema.cjs
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
