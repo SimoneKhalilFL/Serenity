@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; base-uri 'self'; object-src 'none'; frame-ancestors 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Page not found | Serenity Rentals</title>
+    <meta name="description" content="That page couldn't be found. Browse our Gulf Coast vacation rentals or get in touch.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://stayatflorida.com/404.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        .not-found {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 1.5rem 4rem;
+            text-align: center;
+        }
+        .not-found h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 0.5rem;
+        }
+        .not-found p { font-size: 1.125rem; margin-bottom: 2rem; color: var(--text-secondary); }
+        .not-found .not-found-code {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 5rem;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .not-found .not-found-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+                        <circle cx="24" cy="18" r="8" fill="#F59E0B" opacity="0.9"/>
+                        <circle cx="24" cy="18" r="5" fill="#FBBF24"/>
+                        <path d="M4 28 Q10 24, 16 28 T28 28 T40 28 T52 28" stroke="#0EA5E9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <span>Serenity Rentals</span>
+                </a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/#properties">Properties</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="not-found">
+        <div class="not-found-code" aria-hidden="true">404</div>
+        <h1>We couldn&rsquo;t find that page</h1>
+        <p>It may have moved, or the link that sent you here might be out of date. Try our properties or head back home.</p>
+        <div class="not-found-actions">
+            <a href="/" class="btn btn-primary">Go Home</a>
+            <a href="/#properties" class="btn btn-secondary">See Properties</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Serenity Rentals &mdash; Florida Vacation Rentals by Owner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

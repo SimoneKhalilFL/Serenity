@@ -1,0 +1,54 @@
+# Lints HTML + JS and checks links on every push and PR. Keep dependencies light (npx only).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint HTML + JS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Node syntax check (.js)
+        run: npm run lint:js
+
+      - name: HTMLHint (*.html)
+        run: npm run lint:html
+
+      - name: Generate sitemap (must not error)
+        run: npm run generate-sitemap
+
+  links:
+    name: Broken link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # Check relative links and http(s) URLs in HTML/MD. Skip noisy OTA iCal feeds.
+          args: --no-progress --max-concurrency 4 --exclude-path node_modules --exclude-path data --exclude 'vrbo\.com/icalendar' --exclude 'ical\.booking\.com' --exclude 'airbnb\.com/calendar/ical' --exclude 'images\.unsplash\.com' './**/*.html' './**/*.md'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

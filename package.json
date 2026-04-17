@@ -6,7 +6,11 @@
   "scripts": {
     "sync-calendars": "node scripts/sync-calendars.cjs",
     "generate-sitemap": "node scripts/generate-sitemap.cjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "npx --yes serve -l 3000 .",
+    "lint:js": "node scripts/lint-js.cjs",
+    "lint:html": "npx --yes htmlhint@1 \"**/*.html\" --ignore \"node_modules/**\"",
+    "lint": "npm run lint:js && npm run lint:html",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
