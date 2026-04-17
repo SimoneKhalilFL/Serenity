@@ -44,6 +44,11 @@ jobs:
       - name: Inject static per-listing VacationRental JSON-LD into index.html
         run: node scripts/generate-listing-schema.cjs
 
+      - name: Cache-bust styles.css / app.js references with commit SHA
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: node scripts/cache-bust.cjs
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
