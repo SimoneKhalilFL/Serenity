@@ -3157,6 +3157,8 @@ body.has-listing-sticky {
 
 @media (max-width: 600px) {
     .hero-trust-badges {
+        flex-direction: column;
+        align-items: center;
         gap: 0.4rem;
         margin-top: 1rem;
     }
