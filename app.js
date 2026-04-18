@@ -1683,13 +1683,13 @@ function renderCategorizedGallery(property) {
     return `
         <div class="gallery-container categorized">
             <div class="gallery-categories">
-                <button class="category-btn active" onclick="filterGalleryCategory('all')">
+                <button type="button" class="category-btn active" data-category="all" onclick="filterGalleryCategory('all')">
                     All Photos
                     <span class="category-count">${allImages.length}</span>
                 </button>
                 ${categories.map(cat => `
-                    <button class="category-btn" onclick="filterGalleryCategory('${cat}')">
-                        ${cat}
+                    <button type="button" class="category-btn" data-category="${escapeHtml(cat)}" onclick="filterGalleryCategory(${JSON.stringify(cat)})">
+                        ${escapeHtml(cat)}
                         <span class="category-count">${property.images[cat].length}</span>
                     </button>
                 `).join('')}
@@ -1727,41 +1727,25 @@ function renderCategorizedGallery(property) {
 function filterGalleryCategory(category) {
     const thumbnails = document.querySelectorAll('.gallery-thumbnail');
     const categoryBtns = document.querySelectorAll('.category-btn');
-    
-    // Update active button
+
     categoryBtns.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.includes(category === 'all' ? 'All Photos' : category)) {
-            btn.classList.add('active');
-        }
+        btn.classList.toggle('active', btn.dataset.category === category);
     });
-    
-    // Filter thumbnails
-    let visibleCount = 0;
+
     let firstVisibleIndex = -1;
-    
     thumbnails.forEach((thumb, idx) => {
         if (category === 'all' || thumb.dataset.category === category) {
             thumb.style.display = '';
-            visibleCount++;
             if (firstVisibleIndex === -1) firstVisibleIndex = idx;
         } else {
             thumb.style.display = 'none';
         }
     });
-    
-    // Select first visible image
+
+    window.activeGalleryFilter = category;
+
     if (firstVisibleIndex >= 0) {
         selectGalleryImage(firstVisibleIndex);
-    }
-    
-    // Update indicator
-    const indicatorText = document.getElementById('gallery-indicator-text');
-    if (indicatorText && window.categorizedImages) {
-        const filteredImages = category === 'all' 
-            ? window.categorizedImages 
-            : window.categorizedImages.filter(img => img.category === category);
-        indicatorText.textContent = `1 / ${filteredImages.length}`;
     }
 }
 

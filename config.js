@@ -447,65 +447,91 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
         googleMapsUrl: "https://www.google.com/maps/place/Majestic+Sun/@30.3797734,-86.388212,15z/data=!4m10!1m2!2m1!1smajestic+sun+miramar+beach!3m6!1s0x88915b85c1712a1b:0x52984811f11ae7cb!8m2!3d30.3759919!4d-86.3686236",
         mapImage: "https://maps.googleapis.com/maps/api/staticmap?center=30.3759919,-86.3686236&zoom=15&size=600x400&maptype=roadmap&markers=color:red%7C30.3759919,-86.3686236",
         webcam: "https://www.youtube.com/embed/TyX02EtQcYI",
-        images: [
-            "images/lodging/ms-01-living-room.jpg",
-            "images/lodging/ms-02-living-room.jpg",
-            "images/lodging/ms-01-master-bath.jpg",
-            "images/lodging/ms-01-gulf-balcony.jpg",
-            "images/lodging/ms-02-gulf-balcony.jpg",
-            "images/lodging/ms-02-dining-room.jpg",
-            "images/lodging/ms-03-dining-room.jpg",
-            "images/lodging/ms-02-master-bedroom.jpg",
-            "images/lodging/ms-03-master-bedroom.jpg",
-            "images/lodging/ms-01-guest-bedroom.jpg",
-            "images/lodging/ms-02-guest-bedroom.jpg",
-            "images/lodging/ms-01-kitchen.jpg",
-            "images/lodging/ms-02-kitchen.jpg",
-            "images/lodging/ms-01-guest-bath.jpg",
-            "images/lodging/ms-02-guest-bath.jpg",
-            "images/lodging/ms-01-building-view.jpg",
-            "images/lodging/ms-02-building-view.jpg",
-            "images/lodging/ms-beach-view.jpg",
-            "images/lodging/ms-10-sunset-view.jpg",
-            "images/lodging/ms-01-pool.jpg",
-            "images/lodging/ms-01-pool-outdoor.jpg",
-            "images/lodging/ms-02-gym.jpg",
-            "images/lodging/ms-02-pickleball.jpg",
-            "images/lodging/ms-02-hottub.jpg",
-            "images/lodging/ms-01-beachy-decor.jpg",
-            "images/lodging/ms-01-hallway.jpg",
-            "images/lodging/ms-03-living-room.jpg",
-            "images/lodging/ms-04-living-room.jpg",
-            "images/lodging/ms-03-gulf-balcony.jpg",
-            "images/lodging/ms-04-gulf-balcony.jpg",
-            "images/lodging/ms-04-dining-room.jpg",
-            "images/lodging/ms-05-dining-room.jpg",
-            "images/lodging/ms-04-master-bedroom.jpg",
-            "images/lodging/ms-05-master-bedroom.jpg",
-            "images/lodging/ms-05-guest-bedroom.jpg",
-            "images/lodging/ms-03-kitchen.jpg",
-            "images/lodging/ms-04-kitchen.jpg",
-            "images/lodging/ms-02-condo-view.jpg",
-            "images/lodging/ms-08-pool-indoor.jpg",
-            "images/lodging/ms-01-outdoor-lake.jpg",
-            "images/lodging/ms-01-laundry.jpg",
-            "images/lodging/ms-05-living-room.jpg",
-            "images/lodging/ms-06-living-room.jpg",
-            "images/lodging/ms-05-gulf-balcony.jpg",
-            "images/lodging/ms-06-gulf-balcony.jpg",
-            "images/lodging/ms-05-kitchen.jpg",
-            "images/lodging/ms-06-kitchen.jpg",
-            "images/lodging/ms-07-living-room.jpg",
-            "images/lodging/ms-08-living-room.jpg",
-            "images/lodging/ms-07-gulf-balcony.jpg",
-            "images/lodging/ms-08-gulf-balcony.jpg",
-            "images/lodging/ms-07-kitchen.jpg",
-            "images/lodging/ms-08-kitchen.jpg",
-            "images/lodging/ms-09-living-room.jpg",
-            "images/lodging/ms-10-living-room.jpg",
-            "images/lodging/ms-11-living-room.jpg",
-            "images/lodging/ms-12-living-room.jpg"
-        ],
+        images: {
+            "Living Room": [
+                "images/lodging/ms-01-living-room.jpg",
+                "images/lodging/ms-02-living-room.jpg",
+                "images/lodging/ms-03-living-room.jpg",
+                "images/lodging/ms-04-living-room.jpg",
+                "images/lodging/ms-05-living-room.jpg",
+                "images/lodging/ms-06-living-room.jpg",
+                "images/lodging/ms-07-living-room.jpg",
+                "images/lodging/ms-08-living-room.jpg",
+                "images/lodging/ms-09-living-room.jpg",
+                "images/lodging/ms-10-living-room.jpg",
+                "images/lodging/ms-11-living-room.jpg",
+                "images/lodging/ms-12-living-room.jpg"
+            ],
+            "Master Bedroom": [
+                "images/lodging/ms-02-master-bedroom.jpg",
+                "images/lodging/ms-03-master-bedroom.jpg",
+                "images/lodging/ms-04-master-bedroom.jpg",
+                "images/lodging/ms-05-master-bedroom.jpg"
+            ],
+            "Guest Bedroom": [
+                "images/lodging/ms-01-guest-bedroom.jpg",
+                "images/lodging/ms-02-guest-bedroom.jpg",
+                "images/lodging/ms-05-guest-bedroom.jpg"
+            ],
+            "Master Bath": [
+                "images/lodging/ms-01-master-bath.jpg"
+            ],
+            "Guest Bath": [
+                "images/lodging/ms-01-guest-bath.jpg",
+                "images/lodging/ms-02-guest-bath.jpg"
+            ],
+            "Kitchen": [
+                "images/lodging/ms-01-kitchen.jpg",
+                "images/lodging/ms-02-kitchen.jpg",
+                "images/lodging/ms-03-kitchen.jpg",
+                "images/lodging/ms-04-kitchen.jpg",
+                "images/lodging/ms-05-kitchen.jpg",
+                "images/lodging/ms-06-kitchen.jpg",
+                "images/lodging/ms-07-kitchen.jpg",
+                "images/lodging/ms-08-kitchen.jpg"
+            ],
+            "Dining": [
+                "images/lodging/ms-02-dining-room.jpg",
+                "images/lodging/ms-03-dining-room.jpg",
+                "images/lodging/ms-04-dining-room.jpg",
+                "images/lodging/ms-05-dining-room.jpg"
+            ],
+            "Balcony": [
+                "images/lodging/ms-01-gulf-balcony.jpg",
+                "images/lodging/ms-02-gulf-balcony.jpg",
+                "images/lodging/ms-03-gulf-balcony.jpg",
+                "images/lodging/ms-04-gulf-balcony.jpg",
+                "images/lodging/ms-05-gulf-balcony.jpg",
+                "images/lodging/ms-06-gulf-balcony.jpg",
+                "images/lodging/ms-07-gulf-balcony.jpg",
+                "images/lodging/ms-08-gulf-balcony.jpg"
+            ],
+            "Beach View": [
+                "images/lodging/ms-beach-view.jpg",
+                "images/lodging/ms-10-sunset-view.jpg"
+            ],
+            "Pool": [
+                "images/lodging/ms-01-pool.jpg",
+                "images/lodging/ms-01-pool-outdoor.jpg",
+                "images/lodging/ms-08-pool-indoor.jpg",
+                "images/lodging/ms-01-outdoor-lake.jpg"
+            ],
+            "Building": [
+                "images/lodging/ms-01-building-view.jpg",
+                "images/lodging/ms-02-building-view.jpg",
+                "images/lodging/ms-02-condo-view.jpg"
+            ],
+            "Amenities": [
+                "images/lodging/ms-02-gym.jpg",
+                "images/lodging/ms-02-pickleball.jpg",
+                "images/lodging/ms-02-hottub.jpg"
+            ],
+            "More": [
+                "images/lodging/ms-01-beachy-decor.jpg",
+                "images/lodging/ms-01-hallway.jpg",
+                "images/lodging/ms-01-laundry.jpg"
+            ]
+        },
         amenities: [
             { icon: "wifi", name: "High-Speed WiFi" },
             { icon: "kitchen", name: "Full Kitchen" },
