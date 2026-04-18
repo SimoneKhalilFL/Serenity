@@ -1677,7 +1677,7 @@ function renderCategorizedGallery(property) {
     window.categorizedImages = allImages;
     window.categoryMap = categoryMap;
     
-    const mainAlt = `${property.title} — ${allImages[0]?.category || 'Photo'} (1 of ${allImages.length})`;
+    const mainAlt = escapeHtml(`${property.title} — ${allImages[0]?.category || 'Photo'} (1 of ${allImages.length})`);
     const galleryFallback = allImages[0]?.url || '';
     
     return `
@@ -1688,7 +1688,7 @@ function renderCategorizedGallery(property) {
                     <span class="category-count">${allImages.length}</span>
                 </button>
                 ${categories.map(cat => `
-                    <button type="button" class="category-btn" data-category="${escapeHtml(cat)}" onclick="filterGalleryCategory(${JSON.stringify(cat)})">
+                    <button type="button" class="category-btn" data-category="${escapeHtml(cat)}" onclick="filterGalleryCategory(${escapeHtml(JSON.stringify(cat))})">
                         ${escapeHtml(cat)}
                         <span class="category-count">${property.images[cat].length}</span>
                     </button>
@@ -1709,14 +1709,14 @@ function renderCategorizedGallery(property) {
                     </button>
                 </div>
                 <div class="gallery-indicator">
-                    <span id="gallery-current-category">${allImages[0]?.category || ''}</span>
+                    <span id="gallery-current-category">${escapeHtml(allImages[0]?.category || '')}</span>
                     <span id="gallery-indicator-text">1 / ${allImages.length}</span>
                 </div>
             </div>
             <div class="gallery-thumbnails" id="gallery-thumbnails">
                 ${allImages.map((img, idx) => `
-                    <div class="gallery-thumbnail ${idx === 0 ? 'active' : ''}" data-category="${img.category}" onclick="selectGalleryImage(${idx})">
-                        <img src="${img.url}" alt="${property.title} — ${img.category} (${idx + 1})" loading="lazy" data-fallback-src="${galleryFallback}" onerror="galleryImageOnError(this)">
+                    <div class="gallery-thumbnail ${idx === 0 ? 'active' : ''}" data-category="${escapeHtml(img.category)}" onclick="selectGalleryImage(${idx})">
+                        <img src="${img.url}" alt="${escapeHtml(property.title)} — ${escapeHtml(img.category)} (${idx + 1})" loading="lazy" data-fallback-src="${galleryFallback}" onerror="galleryImageOnError(this)">
                     </div>
                 `).join('')}
             </div>
