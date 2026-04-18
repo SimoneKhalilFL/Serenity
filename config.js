@@ -235,7 +235,7 @@ From Tidewater you're minutes from the best of PCB:
         googleMapsUrl: "https://www.google.com/maps/place/Tidewater+Beach+Resort/@30.220254,-85.8887336,16z/data=!3m2!4b1!5s0x88938c59c1b38bf1:0xa60091c6745974d7!4m9!3m8!1s0x88938c59c6501e8f:0x28163e68311a261b!5m2!4m1!1i2!8m2!3d30.2202494!4d-85.8861587!16s%2Fg%2F11j006jdb1?entry=ttu&g_ep=EgoyMDI2MDIwOC4wIKXMDSoASAFQAw%3D%3D",
         webcam: {
             linkUrl: "https://www.tidewaterhoa.com/tidecam/",
-            previewImage: "images/lodging/0327edd4.jpg"
+            previewImage: "images/lodging/tw-01-beach-view.jpg"
         },
         maxGuests: 8,
         bedrooms: 3,
@@ -247,61 +247,62 @@ From Tidewater you're minutes from the best of PCB:
         featured: false,
         images: {
             "Views & Beach": [
-                "images/lodging/0327edd4.jpg",
-                "images/lodging/w1200h768x0y32-35a299f6.jpg",
-                "images/lodging/1c8d5689.jpg",
-                "images/lodging/76c26b3e.jpg",
-                "images/lodging/840c2634.jpg",
-                "images/lodging/ab71f25e.jpg",
-                "images/lodging/e6dd08b2.jpg",
-                "images/lodging/e96e1cdc.jpg"
+                "images/lodging/tw-01-beach-view.jpg",
+                "images/lodging/tw-02-beach-view.jpg"
             ],
             "Living Room": [
-                "images/lodging/1a745244.jpg",
-                "images/lodging/69a3feb9.jpg",
-                "images/lodging/b70e0e33.jpg"
+                "images/lodging/tw-01-living.jpg",
+                "images/lodging/tw-02-living.jpg"
             ],
             "Kitchen & Dining": [
-                "images/lodging/3798f6d1.jpg",
-                "images/lodging/6e51f408.jpg",
-                "images/lodging/77e9cb0b.jpg",
-                "images/lodging/d008903d.jpg"
+                "images/lodging/tw-01-kitchen.jpg",
+                "images/lodging/tw-02-kitchen.jpg",
+                "images/lodging/tw-03-kitchen.jpg",
+                "images/lodging/tw-01-dining.jpg",
+                "images/lodging/tw-02-dining.jpg"
             ],
             "Master Bedroom": [
-                "images/lodging/81ab2c30.jpg",
-                "images/lodging/ddc625fa.jpg"
+                "images/lodging/tw-01-bedroom-master.jpg",
+                "images/lodging/tw-02-bedroom-master.jpg"
             ],
             "Bedroom 2": [
-                "images/lodging/186c0693.jpg",
-                "images/lodging/e20020cc.jpg"
+                "images/lodging/tw-01-bedroom-two.jpg",
+                "images/lodging/tw-02-bedroom-two.jpg"
             ],
             "Bunk Room": [
-                "images/lodging/e7cf581d.jpg"
+                "images/lodging/tw-01-bedroom-three.jpg"
             ],
             "Bathrooms": [
-                "images/lodging/3032ff41.jpg",
-                "images/lodging/8b283b03.jpg",
-                "images/lodging/a2bccfd9.jpg",
-                "images/lodging/cd7cfc50.jpg"
+                "images/lodging/tw-01-bath-master.jpg",
+                "images/lodging/tw-01-bath-two.jpg",
+                "images/lodging/tw-01-bath-three.jpg",
+                "images/lodging/tw-02-bath-three.jpg"
             ],
             "Balcony": [
-                "images/lodging/48ff7988.jpg",
-                "images/lodging/b16027df.jpg",
-                "images/lodging/e126cd51.jpg"
+                "images/lodging/tw-01-balcony.jpg",
+                "images/lodging/tw-02-balcony.jpg"
             ],
-            "Amenities": [
-                "images/lodging/0aef567d.jpg",
-                "images/lodging/35474342.jpg",
-                "images/lodging/37e06634.jpg",
-                "images/lodging/47765a51.jpg",
-                "images/lodging/5e4d7f21.jpg",
-                "images/lodging/9b2bdc29.jpg",
-                "images/lodging/d4a91ca0.jpg",
-                "images/lodging/d727c8fb.jpg",
-                "images/lodging/ec8dbbfb.jpg",
-                "images/lodging/f2e52ee9.jpg",
-                "images/lodging/f4f9ce40.jpg",
-                "images/lodging/ffba253e.jpg"
+            "Pool & Outdoors": [
+                "images/lodging/tw-01-pool.jpg",
+                "images/lodging/tw-02-pool.jpg",
+                "images/lodging/tw-03-pool.jpg",
+                "images/lodging/tw-04-pool.jpg",
+                "images/lodging/tw-05-pool.jpg",
+                "images/lodging/tw-01-outdoor.jpg",
+                "images/lodging/tw-02-outdoor.jpg",
+                "images/lodging/tw-03-outdoor.jpg",
+                "images/lodging/tw-04-outdoor.jpg",
+                "images/lodging/tw-05-outdoor.jpg"
+            ],
+            "Resort Amenities": [
+                "images/lodging/tw-01-building.jpg",
+                "images/lodging/tw-02-building.jpg",
+                "images/lodging/tw-01-gym.jpg",
+                "images/lodging/tw-02-gym.jpg",
+                "images/lodging/tw-01-amenities.jpg",
+                "images/lodging/tw-02-amenities.jpg",
+                "images/lodging/tw-03-amenities.jpg",
+                "images/lodging/tw-04-amenities.jpg"
             ]
         },
         amenities: [
