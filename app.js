@@ -813,7 +813,7 @@ function showContactModal() {
                 <h4>Booking Request</h4>
                 <div class="booking-summary-row">
                     <span>Property:</span>
-                    <span>${currentProperty.title}</span>
+                    <span>${escapeHtml(currentProperty.title)}</span>
                 </div>
                 <div class="booking-summary-row">
                     <span>Check-in:</span>
@@ -1140,18 +1140,18 @@ function createPropertyCard(property, isFeatured = false) {
     
     card.innerHTML = `
         <div class="property-card-image">
-            <img src="${firstImage}" alt="${altText}" loading="lazy">
+            <img src="${escapeHtml(firstImage)}" alt="${escapeHtml(altText)}" loading="lazy">
             ${property.featured ? '<div class="property-card-badge">Featured Florida Rental</div>' : ''}
         </div>
         <div class="property-card-content">
             <div class="property-card-header">
-                <h3 class="property-card-title"><a class="property-card-title-link" href="?listing=${property.id}" onclick="event.preventDefault(); event.stopPropagation(); navigateToProperty(${property.id});">${property.title}</a></h3>
+                <h3 class="property-card-title"><a class="property-card-title-link" href="?listing=${property.id}" onclick="event.preventDefault(); event.stopPropagation(); navigateToProperty(${property.id});">${escapeHtml(property.title)}</a></h3>
                 <div class="property-card-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                    <span>${property.location}</span>
+                    <span>${escapeHtml(property.location)}</span>
                 </div>
                 <p class="property-card-sleep-line">Sleeps ${property.maxGuests} · ${property.bedrooms} BR</p>
             </div>
@@ -1455,7 +1455,7 @@ function renderKeyPolicyChips(property) {
     if (!labels.length) return '';
     return `
         <div class="key-policy-chips" aria-label="Key property details">
-            ${labels.map(text => `<span class="policy-chip">${text}</span>`).join('')}
+            ${labels.map(text => `<span class="policy-chip">${escapeHtml(text)}</span>`).join('')}
         </div>
     `;
 }
@@ -1463,9 +1463,9 @@ function renderKeyPolicyChips(property) {
 function renderListingTrustSidebar(property) {
     const c = getSiteContact();
     const phoneHtml = c.phoneTel && c.phoneDisplay
-        ? `<p class="listing-trust-line"><span class="listing-trust-label">Call or text</span> <a class="listing-trust-phone" href="tel:${c.phoneTel}">${c.phoneDisplay}</a></p>`
+        ? `<p class="listing-trust-line"><span class="listing-trust-label">Call or text</span> <a class="listing-trust-phone" href="tel:${encodeURIComponent(c.phoneTel)}">${escapeHtml(c.phoneDisplay)}</a></p>`
         : '';
-    const emailHtml = `<p class="listing-trust-line"><span class="listing-trust-label">Email</span> <a class="listing-trust-email" href="mailto:${c.email}">${c.email}</a></p>`;
+    const emailHtml = `<p class="listing-trust-line"><span class="listing-trust-label">Email</span> <a class="listing-trust-email" href="mailto:${encodeURIComponent(c.email)}">${escapeHtml(c.email)}</a></p>`;
     const reply = `<p class="listing-reply-note">${escapeHtml(c.replyBlurb)}</p>`;
     return `<div class="listing-sidebar-trust">${phoneHtml}${emailHtml}${reply}</div>`;
 }
@@ -1770,9 +1770,10 @@ function renderFormattedDescription(property, isFlorida, city) {
         return renderRichDescription(property, description, isFlorida, city);
     }
     
-    // Fallback for simple descriptions
+    // Fallback for simple descriptions. description is allowed to contain
+    // inline HTML (paragraph markup from config.js); property.title is escaped.
     return `
-        <h2>About ${property.title}</h2>
+        <h2>About ${escapeHtml(property.title)}</h2>
         <p class="property-description">${description}</p>
         ${property.webcam ? renderWebcam(property.webcam, property.title) : ''}
         ${isFlorida ? `<details class="seo-more"><summary>More About Booking Direct in ${escapeHtml(city)}</summary><p class="seo-text">Owner-direct stays: no OTA service fees. Final rates are confirmed with the host.</p></details>` : ''}
@@ -1889,7 +1890,7 @@ function renderRichDescription(property, description, isFlorida, city) {
                             <line x1="12" y1="8" x2="12.01" y2="8"></line>
                         </svg>
                     </div>
-                    <h2>About ${property.title}</h2>
+                    <h2>About ${escapeHtml(property.title)}</h2>
                 </div>
                 <div class="section-content">
                     <div class="description-preview">
@@ -1957,7 +1958,7 @@ function renderRichDescription(property, description, isFlorida, city) {
         if (sectionImage) {
             mediaContent = `
                 <div class="section-image">
-                    <img src="${sectionImage}" alt="${title} at ${property.title}" loading="lazy">
+                    <img src="${escapeHtml(sectionImage)}" alt="${escapeHtml(title)} at ${escapeHtml(property.title)}" loading="lazy">
                 </div>
             `;
         }
