@@ -179,6 +179,7 @@ const PROPERTIES = [
         title: "Tidewater Beach Resort - 3BR Beachfront Condo",
         listingHeadline: "Beachfront Tidewater Condo—Space for Families and Groups",
         listingTagline: "Resort pools, beach access, and Pier Park within easy reach.",
+        coverImage: "images/lodging/tw-02-living.jpg",
         location: "Panama City Beach, Florida",
         description: `Experience Panama City Beach from Tidewater Beach Resort—Gulf-front living with space for families and groups. This beachfront condo features cool tile throughout, a bright living area with comfortable seating and a smart TV, and a balcony with sweeping Gulf views.
 

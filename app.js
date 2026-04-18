@@ -130,6 +130,16 @@ function getFirstImage(images) {
     return '';
 }
 
+// Returns the property's explicit coverImage when set, otherwise the first image
+// from the gallery. Used for the property card, OG/Twitter preview, and schema
+// fallback so each listing can pick its hero shot without reordering the gallery.
+function getCoverImage(property) {
+    if (property && typeof property.coverImage === 'string' && property.coverImage) {
+        return property.coverImage;
+    }
+    return getFirstImage(property ? property.images : null);
+}
+
 // Helper function to get all images as flat array
 function getAllImages(images) {
     if (Array.isArray(images)) {
@@ -228,7 +238,7 @@ function setCanonicalAndSocial(property) {
         const url = getListingCanonicalUrl(property.id);
         if (canonical) canonical.setAttribute('href', url);
         if (ogUrl) ogUrl.setAttribute('content', url);
-        const img = absoluteUrl(getFirstImage(property.images));
+        const img = absoluteUrl(getCoverImage(property));
         if (ogImage && img) ogImage.setAttribute('content', img);
         if (twImage && img) twImage.setAttribute('content', img);
     } else {
@@ -254,7 +264,7 @@ function getSchemaImageList(property) {
         }
     }
     if (out.length === 0) {
-        const one = absoluteUrl(getFirstImage(property.images));
+        const one = absoluteUrl(getCoverImage(property));
         return one ? [one] : [];
     }
     return out;
@@ -1125,8 +1135,8 @@ function createPropertyCard(property, isFeatured = false) {
         ? `${property.bedrooms}-bedroom Florida vacation rental in ${city} - beachfront condo sleeps ${property.maxGuests}`
         : `${property.bedrooms}-bedroom vacation rental in ${city} - sleeps ${property.maxGuests} guests`;
     
-    // Handle both categorized and flat image arrays
-    const firstImage = getFirstImage(property.images);
+    // Prefer the listing's explicit coverImage; fall back to the first gallery photo.
+    const firstImage = getCoverImage(property);
     
     card.innerHTML = `
         <div class="property-card-image">
