@@ -1,7 +1,7 @@
 /**
  * Generate sitemap.xml from PROPERTIES in config.js so listing URLs stay in sync.
  *
- * - Includes homepage (SITE_BASE_URL), one URL per property (/?listing=<id>),
+ * - Includes homepage (SITE_BASE_URL), one URL per property (listing-<id>.html),
  *   and static pages (privacy.html, terms.html) when present.
  * - lastmod uses the file's git mtime when available, otherwise today's UTC date.
  * - Commented-out properties are simply not in PROPERTIES, so they are excluded.
@@ -59,17 +59,21 @@ function main() {
     const base = SITE_BASE_URL.replace(/\/$/, '');
     const today = todayYmd();
 
-    // Listings share the freshness of index.html + config.js (whichever was touched most recently).
-    const listingLastmod = lastCommitYmd(['index.html', 'config.js', 'app.js']) || today;
-    const homeLastmod = listingLastmod;
+    // Homepage freshness tracks index.html + config.js + app.js.
+    const homeLastmod = lastCommitYmd(['index.html', 'config.js', 'app.js']) || today;
 
     const urls = [];
     urls.push({ loc: `${base}/`, changefreq: 'weekly', priority: '1.0', lastmod: homeLastmod });
 
     for (const p of PROPERTIES) {
         if (!p || typeof p.id === 'undefined') continue;
+        const listingFile = `listing-${p.id}.html`;
+        // Per-listing freshness: the share page itself, falling back to config
+        // (covers the case where a new property was added but the file wasn't
+        // committed yet in local dev; CI always regenerates the file first).
+        const listingLastmod = lastCommitYmd([listingFile, 'config.js']) || homeLastmod;
         urls.push({
-            loc: `${base}/?listing=${encodeURIComponent(p.id)}`,
+            loc: `${base}/${listingFile}`,
             changefreq: 'weekly',
             priority: '0.9',
             lastmod: listingLastmod

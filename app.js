@@ -36,11 +36,18 @@ function getSiteBaseHref() {
     return typeof SITE_BASE_URL === 'string' ? `${SITE_BASE_URL.replace(/\/$/, '')}/` : '/';
 }
 
-function getListingCanonicalUrl(propertyId) {
-    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
-    return base ? `${base}/?listing=${encodeURIComponent(propertyId)}` : `/?listing=${encodeURIComponent(propertyId)}`;
+/** Relative path used for SPA history entries (keeps URL bar in sync with canonical). */
+function getListingRelativePath(propertyId) {
+    return `/listing-${encodeURIComponent(propertyId)}.html`;
 }
 
+function getListingCanonicalUrl(propertyId) {
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const rel = getListingRelativePath(propertyId);
+    return base ? `${base}${rel}` : rel;
+}
+
+/** Read listing id from `?listing=<id>`, `/listing-<id>.html`, or `#property-<id>`. */
 function getListingIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const q = params.get('listing');
@@ -48,24 +55,24 @@ function getListingIdFromUrl() {
         const id = parseInt(q, 10);
         if (!Number.isNaN(id)) return id;
     }
-    const m = /^#property-(\d+)$/.exec(window.location.hash || '');
-    if (m) return parseInt(m[1], 10);
+    const pathMatch = /\/listing-(\d+)\.html$/i.exec(window.location.pathname || '');
+    if (pathMatch) return parseInt(pathMatch[1], 10);
+    const hashMatch = /^#property-(\d+)$/.exec(window.location.hash || '');
+    if (hashMatch) return parseInt(hashMatch[1], 10);
     return null;
 }
 
 function pushListingHistoryState(propertyId) {
-    const u = new URL(window.location.href);
-    u.searchParams.set('listing', String(propertyId));
-    u.hash = '';
-    history.pushState({ listing: propertyId }, '', `${u.pathname}${u.search}${u.hash}`);
+    // Use the clean, share-friendly path so URL bar matches canonical and
+    // crawlers scraping a copy-pasted URL get the static listing-<id>.html page.
+    const rel = getListingRelativePath(propertyId);
+    history.pushState({ listing: propertyId }, '', rel);
 }
 
 function pushHomeHistoryState() {
-    const u = new URL(window.location.href);
-    u.searchParams.delete('listing');
-    u.hash = '';
-    const search = u.searchParams.toString();
-    history.pushState({ page: 'home' }, '', `${u.pathname}${search ? `?${search}` : ''}${u.hash}`);
+    // Collapse back to "/" regardless of whether the current URL was
+    // ?listing=X, /listing-X.html, or any legacy variant.
+    history.pushState({ page: 'home' }, '', '/');
 }
 
 function getSiteContact() {
@@ -1145,7 +1152,7 @@ function createPropertyCard(property, isFeatured = false) {
         </div>
         <div class="property-card-content">
             <div class="property-card-header">
-                <h3 class="property-card-title"><a class="property-card-title-link" href="?listing=${property.id}" onclick="event.preventDefault(); event.stopPropagation(); navigateToProperty(${property.id});">${escapeHtml(property.title)}</a></h3>
+                <h3 class="property-card-title"><a class="property-card-title-link" href="${getListingRelativePath(property.id)}" onclick="event.preventDefault(); event.stopPropagation(); navigateToProperty(${property.id});">${escapeHtml(property.title)}</a></h3>
                 <div class="property-card-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -2774,7 +2781,7 @@ function refreshHomeLocationsMapSize() {
 // ==========================================
 // Initialization
 // ==========================================
-/** Homepage Organization + WebSite + ItemList JSON-LD (listing URLs use ?listing=id). */
+/** Homepage Organization + WebSite + ItemList JSON-LD (listing URLs are the static listing-<id>.html canonicals). */
 function buildHomepageSchema() {
     if (typeof SITE_BASE_URL !== 'string' || !SITE_BASE_URL.trim()) return null;
     const base = SITE_BASE_URL.replace(/\/$/, '');
@@ -2811,7 +2818,7 @@ function buildHomepageSchema() {
             '@type': 'ListItem',
             position: i + 1,
             name: p.title,
-            url: `${base}/?listing=${p.id}`
+            url: getListingCanonicalUrl(p.id)
         }))
     };
     return {
@@ -2849,6 +2856,13 @@ document.addEventListener('DOMContentLoaded', () => {
         syncSiteMetaFromBaseUrl();
         const lid = getListingIdFromUrl();
         if (lid != null && PROPERTIES.some(p => p.id === lid)) {
+            // Normalize legacy ?listing=X URLs (and fallback redirects from
+            // listing-X.html → /?listing=X) to the clean canonical path so
+            // copy-paste and bookmarks match the social-share canonical URL.
+            const expectedPath = getListingRelativePath(lid);
+            if (window.location.pathname !== expectedPath) {
+                history.replaceState({ listing: lid }, '', expectedPath);
+            }
             await navigateToProperty(lid, { skipHistory: true });
         } else {
             setCanonicalAndSocial(null);

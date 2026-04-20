@@ -38,19 +38,22 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Inject Cloudflare Web Analytics beacon (optional)
-        env:
-          CLOUDFLARE_BEACON_TOKEN: ${{ secrets.CLOUDFLARE_BEACON_TOKEN }}
-        run: node scripts/inject-cf-beacon.cjs
+      - name: Install dev dependencies (sharp for OG image generation)
+        run: npm ci --include=dev
 
       - name: Generate sitemap.xml from PROPERTIES
         run: node scripts/generate-sitemap.cjs
 
-      - name: Install dev dependencies (sharp for OG image generation)
-        run: npm ci --include=dev
-
       - name: Generate Open Graph preview cards (1200x630)
         run: node scripts/generate-og-images.cjs
+
+      - name: Generate per-listing share pages (listing-<id>.html)
+        run: node scripts/generate-listing-pages.cjs
+
+      - name: Inject Cloudflare Web Analytics beacon (optional, processes listing-*.html too)
+        env:
+          CLOUDFLARE_BEACON_TOKEN: ${{ secrets.CLOUDFLARE_BEACON_TOKEN }}
+        run: node scripts/inject-cf-beacon.cjs
 
       - name: Inject static per-listing VacationRental JSON-LD into index.html
         run: node scripts/generate-listing-schema.cjs

@@ -17,9 +17,20 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const HTML_FILES = ['index.html', 'privacy.html', 'terms.html', '404.html'];
+const STATIC_HTML_FILES = ['index.html', 'privacy.html', 'terms.html', '404.html'];
 const PLACEHOLDER = '__CF_BEACON_TOKEN__';
 const BLOCK_RE = /[ \t]*<!--\s*CF_BEACON_START\s*-->[\s\S]*?<!--\s*CF_BEACON_END\s*-->\n?/g;
+
+function discoverHtmlFiles() {
+    // Always process the known static pages, then append any generated
+    // listing-<id>.html share pages that exist at the repo root so they also
+    // get the beacon (they embed the same CF_BEACON_START/END marker block).
+    const files = new Set(STATIC_HTML_FILES);
+    for (const name of fs.readdirSync(ROOT)) {
+        if (/^listing-\d+\.html$/i.test(name)) files.add(name);
+    }
+    return Array.from(files);
+}
 
 function main() {
     const rawToken = (process.env.CLOUDFLARE_BEACON_TOKEN || '').trim();
@@ -27,7 +38,8 @@ function main() {
     const mode = hasToken ? 'inject' : 'strip';
 
     let updated = 0;
-    for (const rel of HTML_FILES) {
+    const htmlFiles = discoverHtmlFiles();
+    for (const rel of htmlFiles) {
         const abs = path.join(ROOT, rel);
         if (!fs.existsSync(abs)) continue;
         const before = fs.readFileSync(abs, 'utf8');
