@@ -19,7 +19,7 @@ const SEO_CONFIG = {
     defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
     /** ~155 chars — Bing/Google tools expect roughly 25–160 for meta description. */
     defaultDescription: 'Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.',
-    defaultOgImage: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80'
+    defaultOgImage: 'images/og/default.jpg'
 };
 
 /** Absolute URL for an asset path or full URL (uses SITE_BASE_URL from config.js). */
@@ -238,14 +238,14 @@ function setCanonicalAndSocial(property) {
         const url = getListingCanonicalUrl(property.id);
         if (canonical) canonical.setAttribute('href', url);
         if (ogUrl) ogUrl.setAttribute('content', url);
-        const img = absoluteUrl(getCoverImage(property));
+        const img = absoluteUrl(`images/og/listing-${property.id}.jpg`);
         if (ogImage && img) ogImage.setAttribute('content', img);
         if (twImage && img) twImage.setAttribute('content', img);
     } else {
         const url = base ? `${base}/` : window.location.origin + window.location.pathname;
         if (canonical) canonical.setAttribute('href', url);
         if (ogUrl) ogUrl.setAttribute('content', url);
-        const def = SEO_CONFIG.defaultOgImage;
+        const def = absoluteUrl(SEO_CONFIG.defaultOgImage);
         if (ogImage) ogImage.setAttribute('content', def);
         if (twImage) twImage.setAttribute('content', def);
     }

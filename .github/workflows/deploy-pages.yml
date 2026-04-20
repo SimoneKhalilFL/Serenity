@@ -46,6 +46,12 @@ jobs:
       - name: Generate sitemap.xml from PROPERTIES
         run: node scripts/generate-sitemap.cjs
 
+      - name: Install dev dependencies (sharp for OG image generation)
+        run: npm ci --include=dev
+
+      - name: Generate Open Graph preview cards (1200x630)
+        run: node scripts/generate-og-images.cjs
+
       - name: Inject static per-listing VacationRental JSON-LD into index.html
         run: node scripts/generate-listing-schema.cjs
 
