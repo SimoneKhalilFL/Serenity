@@ -4,7 +4,11 @@ Active ideas to pick from when asking "what's next". Assistant reads this file a
 
 ## Open
 
-1. **A/B-test the hero** — swap video vs. still image, log engagement, see which drives more "Contact Owner" clicks.
+_(no open items — backlog fully groomed)_
+
+## Closed without shipping
+
+- **A/B-test the hero** (retired 2026-04) — at owner-direct-rental traffic scale (dozens to low-hundreds of inquiries/year) an A/B test on hero media can't reach statistical significance in a reasonable timeframe, and Cloudflare free tier can't cleanly attribute conversions to a variant anyway. Rather than ship a half-measured test, keep the current autoplay MP4 until a clear product reason to change (e.g. Core Web Vitals regression, mobile data complaints, or an LCP issue flagged by GSC). If the hero needs to change later, flip it deliberately and measure before/after in CF over 2–4 weeks instead of running a split test.
 
 ## Done (recent)
 
