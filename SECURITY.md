@@ -31,14 +31,22 @@ Optional: run `bash scripts/apply-branch-protection.sh` after `gh auth login` (r
 
 ## Secrets (never commit)
 
-| Secret | Purpose |
-|--------|---------|
-| `WEB3FORMS_ACCESS_KEY` | Web3Forms access key — injected into `config.js` during **Deploy to GitHub Pages** only |
-| `CALENDAR_FEEDS_JSON` | iCal URLs for **Sync iCal availability** workflow |
+| Secret | Required? | Purpose |
+|--------|-----------|---------|
+| `WEB3FORMS_ACCESS_KEY` | Required | Web3Forms access key — injected into `config.js` during **Deploy to GitHub Pages** only |
+| `CALENDAR_FEEDS_JSON` | Required | iCal URLs for **Sync iCal availability** workflow |
+| `CLOUDFLARE_BEACON_TOKEN` | Optional | Cloudflare Web Analytics beacon token. When present, `scripts/inject-cf-beacon.cjs` injects the tracking snippet into all HTML pages during deploy. When absent, the snippet is **stripped** and no analytics ship. |
 
-Add both under **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+Add them under **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
 
-Do not paste these into committed files. Rotate keys in the Web3Forms / OTA dashboards if they were ever exposed in git history.
+Do not paste these into committed files. Rotate keys in the Web3Forms / Cloudflare / OTA dashboards if they were ever exposed in git history.
+
+### Finding the Cloudflare beacon token
+
+1. Cloudflare dashboard → **Analytics & Logs** → **Web Analytics**.
+2. Open your site (or **Add a site** and enter `stayatflorida.com` — since the domain isn't on Cloudflare DNS, it will show a "JS Snippet" option).
+3. In the snippet Cloudflare shows you (`<script ... data-cf-beacon='{"token": "abc123..."}'></script>`), copy **only** the token string — the value between the quotes after `"token":`.
+4. Paste that value into the `CLOUDFLARE_BEACON_TOKEN` secret in GitHub Actions.
 
 ## Reporting issues
 
