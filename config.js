@@ -445,6 +445,7 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
         taxRate: 0.12,
         refundableDamageDeposit: 300,
         featured: false,
+        coverImage: "images/lodging/ms-01-gulf-balcony.jpg",
         coordinates: { lat: 30.3759919, lng: -86.3686236 },
         googleMapsUrl: "https://www.google.com/maps/place/Majestic+Sun/@30.3797734,-86.388212,15z/data=!4m10!1m2!2m1!1smajestic+sun+miramar+beach!3m6!1s0x88915b85c1712a1b:0x52984811f11ae7cb!8m2!3d30.3759919!4d-86.3686236",
         mapImage: "https://maps.googleapis.com/maps/api/staticmap?center=30.3759919,-86.3686236&zoom=15&size=600x400&maptype=roadmap&markers=color:red%7C30.3759919,-86.3686236",
