@@ -686,12 +686,15 @@ async function navigateToProperty(propertyId, options = {}) {
     renderPropertyDetail(property);
 
     const scrollToCalendar = options.scrollToCalendar === true;
-    if (scrollToCalendar) {
+    const scrollToSectionId = typeof options.scrollToSectionId === 'string' && options.scrollToSectionId
+        ? options.scrollToSectionId
+        : (scrollToCalendar ? 'property-availability' : null);
+    if (scrollToSectionId) {
         requestAnimationFrame(() => {
             setTimeout(() => {
-                const calSection = document.getElementById('property-availability');
-                if (calSection) {
-                    calSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const target = document.getElementById(scrollToSectionId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }, 50);
         });
@@ -2622,6 +2625,144 @@ function renderExploreCards(property) {
 // Reviews Functions
 // ==========================================
 const REVIEWS_PREVIEW_COUNT = 3;
+const HOMEPAGE_REVIEWS_COUNT = 6;
+
+/**
+ * Score a single review for homepage display. Higher = more likely to feature.
+ * Deterministic so the featured set stays stable across page loads, and so
+ * adding a review in config.js just re-ranks without hand-picking.
+ * Prefers: named authors, medium-length comments (fits a card nicely), recent dates.
+ */
+function scoreHomepageReview(review) {
+    let score = 0;
+    const author = (review && review.author) ? String(review.author).trim() : '';
+    if (author && author.toLowerCase() !== 'guest') score += 10;
+    const len = ((review && review.comment) || '').length;
+    if (len >= 80 && len <= 240) score += 6;
+    else if (len > 240 && len <= 360) score += 3;
+    else if (len >= 40) score += 1;
+    const year = parseInt(String((review && review.date) || '').slice(0, 4), 10);
+    if (!Number.isNaN(year)) {
+        if (year >= 2024) score += 3;
+        else if (year >= 2022) score += 1;
+    }
+    return score;
+}
+
+/**
+ * Round-robin interleave top-ranked reviews from each property so the homepage
+ * features both listings even when one has far more reviews than the other.
+ */
+function getHomepageReviews(targetCount) {
+    const byProperty = {};
+    PROPERTIES.forEach(p => {
+        const list = (typeof REVIEWS === 'object' && REVIEWS && REVIEWS[p.id]) ? REVIEWS[p.id] : [];
+        const ranked = list
+            .map(r => ({ review: r, propertyId: p.id, score: scoreHomepageReview(r) }))
+            .sort((a, b) => {
+                if (b.score !== a.score) return b.score - a.score;
+                const da = new Date(a.review.date || 0).getTime() || 0;
+                const db = new Date(b.review.date || 0).getTime() || 0;
+                if (db !== da) return db - da;
+                return (a.review.id || 0) - (b.review.id || 0);
+            });
+        if (ranked.length > 0) byProperty[p.id] = ranked;
+    });
+    const pids = Object.keys(byProperty);
+    const featured = [];
+    let i = 0;
+    while (featured.length < targetCount) {
+        let addedThisRound = false;
+        for (const pid of pids) {
+            const item = byProperty[pid][i];
+            if (item) {
+                featured.push(item);
+                addedThisRound = true;
+                if (featured.length >= targetCount) break;
+            }
+        }
+        if (!addedThisRound) break;
+        i += 1;
+    }
+    return featured;
+}
+
+function getReviewAggregate() {
+    let total = 0;
+    let sum = 0;
+    let propertyCount = 0;
+    if (typeof REVIEWS === 'object' && REVIEWS) {
+        Object.keys(REVIEWS).forEach(pid => {
+            const list = REVIEWS[pid] || [];
+            if (list.length > 0) propertyCount += 1;
+            total += list.length;
+            sum += list.reduce((acc, r) => acc + (Number(r.rating) || 0), 0);
+        });
+    }
+    const avg = total > 0 ? sum / total : 0;
+    const avgFormatted = (Math.round(avg * 10) / 10).toFixed(1);
+    return { total, propertyCount, avg, avgFormatted };
+}
+
+function getPropertyShortName(property) {
+    if (!property) return '';
+    // "Tidewater Beach Resort - 3BR Beachfront Condo" -> "Tidewater Beach Resort"
+    // "Majestic Sun 811" -> "Majestic Sun 811"
+    return String(property.title || '').split(/[-–—]/)[0].trim();
+}
+
+function renderHomepageReviewCard(entry) {
+    const { review, propertyId } = entry;
+    const property = PROPERTIES.find(p => p.id === propertyId);
+    const shortName = getPropertyShortName(property);
+    const href = getListingRelativePath(propertyId);
+    return `
+        <article class="home-review-card">
+            <div class="home-review-stars" aria-label="${review.rating} out of 5 stars">
+                ${renderStars(review.rating)}
+            </div>
+            <blockquote class="home-review-quote">${escapeHtml(review.comment)}</blockquote>
+            <footer class="home-review-meta">
+                <div class="home-review-author">${escapeHtml(review.author)}</div>
+                <div class="home-review-sub">
+                    <span class="home-review-date">${formatDate(review.date)}</span>
+                    ${shortName ? `<span class="home-review-sep" aria-hidden="true">&middot;</span><a class="home-review-property" href="${href}" onclick="event.preventDefault(); navigateToProperty(${propertyId});">${escapeHtml(shortName)}</a>` : ''}
+                </div>
+            </footer>
+        </article>
+    `;
+}
+
+function renderHomepageReviews() {
+    const section = document.getElementById('home-reviews');
+    const grid = document.getElementById('home-reviews-grid');
+    const ctaRow = document.getElementById('home-reviews-cta');
+    const description = section ? section.querySelector('.home-reviews-description') : null;
+    if (!section || !grid || !ctaRow) return;
+
+    const featured = getHomepageReviews(HOMEPAGE_REVIEWS_COUNT);
+    if (featured.length === 0) {
+        section.hidden = true;
+        return;
+    }
+
+    const { total, avgFormatted } = getReviewAggregate();
+    if (description) {
+        description.textContent = `${avgFormatted}\u2605 average across ${total} verified guest reviews.`;
+    }
+
+    grid.innerHTML = featured.map(renderHomepageReviewCard).join('');
+
+    const ctaLinks = PROPERTIES.map(p => {
+        const list = (typeof REVIEWS === 'object' && REVIEWS && REVIEWS[p.id]) ? REVIEWS[p.id] : [];
+        if (list.length === 0) return '';
+        const shortName = getPropertyShortName(p);
+        return `<a class="home-reviews-cta-link" href="${getListingRelativePath(p.id)}#property-reviews" onclick="event.preventDefault(); navigateToProperty(${p.id}, { scrollToSectionId: 'property-reviews' });">Read all ${list.length} ${escapeHtml(shortName)} reviews<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>`;
+    }).filter(Boolean).join('');
+    ctaRow.innerHTML = ctaLinks;
+
+    section.hidden = false;
+}
 
 function renderReviewListItem(review, index) {
     return `
@@ -2868,6 +3009,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setCanonicalAndSocial(null);
         }
         renderPropertyListings();
+        renderHomepageReviews();
         initHomeLocationsMap();
     })();
 });

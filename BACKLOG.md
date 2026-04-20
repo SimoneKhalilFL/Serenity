@@ -4,12 +4,11 @@ Active ideas to pick from when asking "what's next". Assistant reads this file a
 
 ## Open
 
-1. **Conversion analytics (event tracking)** — Cloudflare Web Analytics is shipped for free pageview-level data (traffic volume, sources, countries, devices, Core Web Vitals). With the new `listing-<id>.html` canonicals, per-listing traffic IS now visible in the CF dashboard. CF free tier still **does not** support custom events, so we can't see: contact-modal opens, form submits, "Check Availability" clicks, phone/email taps. **Next step:** add Plausible (~$9/mo) layered on top of CF, or build a small Cloudflare Worker that collects custom events from a `track()` helper.
-2. **A/B-test the hero** — swap video vs. still image, log engagement, see which drives more "Contact Owner" clicks.
-3. **More reviews surfaced** — pull the review carousel onto the home page (currently only on listing detail).
+1. **A/B-test the hero** — swap video vs. still image, log engagement, see which drives more "Contact Owner" clicks.
 
 ## Done (recent)
 
+- Homepage social proof: `Loved by Guests` section between "Why Book Direct" and "Where You'll Stay" with 6 curated reviews (round-robin across both listings, scored by named-author preference, comment length, and recency — fully deterministic so the set stays stable). Cards show 5-star row, quote, author, date, and a link to the listing it's for. Two CTAs at the bottom deep-link to each listing's full reviews (`#property-reviews`) via a new `scrollToSectionId` option on `navigateToProperty`. Aggregate line ("5.0★ average across 69 verified guest reviews") is computed from `REVIEWS` so it auto-updates when reviews change.
 - Mobile polish: pill-chip listing sub-nav (outlined chips, filled hover/focus), brand lockup `white-space: nowrap` (keeps "Serenity Rentals" single-line on narrow phones), hero H1 `text-wrap: balance` + tighter line-heights so the headline distributes cleanly on 2 lines instead of orphaning a word per line.
 - **Production bug: footer text leak** — the live `CLOUDFLARE_BEACON_TOKEN` secret was set to the entire Cloudflare `<script data-cf-beacon='{"token": "…"}'></script>` snippet (not just the token). That nested a second `<script>` tag inside the beacon tag and leaked `"}'>` as visible text below the footer on every page. `scripts/inject-cf-beacon.cjs` now extracts the bare token from a full-snippet paste, validates it (alnum only, no quotes/brackets), and strips the block entirely if the value can't be recovered — so invalid input can never again ship nested-script garbage.
 - Majestic Sun cover polish (explicit `coverImage` → 8th-floor Gulf balcony shot)
