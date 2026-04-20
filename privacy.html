@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://*.clarity.ms; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Privacy Policy | Serenity Rentals</title>
@@ -37,7 +37,7 @@
 
     <main class="legal-page" id="main">
         <h1>Privacy Policy</h1>
-        <p class="legal-updated">Last updated: April 17, 2026</p>
+        <p class="legal-updated">Last updated: April 20, 2026</p>
 
         <p>Serenity Rentals ("we", "us") operates <strong>stayatflorida.com</strong> to list owner-managed Florida Gulf Coast vacation rentals. This page explains what information we collect and how we use it.</p>
 
@@ -62,11 +62,12 @@
             <li><strong>GitHub Pages</strong> &mdash; hosts the static site.</li>
             <li><strong>OpenStreetMap</strong> &mdash; provides the map tiles shown on property pages.</li>
             <li><strong>Cloudflare Web Analytics</strong> &mdash; measures aggregate page traffic. It does not use cookies, does not fingerprint visitors, and does not collect personal data. See <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare&rsquo;s privacy policy</a> for details.</li>
+            <li><strong>Microsoft Clarity</strong> &mdash; records anonymized session behavior (clicks, scrolls, mouse movement) and produces aggregate heatmaps so we can understand which parts of the site are confusing or hard to use. We run Clarity in <em>cookieless</em> mode, meaning no persistent identifier is stored in your browser and sessions cannot be joined across visits. Form fields and text inputs are automatically masked in recordings. See <a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener" target="_blank">Microsoft&rsquo;s privacy statement</a> and the <a href="https://learn.microsoft.com/en-us/clarity/faq" rel="noopener" target="_blank">Clarity FAQ</a> for details.</li>
         </ul>
         <p>These services process data only as needed to deliver their service.</p>
 
         <h2>Cookies and tracking</h2>
-        <p>This site does not set advertising cookies and does not sell your data. We use <strong>Cloudflare Web Analytics</strong> to count page views and see which pages are popular; it is a privacy-friendly, cookie-less analytics service that does not identify individual visitors. Our contact form and availability integrations may cause your browser to connect to the third parties listed above when you use those features.</p>
+        <p>This site does not set advertising cookies and does not sell your data. We use <strong>Cloudflare Web Analytics</strong> (cookie-less) to count page views and <strong>Microsoft Clarity</strong> (configured cookie-less) to record anonymized session behavior for site improvement. Neither identifies you personally, and neither is used for advertising. Our contact form and availability integrations may cause your browser to connect to the third parties listed above when you use those features.</p>
 
         <h2>Your choices</h2>
         <p>You can contact us anytime at <a href="mailto:FloridaVacationRental2020@gmail.com">FloridaVacationRental2020@gmail.com</a> to ask what information we have about you from prior inquiries, or to request its deletion.</p>
@@ -88,5 +89,15 @@
     <!-- CF_BEACON_START -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "__CF_BEACON_TOKEN__"}'></script>
     <!-- CF_BEACON_END -->
+    <!-- CLARITY_START -->
+    <script>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "__CLARITY_PROJECT_ID__");
+        window.clarity && window.clarity("consent", false);
+    </script>
+    <!-- CLARITY_END -->
 </body>
 </html>

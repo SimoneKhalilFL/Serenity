@@ -36,6 +36,7 @@ Optional: run `bash scripts/apply-branch-protection.sh` after `gh auth login` (r
 | `WEB3FORMS_ACCESS_KEY` | Required | Web3Forms access key — injected into `config.js` during **Deploy to GitHub Pages** only |
 | `CALENDAR_FEEDS_JSON` | Required | iCal URLs for **Sync iCal availability** workflow |
 | `CLOUDFLARE_BEACON_TOKEN` | Optional | Cloudflare Web Analytics beacon token. When present, `scripts/inject-cf-beacon.cjs` injects the tracking snippet into all HTML pages during deploy. When absent, the snippet is **stripped** and no analytics ship. |
+| `CLARITY_PROJECT_ID` | Optional | Microsoft Clarity project ID for session recordings + heatmaps. When present, `scripts/inject-clarity.cjs` injects the Clarity tag into all HTML pages during deploy. When absent, the block is **stripped** and Clarity does not load. Runs cookieless by default. |
 
 Add them under **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
 
@@ -47,6 +48,14 @@ Do not paste these into committed files. Rotate keys in the Web3Forms / Cloudfla
 2. Open your site (or **Add a site** and enter `stayatflorida.com` — since the domain isn't on Cloudflare DNS, it will show a "JS Snippet" option).
 3. In the snippet Cloudflare shows you (`<script ... data-cf-beacon='{"token": "abc123..."}'></script>`), copy **only** the token string — the value between the quotes after `"token":`.
 4. Paste that value into the `CLOUDFLARE_BEACON_TOKEN` secret in GitHub Actions.
+
+### Finding the Microsoft Clarity project ID
+
+1. Sign up at [clarity.microsoft.com](https://clarity.microsoft.com/) (free forever — no credit card, no traffic cap).
+2. Create a new project with your site name and URL `https://stayatflorida.com/`.
+3. In the install instructions, Microsoft shows a `<script>(function(c,l,a,r,i,t,y){…})(window,document,"clarity","script","r7a8b9c0de");</script>` snippet. Copy **only** the last string — the project ID (e.g. `r7a8b9c0de`) — not the whole snippet. The injector can recover the bare ID from a full-snippet paste but the bare value is safer.
+4. Paste that value into the `CLARITY_PROJECT_ID` secret in GitHub Actions.
+5. In the Clarity dashboard → **Settings** → **Setup**, toggle **Cookies** to **OFF**. This belt-and-suspenders the cookieless mode already enforced in the injected snippet (via `clarity("consent", false)`), so no session cookies are ever set on your visitors.
 
 ## Reporting issues
 

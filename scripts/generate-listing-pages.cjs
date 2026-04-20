@@ -68,7 +68,9 @@ function buildPage(property) {
 
     // CSP here is the slim one used by 404/privacy/terms (no Leaflet, no
     // Web3Forms, no media.scurto.net). Kept in sync with other static pages.
-    const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; base-uri 'self'; object-src 'none'";
+    // Microsoft Clarity (www.clarity.ms + *.clarity.ms) allowlisted for session
+    // recordings & heatmaps; runs cookieless via clarity("consent", false).
+    const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://*.clarity.ms; base-uri 'self'; object-src 'none'";
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -139,6 +141,16 @@ function buildPage(property) {
     <!-- CF_BEACON_START -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "__CF_BEACON_TOKEN__"}'></script>
     <!-- CF_BEACON_END -->
+    <!-- CLARITY_START -->
+    <script>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "__CLARITY_PROJECT_ID__");
+        window.clarity && window.clarity("consent", false);
+    </script>
+    <!-- CLARITY_END -->
 </body>
 </html>
 `;
