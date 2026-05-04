@@ -19,7 +19,7 @@ const SEO_CONFIG = {
     defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
     /** ~155 chars — Bing/Google tools expect roughly 25–160 for meta description. */
     defaultDescription: 'Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.',
-    defaultOgImage: 'images/og/default.jpg'
+    defaultOgImage: 'images/og/default.jpg?v=postcard-v1'
 };
 
 /** Absolute URL for an asset path or full URL (uses SITE_BASE_URL from config.js). */

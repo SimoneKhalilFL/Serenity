@@ -25,7 +25,7 @@ const SEO_CONFIG = {
     siteName: 'Serenity Rentals',
     defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
     defaultDescription: 'Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.',
-    defaultOgImage: 'images/og/default.jpg'
+    defaultOgImage: 'images/og/default.jpg?v=postcard-v1'
 };
 
 const ORGANIZATION_SAME_AS = ['https://www.facebook.com/FloridaRental2020'];

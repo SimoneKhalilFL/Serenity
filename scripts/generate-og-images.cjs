@@ -144,16 +144,30 @@ async function main() {
     fs.mkdirSync(OUT_DIR, { recursive: true });
     console.log('Generating Open Graph preview cards (1200x630)...');
 
-    await renderCard(
-        path.join(ROOT, HOME_BG_REL),
-        path.join(OUT_DIR, 'default.jpg'),
-        {
-            title: 'Gulf-Front Florida Stays',
-            subtitle: 'Panama City Beach & Destin — by owner',
-            tag: 'BOOK DIRECT · NO OTA FEES',
-            brand: 'SERENITY RENTALS'
+    // The homepage card (images/og/default.jpg) is curated by hand — a two-up
+    // postcard featuring Majestic Sun + Tidewater with amenity bullets — and
+    // is committed to the repo. This generator will NOT overwrite it on every
+    // deploy. Set OG_REGENERATE_HOME=1 to force the auto-generated fallback.
+    if (process.env.OG_REGENERATE_HOME === '1') {
+        await renderCard(
+            path.join(ROOT, HOME_BG_REL),
+            path.join(OUT_DIR, 'default.jpg'),
+            {
+                title: 'Gulf-Front Florida Stays',
+                subtitle: 'Panama City Beach & Destin — by owner',
+                tag: 'BOOK DIRECT · NO OTA FEES',
+                brand: 'SERENITY RENTALS'
+            }
+        );
+    } else {
+        const homePath = path.join(OUT_DIR, 'default.jpg');
+        if (fs.existsSync(homePath)) {
+            const { size } = fs.statSync(homePath);
+            console.log(`  ${path.relative(ROOT, homePath)}  (${Math.round(size / 1024)} KB)  [curated, kept as-is]`);
+        } else {
+            console.warn('  [warn] images/og/default.jpg missing and OG_REGENERATE_HOME!=1; homepage will 404.');
         }
-    );
+    }
 
     for (const p of PROPERTIES) {
         const rel = getCoverImagePath(p);
