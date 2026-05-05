@@ -894,10 +894,6 @@ function showContactModal() {
                     <span class="error-message" id="email-error"></span>
                 </div>
                 <div class="form-group">
-                    <label for="user-phone">Your Phone Number</label>
-                    <input type="tel" id="user-phone" name="phone" placeholder="(555) 123-4567">
-                </div>
-                <div class="form-group">
                     <label for="user-message">Your Message</label>
                     <textarea id="user-message" name="message" rows="3" placeholder="Tell us about your trip, how many guests you're bringing, and any questions or special requests..."></textarea>
                 </div>
@@ -927,7 +923,6 @@ async function submitContactForm(event) {
     event.preventDefault();
     
     const emailInput = document.getElementById('user-email');
-    const phoneInput = document.getElementById('user-phone');
     const messageInput = document.getElementById('user-message');
     const subjectInput = document.getElementById('form-subject');
     const emailError = document.getElementById('email-error');
@@ -993,10 +988,7 @@ async function submitContactForm(event) {
     body += `CONTACT INFORMATION\n`;
     body += `================\n`;
     body += `Email: ${emailInput.value}\n`;
-    if (phoneInput.value) {
-        body += `Phone: ${phoneInput.value}\n`;
-    }
-    
+
     if (messageInput.value) {
         body += `\nMESSAGE\n`;
         body += `================\n`;
@@ -1023,8 +1015,7 @@ async function submitContactForm(event) {
                 subject: subject,
                 name: emailInput.value.split('@')[0] || 'Guest',
                 email: emailInput.value,
-                message: body,
-                phone: phoneInput.value || ''
+                message: body
             })
         });
         let data = {};
@@ -1045,7 +1036,6 @@ async function submitContactForm(event) {
                 statusEl.focus();
             }
             if (emailInput) emailInput.disabled = true;
-            if (phoneInput) phoneInput.disabled = true;
             if (messageInput) messageInput.disabled = true;
             if (submitBtn) {
                 submitBtn.disabled = false;
@@ -1445,13 +1435,6 @@ function updateListingStickyCta(property) {
             <span class="listing-sticky-placeholder">Select dates for an estimated total</span>
         `;
     }
-    const phoneBtn = bar.querySelector('[data-sticky-tel]');
-    if (phoneBtn && c.phoneTel) {
-        phoneBtn.href = `tel:${c.phoneTel}`;
-        phoneBtn.style.display = '';
-    } else if (phoneBtn) {
-        phoneBtn.style.display = 'none';
-    }
 }
 
 function renderKeyPolicyChips(property) {
@@ -1472,12 +1455,9 @@ function renderKeyPolicyChips(property) {
 
 function renderListingTrustSidebar(property) {
     const c = getSiteContact();
-    const phoneHtml = c.phoneTel && c.phoneDisplay
-        ? `<p class="listing-trust-line"><span class="listing-trust-label">Call or text</span> <a class="listing-trust-phone" href="tel:${encodeURIComponent(c.phoneTel)}">${escapeHtml(c.phoneDisplay)}</a></p>`
-        : '';
     const emailHtml = `<p class="listing-trust-line"><span class="listing-trust-label">Email</span> <a class="listing-trust-email" href="mailto:${encodeURIComponent(c.email)}">${escapeHtml(c.email)}</a></p>`;
     const reply = `<p class="listing-reply-note">${escapeHtml(c.replyBlurb)}</p>`;
-    return `<div class="listing-sidebar-trust">${phoneHtml}${emailHtml}${reply}</div>`;
+    return `<div class="listing-sidebar-trust">${emailHtml}${reply}</div>`;
 }
 
 // ==========================================
@@ -1604,7 +1584,6 @@ function renderPropertyDetail(property) {
                     <div class="listing-sticky-cta-estimate" id="listing-sticky-cta-estimate"></div>
                     <div class="listing-sticky-cta-actions">
                         <a class="btn btn-primary btn-sticky" href="#" onclick="event.preventDefault(); showContactModal();">Email to Book</a>
-                        ${getSiteContact().phoneTel ? `<a class="btn btn-secondary btn-sticky" href="#" data-sticky-tel>Call</a>` : ''}
                     </div>
                 </div>
             </div>

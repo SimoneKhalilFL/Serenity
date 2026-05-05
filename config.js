@@ -16,9 +16,9 @@ const WEB3FORMS_ACCESS_KEY = '__WEB3FORMS_ACCESS_KEY__';
 
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
-    phoneTel: '+18504049822',
-    phoneDisplay: '(850) 404-9822',
-    replyBlurb: 'We usually reply within 24 hours. For a quicker answer, feel free to text us.',
+    phoneTel: '',
+    phoneDisplay: '',
+    replyBlurb: 'We usually reply within 24 hours. Email is the fastest way to reach us.',
     cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book. Ask about flexibility if your plans change.'
 };
 
