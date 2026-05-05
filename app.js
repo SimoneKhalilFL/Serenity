@@ -83,7 +83,7 @@ function getSiteContact() {
         email: 'FloridaVacationRental2020@gmail.com',
         phoneTel: '',
         phoneDisplay: '',
-        replyBlurb: 'We usually reply within 24 hours. For a quicker answer, feel free to text us.',
+        replyBlurb: 'We usually reply within 24 hours. Email is the fastest way to reach us.',
         cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book.'
     };
 }
