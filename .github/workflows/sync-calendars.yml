@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
 
       - name: Install dependencies
@@ -48,9 +48,16 @@ jobs:
           else
             git commit -m "chore(data): sync availability from iCal"
             # Remote can move between checkout and push (e.g. deploy workflow). Retry fetch/rebase/push.
+            # iCal feeds are the source of truth, so prefer our regenerated data on conflict (-X theirs
+            # picks the rebasing branch's version, i.e. our fresh sync output).
             for i in 1 2 3 4 5; do
               git fetch origin main
-              git rebase origin/main || exit 1
+              if ! git rebase -X theirs origin/main; then
+                echo "::warning::Rebase failed unexpectedly; aborting and retrying."
+                git rebase --abort || true
+                sleep 3
+                continue
+              fi
               if git push origin main; then
                 echo "Pushed availability update."
                 break
