@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "sync-calendars": "node scripts/sync-calendars.cjs",
+    "sync-pricelabs": "node scripts/sync-pricelabs.cjs",
     "generate-sitemap": "node scripts/generate-sitemap.cjs",
     "generate-listing-schema": "node scripts/generate-listing-schema.cjs",
     "generate-listing-pages": "node scripts/generate-listing-pages.cjs",

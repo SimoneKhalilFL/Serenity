@@ -10,6 +10,9 @@ let currentCalendarMonth = new Date();
 /** Synced nights from data/availability-{id}.json (iCal); merged with config unavailableDates. */
 const syncedUnavailableByListingId = {};
 
+/** Synced daily prices from data/pricing-{id}.json (PriceLabs). Empty object = no PriceLabs data for that listing yet; getAdjustedRate() falls back to config.seasonalAdjustments. */
+const syncedPricingByListingId = {};
+
 // ==========================================
 // SEO Helper Functions
 // ==========================================
@@ -546,18 +549,41 @@ async function fetchAvailabilityForListing(propertyId) {
     }
 }
 
+async function fetchPricingForListing(propertyId) {
+    if (Object.prototype.hasOwnProperty.call(syncedPricingByListingId, propertyId)) {
+        return;
+    }
+    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
+    const url = base ? `${base}/data/pricing-${propertyId}.json` : `/data/pricing-${propertyId}.json`;
+    try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (!r.ok) {
+            syncedPricingByListingId[propertyId] = {};
+            return;
+        }
+        const data = await r.json();
+        const prices = data && typeof data.prices === 'object' && data.prices !== null ? data.prices : {};
+        syncedPricingByListingId[propertyId] = prices;
+    } catch {
+        syncedPricingByListingId[propertyId] = {};
+    }
+}
+
 function getAdjustedRate(date, property) {
     const dateStr = dateToString(date);
+
+    const pricelabsPrices = syncedPricingByListingId[property.id];
+    if (pricelabsPrices && typeof pricelabsPrices[dateStr] === 'number' && Number.isFinite(pricelabsPrices[dateStr])) {
+        return Math.round(pricelabsPrices[dateStr]);
+    }
+
     let rate = property.baseNightlyRate;
-    
-    // Apply seasonal adjustments
     for (const adjustment of property.seasonalAdjustments) {
         if (dateStr >= adjustment.startDate && dateStr <= adjustment.endDate) {
             rate *= adjustment.adjustment;
             break;
         }
     }
-    
     return Math.round(rate);
 }
 
@@ -671,7 +697,10 @@ async function navigateToProperty(propertyId, options = {}) {
     selectedStartDate = null;
     selectedEndDate = null;
 
-    await fetchAvailabilityForListing(property.id);
+    await Promise.all([
+        fetchAvailabilityForListing(property.id),
+        fetchPricingForListing(property.id)
+    ]);
 
     const seo = generatePropertySEO(property);
     updatePageMeta(seo.title, seo.description);

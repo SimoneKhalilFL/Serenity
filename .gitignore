@@ -6,3 +6,4 @@ Desktop.ini
 .env.local
 node_modules/
 scripts/calendar-feeds.config.json
+scripts/pricelabs-feeds.config.json

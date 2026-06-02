@@ -1,0 +1,76 @@
+# Fetches daily prices from the PriceLabs Customer API and commits
+# data/pricing-{id}.json. Requires secrets:
+#   - PRICELABS_API_KEY     (string, from PriceLabs Settings → API Details)
+#   - PRICELABS_FEEDS_JSON  (JSON, see scripts/pricelabs-feeds.config.example.json)
+# Uses GitHub Actions minutes — monitor: repo Settings → Actions; account Billing → Actions usage.
+name: Sync PriceLabs pricing
+
+on:
+  schedule:
+    # Every 6 hours (UTC) = 4 runs/day. PriceLabs only re-prices a couple times
+    # per day, so 30-min cadence (like iCal) would be wasted minutes.
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-pricelabs
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Needed so rebase before push can integrate remote commits (avoids rejected push).
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run PriceLabs sync
+        env:
+          PRICELABS_API_KEY: ${{ secrets.PRICELABS_API_KEY }}
+          PRICELABS_FEEDS_JSON: ${{ secrets.PRICELABS_FEEDS_JSON }}
+        run: node scripts/sync-pricelabs.cjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pricing-*.json
+          if git diff --staged --quiet; then
+            echo "No pricing changes to commit."
+          else
+            git commit -m "chore(data): sync pricing from PriceLabs"
+            # Remote can move between checkout and push (e.g. the iCal sync workflow).
+            # PriceLabs is the source of truth for pricing, so prefer our regenerated
+            # data on conflict (-X theirs picks the rebasing branch's version).
+            for i in 1 2 3 4 5; do
+              git fetch origin main
+              if ! git rebase -X theirs origin/main; then
+                echo "::warning::Rebase failed unexpectedly; aborting and retrying."
+                git rebase --abort || true
+                sleep 3
+                continue
+              fi
+              if git push origin main; then
+                echo "Pushed pricing update."
+                break
+              fi
+              if [ "$i" -eq 5 ]; then
+                echo "::error::git push failed after 5 attempts (remote kept moving)."
+                exit 1
+              fi
+              echo "Push rejected, retrying ($i/5)..."
+              sleep 3
+            done
+          fi
