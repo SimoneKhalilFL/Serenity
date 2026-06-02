@@ -2301,12 +2301,11 @@ function selectDate(date) {
     // a morning turnover. stayRangeCrossesUnavailable() below guarantees we never
     // include a booked night in [checkIn, checkOut).
     if (isUnavailable) {
-        const allowedAsCheckout =
-            selectedStartDate && !selectedEndDate && date > selectedStartDate;
-        if (!allowedAsCheckout) return;
-    }
-    
-    if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
+        if (!selectedStartDate || date <= selectedStartDate) return;
+        // Force as checkout, even if a checkout was already chosen (this lets the
+        // user click a booked date to extend / move the checkout).
+        selectedEndDate = date;
+    } else if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
         // Starting new selection
         selectedStartDate = date;
         selectedEndDate = null;
