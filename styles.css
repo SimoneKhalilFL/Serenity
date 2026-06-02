@@ -1855,7 +1855,7 @@ button {
     border: 2px solid transparent;
 }
 
-.calendar-day:not(.empty):not(.unavailable):not(.past):hover {
+.calendar-day:not(.empty):not(.unavailable):not(.past):not(.turnover-checkout):hover {
     background-color: var(--bg-light);
     border-color: var(--primary-color);
 }
@@ -1912,6 +1912,60 @@ button {
 .calendar-day.unavailable.in-range {
     background: linear-gradient(145deg, #FECACA 0%, #FCA5A5 100%);
     color: #7F1D1D;
+}
+
+/* --- Turnover (split) cells: morning vs. afternoon availability ---
+   - turnover-checkin: this date is booked but yesterday was free. Next guest
+     arrives this afternoon; our guest can use this morning as a checkout.
+     Visual: top-left (morning) light, bottom-right (afternoon) red.
+   - turnover-checkout: this date is free but yesterday was booked. Previous
+     guest leaves this morning; our guest can check in this afternoon.
+     Visual: top-left (morning) red, bottom-right (afternoon) light. */
+.calendar-day.unavailable.turnover-checkin {
+    background: linear-gradient(135deg, #FFFFFF 50%, #FCA5A5 50%);
+    color: #7F1D1D;
+    cursor: pointer;
+    border-color: #DC2626;
+}
+
+.calendar-day.unavailable.turnover-checkin:hover {
+    background: linear-gradient(135deg, #F3F4F6 50%, #F87171 50%);
+    border-color: var(--primary-color);
+}
+
+/* When our guest selects a turnover-checkin date as their checkout: the
+   .unavailable class is intentionally dropped (see renderCalendar). Top-left
+   (our morning departure) becomes our primary blue. */
+.calendar-day.turnover-checkin.selected {
+    background: linear-gradient(135deg, var(--primary-color) 50%, #FCA5A5 50%);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.calendar-day.turnover-checkout {
+    background: linear-gradient(135deg, #FCA5A5 50%, #FFFFFF 50%);
+    color: #7F1D1D;
+    cursor: pointer;
+    border-color: #DC2626;
+}
+
+.calendar-day.turnover-checkout:hover {
+    background: linear-gradient(135deg, #F87171 50%, #F3F4F6 50%);
+    border-color: var(--primary-color);
+}
+
+/* When our guest selects a turnover-checkout date as their check-in: bottom-right
+   (our afternoon arrival) becomes our primary blue. */
+.calendar-day.turnover-checkout.selected {
+    background: linear-gradient(135deg, #FCA5A5 50%, var(--primary-color) 50%);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Legend swatch for the turnover state (both halves visible in a small square). */
+.legend-color.turnover {
+    background: linear-gradient(135deg, #FCA5A5 50%, #FFFFFF 50%);
+    border: 1px solid #DC2626;
 }
 
 .calendar-legend {

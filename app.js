@@ -2228,12 +2228,22 @@ function renderCalendar(property) {
     }
     
     // Days of the month
+    const merged = getMergedUnavailableDates(property);
     for (let day = 1; day <= daysInMonth; day++) {
         const date = new Date(year, month, day);
         const dateStr = dateToString(date);
         const isPast = isPastCalendarDay(date);
-        const isUnavailable = !isPast && getMergedUnavailableDates(property).includes(dateStr);
+        const isUnavailable = !isPast && merged.includes(dateStr);
         const isCheckout = !isPast && selectedEndDate && dateStr === dateToString(selectedEndDate);
+
+        // Boundary days where someone else's booking starts or ends. Drives the
+        // diagonal "split" rendering in CSS so guests can see morning-vs-afternoon
+        // availability at turnovers (Airbnb-style half cells).
+        const prevDateStr = dateToString(new Date(year, month, day - 1));
+        const prevBooked = merged.includes(prevDateStr);
+        const isTurnoverCheckin = !isPast && isUnavailable && !prevBooked;
+        const isTurnoverCheckout = !isPast && !isUnavailable && prevBooked;
+
         // A booked night used as our checkout day renders as "selected" (blue),
         // not "booked" (red), since the guest will only stay until that morning.
         const showAsUnavailable = isUnavailable && !isCheckout;
@@ -2244,6 +2254,8 @@ function renderCalendar(property) {
         } else if (showAsUnavailable) {
             classes += ' unavailable';
         }
+        if (isTurnoverCheckin) classes += ' turnover-checkin';
+        if (isTurnoverCheckout) classes += ' turnover-checkout';
         
         if (!isPast && selectedStartDate && dateStr === dateToString(selectedStartDate)) {
             classes += ' selected';
@@ -2260,11 +2272,15 @@ function renderCalendar(property) {
         
         const dayTitle = isPast
             ? ' title="Past dates cannot be selected"'
-            : showAsUnavailable
-                ? ' title="Booked — not available for check-in (can still be a checkout day)"'
-                : isCheckout && isUnavailable
-                    ? ' title="Checkout day (next guest checks in)"'
-                    : '';
+            : isCheckout && isTurnoverCheckin
+                ? ' title="Checkout (you leave morning, next guest arrives afternoon)"'
+                : isTurnoverCheckin
+                    ? ' title="Booked tonight — can be your checkout (morning only)"'
+                    : isTurnoverCheckout
+                        ? ' title="Available — previous guest checks out this morning"'
+                        : showAsUnavailable
+                            ? ' title="Booked — not available for check-in"'
+                            : '';
         calendarHTML += `<div class="${classes}"${dayTitle} onclick="selectDate(new Date(${year}, ${month}, ${day}))">${day}</div>`;
     }
     
@@ -2278,6 +2294,10 @@ function renderCalendar(property) {
                 <div class="legend-item">
                     <div class="legend-color unavailable"></div>
                     <span>Booked</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color turnover"></div>
+                    <span>Turnover day (split = check-in/out possible)</span>
                 </div>
             </div>
         </div>
