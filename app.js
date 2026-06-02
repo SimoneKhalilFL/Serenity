@@ -2233,18 +2233,22 @@ function renderCalendar(property) {
         const dateStr = dateToString(date);
         const isPast = isPastCalendarDay(date);
         const isUnavailable = !isPast && getMergedUnavailableDates(property).includes(dateStr);
+        const isCheckout = !isPast && selectedEndDate && dateStr === dateToString(selectedEndDate);
+        // A booked night used as our checkout day renders as "selected" (blue),
+        // not "booked" (red), since the guest will only stay until that morning.
+        const showAsUnavailable = isUnavailable && !isCheckout;
         
         let classes = 'calendar-day';
         if (isPast) {
             classes += ' past';
-        } else if (isUnavailable) {
+        } else if (showAsUnavailable) {
             classes += ' unavailable';
         }
         
         if (!isPast && selectedStartDate && dateStr === dateToString(selectedStartDate)) {
             classes += ' selected';
         }
-        if (!isPast && selectedEndDate && dateStr === dateToString(selectedEndDate)) {
+        if (isCheckout) {
             classes += ' selected';
         }
         
@@ -2256,9 +2260,11 @@ function renderCalendar(property) {
         
         const dayTitle = isPast
             ? ' title="Past dates cannot be selected"'
-            : isUnavailable
-                ? ' title="Booked — not available for check-in"'
-                : '';
+            : showAsUnavailable
+                ? ' title="Booked — not available for check-in (can still be a checkout day)"'
+                : isCheckout && isUnavailable
+                    ? ' title="Checkout day (next guest checks in)"'
+                    : '';
         calendarHTML += `<div class="${classes}"${dayTitle} onclick="selectDate(new Date(${year}, ${month}, ${day}))">${day}</div>`;
     }
     
@@ -2288,8 +2294,16 @@ function selectDate(date) {
     }
     
     const dateStr = dateToString(date);
-    if (getMergedUnavailableDates(currentProperty).includes(dateStr)) {
-        return;
+    const isUnavailable = getMergedUnavailableDates(currentProperty).includes(dateStr);
+
+    // An unavailable night cannot be the START of our stay (someone else is occupying
+    // it). But it CAN be the checkout day — the previous guest's check-in day is just
+    // a morning turnover. stayRangeCrossesUnavailable() below guarantees we never
+    // include a booked night in [checkIn, checkOut).
+    if (isUnavailable) {
+        const allowedAsCheckout =
+            selectedStartDate && !selectedEndDate && date > selectedStartDate;
+        if (!allowedAsCheckout) return;
     }
     
     if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
