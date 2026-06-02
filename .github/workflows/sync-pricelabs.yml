@@ -6,10 +6,18 @@
 name: Sync PriceLabs pricing
 
 on:
-  schedule:
-    # Every 6 hours (UTC) = 4 runs/day. PriceLabs only re-prices a couple times
-    # per day, so 30-min cadence (like iCal) would be wasted minutes.
-    - cron: '0 */6 * * *'
+  # NOTE: Scheduled trigger is intentionally disabled until the PriceLabs
+  # Customer API is enabled on the account, the PRICELABS_API_KEY +
+  # PRICELABS_FEEDS_JSON secrets are added, and fetchPriceLabsForListing()
+  # in scripts/sync-pricelabs.cjs has the real HTTP call filled in. Until
+  # then, this workflow only runs when manually triggered via the Actions
+  # tab → "Run workflow", which avoids spamming red runs every 6 hours.
+  # To re-enable: uncomment the schedule: block below.
+  #
+  # schedule:
+  #   # Every 6 hours (UTC) = 4 runs/day. PriceLabs only re-prices a couple times
+  #   # per day, so 30-min cadence (like iCal) would be wasted minutes.
+  #   - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
