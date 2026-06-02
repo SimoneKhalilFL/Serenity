@@ -132,9 +132,11 @@ function writeAvailabilityFile(listingId, dates, sources) {
 async function main() {
     const config = loadConfig();
     if (!config || !config.listings) {
-        console.log('No calendar config found. Set CALENDAR_FEEDS_JSON or add scripts/calendar-feeds.config.json');
-        console.log('See scripts/calendar-feeds.config.example.json');
-        process.exit(0);
+        // Hard-fail so missing/expired CALENDAR_FEEDS_JSON secret surfaces as a red workflow
+        // run instead of a silent green one that leaves availability data stale.
+        console.error('ERROR: No calendar config found. Set CALENDAR_FEEDS_JSON secret or add scripts/calendar-feeds.config.json');
+        console.error('See scripts/calendar-feeds.config.example.json');
+        process.exit(1);
     }
 
     const listings = config.listings;
