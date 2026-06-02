@@ -440,7 +440,7 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
         maxGuests: 6,
         bedrooms: 2,
         bathrooms: 2,
-        baseNightlyRate: 200,
+        baseNightlyRate: 300,
         cleaningFee: 250,
         taxRate: 0.12,
         refundableDamageDeposit: 300,
@@ -568,22 +568,26 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
             "Occupancy: 6"
         ],
         seasonalAdjustments: [
-            // 2026 Pricing based on calendar
-            { startDate: "2026-03-01", endDate: "2026-03-14", adjustment: 0.75 },   // Early March: ~$150/night
-            { startDate: "2026-03-15", endDate: "2026-03-28", adjustment: 1.05 },   // Mid-Late March: $210/night
-            { startDate: "2026-03-29", endDate: "2026-03-31", adjustment: 1.375 },  // End March: $275/night
-            { startDate: "2026-04-01", endDate: "2026-04-30", adjustment: 1.45 },   // April: ~$290/night
-            { startDate: "2026-05-01", endDate: "2026-05-23", adjustment: 1.375 },  // Early May: $275/night
-            { startDate: "2026-05-24", endDate: "2026-05-31", adjustment: 1.70 },   // Memorial Day: $340/night
-            { startDate: "2026-06-01", endDate: "2026-06-30", adjustment: 1.875 },  // June: $375/night
-            { startDate: "2026-07-01", endDate: "2026-07-31", adjustment: 1.875 },  // July: $375/night
-            { startDate: "2026-08-01", endDate: "2026-08-08", adjustment: 1.375 },  // Early Aug: $275/night
-            { startDate: "2026-08-09", endDate: "2026-08-31", adjustment: 1.10 },   // Late Aug: $220/night
-            { startDate: "2026-09-01", endDate: "2026-09-30", adjustment: 1.10 },   // September: $220/night
-            { startDate: "2026-10-01", endDate: "2026-10-31", adjustment: 1.10 },   // October: $220/night
-            { startDate: "2026-11-01", endDate: "2026-11-30", adjustment: 1.10 },   // November: $220/night
-            { startDate: "2026-12-01", endDate: "2026-12-12", adjustment: 0.90 },   // Early Dec: $180/night
-            { startDate: "2026-12-13", endDate: "2026-12-31", adjustment: 1.125 }   // Holiday: $225/night
+            // Mirrors PriceLabs daily prices, averaged into seasonal buckets (base $300).
+            // Until the PriceLabs Customer API sync is enabled (scripts/sync-pricelabs.cjs),
+            // these are hand-maintained. When data/pricing-5.json arrives, those daily
+            // prices will override these per-day via app.js getAdjustedRate().
+            { startDate: "2026-06-01", endDate: "2026-06-30", adjustment: 1.43 },   // June: ~$429/night
+            { startDate: "2026-07-01", endDate: "2026-07-07", adjustment: 2.07 },   // July 4th week: ~$621/night
+            { startDate: "2026-07-08", endDate: "2026-07-31", adjustment: 1.82 },   // Mid-Late July: ~$546/night
+            { startDate: "2026-08-01", endDate: "2026-08-31", adjustment: 1.30 },   // August: ~$390/night
+            { startDate: "2026-09-01", endDate: "2026-09-30", adjustment: 1.23 },   // September: ~$369/night
+            { startDate: "2026-10-01", endDate: "2026-10-31", adjustment: 1.40 },   // October: ~$420/night
+            { startDate: "2026-11-01", endDate: "2026-11-30", adjustment: 1.13 },   // November: ~$339/night
+            { startDate: "2026-12-01", endDate: "2026-12-25", adjustment: 1.08 },   // Early-Mid Dec: ~$324/night
+            { startDate: "2026-12-26", endDate: "2026-12-31", adjustment: 1.57 },   // NYE week: ~$471/night
+            { startDate: "2027-01-01", endDate: "2027-01-31", adjustment: 1.13 },   // January: ~$339/night
+            { startDate: "2027-02-01", endDate: "2027-02-28", adjustment: 1.20 },   // February: ~$360/night
+            { startDate: "2027-03-01", endDate: "2027-03-31", adjustment: 1.57 },   // March / Spring Break: ~$471/night
+            { startDate: "2027-04-01", endDate: "2027-04-09", adjustment: 1.57 },   // Early April: ~$471/night
+            { startDate: "2027-04-10", endDate: "2027-04-18", adjustment: 2.27 },   // Easter peak: ~$681/night
+            { startDate: "2027-04-19", endDate: "2027-04-30", adjustment: 1.40 },   // Late April: ~$420/night
+            { startDate: "2027-05-01", endDate: "2027-05-31", adjustment: 1.25 }    // May: ~$375/night
         ],
         // Booked/blocked nights: data/availability-5.json (iCal from VRBO/Airbnb/Booking). Block on the OTA calendar—no need to list dates here unless a rare edge case is not on any feed.
         unavailableDates: [],
