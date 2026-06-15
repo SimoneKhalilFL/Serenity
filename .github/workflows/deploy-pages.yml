@@ -5,6 +5,20 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Bot commits from GITHUB_TOKEN do NOT fire `push`, so explicitly chain
+  # off our data-sync workflows. Without this, data/availability-*.json and
+  # data/pricing-*.json refresh in the repo but the live site keeps serving
+  # the last human-deployed version (broke June 2026: 13 days of OTA bookings
+  # were committed but never deployed).
+  workflow_run:
+    workflows:
+      - Sync iCal availability
+      - Sync PriceLabs pricing
+    types: [completed]
+    branches: [main]
+  # Lets you re-deploy on demand from the Actions tab (e.g. recover from a
+  # missed bot-triggered deploy without making a code commit).
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,6 +32,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Skip if the upstream sync workflow failed; still deploy on direct `push` or manual run.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
