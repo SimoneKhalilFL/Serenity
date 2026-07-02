@@ -17,11 +17,12 @@ const syncedPricingByListingId = {};
 // SEO Helper Functions
 // ==========================================
 const SEO_CONFIG = {
-    siteName: 'Serenity Rentals',
+    siteName: 'StayAtFlorida',
+    siteTagline: 'Luxury Beachfront Vacation Homes',
     /** Browser tab + bookmark title (always; listing pages still use property titles for og/twitter). */
-    defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
+    defaultTitle: 'StayAtFlorida | Luxury Beachfront Vacation Homes',
     /** ~155 chars — Bing/Google tools expect roughly 25–160 for meta description. */
-    defaultDescription: 'Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.',
+    defaultDescription: 'Book luxury owner-hosted beachfront vacation homes on Florida’s Gulf Coast with StayAtFlorida. Enjoy direct beach access, Gulf views, resort amenities, and direct-booking savings.',
     defaultOgImage: 'images/og/default.jpg?v=postcard-v1'
 };
 
@@ -195,18 +196,25 @@ function generatePropertySEO(property) {
         : `${city} vacation rental`;
 
     let title;
-    if (isFlorida) {
-        title = `${headline} | ${city} | Book Direct | Serenity Rentals`;
+    if (property.metaTitle) {
+        title = property.metaTitle;
+    } else if (isFlorida) {
+        title = `${headline} | ${city} | Book Direct | ${SEO_CONFIG.siteName}`;
     } else {
-        title = `${headline} | ${city} Vacation Rental | Serenity Rentals`;
+        title = `${headline} | ${city} Vacation Rental | ${SEO_CONFIG.siteName}`;
     }
-    if (title.length > 70) {
-        title = `${property.title} | ${city} | Serenity Rentals`;
+    if (!property.metaTitle && title.length > 70) {
+        title = `${property.title} | ${city} | ${SEO_CONFIG.siteName}`;
     }
 
-    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct pricing—no OTA fees. ${areaPhrase}. Book direct with Serenity Rentals.`;
-    if (description.length > 168) {
-        description = `${description.slice(0, 165).trim()}…`;
+    let description;
+    if (property.metaDescription) {
+        description = property.metaDescription;
+    } else {
+        description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct pricing—no OTA fees. ${areaPhrase}. Book direct with ${SEO_CONFIG.siteName}.`;
+        if (description.length > 168) {
+            description = `${description.slice(0, 165).trim()}…`;
+        }
     }
 
     return { title, description, city, state, isFlorida };
@@ -1167,6 +1175,13 @@ function createPropertyCard(property, isFeatured = false) {
     // Prefer the listing's explicit coverImage; fall back to the first gallery photo.
     const firstImage = getCoverImage(property);
     
+    const subtitleHtml = property.cardSubtitle
+        ? `<p class="property-card-subtitle">${escapeHtml(property.cardSubtitle)}</p>`
+        : '';
+    const shortDescHtml = property.cardShortDescription
+        ? `<p class="property-card-blurb">${escapeHtml(property.cardShortDescription)}</p>`
+        : '';
+
     card.innerHTML = `
         <div class="property-card-image">
             <img src="${escapeHtml(firstImage)}" alt="${escapeHtml(altText)}" loading="lazy">
@@ -1175,6 +1190,7 @@ function createPropertyCard(property, isFeatured = false) {
         <div class="property-card-content">
             <div class="property-card-header">
                 <h3 class="property-card-title"><a class="property-card-title-link" href="${getListingRelativePath(property.id)}" onclick="event.preventDefault(); event.stopPropagation(); navigateToProperty(${property.id});">${escapeHtml(property.title)}</a></h3>
+                ${subtitleHtml}
                 <div class="property-card-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1183,6 +1199,7 @@ function createPropertyCard(property, isFeatured = false) {
                     <span>${escapeHtml(property.location)}</span>
                 </div>
                 <p class="property-card-sleep-line">Sleeps ${property.maxGuests} · ${property.bedrooms} BR</p>
+                ${shortDescHtml}
             </div>
             <div class="property-card-details">
                 <div class="property-detail-item">
@@ -1510,9 +1527,13 @@ function renderPropertyDetail(property) {
     // errors in Google Rich Results when navigating client-side.
 
     const displayTitle = property.listingHeadline || property.title;
-    const displaySubtitle = property.listingTagline || (isFlorida
+    const displaySubtitle = property.listingBrandSubtitle || property.listingTagline || (isFlorida
         ? `${city}, Florida`
         : `Vacation rental in ${city}`);
+    const displayTagline = property.listingBrandSubtitle && property.listingTagline
+        ? property.listingTagline
+        : '';
+    const displayHeroCopy = property.listingHeroCopy || '';
     const homeHref = escapeHtml(getSiteBaseHref());
     const propsHref = `${escapeHtml(getSiteBaseHref().replace(/\/$/, ''))}#properties`;
 
@@ -1533,12 +1554,18 @@ function renderPropertyDetail(property) {
                 <div class="property-detail-header">
                     <h1 class="property-detail-title">${escapeHtml(displayTitle)}</h1>
                     <p class="property-detail-subtitle">${escapeHtml(displaySubtitle)}</p>
+                    ${displayTagline ? `<p class="property-detail-tagline">${escapeHtml(displayTagline)}</p>` : ''}
                     <div class="property-detail-location">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                         <span>${escapeHtml(property.location)}</span>
+                    </div>
+                    ${displayHeroCopy ? `<p class="property-detail-hero-copy">${escapeHtml(displayHeroCopy)}</p>` : ''}
+                    <div class="property-detail-hero-cta">
+                        <a class="btn btn-primary" href="#" onclick="event.preventDefault(); showContactModal();">Book Direct &amp; Save</a>
+                        <button type="button" class="btn btn-secondary" onclick="scrollToPropertyPhotos()">View Photos</button>
                     </div>
                 </div>
             </div>
@@ -2974,7 +3001,7 @@ function buildHomepageSchema() {
         name: SEO_CONFIG.siteName,
         url: `${base}/`,
         logo: { '@type': 'ImageObject', url: `${base}/favicon.svg` },
-        description: 'Owner-direct beach vacation rentals in Panama City Beach and Destin, Florida. Transparent pricing and no OTA service fees on Gulf-front condos.',
+        description: 'Luxury owner-hosted beachfront vacation homes on Florida’s Gulf Coast — Panama City Beach and Destin. Direct beach access, Gulf views, resort amenities, and direct-booking savings.',
         sameAs: ORGANIZATION_SAME_AS,
         areaServed: [
             { '@type': 'City', name: 'Panama City Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },

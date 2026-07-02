@@ -22,9 +22,10 @@ const {
 } = require(path.join(ROOT, 'config.js'));
 
 const SEO_CONFIG = {
-    siteName: 'Serenity Rentals',
-    defaultTitle: 'Majestic Sun 811 | Tidewater 2111 | Serenity Rentals',
-    defaultDescription: 'Gulf-front PCB and Destin condos—book direct with Serenity Rentals, no OTA fees. Clear rates for Panama City Beach, Miramar Beach, and Emerald Coast stays.',
+    siteName: 'StayAtFlorida',
+    siteTagline: 'Luxury Beachfront Vacation Homes',
+    defaultTitle: 'StayAtFlorida | Luxury Beachfront Vacation Homes',
+    defaultDescription: 'Book luxury owner-hosted beachfront vacation homes on Florida’s Gulf Coast with StayAtFlorida. Enjoy direct beach access, Gulf views, resort amenities, and direct-booking savings.',
     defaultOgImage: 'images/og/default.jpg?v=postcard-v1'
 };
 
@@ -110,8 +111,13 @@ function generatePropertySEO(property) {
                 ? 'Destin area & Miramar Beach, FL'
                 : `${city}, Florida vacation rental`)
         : `${city} vacation rental`;
-    let description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct pricing—no OTA fees. ${areaPhrase}. Book direct with Serenity Rentals.`;
-    if (description.length > 168) description = `${description.slice(0, 165).trim()}…`;
+    let description;
+    if (property.metaDescription) {
+        description = property.metaDescription;
+    } else {
+        description = `${property.bedrooms} BR, sleeps ${property.maxGuests}. ${amenityText}. Owner-direct pricing—no OTA fees. ${areaPhrase}. Book direct with ${SEO_CONFIG.siteName}.`;
+        if (description.length > 168) description = `${description.slice(0, 165).trim()}…`;
+    }
     return { description, city, state, isFlorida };
 }
 
@@ -271,7 +277,7 @@ function buildHomepageGraph() {
         name: SEO_CONFIG.siteName,
         url: `${base}/`,
         logo: { '@type': 'ImageObject', url: `${base}/favicon.svg` },
-        description: 'Owner-direct beach vacation rentals in Panama City Beach and Destin, Florida. Transparent pricing and no OTA service fees on Gulf-front condos.',
+        description: 'Luxury owner-hosted beachfront vacation homes on Florida’s Gulf Coast — Panama City Beach and Destin. Direct beach access, Gulf views, resort amenities, and direct-booking savings.',
         sameAs: ORGANIZATION_SAME_AS,
         areaServed: [
             { '@type': 'City', name: 'Panama City Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },

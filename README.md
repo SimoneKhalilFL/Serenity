@@ -2,6 +2,68 @@
 
 A fully responsive, modern vacation rental website built with vanilla JavaScript, HTML, and CSS. Features include property listings, detailed property pages, interactive calendar with availability tracking, dynamic pricing calculator with hidden seasonal adjustments, image gallery with lightbox, and guest reviews system.
 
+## StayAtFlorida Hospitality Operating System
+
+StayAtFlorida runs an internal documentation system that every AI coding agent (Cursor and others) — and every human contributor — reads before making any content, brand, UI, SEO, hospitality, or marketing change. If a change would conflict with these standards, agents flag the conflict and propose the on-brand alternative. **Cursor never publishes to Airbnb, VRBO, or Booking.com** — it produces platform-ready markdown the owner copies in.
+
+### Doc tree
+
+```
+docs/
+├── brand/                     # Governance — voice, agents, rules, QA, SEO, portfolio
+│   ├── AGENTS.md              # 11 internal agent roles (CEO, Brand, UX, Hospitality,
+│   │                          #   SEO, Revenue, Software, Marketing, QA, CGO, Content Sync)
+│   ├── AI_RULES.md            # How AI agents behave, MASTER-first discipline, impact ranking
+│   ├── BRAND_GUIDELINES.md    # Voice, tone, approved / forbidden language
+│   ├── DESIGN_SYSTEM.md       # Colors, type, components, accessibility
+│   ├── HOSPITALITY.md         # Guest journey, amenity standards, message templates
+│   ├── MARKETING.md           # Positioning, channels, campaigns, Growth Strategy
+│   ├── PROPERTY_PORTFOLIO.md  # Roster of every property + naming standard
+│   ├── QA_CHECKLIST.md        # Pre-ship QA gate incl. Sync QA
+│   └── SEO.md                 # Meta, JSON-LD, alt text, sitemap
+├── listings/                  # Per-property content — MASTER is source of truth
+│   ├── TW2111/                # Twenty First (Panama City Beach)
+│   │   ├── MASTER.md          # Source of truth
+│   │   ├── WEBSITE.md         # Derived — stayatflorida.com
+│   │   ├── AIRBNB.md          # Derived — Airbnb-ready copy
+│   │   ├── VRBO.md            # Derived — VRBO-ready copy
+│   │   └── BOOKING.md         # Derived — Booking.com-ready copy
+│   ├── MS811/                 # Majestic Sun (Miramar Beach — branding pending)
+│   │   └── (same 5 files)
+│   └── TEMPLATE/              # Copy this folder to onboard a new property
+│       └── (same 5 files)
+└── sync/
+    └── SYNC_RULES.md          # MASTER → platform files sync workflow
+```
+
+### Start here
+
+- [`docs/brand/AI_RULES.md`](docs/brand/AI_RULES.md) — how AI agents behave, priority order, **MASTER-first** rule, impact ranking
+- [`docs/brand/AGENTS.md`](docs/brand/AGENTS.md) — the 11 internal agent roles (CEO, Brand Director, UX Director, Hospitality Expert, SEO Expert, Revenue Manager, Software Architect, Marketing Director, **QA Agent**, **Chief Growth Officer Agent**, **Content Synchronization Agent**)
+- [`docs/sync/SYNC_RULES.md`](docs/sync/SYNC_RULES.md) — how a change flows from MASTER.md to every platform file
+- [`docs/brand/QA_CHECKLIST.md`](docs/brand/QA_CHECKLIST.md) — the pre-ship QA gate, including Sync QA
+
+### Reference docs
+
+- [`docs/brand/BRAND_GUIDELINES.md`](docs/brand/BRAND_GUIDELINES.md) — voice, tone, approved and forbidden language
+- [`docs/brand/DESIGN_SYSTEM.md`](docs/brand/DESIGN_SYSTEM.md) — colors, type, components, motion, accessibility
+- [`docs/brand/MARKETING.md`](docs/brand/MARKETING.md) — positioning, channels, campaigns, **[Growth Strategy](docs/brand/MARKETING.md#growth-strategy)**
+- [`docs/brand/HOSPITALITY.md`](docs/brand/HOSPITALITY.md) — guest journey, amenity standards, message templates
+- [`docs/brand/PROPERTY_PORTFOLIO.md`](docs/brand/PROPERTY_PORTFOLIO.md) — the Signature Collection roster, naming standard, add/retire workflow
+- [`docs/brand/SEO.md`](docs/brand/SEO.md) — meta, JSON-LD, alt text, sitemap, Core Web Vitals
+
+### The MASTER-first rule
+
+For every property, the source of truth is `docs/listings/{CODE}/MASTER.md`. `WEBSITE.md`, `AIRBNB.md`, `VRBO.md`, and `BOOKING.md` are **derived views** for copy-paste into each platform. When any property content changes:
+
+1. Edit MASTER.md first.
+2. Log the change in MASTER.md's Changelog.
+3. Regenerate every affected platform file per [`docs/sync/SYNC_RULES.md`](docs/sync/SYNC_RULES.md).
+4. Include a **Sync QA Summary** in the response.
+5. The human copies the platform files into each OTA — Cursor does not publish.
+
+Ground truth for the master brand voice lives in [`StayAtFlorida-Brand-Standards-v1.0.md`](StayAtFlorida-Brand-Standards-v1.0.md) at the repo root.
+
 ## Features
 
 ### Core Functionality

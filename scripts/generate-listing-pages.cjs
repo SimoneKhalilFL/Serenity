@@ -59,7 +59,7 @@ function buildPage(property) {
     const redirectTo = `/?listing=${encodeURIComponent(property.id)}`;
     const seo = generatePropertySEO(property);
     const ogImage = `${base}/images/og/listing-${encodeURIComponent(property.id)}.jpg`;
-    const ogAlt = `${property.title} — ${property.location}. Book direct with Serenity Rentals.`;
+    const ogAlt = `${property.title} — ${property.location}. Book direct with ${SEO_CONFIG.siteName}.`;
     const siteTitle = `${property.title} | ${SEO_CONFIG.siteName}`;
     const description = seo.description;
 

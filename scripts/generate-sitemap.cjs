@@ -83,6 +83,7 @@ function main() {
     // Additional static pages. Any page that declares noindex in its head is
     // skipped so the sitemap does not contradict the page's own directive.
     const staticPages = [
+        { file: 'gear.html', priority: '0.6', changefreq: 'monthly' },
         { file: 'privacy.html', priority: '0.3', changefreq: 'yearly' },
         { file: 'terms.html', priority: '0.3', changefreq: 'yearly' }
     ];

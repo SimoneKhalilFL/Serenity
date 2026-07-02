@@ -1,11 +1,8 @@
 // ==========================================
 // Site-wide contact & URLs (edit for production)
 // ==========================================
-// Public domain naming (memorable .com candidates — verify availability at your registrar):
-// Brand: serenityrentals, serenitygulf, serenitygulfstays, gulfserenity, serenitypcb, serenityemerald
-// Geography: pcbdestinstays, emeralddirectstays, gulfcoastbyowner, twogulfhomes
-// Owner-direct: bookgulfdirect, gulfdirectstays, ownerdirectgulf
-// Phone-test finalists (say "visit [name] dot com"): serenitygulf, serenitypcb, gulfdirectstays
+// Master brand: StayAtFlorida (rebranded from legacy "Serenity Rentals" 2026-07).
+// Site tagline: Luxury Beachfront Vacation Homes.
 // Live site URL (no trailing slash). Canonical / JSON-LD follow this via app.js.
 // sitemap.xml is regenerated from PROPERTIES at deploy (scripts/generate-sitemap.cjs); no manual edit needed.
 // Web3Forms: add this domain in their dashboard. Social/email: hello@ / stays@ on this domain when ready.
@@ -176,48 +173,68 @@ const PROPERTIES = [
     END COMMENTED OUT */
     {
         id: 4,
-        title: "Tidewater Beach Resort - 3BR Beachfront Condo",
-        listingHeadline: "Beachfront Tidewater Condo—Space for Families and Groups",
-        listingTagline: "Resort pools, beach access, and Pier Park within easy reach.",
+        title: "Twenty First",
+        listingHeadline: "Twenty First",
+        listingBrandSubtitle: "A StayAtFlorida Signature Property",
+        listingTagline: "Above the Gulf. Beyond Expectations.",
+        listingHeroCopy: "Wake up above the emerald Gulf in this luxury beachfront retreat with panoramic, unobstructed views. Enjoy morning coffee on the private balcony, spend the day on the sugar-white sand, and end each evening with unforgettable Gulf sunsets.",
+        cardSubtitle: "A StayAtFlorida Signature Property",
+        cardShortDescription: "Luxury beachfront condo with panoramic Gulf views, a private balcony, sunset views, room for up to 8 guests, direct beach access, and resort-style amenities.",
+        metaTitle: "Twenty First | Luxury Beachfront Condo in Panama City Beach",
+        metaDescription: "Book Twenty First by StayAtFlorida, a luxury beachfront condo in Panama City Beach with panoramic Gulf views, private balcony, resort amenities, and room for 8.",
         coverImage: "images/lodging/tw-02-living.jpg",
         location: "Panama City Beach, Florida",
-        description: `Experience Panama City Beach from Tidewater Beach Resort—Gulf-front living with space for families and groups. This beachfront condo features cool tile throughout, a bright living area with comfortable seating and a smart TV, and a balcony with sweeping Gulf views.
+        description: `Twenty First is a 3-bedroom, 3-bath luxury beachfront retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets. There's room for up to 8 guests, direct beach access, resort amenities, and complimentary beach chairs and umbrella waiting in the condo when you arrive.
 
-Thoughtful décor, granite counters, and stainless appliances make it easy to settle in whether you're here for a long weekend or a full week.
+**Highlights**
 
-**Kitchen**
+• Panoramic unobstructed Gulf views
+• Private beachfront balcony with sunset views
+• Sleeps up to 8 guests
+• 3 bedrooms / 3 bathrooms
+• Direct beach access
+• Complimentary beach chairs and umbrella available in the condo
+• Resort pools, hot tubs, sauna, steam room, and fitness center
+• 1 mile from Pier Park
 
-Full kitchen for cooking and dining:
-• Granite countertops, stainless appliances, refrigerator, stove, oven, microwave, dishwasher
-• Cookware, dishes, and utensils
-• Coffee maker, toaster, blender; dining area for family meals
-• Enjoy meals inside or on the balcony overlooking the Gulf
+**The Kitchen**
 
-**Sleeping Arrangements**
+Gather around after a day on the sand to prepare breakfast, share family dinners, or open a bottle of wine on the balcony as the sun sets. The kitchen is stocked with what you actually reach for on vacation, so cooking never feels like a chore.
 
-• 3 bedrooms, 3 bathrooms — sleeps up to 8 guests
-• Master bedroom: king bed
-• Bedroom 2: queen bed
-• Bunk room: two bunk beds
+What's on hand:
+• Full-size refrigerator, stove, oven, microwave, and dishwasher
+• Cookware, dishes, glassware, and utensils
+• Coffee maker, toaster, blender
+• Dedicated dining area with seating for the whole group
+
+**Where You'll Sleep**
+
+Drift off after watching the sunset from the balcony and wake up refreshed for another day at the beach. Every bedroom is set up for real rest — cool sheets, quiet mornings, and plenty of space to unpack.
+
+• Primary bedroom: king bed
+• Second bedroom: queen bed
+• Third bedroom: bunk room with two sets of bunks
 • Living room: queen sleeper sofa
+• Sleeps up to 8 guests across 3 bedrooms and 3 bathrooms
 
 **Location**
 
-Tidewater sits on the west end of Panama City Beach with direct Gulf access and sugar-white sand steps from your door. Pier Park—shopping, dining, and entertainment—is a short walk away. Russell-Fields City Pier is nearby for fishing and sunsets. You get quiet beachfront relaxation with conveniences close at hand.
+Set directly on the sugar-white sand of Panama City Beach's west end, with unobstructed Gulf views and immediate beach access. Pier Park — shopping, dining, and entertainment — is about a mile away, and Russell-Fields City Pier is close by for fishing and sunsets. Quiet beachfront relaxation with everything you need within easy reach. Located inside the Tidewater Beach Resort community.
 
-**Tidewater Beach Resort Amenities**
+**Resort Amenities**
 
-Guests enjoy resort-style extras across the property:
-• Two large lagoon-style Gulf-front pools with hot tubs
+Step outside the condo and the resort side of the stay begins — pools for lazy afternoons, hot tubs after long beach days, and quiet spots to keep the vacation going.
+
+• Two Gulf-front lagoon-style pools with hot tubs
 • Heated indoor pool, Roman spa, steam room, and sauna
-• 4,300 sq. ft. fitness center
+• Full fitness center
 • Movie theater, arcade, restaurant, coffee shop, and tiki bar
 • Seasonal kids' activities, gift shop, and outdoor grilling areas
 • Direct beach access from the resort
 
 **Registration**
 
-The Tidewater Registration fee is $48 + tax + credit card fee (Total: $54.04). Guests who register 24 hours or more in advance will save $10.
+The community registration fee is $48 + tax + credit card fee (Total: $54.04). Guests who register 24 hours or more in advance will save $10.
 
 The registration fee includes up to 2 parking passes and up to 8 wristbands. Wristbands are required for all occupants over age 12.
 
@@ -225,7 +242,7 @@ Registration can be done at https://www.tidewaterhoa.com/registration/
 
 **Things to Do**
 
-From Tidewater you're minutes from the best of PCB:
+You're a short drive — or an easy walk — from the best of Panama City Beach:
 • Pier Park — shops, restaurants, and events
 • Beach walks, Gulf swimming, and shelling
 • Russell-Fields City Pier — fishing and views
@@ -373,23 +390,27 @@ From Tidewater you're minutes from the best of PCB:
         location: "Destin, Florida",
         description: `Experience the best of Destin at Majestic Sun, where Gulf-front living meets comfort and convenience. This beautifully appointed 8th-floor beachfront condo offers breathtaking panoramic views of the emerald waters and sugar-white sands of the Gulf of Mexico. Step onto your private balcony to enjoy morning coffee, afternoon sea breezes, or unforgettable sunsets over the water.
 
-Inside, the condo features a spacious, light-filled living area, coastal-inspired décor, and a fully equipped kitchen ideal for everything from quick breakfasts to family dinners. Thoughtful updates, modern finishes, and comfortable furnishings make this a perfect home base for couples, families, and friends seeking a relaxing beach getaway.
+Inside, the condo features a spacious, light-filled living area, coastal-inspired décor, and a kitchen made for real vacations — from quick breakfasts before the beach to slower family dinners with the sliding doors open. Thoughtful updates and comfortable furnishings make this a genuine home base for couples, families, and friends who want to relax without leaving anything behind.
 
-**Kitchen**
+**The Kitchen**
 
-Full kitchen setup for cooking and dining:
+Start the morning with coffee on the balcony, come back for lunch between beach visits, and take your time over dinner with the Gulf still glowing outside. The kitchen is stocked so you can cook what you actually want to cook on vacation.
+
+What's on hand:
 • Refrigerator, stove, oven, microwave, dishwasher
-• Dishes and utensils; pantry items
-• Coffee maker, toaster, ice maker, freezer, blender
-• Pots and pans; kitchen island; dining table; baking sheet
-• Barbecue/grill utensils; coffee; wine glasses
-• Slow cooker; air fryer; GEORGE FOREMAN grills (big and small); popcorn machine; food processor; spices; toaster oven; cookie sheets; pizza pan; veggie chopper
+• Cookware, dishes, glassware, and utensils
+• Coffee maker, toaster, blender, ice maker, freezer
+• Slow cooker, air fryer, food processor, toaster oven
+• Countertop grills (large and small), popcorn maker, veggie chopper
+• Kitchen island, dining table, wine glasses, baking sheets, pizza pan, spices
 
-**Sleeping Arrangements**
+**Where You'll Sleep**
 
-• 2 bedrooms — sleeps 1–6 guests
-• Bedroom 1: king bed
-• Bedroom 2: queen bed
+Drift off with the sound of the Gulf outside and wake up refreshed for another day at the beach.
+
+• 2 bedrooms — sleeps up to 6 guests
+• Primary bedroom: king bed
+• Second bedroom: queen bed
 • Living room: queen sleeper sofa
 
 **Location**
@@ -707,7 +728,7 @@ const REVIEWS = {
             author: "Guest",
             date: "2024-08-18",
             rating: 5,
-            comment: "This was our second time staying at this property and it did not disappoint! The beds were very comfortable, the kitchen had all the cookware we needed, and the balcony was our favorite spot for morning coffee with ocean views. Beach setup service made our days on the beach hassle-free."
+            comment: "This was our second time staying at this property and it did not disappoint! The beds were very comfortable, the kitchen had all the cookware we needed, and the balcony was our favorite spot for morning coffee with Gulf views. The complimentary beach chairs and umbrella in the condo made our days on the sand simple."
         },
         {
             id: 5,

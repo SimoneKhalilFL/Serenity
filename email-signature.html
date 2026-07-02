@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StayAtFlorida — Email Signature</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background:#f4f6f8; margin:0; padding:32px; color:#1f2937; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:28px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    h1 { font-size:18px; margin:0 0 6px; }
+    p.sub { margin:0 0 18px; color:#4b5563; font-size:13px; }
+    .label { font-size:12px; color:#6b7280; text-transform:uppercase; letter-spacing:.04em; margin:18px 0 6px; }
+    pre { background:#0b1220; color:#e5e7eb; padding:14px; border-radius:8px; overflow:auto; font-size:12px; line-height:1.5; }
+    button { background:#2D7DD2; color:#fff; border:0; border-radius:6px; padding:8px 14px; font-size:13px; cursor:pointer; }
+    button:hover { background:#2468b0; }
+    .preview { border:1px dashed #d1d5db; border-radius:8px; padding:18px; background:#fafafa; }
+    ol { padding-left: 20px; font-size:13px; color:#374151; }
+    ol li { margin: 4px 0; }
+    code.kbd { background:#eef2ff; border:1px solid #c7d2fe; padding:1px 6px; border-radius:4px; font-size:12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>StayAtFlorida — Email Signature</h1>
+      <p class="sub">Preview below. Click <em>Copy signature</em>, then paste into Gmail → Settings → See all settings → General → Signature.</p>
+
+      <div class="label">Preview</div>
+      <div class="preview" id="preview-host">
+        <!-- ============ SIGNATURE START (this is what gets copied) ============ -->
+        <table id="signature" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1f2937;font-size:14px;line-height:1.45;">
+          <tr>
+            <td style="padding-right:18px;border-right:3px solid #2D7DD2;vertical-align:top;">
+              <a href="https://stayatflorida.com/" style="text-decoration:none;color:inherit;display:inline-block;">
+                <img src="https://stayatflorida.com/favicon.svg"
+                     alt="StayAtFlorida"
+                     width="72" height="72"
+                     style="display:block;border:0;outline:none;border-radius:8px;">
+              </a>
+            </td>
+            <td style="padding-left:18px;vertical-align:top;">
+              <div style="font-size:16px;font-weight:bold;color:#0f172a;letter-spacing:.2px;">
+                Simone Khalil
+              </div>
+              <div style="font-size:13px;color:#2D7DD2;font-weight:600;margin-top:2px;">
+                Owner &amp; Host · StayAtFlorida
+              </div>
+              <div style="font-size:12px;color:#4b5563;margin-top:2px;font-style:italic;">
+                Luxury Beachfront Vacation Homes — Florida&rsquo;s Gulf Coast
+              </div>
+
+              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:10px;border-collapse:collapse;font-size:13px;color:#1f2937;">
+                <tr>
+                  <td style="padding:2px 8px 2px 0;color:#6b7280;">Email</td>
+                  <td style="padding:2px 0;">
+                    <a href="mailto:FloridaVacationRental2020@gmail.com" style="color:#2D7DD2;text-decoration:none;">FloridaVacationRental2020@gmail.com</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:2px 8px 2px 0;color:#6b7280;">Web</td>
+                  <td style="padding:2px 0;">
+                    <a href="https://stayatflorida.com/" style="color:#2D7DD2;text-decoration:none;font-weight:600;">stayatflorida.com</a>
+                  </td>
+                </tr>
+              </table>
+
+              <div style="margin-top:10px;font-size:12px;color:#374151;">
+                <a href="https://stayatflorida.com/listing-4.html" style="color:#2D7DD2;text-decoration:none;font-weight:600;">Twenty First</a>
+                <span style="color:#9ca3af;">·</span>
+                <a href="https://stayatflorida.com/listing-5.html" style="color:#2D7DD2;text-decoration:none;font-weight:600;">Majestic Sun 811</a>
+                <span style="color:#9ca3af;">·</span>
+                <a href="https://www.facebook.com/FloridaRental2020" style="color:#2D7DD2;text-decoration:none;font-weight:600;">Facebook</a>
+              </div>
+
+              <div style="margin-top:10px;padding:6px 10px;background:#eaf3fc;border-left:3px solid #2D7DD2;font-size:12px;color:#0f172a;border-radius:0 4px 4px 0;">
+                Book direct &amp; keep 10–20% you'd pay in OTA fees.
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!-- ============ SIGNATURE END ============ -->
+      </div>
+
+      <div style="margin-top:18px;">
+        <button onclick="copySignature()">Copy signature</button>
+        <span id="copied" style="margin-left:10px;font-size:13px;color:#16a34a;display:none;">Copied! Now paste into Gmail.</span>
+      </div>
+
+      <div class="label">How to install in Gmail</div>
+      <ol>
+        <li>Open this file in a browser, click <strong>Copy signature</strong> above (or select the preview and press <code class="kbd">Ctrl</code>+<code class="kbd">C</code>).</li>
+        <li>In Gmail, go to <strong>Settings (gear icon) → See all settings → General</strong>.</li>
+        <li>Scroll to <strong>Signature</strong>, click <strong>Create new</strong>, name it "StayAtFlorida".</li>
+        <li>Click into the signature box and press <code class="kbd">Ctrl</code>+<code class="kbd">V</code> to paste.</li>
+        <li>Under <strong>Signature defaults</strong>, set it for new emails and replies.</li>
+        <li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
+      </ol>
+
+      <div class="label">Raw HTML (for Outlook / Apple Mail / other)</div>
+      <pre id="raw-html"></pre>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const sig = document.getElementById('signature');
+      document.getElementById('raw-html').textContent = sig.outerHTML;
+    })();
+
+    function copySignature() {
+      const sig = document.getElementById('signature');
+      const range = document.createRange();
+      range.selectNode(sig);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      try {
+        document.execCommand('copy');
+        const msg = document.getElementById('copied');
+        msg.style.display = 'inline';
+        setTimeout(() => { msg.style.display = 'none'; }, 2500);
+      } catch (e) {
+        alert('Copy failed. Select the preview manually and press Ctrl+C.');
+      }
+      sel.removeAllRanges();
+    }
+  </script>
+</body>
+</html>

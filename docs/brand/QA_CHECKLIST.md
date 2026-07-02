@@ -1,0 +1,285 @@
+# QA Checklist
+
+> **Purpose:** The pre-release checklist the [QA Agent](AGENTS.md#9-qa-agent) runs — or the AI runs on its behalf — before any guest-facing change ships. This is a hard gate, not a suggestion.
+>
+> **How to use:** Run every section relevant to the change. Skipped items are called out in the [Final QA Summary](#10-final-qa-summary). If any critical item fails, the change does not ship until it's fixed or the user explicitly overrides. **Sync QA** (section 9) applies to every change that touches a property's MASTER.md or platform files — see [`../sync/SYNC_RULES.md`](../sync/SYNC_RULES.md).
+>
+> **Governance:** See [`AI_RULES.md`](AI_RULES.md#qa-agent-review-and-veto) for QA Agent veto scope. The rules below are enforcement of the standards defined in [`BRAND_GUIDELINES.md`](BRAND_GUIDELINES.md), [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md), [`SEO.md`](SEO.md), and [`HOSPITALITY.md`](HOSPITALITY.md).
+>
+> **Owned by:** [QA Agent](AGENTS.md#9-qa-agent). **Reviewers on changes:** UX Director, SEO Expert, Brand Director. See [Doc ownership](AGENTS.md#doc-ownership).
+
+---
+
+## Legend
+
+- `[ ]` — item to check
+- **Critical** — failure blocks release
+- **High** — failure blocks release unless owner overrides
+- **Standard** — failure requires a follow-up ticket but not a block
+
+---
+
+## 1. Brand QA
+
+Run on every content-touching change.
+
+- `[ ]` **Critical.** No occurrence of `Serenity Rentals` (or `Serenity Rental`) in guest-facing copy.
+- `[ ]` **Critical.** No occurrence of `Fun in the Sun` in guest-facing copy.
+- `[ ]` **Critical.** `StayAtFlorida` is used as the master brand — always one word, always this capitalization.
+- `[ ]` **Critical.** `Twenty First` is used as the property brand name (never `Tidewater 2111`, never `21st floor unit`).
+- `[ ]` **High.** `A StayAtFlorida Signature Property` appears as the subtitle on the property card, listing hero, and OTA blurbs where the field is defined.
+- `[ ]` **Critical.** No explicit floor number anywhere in guest-facing marketing copy (`21st`, `21st floor`, `floor 21`, `8th floor`, etc.).
+- `[ ]` **High.** Tidewater Beach Resort is not overemphasized — mentioned only where operationally required (location paragraph, registration/parking, community link).
+- `[ ]` **Critical.** Beach chair language reads exactly `complimentary beach chairs and umbrella available in the condo` — no variants.
+- `[ ]` **Standard.** No banned words in headlines, taglines, or meta (`paradise`, `dream getaway`, `bliss`, `escape`, `perfect` in brand-authored copy, `amazing`, `best ever`).
+- `[ ]` **Standard.** No emojis, no all-caps, no exclamation marks in brand-authored copy.
+
+Verification commands (from repo root, on Windows PowerShell substitute `Select-String` for `grep`):
+
+```bash
+# Should return zero brand-facing hits
+grep -rniE "serenity rentals?|fun in the sun|21st(-| )floor|floor 21|8th floor" \
+  --include="*.html" --include="*.js" --include="*.css" .
+```
+
+---
+
+## 2. Content QA
+
+Run on every copy edit.
+
+- `[ ]` **Critical.** Copy sounds premium, warm, clear, and honest — see [`BRAND_GUIDELINES.md`](BRAND_GUIDELINES.md#voice-and-tone).
+- `[ ]` **High.** No cheesy beach language (`paradise`, `slice of heaven`, `beach bum`, `dream getaway`, `escape to`).
+- `[ ]` **Critical.** No overpromising — no beach service, no chair delivery, no daily housekeeping, no guaranteed sunset, no in-condo dining, no concierge.
+- `[ ]` **High.** CTAs are clear and approved: `Book Direct & Save`, `Email to Book`, `View Photos`, `See Our Properties`.
+- `[ ]` **Critical.** Amenities on the listing match [`config.js`](../../config.js) and the on-property reality.
+- `[ ]` **Standard.** Property names are consistent across the site, sitemap, JSON-LD, and OTA callouts.
+- `[ ]` **Standard.** Existing guest-review UGC is untouched — reviews are authentic even when they use words the brand voice avoids.
+
+---
+
+## 3. SEO QA
+
+Run on every SEO-touching change (meta, headings, alt text, schema, sitemap).
+
+- `[ ]` **Critical.** Every page has exactly one `<h1>`.
+- `[ ]` **High.** H2 / H3 hierarchy is logical (no skipped levels, no headings used for styling).
+- `[ ]` **Critical.** `<title>` present on every page, under 60 characters, follows the pattern in [`SEO.md`](SEO.md#meta-title-patterns).
+- `[ ]` **Critical.** `<meta name="description">` present on every page, 150–160 characters, no keyword stuffing, no exclamation marks.
+- `[ ]` **High.** Every `<img>` has descriptive, unique `alt` text — see [`SEO.md`](SEO.md#image-alt-text-patterns).
+- `[ ]` **High.** Local keywords (`Panama City Beach`, `Destin`, `Miramar Beach`, `Florida`, `Gulf Coast`) used naturally, not stuffed.
+- `[ ]` **High.** `<link rel="canonical">` correct on every page — points to the static `listing-<id>.html` for property pages.
+- `[ ]` **Critical.** JSON-LD validates and matches the visible HTML — no ghost reviews, ghost ratings, or ghost amenities.
+- `[ ]` **Critical.** After any `config.js` change: `node scripts/generate-listing-pages.cjs` and `node scripts/generate-listing-schema.cjs` have been run.
+- `[ ]` **Standard.** `sitemap.xml` still lists every indexable URL; no 404s on listed URLs.
+
+Verify JSON-LD in a browser: DevTools → Elements → search `application/ld+json`. Or paste into [Rich Results Test](https://search.google.com/test/rich-results).
+
+---
+
+## 4. UX QA
+
+Run on every UI change.
+
+- `[ ]` **Critical.** Primary booking CTA visible above the fold on desktop (1440×900) and mobile (375×812).
+- `[ ]` **Critical.** Top navigation works: Home, Properties, Gear, Contact.
+- `[ ]` **High.** Photo gallery opens, advances, closes, and traps focus in the lightbox.
+- `[ ]` **Critical.** Contact / inquiry form submits and the `mailto:` (or form endpoint) delivers.
+- `[ ]` **High.** Footer links resolve (Privacy, Terms, Gear, social, sitemap).
+- `[ ]` **High.** Page scannable in 5 seconds — hero → value prop → primary CTA visible without scrolling on desktop.
+- `[ ]` **Standard.** No competing CTAs above the fold; secondary CTA is visually subordinate.
+- `[ ]` **Standard.** Sticky booking bar appears on the property page after scrolling past the hero and does not obscure content on mobile.
+
+---
+
+## 5. Mobile QA
+
+Run on every UI change. Test at 375px, 414px, and 768px widths in DevTools plus a real device where possible.
+
+- `[ ]` **Critical.** Layout renders correctly at 375px — no clipped text, no cut-off images, no overlapping elements.
+- `[ ]` **Critical.** No horizontal scrolling anywhere on the page.
+- `[ ]` **High.** All buttons and CTAs meet the 44×44px tap target minimum.
+- `[ ]` **Critical.** Body text is at least 16px on mobile (per `styles.css` base); no text below 14px except legal footnotes.
+- `[ ]` **High.** Photo gallery is swipeable and readable on mobile.
+- `[ ]` **Critical.** Primary booking CTA reachable without excessive scrolling — sticky bar or above-the-fold placement.
+- `[ ]` **High.** Mobile navigation (hamburger) opens, closes, and traps focus.
+- `[ ]` **Standard.** Video hero respects `prefers-reduced-motion` and has a poster image so mobile data plans don't autoload.
+
+---
+
+## 6. Accessibility QA
+
+Run on every UI or content change. Minimum standard is WCAG AA.
+
+- `[ ]` **Critical.** Semantic HTML: `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>` used correctly.
+- `[ ]` **Critical.** Headings form a valid outline (h1 → h2 → h3, no skips).
+- `[ ]` **Critical.** Every meaningful `<img>` has descriptive `alt`; decorative images have `alt=""` with a labeled adjacent sibling.
+- `[ ]` **Critical.** Every interactive element (buttons, links, form inputs, icons-as-buttons) is reachable via `Tab` and operable via `Enter` / `Space`.
+- `[ ]` **Critical.** Focus states are visible — never `outline: none` without a replacement.
+- `[ ]` **Critical.** Body-text contrast ≥ 4.5:1; large-text contrast ≥ 3:1. Verify with browser devtools or axe.
+- `[ ]` **High.** All form inputs have programmatic `<label>` associations; error messages announced.
+- `[ ]` **High.** Links have descriptive text — no bare "click here" or "read more" without context.
+- `[ ]` **Standard.** `lang="en"` set on `<html>`.
+- `[ ]` **Standard.** Icon-only buttons have `aria-label`; decorative icons have `aria-hidden="true"`.
+
+---
+
+## 7. Performance QA
+
+Run on every UI change that touches images, scripts, or fonts.
+
+- `[ ]` **High.** New / changed images compressed (JPEG or WebP, ~75–85% quality) and no larger than 1200px wide unless there's a specific reason.
+- `[ ]` **High.** Below-the-fold images use `loading="lazy"`.
+- `[ ]` **Standard.** Responsive images (`srcset` / `sizes`) used where the same image renders at multiple sizes.
+- `[ ]` **Critical.** No new dependencies added to the vanilla HTML/CSS/JS stack unless approved by the [Software Architect](AGENTS.md#7-software-architect).
+- `[ ]` **Critical.** No layout shift after page load (visual check + DevTools "Layout Shift" tool). CLS target < 0.1.
+- `[ ]` **High.** LCP < 2.5s on 4G throttled — measure in DevTools Performance panel.
+- `[ ]` **Critical.** Zero console errors on page load; zero unhandled promise rejections.
+- `[ ]` **Standard.** No new render-blocking third-party scripts above the fold.
+- `[ ]` **Standard.** Total property-page weight < 2MB compressed.
+
+---
+
+## 8. Booking Flow QA
+
+Run on every booking-related change (calculator, CTA, contact form, `mailto`, rates).
+
+- `[ ]` **Critical.** `Book Direct & Save` primary CTA works from every property surface (card, listing hero, sticky bar).
+- `[ ]` **Critical.** Property availability calendar renders, blocks out unavailable dates from `config.js`, and does not allow selection of blocked days.
+- `[ ]` **Critical.** Pricing calculator returns the expected total (base × nights + cleaning + tax) with correct seasonal adjustments from `config.js`.
+- `[ ]` **Critical.** Inquiry path (`mailto:` link or contact form) prefills the correct property, dates, and guest count.
+- `[ ]` **High.** Contact / booking path is clear — a guest can go from homepage to inquiry in under three clicks.
+- `[ ]` **High.** No dead ends — every "learn more" or "check availability" click leads somewhere.
+- `[ ]` **Critical.** No exposure of internal fields (owner email plaintext where it shouldn't be, admin data, seasonal-adjustment multipliers).
+- `[ ]` **Standard.** The direct-booking value message ("no OTA service fees") is present at least once on the property page.
+
+---
+
+## 9. Sync QA
+
+Run on every change that touches a property's `MASTER.md` or any platform file (`WEBSITE.md`, `AIRBNB.md`, `VRBO.md`, `BOOKING.md`).
+
+- `[ ]` **Critical.** The edit was made in MASTER.md first — never a platform file first. If a platform file was edited independently, flag the divergence and reconcile.
+- `[ ]` **Critical.** Facts identical across MASTER and every regenerated platform file: bedrooms, bathrooms, sleeps, address, host name, cancellation policy, amenities list.
+- `[ ]` **Critical.** No [forbidden language](../sync/SYNC_RULES.md#forbidden-language-sync-gate) present in any platform file — grep passes.
+- `[ ]` **Critical.** [Required language](../sync/SYNC_RULES.md#required-language-sync-gate) present where the section applies (beach chairs / umbrella phrasing verbatim, Owner Hosted, StayAtFlorida master brand).
+- `[ ]` **High.** Character limits respected on every platform: Airbnb title ≤50, VRBO title ≤65, Booking title ≤70, meta title ≤60, meta description ≤160.
+- `[ ]` **High.** Photo caption library from MASTER reflected consistently across every platform.
+- `[ ]` **High.** MASTER.md has a fresh `## Changelog` entry with today's date and a one-line summary of the change.
+- `[ ]` **High.** No new fact was introduced on a platform file without appearing in MASTER.
+- `[ ]` **Standard.** Approved CTA vocabulary used on every platform where CTAs apply. Booking gets the factual variant; Airbnb / VRBO get the value-forward variant; direct site gets `Book Direct & Save`.
+- `[ ]` **Critical (workflow).** No API call, SDK, or browser-automation was used to push content to Airbnb, VRBO, or Booking. Output is markdown only; publishing is the human's job.
+
+Verification grep (from repo root):
+
+```bash
+grep -rniE "serenity rentals?|fun in the sun|luxury beach service|reserved beach chairs|private beach|guaranteed sunset|dream vacation|paradise awaits|best condo ever|21st(-| )floor|floor 21|8th floor" docs/listings/
+```
+
+Expected result: zero matches.
+
+---
+
+## 10. Final QA Summary
+
+The AI's final response after any non-trivial change **must** include a QA Summary. Use this template verbatim:
+
+```
+### QA Summary
+
+**Files changed**
+- <path/to/file-1>
+- <path/to/file-2>
+
+**What was tested**
+- [Section name from QA_CHECKLIST.md] — pass / fail / skipped, with one-line note
+- e.g. Brand QA — pass (grep clean, no legacy names reintroduced)
+- e.g. SEO QA — pass (JSON-LD regenerated, canonical URLs verified)
+- e.g. Performance QA — skipped (no image or script changes)
+
+**Risks / assumptions**
+- Anything not verifiable in this session (live browser test, real-device test, network throttling, actual OTA rendering).
+- Any override the user granted.
+
+**Remaining recommended improvements**
+- Follow-up items surfaced during QA but out of scope for this change.
+```
+
+**Rules for the summary:**
+
+- Every section run **must** be listed with a pass / fail / skipped status.
+- Never claim "all sections passed" without listing them.
+- Never omit failures. Failures either block the release or are explicitly overridden by the user, in writing, in this session.
+- Keep it under 15 lines. If the change was truly trivial (doc-only, non-guest-facing), a one-line "QA: doc-only change, no guest-facing surface affected" is acceptable in place of the full block.
+
+### Sync QA Summary (property-content changes)
+
+For any change that touched a property's `MASTER.md` or a platform file, the response must **also** include this block (in addition to, or in place of, the general QA Summary):
+
+```
+### Sync QA Summary
+- **Files Updated:** listings/{CODE}/MASTER.md, WEBSITE.md, AIRBNB.md, VRBO.md, BOOKING.md
+- **Character Limits Passed:** Airbnb title (48/50), VRBO title (57/65), Booking title (61/70), meta description (156/160), Airbnb summary (487/500)
+- **Brand Review Passed:** Forbidden-language grep clean; required-language present on every platform; MASTER changelog entry added
+- **Remaining Manual Actions:** Owner to copy AIRBNB.md into Airbnb's listing editor, VRBO.md into VRBO's editor, BOOKING.md into Booking.com's editor; verify each platform's preview matches the file before publishing
+```
+
+Sync QA Summary is required because Cursor never publishes to OTAs — the "remaining manual actions" section is where the human hand-off is documented.
+
+---
+
+## When to run which sections
+
+Not every change needs every section. Quick lookup:
+
+| Change type | Sections to run |
+|---|---|
+| Copy edit on the site | 1 Brand, 2 Content, 3 SEO, 10 Summary |
+| New meta tag / JSON-LD update | 3 SEO, 10 Summary |
+| CSS / layout change | 4 UX, 5 Mobile, 6 Accessibility, 7 Performance, 10 Summary |
+| New image added | 3 SEO (alt text), 6 Accessibility, 7 Performance, 10 Summary |
+| Booking flow tweak | 4 UX, 5 Mobile, 8 Booking Flow, 10 Summary |
+| **MASTER.md edit + platform regeneration** | **1 Brand, 2 Content, 3 SEO, 9 Sync, 10 Summary (with Sync QA Summary block)** |
+| **Platform file edit only (override)** | **1 Brand, 2 Content, 9 Sync, 10 Summary (flag MASTER divergence)** |
+| New property added | 1 Brand, 2 Content, 3 SEO, 4 UX, 5 Mobile, 6 Accessibility, 7 Performance, 8 Booking Flow, 9 Sync, 10 Summary (full run) |
+| Rebrand / brand-standards refresh | All sections, full run |
+| Pure documentation edit (governance docs) | 10 Summary only (one-line acceptable) |
+
+If you're unsure whether a section applies, run it. Over-checking is cheap; a shipped regression is not.
+
+---
+
+## Recommended tools
+
+The QA Agent doesn't need paid tools. Everything below is free and available in-browser.
+
+| Section | Tool | What it verifies |
+|---|---|---|
+| 1 Brand | `grep` / `rg` / PowerShell `Select-String` | Retired-name and banned-phrase scan (see [BRAND_GUIDELINES.md#grep-gate](BRAND_GUIDELINES.md#grep-gate-pre-ship-check)) |
+| 2 Content | Manual read + [Hemingway Editor](https://hemingwayapp.com) | Sentence readability, hype-word detection |
+| 3 SEO | [Google Rich Results Test](https://search.google.com/test/rich-results) | JSON-LD validation, rich-result eligibility |
+| 3 SEO | [Schema.org validator](https://validator.schema.org) | Raw schema validation |
+| 3 SEO | Browser view-source | Meta title, description, canonical, headings audit |
+| 3 SEO | [Google Search Console](https://search.google.com/search-console) | Post-ship coverage, canonical acceptance, indexing status |
+| 4 UX | Chrome / Firefox DevTools | Sticky elements, z-index, hit-area verification |
+| 5 Mobile | Chrome DevTools → Device Toolbar (iPhone 13, Pixel 5, iPad) | Layout at 375, 393, 768 widths |
+| 5 Mobile | Real device where possible | Touch behavior the emulator can't simulate |
+| 6 Accessibility | [axe DevTools extension](https://www.deque.com/axe/devtools/) | Automated a11y scan (60–70% of common issues) |
+| 6 Accessibility | Keyboard-only navigation (Tab / Shift+Tab / Enter / Space) | Focus order, focus visibility, keyboard traps |
+| 6 Accessibility | Chrome DevTools → Rendering → Emulate vision deficiencies | Color-contrast blindness scenarios |
+| 6 Accessibility | Screen reader (NVDA on Windows, VoiceOver on Mac) | Alt text quality, label associations, landmark navigation |
+| 7 Performance | [PageSpeed Insights](https://pagespeed.web.dev) | Real-user Core Web Vitals + lab metrics |
+| 7 Performance | Chrome DevTools → Lighthouse | LCP, CLS, INP, TBT, opportunities |
+| 7 Performance | Chrome DevTools → Network (throttled to "Fast 3G") | Realistic load on non-fiber connections |
+| 7 Performance | Chrome DevTools → Performance → Layout Shift regions | Visualize CLS sources |
+| 8 Booking Flow | Manual click-through in an incognito window | End-to-end guest experience without cached state |
+| 8 Booking Flow | `mailto:` link tester — click the CTA, confirm mail client opens with correct pre-fill | Recipient, subject, body |
+| 9 Sync | `grep -rniE` (see [`../sync/SYNC_RULES.md#forbidden-language-sync-gate`](../sync/SYNC_RULES.md#forbidden-language-sync-gate)) | Forbidden-language scan across all platform files |
+| 9 Sync | Character counter (e.g. `echo -n "title" \| wc -c` or any online char counter) | Airbnb / VRBO / Booking title + summary length compliance |
+| 9 Sync | Manual diff MASTER vs. each platform file | Facts identical, only presentation differs |
+
+**Rules:**
+
+- Never claim a section passed without running at least one tool from its row.
+- Never claim performance passes without a Lighthouse or PageSpeed run in the current session.
+- Never claim accessibility passes on manual review alone — axe finds things the eye misses.

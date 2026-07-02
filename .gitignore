@@ -7,3 +7,10 @@ Desktop.ini
 node_modules/
 scripts/calendar-feeds.config.json
 scripts/pricelabs-feeds.config.json
+
+# Private / research artifacts — never commit
+# Personal Gmail exports (customer service / support archives) containing PII
+images/lodging/[[]#*[]] Collections*
+images/lodging/*Gmail.html
+images/lodging/*Gmail.pdf
+images/lodging/*Gmail_files/

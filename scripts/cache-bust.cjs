@@ -14,8 +14,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const TARGETS = ['styles.css', 'app.js', 'config.js'];
-const HTML_FILES = ['index.html', 'privacy.html', 'terms.html', '404.html'];
+const TARGETS = ['styles.css', 'app.js', 'config.js', 'products.js'];
+const HTML_FILES = ['index.html', 'privacy.html', 'terms.html', '404.html', 'gear.html'];
 
 function deployStamp() {
     const sha = (process.env.GITHUB_SHA || '').trim();
