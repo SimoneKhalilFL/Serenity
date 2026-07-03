@@ -31,6 +31,7 @@ const {
     generatePropertySEO,
     buildVacationRentalSchema,
     buildBreadcrumbSchema,
+    buildFaqPageSchema,
     serialize,
     safeJsonForScript
 } = require('./lib/listing-schema.cjs');
@@ -65,6 +66,8 @@ function buildPage(property) {
 
     const vrJson = safeJsonForScript(serialize(buildVacationRentalSchema(property)));
     const bcJson = safeJsonForScript(serialize(buildBreadcrumbSchema(property)));
+    const faqSchema = buildFaqPageSchema(property);
+    const faqJson = faqSchema ? safeJsonForScript(serialize(faqSchema)) : '';
 
     // CSP here is the slim one used by 404/privacy/terms (no Leaflet, no
     // Web3Forms, no media.scurto.net). Kept in sync with other static pages.
@@ -110,6 +113,7 @@ function buildPage(property) {
 
     <script type="application/ld+json" data-schema="listing-${property.id}">${vrJson}</script>
     <script type="application/ld+json" data-schema="breadcrumb-${property.id}">${bcJson}</script>
+    ${faqJson ? `<script type="application/ld+json" data-schema="faq-${property.id}">${faqJson}</script>` : ''}
 
     <style>
         html, body { margin: 0; padding: 0; }

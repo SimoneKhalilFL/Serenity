@@ -43,16 +43,19 @@
                     </svg>
                     <span>StayAtFlorida</span>
                 </a>
-                <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav" onclick="toggleMobileMenu(this)">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </button>
                 <div id="primary-nav" class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="index.html#properties">Properties</a>
                     <a href="gear.html" aria-current="page">Gear</a>
                 </div>
+                <!-- Static page: no JS access to showContactModal(). Deep-link to index.html?inquire=1
+                     and app.js DOMContentLoaded handler opens the modal automatically. -->
+                <a href="index.html?inquire=1" class="btn-nav-inquire" aria-label="Open inquiry form on the homepage">Inquire</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav" onclick="toggleMobileMenu(this)">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>

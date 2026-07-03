@@ -25,7 +25,9 @@ const SEO_CONFIG = {
     siteName: 'StayAtFlorida',
     siteTagline: 'Luxury Beachfront Vacation Homes',
     defaultTitle: 'StayAtFlorida | Luxury Beachfront Vacation Homes',
-    defaultDescription: 'Book luxury owner-hosted beachfront vacation homes on Florida’s Gulf Coast with StayAtFlorida. Enjoy direct beach access, Gulf views, resort amenities, and direct-booking savings.',
+    // Homepage meta description — trimmed 2026-07-02 from 197 → 152 chars for
+    // Google SERP density. Includes both destination keywords + direct-booking hook.
+    defaultDescription: 'Owner-hosted luxury beachfront homes in Panama City Beach & Destin, Florida. Book direct with StayAtFlorida — Gulf views, resort amenities, no OTA fees.',
     defaultOgImage: 'images/og/default.jpg?v=postcard-v1'
 };
 
@@ -144,6 +146,17 @@ function extractCheckInOutFromProperty(property) {
 }
 
 function buildAccommodationBedDetails(property) {
+    // Prefer an explicit inventory when the property provides one (canonical source
+    // of truth is MASTER §7 → mirrored on the property record as `bedInventory`).
+    // Each entry is a raw BedDetails object. Falls back to a heuristic if absent,
+    // but new properties should always ship an explicit inventory.
+    if (Array.isArray(property.bedInventory) && property.bedInventory.length > 0) {
+        return property.bedInventory.map((b) => ({
+            '@type': 'BedDetails',
+            numberOfBeds: b.numberOfBeds || 1,
+            typeOfBed: b.typeOfBed || 'Queen'
+        }));
+    }
     const n = Math.min(Math.max(0, property.bedrooms || 0), 6);
     const types = ['King', 'Queen', 'Full', 'Queen', 'Single', 'Full'];
     const beds = [];
@@ -159,6 +172,33 @@ function buildAccommodationBedDetails(property) {
         beds.push({ '@type': 'BedDetails', numberOfBeds: 1, typeOfBed: 'Queen' });
     }
     return beds;
+}
+
+/**
+ * FAQPage schema. Emitted when the property record includes a `faqs` array.
+ * The Q/A text here MUST match the visible HTML rendered by
+ * app.js#renderPropertyFAQ() — Google penalizes ghost FAQ schema.
+ */
+function buildFaqPageSchema(property) {
+    if (!property || !Array.isArray(property.faqs) || property.faqs.length === 0) return null;
+    const mainEntity = property.faqs
+        .map((f) => {
+            const q = String((f && f.q) || '').trim();
+            const a = String((f && f.a) || '').trim();
+            if (!q || !a) return null;
+            return {
+                '@type': 'Question',
+                name: q,
+                acceptedAnswer: { '@type': 'Answer', text: a }
+            };
+        })
+        .filter(Boolean);
+    if (mainEntity.length === 0) return null;
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity
+    };
 }
 
 function buildVacationRentalReviews(reviews) {
@@ -226,7 +266,13 @@ function buildVacationRentalSchema(property) {
             latitude: property.coordinates.lat,
             longitude: property.coordinates.lng
         } : undefined,
-        priceRange: `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`,
+        // priceRange in VacationRental JSON-LD. Auto-derived from baseNightlyRate × 1.5 for
+        // properties that don't set an explicit override. TW2111 sets `priceRangeOverride`
+        // because the auto-derived range ($225-$338) understates the peak-season ceiling
+        // (July 4 peak = 2.7× base = $610). See docs/brand/SEO.md and the TW2111 MASTER §21
+        // Fee Schedule for the transparency rule.
+        priceRange: property.priceRangeOverride
+            || `$${property.baseNightlyRate}-$${Math.round(property.baseNightlyRate * 1.5)}`,
         parentOrganization: {
             '@type': 'Organization',
             '@id': `${base}/#organization`,
@@ -277,7 +323,7 @@ function buildHomepageGraph() {
         name: SEO_CONFIG.siteName,
         url: `${base}/`,
         logo: { '@type': 'ImageObject', url: `${base}/favicon.svg` },
-        description: 'Luxury owner-hosted beachfront vacation homes on Florida’s Gulf Coast — Panama City Beach and Destin. Direct beach access, Gulf views, resort amenities, and direct-booking savings.',
+        description: 'Owner-hosted luxury beachfront vacation homes on Florida\u2019s Gulf Coast \u2014 Panama City Beach and Destin. Direct beach access, Gulf views, resort amenities, and direct-booking savings.',
         sameAs: ORGANIZATION_SAME_AS,
         areaServed: [
             { '@type': 'City', name: 'Panama City Beach', containedInPlace: { '@type': 'State', name: 'Florida' } },
@@ -333,6 +379,7 @@ module.exports = {
     generatePropertySEO,
     buildVacationRentalSchema,
     buildBreadcrumbSchema,
+    buildFaqPageSchema,
     buildHomepageGraph,
     serialize,
     safeJsonForScript

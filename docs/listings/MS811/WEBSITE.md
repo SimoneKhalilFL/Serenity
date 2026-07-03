@@ -55,10 +55,10 @@
 | Where is Majestic Sun? | Miramar Beach, Florida, in the Seascape resort community. Near Destin. |
 | How many people can it sleep? | Up to 6 guests across 2 bedrooms. *(Verify sleeping arrangement once MASTER §7 is finalized.)* |
 | Are pets allowed? | *Pending — verify with HOA.* |
-| Is there beach service? | We do not provide beach service. Complimentary beach chairs and umbrella are available in the condo. |
+| Is there beach service? | Complimentary beach chairs and umbrella are available in the condo. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you prefer a full setup. |
 | What's the cancellation policy? | *Pending Revenue Manager sign-off.* |
 | Do you offer discounts for direct booking? | Yes — you skip the OTA service fees (typically 10–15% of the total) when you book direct at stayatflorida.com. |
-| How do I contact the owner? | Simone answers every inquiry personally, typically within 24 hours. |
+| How do I contact the owner? | Simone answers every inquiry personally, typically within 2 hours. |
 
 ## SEO
 

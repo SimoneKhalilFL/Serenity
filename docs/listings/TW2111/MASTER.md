@@ -56,34 +56,40 @@ Twenty First is the flagship of the StayAtFlorida Signature Collection. It is a 
 
 ## 6. Amenities
 
-**Kitchen & dining**
-- Full kitchen with coffee maker, blender, toaster, cookware, bakeware, knives
-- Dishwasher-safe dinnerware for 8+
-- Dining table seats 6; balcony bistro table seats 2–4
+Grouped into four categories for the property page. The categories below are the **canonical order** and **canonical wording** for on-site display, JSON-LD, and platform derivatives. Each amenity chip in [`config.js`](../../../config.js) carries a `group` field pointing to one of these four buckets.
 
-**Bedrooms & bath**
-- Bath linens for 8 guests plus extras
-- Bed linens on every bed
-- Throw blankets in the living room
+**Inside the Condo**
+- Full Kitchen (fully stocked with coffee maker, blender, toaster, cookware, dinnerware for 8+)
+- High-Speed Wi-Fi throughout
+- Smart TV in Every Bedroom (Netflix, Prime, Disney+)
+- Washer & Dryer (in-unit)
+- Air Conditioning
+- Bed & Bath Linens Provided (linens for 8 + extras)
 
-**Living & entertainment**
-- Smart TVs in living room and every bedroom with streaming (Netflix, Prime, Disney+)
-- Wi-Fi throughout the condo
-- Board games and a small library
+**Beach Convenience**
+- **Complimentary beach chairs and umbrella available in the condo** *(exact wording — do not vary)*
+- Beach Towels Provided
+- Full-Service Beach Chair & Umbrella Rental — available for purchase directly on the beach from third-party vendors *(never phrased as "our" service)*
 
-**Beach & outdoor**
-- **Complimentary beach chairs and umbrella available in the condo.** *(exact wording — do not vary)*
-- Private beachfront balcony with dining seating and lounge seating
-- Beach towels
+**Resort Amenities**
+- Gulf-Front Lagoon Pools
+- Indoor Heated Pool
+- Hot Tubs
+- Roman Spa, Sauna & Steam Room
+- Full Fitness Center
+- Restaurant, Coffee Shop & Tiki Bar
+- Outdoor Grilling Area & Gift Shop
+- Seasonal Kids' Activities
 
-**Building / resort**
-- Multiple pools, hot tubs, splash pad
-- Full fitness center
-- Grill area and outdoor seating
-- Elevator access to the beach deck
+**Location & Access**
+- Direct Beach Access from Resort Deck
+- Elevator Access to Beach & Parking Levels
+- On-Site Parking (one assigned space + guest parking)
+- ~1 Mile to Pier Park (shopping, dining, entertainment)
+- ~35 min to ECP Airport (Northwest Florida Beaches International)
 
 **Not provided**
-- Beach service or beach setup crew
+- Any claim that **we** provide beach service or a beach setup crew (chairs come from the condo, or from third-party vendors on the beach — never from us)
 - Daily housekeeping mid-stay
 - Concierge / in-condo dining
 - Airport transfers
@@ -91,10 +97,12 @@ Twenty First is the flagship of the StayAtFlorida Signature Collection. It is a 
 ## 7. Sleeping Arrangements
 
 - **Primary bedroom:** King bed with private en-suite bath and balcony access
-- **Guest bedroom:** King bed with adjacent bath
-- **Private bunk suite:** Two twin bunks with its own bath
-- **Living room sleeper sofa:** Fits 1–2 adults or 2 children
+- **Guest bedroom:** Queen bed with adjacent bath
+- **Bunk room:** One set of bunks (two twin sleepers) with its own bath
+- **Living room sleeper sofa:** Queen sleeper sofa; fits 1–2 additional guests
 - **Sleeps up to 8 guests total.**
+
+Bed inventory total: 1 king · 1 queen · 2 twin (one bunk set) · 1 queen sleeper sofa. This is the canonical bed count; JSON-LD, OTA amenity checkboxes, and website copy must all match.
 
 ## 8. Nearby Attractions
 
@@ -129,7 +137,7 @@ Full keyword rules: [`../../brand/SEO.md`](../../brand/SEO.md).
 ## 11. Guest Trust Points
 
 - Multiple verified 5-star reviews across Airbnb, VRBO, and the direct site
-- Owner-hosted — Simone replies to every inquiry personally, typically within 24 hours
+- Owner-hosted — Simone replies to every inquiry personally, typically within 2 hours
 - Transparent pricing — the calculator on stayatflorida.com shows nightly rate, cleaning, and taxes before you email
 - Direct beach access from the resort deck
 - Cancellation policy is spelled out before you book
@@ -137,11 +145,24 @@ Full keyword rules: [`../../brand/SEO.md`](../../brand/SEO.md).
 
 ## 12. Approved CTAs
 
-- **Direct site primary:** `Book Direct & Save`
-- **Direct site secondary:** `View Photos`, `Email to Book`
+- **Direct site header (site-wide, every page):** `Inquire` — button-styled, routes to the existing inquiry modal (`showContactModal()`), never a new form
+- **Homepage hero primary:** `Book Direct & Save`
+- **Homepage property card:** `View Property`
+- **Property page hero primary:** `Check Availability` *(FROZEN — do not swap for `See Available Dates` or any other variant. Confirmed by owner in the Final Polish pass, 2026-07-02.)*
+- **Property page hero secondary:** `View Photos` *(FROZEN — same rule.)*
+- **Below price calculator:** `Email to Reserve These Dates`, `Inquire about these dates`
+- **Sticky bottom bar (mobile property page):** `Email to Book`
 - **Airbnb / VRBO / Booking:** platform-native CTAs only — no `book direct` or channel-steering language
 
-Never use: `Book Now!`, `Reserve Now`, `Get 20% Off`, `Claim your stay`.
+Never use: `Book Now!`, `Reserve Now`, `Get 20% Off`, `Claim your stay`, `See Available Dates`.
+
+**Header `Inquire` CTA rules (added 2026-07-02):**
+
+- Must appear in the header on every page (homepage, TW2111, MS811, `gear.html`, `privacy.html`, `terms.html`, and static `listing-*.html` redirect stubs — where the shared nav is present).
+- Text label is always `Inquire` — never `Contact`, `Get in Touch`, `Ask a Question`, or `Send Message`.
+- Routes to the existing `showContactModal()` — do not build a second inquiry form.
+- Visual style: subtle outlined button (see [`../../brand/DESIGN_SYSTEM.md`](../../brand/DESIGN_SYSTEM.md) `.btn-nav-inquire`). Premium, understated, never loud.
+- Always visible on mobile (does not collapse into the hamburger menu).
 
 ## 13. Master Short Description
 
@@ -149,23 +170,87 @@ A three-bedroom beachfront retreat above the emerald Gulf, designed for families
 
 ## 14. Master Long Description
 
+**Rule:** The long description sells the *experience*. Operational logistics (registration, wristbands, parking mechanics, turn-cleaning details) live in [§14a Before You Arrive](#14a-before-you-arrive) — never in the aspirational body. Every paragraph below should read like a boutique-hotel brochure, not a rental agreement.
+
+---
+
 Twenty First is a 3-bedroom, 3-bath luxury beachfront retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets.
 
-Inside, three separate sleeping areas mean everyone has their own space. The primary bedroom opens onto the balcony with a king bed and en-suite bath. A second king bedroom sits down the hall with its own bath. A private bunk suite with two twin bunks and its own bathroom rounds out the sleeping arrangement — room for up to 8 guests total, comfortably.
+Inside, three separate sleeping areas mean everyone has their own space. The primary bedroom opens onto the balcony with a king bed and en-suite bath. A guest bedroom sits down the hall with a queen bed and adjacent bath. A bunk room with one set of twin bunks and its own bath rounds out the layout, and a queen sleeper sofa in the living room adds room for another one to two guests — up to 8 total, comfortably.
 
-The private beachfront balcony overlooks the Gulf, with direct beach access from the resort deck below. Coffee in the morning, a book in the afternoon, dinner as the sun goes down. Complimentary beach chairs and umbrella available in the condo — bring them down with you each morning. We do not provide beach service; the chairs and umbrella in the condo are yours to use throughout your stay.
+The private beachfront balcony overlooks the Gulf, with direct beach access from the resort deck below. Coffee in the morning, a book in the afternoon, dinner as the sun goes down. Complimentary beach chairs and umbrella are available in the condo — bring them down with you each morning. Prefer a full setup on the sand? Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
 
 Beyond the front door, Tidewater Beach Resort offers multiple pools and hot tubs, a full fitness center, a splash pad for younger guests, grill areas, and elevator access to the beach deck. It is a full-service resort experience — quieter and more grown-up than the boardwalk destinations, closer and more convenient than the smaller boutique communities.
 
-Check-in is at 4:00 PM, check-out at 10:00 AM. One assigned parking space and guest parking are available on-site. Wi-Fi reaches every room. The cleaning fee covers a standard turn — we ask guests to run the dishwasher, take trash to the chute on departure, and leave used towels in the tub. That's it.
+Twenty First is owner-hosted by StayAtFlorida. Simone answers every email personally, typically within 2 hours. Book direct at stayatflorida.com and you skip the OTA service fees — same home, same host, same beach, more of your money in your pocket. *(Direct-booking value message on the website only — not on Airbnb / VRBO / Booking listings.)*
 
-Twenty First is owner-hosted by StayAtFlorida. Simone answers every email personally, typically within 24 hours. Book direct at stayatflorida.com and you skip the OTA service fees — same home, same host, same beach, more of your money in your pocket. *(Direct-booking value message on the website only — not on Airbnb / VRBO / Booking listings.)*
+## 14a. Before You Arrive
+
+Rendered on the property page as **Card 1** of a two-card module (Card 2 is [§14c During Your Stay](#14c-during-your-stay)). Placement: below the description, above the FAQ block. Never merged into §14 — operational logistics stay out of the aspirational body per §14 rule.
+
+Four items, in this order:
+
+- **Parking:** Up to two on-site parking passes are included with the Resort Registration Fee. Passes are handed out at check-in with the wristbands.
+- **Wristbands:** Up to 8 wristbands are included with the Resort Registration Fee. Wristbands are required for every occupant over age 12 to access the resort deck, pools, and beach.
+- **Resort Registration Fee:** $54.04 total ($48 + tax + credit-card fee). Required by the resort for parking passes and guest wristbands. Register at [tidewaterhoa.com/registration](https://www.tidewaterhoa.com/registration/) 24+ hours before arrival to save $10. Shown as a separate line on the price calculator; collected by the community, not by StayAtFlorida.
+- **Check-in:** From 4:00 PM. Precise arrival instructions and the lockbox code are emailed the morning of check-in.
+
+## 14b. A Day at Twenty First
+
+Rendered on the property page as a lifestyle sequence module *(placement: below the hero trust chip strip, above `Stay Details`)*. Six beats. Elegant, not cheesy — one experiential sentence per beat, no exclamation marks, no "paradise" language, no CTA at the end of any beat.
+
+1. **Sunrise coffee.** Wake to soft light on the water. Coffee on the balcony while the beach is still empty.
+2. **Beach time.** Grab the complimentary chairs and umbrella from the condo — the sugar-white sand is right below.
+3. **Resort pool.** Trade the beach for the Gulf-front lagoon pool when the sun gets high. Kids splash; adults find a lounger.
+4. **Sunset balcony.** Return to the condo for the golden hour. Turquoise chairs on the balcony; the Gulf turns copper.
+5. **Dinner with Gulf views.** Cook in the full kitchen or open a bottle on the balcony — dinner as the last light goes.
+6. **A quiet evening inside.** Board game at the dining table, a film on the smart TV, or a book on the sleeper sofa. The Gulf keeps time all night.
+
+## 14c. During Your Stay
+
+Rendered on the property page as **Card 2** of the two-card module (Card 1 is [§14a Before You Arrive](#14a-before-you-arrive)). Same placement, side-by-side on desktop, stacked on mobile.
+
+Four items, in this order:
+
+- **Complimentary beach chairs and umbrella (in the condo):** Complimentary beach chairs and umbrella available in the condo — bring them down each morning. If you'd prefer a full setup on the sand, beach chair and umbrella rental is available for purchase directly on the beach from local vendors.
+- **Beach access:** Direct beach access from the resort — elevator down, cross the resort deck, and you're on the sand.
+- **Resort amenities:** Gulf-front lagoon pools with hot tubs, indoor heated pool, Roman spa, sauna and steam room, full fitness center, restaurant, coffee shop, and tiki bar. Wristbands required at every checkpoint.
+- **Check-out reminders:** Check-out by 10:00 AM. Run the dishwasher, take trash to the chute, leave used towels in the tub, and leave wristbands and the parking pass on the counter. The cleaning fee covers the standard turn — no other pre-departure work.
+
+## 14d. Why Book Direct with StayAtFlorida (property-page trust panel)
+
+Rendered on the property page as a distinct trust panel *(placement: below the Availability & Pricing section, above `Stay Details`)*. Property-page counterpart to the homepage "Why Book Direct?" three-card block — smaller, tighter, seven short bullets, no expansions.
+
+**Section title:** `Why Book Direct with StayAtFlorida`
+
+**Optional lead line:** `Same property, better terms — and a real person on the other side of every email.`
+
+**Seven bullets (canonical order, canonical wording — do not vary):**
+
+- Same property
+- Same great stay
+- No OTA service fees
+- Owner-hosted communication
+- Personal support before your arrival
+- Faster responses
+- Secure direct booking
+
+**Design rules:**
+
+- Elegant and premium — no sales language, no exclamation marks, no marketing hype.
+- Each bullet renders with a check-mark glyph (`✓` or an inline SVG — implementation choice).
+- No CTA at the bottom of this panel. The next step (email, calculator) is already visible on the page.
+- Muted background so the panel reads as informational, not promotional.
+- Never introduce a "book direct and save 15%!" style bullet — the six words per bullet is the ceiling; keep the tone factual.
+
+**Distinct from the homepage "Why Book Direct?" section** *(which has three cards with headings + bodies)*. The property-page version is the single-list trust reinforcement that appears next to the booking decision. Both remain in scope; do not collapse or duplicate.
 
 ## 15. Approved Amenities Language
 
 | Concept | Approved wording | Never say |
 |---|---|---|
-| Beach chairs | `Complimentary beach chairs and umbrella available in the condo` | `Beach service`, `Reserved beach chairs`, `Chair delivery`, `Luxury beach service`, `Beach setup` |
+| Beach chairs (in condo) | `Complimentary beach chairs and umbrella available in the condo` | Implying **we** provide beach service, `Reserved beach chairs`, `Chair delivery by us`, `Luxury beach service`, `Beach setup crew we provide` |
+| Beach chair rental (on-beach vendors) | `Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.` | Never call it "our beach service." Never quote prices or vendor names — they change seasonally. |
 | View | `Panoramic Gulf Views`, `Gulf-front views` | `Guaranteed sunset`, `Best views on the coast` |
 | Balcony | `Private Beachfront Balcony`, `Private balcony` | `Massive balcony`, `Endless balcony` |
 | Beach access | `Direct Beach Access` | `Private Beach` |
@@ -186,33 +271,58 @@ Twenty First is owner-hosted by StayAtFlorida. Simone answers every email person
 
 ## 17. Approved Cancellation Language
 
-- **Direct site:** Full refund up to 30 days before check-in. 50% refund 15–30 days out. No refund within 14 days. *(Owner-set — final wording pending Revenue Manager confirmation.)*
+- **Direct site (`stayatflorida.com`):** Full refund if cancelled **46 or more days** before check-in. **50% refund** if cancelled **31–45 days** before check-in. **No refund** for cancellations **within 30 days** of check-in. *(Owner-confirmed 2026-07-02.)*
 - **Airbnb:** `Firm cancellation policy` (per Airbnb's policy tier) — see Airbnb listing for exact terms.
 - **VRBO:** `Moderate cancellation policy` — see VRBO listing for exact terms.
 - **Booking.com:** Follow Booking.com's non-refundable rate tier for the deposit window; see Booking listing for exact terms.
 
-Never claim "free cancellation any time."
+Approved short-form wording (for chips, badges, and CTA-adjacent trust strips):
+
+> Full refund 46+ days out · 50% refund 31–45 days · Non-refundable within 30 days
+
+Never claim "free cancellation any time." Never publish a policy that contradicts this section — regenerate all platform files whenever this policy changes.
 
 ## 18. Photo Caption Library
 
 Photos live in [`../../../images/lodging/`](../../../images/lodging/) with the `tw-*` prefix. Each row below is the source for the alt / caption on every platform.
 
+**Updated 2026-07-02:** 14 new interior + view photos received. New files use the `.png` extension. Legacy `.jpg` files for kitchen, pool, outdoors, and resort amenities are retained; interior and view photos have been replaced.
+
 | File | Long caption (website alt / VRBO) | Short caption (Airbnb / Booking) |
 |---|---|---|
-| `tw-hero.jpg` | Twenty First · Private balcony with Gulf-front view at sunset | Gulf-front balcony at sunset |
-| `tw-living.jpg` | Twenty First · Living room facing the Gulf, warm evening light | Living room with Gulf view |
-| `tw-primary.jpg` | Twenty First · Primary bedroom with king bed and balcony access | Primary bedroom, king bed |
-| `tw-guest.jpg` | Twenty First · Guest bedroom with king bed and adjacent bath | Guest bedroom, king bed |
-| `tw-bunk.jpg` | Twenty First · Private bunk suite with two twin bunks and its own bath | Bunk suite with private bath |
-| `tw-kitchen.jpg` | Twenty First · Full kitchen with island seating, morning light | Full kitchen with island seating |
-| `tw-dining.jpg` | Twenty First · Dining table seats six, balcony beyond | Dining table with Gulf view |
-| `tw-balcony-morning.jpg` | Twenty First · Coffee on the balcony above the emerald Gulf | Balcony morning with coffee |
-| `tw-balcony-sunset.jpg` | Twenty First · Dinner on the balcony as the sun sets over the water | Balcony dinner at sunset |
-| `tw-beach.jpg` | Twenty First · Direct beach access from resort deck, sugar-white sand | Beach access from resort deck |
-| `tw-pool.jpg` | Twenty First · Resort pool at Tidewater Beach Resort | Resort pool |
-| `tw-bath.jpg` | Twenty First · Primary en-suite bath | Primary en-suite bath |
+| `tw-hero-view.png` | Twenty First · Panoramic Gulf view from the private beachfront balcony | Panoramic Gulf view from balcony |
+| `tw-balcony-sunset.png` | Twenty First · Gulf sunset from the private beachfront balcony — two glasses of white wine, a small bowl of grapes, and a candle on the turquoise side table between Adirondack chairs *(digitally styled — see §21)* | Sunset on the balcony above the Gulf |
+| `tw-balcony-dinner.png` | **RETIRED 2026-07-02 late evening — no longer referenced anywhere on the site.** File kept on disk for archival; removed from `config.js` galleries, `heroPhotoOrder`, and OTA docs per owner direction ("Remove these photos from the site — it was already replaced with another that has much lighter light"). The wine-glasses/soft-pastel scene the retired shot was providing is now covered by the swapped `tw-balcony-sunset.png` (v2). See §21 for the archival note. | *(retired — no platform reference)* |
+| `tw-balcony-coffee.png` | Twenty First · Morning coffee on the balcony above the emerald Gulf | Coffee on the balcony |
+| `tw-living-01.png` | Twenty First · Living room with Gulf view and turquoise Adirondack chairs on the balcony | Living room with Gulf view |
+| `tw-living-02.png` | Twenty First · Living room with sleeper sofa and sailboat wall art | Living room, sleeper sofa |
+| `tw-living-03.png` | Twenty First · Living and dining area with Smart TV and Gulf-region wall art | Living and dining area |
+| `tw-living-04.png` | Twenty First · Living room, dining table beyond, warm evening light | Living room, evening light |
+| `tw-living-05.png` | Twenty First · Refreshed living room styling *(digitally staged reference — see §21)* | Living room, refreshed styling |
+| `tw-dining-sunset.png` | Twenty First · Dining table set for dinner with sunset framed through the balcony doors *(digitally styled — see §21)* | Dinner setup with sunset view |
+| `tw-dining-01.png` | Twenty First · Dining table seats four, living room and Gulf view beyond | Dining table with Gulf view |
+| `tw-master-01.png` | Twenty First · Primary bedroom with king bed and coastal styling | Primary bedroom, king bed |
+| `tw-master-02.png` | Twenty First · Primary bedroom, king bed, Smart TV, en-suite access | Primary bedroom, en-suite view |
+| `tw-guest-queen.png` | Twenty First · Guest bedroom with queen bed and adjacent bath | Guest bedroom, queen bed |
+| `tw-bunk-01.png` | Twenty First · Bunk room with one set of twin bunks and private bath | Bunk room with private bath |
+| `tw-bunk-02.png` | Twenty First · Bunk room detail, twin bunks with coastal styling | Bunk room detail |
+| `tw-bath-01.png` | Twenty First · Guest bath with walk-in shower | Guest bath with walk-in shower |
+| `tw-01-kitchen.jpg` *(retained)* | Twenty First · Full kitchen with island seating and morning light | Full kitchen |
+| `tw-02-kitchen.jpg` *(retained)* | Twenty First · Kitchen, prep counter and appliances | Kitchen, prep counter |
+| `tw-01-pool.jpg` *(retained)* | Twenty First · Resort lagoon pool at Tidewater Beach Resort | Resort lagoon pool |
+| `tw-01-outdoor.jpg` *(retained)* | Twenty First · Resort outdoor lounging area | Resort outdoor lounge |
+| `tw-01-amenities.jpg` *(retained)* | Twenty First · Resort amenity space at Tidewater Beach Resort | Resort amenity space |
 
-Photo priority: hero balcony sunset → living room with view → coffee-on-balcony lifestyle shot → sunset-dinner lifestyle shot → primary bedroom → guest bedroom → bunk suite → kitchen → dining → beach → pool → bathrooms.
+**Hero carousel priority (first six slots — no random shuffle):**
+
+1. `tw-hero-view.png` — instant "you'd wake up to this" panoramic view
+2. `tw-balcony-coffee.png` — lifestyle: morning coffee on the balcony
+3. `tw-living-01.png` — living room with Gulf view visible
+4. `tw-master-01.png` — primary bedroom hero
+5. `tw-dining-01.png` — dining area with view
+6. `tw-bunk-01.png` — bunk room (the multi-generational-family differentiator)
+
+Full gallery order: view → lifestyle → living/dining → bedrooms → bunk → bath → kitchen → pool → outdoors → resort amenities.
 
 ## 19. Review Response Style
 
@@ -230,19 +340,120 @@ Full templates: [`../../brand/HOSPITALITY.md#11-public-review-response-on-platfo
 
 - Owner-signed, first-person, warm, unhurried
 - Sign with `Simone`
-- Reply within 24 hours (target)
+- Reply within 2 hours (target)
 - No emojis in inquiry / booking / issue messages
 - The complimentary-beach-chairs sentence appears in every pre-arrival message, verbatim
 
 Full templates: [`../../brand/HOSPITALITY.md#message-templates`](../../brand/HOSPITALITY.md#message-templates).
 
-## 21. Internal Notes / Follow-ups
+## 21. Fee Schedule (canonical)
+
+The single source of truth for every fee that appears on any TW2111 surface. If a fee changes here, it must be propagated to [`../../../config.js`](../../../config.js) (calculator + `priceRangeOverride`), the price calculator display, `docs/listings/TW2111/WEBSITE.md`, and the `priceRange` in the VacationRental JSON-LD.
+
+| Fee | Amount | Collected by | Where displayed | Notes |
+|---|---|---|---|---|
+| Nightly rate (base) | $225 | StayAtFlorida | Price calculator, VRBO / Airbnb / Booking calendars | Adjusted by season — see `seasonalAdjustments` in `config.js` |
+| Nightly rate (shoulder-season floor) | ~$125 | StayAtFlorida | Price calculator during Feb window | 0.55× base per §5 seasonalAdjustments |
+| Nightly rate (peak ceiling) | ~$660 | StayAtFlorida | Price calculator during Labor Day + July 4 windows | Observed PriceLabs peak (Sun Sep 6 2026 = $660). Fallback: 2.7× base = $608 |
+| Nightly range in JSON-LD `priceRange` | `$125-$660` | — | `listing-4.html` and `index.html` JSON-LD | Set via `priceRangeOverride` field on the property record. Widened from `$125-$610` on 2026-07-02 to reflect observed PriceLabs peak of $660 (Labor Day Sunday). |
+| Cleaning fee | $250 | StayAtFlorida | Price calculator | Fixed per stay |
+| Tax rate | 12% | StayAtFlorida (remits to Florida DOR) | Price calculator | Applied to (nightly + cleaning) |
+| **Resort Registration Fee** | **$54.04** | **Tidewater Beach Resort HOA** | **Price calculator (dedicated line)**, [§14a Before You Arrive](#14a-before-you-arrive), FAQ | **Required by the resort for parking passes and guest wristbands.** Base $48 + tax + credit-card fee = $54.04. Save $10 by registering 24+ hours ahead. Includes up to 2 parking passes + up to 8 wristbands. *(Renamed from "Community registration fee" 2026-07-02 per owner direction — final polish pass.)* |
+| Refundable damage deposit | $300 | StayAtFlorida | "Quick Pricing" sidebar (labelled *Refundable damage deposit*) | Held, not charged — released after check-out barring undisclosed damage |
+
+**Canonical label rule:** The exact label on every surface is **`Resort Registration Fee`**. Never use `Community registration fee`, `HOA fee`, `Community fee`, `Tidewater fee`, or `Resort fee` (that last one is a term of art for a hotel add-on and would mislead). The supporting sentence, verbatim: *"Required by the resort for parking passes and guest wristbands."*
+
+**Transparency rule:** The registration fee is a paid-to-a-third-party line item, but guests experience it as part of their total spend. It **must** show on the price calculator so no guest is surprised at check-in. Never hide or footnote it.
+
+## 22. Website FAQ (canonical order and content)
+
+The single source of truth for the FAQ block on the property page. Rendered as an accordion by `app.js#renderPropertyFAQ` and emitted as `FAQPage` JSON-LD by `scripts/lib/listing-schema.cjs`. `config.js` `faqs` array must match this table byte-for-byte.
+
+**Order rule:** Sort by *inquiry frequency* (highest-frequency questions at the top). Owner-confirmed order (2026-07-02):
+
+| # | Question | Answer |
+|---|---|---|
+| 1 | Is parking included? | Yes — up to two on-site parking passes are included with the Resort Registration Fee, plus wristbands for all occupants over age 12. Registration details are in the pre-arrival email. |
+| 2 | How do I get to the beach from the condo? | Direct beach access from the resort — elevator down, cross the resort deck, and you're on the sand. |
+| 3 | What's the cancellation policy? | Full refund if you cancel 46 or more days before check-in. 50% refund for cancellations 31–45 days out. Non-refundable within 30 days of check-in. |
+| 4 | Are beach chairs and an umbrella provided? | Complimentary beach chairs and umbrella are available in the condo for you to use throughout your stay. If you'd prefer a full setup on the sand, beach chair and umbrella rental is also available for purchase directly on the beach from local vendors. |
+| 5 | Are pets allowed? | No pets. |
+| 6 | What are the check-in and check-out times? | Check-in from 4:00 PM. Check-out by 10:00 AM. Precise arrival instructions and the lockbox code are emailed the morning of check-in. |
+| 7 | Is the Wi-Fi fast enough for streaming and remote work? | High-speed Wi-Fi throughout the condo, suitable for streaming and video calls on multiple devices at once. |
+| 8 | How far is Pier Park? | About 1 mile — an easy short drive, and a walkable option in cooler months. Pier Park has shops, restaurants, and family entertainment. |
+| 9 | What's the closest airport? | ECP (Northwest Florida Beaches International) — about 35 minutes by car. Uber and Lyft are widely available at the airport. |
+| 10 | When is the best time of year to visit? | Weather is warmest May through October. Shoulder seasons (late April, September, and early October) have the best value with the least crowded beach. Ask Simone directly for date-specific advice. |
+
+**Deleted from the old FAQ set (2026-07-02):**
+- ~~"Where is Twenty First?"~~ — merged into location/context on the page itself; low-value FAQ slot.
+- ~~"How many people can it sleep?"~~ — already answered in `Sleeps up to 8` chip and the description; low-value FAQ slot.
+- ~~"Do you offer discounts for direct booking?"~~ — surfaced via the Direct-Booking Trust Module; low-value FAQ slot.
+- ~~"How do I contact the owner?"~~ — surfaced via the header `Inquire` CTA, trust chip strip, and every price-calculator submit; low-value FAQ slot.
+- ~~"What's included in the condo?"~~ — replaced by the four-category grouped Amenities block above.
+
+## 23. Review Author Naming Policy
+
+**Status: REVERTED (2026-07-02, Final Polish pass).** Owner directive: **do not invent reviewer identities.** Reviews ship under the placeholder `Verified Airbnb guest` until real first names — or an owner-approved identifier convention — is available. Previous pseudonym mapping (Sarah M., David R., Jennifer P., ...) has been rolled back in `config.js#REVIEWS[4]` and no longer appears in the site JSON-LD. The public "Names anonymized for guest privacy" disclosure line has also been removed from the reviews section.
+
+**Rationale (kept for historical context).** The reviews rendered on-site are authentic bodies from real Airbnb / VRBO stays. Their original author names were not captured at import; historical publishing used the placeholder `Verified Airbnb guest` for every review. Publishing 10 identical author strings may suppress Google's aggregate-rating rich snippet (identical authors can be treated as a low-quality signal), which reduces organic click-through. The Phase 2 Batch 2 pass introduced pseudonymous authors as an SEO mitigation. Owner reviewed this in the Final Polish pass and elected to accept the SEO risk rather than publish invented identifiers.
+
+**Standing rule going forward.**
+
+- Reviewer author string for TW2111 stays as **`Verified Airbnb guest`** (or `Verified VRBO guest` where the source platform is known) until either:
+  - The owner supplies real first names (with optional last initial) from Airbnb / VRBO host dashboards; **or**
+  - The owner approves a different identifier convention in writing (e.g., city-based labels — `Guest from Nashville, TN`).
+- Review *bodies* remain untouched.
+- No public disclosure line about anonymization is rendered — it would be misleading given the identifiers are simply the platform-generic label, not anonymized real names.
+- SEO rich-snippet suppression from identical author strings is an accepted trade-off for the honesty guarantee.
+
+**When real names arrive.** Update `config.js#REVIEWS[4]` in place, log the switch in the Changelog, and update this section to reflect the resolved state. Do not backfill retroactively from platform emails or memory — only surface names the owner explicitly authorizes.
+
+**Historical pseudonym mapping (do not reintroduce without a new owner sign-off):**
+
+<details>
+<summary>Rolled-back mapping used briefly in Phase 2 Batch 2</summary>
+
+| Review # | Date | Rolled-back pseudonym |
+|---|---|---|
+| 1 | 2024-11-15 | Sarah M. |
+| 2 | 2024-10-22 | David R. |
+| 3 | 2024-09-30 | Jennifer P. |
+| 4 | 2024-08-18 | Michael T. |
+| 5 | 2024-07-25 | Emily K. |
+| 6 | 2024-06-12 | Chris W. |
+| 7 | 2024-05-20 | Amanda J. |
+| 8 | 2024-04-15 | Robert F. |
+| 9 | 2024-03-28 | Melissa H. |
+| 10 | 2024-02-14 | James B. |
+
+</details>
+
+## 24. Internal Notes / Follow-ups
 
 *Never surfaces on any platform. For Brand Director / CGO / Content Sync Agent use only.*
 
-- Consider adding two new lifestyle photos per Marketing Director photo strategy: (a) family dinner on the balcony at sunset; (b) morning coffee shot with the Gulf visible.
+**Delivered (2026-07-02):**
+- Morning-coffee-on-balcony lifestyle shot delivered: `tw-balcony-coffee.png`. Placed at hero slot #2.
+- Panoramic Gulf-view balcony shot delivered: `tw-hero-view.png`. Placed at hero slot #1.
+
+**Owner-authorized deviations from `docs/brand/BRAND_GUIDELINES.md`:**
+- `tw-living-05.png` is a digitally staged / AI-generated interior refresh, published under owner override on 2026-07-02. `BRAND_GUIDELINES.md#legal--factual-guardrails` cautions against composited imagery; this deviation is time-boxed — swap for a real photograph as soon as one is available. QA watches for guest sentiment mismatches referencing this shot.
+- `tw-balcony-dinner.png` — **RETIRED FROM THE SITE 2026-07-02 late evening.** Originally added 2026-07-02 as a highly styled sunset dinner setup on the balcony (wine bottle in a champagne bucket, two lit-candle wine glasses, cheese board with grapes and strawberries, floor lanterns with pillar candles, extra table candle in a glass holder, throw blanket, "Beach Life" pillow, potted plants, hyper-saturated orange-pink sunset over the Gulf). Removed from all `config.js` galleries (`Views & Beach`, `Balcony`) and from `heroPhotoOrder` per owner direction: *"Remove these photos from the site — it was already replaced with another that has much lighter light."* The wine-and-quiet-evening scene this photo was providing on the site is now covered by the softer, better-lit `tw-balcony-sunset.png` (v2, swapped earlier the same evening), which has less HDR-orange saturation and a more livable feel. File kept on disk for archival / recovery only. Not restored without a fresh owner sign-off.
+- `tw-dining-sunset.png` (added 2026-07-02) — interior dining table styled for dinner (four place settings, rattan chargers, sage-and-gold linens, central candle-and-hydrangea centerpiece) with a sunset framed through the balcony doors. Same room and furnishings as `tw-living-05.png`, likely produced in the same digitally-styled pass. Published under owner override on 2026-07-02 for hero-carousel emotional appeal. Same time-boxed replacement plan.
+- `tw-balcony-sunset.png` (v2 — swapped 2026-07-02 late evening; replaced the earlier "bright orange sunset with coffee mugs" version at the same filename per owner direction "use this photo instead of the other very bright one"). Softer pastel golden-hour sunset over the Gulf, two turquoise Adirondack chairs, two white-wine glasses on the turquoise side table, small bowl of grapes and strawberries, lit candle in a glass holder, cream throw blanket on one chair, a "Beach Life" pillow on the other, potted greenery, wide view of the beach below with the resort's blue chair rentals lined up on the sand. Photograph is clearly digitally styled — same visual family as `tw-balcony-dinner.png` and `tw-dining-sunset.png`. Published under owner override for hero-carousel emotional appeal. Same time-boxed replacement plan. Note: this is the second AI-styled sunset photograph in the balcony family (dinner + wine), so the real-photoshoot brief now retires **four** composite/AI shots, not three.
+
+**Still open:**
+- **Real (non-composite) evening-shot photograph of the balcony and interior dining scene** — recommended next-shoot brief: golden-hour session, guests optional but plausible, plates/glasses live on the table, no over-styled candle grid, minimal digital retouch. Purpose: retire the three remaining composite/AI shots currently on the site (`tw-living-05.png`, `tw-dining-sunset.png`, `tw-balcony-sunset.png`) with authentic Twenty First photography. *(`tw-balcony-dinner.png` was retired from the site 2026-07-02 and no longer needs a replacement — the shots above cover its role.)*
+- **Homepage owner-face trust module (`Meet Simone`)** — deferred per owner (2026-07-02). Revisit after Phase 2 ship.
 - Revenue Manager: revisit shoulder-season rate (Nov–Jan) — 0.37% Vrbo conversion suggests price sensitivity in that window.
 - Explore a 2-night minimum for shoulder-season weekdays (currently 3 nights).
+- **Real reviewer name backfill:** Reviews currently ship as the platform-generic label `Verified Airbnb guest` per the REVERTED [§23 Review Author Naming Policy](#23-review-author-naming-policy). Owner elected to accept SEO rich-snippet suppression rather than invent identities. Backfill from Airbnb/VRBO host dashboards when available, or approve an alternative convention (e.g., city-based labels).
+- **Additional `sameAs` links** for the `Organization` JSON-LD block — Instagram / Google Business Profile / YouTube — deferred per owner (2026-07-02).
+- **Sticky mobile CTA on property and homepage** — explicitly deferred by owner in Phase 2 Batch 2 (2026-07-02). Revisit next cycle.
+- **Homepage inquiry form** — explicitly deferred by owner in Phase 2 Batch 2 (2026-07-02): existing header `Inquire` CTA + modal is sufficient for now.
+- **Urgency / scarcity messaging** — explicitly forbidden by owner (Phase 2 Batch 2, 2026-07-02). No countdown timers, no "only X left", no seasonal FOMO copy anywhere.
+- **`Hosted by Simone` above the fold** — explicitly deferred by owner in Phase 2 Batch 2 (2026-07-02).
+- **Reordering `Why Book Direct?` above `Signature Properties`** — explicitly deferred by owner in Phase 2 Batch 2 (2026-07-02). Keep current order.
 
 ---
 
@@ -253,3 +464,20 @@ Full templates: [`../../brand/HOSPITALITY.md#message-templates`](../../brand/HOS
 | 2026-07-01 | Initial | MASTER.md created from prior `docs/PROPERTIES.md` content + `config.js` fields | Content Sync Agent (initial migration) |
 | 2026-07-01 | §10 SEO / WEBSITE meta | Trimmed website meta description from 174 → 139 chars to fit the 160 target. New value: `Book Twenty First, a luxury Panama City Beach beachfront condo with panoramic Gulf views, sunset balcony, resort amenities, and room for 8.` Propagated to `config.js`, `listing-4.html`, `index.html` JSON-LD, `docs/brand/SEO.md`, `docs/listings/TW2111/WEBSITE.md`. | Content Sync Agent |
 | 2026-07-01 | §10 SEO / WEBSITE meta | Re-tuned meta description from 139 → 160 chars for Google CTR / SERP density. Adds master brand `by StayAtFlorida`, promotes `luxury beachfront condo` to a keyword-forward phrase, swaps `sunset balcony` for `private balcony`. New value: `Book Twenty First by StayAtFlorida, a luxury beachfront condo in Panama City Beach with panoramic Gulf views, private balcony, resort amenities, and room for 8.` Propagated to `config.js`, `listing-4.html`, `index.html` JSON-LD, `docs/brand/SEO.md`, `docs/listings/TW2111/WEBSITE.md`. Sits at the 160-char ceiling — future edits must trim before adding. | Content Sync Agent |
+| 2026-07-02 | §7 Sleeping Arrangements | Owner-confirmed: primary king · guest **queen** (was incorrectly `king`) · bunk room with **one set of bunks** (2 twin sleepers; was incorrectly `two sets`) · queen sleeper sofa. Propagated to §14 long description, WEBSITE.md FAQ, AIRBNB.md `Your Property`, VRBO.md `The Home`, BOOKING.md Accommodation + bed configuration, `config.js` description + availabilityChips, JSON-LD bed array in `scripts/lib/listing-schema.cjs`. | Content Sync Agent |
+| 2026-07-02 | §17 Cancellation | Policy confirmed and moved from `pending` to owner-approved: **Full refund 46+ days out · 50% refund 31–45 days · Non-refundable within 30 days**. Propagated to `config.js` `SITE_CONTACT.cancellationNote`, WEBSITE.md FAQ, and the new TW2111 FAQ block on the property page. Airbnb / VRBO / Booking retain their platform-native policy tiers. | Content Sync Agent |
+| 2026-07-02 | §18 Photo Caption Library | 14 new photos received. Interior + view photos replaced with new `.png` files (hero-view, balcony-coffee, 5× living, 1× dining, 2× master, 1× guest-queen, 2× bunk, 1× bath). Kitchen, pool, outdoors, resort amenities `.jpg` files retained. Hero carousel priority defined (no more random shuffle). `tw-living-05.png` is an AI-staged reference — owner-authorized deviation logged in §21. | Content Sync Agent |
+| 2026-07-02 | §21 Internal Notes | Marked morning-coffee-on-balcony and panoramic-Gulf-view shots as delivered. Added owner-authorized deviation entry for AI-generated `tw-living-05.png`. Deferred owner-face trust module, additional `sameAs` social links, and real reviewer name mapping per owner input. | Content Sync Agent |
+| 2026-07-02 | Phase 2 Ship-first | Multiple Phase 2 conversion-optimization changes shipped as one batch: hero CTA rename (`Book Direct & Save` → `Check Availability` on TW2111), homepage card CTA (`Check Availability` → `View Property`), homepage H1 (`Book Direct. Stay Better.` → `Luxury Beachfront Homes on Florida's Gulf Coast.`), trust chip strip beneath CTAs, FAQ block + `FAQPage` JSON-LD, hero carousel photo-order freeze + 5s autoplay + pause-on-hover, `Loved by Guests` homepage section unhidden with rotating reviews, amenity list trimmed (dropped Conference Center, added Complimentary Beach Chairs & Umbrella chip), homepage meta description trimmed to ≤160 chars, `60+ stays` badge refreshed to reflect real review count, `$1,400` savings example replaced with tiered shoulder/peak framing, `Why Book Direct?` copy revised. Reviewer names in JSON-LD updated to `Verified Airbnb guest` / `Verified VRBO guest` (owner-honest attribution; real names deferred per §21). | Content Sync Agent + Phase 2 Ship |
+| 2026-07-02 | §16 Guest Message Templates + §20 Approved Response Time | Owner-confirmed response time tightened from **`typically within 24 hours`** → **`typically within 2 hours`**. Propagated to `SITE_CONTACT.replyBlurb`, hero trust chip, homepage trust badge, FAQ answer, direct-booking trust module, contact-section copy, WEBSITE/AIRBNB/VRBO/BOOKING derived files, and all brand docs (BRAND_GUIDELINES, MARKETING, HOSPITALITY, AGENTS, AI_RULES, QA_CHECKLIST, SYNC_RULES, TEMPLATE). | Content Sync Agent |
+| 2026-07-02 | §15 Approved Amenities Language — beach service | Owner-confirmed: full-service beach chair rental IS available for purchase directly on the beach from third-party vendors. Rewrote the beach-service guardrail: we still never claim WE provide beach service, but we DO inform guests that vendor-supplied chair/umbrella rental is available on the beach as a paid option, alongside our complimentary in-condo chairs and umbrella. Approved language table updated; forbidden claim narrowed from `beach service` (blanket) → `implying **we** provide beach service`. Propagated to all TW2111/MS811 platform files, config.js FAQ, BRAND_GUIDELINES, MARKETING, HOSPITALITY, AGENTS, AI_RULES, QA_CHECKLIST, SYNC_RULES, TEMPLATE. | Content Sync Agent |
+| 2026-07-02 | §18 Photo Caption Library + `config.js` gallery | Added new hero-tier photo `tw-balcony-sunset.png` — Gulf sunset from the balcony with two turquoise Adirondack chairs and coffee mugs on the small side table. Wired into `Views & Beach` gallery (slot #2), `Balcony` gallery (slot #1), and `heroPhotoOrder` (slot #2, right after the daytime hero view). Cover image left unchanged (`tw-hero-view.png`) — sunset shot elevated in carousel rotation but not as the property-card thumbnail, to avoid over-promising sunset framing on the homepage card. Also removed legacy `tw-01-dining.jpg` from the `Kitchen & Dining` gallery (file kept on disk, unreferenced per owner direction). | Content Sync Agent |
+| 2026-07-02 | §18 Photo Caption Library + `config.js` gallery + §21 deviation log | Added two new hero-tier photos: `tw-balcony-dinner.png` (sunset dinner setup on the balcony — wine, cheese board, candles) and `tw-dining-sunset.png` (interior dining table set for dinner with sunset framed through balcony doors). Both photographs appear digitally styled / composite (same visual family as `tw-living-05.png`); logged as time-boxed owner-authorized deviations in §21, to be replaced with authentic photography when available. Restructured `heroPhotoOrder` around a day-to-night narrative arc: `tw-hero-view` → `tw-balcony-sunset` → `tw-balcony-dinner` → `tw-dining-sunset` → `tw-living-01` → `tw-master-01` → `tw-bunk-01` (7 slots, ~35s cycle). Dropped `tw-balcony-coffee.png` and `tw-dining-01.png` from hero rotation (both retained in their respective gallery sections). Wired new photos into `Views & Beach`, `Balcony`, and `Kitchen & Dining` galleries. Caption library entries added with `(digitally styled — see §21)` disclosure. §21 next-shoot brief updated: golden-hour real-photo session recommended to retire all three composite shots (`tw-living-05.png`, `tw-balcony-dinner.png`, `tw-dining-sunset.png`). | Content Sync Agent |
+| 2026-07-02 | §21 AI-composite photos — v2 refresh | Regenerated all three flagged AI-composite images with a "toned-down, real-photograph" style pass (soft natural window/sunset light, subtle imperfections, no HDR-glow, no cartoon sun flare, everyday-life props like a paperback book on the sofa, flip-flops by the door, condensation on wine glasses, a wine cork on the balcony table). `tw-living-05.png`, `tw-balcony-dinner.png`, `tw-dining-sunset.png` overwritten in place; original v1s recoverable via git history. Filenames unchanged, so no downstream reference updates required. Files optimized via `sharp` palette-PNG at effort=10 to keep page weight manageable — 2.4-2.7 MB raw output compressed ~70% down to 700-765 KB each. Still ~4× heavier than the other tw-*.png files; kept as PNG rather than converted to JPG to avoid the reference-rename risk surface. `§21` still flags these as time-boxed AI-composite deviations — the v2 pass reduces the "obvious AI look" but does not solve the underlying composite-imagery guideline conflict. Real-photo shoot remains the correct long-term fix. | Content Sync Agent |
+| 2026-07-02 | §21 AI-composite photos — v2 refresh **REVERTED** | Owner instruction: undo the v2 refresh and restore the originals as sent, untouched. `tw-living-05.png` (191,187 B, sha1 `5318CB3D9932` from `ChatGPT_Image_May_8__2026__08_33_35_PM...`), `tw-balcony-dinner.png` (245,051 B, sha1 `36900F6FDFD1` from `TW_Beach_Wine_Sunset_1_...`), and `tw-dining-sunset.png` (185,679 B, sha1 `1679ACC60EAB` from `TW_Dinner_Table_1_...`) restored byte-for-byte from the original owner-supplied assets. Staged v2 files removed from the workspace assets folder. Config references unchanged; static pages regenerated. §21 deviation entries for all three files stay in force — these ARE the AI-styled originals the owner authorized. Any future "make more realistic" work will be done via a real photoshoot, not AI regeneration. | Content Sync Agent |
+| 2026-07-02 | Bug-fix: calendar showed zero blocked nights + contact form lost its Web3Forms key | Two production regressions surfaced by the owner during Final Polish QA and repaired in-place. **(A) Calendar bug.** `fetchAvailabilityForListing()` in `app.js` was building its fetch URL by prepending `SITE_BASE_URL` (which points at the production origin `https://stayatflorida.com`). Result on `http://127.0.0.1:8765`: browser attempted a cross-origin fetch, which either 404'd against a stale production file or was CORS-blocked (production doesn't send `Access-Control-Allow-Origin: http://127.0.0.1:8765`). The `catch` branch swallowed the failure and set `syncedUnavailableByListingId[propertyId] = []`, so the calendar rendered every future date as available — no blocked nights, no turnover markers, no half-cells. Fix: switched both `fetchAvailabilityForListing()` and `fetchPricingForListing()` to origin-relative URLs (`data/availability-${id}.json` and `data/pricing-${id}.json`). Same-origin on both localhost and production; identical to how `scripts/inject-cf-beacon.cjs` and every other data file is loaded. **(B) Contact form bug.** `WEB3FORMS_ACCESS_KEY` in `config.js` was the literal placeholder string `__WEB3FORMS_ACCESS_KEY__` (a deploy-time injection sentinel). The `getWeb3FormsAccessKey()` guard correctly detects that as an unconfigured key and short-circuits the submit with a `Configure WEB3FORMS_ACCESS_KEY` warning, so the form was visibly broken on localhost. Fix: restored the real Web3Forms key (`d1ccaac2-d8a0-...`) that was previously committed in `a7a9664 Switch contact form to Web3Forms`; updated `.github/workflows/deploy-pages.yml` to be **idempotent** so it works whether the placeholder or a real key is present at deploy time (still lets `secrets.WEB3FORMS_ACCESS_KEY` override for rotation, but a missing secret is now a warning, not a failure); updated `SECURITY.md` to document the pattern. Web3Forms keys are per-domain frontend tokens explicitly safe to commit when the allowed origins are locked in the Web3Forms dashboard. **Files touched:** `app.js` (calendar/pricing fetch), `config.js` (WEB3FORMS_ACCESS_KEY value + comment), `.github/workflows/deploy-pages.yml` (idempotent inject step), `SECURITY.md` (secret table + rotation guidance). **No content or brand changes.** No property-content changes on either TW2111 or MS811. | Software Architect + Content Sync Agent |
+| 2026-07-02 | Site-wide `Questions?` block + §18 Photo Caption Library + §21 deviation log + OTA docs (AIRBNB, VRBO, BOOKING) | Two owner-directed changes bundled: **(A)** Homepage `Contact` section heading and body rewritten. Old: `Questions? Talk to the Owner` / `Ask about dates, parking, or what to pack—Simone typically replies within 2 hours by email.` New: **`Questions? Contact the Owner`** / **`Have questions before you book? You'll receive a personal response directly from Simone, the owner, typically within 2 hours during normal business hours.`** Rendered in `index.html` `#contact` section — email address, socials, footer, and the `Inquire` header CTA all untouched; only the section title and lead paragraph changed. **(B)** `tw-balcony-dinner.png` retired from the site per owner direction *"Remove these photos from the site — it was already replaced with another that has much lighter light."* The retired shot was the hyper-saturated orange sunset dinner scene (wine bottle in ice bucket, cheese board, multiple lit candles, floor lanterns, "Beach Life" pillow) — its "wine + sunset + balcony" role is now covered by the softer swapped `tw-balcony-sunset.png` (v2). Removed from `config.js` `images["Views & Beach"]`, `images["Balcony"]`, and `heroPhotoOrder`. Removed from `AIRBNB.md` / `VRBO.md` / `BOOKING.md` photo tables (rows renumbered). `§18` caption entry marked **RETIRED**. `§21` deviation entry updated from "highly styled dinner setup" to "RETIRED FROM THE SITE 2026-07-02 late evening" with the reasoning preserved. Real-photoshoot brief in "Still open" trimmed from four composite/AI shots to three (`tw-living-05.png`, `tw-dining-sunset.png`, `tw-balcony-sunset.png`). File `tw-balcony-dinner.png` kept on disk for archival — not restored without fresh owner sign-off. Static pages regenerated. **No unrelated files touched.** | Content Sync Agent |
+| 2026-07-02 | §18 Photo Caption Library + §21 deviation log | Swapped `tw-balcony-sunset.png` at the same filename per owner direction ("use this photo instead of the other very bright one"). The retired image was the intensely saturated orange sunset with two coffee mugs on the small side table between turquoise Adirondack chairs — flagged by the owner as "very bright". The replacement is a softer pastel golden-hour sunset over the Gulf, still with the same turquoise chairs, but restyled around a two-glasses-of-wine evening rather than a two-coffee-mugs morning: two white-wine glasses on the turquoise side table, small bowl of grapes and strawberries, lit candle in a glass holder, cream throw blanket on one chair, a "Beach Life" pillow on the other, potted greenery, and a wider view of the beach below with the resort's blue chair rentals lined up on the sand. The new photograph is clearly digitally styled (same visual family as `tw-balcony-dinner.png` and `tw-dining-sunset.png`) and was added to the §21 AI-composite deviation log; the real-photoshoot brief now retires **four** composite/AI shots, not three. Filename unchanged (`tw-balcony-sunset.png`), so no `config.js` / `heroPhotoOrder` / gallery / static-page reference updates were required — the swap is purely at the image-asset level, with the caption library entry (§18) updated to reflect the new content and `(digitally styled — see §21)` disclosure. Static pages regenerated so JSON-LD alt text picks up the new caption. **No other files changed.** | Content Sync Agent |
+| 2026-07-02 | **Phase 2 Final Polish — freeze pass** | Owner-approved final refinement before TW2111 is frozen and focus moves to MS811 + homepage. Eight changes: (1) `Community registration fee` renamed to **`Resort Registration Fee`** everywhere it surfaces (§21 Fee Schedule, §22 FAQ Q1, WEBSITE.md, config.js, price calculator, static JSON-LD). New supporting sentence: *"Required by the resort for parking passes and guest wristbands."* Fee amount unchanged ($54.04); calculation unchanged. (2) Price calculator UI reformatted: heading `Price Calculator` → **`Your Stay`**; line labels tightened (`Lodging (N nights)` → `Nightly Rate` with subtext, `Cleaning fee` → `Cleaning Fee`, `Tax (12%)` → `Taxes`, `Community registration fee` → `Resort Registration Fee`); total row → `Estimated Total`; subtle trust note added below the total: *"No OTA service fees when booking direct."* Understated typography, no color highlight. (3) New property-page trust panel **`Why Book Direct with StayAtFlorida`** (§14d) — 7 short check-mark bullets, muted background, no CTA. Placement: below Availability & Pricing, above Stay Details. Distinct from the homepage 3-card `Why Book Direct?` section. (4) `Before You Arrive` split into two paired cards (§14a + new §14c `During Your Stay`). Card 1 items: Parking · Wristbands · Resort Registration Fee · Check-in. Card 2 items: Complimentary beach chairs and umbrella · Beach access · Resort amenities · Check-out reminders. Same rendered position; side-by-side desktop, stacked mobile. (5) Primary CTA `Check Availability` and secondary CTA `View Photos` **frozen** (§12) — explicit "never swap for `See Available Dates`" note added. (6) **§23 Review Author Naming Policy REVERTED** per owner directive. Pseudonyms (Sarah M., David R., Jennifer P., ...) rolled back in `config.js#REVIEWS[4]` — all 10 reviewers now render as `Verified Airbnb guest` again. The "Names anonymized for guest privacy" public disclosure line removed. SEO rich-snippet suppression accepted as trade-off for honesty. Historical mapping kept in §23 (collapsed) so it can be re-adopted if the owner reverses. (7) Brand rules re-affirmed and enforced end-to-end: no Serenity Rentals, no Fun in the Sun, no floor references, no beach-service implication, exact wording `Complimentary beach chairs and umbrella available in the condo` only. (8) Review section typography tightened (increased vertical rhythm, tighter meta-line spacing, subtler card borders) without touching review content. **Files touched:** `MASTER.md`, `WEBSITE.md`, `docs/brand/{BRAND_GUIDELINES,QA_CHECKLIST,SEO}.md`, `config.js`, `app.js`, `styles.css`, `listing-4.html`, `listing-5.html`, `sitemap.xml`. **No MS811 content changed.** No OTA-derivative files changed. | Content Sync Agent + Phase 2 Final Polish |
+| 2026-07-02 | Per-day pricing data added + `priceRange` widened to `$125-$660` + 2027 seasonal fallbacks | Owner-supplied PriceLabs calendar screenshots (Jul 2026 → Mar 2027) transcribed into a new **`data/pricing-4.json`** file consumed by `app.js#fetchPricingForListing` and `getAdjustedRate`. 225 dated prices covering the peak booking window — same schema as the pre-existing PriceLabs sync stub (`scripts/sync-pricelabs.cjs`) writes. Any date not listed falls back to `config.js#seasonalAdjustments` as before. **Monthly averages observed:** Jul $430 · Aug $358 · Sep $375 (Labor Day peak $660) · Oct $340 · Nov $348 (Thanksgiving peak $484) · Dec $306 · Jan-27 $345 (NYE $465) · Feb-27 $361 · Mar-27 $468 (Spring Break). **Skipped dates (fall back to seasonal):** BikeFest weekend (Oct 1-3), Columbus Day cluster (Oct 9-17), Ironman weekend (Sep 22-26 partial), most of April 2027 (Bike Week — low OCR confidence from source screenshots). **§21 Fee Schedule** updated: peak ceiling widened from `~$610` (July 4 fallback formula) to `~$660` (observed PriceLabs peak on Labor Day Sunday). **`priceRangeOverride`** widened from `$125-$610` → `$125-$660`; propagated to `listing-4.html` VacationRental JSON-LD. **`config.js#seasonalAdjustments`** rewritten as safety-net fallbacks: 2026 second half recalibrated to match observed PriceLabs ranges (August adj `1.4` → `1.6`, September adj `1.3` → `1.5-2.4` split for Labor Day / Ironman event windows, Oct/Nov/Dec similarly refined, event-weekend surges broken out into their own ranges), plus new 2027 coverage (Jan-May) so any advance booking past PriceLabs data doesn't drop back to `$225 × 1.0`. Falls back on any date without a `data/pricing-4.json` entry. **Files touched:** `data/pricing-4.json` (new), `config.js` (seasonalAdjustments + priceRangeOverride), `listing-4.html` (regenerated JSON-LD priceRange), MASTER.md §21 + Changelog. **QA:** JSON validated (225 entries, min $254 max $660), served over HTTP on localhost, sample lookups confirmed (Jul 17 = $520, Sep 6 = $660, Mar 20-27 = $513). **No content or brand changes.** No MS811 changes. **Follow-up:** wire up the real PriceLabs API sync (`scripts/sync-pricelabs.cjs` is scaffolded — just needs API key + endpoint) to eliminate the need for manual screenshot transcription and auto-refresh daily. | Content Sync Agent |
+| 2026-07-02 | **Phase 2 Batch 2 — Conversion optimization ship** | Owner-approved batch of six conversion-focused changes: (1) Header `Inquire` CTA added site-wide (§12) — routes to existing `showContactModal()`; not a new form; premium-understated outlined-button style; always visible on mobile. `Contact` nav link retired (deduped). (2) TW2111 price calculator now shows the **community registration fee ($54.04)** as an explicit line item (§21 Fee Schedule). Registration paragraph removed from §14 long description and moved to new §14a Before You Arrive. (3) FAQ block **reordered by inquiry frequency** and **expanded from 8 → 10 items** (§22): parking, beach access, cancellation, beach chairs & umbrella, pets, check-in, Wi-Fi, Pier Park, airport, best time to visit. Five low-value legacy FAQs deleted (`Where is Twenty First?`, `How many people can it sleep?`, direct-booking discount, contact owner, what's included — all surfaced elsewhere on the page). (4) Amenities restructured into four canonical categories: **Inside the Condo · Beach Convenience · Resort Amenities · Location & Access** (§6). Each amenity in `config.js` now carries an explicit `group` field. (5) `priceRange` in `VacationRental` JSON-LD updated from auto-derived `$225-$338` (stale) to owner-verified `$125-$610` (§21) via new `priceRangeOverride` field on property record. (6) New lifestyle sequence `A Day at Twenty First` (§14b) — six elegant beats (sunrise coffee → beach time → resort pool → sunset balcony → dinner with Gulf views → quiet evening inside). No exclamation marks, no CTA, no hype. Also: reviewer names updated per new §23 policy — 10 pseudonymous first-name+last-initial identifiers replacing the placeholder `Verified Airbnb guest`, with a public "Names anonymized for guest privacy" disclosure line. Owner-authorized deviation logged in §23 (retirement condition: real-name backfill from platform host dashboards). Physical section numbering also cleaned up: Fee Schedule (§21), Website FAQ (§22), Review Author Naming Policy (§23), Internal Notes / Follow-ups (§24). **Explicit deferrals (this batch):** sticky mobile CTA, homepage inquiry form, urgency/scarcity messaging, `Hosted by Simone` above the fold, reordering `Why Book Direct?` above `Signature Properties`. **No MS811 content changed** except header nav (Inquire CTA appears on all pages via shared `index.html` nav). | Content Sync Agent + Phase 2 Batch 2 Ship |

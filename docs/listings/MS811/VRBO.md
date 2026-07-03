@@ -50,7 +50,7 @@ Inherits StayAtFlorida checkbox standard, adapted to what Majestic Sun actually 
 
 **Never check:**
 
-- Beach service
+- Beach service *(we do not provide this — on-beach vendors do, mentioned as an optional paid add-on in the description text only, never checked as an amenity)*
 - Private beach
 - Chef's kitchen
 - Concierge

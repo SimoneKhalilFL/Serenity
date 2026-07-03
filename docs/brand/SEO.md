@@ -69,7 +69,7 @@ Every page must have exactly one `<h1>`.
 
 | Page | `<h1>` | `<h2>` uses |
 |---|---|---|
-| Homepage | Hero H1: `Book Direct. Stay Better.` | Section titles: `Signature Properties`, `Loved by Guests`, `Why Book Direct`, etc. |
+| Homepage | Hero H1: `Luxury Beachfront Homes on Florida's Gulf Coast.` | Section titles: `Signature Properties`, `Loved by Guests`, `Why Book Direct`, etc. |
 | Property page | Property name: `Twenty First` | Detail section titles: `About the Home`, `Amenities`, `Guest Reviews`, `Location` |
 | Policy page | Page title (`Privacy Policy`, `Terms of Service`, `Gear We Love`) | Section headings within |
 | 404 | `Page not found` | none required |
@@ -91,7 +91,7 @@ Rendered by [`scripts/lib/listing-schema.cjs`](../../scripts/lib/listing-schema.
 | Page | Required schema entities |
 |---|---|
 | Homepage (`index.html`) | `Organization`, `WebSite`, `ItemList` of properties |
-| Property page (`listing-<id>.html`) | `VacationRental` (or `LodgingBusiness` fallback), `Organization`, `BreadcrumbList`, embedded `Review[]`, `AggregateRating` |
+| Property page (`listing-<id>.html`) | `VacationRental` (or `LodgingBusiness` fallback), `Organization`, `BreadcrumbList`, embedded `Review[]`, `AggregateRating`, **`FAQPage`** *(when the property record has a `faqs` array — TW2111 has one as of 2026-07-02)* |
 | Policy pages | `Organization` only |
 
 **Rules:**
@@ -99,6 +99,8 @@ Rendered by [`scripts/lib/listing-schema.cjs`](../../scripts/lib/listing-schema.
 - Never publish JSON-LD that references a property, review, rating, or amenity that isn't actually rendered in the visible HTML. Google penalizes ghost schema.
 - Never inflate `aggregateRating` — the number and average come from the `REVIEWS` array in `config.js`.
 - Always update the schema when a review is added, a property changes bedrooms/bathrooms/capacity, or an amenity is added or removed. Regenerate via `node scripts/generate-listing-schema.cjs`.
+- **`priceRange` accuracy (added 2026-07-02):** For each `VacationRental`, `priceRange` must reflect the **actual** low-to-high seasonal range, not a heuristic derived from a single base rate. If the auto-derived range in `scripts/lib/listing-schema.cjs` understates the real seasonal ceiling by more than ~15%, set an explicit `priceRangeOverride` on the property record. TW2111's canonical range is `$125-$610` per [`docs/listings/TW2111/MASTER.md §21`](../listings/TW2111/MASTER.md#21-fee-schedule-canonical).
+- **Review author distinctness — accepted trade-off (REVERTED 2026-07-02, Final Polish pass).** Google's reviews rich-results policy discourages duplicate `review[].author.name` values on the same page and may suppress the aggregate-rating rich snippet when many reviews share an author string. **Owner elected to accept this SEO cost rather than invent identifiers.** Until real first names or an owner-approved identifier convention (e.g., city labels) are available, reviews on TW2111 (and any other listing in the same state) publish under the platform-generic label `Verified Airbnb guest` / `Verified VRBO guest`. Do not reintroduce pseudonyms. See [`BRAND_GUIDELINES.md#legal--factual-guardrails`](BRAND_GUIDELINES.md#legal--factual-guardrails) and TW2111 MASTER §23 for the canonical policy and rolled-back mapping.
 
 **Regeneration workflow:**
 
@@ -240,7 +242,7 @@ Reflects what's actually on the site as of this doc's revision. When a value cha
 
 | Page | `<title>` | `<meta description>` |
 |---|---|---|
-| `index.html` | `StayAtFlorida | Luxury Beachfront Vacation Homes` | `Book luxury owner-hosted beachfront vacation homes on Florida's Gulf Coast with StayAtFlorida. Enjoy direct beach access, Gulf views, resort amenities, and direct-booking savings.` |
+| `index.html` | `StayAtFlorida | Luxury Beachfront Vacation Homes` | `Owner-hosted luxury beachfront homes in Panama City Beach & Destin, Florida. Book direct with StayAtFlorida — Gulf views, resort amenities, no OTA fees.` *(152 / 160 chars — trimmed 2026-07-02 from 197)* |
 | `listing-4.html` (Twenty First) | `Twenty First | StayAtFlorida` | `Book Twenty First by StayAtFlorida, a luxury beachfront condo in Panama City Beach with panoramic Gulf views, private balcony, resort amenities, and room for 8.` *(160 / 160 chars — at ceiling)* |
 | `listing-5.html` (Majestic Sun 811) | `Majestic Sun 811 | StayAtFlorida` | *needs refresh* — currently auto-generated feature list starting with `2 BR, sleeps 6. High-Speed WiFi, Full Kitchen…`. Should be replaced with a hand-written, brand-voiced sentence via `property.metaDescription` in `config.js`. |
 | `privacy.html` | `Privacy Policy | StayAtFlorida` | `How StayAtFlorida handles your information when you browse stayatflorida.com or submit the contact form.` |

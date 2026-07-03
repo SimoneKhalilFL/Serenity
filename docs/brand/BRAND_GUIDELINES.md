@@ -108,8 +108,8 @@ Hard blocks. Reject any change that introduces these into brand-facing copy:
 | Serenity Rental | Same. |
 | Fun in the Sun | Retired legacy phrase; also on the generic-name block list. |
 | 21st floor / 21st-floor / floor 21 | Floor numbers are never disclosed. Elevator wait times are the reason. |
-| Beach service / beach setup service | We do not provide beach service. |
-| Any phrase implying staff / concierge on the beach | Same reason. |
+| Any phrase implying **we** provide beach service, chair delivery, or a beach setup crew | We do not provide beach service. On-beach vendors do — see the "Beach chairs and umbrella" section below for how to phrase it. |
+| Any phrase implying staff / concierge on the beach | Same reason — we are owner-hosted, not a resort concierge. |
 
 ## Tidewater handling
 
@@ -121,16 +121,33 @@ Tidewater Beach Resort is the community that houses Twenty First. It is **operat
 
 ## Beach chairs and umbrella
 
-Standard language, do not vary:
+Two things exist, and they must never be mixed up in copy:
+
+**1. What WE provide (complimentary, always available):**
 
 > **complimentary beach chairs and umbrella available in the condo**
 
-Never say:
+Guests grab these from the condo and bring them down each morning. This is the always-safe, on-brand language.
 
-- "Beach setup included"
-- "Beach service"
-- "Chairs delivered to the sand"
-- "Complimentary beach set-up"
+**2. What third-party VENDORS on the beach provide (paid, optional):**
+
+> **Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.**
+
+This is a factual, guest-friendly mention of an add-on option that guests can buy on the beach if they want a full setup. It is not our service, and we never take payment for it, quote prices, or name specific vendors (they change seasonally).
+
+Approved compact combined form (use in FAQs, descriptions, and post-booking replies):
+
+> Complimentary beach chairs and umbrella are available in the condo. If you'd prefer a full setup on the sand, beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
+
+Never say (still forbidden):
+
+- "We provide beach service"
+- "Beach service included"
+- "Our beach setup crew"
+- "Chairs delivered to the sand" *(the vendors bring their own — we don't do this)*
+- "Luxury beach service" *(marketing overreach)*
+- "Complimentary beach set-up" *(only chairs/umbrella in the condo are complimentary)*
+- Any wording that lets the guest assume WE are the beach-service provider.
 
 ## Elevators, buildings, and HOA
 
@@ -154,6 +171,8 @@ These are on the "never lead with" list from the brand standards. Guests may enc
 - Never state a guaranteed sunset, wildlife sighting, or weather.
 - Never claim a rating we don't have; the aggregate rating comes from the review data in `config.js`.
 - Never promise pricing; the pricing calculator shows *estimated* rates and the site copy already reflects that.
+- Never hide third-party fees. Any charge the guest experiences as part of their total spend (e.g., the Tidewater Beach Resort Registration Fee for TW2111 — labelled `Resort Registration Fee` in all guest-facing surfaces per the Final Polish rename on 2026-07-02) must appear as a distinct line item on the price calculator. See TW2111 MASTER §21 Fee Schedule for the canonical fee list.
+- **Review author display (REVERTED 2026-07-02, Final Polish pass — supersedes the earlier pseudonym allowance from the same day).** Reviews with unknown author names must be published under the platform-generic label (`Verified Airbnb guest` / `Verified VRBO guest`) — **do not invent first-name + last-initial pseudonyms**, do not fabricate city labels, do not add a "Names anonymized for guest privacy" disclosure. Owner directive: publish only real, owner-supplied identifiers, or the platform-generic label. Consequences of identical author strings across many reviews (Google may suppress the aggregate-rating rich snippet) are an accepted trade-off. Retirement condition: when the owner supplies real first names (or approves an alternative identifier convention such as city labels) from platform host dashboards, swap the identifiers in place and log the change in the affected listing's Review Author Naming Policy section. See TW2111 MASTER §23 for the canonical rolled-back state.
 
 ---
 
@@ -246,12 +265,16 @@ Rejected:
 
 ### Primary CTA
 
-Approved (choose one):
+Approved (choose one for its context):
 
-- `Book Direct & Save`
-- `Email to Book`
-- `See Our Properties`
-- `View Photos` *(secondary CTA on property page)*
+- `Inquire` — **site-wide header CTA (added 2026-07-02).** Present on every page. Opens the existing inquiry modal (`showContactModal()`). Never build a duplicate form. Visual style: outlined-primary pill (`.btn-nav-inquire`) — premium, understated, always visible on mobile (not inside the hamburger).
+- `Book Direct & Save` — homepage hero
+- `Check Availability` — property page hero primary
+- `View Photos` — property page hero secondary
+- `Email to Reserve These Dates` — price calculator submit
+- `Email to Book` — sticky bottom bar (mobile property page)
+- `See Our Properties` — footer / cross-links
+- `View Property` — homepage property card
 
 Rejected:
 
@@ -259,6 +282,7 @@ Rejected:
 - `Reserve Instantly`
 - `Get 20% Off`
 - `Claim Your Stay`
+- `Contact` *(retired 2026-07-02 in favor of `Inquire` — clearer for a vacation-rental site)*
 
 ### Email subject (host outbound)
 
@@ -342,8 +366,10 @@ Never introduce a new tagline into production without Brand Director sign-off re
 Run before shipping any content change. Any hit in guest-facing files is a Critical fail in [`QA_CHECKLIST.md`](QA_CHECKLIST.md#1-brand-qa).
 
 ```bash
-grep -rniE "serenity rentals?|fun in the sun|21st(-| )floor|floor 21|8th floor|beach service|beach setup|dream getaway|dream vacation" \
+grep -rniE "serenity rentals?|fun in the sun|21st(-| )floor|floor 21|8th floor|luxury beach service|beach setup crew|we provide beach service|beach service included|chair delivery|dream getaway|dream vacation" \
   --include="*.html" --include="*.js" .
 ```
 
 Expected result: zero matches in guest-facing files. Matches inside `docs/*.md`, `StayAtFlorida-Brand-Standards-v1.0.md`, `BACKLOG.md`, or `REVIEWS` guest UGC are acceptable.
+
+> **Note on `beach service`:** The literal phrase `beach service` is no longer a blanket forbidden term as of 2026-07-02. Beach chair rental IS available for purchase from third-party vendors on the beach, so we may mention it factually. What remains forbidden is any wording that implies **we** provide beach service. The grep above catches the specific overreach patterns (`luxury beach service`, `beach setup crew`, `we provide beach service`, `beach service included`, `chair delivery`) without producing false positives on approved informational copy.

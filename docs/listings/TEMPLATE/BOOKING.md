@@ -70,7 +70,7 @@ Booking's structured accommodation field.
 Booking supports a Host Profile block. Keep it factual and short.
 
 ```
-StayAtFlorida is an owner-hosted collection of luxury beachfront vacation homes on Florida's Gulf Coast. The owner personally manages every booking and typically replies within 24 hours.
+StayAtFlorida is an owner-hosted collection of luxury beachfront vacation homes on Florida's Gulf Coast. The owner personally manages every booking and typically replies within 2 hours.
 ```
 
 ## Nearby Attractions
@@ -96,7 +96,7 @@ No smoking, no parties, no pets{or state pet policy}.
 Quiet hours 10:00 PM – 8:00 AM.
 
 Cancellation policy: {per MASTER §17 Booking.com line}.
-Beach service is not provided; complimentary beach chairs and umbrella are available in the condo.
+Complimentary beach chairs and umbrella are available in the condo. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you prefer a full setup.
 ```
 
 ## Photo Captions

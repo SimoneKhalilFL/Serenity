@@ -33,13 +33,13 @@
 ## Guest Access
 
 ```
-Guests have full access to the condo and Seascape resort amenities. One assigned parking space is available on-site. Beach service is not provided — complimentary beach chairs and umbrella are available in the condo for you to bring down each morning.
+Guests have full access to the condo and Seascape resort amenities. One assigned parking space is available on-site. Complimentary beach chairs and umbrella are available in the condo for you to bring down each morning. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you'd prefer a full setup.
 ```
 
 ## Interaction with Guests
 
 ```
-I'm the owner and I answer every message personally, usually within 24 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
+I'm the owner and I answer every message personally, typically within 2 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
 ```
 
 ## Other Things to Note

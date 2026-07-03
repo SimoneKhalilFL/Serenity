@@ -100,7 +100,7 @@
 
 *Pending — inherit from StayAtFlorida brand-level trust points, add property-specific once available:*
 
-- Owner-hosted — Simone replies within 24 hours
+- Owner-hosted — Simone replies within 2 hours
 - Transparent pricing on stayatflorida.com
 - Beach access at Seascape
 
@@ -142,7 +142,8 @@ Inherits StayAtFlorida standard amenity phrasing:
 
 | Concept | Approved wording |
 |---|---|
-| Beach chairs | `Complimentary beach chairs and umbrella available in the condo` |
+| Beach chairs (in condo) | `Complimentary beach chairs and umbrella available in the condo` |
+| Beach chair rental (on-beach vendors) | `Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.` |
 | View | `Gulf-facing views` *(not "Gulf-front" — verify view line of sight)* |
 | Host | `Owner Hosted` |
 | Kitchen | `Full kitchen` |
@@ -187,7 +188,7 @@ Inherits StayAtFlorida standard. See [`../../brand/HOSPITALITY.md#11-public-revi
 
 ## 20. Guest Messaging Style
 
-Inherits StayAtFlorida standard. Sign with `Simone`. Reply within 24 hours. Full templates: [`../../brand/HOSPITALITY.md#message-templates`](../../brand/HOSPITALITY.md#message-templates).
+Inherits StayAtFlorida standard. Sign with `Simone`. Reply within 2 hours. Full templates: [`../../brand/HOSPITALITY.md#message-templates`](../../brand/HOSPITALITY.md#message-templates).
 
 ## 21. Internal Notes / Follow-ups
 
@@ -226,3 +227,4 @@ Inherits StayAtFlorida standard. Sign with `Simone`. Reply within 24 hours. Full
 | Date | Section | Change | Author |
 |---|---|---|---|
 | 2026-07-01 | Initial | MASTER.md created as a structural placeholder — property active but branding pending | Content Sync Agent (initial migration) |
+| 2026-07-02 | Response time + beach service | Response time tightened `24 hours` → `2 hours` (matches TW2111). Beach service language updated: still no claim that WE provide beach service, but we DO inform guests that vendor-supplied chair/umbrella rental is available on the beach as a paid option. See TW2111 MASTER §15 for canonical approved language table. | Content Sync Agent |

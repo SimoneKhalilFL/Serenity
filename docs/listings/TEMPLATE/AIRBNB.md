@@ -54,7 +54,7 @@ What the guest can and can't access. Match MASTER §5–§6.
 ```
 Guests have full access to the condo and all resort amenities (pools, hot tubs, fitness center, splash pad, grill area). One assigned parking space plus guest parking is available on-site.
 
-Beach service is not provided — complimentary beach chairs and umbrella are available in the condo for you to bring down each morning.
+Complimentary beach chairs and umbrella are available in the condo for you to bring down each morning. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you'd prefer a full setup.
 ```
 
 ## Interaction with Guests
@@ -62,7 +62,7 @@ Beach service is not provided — complimentary beach chairs and umbrella are av
 Owner-hosted communication style. Match MASTER §20.
 
 ```
-I'm the owner and I answer every message personally, usually within 24 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
+I'm the owner and I answer every message personally, typically within 2 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
 ```
 
 ## Other Things to Note

@@ -53,10 +53,10 @@ Three to five short bullets, each ≤10 words. Pulled from §9 Selling Points.
 | Where is the property? | *{City, community context, distance to beach}* |
 | How many people can it sleep? | *{N guests, sleeping arrangement summary}* |
 | Are pets allowed? | *{Y/N per MASTER §5}* |
-| Is there beach service? | We do not provide beach service. Complimentary beach chairs and umbrella are available in the condo. |
+| Is there beach service? | Complimentary beach chairs and umbrella are available in the condo. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you prefer a full setup. |
 | What is the cancellation policy? | *{Per MASTER §17 direct-site policy}* |
 | Do you offer discounts for direct booking? | You skip the OTA service fees (typically 10–15% of the total) when you book direct at stayatflorida.com. |
-| How do I contact the owner? | *{First name} replies within 24 hours to every inquiry.* |
+| How do I contact the owner? | *{First name} replies within 2 hours to every inquiry.* |
 
 ## SEO
 

@@ -31,7 +31,7 @@ The three claims we lead with, in priority order:
 
 1. **Luxury, owner-hosted beachfront homes.** Every property is a Signature Property, chosen and hosted by the owner. Not part of a large managed pool.
 2. **Book direct and save.** Guests skip the OTA service fees (roughly 10–20%). On a $1,400 week that's $140–$280 kept out of Airbnb/VRBO's pocket and in the guest's — with the same home, same host, same beach.
-3. **Real hospitality, real communication.** A named owner answers the email. Replies typically within 24 hours. No support ticket queue.
+3. **Real hospitality, real communication.** A named owner answers the email. Replies typically within 2 hours. No support ticket queue.
 
 Supporting proof points we can use:
 
@@ -53,7 +53,7 @@ Supporting proof points we can use:
 - Spring-break party groups
 - One-night bookings
 - Bachelor/bachelorette groups
-- Any guest expecting concierge / white-glove beach service (we do not provide that, see [BRAND_GUIDELINES.md](BRAND_GUIDELINES.md#beach-chairs-and-umbrella))
+- Any guest expecting concierge / white-glove beach service *provided by us* (we do not provide that — beach chair rental IS available for purchase from on-beach vendors, but that's a third-party paid option, never framed as our amenity. See [BRAND_GUIDELINES.md](BRAND_GUIDELINES.md#beach-chairs-and-umbrella))
 
 Guest profile detail lives in [`HOSPITALITY.md`](HOSPITALITY.md).
 
@@ -88,7 +88,7 @@ The same tone, adapted to platform limits:
 - No mention of "book direct" (OTAs forbid channel steering in the listing body).
 - Never mention floor number, unit number, or Tidewater as the lead.
 - Every listing must include the [complimentary beach chairs and umbrella](BRAND_GUIDELINES.md#beach-chairs-and-umbrella) sentence, verbatim.
-- Every listing must clarify that beach service is not provided.
+- Every listing must clarify what WE provide (complimentary beach chairs and umbrella in the condo) vs. what's available for purchase from on-beach vendors (full-service chair/umbrella rental). Never let a guest assume WE are the beach-service provider.
 - Reviews from OTAs feed back into `config.js` as reference; direct-site copy still owns the aggregate rating.
 
 **Approved OTA headlines by property** — see the `AIRBNB.md`, `VRBO.md`, and `BOOKING.md` files under the property's [`../listings/`](../listings/) folder (e.g. [`../listings/TW2111/AIRBNB.md`](../listings/TW2111/AIRBNB.md)). Never publish an OTA listing with a headline that isn't in that library, or that hasn't been signed off by the Brand Director.
@@ -108,7 +108,7 @@ Use this structure for every OTA property description. Adapt the specific detail
 
 [Good to Know — bullet list: check-in time, parking, Wi-Fi, no smoking/pets/parties, minimum age 25]
 
-[About Your Host — one paragraph, first-person, owner-hosted, response time within 24 hours]
+[About Your Host — one paragraph, first-person, owner-hosted, response time within 2 hours]
 ```
 
 Length targets by platform:
@@ -125,13 +125,13 @@ Length targets by platform:
 
 **Twenty First — sample View & Beach paragraph:**
 
-> The private balcony overlooks the Gulf, with direct beach access from the resort deck below. Complimentary beach chairs and umbrella available in the condo — bring them down with you each morning. Note: we do not provide beach service or chair delivery.
+> The private balcony overlooks the Gulf, with direct beach access from the resort deck below. Complimentary beach chairs and umbrella are available in the condo — bring them down with you each morning. Prefer the full setup? Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
 
 ### Email
 
 - Subject lines: sentence case, no exclamations.
 - Signature: use `email-signature.html` (already rebranded).
-- Reply time expectation: "usually within 24 hours."
+- Reply time expectation: "typically within 2 hours."
 - Sign-off: warm but professional. `Best,` or `Warmly,`. Never `Cheers!` or emoji.
 
 ---

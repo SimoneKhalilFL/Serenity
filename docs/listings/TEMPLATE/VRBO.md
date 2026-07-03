@@ -52,11 +52,11 @@
 
 ### About Your Stay
 
-*Practicalities — check-in, parking, Wi-Fi, cleaning-fee scope, and the explicit "Beach service is not provided" line.*
+*Practicalities — check-in, parking, Wi-Fi, cleaning-fee scope, and the explicit clarification of what we provide (complimentary chairs/umbrella in the condo) vs. what's available from on-beach vendors (paid chair/umbrella rental).*
 
 ### About Your Host
 
-*From MASTER §20 Guest Messaging Style — owner-hosted, first-name, reply within 24 hours.*
+*From MASTER §20 Guest Messaging Style — owner-hosted, first-name, reply within 2 hours.*
 
 ## Amenities Section
 
@@ -77,7 +77,7 @@ VRBO uses a structured amenity picker. Every checkbox we tick here must match MA
 
 **Never check:**
 
-- Beach service / beach setup
+- Beach service / beach setup *(we do not provide this — on-beach vendors do, mentioned as an optional paid add-on in the description text only, never checked as an amenity)*
 - Chef's kitchen (unless the property genuinely has one)
 - Concierge
 

@@ -33,14 +33,14 @@ Optional: run `bash scripts/apply-branch-protection.sh` after `gh auth login` (r
 
 | Secret | Required? | Purpose |
 |--------|-----------|---------|
-| `WEB3FORMS_ACCESS_KEY` | Required | Web3Forms access key — injected into `config.js` during **Deploy to GitHub Pages** only |
+| `WEB3FORMS_ACCESS_KEY` | Optional (rotation) | Web3Forms access key. A working key is committed to `config.js` so local `npx serve` and PR previews work out of the box (Web3Forms keys are per-domain frontend tokens — safe to commit when the allowed origins are locked in the Web3Forms dashboard). Set this secret only when you want to **rotate** the key without a code commit — the deploy workflow will overwrite the committed literal with the secret value. Missing secret = deploy still ships the committed key. |
 | `CALENDAR_FEEDS_JSON` | Required | iCal URLs for **Sync iCal availability** workflow |
 | `CLOUDFLARE_BEACON_TOKEN` | Optional | Cloudflare Web Analytics beacon token. When present, `scripts/inject-cf-beacon.cjs` injects the tracking snippet into all HTML pages during deploy. When absent, the snippet is **stripped** and no analytics ship. |
 | `CLARITY_PROJECT_ID` | Optional | Microsoft Clarity project ID for session recordings + heatmaps. When present, `scripts/inject-clarity.cjs` injects the Clarity tag into all HTML pages during deploy. When absent, the block is **stripped** and Clarity does not load. Runs cookieless by default. |
 
 Add them under **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
 
-Do not paste these into committed files. Rotate keys in the Web3Forms / Cloudflare / OTA dashboards if they were ever exposed in git history.
+Do not paste these into committed files, with the intentional exception of the Web3Forms key documented in the row above (per-domain frontend token, safe to commit when the Web3Forms dashboard restricts allowed origins). Rotate keys in the Web3Forms / Cloudflare / OTA dashboards if they were ever exposed in git history.
 
 ### Finding the Cloudflare beacon token
 

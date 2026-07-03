@@ -264,10 +264,17 @@ button {
     transition: var(--transition);
 }
 
+.nav-content {
+    /* Space-between logo (left) and everything else (right). Nav links, Inquire CTA, and
+       mobile menu button sit on the right and share a flex row with a modest gap. */
+    gap: 1.25rem;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
     align-items: center;
+    order: 1;
 }
 
 .nav-links a {
@@ -278,6 +285,52 @@ button {
 
 .nav-links a:hover {
     color: var(--primary-color);
+}
+
+/* Site-wide Inquire CTA in the header.
+   Premium and understated per docs/listings/TW2111/MASTER.md §12.
+   Always visible on mobile — never collapses into the hamburger menu.
+   Routes to showContactModal() (index.html) or index.html?inquire=1 (static pages). */
+.btn-nav-inquire {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.15rem;
+    min-height: 40px;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    order: 2;
+}
+
+.btn-nav-inquire:hover,
+.btn-nav-inquire:focus-visible {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-nav-inquire:active {
+    transform: translateY(1px);
+}
+
+.btn-nav-inquire:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.mobile-menu-btn {
+    order: 3;
 }
 
 /* ==========================================
@@ -2550,6 +2603,17 @@ button {
         width: 100%;
     }
     
+    /* Inquire CTA stays visible on mobile beside the hamburger — never collapses into the menu. */
+    .btn-nav-inquire {
+        padding: 0.45rem 0.9rem;
+        min-height: 38px;
+        font-size: 0.875rem;
+    }
+    
+    .nav-content {
+        gap: 0.5rem;
+    }
+    
     /* Hero */
     .hero {
         height: 70vh;
@@ -3939,4 +4003,518 @@ body.has-listing-sticky {
     .gear-footnote {
         padding: 1.25rem;
     }
+}
+
+/* ==========================================
+   Listing hero trust strip (Phase 2)
+   Beneath the primary + secondary CTA on the property detail hero.
+   Compact chip row: rating · sleeps · reply time · cancellation.
+   ========================================== */
+.listing-hero-trust-strip {
+    margin: 1rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    align-items: center;
+}
+
+.hero-trust-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background: var(--bg-light, #f6f7f9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-primary, #1f2937);
+    line-height: 1.15;
+}
+
+.hero-trust-chip-star {
+    color: #f5b301;
+    font-size: 0.95em;
+}
+
+.hero-trust-chip-muted {
+    color: var(--text-secondary, #64748b);
+    font-weight: 400;
+}
+
+@media (max-width: 600px) {
+    .listing-hero-trust-strip {
+        gap: 0.35rem;
+    }
+    .hero-trust-chip {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.55rem;
+    }
+}
+
+/* ==========================================
+   Property FAQ accordion (Phase 2)
+   Uses native <details>/<summary>. Deployed with FAQPage JSON-LD.
+   ========================================== */
+.property-faq-section {
+    padding: 3rem 0;
+    background: var(--bg-light, #f6f7f9);
+}
+
+.property-faq-list {
+    max-width: 780px;
+    margin: 2rem auto 0;
+}
+
+.property-faq-item {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: box-shadow 0.15s ease;
+}
+
+.property-faq-item[open] {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.property-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.35rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--text-primary, #1f2937);
+    list-style: none;
+    gap: 1rem;
+}
+
+.property-faq-question::-webkit-details-marker { display: none; }
+.property-faq-question:focus-visible {
+    outline: 2px solid var(--primary-color, #2D7DD2);
+    outline-offset: 2px;
+}
+
+.property-faq-chevron {
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--primary-color, #2D7DD2);
+    font-weight: 400;
+    transition: transform 0.2s ease;
+}
+
+.property-faq-item[open] .property-faq-chevron {
+    transform: rotate(45deg);
+}
+
+.property-faq-answer {
+    padding: 0 1.35rem 1.15rem;
+    color: var(--text-secondary, #475569);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.property-faq-answer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .property-faq-section {
+        padding: 2rem 0;
+    }
+    .property-faq-question {
+        font-size: 0.95rem;
+        padding: 1rem 1.1rem;
+    }
+    .property-faq-answer {
+        padding: 0 1.1rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================
+   A Day at Twenty First — lifestyle sequence
+   Rendered below the hero trust chip strip.
+   Elegant, understated. No CTAs, no exclamation marks.
+   Source: docs/listings/TW2111/MASTER.md §14b.
+   ========================================== */
+.day-in-the-life-section {
+    padding: 3.5rem 0;
+    background: linear-gradient(180deg, var(--bg-white, #ffffff) 0%, var(--bg-light, #F9FAFB) 100%);
+    border-top: 1px solid var(--border-color, #e5e7eb);
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.day-in-the-life-intro {
+    text-align: center;
+    color: var(--text-secondary, #6B7280);
+    font-size: 1.0625rem;
+    margin: 0.25rem 0 2.25rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.005em;
+    font-style: italic;
+}
+
+.day-in-the-life-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem 2rem;
+}
+
+.day-in-the-life-beat {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    padding: 0.5rem 0.25rem;
+}
+
+.day-in-the-life-beat-number {
+    flex: 0 0 auto;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary-color, #2D7DD2);
+    letter-spacing: 0.03em;
+    padding-top: 0.15rem;
+    opacity: 0.85;
+}
+
+.day-in-the-life-beat-content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.day-in-the-life-beat-title {
+    margin: 0 0 0.35rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1F2937);
+    letter-spacing: 0.005em;
+    line-height: 1.3;
+}
+
+.day-in-the-life-beat-body {
+    margin: 0;
+    color: var(--text-secondary, #6B7280);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+@media (max-width: 600px) {
+    .day-in-the-life-section {
+        padding: 2.5rem 0;
+    }
+    .day-in-the-life-intro {
+        font-size: 1rem;
+        margin-bottom: 1.75rem;
+    }
+    .day-in-the-life-list {
+        gap: 1.35rem;
+    }
+    .day-in-the-life-beat-number {
+        font-size: 1.35rem;
+    }
+    .day-in-the-life-beat-title {
+        font-size: 1.05rem;
+    }
+}
+
+/* ==========================================
+   Before You Arrive — logistics module
+   Placement: below the aspirational description, above the FAQ.
+   Source: docs/listings/TW2111/MASTER.md §14a.
+   ========================================== */
+/* ==========================================
+   Stay Logistics — two-card paired module
+   Card 1: "Before You Arrive" (property.beforeYouArrive / MASTER §14a)
+   Card 2: "During Your Stay"  (property.duringYourStay  / MASTER §14c)
+   Side-by-side on desktop, stacked on mobile. Introduced 2026-07-02 (Final Polish pass),
+   replacing the single-card `.before-you-arrive-*` module. Kept visually distinct from
+   the FAQ block that follows so guests read them as a scannable "pair" of practical lists.
+   ========================================== */
+.stay-logistics-section {
+    padding: 3rem 0;
+    background-color: var(--bg-light, #F9FAFB);
+    border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+.stay-logistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.stay-logistics-card {
+    background-color: var(--bg-white, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: var(--radius-lg, 0.75rem);
+    padding: 1.75rem 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Subtle border-top accent so the two cards read as a coordinated pair without shouting. */
+.stay-logistics-card--before {
+    border-top: 3px solid var(--primary-color, #2D7DD2);
+}
+
+.stay-logistics-card--during {
+    border-top: 3px solid var(--accent-color, #F59E0B);
+}
+
+.stay-logistics-card-heading {
+    margin: 0 0 1.1rem;
+    padding: 0 0 0.65rem;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary, #1F2937);
+    letter-spacing: 0.005em;
+    line-height: 1.25;
+}
+
+.stay-logistics-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stay-logistics-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stay-logistics-item-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary, #1F2937);
+    letter-spacing: 0.01em;
+    line-height: 1.35;
+}
+
+.stay-logistics-item-body {
+    color: var(--text-secondary, #6B7280);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.stay-logistics-link {
+    display: inline;
+    margin-left: 0.15rem;
+    color: var(--primary-color, #2D7DD2);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.stay-logistics-link:hover,
+.stay-logistics-link:focus-visible {
+    color: var(--primary-dark, #1E5BA8);
+}
+
+@media (max-width: 600px) {
+    .stay-logistics-section {
+        padding: 2.25rem 0;
+    }
+    .stay-logistics-grid {
+        gap: 1rem;
+    }
+    .stay-logistics-card {
+        padding: 1.35rem 1.25rem 1.15rem;
+    }
+    .stay-logistics-card-heading {
+        font-size: 1.2rem;
+        padding-bottom: 0.55rem;
+        margin-bottom: 0.9rem;
+    }
+    .stay-logistics-item-label {
+        font-size: 0.875rem;
+    }
+    .stay-logistics-item-body {
+        font-size: 0.875rem;
+    }
+}
+
+/* ==========================================
+   Resort Registration Fee line + Price Calculator polish
+   Fee renamed from "Community registration fee" 2026-07-02 (Final Polish pass).
+   Rules from BRAND_GUIDELINES.md (legal/factual guardrails): never hidden, never footnoted,
+   never re-styled to look like a sales note.
+   ========================================== */
+.price-line-registration .price-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.price-line-note {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-secondary, #6B7280);
+    line-height: 1.35;
+    max-width: 22rem;
+}
+
+/* Subtle hairline rule above the "Estimated Total" row so the total reads as a summary
+   of the itemized lines above. No color highlight, no background — understated. */
+.price-line--estimated-total {
+    border-top: 1px solid var(--border-color, #e5e7eb);
+    padding-top: 0.75rem;
+    margin-top: 0.35rem;
+}
+
+/* Trust note below the total. Muted, single line, factual — never promotional. */
+.price-trust-note {
+    margin: 0.65rem 0 0;
+    color: var(--text-secondary, #6B7280);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    text-align: right;
+    letter-spacing: 0.005em;
+}
+
+/* ==========================================
+   Property page — Why Book Direct trust panel
+   New in Final Polish pass (2026-07-02). Distinct class prefix `.property-trust-panel-*`
+   from the homepage `.why-book-direct-*` 3-card block. Muted background, single list.
+   Source: property.whyBookDirect (MASTER §14d).
+   ========================================== */
+.property-trust-panel-section {
+    padding: 2.75rem 0 3rem;
+    background-color: var(--bg-white, #ffffff);
+}
+
+.property-trust-panel {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2rem 2.25rem;
+    background-color: var(--bg-light, #F9FAFB);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: var(--radius-lg, 0.75rem);
+    box-shadow: var(--shadow-sm);
+}
+
+.property-trust-panel-heading {
+    margin: 0 0 0.5rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary, #1F2937);
+    letter-spacing: 0.005em;
+    line-height: 1.25;
+}
+
+.property-trust-panel-lead {
+    margin: 0 0 1.35rem;
+    color: var(--text-secondary, #6B7280);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    max-width: 42rem;
+}
+
+.property-trust-panel-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.55rem 1.5rem;
+}
+
+.property-trust-panel-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    color: var(--text-primary, #1F2937);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    letter-spacing: 0.005em;
+}
+
+.property-trust-panel-check {
+    flex: 0 0 auto;
+    margin-top: 0.15rem;
+    color: var(--primary-color, #2D7DD2);
+}
+
+.property-trust-panel-text {
+    color: var(--text-primary, #1F2937);
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .property-trust-panel-section {
+        padding: 2rem 0 2.25rem;
+    }
+    .property-trust-panel {
+        padding: 1.5rem 1.35rem;
+    }
+    .property-trust-panel-heading {
+        font-size: 1.3rem;
+    }
+    .property-trust-panel-lead {
+        font-size: 0.9rem;
+        margin-bottom: 1.1rem;
+    }
+    .property-trust-panel-list {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+    }
+    .property-trust-panel-item {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================
+   Reviews privacy / anonymization disclosure — kept as an optional hook
+   REVERTED 2026-07-02 (Final Polish): no property currently sets `reviewsPrivacyNote`, so
+   this block never renders. Kept in case pseudonymous / anonymized authors return with a
+   different owner-approved policy. See MASTER §23 for the current state.
+   ========================================== */
+.reviews-privacy-note {
+    margin: 0 0 1.15rem;
+    padding: 0.65rem 0.95rem;
+    background-color: var(--bg-light, #F9FAFB);
+    border-left: 3px solid var(--border-color, #e5e7eb);
+    border-radius: var(--radius-sm, 0.375rem);
+    color: var(--text-secondary, #6B7280);
+    font-size: 0.825rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* ==========================================
+   Reviews section — typography polish (Final Polish pass 2026-07-02)
+   No content changes. Increased vertical rhythm between review cards, tighter meta-line
+   spacing, subtler borders so the block reads as a curated wall of quotes.
+   ========================================== */
+.reviews-group-section .review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+}
+
+.reviews-group-section .review-list > * + * {
+    margin-top: 0;
 }

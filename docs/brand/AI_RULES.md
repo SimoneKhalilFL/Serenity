@@ -72,7 +72,7 @@ The brand's credibility depends on the on-property reality matching the marketin
 
 **Do not claim, imply, or suggest:**
 
-- Beach service, beach setup crew, chair delivery.
+- Beach service **that we** provide, beach setup crew **from us**, chair delivery **by us**. *(Chair/umbrella rental from third-party on-beach vendors IS available for purchase and MAY be mentioned as an optional paid add-on — never as our amenity.)*
 - Concierge, in-condo dining, transfer service.
 - Daily housekeeping mid-stay.
 - Specific weather, sunsets, wildlife, or view conditions.
@@ -113,7 +113,7 @@ Do not fabricate a "the docs allow this exception" justification. If the docs do
 2. Make the change.
 3. Run any regeneration scripts affected.
 4. Run linters (`npm run lint:js`, `npm run lint:html`) if they exist for the affected file types.
-5. Confirm no legacy branding was reintroduced (grep for `Serenity Rentals`, `Fun in the Sun`, `21st floor`, `beach service`, `dream getaway`).
+5. Confirm no legacy branding was reintroduced (grep for `Serenity Rentals`, `Fun in the Sun`, `21st floor`, `luxury beach service`, `beach setup crew`, `we provide beach service`, `chair delivery`, `dream getaway`). *(The literal phrase `beach service` on its own is no longer forbidden — the third-party paid option is a real, mentionable amenity; only the overreach phrasings are.)*
 
 ---
 

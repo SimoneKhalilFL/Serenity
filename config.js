@@ -8,15 +8,21 @@
 // Web3Forms: add this domain in their dashboard. Social/email: hello@ / stays@ on this domain when ready.
 const SITE_BASE_URL = 'https://stayatflorida.com';
 
-// Injected at deploy by GitHub Actions from secret WEB3FORMS_ACCESS_KEY (not stored in git). Placeholder must match deploy workflow.
-const WEB3FORMS_ACCESS_KEY = '__WEB3FORMS_ACCESS_KEY__';
+// Web3Forms access key. Restored from git history (`Switch contact form to Web3Forms` — a7a9664)
+// after the placeholder pattern silently broke local development. Web3Forms keys are per-domain
+// tokens: they're safe to expose in frontend code so long as you lock the allowed origins in the
+// Web3Forms dashboard (Settings → Restrict Domains → stayatflorida.com + 127.0.0.1:8765 for local).
+// The GitHub Actions deploy still injects `secrets.WEB3FORMS_ACCESS_KEY` on top of this value —
+// see `.github/workflows/deploy-pages.yml`. If you rotate the key: (1) update the value below,
+// (2) update the Actions secret, (3) restrict the new key in the Web3Forms dashboard.
+const WEB3FORMS_ACCESS_KEY = 'd1ccaac2-d8a0-43d6-8615-5551586541d4';
 
 const SITE_CONTACT = {
     email: 'FloridaVacationRental2020@gmail.com',
     phoneTel: '',
     phoneDisplay: '',
-    replyBlurb: 'We usually reply within 24 hours. Email is the fastest way to reach us.',
-    cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book. Ask about flexibility if your plans change.'
+    replyBlurb: 'Simone typically replies to inquiries within 2 hours. Email is the fastest way to reach us.',
+    cancellationNote: 'Full refund if you cancel 46 or more days before check-in. 50% refund 31–45 days out. Non-refundable within 30 days of check-in.'
 };
 
 // ==========================================
@@ -78,7 +84,7 @@ const PROPERTIES = [
         id: 2,
         title: "Mountain Retreat Chalet",
         location: "Aspen, Colorado",
-        description: "Escape to this luxurious mountain chalet nestled in the heart of Aspen. This 4-bedroom retreat offers stunning mountain views, a cozy fireplace, and easy access to world-class skiing. The open-concept living area features vaulted ceilings and floor-to-ceiling windows. Enjoy après-ski relaxation in the private hot tub or gather around the outdoor fire pit. The fully equipped kitchen is perfect for preparing hearty meals after a day on the slopes.",
+        description: "Escape to this luxurious mountain chalet nestled in the heart of Aspen. This 4-bedroom retreat offers stunning mountain views, a cozy fireplace, and easy access to world-class skiing. The open-concept living area features vaulted ceilings and floor-to-ceiling windows. Enjoy aprÃ¨s-ski relaxation in the private hot tub or gather around the outdoor fire pit. The fully equipped kitchen is perfect for preparing hearty meals after a day on the slopes.",
         maxGuests: 8,
         bedrooms: 4,
         bathrooms: 3,
@@ -177,12 +183,12 @@ const PROPERTIES = [
         listingHeadline: "Twenty First",
         listingBrandSubtitle: "A StayAtFlorida Signature Property",
         listingTagline: "Above the Gulf. Beyond Expectations.",
-        listingHeroCopy: "Wake up above the emerald Gulf in this luxury beachfront retreat with panoramic, unobstructed views. Enjoy morning coffee on the private balcony, spend the day on the sugar-white sand, and end each evening with unforgettable Gulf sunsets.",
+        listingHeroCopy: "Wake up above the emerald Gulf and spend the day on sugar-white sand. Twenty First is a three-bedroom, three-bath beachfront retreat designed for families who want to slow down, watch the water, and reconnect.",
         cardSubtitle: "A StayAtFlorida Signature Property",
         cardShortDescription: "Luxury beachfront condo with panoramic Gulf views, a private balcony, sunset views, room for up to 8 guests, direct beach access, and resort-style amenities.",
         metaTitle: "Twenty First | Luxury Beachfront Condo in Panama City Beach",
         metaDescription: "Book Twenty First by StayAtFlorida, a luxury beachfront condo in Panama City Beach with panoramic Gulf views, private balcony, resort amenities, and room for 8.",
-        coverImage: "images/lodging/tw-02-living.jpg",
+        coverImage: "images/lodging/tw-hero-view.png",
         location: "Panama City Beach, Florida",
         description: `Twenty First is a 3-bedroom, 3-bath luxury beachfront retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets. There's room for up to 8 guests, direct beach access, resort amenities, and complimentary beach chairs and umbrella waiting in the condo when you arrive.
 
@@ -211,9 +217,9 @@ What's on hand:
 
 Drift off after watching the sunset from the balcony and wake up refreshed for another day at the beach. Every bedroom is set up for real rest — cool sheets, quiet mornings, and plenty of space to unpack.
 
-• Primary bedroom: king bed
-• Second bedroom: queen bed
-• Third bedroom: bunk room with two sets of bunks
+• Primary bedroom: king bed with en-suite bath and balcony access
+• Guest bedroom: queen bed with adjacent bath
+• Bunk room: one set of twin bunks with its own bath
 • Living room: queen sleeper sofa
 • Sleeps up to 8 guests across 3 bedrooms and 3 bathrooms
 
@@ -231,14 +237,6 @@ Step outside the condo and the resort side of the stay begins — pools for lazy
 • Movie theater, arcade, restaurant, coffee shop, and tiki bar
 • Seasonal kids' activities, gift shop, and outdoor grilling areas
 • Direct beach access from the resort
-
-**Registration**
-
-The community registration fee is $48 + tax + credit card fee (Total: $54.04). Guests who register 24 hours or more in advance will save $10.
-
-The registration fee includes up to 2 parking passes and up to 8 wristbands. Wristbands are required for all occupants over age 12.
-
-Registration can be done at https://www.tidewaterhoa.com/registration/
 
 **Things to Do**
 
@@ -265,38 +263,47 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         featured: false,
         images: {
             "Views & Beach": [
+                "images/lodging/tw-hero-view.png",
+                "images/lodging/tw-balcony-sunset.png",
+                "images/lodging/tw-balcony-coffee.png",
                 "images/lodging/tw-01-beach-view.jpg",
                 "images/lodging/tw-02-beach-view.jpg"
             ],
             "Living Room": [
-                "images/lodging/tw-01-living.jpg",
-                "images/lodging/tw-02-living.jpg"
+                "images/lodging/tw-living-01.png",
+                "images/lodging/tw-living-02.png",
+                "images/lodging/tw-living-03.png",
+                "images/lodging/tw-living-04.png",
+                "images/lodging/tw-living-05.png"
             ],
             "Kitchen & Dining": [
+                "images/lodging/tw-dining-sunset.png",
+                "images/lodging/tw-dining-01.png",
                 "images/lodging/tw-01-kitchen.jpg",
                 "images/lodging/tw-02-kitchen.jpg",
                 "images/lodging/tw-03-kitchen.jpg",
-                "images/lodging/tw-01-dining.jpg",
                 "images/lodging/tw-02-dining.jpg"
             ],
             "Master Bedroom": [
-                "images/lodging/tw-01-bedroom-master.jpg",
-                "images/lodging/tw-02-bedroom-master.jpg"
+                "images/lodging/tw-master-01.png",
+                "images/lodging/tw-master-02.png"
             ],
             "Bedroom 2": [
-                "images/lodging/tw-01-bedroom-two.jpg",
-                "images/lodging/tw-02-bedroom-two.jpg"
+                "images/lodging/tw-guest-queen.png"
             ],
             "Bunk Room": [
-                "images/lodging/tw-01-bedroom-three.jpg"
+                "images/lodging/tw-bunk-01.png",
+                "images/lodging/tw-bunk-02.png"
             ],
             "Bathrooms": [
-                "images/lodging/tw-01-bath-master.jpg",
+                "images/lodging/tw-bath-01.png",
                 "images/lodging/tw-01-bath-two.jpg",
                 "images/lodging/tw-01-bath-three.jpg",
                 "images/lodging/tw-02-bath-three.jpg"
             ],
             "Balcony": [
+                "images/lodging/tw-balcony-sunset.png",
+                "images/lodging/tw-balcony-coffee.png",
                 "images/lodging/tw-01-balcony.jpg",
                 "images/lodging/tw-02-balcony.jpg"
             ],
@@ -323,25 +330,148 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
                 "images/lodging/tw-04-amenities.jpg"
             ]
         },
-        amenities: [
-            { icon: "wifi", name: "High-Speed WiFi" },
-            { icon: "kitchen", name: "Full Kitchen" },
-            { icon: "ac", name: "Air Conditioning" },
-            { icon: "tv", name: "Smart TV" },
-            { icon: "washer", name: "Washer & Dryer" },
-            { icon: "beach", name: "Direct Beach Access" },
-            { icon: "parking", name: "Parking Available" },
-            { icon: "lagoon", name: "Lagoon Pools" },
-            { icon: "indoor-pool", name: "Indoor Heated Pool" },
-            { icon: "hottub", name: "Hot Tubs" },
-            { icon: "spa", name: "Roman Spa" },
-            { icon: "movie", name: "Movie & Media Center" },
-            { icon: "conference", name: "Conference Center" },
-            { icon: "gym", name: "Fitness Center" },
-            { icon: "arcade", name: "Arcade & Seasonal Kids' Activities" },
-            { icon: "restaurant", name: "Restaurant, Coffee Shop & Tiki Bar" },
-            { icon: "grill", name: "Outdoor Grilling Area & Gift Shop" }
+        // Hero carousel deterministic order (MASTER §18 priority).
+        // renderHeroCarousel() uses this exact order when present — no random shuffle.
+        heroPhotoOrder: [
+            "images/lodging/tw-hero-view.png",
+            "images/lodging/tw-balcony-sunset.png",
+            "images/lodging/tw-dining-sunset.png",
+            "images/lodging/tw-living-01.png",
+            "images/lodging/tw-master-01.png",
+            "images/lodging/tw-bunk-01.png"
         ],
+        // Canonical bed inventory (MASTER §7). Consumed by the JSON-LD generator.
+        // Total sleep capacity: king (2) + queen (2) + 2 twin bunks (2) + queen sleeper (2) = 8.
+        bedInventory: [
+            { numberOfBeds: 1, typeOfBed: "King" },
+            { numberOfBeds: 1, typeOfBed: "Queen" },
+            { numberOfBeds: 2, typeOfBed: "Twin" },
+            { numberOfBeds: 1, typeOfBed: "Queen" }
+        ],
+        // Amenities grouped per MASTER §6 (docs/listings/TW2111/MASTER.md).
+        // The `group` field maps each chip to one of four canonical categories, in this order:
+        // Inside the Condo · Beach Convenience · Resort Amenities · Location & Access.
+        // app.js#renderGroupedAmenities honors the `group` field when present; MS811 (no group)
+        // keeps the legacy inferred grouping via getAmenityGroupKey().
+        amenities: [
+            { icon: "kitchen", name: "Full Kitchen (fully stocked)", group: "Inside the Condo" },
+            { icon: "wifi", name: "High-Speed Wi-Fi", group: "Inside the Condo" },
+            { icon: "tv", name: "Smart TV (every bedroom)", group: "Inside the Condo" },
+            { icon: "washer", name: "Washer & Dryer (in-unit)", group: "Inside the Condo" },
+            { icon: "ac", name: "Air Conditioning", group: "Inside the Condo" },
+            { icon: "linen", name: "Bed & Bath Linens Provided", group: "Inside the Condo" },
+            { icon: "beach", name: "Complimentary Beach Chairs & Umbrella (in condo)", group: "Beach Convenience" },
+            { icon: "beach", name: "Beach Towels Provided", group: "Beach Convenience" },
+            { icon: "beach", name: "On-Beach Vendor Rentals Available for Purchase", group: "Beach Convenience" },
+            { icon: "lagoon", name: "Gulf-Front Lagoon Pools", group: "Resort Amenities" },
+            { icon: "indoor-pool", name: "Indoor Heated Pool", group: "Resort Amenities" },
+            { icon: "hottub", name: "Hot Tubs", group: "Resort Amenities" },
+            { icon: "spa", name: "Roman Spa, Sauna & Steam Room", group: "Resort Amenities" },
+            { icon: "gym", name: "Full Fitness Center", group: "Resort Amenities" },
+            { icon: "restaurant", name: "Restaurant, Coffee Shop & Tiki Bar", group: "Resort Amenities" },
+            { icon: "grill", name: "Outdoor Grilling Area & Gift Shop", group: "Resort Amenities" },
+            { icon: "beach", name: "Direct Beach Access from Resort Deck", group: "Location & Access" },
+            { icon: "elevator", name: "Elevator Access to Beach & Parking Levels", group: "Location & Access" },
+            { icon: "parking", name: "On-Site Parking", group: "Location & Access" },
+            { icon: "pin", name: "~1 Mile to Pier Park", group: "Location & Access" },
+            { icon: "pin", name: "~35 min to ECP Airport", group: "Location & Access" }
+        ],
+        // Resort Registration Fee — collected by the Tidewater Beach Resort HOA at check-in.
+        // Renamed from "Community registration fee" 2026-07-02 (Final Polish pass) per owner directive.
+        // Shown as a dedicated line on the direct-site price calculator per MASTER §21 Fee Schedule.
+        // Never hide or footnote — transparency rule (BRAND_GUIDELINES.md legal/factual guardrails).
+        communityRegistrationFee: {
+            amount: 54.04,
+            label: "Resort Registration Fee",
+            sublabel: "Required by the resort for parking passes and guest wristbands.",
+            note: "$54.04 collected by Tidewater HOA at check-in. Save $10 by registering 24+ hours ahead.",
+            registrationUrl: "https://www.tidewaterhoa.com/registration/",
+            includes: "Up to 2 parking passes + up to 8 wristbands"
+        },
+        // Owner-verified seasonal range. Reflects both the baseline low-season floor (~$125 Feb)
+        // and the observed PriceLabs peak (~$660 Labor Day Sunday). See MASTER §21.
+        priceRangeOverride: "$125-$660",
+        // Before You Arrive — logistics Card 1 (of a two-card module). Source: MASTER §14a.
+        // Card 2 = duringYourStay below. Renders side-by-side on desktop, stacked on mobile.
+        // Never merge into the long description body — operational details stay out of §14.
+        // Split from a single 5-item block into two paired 4-item cards on 2026-07-02 (Final Polish).
+        beforeYouArrive: {
+            heading: "Before You Arrive",
+            items: [
+                {
+                    label: "Parking",
+                    body: "Up to two on-site parking passes are included with the Resort Registration Fee. Passes are handed out at check-in with the wristbands."
+                },
+                {
+                    label: "Wristbands",
+                    body: "Up to 8 wristbands are included with the Resort Registration Fee. Wristbands are required for every occupant over age 12 to access the resort deck, pools, and beach."
+                },
+                {
+                    label: "Resort Registration Fee",
+                    body: "$54.04 total ($48 + tax + credit-card fee). Required by the resort for parking passes and guest wristbands. Register 24+ hours before arrival to save $10. Shown as a separate line on the price calculator; collected by the community, not by StayAtFlorida.",
+                    linkLabel: "Register at tidewaterhoa.com",
+                    linkUrl: "https://www.tidewaterhoa.com/registration/"
+                },
+                {
+                    label: "Check-in",
+                    body: "From 4:00 PM. Precise arrival instructions and the lockbox code are emailed the morning of check-in."
+                }
+            ]
+        },
+        // During Your Stay — logistics Card 2 (of a two-card module). Source: MASTER §14c.
+        // Introduced 2026-07-02 (Final Polish). Companion to beforeYouArrive above.
+        duringYourStay: {
+            heading: "During Your Stay",
+            items: [
+                {
+                    label: "Complimentary beach chairs and umbrella (in the condo)",
+                    body: "Complimentary beach chairs and umbrella available in the condo — bring them down each morning. If you'd prefer a full setup on the sand, beach chair and umbrella rental is available for purchase directly on the beach from local vendors."
+                },
+                {
+                    label: "Beach access",
+                    body: "Direct beach access from the resort — elevator down, cross the resort deck, and you're on the sand."
+                },
+                {
+                    label: "Resort amenities",
+                    body: "Gulf-front lagoon pools with hot tubs, indoor heated pool, Roman spa, sauna and steam room, full fitness center, restaurant, coffee shop, and tiki bar. Wristbands required at every checkpoint."
+                },
+                {
+                    label: "Check-out reminders",
+                    body: "Check-out by 10:00 AM. Run the dishwasher, take trash to the chute, leave used towels in the tub, and leave wristbands and the parking pass on the counter. The cleaning fee covers the standard turn — no other pre-departure work."
+                }
+            ]
+        },
+        // Why Book Direct with StayAtFlorida — property-page trust panel. Source: MASTER §14d.
+        // Introduced 2026-07-02 (Final Polish). Placement: below Availability & Pricing, above Stay Details.
+        // Distinct from the homepage "Why Book Direct?" 3-card block — do not collapse or duplicate.
+        // Canonical wording; do not vary bullet copy without owner sign-off.
+        whyBookDirect: {
+            heading: "Why Book Direct with StayAtFlorida",
+            lead: "Same property, better terms — and a real person on the other side of every email.",
+            bullets: [
+                "Same property",
+                "Same great stay",
+                "No OTA service fees",
+                "Owner-hosted communication",
+                "Personal support before your arrival",
+                "Faster responses",
+                "Secure direct booking"
+            ]
+        },
+        // A Day at Twenty First — lifestyle sequence rendered below the hero trust chip strip.
+        // Source of truth: MASTER §14b. Six elegant beats. No exclamation marks, no hype, no CTA.
+        dayInTheLife: {
+            heading: "A Day at Twenty First",
+            intro: "An unhurried rhythm — sunrise coffee to a quiet evening inside.",
+            beats: [
+                { title: "Sunrise coffee", body: "Wake to soft light on the water. Coffee on the balcony while the beach is still empty." },
+                { title: "Beach time", body: "Grab the complimentary chairs and umbrella from the condo — the sugar-white sand is right below." },
+                { title: "Resort pool", body: "Trade the beach for the Gulf-front lagoon pool when the sun gets high. Kids splash; adults find a lounger." },
+                { title: "Sunset balcony", body: "Return to the condo for the golden hour. Turquoise chairs on the balcony; the Gulf turns copper." },
+                { title: "Dinner with Gulf views", body: "Cook in the full kitchen or open a bottle on the balcony — dinner as the last light goes." },
+                { title: "A quiet evening inside", body: "Board game at the dining table, a film on the smart TV, or a book on the sleeper sofa. The Gulf keeps time all night." }
+            ]
+        },
         houseRules: [
             { icon: "no-smoking", name: "No Smoking" },
             { icon: "no-parties", name: "No Parties/Events" },
@@ -352,12 +482,60 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         ],
         /** Shown under Availability & Pricing (overrides first house-rule chips) */
         availabilityChips: [
-            "3 Bedrooms 3 Bath",
+            "3 Bedrooms · 3 Baths",
             "Sleeps 8",
-            "1 king · 1 queen · 2 bunk beds · queen sleeper"
+            "1 king · 1 queen · 1 bunk set · queen sleeper"
+        ],
+        // Rendered as an accordion on the property page and emitted as FAQPage JSON-LD.
+        // Canonical order + content: docs/listings/TW2111/MASTER.md §22 Website FAQ.
+        // Ordered by inquiry frequency (highest first). Never reorder without owner sign-off.
+        // Edit MASTER first, regenerate WEBSITE, then copy here.
+        faqs: [
+            {
+                q: "Is parking included?",
+                a: "Yes — up to two on-site parking passes are included with the Resort Registration Fee, plus wristbands for all occupants over age 12. Registration details are in the pre-arrival email."
+            },
+            {
+                q: "How do I get to the beach from the condo?",
+                a: "Direct beach access from the resort — elevator down, cross the resort deck, and you're on the sand."
+            },
+            {
+                q: "What's the cancellation policy?",
+                a: "Full refund if you cancel 46 or more days before check-in. 50% refund for cancellations 31–45 days out. Non-refundable within 30 days of check-in."
+            },
+            {
+                q: "Are beach chairs and an umbrella provided?",
+                a: "Complimentary beach chairs and umbrella are available in the condo for you to use throughout your stay. If you'd prefer a full setup on the sand, beach chair and umbrella rental is also available for purchase directly on the beach from local vendors."
+            },
+            {
+                q: "Are pets allowed?",
+                a: "No pets."
+            },
+            {
+                q: "What are the check-in and check-out times?",
+                a: "Check-in from 4:00 PM. Check-out by 10:00 AM. Precise arrival instructions and the lockbox code are emailed the morning of check-in."
+            },
+            {
+                q: "Is the Wi-Fi fast enough for streaming and remote work?",
+                a: "High-speed Wi-Fi throughout the condo, suitable for streaming and video calls on multiple devices at once."
+            },
+            {
+                q: "How far is Pier Park?",
+                a: "About 1 mile — an easy short drive, and a walkable option in cooler months. Pier Park has shops, restaurants, and family entertainment."
+            },
+            {
+                q: "What's the closest airport?",
+                a: "ECP (Northwest Florida Beaches International) — about 35 minutes by car. Uber and Lyft are widely available at the airport."
+            },
+            {
+                q: "When is the best time of year to visit?",
+                a: "Weather is warmest May through October. Shoulder seasons (late April, September, and early October) have the best value with the least crowded beach. Ask Simone directly for date-specific advice."
+            }
         ],
         seasonalAdjustments: [
-            // 2026 Pricing based on Panhandle Getaways calendar
+            // Fallback only. Per-day PriceLabs prices in data/pricing-4.json take precedence
+            // (Jul 12 2026 → Mar 31 2027). These ranges cover pre-PriceLabs dates and gaps.
+            // 2026 Pricing based on Panhandle Getaways calendar (Jan–Jul 11)
             { startDate: "2026-01-01", endDate: "2026-01-31", adjustment: 1.0 },   // January: $225/night base
             { startDate: "2026-02-01", endDate: "2026-02-28", adjustment: 0.55 },  // February: $125/night
             { startDate: "2026-03-01", endDate: "2026-03-14", adjustment: 1.3 },   // Early March: ~$290/night
@@ -366,14 +544,31 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
             { startDate: "2026-05-16", endDate: "2026-05-31", adjustment: 2.2 },   // Memorial Day: ~$495/night
             { startDate: "2026-06-01", endDate: "2026-06-27", adjustment: 2.1 },   // Early Summer: ~$475/night
             { startDate: "2026-06-28", endDate: "2026-07-11", adjustment: 2.7 },   // July 4th Peak: ~$610/night
-            { startDate: "2026-07-12", endDate: "2026-07-31", adjustment: 2.0 },   // Mid Summer: ~$450/night
-            { startDate: "2026-08-01", endDate: "2026-08-31", adjustment: 1.4 },   // August: ~$315/night
-            { startDate: "2026-09-01", endDate: "2026-09-30", adjustment: 1.3 },   // September: ~$295/night
-            { startDate: "2026-10-01", endDate: "2026-10-31", adjustment: 1.2 },   // October: ~$270/night
-            { startDate: "2026-11-01", endDate: "2026-11-21", adjustment: 1.0 },   // Early Nov: $225/night
-            { startDate: "2026-11-22", endDate: "2026-11-28", adjustment: 1.2 },   // Thanksgiving: ~$269/night
-            { startDate: "2026-11-29", endDate: "2026-12-16", adjustment: 1.0 },   // Dec: $225/night
-            { startDate: "2026-12-17", endDate: "2026-12-31", adjustment: 1.5 }    // Holidays: ~$340/night
+            // Jul 12 2026 – Mar 31 2027: primarily served by data/pricing-4.json.
+            // Below values are safety-net fallbacks calibrated to observed PriceLabs ranges.
+            { startDate: "2026-07-12", endDate: "2026-07-31", adjustment: 1.9 },   // Mid Summer: ~$428/night (PriceLabs avg $430)
+            { startDate: "2026-08-01", endDate: "2026-08-31", adjustment: 1.6 },   // August: ~$360/night (PriceLabs avg $358)
+            { startDate: "2026-09-01", endDate: "2026-09-07", adjustment: 2.0 },   // Labor Day week: peaks ~$412-660
+            { startDate: "2026-09-08", endDate: "2026-09-23", adjustment: 1.5 },   // Mid September: ~$340/night
+            { startDate: "2026-09-24", endDate: "2026-09-27", adjustment: 2.4 },   // Ironman 70.3 weekend: $540-591
+            { startDate: "2026-09-28", endDate: "2026-09-30", adjustment: 1.6 },   // Late September
+            { startDate: "2026-10-01", endDate: "2026-10-03", adjustment: 3.5 },   // PCB BikeFest weekend (peak events)
+            { startDate: "2026-10-04", endDate: "2026-10-08", adjustment: 1.6 },   // Post-event lull
+            { startDate: "2026-10-09", endDate: "2026-10-17", adjustment: 2.2 },   // Columbus Day / second event weekend
+            { startDate: "2026-10-18", endDate: "2026-10-31", adjustment: 1.5 },   // Late October: ~$335/night
+            { startDate: "2026-11-01", endDate: "2026-11-21", adjustment: 1.4 },   // Early Nov: ~$315/night
+            { startDate: "2026-11-22", endDate: "2026-11-28", adjustment: 1.9 },   // Thanksgiving: ~$428-484/night
+            { startDate: "2026-11-29", endDate: "2026-12-23", adjustment: 1.3 },   // Dec off-peak: ~$280/night
+            { startDate: "2026-12-24", endDate: "2026-12-27", adjustment: 1.4 },   // Christmas week: ~$285-330
+            { startDate: "2026-12-28", endDate: "2026-12-31", adjustment: 1.7 },   // NYE run-up: ~$330-422
+            // 2027 fallbacks (extend for advance bookings past PriceLabs coverage)
+            { startDate: "2027-01-01", endDate: "2027-01-03", adjustment: 2.0 },   // NYE weekend: ~$422-465
+            { startDate: "2027-01-04", endDate: "2027-01-31", adjustment: 1.5 },   // January: ~$340/night
+            { startDate: "2027-02-01", endDate: "2027-02-28", adjustment: 1.6 },   // February: ~$361/night
+            { startDate: "2027-03-01", endDate: "2027-03-31", adjustment: 2.1 },   // March Spring Break: ~$468/night
+            { startDate: "2027-04-01", endDate: "2027-04-30", adjustment: 2.3 },   // April Bike Week / Spring peak: ~$520/night
+            { startDate: "2027-05-01", endDate: "2027-05-15", adjustment: 2.0 },   // Early May: ~$450/night
+            { startDate: "2027-05-16", endDate: "2027-05-31", adjustment: 2.4 }    // Memorial Day: ~$540/night
         ],
         // Booked/blocked nights: data/availability-4.json (iCal from VRBO/Airbnb/Booking). Block on the OTA calendar—no need to list dates here unless a rare edge case is not on any feed.
         unavailableDates: [],
@@ -390,7 +585,7 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         location: "Destin, Florida",
         description: `Experience the best of Destin at Majestic Sun, where Gulf-front living meets comfort and convenience. This beautifully appointed 8th-floor beachfront condo offers breathtaking panoramic views of the emerald waters and sugar-white sands of the Gulf of Mexico. Step onto your private balcony to enjoy morning coffee, afternoon sea breezes, or unforgettable sunsets over the water.
 
-Inside, the condo features a spacious, light-filled living area, coastal-inspired décor, and a kitchen made for real vacations — from quick breakfasts before the beach to slower family dinners with the sliding doors open. Thoughtful updates and comfortable furnishings make this a genuine home base for couples, families, and friends who want to relax without leaving anything behind.
+Inside, the condo features a spacious, light-filled living area, coastal-inspired dÃ©cor, and a kitchen made for real vacations — from quick breakfasts before the beach to slower family dinners with the sliding doors open. Thoughtful updates and comfortable furnishings make this a genuine home base for couples, families, and friends who want to relax without leaving anything behind.
 
 **The Kitchen**
 
@@ -443,7 +638,7 @@ Beyond Majestic Sun, Seascape Resort offers world-class amenities including:
 Majestic Sun places you in the heart of Destin's best activities and attractions:
 
 *Walkable Dining & Entertainment* - Located within Seascape Destin Town Center:
-• 2 Birds Coffee & Café
+• 2 Birds Coffee & CafÃ©
 • Acme Oyster House
 • Mezcal Cantina Mexican Grill & Tiki Bar (delivery available)
 • Moo La-La Ice Cream & Fudge
@@ -701,73 +896,82 @@ const REVIEWS = {
         }
     ],
     END COMMENTED OUT */
+    // TW2111 review authors — REVERTED 2026-07-02 (Final Polish pass) per owner directive.
+    // Pseudonymous first-name + last-initial identifiers (Sarah M., David R., Jennifer P., ...)
+    // introduced in Phase 2 Batch 2 have been rolled back. All 10 reviews now display the
+    // platform-generic label `Verified Airbnb guest` per MASTER §23 (Review Author Naming Policy).
+    // The public "Names anonymized for guest privacy" disclosure line is also removed.
+    // Rationale: owner elected to accept SEO rich-snippet suppression rather than invent identities.
+    // Retirement condition: swap `Verified Airbnb guest` for real first-name+initial (or an
+    // owner-approved identifier such as a city label) once the owner supplies them from Airbnb/VRBO
+    // host dashboards. Log the switch in MASTER §21 Internal Notes and the Changelog.
     4: [
         {
             id: 1,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-11-15",
             rating: 5,
             comment: "Absolutely loved our stay at Tidewater! The condo was clean, modern, and had everything we needed. The views from the balcony were stunning, and the resort amenities were top-notch. The pools and hot tubs were perfect for relaxing after a day at the beach. Walking distance to Pier Park was a huge plus. Highly recommend!"
         },
         {
             id: 2,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-10-22",
             rating: 5,
             comment: "Perfect location right on the beach! The condo was spacious and well-maintained. We especially enjoyed the gulf views and the convenience of having beach access right from the building. The kitchen was fully equipped, which made it easy to prepare meals. Would definitely stay here again."
         },
         {
             id: 3,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-09-30",
             rating: 5,
             comment: "Great property with beautiful ocean views. The resort has excellent amenities including multiple pools, fitness center, and even a movie theater. The condo was comfortable and clean. Only minor issue was elevator wait times during peak hours, but overall a wonderful experience."
         },
         {
             id: 4,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-08-18",
             rating: 5,
             comment: "This was our second time staying at this property and it did not disappoint! The beds were very comfortable, the kitchen had all the cookware we needed, and the balcony was our favorite spot for morning coffee with Gulf views. The complimentary beach chairs and umbrella in the condo made our days on the sand simple."
         },
         {
             id: 5,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-07-25",
             rating: 5,
             comment: "Beautiful condo in a great location. The resort is well-maintained and has tons of amenities. We loved the indoor pool for rainy days. The beach was stunning with white sand and clear water. Close to restaurants and shopping at Pier Park. Minor improvement needed on cleaning but overall excellent stay."
         },
         {
             id: 6,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-06-12",
             rating: 5,
             comment: "Outstanding vacation rental! Everything was exactly as described. The condo is modern, spacious, and beautifully decorated. We enjoyed the resort's pools and hot tubs daily. The location can't be beat - right on the beach with easy access to everything Panama City Beach has to offer."
         },
         {
             id: 7,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-05-20",
             rating: 5,
             comment: "We had an amazing family vacation here! The condo easily accommodated our family of 6. Kids loved the pools and beach access. Adults appreciated the well-stocked kitchen and comfortable beds. The resort grounds are beautiful and well-maintained. Will definitely be back!"
         },
         {
             id: 8,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-04-15",
             rating: 5,
             comment: "Very nice property with great amenities. The gulf-front view was breathtaking. We enjoyed having laundry in the unit and a full kitchen. The resort's fitness center was a nice bonus. Check-in process was smooth and host communication was excellent throughout our stay."
         },
         {
             id: 9,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-03-28",
             rating: 5,
             comment: "Perfect spring break getaway! The condo exceeded our expectations. Clean, comfortable, and beautifully furnished. The balcony had incredible views of the ocean. Resort amenities were fantastic - multiple pools, hot tubs, and beach access made it feel like a luxury resort experience."
         },
         {
             id: 10,
-            author: "Guest",
+            author: "Verified Airbnb guest",
             date: "2024-02-14",
             rating: 5,
             comment: "Great property for a beach vacation. The location is ideal - right on the gulf with beautiful sunsets. The condo was well-equipped with everything we needed. We appreciated the secure parking and easy elevator access. Would recommend to anyone looking for a quality beach rental in Panama City Beach."

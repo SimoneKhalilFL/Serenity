@@ -79,7 +79,7 @@ Grouped by category. Every item listed here must be present and functional on-pr
 - *e.g., Pools, hot tubs, fitness center, splash pad, grill area*
 
 **Not provided** *(state explicitly to prevent overpromising)*
-- Beach service or beach setup crew
+- Any claim that **we** provide beach service or a beach setup crew *(third-party on-beach chair rental IS available for purchase and may be mentioned as an optional paid add-on — never as our amenity)*
 - Daily housekeeping mid-stay
 - Concierge / in-condo dining
 - Airport transfers
@@ -126,7 +126,7 @@ Full keyword rules: [`../../brand/SEO.md`](../../brand/SEO.md).
 Concrete facts that build trust on any platform.
 
 - *X verified 5-star reviews since {year}*
-- *Owner-hosted — named host replies within 24 hours*
+- *Owner-hosted — named host replies within 2 hours*
 - *Transparent pricing — the calculator on stayatflorida.com shows nightly, cleaning, and tax before you email*
 - *Direct beach access at the resort*
 - *Cancellation policy is spelled out in advance*
@@ -161,7 +161,7 @@ Never use: `Book Now!`, `Reserve Now`, `Get 20% Off`, `Claim your stay`.
 
 **Paragraph 5 — practicalities.** *Parking, check-in, Wi-Fi, cleaning fee scope.*
 
-**Paragraph 6 — the host.** *Owner-hosted. Reply within 24 hours. Direct booking option.*
+**Paragraph 6 — the host.** *Owner-hosted. Reply within 2 hours. Direct booking option.*
 
 ## 15. Approved Amenities Language
 
@@ -169,7 +169,8 @@ Exact phrasing for the most-linted amenities.
 
 | Concept | Approved wording | Never say |
 |---|---|---|
-| Beach chairs | `Complimentary beach chairs and umbrella available in the condo` | `Beach service`, `Reserved beach chairs`, `Chair delivery`, `Luxury beach service` |
+| Beach chairs (in condo) | `Complimentary beach chairs and umbrella available in the condo` | Any implication that **we** provide beach service, `Reserved beach chairs`, `Chair delivery by us`, `Luxury beach service`, `Beach setup crew we provide` |
+| Beach chair rental (on-beach vendors) | `Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.` | Never quote prices or vendor names. Never call it "our beach service." |
 | View | `Panoramic Gulf Views` | `Guaranteed sunset`, `Best views on the coast` |
 | Balcony | `Private Beachfront Balcony` | `Massive`, `Endless` |
 | Beach access | `Direct Beach Access` | `Private Beach` |
@@ -221,7 +222,7 @@ See [`../../brand/HOSPITALITY.md#11-public-review-response-on-platform`](../../b
 ## 20. Guest Messaging Style
 
 - Owner-signed, first-person, warm, unhurried.
-- Reply within 24 hours (target).
+- Reply within 2 hours (target).
 - Sign with the owner's first name.
 - No emojis in inquiry / booking / issue messages.
 - The complimentary-beach-chairs sentence appears in every pre-arrival message.

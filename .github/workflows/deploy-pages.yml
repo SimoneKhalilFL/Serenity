@@ -40,15 +40,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Inject Web3Forms key from Actions secret
+      - name: Inject Web3Forms key from Actions secret (idempotent)
+        # Web3Forms keys are per-domain frontend tokens (safe to commit). We keep a real key in
+        # `config.js` so local `npx serve` works out of the box, but production still gets to
+        # rotate via the Actions secret without a code change: if the placeholder
+        # `__WEB3FORMS_ACCESS_KEY__` is present we replace it; otherwise we overwrite the
+        # committed literal with the secret. Missing secret is a warning, not a hard failure,
+        # so local dev never blocks deploys — the committed key still ships.
         env:
           WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
         run: |
           if [ -z "${WEB3FORMS_ACCESS_KEY:-}" ]; then
-            echo "::error::Add repository secret WEB3FORMS_ACCESS_KEY (Web3Forms dashboard → Access Key) under Settings → Secrets and variables → Actions."
-            exit 1
+            echo "::warning::Repository secret WEB3FORMS_ACCESS_KEY is not set. The key committed in config.js will ship as-is. Set the secret to rotate without a code change."
+            exit 0
           fi
-          python3 -c "import os; from pathlib import Path; k=os.environ['WEB3FORMS_ACCESS_KEY'].strip(); assert k; p=Path('config.js'); t=p.read_text(encoding='utf-8'); assert '__WEB3FORMS_ACCESS_KEY__' in t; p.write_text(t.replace('__WEB3FORMS_ACCESS_KEY__', k), encoding='utf-8')"
+          python3 - <<'PY'
+          import os, re
+          from pathlib import Path
+          k = os.environ['WEB3FORMS_ACCESS_KEY'].strip()
+          assert k, 'WEB3FORMS_ACCESS_KEY is empty'
+          p = Path('config.js')
+          t = p.read_text(encoding='utf-8')
+          placeholder = '__WEB3FORMS_ACCESS_KEY__'
+          if placeholder in t:
+              t = t.replace(placeholder, k)
+              print(f'Replaced placeholder with secret ({len(k)} chars).')
+          else:
+              new_t, n = re.subn(
+                  r"const WEB3FORMS_ACCESS_KEY = '[^']*';",
+                  f"const WEB3FORMS_ACCESS_KEY = '{k}';",
+                  t,
+                  count=1,
+              )
+              assert n == 1, 'Could not locate WEB3FORMS_ACCESS_KEY assignment in config.js'
+              t = new_t
+              print(f'Overwrote committed key literal with secret ({len(k)} chars).')
+          p.write_text(t, encoding='utf-8')
+          PY
 
       - uses: actions/setup-node@v4
         with:

@@ -28,7 +28,7 @@ Twenty First is a luxury 3-bedroom, 3-bath beachfront condo in Panama City Beach
 
 ### Accommodation
 
-The condo offers three separate sleeping areas: a primary bedroom with a king bed and en-suite bathroom, a guest bedroom with a king bed and adjacent bathroom, and a private bunk suite with two twin bunks and its own bathroom. A sleeper sofa in the living room accommodates one to two additional guests. In-unit amenities include a full kitchen, dishwasher, washer and dryer, smart TVs with streaming in the living room and every bedroom, and Wi-Fi throughout.
+The condo offers three separate sleeping areas: a primary bedroom with a king bed and en-suite bathroom, a guest bedroom with a queen bed and adjacent bathroom, and a bunk room with one set of twin bunks and its own bathroom. A queen sleeper sofa in the living room accommodates one to two additional guests. In-unit amenities include a full kitchen, dishwasher, washer and dryer, smart TVs with streaming in the living room and every bedroom, and Wi-Fi throughout.
 
 ### Location
 
@@ -59,7 +59,7 @@ Panama City Beach on Florida's Emerald Coast. Direct beach access from the resor
 | Bedrooms | 3 |
 | Bathrooms | 3 |
 | Sleeps | Up to 8 |
-| Bed configuration | 2 kings + 2 twin bunks + 1 sofa bed |
+| Bed configuration | 1 king + 1 queen + 2 twin bunks (one set) + 1 queen sleeper sofa |
 | Floor level | Upper floors |
 | Balcony / terrace | Yes — private, Gulf-facing |
 | View | Panoramic Gulf |
@@ -69,7 +69,7 @@ Panama City Beach on Florida's Emerald Coast. Direct beach access from the resor
 ## Host Profile
 
 ```
-StayAtFlorida is an owner-hosted collection of luxury beachfront vacation homes on Florida's Gulf Coast. The owner personally manages every booking and typically replies to guest messages within 24 hours.
+StayAtFlorida is an owner-hosted collection of luxury beachfront vacation homes on Florida's Gulf Coast. The owner personally manages every booking and typically replies to guest messages within 2 hours.
 ```
 
 ## Nearby Attractions
@@ -93,28 +93,30 @@ Quiet hours 10:00 PM – 8:00 AM per HOA.
 
 Cancellation policy: See Booking.com's rate policy for exact terms. Refund windows are set at the rate-tier level.
 
-Beach service is not provided; complimentary beach chairs and umbrella are available in the condo for use during your stay.
+Complimentary beach chairs and umbrella are available in the condo for use during your stay. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you prefer a full setup.
 
 Wristbands and parking pass are provided at check-in and should be left on the counter on departure.
 ```
 
 ## Photo Captions
 
-Booking captions ~150 chars each. Factual, no lifestyle framing.
+Booking captions ~150 chars each. Factual, no lifestyle framing. Updated 2026-07-02 to reflect the new photo set.
 
 | Slot | File | Caption |
 |---|---|---|
-| 1 | `tw-hero.jpg` | Private balcony with Gulf view |
-| 2 | `tw-living.jpg` | Living room with Gulf view |
-| 3 | `tw-primary.jpg` | Primary bedroom with king bed |
-| 4 | `tw-guest.jpg` | Guest bedroom with king bed |
-| 5 | `tw-bunk.jpg` | Bunk room with private bath |
-| 6 | `tw-kitchen.jpg` | Full kitchen |
-| 7 | `tw-dining.jpg` | Dining area |
-| 8 | `tw-bath.jpg` | Primary en-suite bathroom |
-| 9 | `tw-balcony-morning.jpg` | Private balcony |
-| 10 | `tw-beach.jpg` | Beach access from resort deck |
-| 11 | `tw-pool.jpg` | Resort pool |
+| 1 | `tw-hero-view.png` | Panoramic Gulf view from private balcony |
+| 2 | `tw-living-01.png` | Living room with Gulf view |
+| 3 | `tw-master-01.png` | Primary bedroom with king bed |
+| 4 | `tw-guest-queen.png` | Guest bedroom with queen bed |
+| 5 | `tw-bunk-01.png` | Bunk room with private bath |
+| 6 | `tw-01-kitchen.jpg` | Full kitchen |
+| 7 | `tw-dining-01.png` | Dining area |
+| 8 | `tw-dining-sunset.png` | Dining area, evening styling |
+| 9 | `tw-bath-01.png` | Guest bath with walk-in shower |
+| 10 | `tw-balcony-sunset.png` | Private balcony above the Gulf at sunset |
+| 11 | `tw-balcony-coffee.png` | Private balcony above the Gulf |
+| 12 | `tw-01-pool.jpg` | Resort pool |
+| 13 | `tw-01-amenities.jpg` | Resort amenity space |
 
 Booking photo order: exterior/view → living room → bedrooms → kitchen → balcony → bathrooms → resort amenities → beach.
 

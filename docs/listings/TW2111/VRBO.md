@@ -36,16 +36,16 @@ Twenty First is a 3-bedroom, 3-bath luxury beachfront retreat designed for famil
 Three separate sleeping areas mean everyone has their own space:
 
 - **Primary bedroom:** King bed with private en-suite bath and balcony access
-- **Guest bedroom:** King bed with adjacent bath
-- **Private bunk suite:** Two twin bunks with its own bathroom
-- **Living room sleeper sofa:** Fits 1–2 additional guests
+- **Guest bedroom:** Queen bed with adjacent bath
+- **Bunk room:** One set of twin bunks with its own bathroom
+- **Living room sleeper sofa:** Queen sleeper; fits 1–2 additional guests
 - **Sleeps up to 8 guests total**
 
 Inside, you'll find a full kitchen with dishwasher-safe dinnerware for the full sleeping capacity plus extras, a dining table that seats six, and smart TVs in the living room and every bedroom with streaming (Netflix, Prime, Disney+). Wi-Fi reaches every room. Bath linens for eight-plus guests, bed linens on every bed, and throw blankets in the living room.
 
 ### The View & Beach
 
-The private beachfront balcony overlooks the Gulf, with direct beach access from the resort deck below. Coffee in the morning, a book in the afternoon, dinner as the sun goes down. Complimentary beach chairs and umbrella available in the condo — bring them down with you each morning. Beach service is not provided; the chairs and umbrella in the condo are yours to use throughout your stay.
+The private beachfront balcony overlooks the Gulf, with direct beach access from the resort deck below. Coffee in the morning, a book in the afternoon, dinner as the sun goes down. Complimentary beach chairs and umbrella are available in the condo — bring them down with you each morning. Prefer the full setup? Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
 
 ### Resort Amenities
 
@@ -66,7 +66,7 @@ Check-in 4:00 PM, check-out 10:00 AM. One assigned parking space plus guest park
 
 ### About Your Host
 
-Twenty First is owner-hosted by Simone. I answer every inquiry personally, typically within 24 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
+Twenty First is owner-hosted by Simone. I answer every inquiry personally, typically within 2 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
 
 ## Amenities Section
 
@@ -91,7 +91,7 @@ Check the boxes matching MASTER §6. Verify against VRBO's current amenity picke
 
 **Never check:**
 
-- Beach service / beach setup
+- Beach service / beach setup *(we do not provide this — on-beach vendors do, mentioned as an optional paid add-on in the description text only, never checked as an amenity)*
 - Chef's kitchen
 - Concierge
 - Private beach
@@ -126,22 +126,24 @@ Check the boxes matching MASTER §6. Verify against VRBO's current amenity picke
 
 ## Photo Captions
 
-VRBO captions ~150 chars each. From MASTER §18 short-caption column.
+VRBO captions ~150 chars each. From MASTER §18 short-caption column. Updated 2026-07-02 to reflect the new photo set.
 
 | Slot | File | Caption |
 |---|---|---|
-| 1 | `tw-hero.jpg` | Gulf-front balcony at sunset |
-| 2 | `tw-balcony-morning.jpg` | Balcony morning with coffee |
-| 3 | `tw-living.jpg` | Living room with Gulf view |
-| 4 | `tw-balcony-sunset.jpg` | Balcony dinner at sunset |
-| 5 | `tw-primary.jpg` | Primary bedroom, king bed |
-| 6 | `tw-guest.jpg` | Guest bedroom, king bed |
-| 7 | `tw-bunk.jpg` | Bunk suite with private bath |
-| 8 | `tw-kitchen.jpg` | Full kitchen with island seating |
-| 9 | `tw-dining.jpg` | Dining table with Gulf view |
-| 10 | `tw-beach.jpg` | Beach access from resort deck |
-| 11 | `tw-pool.jpg` | Resort pool |
-| 12 | `tw-bath.jpg` | Primary en-suite bath |
+| 1 | `tw-hero-view.png` | Panoramic Gulf view from balcony |
+| 2 | `tw-balcony-sunset.png` | Sunset on the balcony above the Gulf |
+| 3 | `tw-dining-sunset.png` | Dining table set for dinner with sunset view |
+| 4 | `tw-balcony-coffee.png` | Coffee on the balcony |
+| 5 | `tw-living-01.png` | Living room with Gulf view |
+| 6 | `tw-master-01.png` | Primary bedroom, king bed |
+| 7 | `tw-guest-queen.png` | Guest bedroom, queen bed |
+| 8 | `tw-bunk-01.png` | Bunk room with private bath |
+| 9 | `tw-bunk-02.png` | Bunk room detail |
+| 10 | `tw-01-kitchen.jpg` | Full kitchen with island seating |
+| 11 | `tw-dining-01.png` | Dining table with Gulf view |
+| 12 | `tw-master-02.png` | Primary bedroom, en-suite view |
+| 13 | `tw-01-pool.jpg` | Resort pool |
+| 14 | `tw-bath-01.png` | Guest bath with walk-in shower |
 
 VRBO photo order: view → lifestyle → bedrooms → living → kitchen → dining → balcony → beach → amenities → bathrooms.
 

@@ -87,7 +87,7 @@ function getSiteContact() {
         email: 'FloridaVacationRental2020@gmail.com',
         phoneTel: '',
         phoneDisplay: '',
-        replyBlurb: 'We usually reply within 24 hours. Email is the fastest way to reach us.',
+        replyBlurb: 'Simone typically replies to inquiries within 2 hours. Email is the fastest way to reach us.',
         cancellationNote: 'Exact cancellation terms are confirmed with the owner when you book.'
     };
 }
@@ -537,12 +537,16 @@ function stayRangeCrossesUnavailable(checkIn, checkOut, property) {
     return false;
 }
 
+// Data files (availability-{id}.json, pricing-{id}.json) are served by the same origin
+// as the app on both localhost (npx serve) and production (GitHub Pages). Use origin-relative
+// paths — the previous `${SITE_BASE_URL}/data/...` form pointed at production from localhost,
+// which either 404'd or was CORS-blocked, so the calendar silently rendered zero blocked nights.
+// See MASTER §21 Internal Notes for the incident report (2026-07-02).
 async function fetchAvailabilityForListing(propertyId) {
     if (Object.prototype.hasOwnProperty.call(syncedUnavailableByListingId, propertyId)) {
         return;
     }
-    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
-    const url = base ? `${base}/data/availability-${propertyId}.json` : `/data/availability-${propertyId}.json`;
+    const url = `data/availability-${propertyId}.json`;
     try {
         const r = await fetch(url, { cache: 'no-store' });
         if (!r.ok) {
@@ -561,8 +565,7 @@ async function fetchPricingForListing(propertyId) {
     if (Object.prototype.hasOwnProperty.call(syncedPricingByListingId, propertyId)) {
         return;
     }
-    const base = typeof SITE_BASE_URL === 'string' ? SITE_BASE_URL.replace(/\/$/, '') : '';
-    const url = base ? `${base}/data/pricing-${propertyId}.json` : `/data/pricing-${propertyId}.json`;
+    const url = `data/pricing-${propertyId}.json`;
     try {
         const r = await fetch(url, { cache: 'no-store' });
         if (!r.ok) {
@@ -818,7 +821,10 @@ function closeContactModalThenScrollToCalendar() {
     });
 }
 
-function scrollToPropertyCalendar() {
+function scrollToPropertyCalendar(event) {
+    if (event && typeof event.preventDefault === 'function') {
+        event.preventDefault();
+    }
     const el = document.getElementById('property-availability');
     if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1227,7 +1233,7 @@ function createPropertyCard(property, isFeatured = false) {
                 </div>
             </div>
             <div class="property-card-footer">
-                <button type="button" class="btn btn-primary property-card-cta">Check Availability</button>
+                <button type="button" class="btn btn-primary property-card-cta">View Property</button>
             </div>
         </div>
     `;
@@ -1253,11 +1259,10 @@ let heroCarouselInterval = null;
 
 function renderHeroCarousel(property) {
     const hasCategories = property.images && typeof property.images === 'object' && !Array.isArray(property.images);
-    
+
     let carouselImages = [];
-    
+
     if (hasCategories) {
-        // Get ALL images from all categories
         Object.keys(property.images).forEach(category => {
             property.images[category].forEach(url => {
                 carouselImages.push({ url: url });
@@ -1266,16 +1271,33 @@ function renderHeroCarousel(property) {
     } else if (Array.isArray(property.images)) {
         carouselImages = property.images.map(url => ({ url: url }));
     }
-    
+
     if (carouselImages.length === 0) return '';
-    
-    // Shuffle images randomly
-    for (let i = carouselImages.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [carouselImages[i], carouselImages[j]] = [carouselImages[j], carouselImages[i]];
+
+    // Deterministic hero order: when a property defines heroPhotoOrder (see MASTER §18),
+    // those files load first, in order. Any remaining images follow in their natural
+    // gallery order. This replaces the previous random Fisher-Yates shuffle so the
+    // first-impression photo (view → lifestyle) is stable, not roulette.
+    if (Array.isArray(property.heroPhotoOrder) && property.heroPhotoOrder.length > 0) {
+        const priority = property.heroPhotoOrder.slice();
+        const seen = new Set();
+        const ordered = [];
+        priority.forEach(url => {
+            const hit = carouselImages.find(img => img.url === url);
+            if (hit && !seen.has(hit.url)) {
+                ordered.push(hit);
+                seen.add(hit.url);
+            }
+        });
+        carouselImages.forEach(img => {
+            if (!seen.has(img.url)) {
+                ordered.push(img);
+                seen.add(img.url);
+            }
+        });
+        carouselImages = ordered;
     }
-    
-    // Store for global access
+
     window.heroCarouselImages = carouselImages;
     
     return `
@@ -1306,10 +1328,31 @@ function renderHeroCarousel(property) {
 function initHeroCarousel() {
     heroCarouselIndex = 0;
     updateCarouselPosition();
+    startHeroCarouselAutoplay();
+
+    // Pause on hover / focus so guests can absorb a photo.
+    // Slot in listeners on the carousel wrapper; safe to re-attach on each render
+    // because the previous elements are gone.
+    const wrap = document.querySelector('.hero-carousel');
+    if (wrap && !wrap.dataset.pauseWired) {
+        wrap.addEventListener('mouseenter', stopHeroCarouselAutoplay);
+        wrap.addEventListener('mouseleave', startHeroCarouselAutoplay);
+        wrap.addEventListener('focusin', stopHeroCarouselAutoplay);
+        wrap.addEventListener('focusout', startHeroCarouselAutoplay);
+        wrap.dataset.pauseWired = 'true';
+    }
+}
+
+function startHeroCarouselAutoplay() {
     if (heroCarouselInterval) clearInterval(heroCarouselInterval);
-    heroCarouselInterval = setInterval(() => {
-        heroCarouselNext();
-    }, 3000); // Auto-advance every 3 seconds
+    heroCarouselInterval = setInterval(() => heroCarouselNext(), 5000); // 5s per slide
+}
+
+function stopHeroCarouselAutoplay() {
+    if (heroCarouselInterval) {
+        clearInterval(heroCarouselInterval);
+        heroCarouselInterval = null;
+    }
 }
 
 function updateCarouselPosition() {
@@ -1329,24 +1372,18 @@ function heroCarouselNext() {
     if (heroCarouselIndex > maxIndex) heroCarouselIndex = 0;
     
     updateCarouselPosition();
-    
-    // Reset auto-advance timer
-    if (heroCarouselInterval) clearInterval(heroCarouselInterval);
-    heroCarouselInterval = setInterval(() => heroCarouselNext(), 3000);
+    startHeroCarouselAutoplay();
 }
 
 function heroCarouselPrev() {
     const totalImages = window.heroCarouselImages?.length || 0;
     const maxIndex = Math.max(0, totalImages - 5);
-    
+
     heroCarouselIndex--;
     if (heroCarouselIndex < 0) heroCarouselIndex = maxIndex;
-    
+
     updateCarouselPosition();
-    
-    // Reset auto-advance timer
-    if (heroCarouselInterval) clearInterval(heroCarouselInterval);
-    heroCarouselInterval = setInterval(() => heroCarouselNext(), 3000);
+    startHeroCarouselAutoplay();
 }
 
 // ==========================================
@@ -1380,7 +1417,15 @@ function renderListingRibbon(property, avgRating, reviewCount) {
     `;
 }
 
+// Amenity group key resolver.
+// 1. Explicit `group` field on the amenity record wins (TW2111 uses this — MASTER §6 categories:
+//    "Inside the Condo", "Beach Convenience", "Resort Amenities", "Location & Access").
+// 2. Falls back to icon/name inference for legacy properties without a `group` field (MS811, etc).
 function getAmenityGroupKey(amenity) {
+    if (amenity && typeof amenity.group === 'string') {
+        const explicit = amenity.group.trim();
+        if (explicit) return explicit;
+    }
     const icon = amenity.icon || '';
     const n = (amenity.name || '').toLowerCase();
     if (icon === 'kitchen' || /kitchen|dining|coffee|dish|wine|refrigerator|grill uten|barbecue/.test(n)) return 'Kitchen & dining';
@@ -1391,17 +1436,34 @@ function getAmenityGroupKey(amenity) {
     return 'General';
 }
 
+// Preferred display order for amenity groups. When a property uses explicit MASTER-§6 groups,
+// this array puts them in the canonical order. Groups not in this list are appended in
+// first-seen order so a new property can introduce a group without touching this file.
+const AMENITY_GROUP_ORDER = [
+    'Inside the Condo',
+    'Beach Convenience',
+    'Resort Amenities',
+    'Location & Access',
+    // Legacy (MS811 and older):
+    'General',
+    'Kitchen & dining',
+    'Resort & outdoors'
+];
+
 function renderGroupedAmenities(property) {
-    const groups = { General: [], 'Kitchen & dining': [], 'Resort & outdoors': [] };
+    const groups = {};
+    const seen = [];
     property.amenities.forEach(a => {
         const g = getAmenityGroupKey(a);
-        if (!groups[g]) groups[g] = [];
+        if (!groups[g]) { groups[g] = []; seen.push(g); }
         groups[g].push(a.name);
     });
-    const order = ['General', 'Kitchen & dining', 'Resort & outdoors'];
-    const blocks = order.filter(k => groups[k] && groups[k].length).map(k => `
+    // Order: canonical positions first, then any not-yet-seen keys appended in first-seen order.
+    const order = AMENITY_GROUP_ORDER.filter(k => groups[k] && groups[k].length)
+        .concat(seen.filter(k => !AMENITY_GROUP_ORDER.includes(k)));
+    const blocks = order.map(k => `
         <div class="amenity-group">
-            <h4 class="amenity-group-title">${k}</h4>
+            <h4 class="amenity-group-title">${escapeHtml(k)}</h4>
             <ul class="amenity-group-list">
                 ${groups[k].map(name => `<li>${escapeHtml(name)}</li>`).join('')}
             </ul>
@@ -1414,6 +1476,138 @@ function renderGroupedAmenities(property) {
                 ${blocks}
             </div>
         </div>
+    `;
+}
+
+// A Day at Twenty First — lifestyle sequence module.
+// Rendered below the hero trust chip strip, above `Stay Details`. Source: property.dayInTheLife
+// (MASTER §14b canonical content). Elegant one-sentence-per-beat design. Never add CTAs, exclamation
+// marks, or hype language to this module — those changes belong upstream in MASTER first.
+function renderDayInTheLife(property) {
+    const dil = property && property.dayInTheLife;
+    if (!dil || !Array.isArray(dil.beats) || dil.beats.length === 0) return '';
+    const heading = escapeHtml(dil.heading || 'A Day Here');
+    const intro = dil.intro ? `<p class="day-in-the-life-intro">${escapeHtml(dil.intro)}</p>` : '';
+    const beats = dil.beats.map((b, i) => {
+        const title = escapeHtml(String(b && b.title || '').trim());
+        const body = escapeHtml(String(b && b.body || '').trim());
+        if (!title || !body) return '';
+        return `
+            <li class="day-in-the-life-beat">
+                <span class="day-in-the-life-beat-number" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+                <div class="day-in-the-life-beat-content">
+                    <h3 class="day-in-the-life-beat-title">${title}</h3>
+                    <p class="day-in-the-life-beat-body">${body}</p>
+                </div>
+            </li>
+        `;
+    }).filter(Boolean).join('');
+    if (!beats) return '';
+    return `
+        <section class="day-in-the-life-section" id="day-in-the-life" aria-labelledby="day-in-the-life-heading">
+            <div class="container">
+                <h2 id="day-in-the-life-heading" class="section-title">${heading}</h2>
+                ${intro}
+                <ol class="day-in-the-life-list">
+                    ${beats}
+                </ol>
+            </div>
+        </section>
+    `;
+}
+
+// Two-card logistics module — "Before You Arrive" (Card 1, property.beforeYouArrive / MASTER §14a)
+// paired with "During Your Stay" (Card 2, property.duringYourStay / MASTER §14c). Rendered below
+// the aspirational description and above the FAQ. Side-by-side on desktop, stacked on mobile.
+// Split into two cards on 2026-07-02 (Final Polish pass) to improve scanability while keeping
+// every existing item. Never allow either card's content to leak back into the long-form
+// description body — operational details stay out of §14.
+function renderStayLogisticsCard(cardData, cardId, cardClassSuffix) {
+    if (!cardData || !Array.isArray(cardData.items) || cardData.items.length === 0) return '';
+    const heading = escapeHtml(cardData.heading || '');
+    const items = cardData.items.map(it => {
+        const label = escapeHtml(String(it && it.label || '').trim());
+        const body = escapeHtml(String(it && it.body || '').trim());
+        if (!label || !body) return '';
+        const link = it && it.linkUrl && it.linkLabel
+            ? ` <a class="stay-logistics-link" href="${escapeHtml(it.linkUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.linkLabel)}</a>`
+            : '';
+        return `
+            <li class="stay-logistics-item">
+                <span class="stay-logistics-item-label">${label}</span>
+                <span class="stay-logistics-item-body">${body}${link}</span>
+            </li>
+        `;
+    }).filter(Boolean).join('');
+    if (!items) return '';
+    return `
+        <article class="stay-logistics-card stay-logistics-card--${cardClassSuffix}" aria-labelledby="${cardId}-heading">
+            <h3 id="${cardId}-heading" class="stay-logistics-card-heading">${heading}</h3>
+            <ul class="stay-logistics-list">
+                ${items}
+            </ul>
+        </article>
+    `;
+}
+
+function renderBeforeYouArrive(property) {
+    // Wrapper renders BOTH cards (Before You Arrive + During Your Stay) as a single paired module.
+    // Name is preserved for backward-compat with existing callers in renderPropertyDetail.
+    const bya = property && property.beforeYouArrive;
+    const dus = property && property.duringYourStay;
+    const beforeCard = renderStayLogisticsCard(bya, 'before-you-arrive', 'before');
+    const duringCard = renderStayLogisticsCard(dus, 'during-your-stay', 'during');
+    if (!beforeCard && !duringCard) return '';
+    return `
+        <section class="stay-logistics-section" id="stay-logistics" aria-label="Practical details for your stay">
+            <div class="container">
+                <div class="stay-logistics-grid">
+                    ${beforeCard}
+                    ${duringCard}
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+// Why Book Direct with StayAtFlorida — property-page trust panel. Placement: below Availability
+// & Pricing, above Stay Details. Source: property.whyBookDirect (MASTER §14d). Distinct from the
+// homepage "Why Book Direct?" 3-card block. Introduced 2026-07-02 (Final Polish pass). Muted,
+// premium, no CTA. Do not vary bullet copy without owner sign-off.
+function renderWhyBookDirect(property) {
+    // Class prefix `property-trust-panel-*` (NOT `why-book-direct-*`) deliberately: the
+    // homepage already has a `.why-book-direct-*` 3-card block with different visual design.
+    // This is the property-page trust panel — a single muted list. Keeping class names
+    // distinct prevents accidental style bleed between the two "Why Book Direct" surfaces.
+    const wbd = property && property.whyBookDirect;
+    if (!wbd || !Array.isArray(wbd.bullets) || wbd.bullets.length === 0) return '';
+    const heading = escapeHtml(wbd.heading || 'Why Book Direct with StayAtFlorida');
+    const lead = wbd.lead ? `<p class="property-trust-panel-lead">${escapeHtml(wbd.lead)}</p>` : '';
+    const bullets = wbd.bullets.map(b => {
+        const text = escapeHtml(String(b || '').trim());
+        if (!text) return '';
+        return `
+            <li class="property-trust-panel-item">
+                <svg class="property-trust-panel-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="property-trust-panel-text">${text}</span>
+            </li>
+        `;
+    }).filter(Boolean).join('');
+    if (!bullets) return '';
+    return `
+        <section class="property-trust-panel-section" id="property-trust-panel" aria-labelledby="property-trust-panel-heading">
+            <div class="container">
+                <div class="property-trust-panel">
+                    <h2 id="property-trust-panel-heading" class="property-trust-panel-heading">${heading}</h2>
+                    ${lead}
+                    <ul class="property-trust-panel-list">
+                        ${bullets}
+                    </ul>
+                </div>
+            </div>
+        </section>
     `;
 }
 
@@ -1506,6 +1700,52 @@ function renderListingTrustSidebar(property) {
     return `<div class="listing-sidebar-trust">${emailHtml}${reply}</div>`;
 }
 
+// Trust chip strip beneath the hero CTAs.
+// Renders rating (if any), sleeps count, response-time promise, and cancellation shorthand.
+// Kept short so it fits under two buttons on mobile without pushing the CTAs below the fold.
+function renderListingHeroTrustStrip(property, avgRating, reviewCount) {
+    const chips = [];
+    if (reviewCount > 0 && avgRating > 0) {
+        chips.push(`<span class="hero-trust-chip"><span class="hero-trust-chip-star" aria-hidden="true">★</span> ${escapeHtml(String(avgRating))} <span class="hero-trust-chip-muted">(${reviewCount} reviews)</span></span>`);
+    }
+    if (property && property.maxGuests) {
+        chips.push(`<span class="hero-trust-chip">Sleeps up to ${property.maxGuests}</span>`);
+    }
+    chips.push(`<span class="hero-trust-chip">Simone replies within 2 hours</span>`);
+    chips.push(`<span class="hero-trust-chip">Full refund 46+ days out</span>`);
+    return `<div class="listing-hero-trust-strip" role="list" aria-label="Booking trust signals">${chips.join('')}</div>`;
+}
+
+// FAQ accordion. Data lives on the property record as `property.faqs = [{q, a}, ...]`.
+// The visible HTML here is the source of truth for the FAQPage JSON-LD emitted by
+// scripts/generate-listing-schema.cjs — keep them in sync via MASTER-first workflow.
+function renderPropertyFAQ(property) {
+    if (!property || !Array.isArray(property.faqs) || property.faqs.length === 0) return '';
+    const items = property.faqs.map((faq, idx) => {
+        const q = escapeHtml(String(faq && faq.q || '').trim());
+        const a = escapeHtml(String(faq && faq.a || '').trim());
+        if (!q || !a) return '';
+        return `
+            <details class="property-faq-item" ${idx === 0 ? 'open' : ''}>
+                <summary class="property-faq-question"><span>${q}</span><span class="property-faq-chevron" aria-hidden="true">+</span></summary>
+                <div class="property-faq-answer"><p>${a}</p></div>
+            </details>
+        `;
+    }).filter(Boolean).join('');
+    if (!items) return '';
+    return `
+        <section class="property-faq-section" id="property-faq" aria-labelledby="property-faq-heading">
+            <div class="container">
+                <h2 id="property-faq-heading" class="section-title">Common Questions</h2>
+                <p class="section-description">Answers to the questions we hear most — direct from the owner.</p>
+                <div class="property-faq-list">
+                    ${items}
+                </div>
+            </div>
+        </section>
+    `;
+}
+
 // ==========================================
 // Property Detail Page Rendering
 // ==========================================
@@ -1564,12 +1804,14 @@ function renderPropertyDetail(property) {
                     </div>
                     ${displayHeroCopy ? `<p class="property-detail-hero-copy">${escapeHtml(displayHeroCopy)}</p>` : ''}
                     <div class="property-detail-hero-cta">
-                        <a class="btn btn-primary" href="#" onclick="event.preventDefault(); showContactModal();">Book Direct &amp; Save</a>
+                        <a class="btn btn-primary" href="#property-availability" onclick="scrollToPropertyCalendar(event)">Check Availability</a>
                         <button type="button" class="btn btn-secondary" onclick="scrollToPropertyPhotos()">View Photos</button>
                     </div>
+                    ${renderListingHeroTrustStrip(property, avgRating, reviews.length)}
                 </div>
             </div>
             
+            ${renderDayInTheLife(property)}
             ${renderListingRibbon(property, avgRating, reviews.length)}
             
             <div class="gallery-section" id="property-photos">
@@ -1595,7 +1837,7 @@ function renderPropertyDetail(property) {
                             <div id="calendar-widget"></div>
                         </div>
                         <div class="pricing-container">
-                            <h3>Price Calculator</h3>
+                            <h3>Your Stay</h3>
                             <div class="pricing-disclaimer">
                                 Prices shown reflect owner-configured rates. Availability may reflect external calendar sync. Final pricing is confirmed directly with the owner.
                             </div>
@@ -1605,6 +1847,8 @@ function renderPropertyDetail(property) {
                     </div>
                 </div>
             </div>
+            
+            ${renderWhyBookDirect(property)}
             
             <div class="property-overview-section" id="property-overview">
                 <div class="container">
@@ -1631,7 +1875,9 @@ function renderPropertyDetail(property) {
                 </div>
             </div>
             
-            ${reviews.length > 0 ? renderReviews(reviews, avgRating) : ''}
+            ${renderBeforeYouArrive(property)}
+            ${renderPropertyFAQ(property)}
+            ${reviews.length > 0 ? renderReviews(reviews, avgRating, property) : ''}
             ${renderPropertyLocationSection(property)}
             ${renderExploreCards(property)}
             
@@ -2432,28 +2678,53 @@ function renderPriceCalculator(property) {
     const cleaningFee = property.cleaningFee;
     const subtotal = nightlyTotal + cleaningFee;
     const tax = subtotal * property.taxRate;
-    const total = subtotal + tax;
+    // Resort Registration Fee — third-party pass-through (collected by the community HOA at
+    // check-in, not by StayAtFlorida). Surfaced as a distinct line so guests see the true total.
+    // Renamed from "Community registration fee" 2026-07-02 (Final Polish) — the config key is
+    // preserved (`communityRegistrationFee`) for backward compatibility, but the guest-facing
+    // label pulls from `communityRegistrationFee.label` which is now "Resort Registration Fee".
+    // Not taxed by our calculator (already tax-inclusive from the community).
+    // See docs/listings/TW2111/MASTER.md §21 Fee Schedule for the transparency rule.
+    const registrationFeeObj = property.communityRegistrationFee;
+    const hasRegistrationFee = registrationFeeObj && typeof registrationFeeObj.amount === 'number' && registrationFeeObj.amount > 0;
+    const registrationFee = hasRegistrationFee ? registrationFeeObj.amount : 0;
+    const registrationLabel = hasRegistrationFee ? (registrationFeeObj.label || 'Resort Registration Fee') : '';
+    const registrationSublabel = hasRegistrationFee ? (registrationFeeObj.sublabel || '') : '';
+    const total = subtotal + tax + registrationFee;
     
     const avgNightlyRate = Math.round(nightlyTotal / nights);
+    
+    const registrationLineHtml = hasRegistrationFee ? `
+            <div class="price-line price-line-registration" data-testid="resort-registration-fee-line">
+                <span class="price-label">
+                    ${escapeHtml(registrationLabel)}
+                    ${registrationSublabel ? `<span class="price-line-note">${escapeHtml(registrationSublabel)}</span>` : ''}
+                </span>
+                <span class="price-value">${formatCurrency(registrationFee)}</span>
+            </div>` : '';
     
     container.innerHTML = `
         <div class="price-breakdown">
             <div class="price-line">
-                <span class="price-label">Lodging (${nights} ${nights === 1 ? 'night' : 'nights'})</span>
+                <span class="price-label">
+                    Nightly Rate
+                    <span class="price-line-note">${nights} ${nights === 1 ? 'night' : 'nights'}</span>
+                </span>
                 <span class="price-value">${formatCurrency(nightlyTotal)}</span>
             </div>
             <div class="price-line">
-                <span class="price-label">Cleaning fee</span>
+                <span class="price-label">Cleaning Fee</span>
                 <span class="price-value">${formatCurrency(cleaningFee)}</span>
             </div>
             <div class="price-line">
-                <span class="price-label">Tax (${(property.taxRate * 100).toFixed(0)}%)</span>
+                <span class="price-label">Taxes</span>
                 <span class="price-value">${formatCurrency(tax)}</span>
-            </div>
-            <div class="price-line total">
-                <span class="price-label">Total</span>
+            </div>${registrationLineHtml}
+            <div class="price-line total price-line--estimated-total">
+                <span class="price-label">Estimated Total</span>
                 <span class="price-total">${formatCurrency(total)}</span>
             </div>
+            <p class="price-trust-note" data-testid="price-trust-note">No OTA service fees when booking direct.</p>
         </div>
         <p class="calculator-reply-hint">${escapeHtml(c.replyBlurb)} Final details are confirmed by email.</p>
         <button class="btn btn-primary" style="width: 100%;" onclick="showContactModal()">
@@ -2471,13 +2742,13 @@ function renderPriceCalculator(property) {
             : '';
         
         quickPricing.innerHTML = `
-            <h3>Your Stay</h3>
+            <h3>Booking Summary</h3>
             <div class="quick-pricing-dates" style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
                 ${checkInStr} – ${checkOutStr} (${nights} ${nights === 1 ? 'night' : 'nights'})
             </div>
             <div class="property-price" style="margin-bottom: 0.5rem;">
                 ${formatCurrency(total)}
-                <span style="font-size: 0.875rem; font-weight: normal;">total</span>
+                <span style="font-size: 0.875rem; font-weight: normal;">estimated total</span>
             </div>
             ${depositLine}
             <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="showContactModal()">
@@ -2849,13 +3120,23 @@ function renderReviewListItem(review, index) {
     `;
 }
 
-function renderReviews(reviews, avgRating) {
+function renderReviews(reviews, avgRating, property) {
     const previewCount = Math.min(REVIEWS_PREVIEW_COUNT, reviews.length);
     const previewReviews = reviews.slice(0, previewCount);
     const restReviews = reviews.slice(previewCount);
     const hasMoreReviews = restReviews.length > 0;
     const moreCount = restReviews.length;
     const moreLabel = `Read ${moreCount} more ${moreCount === 1 ? 'review' : 'reviews'}`;
+    // Privacy / anonymization disclosure — rendered only when the property record explicitly
+    // opts in via `reviewsPrivacyNote`. Kept as an optional hook for future use, but as of the
+    // 2026-07-02 Final Polish pass NO property currently sets it: TW2111 reverted to the
+    // platform-generic `Verified Airbnb guest` author string per MASTER §23 (Review Author Naming
+    // Policy REVERTED), and MS811 uses real Airbnb-supplied first names. If pseudonymous or
+    // otherwise privacy-anonymized authors are ever reintroduced, populate `reviewsPrivacyNote`
+    // on the property and this block will render the disclosure.
+    const privacyNote = property && typeof property.reviewsPrivacyNote === 'string' && property.reviewsPrivacyNote.trim()
+        ? `<p class="reviews-privacy-note">${escapeHtml(property.reviewsPrivacyNote.trim())}</p>`
+        : '';
     const expandBlock = hasMoreReviews ? `
                 <div class="description-full reviews-more-panel" style="display: none;">
                     <div class="review-list">
@@ -2898,6 +3179,7 @@ function renderReviews(reviews, avgRating) {
                         </div>
                     </div>
                     <div class="section-content reviews-group-content">
+                        ${privacyNote}
                         <div class="description-preview">
                             <div class="review-list">
                                 ${previewReviews.map((r, i) => renderReviewListItem(r, i)).join('')}
@@ -3079,6 +3361,22 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPropertyListings();
         renderHomepageReviews();
         initHomeLocationsMap();
+        // Deep-link support for the site-wide `Inquire` header CTA. Static pages (privacy.html,
+        // terms.html, 404.html, gear.html) have no JS access to showContactModal(), so their
+        // Inquire button links to `index.html?inquire=1` and we open the modal here on load.
+        // Also strip the param so the URL stays clean and doesn't re-trigger on refresh.
+        try {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('inquire') === '1') {
+                params.delete('inquire');
+                const q = params.toString();
+                const cleanUrl = window.location.pathname + (q ? `?${q}` : '') + window.location.hash;
+                history.replaceState(history.state, '', cleanUrl);
+                if (typeof showContactModal === 'function') {
+                    setTimeout(() => showContactModal(), 100);
+                }
+            }
+        } catch (_) { /* URL API unavailable — no-op */ }
     })();
 });
 

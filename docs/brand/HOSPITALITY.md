@@ -38,7 +38,7 @@ If a proposed guest touchpoint doesn't advance one of those three, it's clutter.
 
 **Standard:**
 
-- Reply within 24 hours, ideally faster.
+- Reply within 2 hours, ideally faster. (Owner-confirmed 2026-07-02 — this is now the public commitment on the site and in trust badges. Keep an inbox routine that honors it.)
 - Named human sign-off (never "The Team" for a two-property brand).
 - Confirm: dates, guests, total price broken out (nightly × nights + cleaning + taxes if applicable), next step.
 - Never send a boilerplate wall of text on the first reply. Two or three tight paragraphs.
@@ -53,7 +53,7 @@ If a proposed guest touchpoint doesn't advance one of those three, it's clutter.
 - Check-in time and check-out time.
 - Wi-Fi will be provided on arrival (or in this email).
 - What's in the condo they might not expect: **complimentary beach chairs and umbrella available in the condo**, kitchen basics, board games, streaming platforms.
-- What's not: beach service, daily housekeeping mid-stay.
+- What's not: daily housekeeping mid-stay, and no beach service is provided **by us** (on-beach vendors sell chair/umbrella rental — guests can buy it directly on the beach if they prefer).
 - Nearby staples they may want to know about: closest grocery, easiest coffee, one restaurant recommendation. Never overload — this is not a concierge service.
 
 ### 4. Check-in day
@@ -114,7 +114,7 @@ Everything listed on the site or an OTA must be present, clean, and working.
 
 **What we never claim:**
 
-- Beach service or beach setup crew.
+- Any implication that **we** provide beach service or a beach setup crew. *(Chair/umbrella rental from on-beach vendors is fine to mention as an optional paid add-on — never as our service.)*
 - Daily housekeeping mid-stay.
 - Airport transfers.
 - Grocery pre-stocking (unless explicitly arranged and priced).
@@ -201,7 +201,7 @@ The following are approved starting points for owner-outbound messages. Personal
 
 Replace `[bracketed]` fields before sending.
 
-### 1. Inquiry reply (within 24 hours)
+### 1. Inquiry reply (within 2 hours)
 
 Trigger: guest emails via `stayatflorida.com` or an OTA inquiry.
 
@@ -248,7 +248,7 @@ Your stay at Twenty First starts [check-in day, date]. A few details to help you
 - In the condo: complimentary beach chairs and umbrella, kitchen basics, streaming on the smart TVs, a few board games in the media cabinet.
 - Good to know: the nearest grocery is [store, distance]. For a solid coffee spot, try [name].
 
-We don't provide beach service — the chairs and umbrella in the condo are yours to bring down each morning.
+The chairs and umbrella in the condo are yours to bring down each morning. If you'd prefer a full setup on the sand, beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
 
 Safe travels — message anytime.
 

@@ -209,7 +209,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 
 **Rejects.**
 
-- Copy that implies beach service, concierge, or daily housekeeping.
+- Copy that implies **we** provide beach service, concierge, or daily housekeeping. *(As of 2026-07-02, on-beach chair/umbrella rental IS available for purchase from third-party vendors — that's factual and OK to mention, but it must never read as our amenity.)*
 - Amenities on the listing that aren't on-property.
 - Boilerplate check-in messages that don't reference the specific guest.
 - "Coached" reviews or incentivized ratings.
@@ -217,7 +217,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 
 **Example feedback.**
 
-> "'Beach chairs delivered to the sand each morning' sounds great — and would earn one-star reviews the first time we don't deliver. We don't provide beach service. Use our standard wording: 'complimentary beach chairs and umbrella available in the condo.'"
+> "'Beach chairs delivered to the sand each morning' sounds great — and would earn one-star reviews the first time we don't deliver, because we don't deliver anything. Our standard wording: 'complimentary beach chairs and umbrella available in the condo.' If you also want to mention the paid option, use the approved second sentence: 'Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.' — never as our service, never with a price, never with a vendor name."
 
 > "The three-star review from Wisconsin Rivera flagged a moldy shower curtain and un-emptied dishwasher. The listing is accurate, the cleaning is not. Fix the turnover checklist and reply publicly acknowledging the specific issue is resolved."
 
@@ -388,7 +388,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 - Ensure Tidewater is not overemphasized (mentioned only where operationally required).
 - Ensure no explicit floor number is disclosed.
 - Ensure beach chairs are described exactly as `complimentary beach chairs and umbrella available in the condo`.
-- Ensure no misleading claims — no beach service, no reserved beach setup, no guaranteed sunset, no luxury beach service.
+- Ensure no misleading claims — no implication that **we** provide beach service, no reserved beach setup, no guaranteed sunset, no "luxury beach service." *(Third-party on-beach vendor rental IS OK to mention as an optional paid add-on.)*
 - Run the [QA Checklist](QA_CHECKLIST.md) before considering any change complete.
 - Test the important pages after any change:
   - Homepage (`index.html`)
@@ -436,7 +436,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 
 > "This mobile layout pushes the booking button too far down the page."
 
-> "This copy implies beach service. Replace with 'complimentary beach chairs and umbrella available in the condo.'"
+> "This copy reads like WE provide beach service. Replace with 'complimentary beach chairs and umbrella available in the condo' — and, if you want to flag the paid option, add the approved second sentence: 'Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.'"
 
 > "This image is too large and may hurt load performance. Compress or serve responsive sizes."
 

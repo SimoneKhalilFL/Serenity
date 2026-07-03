@@ -42,7 +42,7 @@
 ## Host Profile
 
 ```
-StayAtFlorida is an owner-hosted collection of luxury beachfront vacation homes on Florida's Gulf Coast. The owner personally manages every booking and typically replies to guest messages within 24 hours.
+StayAtFlorida is an owner-hosted collection of luxury beachfront vacation homes on Florida's Gulf Coast. The owner personally manages every booking and typically replies to guest messages within 2 hours.
 ```
 
 ## Nearby Attractions
@@ -66,7 +66,7 @@ Quiet hours per HOA.
 
 Cancellation policy: See Booking.com's rate policy for exact terms. (Pending Revenue Manager sign-off.)
 
-Beach service is not provided; complimentary beach chairs and umbrella are available in the condo.
+Complimentary beach chairs and umbrella are available in the condo. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you prefer a full setup.
 ```
 
 ## Photo Captions

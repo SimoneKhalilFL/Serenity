@@ -50,8 +50,9 @@ Run on every copy edit.
 
 - `[ ]` **Critical.** Copy sounds premium, warm, clear, and honest — see [`BRAND_GUIDELINES.md`](BRAND_GUIDELINES.md#voice-and-tone).
 - `[ ]` **High.** No cheesy beach language (`paradise`, `slice of heaven`, `beach bum`, `dream getaway`, `escape to`).
-- `[ ]` **Critical.** No overpromising — no beach service, no chair delivery, no daily housekeeping, no guaranteed sunset, no in-condo dining, no concierge.
-- `[ ]` **High.** CTAs are clear and approved: `Book Direct & Save`, `Email to Book`, `View Photos`, `See Our Properties`.
+- `[ ]` **Critical.** No overpromising — no implication that **we** provide beach service, no chair delivery **by us**, no daily housekeeping, no guaranteed sunset, no in-condo dining, no concierge. *(Third-party on-beach chair rental MAY be mentioned as an optional paid add-on — approved wording in [`BRAND_GUIDELINES.md#beach-chairs-and-umbrella`](BRAND_GUIDELINES.md#beach-chairs-and-umbrella).)*
+- `[ ]` **High.** CTAs are clear and approved: `Inquire` *(header, site-wide)*, `Book Direct & Save`, `Check Availability`, `Email to Book`, `Email to Reserve These Dates`, `View Photos`, `View Property`, `See Our Properties`, `Inquire about these dates`, `Send Inquiry`.
+- `[ ]` **Critical.** `Inquire` header CTA is present on every page (homepage, TW2111, MS811, `gear.html`, `privacy.html`, `terms.html`, static `listing-*.html`). Clicking it opens the existing inquiry modal (`showContactModal()`) — never a duplicate form. Always visible on mobile (not inside the hamburger menu).
 - `[ ]` **Critical.** Amenities on the listing match [`config.js`](../../config.js) and the on-property reality.
 - `[ ]` **Standard.** Property names are consistent across the site, sitemap, JSON-LD, and OTA callouts.
 - `[ ]` **Standard.** Existing guest-review UGC is untouched — reviews are authentic even when they use words the brand voice avoids.
@@ -71,6 +72,8 @@ Run on every SEO-touching change (meta, headings, alt text, schema, sitemap).
 - `[ ]` **High.** `<link rel="canonical">` correct on every page — points to the static `listing-<id>.html` for property pages.
 - `[ ]` **Critical.** JSON-LD validates and matches the visible HTML — no ghost reviews, ghost ratings, or ghost amenities.
 - `[ ]` **Critical.** After any `config.js` change: `node scripts/generate-listing-pages.cjs` and `node scripts/generate-listing-schema.cjs` have been run.
+- `[ ]` **High.** `FAQPage` JSON-LD is present on any property page that renders a visible FAQ block. Every question / answer in the schema must match the visible HTML verbatim — no ghost FAQs.
+- `[ ]` **High.** `Person.name` in `Review` schema must reflect actual authorship. `Guest` or `Verified Airbnb guest` / `Verified VRBO guest` are acceptable when we don't hold real names; **inventing plausible names is prohibited** and treated as a Critical fail.
 - `[ ]` **Standard.** `sitemap.xml` still lists every indexable URL; no 404s on listed URLs.
 
 Verify JSON-LD in a browser: DevTools → Elements → search `application/ld+json`. Or paste into [Rich Results Test](https://search.google.com/test/rich-results).
@@ -84,6 +87,8 @@ Run on every UI change.
 - `[ ]` **Critical.** Primary booking CTA visible above the fold on desktop (1440×900) and mobile (375×812).
 - `[ ]` **Critical.** Top navigation works: Home, Properties, Gear, Contact.
 - `[ ]` **High.** Photo gallery opens, advances, closes, and traps focus in the lightbox.
+- `[ ]` **High.** Property page hero carousel loads images in the deterministic MASTER §18-defined order — no random shuffle. First slot is the property's hero-view photo; second is the lifestyle shot.
+- `[ ]` **Standard.** Hero carousel autoplay is ≥ 5 seconds per slide and pauses on hover / focus.
 - `[ ]` **Critical.** Contact / inquiry form submits and the `mailto:` (or form endpoint) delivers.
 - `[ ]` **High.** Footer links resolve (Privacy, Terms, Gear, social, sitemap).
 - `[ ]` **High.** Page scannable in 5 seconds — hero → value prop → primary CTA visible without scrolling on desktop.
@@ -144,7 +149,13 @@ Run on every UI change that touches images, scripts, or fonts.
 
 Run on every booking-related change (calculator, CTA, contact form, `mailto`, rates).
 
-- `[ ]` **Critical.** `Book Direct & Save` primary CTA works from every property surface (card, listing hero, sticky bar).
+- `[ ]` **Critical.** Primary CTA on every property surface works and matches its expected next action: header (site-wide) → `Inquire` opens the inquiry modal, property card → `View Property`, property hero primary → `Check Availability`, property hero secondary → `View Photos` (scrolls to photos), price calculator submit → `Email to Reserve These Dates`, sticky bottom → `Email to Book`, homepage hero primary → `Book Direct & Save`.
+- `[ ]` **Critical.** For TW2111 only: price calculator shows a dedicated **Resort Registration Fee** line at $54.04 for every dated quote, with the supporting sub-label `Required by the resort for parking passes and guest wristbands.` Never hidden, never footnoted. *(Renamed from "Community registration fee" 2026-07-02, Final Polish pass.)*
+- `[ ]` **Critical.** For TW2111 only: price calculator panel heading reads **`Your Stay`** (not `Price Calculator`); line labels read `Nightly Rate`, `Cleaning Fee`, `Taxes`, `Resort Registration Fee`; total row reads `Estimated Total`; and the trust note `No OTA service fees when booking direct.` renders directly below the total in muted (not highlighted) text.
+- `[ ]` **Critical.** For TW2111 only: the property page hero primary CTA still reads exactly `Check Availability` and the secondary CTA still reads exactly `View Photos`. Neither string has been swapped for `See Available Dates`, `Book Now`, `Gallery`, or any other variant. *(CTAs frozen 2026-07-02, Final Polish pass — MASTER §12.)*
+- `[ ]` **Critical.** For TW2111 only: the `Why Book Direct with StayAtFlorida` trust panel renders below Availability & Pricing and above Stay Details, with exactly the seven canonical bullets in order (Same property · Same great stay · No OTA service fees · Owner-hosted communication · Personal support before your arrival · Faster responses · Secure direct booking). No CTA at the bottom of the panel. Distinct from the homepage `Why Book Direct?` 3-card block.
+- `[ ]` **Critical.** For TW2111 only: the logistics block below the description renders as **two paired cards** — `Before You Arrive` (Parking · Wristbands · Resort Registration Fee · Check-in) and `During Your Stay` (Complimentary beach chairs and umbrella · Beach access · Resort amenities · Check-out reminders). Side-by-side on desktop, stacked on mobile.
+- `[ ]` **Critical.** Reviews section: no author string other than `Verified Airbnb guest` (or `Verified VRBO guest` where the source is known). **No pseudonyms** (Sarah M., David R., etc.). **No "Names anonymized for guest privacy" disclosure line.** *(Review author naming policy REVERTED 2026-07-02, Final Polish pass — MASTER §23.)*
 - `[ ]` **Critical.** Property availability calendar renders, blocks out unavailable dates from `config.js`, and does not allow selection of blocked days.
 - `[ ]` **Critical.** Pricing calculator returns the expected total (base × nights + cleaning + tax) with correct seasonal adjustments from `config.js`.
 - `[ ]` **Critical.** Inquiry path (`mailto:` link or contact form) prefills the correct property, dates, and guest count.
