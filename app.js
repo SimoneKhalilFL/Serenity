@@ -793,21 +793,30 @@ function scrollToSection(event, sectionId) {
 function toggleDescription(button) {
     const section = button.closest('.section-content');
     if (!section) return;
-    const fullContent = section.querySelector('.description-full');
+    // Prefer the sibling `.description-full` immediately after the button
+    // (reviews-expand-btn pattern where the panel and the button are sibling
+    // children of the review section). Fall back to the closest ancestor
+    // section-content's `.description-full` for the original description toggle.
+    const fullContent = button.previousElementSibling && button.previousElementSibling.classList
+        && button.previousElementSibling.classList.contains('description-full')
+        ? button.previousElementSibling
+        : section.querySelector('.description-full');
     const textSpan = button.querySelector('.read-more-text');
     if (!fullContent || !textSpan) return;
     const isExpanded = fullContent.style.display !== 'none';
     const labelMore = button.getAttribute('data-read-more');
     const labelLess = button.getAttribute('data-show-less');
-    
+
     if (isExpanded) {
         fullContent.style.display = 'none';
         textSpan.textContent = labelMore != null ? labelMore : 'Read more';
         button.classList.remove('expanded');
+        if (button.hasAttribute('aria-expanded')) button.setAttribute('aria-expanded', 'false');
     } else {
         fullContent.style.display = 'block';
         textSpan.textContent = labelLess != null ? labelLess : 'Show less';
         button.classList.add('expanded');
+        if (button.hasAttribute('aria-expanded')) button.setAttribute('aria-expanded', 'true');
     }
 }
 
@@ -2993,13 +3002,22 @@ function renderExploreCards(property) {
 // ==========================================
 const REVIEWS_PREVIEW_COUNT = 3;
 const HOMEPAGE_REVIEWS_COUNT = 6;
-// Long-review truncation threshold (raw characters incl. spaces & punctuation).
-// Reviews whose `comment` exceeds this render with a CSS line-clamped preview
-// (~4-5 lines on both mobile and desktop) plus a per-item `Read more` toggle.
-// Reviews at or below this render fully with no toggle. Threshold chosen so the
-// 4 longest TW2111 reviews (Michelle, Daphne, Candice, Joan) get the treatment
-// while short one-liners stay clean. See renderReviewListItem() + toggleReviewText().
-const REVIEW_PREVIEW_CHAR_LIMIT = 250;
+// Long-review truncation parameters. The per-review "Read more" is applied at
+// the TEXT level (JS-driven, not CSS `-webkit-line-clamp`) so it works
+// deterministically across all viewports, all fonts, and inside the initially
+// hidden `.reviews-more-panel` (measurement-free). See truncateReviewText() +
+// renderReviewListItem() + toggleReviewText().
+//
+// - `TARGET_CHARS` is the desired preview length after truncation. The
+//   truncator will back off to the last word boundary at or before this, so
+//   the visible preview may be a bit shorter.
+// - `MIN_GAIN` is the minimum char count that MUST be hidden for the button
+//   to render. If the full body is only 10-20 chars longer than the preview
+//   (rare, but possible with word-boundary snapping), we skip the toggle
+//   entirely — no fake "Read more" that reveals a sentence-fragment. See
+//   BRAND_GUIDELINES "Long-review preview and expand".
+const REVIEW_PREVIEW_TARGET_CHARS = 220;
+const REVIEW_PREVIEW_MIN_GAIN = 60;
 // Per-platform "Verified X Guest" attribution — reverses the same-day 2026-07-06
 // morning "unified Verified guest" decision. Reasoning: each OTA badge is an
 // independent trust signal (VRBO/Airbnb/Booking.com each verify guest identity +
@@ -3198,26 +3216,58 @@ function renderReviewComment(text, highlights) {
 }
 
 /**
+ * Truncate raw review text at a natural word boundary near `targetLength`, and
+ * append an ellipsis. Preserves at least one full word before the cut and never
+ * mid-word-cuts. Returns the untouched string if it's already short enough or
+ * within one word of the target (avoids "…" that saves 3 chars).
+ *
+ * Kept simple deliberately — we want a deterministic preview that's shorter than
+ * the full text by a meaningful amount, so the per-review "Read more" toggle
+ * reveals visibly more content when clicked. Bug root cause on the CSS
+ * `-webkit-line-clamp` approach was that flex-item children of `.review-item-body`
+ * got their `display: -webkit-box` downgraded to `flow-root`, so the clamp never
+ * activated and "expand" showed the same content that was already visible. This
+ * text-level truncation bypasses that entire class of layout race.
+ */
+function truncateReviewText(raw, targetLength) {
+    if (typeof raw !== 'string') return '';
+    const target = Math.max(40, targetLength | 0);
+    if (raw.length <= target) return raw;
+    // Cut at target, then back off to the last word boundary (space, newline,
+    // punctuation). Trailing sentence-ending punctuation is stripped so the
+    // ellipsis reads cleanly.
+    let cut = raw.slice(0, target);
+    const wsIdx = cut.search(/\s\S*$/);
+    if (wsIdx > target * 0.5) cut = cut.slice(0, wsIdx);
+    cut = cut.replace(/[\s\.,;:!\?—–\-]+$/, '');
+    return cut + '…';
+}
+
+/**
  * Per-review expand/collapse handler. Wired via inline onclick from
  * renderReviewListItem() and kept globally accessible (matches the existing
  * `toggleDescription` pattern). Uses aria-expanded on the button so screen
- * readers announce the state transition. Toggles a `--expanded` class on the
- * text element, which pairs with the CSS `-webkit-line-clamp` reset.
+ * readers announce the state transition. Toggles which of `.review-item-text--preview`
+ * and `.review-item-text--full` is visible — both are already rendered in the
+ * DOM as siblings, so no re-render or measurement is needed.
  */
 function toggleReviewText(button) {
     const body = button.closest('.review-item-body');
     if (!body) return;
-    const text = body.querySelector('.review-item-text');
+    const preview = body.querySelector('.review-item-text--preview');
+    const full = body.querySelector('.review-item-text--full');
     const labelSpan = button.querySelector('.review-read-more-text');
-    if (!text) return;
+    if (!preview || !full) return;
     const expanded = button.getAttribute('aria-expanded') === 'true';
     if (expanded) {
-        text.classList.remove('review-item-text--expanded');
+        preview.hidden = false;
+        full.hidden = true;
         button.setAttribute('aria-expanded', 'false');
         button.classList.remove('expanded');
         if (labelSpan) labelSpan.textContent = button.getAttribute('data-label-more') || 'Read more';
     } else {
-        text.classList.add('review-item-text--expanded');
+        preview.hidden = true;
+        full.hidden = false;
         button.setAttribute('aria-expanded', 'true');
         button.classList.add('expanded');
         if (labelSpan) labelSpan.textContent = button.getAttribute('data-label-less') || 'Show less';
@@ -3233,16 +3283,21 @@ function renderReviewListItem(review, index) {
     const platformClass = review.platform ? ` review-item-verified--${review.platform}` : '';
 
     const commentText = String(review.comment == null ? '' : review.comment);
-    const commentHtml = renderReviewComment(commentText, review.highlights);
-    const isLong = commentText.length > REVIEW_PREVIEW_CHAR_LIMIT;
+    const fullHtml = renderReviewComment(commentText, review.highlights);
 
-    // Truncatable long-review path: full comment HTML is emitted (so highlights
-    // apply consistently in both preview and expanded states) and CSS clamps
-    // the visible preview via `-webkit-line-clamp` when `.review-item-text--clamped`
-    // is set. The `--expanded` class removes the clamp. This keeps the DOM
-    // simple and avoids re-rendering on toggle. See toggleReviewText().
+    // Truncation is meaningful only when it hides a substantive chunk of text.
+    // We require the full body to be longer than the preview target by at least
+    // REVIEW_PREVIEW_MIN_GAIN chars — otherwise the "Read more" reveal is
+    // anticlimactic (3-5 additional words is not worth a toggle). See bug
+    // report 2026-07-06 evening.
+    const previewTargetLen = REVIEW_PREVIEW_TARGET_CHARS;
+    const truncated = truncateReviewText(commentText, previewTargetLen);
+    const isTruncatable = truncated !== commentText
+        && (commentText.length - truncated.length) >= REVIEW_PREVIEW_MIN_GAIN;
+    const previewHtml = isTruncatable ? renderReviewComment(truncated, review.highlights) : fullHtml;
+
     const idSuffix = `review-item-${index}`;
-    if (isLong) {
+    if (isTruncatable) {
         return `
         <div class="review-list-item review-list-item--truncatable" id="${idSuffix}">
             <div class="review-list-item-head">
@@ -3256,9 +3311,10 @@ function renderReviewListItem(review, index) {
                 </div>
             </div>
             <div class="review-item-body">
-                <div class="review-item-text review-item-text--clamped" id="${idSuffix}-text">${commentHtml}</div>
+                <div class="review-item-text review-item-text--preview" id="${idSuffix}-text-preview">${previewHtml}</div>
+                <div class="review-item-text review-item-text--full" id="${idSuffix}-text-full" hidden>${fullHtml}</div>
                 <button type="button" class="review-read-more-btn"
-                    aria-expanded="false" aria-controls="${idSuffix}-text"
+                    aria-expanded="false" aria-controls="${idSuffix}-text-full"
                     data-label-more="Read more" data-label-less="Show less"
                     onclick="toggleReviewText(this)">
                     <span class="review-read-more-text">Read more</span>
@@ -3282,7 +3338,7 @@ function renderReviewListItem(review, index) {
                     ${renderStars(review.rating)}
                 </div>
             </div>
-            <div class="review-item-text">${commentHtml}</div>
+            <div class="review-item-text">${fullHtml}</div>
         </div>
     `;
 }
@@ -3303,11 +3359,12 @@ function renderReviews(reviews, avgRating, property) {
     const previewReviews = listReviews.slice(0, previewCount);
     const restReviews = listReviews.slice(previewCount);
     const hasMoreReviews = restReviews.length > 0;
-    // Generic label per owner directive 2026-07-06 (evening): drop the running
-    // count from the expand button. Was `Read 22 more reviews`; now `Read more
-    // reviews`. Keeps the button copy stable regardless of how many reviews
-    // are curated/added to the archive.
-    const moreLabel = 'Read more reviews';
+    // Generic labels per owner directive 2026-07-06 (evening) + bug-fix pass.
+    // No running count on the button (spec: "Show more reviews", not "Show 22
+    // more reviews"). Button only renders when there IS hidden content to
+    // reveal (`hasMoreReviews`), enforcing the no-fake-toggles rule.
+    const moreLabel = 'Show more reviews';
+    const lessLabel = 'Show fewer reviews';
 
     // Aggregate rating chip — the earlier same-day `hideReviewAggregate: true`
     // decision was REVERSED by the owner (2026-07-06 evening) for TW2111. This
@@ -3396,7 +3453,8 @@ function renderReviews(reviews, avgRating, property) {
                         </div>
                         <button type="button" class="read-more-btn reviews-expand-btn" onclick="toggleDescription(this)"
                             data-read-more="${moreLabel.replace(/"/g, '&quot;')}"
-                            data-show-less="Show fewer reviews">
+                            data-show-less="${lessLabel.replace(/"/g, '&quot;')}"
+                            aria-expanded="false">
                             <span class="read-more-text">${moreLabel}</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <polyline points="6 9 12 15 18 9"></polyline>

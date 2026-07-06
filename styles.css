@@ -2627,34 +2627,29 @@ button {
 }
 
 /* Long-review preview + expand/collapse — reviews whose raw comment length
- * exceeds REVIEW_PREVIEW_CHAR_LIMIT (see app.js) get a `.review-list-item--truncatable`
- * container with a body/text/button structure. The `.review-item-text--clamped`
- * class enables a CSS -webkit-line-clamp preview; toggling `.review-item-text--expanded`
- * removes the clamp. Deterministic (character-based), so it works even when
- * the review is inside an initially-hidden `.reviews-more-panel`. */
+ * exceeds REVIEW_PREVIEW_TARGET_CHARS + REVIEW_PREVIEW_MIN_GAIN (see app.js)
+ * get a `.review-list-item--truncatable` container with two sibling text
+ * elements — `.review-item-text--preview` (truncated, visible initially) and
+ * `.review-item-text--full` (full body, hidden initially) — plus a toggle
+ * button that swaps the `hidden` attribute between them via toggleReviewText().
+ *
+ * We use JS text truncation (not CSS `-webkit-line-clamp`) because flex-item
+ * children of `.review-item-body` were having `display: -webkit-box` downgraded
+ * to `flow-root` by the browser, so the clamp never activated and "Read more"
+ * revealed no visibly-additional content (bug report 2026-07-06 evening).
+ * JS truncation is deterministic across viewports and works inside the
+ * initially-hidden `.reviews-more-panel` (no measurement race). */
 .review-list-item--truncatable .review-item-body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.review-item-text--clamped {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    /* Line-clamp requires block/box display and cancels white-space: pre-wrap.
-     * Long reviews rarely contain hard newlines from the OTAs (they collapse
-     * whitespace at export), so this is a non-issue for the archive we have. */
-    white-space: normal;
-}
-
-.review-item-text--expanded {
-    display: block;
-    -webkit-line-clamp: unset;
-    line-clamp: unset;
-    overflow: visible;
+.review-item-text--preview,
+.review-item-text--full {
+    /* Inherit the base `.review-item-text` visual styles. No display override
+     * needed — the `hidden` attribute (set by toggleReviewText) controls
+     * visibility. */
     white-space: pre-wrap;
 }
 
@@ -2729,6 +2724,34 @@ button {
 
 .reviews-cta-btn {
     min-width: 220px;
+}
+
+/* Bug fix 2026-07-06 evening: the reviews section is nested inside a
+ * `.description-section`, which globally styles `<a>` children to `color:
+ * var(--primary-color)`. That override was winning against `.btn-primary
+ * { color: white; }` because it's a compound selector (0,1,1) beating a
+ * single-class selector (0,1,0). Result on the live site: primary-blue text
+ * on a primary-blue button background — text visually invisible.
+ *
+ * These rules force white on the button in every relevant nesting. The
+ * `.description-section .reviews-cta-btn` variant (0,2,0) beats
+ * `.description-section a` (0,1,1). The `.reviews-cta .btn-primary` variant
+ * (0,2,0) covers the case where a future markup change removes
+ * `.reviews-cta-btn` from the anchor. Focus-visible retains white text on the
+ * darker hover background. */
+.description-section .reviews-cta-btn,
+.reviews-cta .btn-primary,
+a.reviews-cta-btn {
+    color: #ffffff;
+}
+
+.description-section .reviews-cta-btn:hover,
+.description-section .reviews-cta-btn:focus-visible,
+.reviews-cta .btn-primary:hover,
+.reviews-cta .btn-primary:focus-visible,
+a.reviews-cta-btn:hover,
+a.reviews-cta-btn:focus-visible {
+    color: #ffffff;
 }
 
 @media (max-width: 640px) {
