@@ -324,6 +324,31 @@ Rejected:
 
 > Thank you for your wonderful review! We are so happy you had an amazing time at our property! We look forward to hosting you again soon!!!
 
+### Reviews on the direct site
+
+Two hard rules, enforced by every reviewer role (Chief Growth Officer, Brand Director, SEO Expert, QA Agent) and by the operating-system's honesty guarantee:
+
+#### No rating manipulation
+
+- **Every review rating rendered on the Website is the exact rating the guest gave on the source OTA.** No upward adjustment, no downward adjustment, no averaging, no rounding to make the aggregate look cleaner.
+- If a captured review has a sub-max rating (e.g., 8/10 on VRBO, 4 stars on Airbnb, 9/10 on Booking.com), the response is **exclude the review from publication**, not adjust the number.
+- This applies to individual `Review.reviewRating.ratingValue` in schema.org markup **and** to any `AggregateRating.ratingValue` rendered on the page or in JSON-LD.
+- Rationale: FTC 16 CFR Part 465 (Deceptive Reviews and Testimonials) explicitly prohibits misrepresenting the substance or rating of a consumer review. Cross-platform verification exposes any discrepancy in one screenshot. Google's rich-results validators flag rating mismatches between site markup and third-party sources and can strip star display from search results. And we do not need to fabricate — a curated selection of real max-rating reviews delivers the same aesthetic outcome with none of the exposure.
+
+#### No fabricated reviewer identities
+
+- Reviewer `author` strings on the Website are sourced from the guest's public OTA display name. Approved formats:
+  - **Hybrid (current TW2111 policy):** first name only, no last initial. Matches what Airbnb + Booking.com already show publicly. See `docs/listings/TW2111/MASTER.md#23-review-author-naming-policy`.
+  - **Full first + last initial:** as it appears on VRBO. Available as a reversal path.
+  - **Platform-generic placeholder:** `Verified guest` (used as an attribution complement, or standalone if names are ever pulled).
+- Never invented pseudonyms. Never composited "first name from city, last initial from month" style constructions. If the real name is not available, use the platform-generic placeholder.
+- Review *bodies* are the guest's own words with only two trim categories allowed: resort-wide operational commentary that doesn't reflect the property (elevator wait times at Tidewater), and content that violates other brand rules (e.g., floor-height references). Every trim must be documented in the property's curation shortlist.
+
+#### Aggregate rating display
+
+- If a property record sets `hideReviewAggregate: true`, the site suppresses the aggregate rating chip in the reviews section but continues to render individual `Review` markup. This is a presentation choice, not a data change — the underlying ratings are real and the JSON-LD reviews still carry their honest per-review rating values.
+- If the aggregate chip is shown, its `ratingValue` and `reviewCount` must derive directly from the published `REVIEWS` array — no rounding, no hand-tuning. See `app.js#getReviewAggregate` for the canonical computation.
+
 ### 404 / error page
 
 Pattern: acknowledge → redirect → warmth. See [`404.html`](../../404.html).

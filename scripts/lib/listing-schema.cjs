@@ -284,7 +284,13 @@ function buildVacationRentalSchema(property) {
 
     if (contact.phoneTel) schema.telephone = contact.phoneTel;
 
-    if (reviews.length > 0) {
+    // Aggregate rating suppression — set `hideReviewAggregate: true` on the property record
+    // in `config.js` to omit `AggregateRating` from JSON-LD. Individual `Review` items still
+    // ship so per-review rich-snippets remain eligible. Owner directive 2026-07-06 for TW2111
+    // (§23 hybrid naming policy + BRAND_GUIDELINES `No rating manipulation` rule); MS811
+    // continues to emit the aggregate. Per-review ratings in `schema.review[].reviewRating`
+    // are always the real values from the source OTA — never altered.
+    if (reviews.length > 0 && !property.hideReviewAggregate) {
         const avg = (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1);
         schema.aggregateRating = {
             '@type': 'AggregateRating',

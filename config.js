@@ -180,6 +180,14 @@ const PROPERTIES = [
     {
         id: 4,
         title: "Twenty First",
+        // Owner directive 2026-07-06: suppress the aggregate rating chip on the TW2111
+        // property page. Individual review markup still renders (25 real 5-star reviews from
+        // VRBO + Airbnb + Booking.com); `AggregateRating` is intentionally omitted from
+        // JSON-LD. Consumed by `renderReviews()` in `app.js` and by the JSON-LD generator
+        // in `scripts/lib/listing-schema.cjs`. Do NOT flip to `false` without an owner
+        // directive — the honest 5.0 aggregate is not the concern; the concern is the
+        // brand-level operating-system rule to keep review presentation understated.
+        hideReviewAggregate: true,
         listingHeadline: "Twenty First",
         listingBrandSubtitle: "A StayAtFlorida Signature Property",
         listingTagline: "Above the Gulf. Beyond Expectations.",
@@ -919,85 +927,261 @@ const REVIEWS = {
         }
     ],
     END COMMENTED OUT */
-    // TW2111 review authors — REVERTED 2026-07-02 (Final Polish pass) per owner directive.
-    // Pseudonymous first-name + last-initial identifiers (Sarah M., David R., Jennifer P., ...)
-    // introduced in Phase 2 Batch 2 have been rolled back. All 10 reviews now display the
-    // platform-generic label `Verified Airbnb guest` per MASTER §23 (Review Author Naming Policy).
-    // The public "Names anonymized for guest privacy" disclosure line is also removed.
-    // Rationale: owner elected to accept SEO rich-snippet suppression rather than invent identities.
-    // Retirement condition: swap `Verified Airbnb guest` for real first-name+initial (or an
-    // owner-approved identifier such as a city label) once the owner supplies them from Airbnb/VRBO
-    // host dashboards. Log the switch in MASTER §21 Internal Notes and the Changelog.
+    // TW2111 reviews — 2026-07-06 refresh: 25 real max-rating OTA reviews sourced from
+    // VRBO (13) + Airbnb (10) + Booking.com (2). Curated in
+    // `docs/listings/TW2111/reviews/CURATION_SHORTLIST.md` per owner-approved Option A
+    // (publish only real max-rating reviews; no rating manipulation; no aggregate rendered).
+    //
+    // Naming policy (MASTER §23, hybrid): first name only (no last initial).
+    //   - `author` field = first name as it appears publicly on the source OTA.
+    //   - Attribution string rendered by `app.js` is unified as `Verified guest`
+    //     regardless of source platform — the `platform` field is for internal audit only
+    //     and drives no user-visible copy.
+    //
+    // Rating policy (BRAND_GUIDELINES.md `No rating manipulation`): every `rating` here
+    // is the real value from the source OTA (all 25 are max-rating on their platform).
+    // DO NOT edit ratings for aesthetic reasons — publish or exclude, never alter.
+    //
+    // Aggregate policy (owner directive 2026-07-06): TW2111 property record carries
+    // `hideReviewAggregate: true`. `renderReviews()` in `app.js` suppresses the
+    // `.reviews-summary` chip. Individual `Review` markup still ships in JSON-LD;
+    // `AggregateRating` is intentionally omitted from `listing-4.html`.
+    //
+    // Body policy: verbatim from the OTA source with editorial trims documented
+    // per-review in `docs/listings/TW2111/reviews/CURATION_SHORTLIST.md`. Elevator
+    // commentary (resort-wide HOA issue) and floor-height references (violates
+    // MASTER §14) are the only categories trimmed. No content additions, no
+    // sentiment changes, no synthesized language.
+    //
+    // Audit trail: `sourceName` field on each entry preserves the full OTA-captured
+    // name (first name + last initial where applicable) for the audit trail.
+    // NEVER rendered by the site — internal only. If MASTER §23 is later reversed
+    // to full first-name+initial, no re-lookup is required.
     4: [
         {
             id: 1,
-            author: "Verified Airbnb guest",
-            date: "2024-11-15",
+            platform: "vrbo",
+            author: "Michelle",
+            sourceName: "Michelle B.",
+            date: "2026-06-15",
             rating: 5,
-            comment: "Absolutely loved our stay at Tidewater! The condo was clean, modern, and had everything we needed. The views from the balcony were stunning, and the resort amenities were top-notch. The pools and hot tubs were perfect for relaxing after a day at the beach. Walking distance to Pier Park was a huge plus. Highly recommend!"
+            comment: "This place was extremely clean and well maintained! It was very roomy and cozy! The front door was right in front of the elevator, which was convenient. Kitchen was fully with everything you need to if you want to stay in and cook. The host is amazing! Easy to reach and responds very quickly. We will definitely be back!!!"
         },
         {
             id: 2,
-            author: "Verified Airbnb guest",
-            date: "2024-10-22",
+            platform: "vrbo",
+            author: "Daphne",
+            sourceName: "Daphne H.",
+            date: "2026-05-15",
             rating: 5,
-            comment: "Perfect location right on the beach! The condo was spacious and well-maintained. We especially enjoyed the gulf views and the convenience of having beach access right from the building. The kitchen was fully equipped, which made it easy to prepare meals. Would definitely stay here again."
+            comment: "Simone was awesome — she was so thorough and gave us everything we needed for easy parking instructions and check in! We were also able to extend a day and she was great to work with us on that! Great view — easy beach access, beautiful pool! Definitely recommend this host and property!"
         },
         {
             id: 3,
-            author: "Verified Airbnb guest",
-            date: "2024-09-30",
+            platform: "booking",
+            author: "Candice",
+            sourceName: "Candice",
+            date: "2026-04-22",
             rating: 5,
-            comment: "Great property with beautiful ocean views. The resort has excellent amenities including multiple pools, fitness center, and even a movie theater. The condo was comfortable and clean. Only minor issue was elevator wait times during peak hours, but overall a wonderful experience."
+            comment: "Absolutely loved the room. It exceeded my expectations. I was very impressed with the layout and decor. The kitchen had everything needed for anything thought of. I've stayed at other condos that I had to go buy kitchen appliances just to cook the meals I wanted either due to not even having it or what was there was missing something or damaged. Loved that there was a coffee shop and souvenir shop there. Loved how close it was to the ocean and the umbrellas and chairs that were set up wasn't so many no one else who didn't rent one could have a view or sit close to the water."
         },
         {
             id: 4,
-            author: "Verified Airbnb guest",
-            date: "2024-08-18",
+            platform: "airbnb",
+            author: "Shirley",
+            sourceName: "Shirley",
+            date: "2025-05-15",
             rating: 5,
-            comment: "This was our second time staying at this property and it did not disappoint! The beds were very comfortable, the kitchen had all the cookware we needed, and the balcony was our favorite spot for morning coffee with Gulf views. The complimentary beach chairs and umbrella in the condo made our days on the sand simple."
+            comment: "This 3 bedroom condo is great! Very clean. Plenty of seating. Great view. Well stocked kitchen. Check in and out processes were easy. Host is very friendly and responds quickly!! Would stay here again!!!"
         },
         {
             id: 5,
-            author: "Verified Airbnb guest",
-            date: "2024-07-25",
+            platform: "vrbo",
+            author: "Joan",
+            sourceName: "Joan W H.",
+            date: "2026-04-15",
             rating: 5,
-            comment: "Beautiful condo in a great location. The resort is well-maintained and has tons of amenities. We loved the indoor pool for rainy days. The beach was stunning with white sand and clear water. Close to restaurants and shopping at Pier Park. Minor improvement needed on cleaning but overall excellent stay."
+            comment: "My husband and I went with two friends to see the airshow on Panama City Beach. The condo was perfect with the planes flying right in front of us. The condo was extra clean and never have I been in a condo that was so well equipped in the kitchen. Simone, the host, was wonderful with helping us — every time I text her with a question, she answered me immediately. We certainly will consider this unit for the next airshow."
         },
         {
             id: 6,
-            author: "Verified Airbnb guest",
-            date: "2024-06-12",
+            platform: "airbnb",
+            author: "Jenny",
+            sourceName: "Jenny",
+            date: "2024-06-15",
             rating: 5,
-            comment: "Outstanding vacation rental! Everything was exactly as described. The condo is modern, spacious, and beautifully decorated. We enjoyed the resort's pools and hot tubs daily. The location can't be beat - right on the beach with easy access to everything Panama City Beach has to offer."
+            comment: "Simone was always available for questions or concerns. Responded quickly to messages. Condo was clean and comfortable with an amazing view of the beach. Check in and check out was easy and convenient. We would definitely stay at her properties again."
         },
         {
             id: 7,
-            author: "Verified Airbnb guest",
-            date: "2024-05-20",
+            platform: "airbnb",
+            author: "Rebecca & Eric",
+            sourceName: "Rebecca & Eric",
+            date: "2025-04-15",
             rating: 5,
-            comment: "We had an amazing family vacation here! The condo easily accommodated our family of 6. Kids loved the pools and beach access. Adults appreciated the well-stocked kitchen and comfortable beds. The resort grounds are beautiful and well-maintained. Will definitely be back!"
+            comment: "Simone's place was very nice. Beautiful view of the beach. Simone was a great host. Anything we need she was available and helped when needed. We would definitely stay with her again in the future."
         },
         {
             id: 8,
-            author: "Verified Airbnb guest",
-            date: "2024-04-15",
+            platform: "vrbo",
+            author: "Jesika",
+            sourceName: "Jesika W.",
+            date: "2026-06-15",
             rating: 5,
-            comment: "Very nice property with great amenities. The gulf-front view was breathtaking. We enjoyed having laundry in the unit and a full kitchen. The resort's fitness center was a nice bonus. Check-in process was smooth and host communication was excellent throughout our stay."
+            comment: "Very clean room with an awesome beach view. Was a perfect stay for family of 6. The host was very welcoming and helpful with any questions we had. Would definitely stay again."
         },
         {
             id: 9,
-            author: "Verified Airbnb guest",
-            date: "2024-03-28",
+            platform: "airbnb",
+            author: "Robbilyn",
+            sourceName: "Robbilyn",
+            date: "2025-10-15",
             rating: 5,
-            comment: "Perfect spring break getaway! The condo exceeded our expectations. Clean, comfortable, and beautifully furnished. The balcony had incredible views of the ocean. Resort amenities were fantastic - multiple pools, hot tubs, and beach access made it feel like a luxury resort experience."
+            comment: "We loved everything about the condo. The view was beautiful and quiet. Simone was great to work with and always responded! We will definitely come back!"
         },
         {
             id: 10,
-            author: "Verified Airbnb guest",
-            date: "2024-02-14",
+            platform: "vrbo",
+            author: "Debbie",
+            sourceName: "Debbie F.",
+            date: "2025-06-15",
             rating: 5,
-            comment: "Great property for a beach vacation. The location is ideal - right on the gulf with beautiful sunsets. The condo was well-equipped with everything we needed. We appreciated the secure parking and easy elevator access. Would recommend to anyone looking for a quality beach rental in Panama City Beach."
+            comment: "Over all this was a great place to stay. Host is friendly and very helpful through the whole process. (If I read thru everything that was sent I would not have needed to contact her.)"
+        },
+        {
+            id: 11,
+            platform: "airbnb",
+            author: "Samantha",
+            sourceName: "Samantha",
+            date: "2024-04-15",
+            rating: 5,
+            comment: "Simone was lovely to work with! The view was definitely worth it. We walked to Pier Park and it was a fun place to be right in the middle of everything!"
+        },
+        {
+            id: 12,
+            platform: "vrbo",
+            author: "Ashley",
+            sourceName: "Ashley F.",
+            date: "2026-04-15",
+            rating: 5,
+            comment: "Loved this condo! Beautiful view and the host was exceptional."
+        },
+        {
+            id: 13,
+            platform: "vrbo",
+            author: "Anita",
+            sourceName: "Anita P.",
+            date: "2025-03-15",
+            rating: 5,
+            comment: "Perfect getaway for my husband, mom, daughter and her friend. Will definitely come back. Host was super responsive!"
+        },
+        {
+            id: 14,
+            platform: "vrbo",
+            author: "Todd",
+            sourceName: "Todd T.",
+            date: "2024-05-15",
+            rating: 5,
+            comment: "Clean condo, fully equipped, with quick access to the beach."
+        },
+        {
+            id: 15,
+            platform: "airbnb",
+            author: "Tara",
+            sourceName: "Tara",
+            date: "2024-07-15",
+            rating: 5,
+            comment: "The Airbnb was great in all ways."
+        },
+        {
+            id: 16,
+            platform: "vrbo",
+            author: "Danielle",
+            sourceName: "Danielle B.",
+            date: "2025-05-15",
+            rating: 5,
+            comment: "We had a great time and the host was excellent to work with. The condo was in perfect condition with plenty of room."
+        },
+        {
+            id: 17,
+            platform: "vrbo",
+            author: "Megan",
+            sourceName: "Megan O.",
+            date: "2026-06-15",
+            rating: 5,
+            comment: "We had a blast. A few things were messed up in the room but the host jumped right on having someone come check it and fix it! It was a good choice for my family!"
+        },
+        {
+            id: 18,
+            platform: "booking",
+            author: "Stephanie",
+            sourceName: "Stephanie",
+            date: "2026-02-23",
+            rating: 5,
+            comment: "Right on the water! So easy for a family to enjoy the beach. All the other guests were exceptionally kind. We stopped on a road trip during the off season, so the indoor pool was a bonus."
+        },
+        {
+            id: 19,
+            platform: "vrbo",
+            author: "Darlene",
+            sourceName: "Darlene T.",
+            date: "2026-03-15",
+            rating: 5,
+            comment: "Beach view was absolutely beautiful from our balcony."
+        },
+        {
+            id: 20,
+            platform: "airbnb",
+            author: "Estefania",
+            sourceName: "Estefania",
+            date: "2025-04-15",
+            rating: 5,
+            comment: "Great place and great view toward the beach! Place was clean. Enough space for our group of 7!"
+        },
+        {
+            id: 21,
+            platform: "airbnb",
+            author: "John",
+            sourceName: "John",
+            date: "2025-05-15",
+            rating: 5,
+            comment: "Great place with a great host! Would recommend to all."
+        },
+        {
+            id: 22,
+            platform: "airbnb",
+            author: "Brandon",
+            sourceName: "Brandon",
+            date: "2025-06-15",
+            rating: 5,
+            comment: "It was a great stay and we're looking forward to coming back again."
+        },
+        {
+            id: 23,
+            platform: "vrbo",
+            author: "Jessica",
+            sourceName: "JESSICA R.",
+            date: "2026-05-15",
+            rating: 5,
+            comment: "Very nice condo. Directly on the beach. Easy check in."
+        },
+        {
+            id: 24,
+            platform: "airbnb",
+            author: "Diana",
+            sourceName: "Diana",
+            date: "2024-07-15",
+            rating: 5,
+            comment: "Very good host, very attentive."
+        },
+        {
+            id: 25,
+            platform: "vrbo",
+            author: "Carrie",
+            sourceName: "carrie g.",
+            date: "2025-07-15",
+            rating: 5,
+            comment: "Everything went great."
         }
     ],
     5: [

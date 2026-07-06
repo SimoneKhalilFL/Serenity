@@ -2342,6 +2342,23 @@ button {
     color: var(--text-primary);
 }
 
+/*
+ * Small understated "Verified guest" badge rendered between the author name and the
+ * date. Owner directive 2026-07-06: unified attribution across all source platforms
+ * (VRBO / Airbnb / Booking.com). Kept muted so it reads as a trust marker, not a shout.
+ */
+.review-item-verified {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    padding: 0.05rem 0.4rem 0.05rem 0;
+    opacity: 0.75;
+}
+
 .review-item-date {
     font-size: 0.8125rem;
     color: var(--text-secondary);

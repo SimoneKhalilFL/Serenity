@@ -3101,11 +3101,18 @@ function renderHomepageReviews() {
 }
 
 function renderReviewListItem(review, index) {
+    // Attribution string: unified `Verified guest` label across all platforms per owner
+    // directive 2026-07-06. The `platform` field on each review is preserved for internal
+    // audit but drives no user-visible copy. If the multi-platform attribution rule is
+    // ever reversed (`Verified VRBO guest` / `Verified Airbnb guest` / `Verified Booking.com
+    // guest`), branch here on `review.platform`. See MASTER §23 Review Author Naming Policy.
+    const verifiedLabel = 'Verified guest';
     return `
         <div class="review-list-item" id="review-item-${index}">
             <div class="review-list-item-head">
                 <div class="review-list-item-meta">
                     <span class="review-item-author">${escapeHtml(review.author)}</span>
+                    <span class="review-item-verified" aria-label="${verifiedLabel}">${verifiedLabel}</span>
                     <span class="review-item-date">${formatDate(review.date)}</span>
                 </div>
                 <div class="review-rating" aria-label="${review.rating} out of 5 stars">
@@ -3124,6 +3131,13 @@ function renderReviews(reviews, avgRating, property) {
     const hasMoreReviews = restReviews.length > 0;
     const moreCount = restReviews.length;
     const moreLabel = `Read ${moreCount} more ${moreCount === 1 ? 'review' : 'reviews'}`;
+    // Aggregate rating chip suppression — set `hideReviewAggregate: true` on a property
+    // record in `config.js` to hide the `X.X ★★★★★ · N reviews` block from that
+    // property's reviews section. Individual reviews still render, and JSON-LD still
+    // emits per-review `Review` markup (see `scripts/lib/listing-schema.cjs`). Owner
+    // directive 2026-07-06 for TW2111. Do NOT hide unconditionally — MS811 and any
+    // future properties may want the aggregate visible.
+    const hideAggregate = !!(property && property.hideReviewAggregate === true);
     // Privacy / anonymization disclosure — rendered only when the property record explicitly
     // opts in via `reviewsPrivacyNote`. Kept as an optional hook for future use, but as of the
     // 2026-07-02 Final Polish pass NO property currently sets it: TW2111 reverted to the
@@ -3163,6 +3177,7 @@ function renderReviews(reviews, avgRating, property) {
                             </div>
                             <h2 class="reviews-group-title">Guest Reviews</h2>
                         </div>
+                        ${hideAggregate ? '' : `
                         <div class="reviews-summary reviews-summary--grouped">
                             <div class="reviews-rating">
                                 <span class="rating-number">${avgRating}</span>
@@ -3173,7 +3188,7 @@ function renderReviews(reviews, avgRating, property) {
                                     <div class="rating-count">${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}</div>
                                 </div>
                             </div>
-                        </div>
+                        </div>`}
                     </div>
                     <div class="section-content reviews-group-content">
                         ${privacyNote}
