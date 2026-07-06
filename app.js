@@ -3156,22 +3156,19 @@ function renderHomepageReviews() {
 
     grid.innerHTML = featured.map(renderHomepageReviewCard).join('');
 
-    const ctaLinks = PROPERTIES.map(p => {
-        const list = (typeof REVIEWS === 'object' && REVIEWS && REVIEWS[p.id]) ? REVIEWS[p.id] : [];
-        if (list.length === 0) return '';
-        const shortName = getPropertyShortName(p);
-        // Copy refinement 2026-07-06 late-evening: dropped the running count
-        // ("Read all 25 Twenty First reviews") in favor of a compact `View All`
-        // label. The count feels marketing-forward and shifts with every added
-        // review; `View All` is timeless and consistent with premium
-        // convention (Ritz-Carlton, Aman, etc.). Property name kept in the
-        // aria-label so screen readers still get the disambiguating context
-        // when both property CTAs render side-by-side. See BRAND_GUIDELINES
-        // "No running counts in CTA labels".
-        const ariaLabel = `View all ${escapeHtml(shortName)} reviews`;
-        return `<a class="home-reviews-cta-link" href="${getListingRelativePath(p.id)}#property-reviews" onclick="event.preventDefault(); navigateToProperty(${p.id}, { scrollToSectionId: 'property-reviews' });" aria-label="${ariaLabel}">View All<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>`;
-    }).filter(Boolean).join('');
-    ctaRow.innerHTML = ctaLinks;
+    // Homepage `Loved by Guests` bottom CTA row REMOVED per owner directive
+    // 2026-07-06 late-evening. Rationale: two side-by-side `View All` buttons
+    // (one per property) read as redundant and slightly ambiguous — users
+    // reach per-property reviews via the property cards in the "Signature
+    // Properties" section above (each card's `View Property` button lands on
+    // the property page, which includes the full reviews section). The
+    // featured review grid alone communicates the trust signal; a bottom
+    // CTA on this section isn't necessary. If a future pass wants a single
+    // consolidated CTA, restore this block using a single anchor rather than
+    // one-per-property. The `#home-reviews-cta` element in `index.html` is
+    // left in place but empty — it self-collapses via `:empty` in CSS or by
+    // being an empty inline flex row.
+    ctaRow.innerHTML = '';
 
     section.hidden = false;
 }

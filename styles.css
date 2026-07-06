@@ -4063,6 +4063,14 @@ body.has-listing-sticky {
     gap: 0.875rem;
 }
 
+/* Collapse the CTA row when empty — the per-property `View All` links were
+ * removed 2026-07-06 late-evening (see app.js), leaving `#home-reviews-cta`
+ * as an empty container. Without this rule the empty flex row still consumes
+ * ~2.25rem of top margin, adding a dead gap below the featured review grid. */
+.home-reviews-cta:empty {
+    display: none;
+}
+
 .home-reviews-cta-link {
     display: inline-flex;
     align-items: center;
