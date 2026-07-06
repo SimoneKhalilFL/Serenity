@@ -1529,13 +1529,24 @@ function renderStayLogisticsCard(cardData, cardId, cardClassSuffix) {
         const label = escapeHtml(String(it && it.label || '').trim());
         const body = escapeHtml(String(it && it.body || '').trim());
         if (!label || !body) return '';
+        // Inline text link (kept for backward compat — subtle, in-flow attribution links).
         const link = it && it.linkUrl && it.linkLabel
             ? ` <a class="stay-logistics-link" href="${escapeHtml(it.linkUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.linkLabel)}</a>`
+            : '';
+        // Distinct action button — introduced 2026-07-06 (Pricing/Logistics cleanup) so the
+        // Resort Registration Fee bullet can render a `Register with the Resort` CTA rather than
+        // an inline text link. Rendered on its own line below the body for tap-target clarity.
+        // Any Before-You-Arrive / During-Your-Stay item can now carry a distinct action.
+        const cta = it && it.ctaUrl && it.ctaLabel
+            ? `
+                <a class="btn btn-outline stay-logistics-cta" href="${escapeHtml(it.ctaUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(it.ctaLabel)}</a>
+            `
             : '';
         return `
             <li class="stay-logistics-item">
                 <span class="stay-logistics-item-label">${label}</span>
                 <span class="stay-logistics-item-body">${body}${link}</span>
+                ${cta}
             </li>
         `;
     }).filter(Boolean).join('');
@@ -2678,31 +2689,17 @@ function renderPriceCalculator(property) {
     const cleaningFee = property.cleaningFee;
     const subtotal = nightlyTotal + cleaningFee;
     const tax = subtotal * property.taxRate;
-    // Resort Registration Fee — third-party pass-through (collected by the community HOA at
-    // check-in, not by StayAtFlorida). Surfaced as a distinct line so guests see the true total.
-    // Renamed from "Community registration fee" 2026-07-02 (Final Polish) — the config key is
-    // preserved (`communityRegistrationFee`) for backward compatibility, but the guest-facing
-    // label pulls from `communityRegistrationFee.label` which is now "Resort Registration Fee".
-    // Not taxed by our calculator (already tax-inclusive from the community).
-    // See docs/listings/TW2111/MASTER.md §21 Fee Schedule for the transparency rule.
-    const registrationFeeObj = property.communityRegistrationFee;
-    const hasRegistrationFee = registrationFeeObj && typeof registrationFeeObj.amount === 'number' && registrationFeeObj.amount > 0;
-    const registrationFee = hasRegistrationFee ? registrationFeeObj.amount : 0;
-    const registrationLabel = hasRegistrationFee ? (registrationFeeObj.label || 'Resort Registration Fee') : '';
-    const registrationSublabel = hasRegistrationFee ? (registrationFeeObj.sublabel || '') : '';
-    const total = subtotal + tax + registrationFee;
-    
+    // Resort Registration Fee is a third-party pass-through paid directly to the Tidewater HOA.
+    // Removed from the price calculator on 2026-07-06 (Pricing/Logistics cleanup) per owner
+    // directive — surfacing a fee we don't collect misrepresented what StayAtFlorida is charging.
+    // The fee now lives in Before You Arrive (Card 1) with its own `Register with the Resort`
+    // button. See docs/listings/TW2111/MASTER.md §21 Placement rule for the canonical policy.
+    // Do not re-add a "fee disclosure note" beneath the calculator — Before You Arrive is the
+    // single canonical surface for this fee.
+    const total = subtotal + tax;
+
     const avgNightlyRate = Math.round(nightlyTotal / nights);
-    
-    const registrationLineHtml = hasRegistrationFee ? `
-            <div class="price-line price-line-registration" data-testid="resort-registration-fee-line">
-                <span class="price-label">
-                    ${escapeHtml(registrationLabel)}
-                    ${registrationSublabel ? `<span class="price-line-note">${escapeHtml(registrationSublabel)}</span>` : ''}
-                </span>
-                <span class="price-value">${formatCurrency(registrationFee)}</span>
-            </div>` : '';
-    
+
     container.innerHTML = `
         <div class="price-breakdown">
             <div class="price-line">
@@ -2719,7 +2716,7 @@ function renderPriceCalculator(property) {
             <div class="price-line">
                 <span class="price-label">Taxes</span>
                 <span class="price-value">${formatCurrency(tax)}</span>
-            </div>${registrationLineHtml}
+            </div>
             <div class="price-line total price-line--estimated-total">
                 <span class="price-label">Estimated Total</span>
                 <span class="price-total">${formatCurrency(total)}</span>

@@ -141,10 +141,10 @@
                 </div>
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <p class="hero-eyebrow">A Boutique Beach Rental Brand</p>
+                    <p class="hero-eyebrow">A Boutique Beachfront Stay Collection</p>
                     <h1>Luxury Beachfront Homes on Florida&rsquo;s Gulf Coast.</h1>
                     <p>Owner-hosted, direct-booking condos in Panama City Beach and Destin. Panoramic Gulf views, resort amenities, and a real person answering every email.</p>
-                    <a href="#properties" class="btn btn-primary" onclick="scrollToSection(event, 'properties')">Book Direct &amp; Save</a>
+                    <a href="#properties" class="btn btn-primary" onclick="scrollToSection(event, 'properties')">Explore Signature Properties</a>
                     <div class="hero-trust-badges" role="list" aria-label="Why guests book with us">
                         <span class="hero-trust-badge" role="listitem">
                             <svg class="hero-trust-badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
@@ -222,6 +222,14 @@
                         </article>
                     </div>
                     <p class="why-book-direct-note">Savings estimate based on typical OTA guest service fees (Airbnb ~14%, Vrbo ~12%). Your exact OTA total varies; booking direct always skips this fee.</p>
+                    <!-- Direct-booking-section CTA. `Book Direct & Save` is reserved for THIS
+                         section only (no longer the hero primary CTA — see
+                         docs/listings/TW2111/MASTER.md §12 "Homepage CTA hierarchy"). Uses the
+                         subtle outline style — the CTA supports the value story, doesn't compete
+                         with the hero. -->
+                    <div class="why-book-direct-cta-row">
+                        <a href="#properties" class="btn btn-outline why-book-direct-cta" onclick="scrollToSection(event, 'properties')">Book Direct &amp; Save</a>
+                    </div>
                 </div>
             </section>
 
@@ -250,15 +258,17 @@
                     <h2 class="section-title">Questions? Contact the Owner</h2>
                     <div class="contact-content">
                         <p>Have questions before you book? You&rsquo;ll receive a personal response directly from Simone, the owner, typically within 2 hours during normal business hours.</p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <a href="mailto:FloridaVacationRental2020@gmail.com">FloridaVacationRental2020@gmail.com</a>
-                            </div>
+                        <!-- Primary contact-section CTA. Opens the SAME modal as the header `Inquire`
+                             button (`showContactModal()`) — never a duplicate form. Email address stays
+                             visible below as a secondary affordance. See
+                             docs/listings/TW2111/MASTER.md §12 "Homepage CTA hierarchy". -->
+                        <div class="contact-cta-row">
+                            <button type="button" class="btn btn-primary contact-cta-primary" onclick="showContactModal()" aria-label="Open inquiry form to send Simone an inquiry">Send an Inquiry</button>
                         </div>
+                        <p class="contact-email-secondary">
+                            Or email directly:
+                            <a href="mailto:FloridaVacationRental2020@gmail.com">FloridaVacationRental2020@gmail.com</a>
+                        </p>
                     </div>
                 </div>
             </section>

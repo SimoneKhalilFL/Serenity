@@ -111,7 +111,9 @@ Source: MASTER §14a. Four items in order.
 
 - **Parking** — Up to two on-site parking passes are included with the Resort Registration Fee. Passes are handed out at check-in with the wristbands.
 - **Wristbands** — Up to 8 wristbands are included with the Resort Registration Fee. Wristbands are required for every occupant over age 12 to access the resort deck, pools, and beach.
-- **Resort Registration Fee** — $54.04 total ($48 + tax + credit-card fee). Required by the resort for parking passes and guest wristbands. Register at [tidewaterhoa.com/registration](https://www.tidewaterhoa.com/registration/) 24+ hours before arrival to save $10. Shown as a separate line on the price calculator; collected by the community, not by StayAtFlorida.
+- **Resort Registration Fee** — A one-time $54.04 fee paid directly to the resort before arrival. It includes up to 2 parking passes and 8 guest wristbands. Register at least 24 hours before arrival to save $10.
+  - Rendered CTA: **`Register with the Resort`** button → [`https://www.tidewaterhoa.com/registration/`](https://www.tidewaterhoa.com/registration/) (`target="_blank" rel="noopener noreferrer"`).
+  - **Not shown on the price calculator** — see §21 Placement rule.
 - **Check-in** — From 4:00 PM. Precise arrival instructions and the lockbox code are emailed the morning of check-in.
 
 ### Card 2 — During Your Stay
@@ -129,18 +131,19 @@ Rendered by `app.js#renderPriceCalculator`. Structure:
 
 **Panel heading:** `Your Stay` *(was `Price Calculator`)*
 
-**Line items in order:**
+**Line items in order (updated 2026-07-06 — Pricing/Logistics cleanup):**
 
 | Line label | Amount | Notes |
 |---|---|---|
 | Nightly Rate | Sum of nightly rates × seasonalAdjustments | Sub-label: `N nights` (renders below the label) |
-| Cleaning Fee | $250 | Fixed |
+| Cleaning Fee | $250 | Fixed. *(A $250 → $200 reduction was staged on 2026-07-06 during the Pricing/Logistics cleanup pass, then reverted the same session before publishing. Held at $250.)* |
 | Taxes | (Nightly + Cleaning) × 12% | Percentage moved off the label to keep the line clean |
-| **Resort Registration Fee** | **$54.04** | **Sub-label: `Required by the resort for parking passes and guest wristbands.`** Never hidden. Third-party fee — collected by Tidewater HOA. |
 | *— separator —* | | A hairline rule between the last cost line and the total row |
 | **Estimated Total** | Sum | `Total` heading upgraded to `Estimated Total` for accuracy |
 
 **Trust note below the total:** `No OTA service fees when booking direct.`
+
+**Resort Registration Fee is not shown on the price calculator (updated 2026-07-06).** It moved to `Before You Arrive` (Card 1) as a distinct fee bullet with a `Register with the Resort` button. See MASTER §21 Placement rule. Do not re-add a "fee disclosure note" beneath the calculator — the Before You Arrive card is the single canonical surface for that fee.
 
 Rendering rules for the trust note:
 - Muted grey text (`--text-secondary`), 0.825rem, single line.

@@ -8,6 +8,10 @@ node_modules/
 scripts/calendar-feeds.config.json
 scripts/pricelabs-feeds.config.json
 
+# Ephemeral commit-message scratch file used to build git commit -F on PowerShell
+# (which doesn't heredoc). Should never be committed.
+.tmp-commit-msg.txt
+
 # Private / research artifacts — never commit
 # Personal Gmail exports (customer service / support archives) containing PII
 images/lodging/[[]#*[]] Collections*

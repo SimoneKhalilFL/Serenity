@@ -106,19 +106,37 @@
 
 ## 12. Approved CTAs
 
-Inherits StayAtFlorida standard.
+Inherits the StayAtFlorida CTA standard defined in [`../TW2111/MASTER.md#12-approved-ctas`](../TW2111/MASTER.md#12-approved-ctas). Homepage-level CTAs (`Explore Signature Properties`, `View Property`, `Book Direct & Save` inside the direct-booking section, `Send an Inquiry`, header `Inquire`) apply to MS811 whenever it appears on the marketing homepage.
 
-- **Direct site primary:** `Book Direct & Save`
+Property-page CTAs pending — do not ship MS811 property-page CTA changes without a Brand + Owner review pass. Working draft:
+
+- **Direct site primary:** `Check Availability` *(aligns with TW2111 §12 — pending owner confirmation for MS811)*
 - **Direct site secondary:** `View Photos`, `Email to Book`
 - **Airbnb / VRBO / Booking:** platform-native only
 
-Never use: `Book Now!`, `Reserve Now`, `Get 20% Off`, `Claim your stay`.
+Never use: `Book Now!`, `Reserve Now`, `Get 20% Off`, `Claim your stay`, `See Available Dates`.
 
 ## 13. Master Short Description
 
 *Pending. Working draft:*
 
 `A two-bedroom Gulf-facing condo at Miramar Beach, tucked inside the Seascape resort community — quieter than the boardwalk, close to Destin.`
+
+### 13a. Homepage Card Copy *(added 2026-07-06)*
+
+Rendered on the marketing homepage inside `.property-card-blurb` beneath the location + sleeps-line. Kept intentionally short (one sentence, ~90–110 chars) so the card scans in under two seconds.
+
+**Approved copy:**
+
+> Miramar Beach comfort with Gulf views, resort amenities, beach access, and a relaxing coastal setting.
+
+**Homepage card subtitle** *(new, 2026-07-06)*: `A StayAtFlorida Property` — a lighter twin of TW2111's `A StayAtFlorida Signature Property`. Keeps the master-brand association without prematurely elevating MS811 to Signature status (the elevation is gated on the full brand + photo + copy re-shoot per §21 Brand Director follow-ups).
+
+Notes:
+
+- No CTA text, no exclamation marks, no property-name repetition (title already on the card).
+- The card CTA remains `View Property` (see §12).
+- **This is a homepage-merchandising change only — not a rebrand.** Body copy, long description, meta title/description, and OTA listings are unchanged. MS811 stays in `pending` status per §13 / §14.
 
 ## 14. Master Long Description
 
@@ -228,3 +246,4 @@ Inherits StayAtFlorida standard. Sign with `Simone`. Reply within 2 hours. Full 
 |---|---|---|---|
 | 2026-07-01 | Initial | MASTER.md created as a structural placeholder — property active but branding pending | Content Sync Agent (initial migration) |
 | 2026-07-02 | Response time + beach service | Response time tightened `24 hours` → `2 hours` (matches TW2111). Beach service language updated: still no claim that WE provide beach service, but we DO inform guests that vendor-supplied chair/umbrella rental is available on the beach as a paid option. See TW2111 MASTER §15 for canonical approved language table. | Content Sync Agent |
+| 2026-07-06 | §12 CTA alignment + §13a Homepage Card Copy (Phase 2 Homepage Polish) | Homepage-only merchandising update — **not a rebrand.** (1) §12 Approved CTAs re-pointed to the canonical StayAtFlorida CTA hierarchy defined in TW2111 §12; property-page primary CTA working draft aligned to `Check Availability` for future consistency (still pending owner confirmation for MS811). (2) New §13a Homepage Card Copy: *"Miramar Beach comfort with Gulf views, resort amenities, beach access, and a relaxing coastal setting."* Wired into `config.js#properties[id=5].cardShortDescription`. (3) New homepage card subtitle `A StayAtFlorida Property` wired into `config.js#properties[id=5].cardSubtitle` — lighter twin of TW2111's Signature Property tag; MS811 does **not** carry `Signature Property` yet (gated on the full brand + photo re-shoot per §21). Body copy, long description, meta title/description, and OTA listings unchanged. | Content Sync Agent + Phase 2 Homepage Polish |

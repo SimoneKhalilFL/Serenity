@@ -171,7 +171,10 @@ These are on the "never lead with" list from the brand standards. Guests may enc
 - Never state a guaranteed sunset, wildlife sighting, or weather.
 - Never claim a rating we don't have; the aggregate rating comes from the review data in `config.js`.
 - Never promise pricing; the pricing calculator shows *estimated* rates and the site copy already reflects that.
-- Never hide third-party fees. Any charge the guest experiences as part of their total spend (e.g., the Tidewater Beach Resort Registration Fee for TW2111 — labelled `Resort Registration Fee` in all guest-facing surfaces per the Final Polish rename on 2026-07-02) must appear as a distinct line item on the price calculator. See TW2111 MASTER §21 Fee Schedule for the canonical fee list.
+- Never hide third-party fees, but be honest about **who** is collecting them. Any charge the guest experiences as part of their total spend must be disclosed on the property page. **Where** it's disclosed depends on who's charging it:
+    - **Fees collected by StayAtFlorida** (nightly rate, cleaning, taxes) — shown as line items on the price calculator and included in the `Estimated Total`.
+    - **Fees collected by a third party** (e.g., the Tidewater Beach Resort Registration Fee for TW2111 — labelled `Resort Registration Fee` per the Final Polish rename on 2026-07-02) — shown in the `Before You Arrive` card with a distinct action button (e.g., `Register with the Resort`) rather than on the calculator. Rationale: including a third-party fee inside the "Estimated Total" misrepresents what StayAtFlorida is charging; putting it on its own action card is more honest, not less transparent. **Updated 2026-07-06 for TW2111** — see TW2111 MASTER §21 Placement rule for the canonical policy and CTA rule.
+    - **Never add a duplicate "fee disclosure note" beneath the calculator.** If the fee is a third-party pass-through, `Before You Arrive` is the single surface for it.
 - **Review author display (REVERTED 2026-07-02, Final Polish pass — supersedes the earlier pseudonym allowance from the same day).** Reviews with unknown author names must be published under the platform-generic label (`Verified Airbnb guest` / `Verified VRBO guest`) — **do not invent first-name + last-initial pseudonyms**, do not fabricate city labels, do not add a "Names anonymized for guest privacy" disclosure. Owner directive: publish only real, owner-supplied identifiers, or the platform-generic label. Consequences of identical author strings across many reviews (Google may suppress the aggregate-rating rich snippet) are an accepted trade-off. Retirement condition: when the owner supplies real first names (or approves an alternative identifier convention such as city labels) from platform host dashboards, swap the identifiers in place and log the change in the affected listing's Review Author Naming Policy section. See TW2111 MASTER §23 for the canonical rolled-back state.
 
 ---
@@ -268,7 +271,9 @@ Rejected:
 Approved (choose one for its context):
 
 - `Inquire` — **site-wide header CTA (added 2026-07-02).** Present on every page. Opens the existing inquiry modal (`showContactModal()`). Never build a duplicate form. Visual style: outlined-primary pill (`.btn-nav-inquire`) — premium, understated, always visible on mobile (not inside the hamburger).
-- `Book Direct & Save` — homepage hero
+- `Explore Signature Properties` — homepage hero primary *(added 2026-07-06 in the Homepage Conversion Polish pass, replacing `Book Direct & Save`. Scrolls to `#properties`. "Rental" and hard-sell CTAs sold the transaction before we sold the collection.)*
+- `Book Direct & Save` — **direct-booking / `Why Book Direct?` section only.** No longer used as the homepage hero primary. Reserved for the OTA-fee value story.
+- `Send an Inquiry` — homepage inquiry / contact section primary *(added 2026-07-06). Opens the same `showContactModal()` as the header `Inquire` button. Email address stays visible below as a secondary affordance.*
 - `Check Availability` — property page hero primary
 - `View Photos` — property page hero secondary
 - `Email to Reserve These Dates` — price calculator submit
@@ -283,6 +288,15 @@ Rejected:
 - `Get 20% Off`
 - `Claim Your Stay`
 - `Contact` *(retired 2026-07-02 in favor of `Inquire` — clearer for a vacation-rental site)*
+- Any new CTA wording not on the approved list above without a Brand Director review pass.
+
+### Homepage hero eyebrow
+
+Approved (as of 2026-07-06): **`A Boutique Beachfront Stay Collection`**
+
+Retired: `A Boutique Beach Rental Brand` *("Rental" reads transactional; "Stay Collection" supports the boutique-hospitality positioning without overpromising.)*
+
+Never use: `Vacation rentals`, `Home rentals`, `Cheap beach stays`, `Ultimate paradise` in this slot.
 
 ### Email subject (host outbound)
 

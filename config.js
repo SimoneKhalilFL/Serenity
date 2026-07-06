@@ -185,7 +185,10 @@ const PROPERTIES = [
         listingTagline: "Above the Gulf. Beyond Expectations.",
         listingHeroCopy: "Wake up above the emerald Gulf and spend the day on sugar-white sand. Twenty First is a three-bedroom, three-bath beachfront retreat designed for families who want to slow down, watch the water, and reconnect.",
         cardSubtitle: "A StayAtFlorida Signature Property",
-        cardShortDescription: "Luxury beachfront condo with panoramic Gulf views, a private balcony, sunset views, room for up to 8 guests, direct beach access, and resort-style amenities.",
+        // Homepage property-card blurb. Source of truth: docs/listings/TW2111/MASTER.md §13a
+        // "Homepage Card Copy". Kept short (one scannable sentence) — the long story lives on
+        // the property detail page. Do not swap for a longer aspirational line here.
+        cardShortDescription: "Panoramic Gulf views, sunset balcony, direct beach access, resort amenities, and room for up to 8 guests.",
         metaTitle: "Twenty First | Luxury Beachfront Condo in Panama City Beach",
         metaDescription: "Book Twenty First by StayAtFlorida, a luxury beachfront condo in Panama City Beach with panoramic Gulf views, private balcony, resort amenities, and room for 8.",
         coverImage: "images/lodging/tw-hero-view.png",
@@ -257,6 +260,10 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         bedrooms: 3,
         bathrooms: 3,
         baseNightlyRate: 225,
+        // Cleaning fee held at $250. A short-lived $250 → $200 reduction was staged on 2026-07-06
+        // (Pricing/Logistics cleanup) but reverted the same session before publishing — owner
+        // decided to keep the fee at $250 rather than absorb the ~$50/stay revenue hit. Do not
+        // re-reduce without a fresh owner directive. See docs/listings/TW2111/MASTER.md §21 + Changelog.
         cleaningFee: 250,
         taxRate: 0.12,
         refundableDamageDeposit: 300,
@@ -376,17 +383,23 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
             { icon: "pin", name: "~1 Mile to Pier Park", group: "Location & Access" },
             { icon: "pin", name: "~35 min to ECP Airport", group: "Location & Access" }
         ],
-        // Resort Registration Fee — collected by the Tidewater Beach Resort HOA at check-in.
+        // Resort Registration Fee — paid directly to the Tidewater Beach Resort HOA before arrival.
         // Renamed from "Community registration fee" 2026-07-02 (Final Polish pass) per owner directive.
-        // Shown as a dedicated line on the direct-site price calculator per MASTER §21 Fee Schedule.
-        // Never hide or footnote — transparency rule (BRAND_GUIDELINES.md legal/factual guardrails).
+        //
+        // **Placement change 2026-07-06 (Pricing/Logistics cleanup):** This fee is no longer shown
+        // as a line item on the price calculator. It surfaces only in `Before You Arrive` (Card 1)
+        // as a distinct bullet with a `Register with the Resort` button. See MASTER §21 Placement
+        // rule for the canonical policy. The `communityRegistrationFee` object here is kept as a
+        // documentation-only reference — `renderPriceCalculator` no longer reads it. The
+        // Before-You-Arrive item below owns the guest-facing copy.
         communityRegistrationFee: {
             amount: 54.04,
             label: "Resort Registration Fee",
-            sublabel: "Required by the resort for parking passes and guest wristbands.",
-            note: "$54.04 collected by Tidewater HOA at check-in. Save $10 by registering 24+ hours ahead.",
+            sublabel: "A one-time fee paid directly to the resort before arrival. Includes up to 2 parking passes and 8 guest wristbands.",
+            note: "$54.04 total. Save $10 by registering 24+ hours before arrival.",
             registrationUrl: "https://www.tidewaterhoa.com/registration/",
-            includes: "Up to 2 parking passes + up to 8 wristbands"
+            includes: "Up to 2 parking passes + up to 8 wristbands",
+            surfacedOn: ["beforeYouArrive"] // Never surface on the price calculator per MASTER §21.
         },
         // Owner-verified seasonal range. Reflects both the baseline low-season floor (~$125 Feb)
         // and the observed PriceLabs peak (~$660 Labor Day Sunday). See MASTER §21.
@@ -407,10 +420,15 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
                     body: "Up to 8 wristbands are included with the Resort Registration Fee. Wristbands are required for every occupant over age 12 to access the resort deck, pools, and beach."
                 },
                 {
+                    // Resort Registration Fee — canonical Before-You-Arrive bullet.
+                    // Copy source of truth: MASTER §14a + §21 (canonical supporting sentence).
+                    // Rendered CTA: distinct button below the body (renderStayLogisticsCard reads
+                    // `ctaLabel` + `ctaUrl` for this — separate from `linkLabel`/`linkUrl` which
+                    // renders an inline text link). Button label is FROZEN — see MASTER §21 CTA rule.
                     label: "Resort Registration Fee",
-                    body: "$54.04 total ($48 + tax + credit-card fee). Required by the resort for parking passes and guest wristbands. Register 24+ hours before arrival to save $10. Shown as a separate line on the price calculator; collected by the community, not by StayAtFlorida.",
-                    linkLabel: "Register at tidewaterhoa.com",
-                    linkUrl: "https://www.tidewaterhoa.com/registration/"
+                    body: "A one-time $54.04 fee paid directly to the resort before arrival. It includes up to 2 parking passes and 8 guest wristbands. Register at least 24 hours before arrival to save $10.",
+                    ctaLabel: "Register with the Resort",
+                    ctaUrl: "https://www.tidewaterhoa.com/registration/"
                 },
                 {
                     label: "Check-in",
@@ -582,6 +600,11 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         title: "Majestic Sun 811",
         listingHeadline: "8th-Floor Gulf Views at Majestic Sun",
         listingTagline: "Boardwalk to the beach—Seascape pools, golf, and dining nearby.",
+        // Homepage property-card subtitle + blurb. Source of truth:
+        // docs/listings/MS811/MASTER.md §13a. Lighter twin of TW2111's Signature Property tag —
+        // MS811 is NOT elevated to Signature yet (gated on the full brand + photo re-shoot).
+        cardSubtitle: "A StayAtFlorida Property",
+        cardShortDescription: "Miramar Beach comfort with Gulf views, resort amenities, beach access, and a relaxing coastal setting.",
         location: "Destin, Florida",
         description: `Experience the best of Destin at Majestic Sun, where Gulf-front living meets comfort and convenience. This beautifully appointed 8th-floor beachfront condo offers breathtaking panoramic views of the emerald waters and sugar-white sands of the Gulf of Mexico. Step onto your private balcony to enjoy morning coffee, afternoon sea breezes, or unforgettable sunsets over the water.
 

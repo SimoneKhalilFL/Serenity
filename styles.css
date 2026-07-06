@@ -2443,6 +2443,43 @@ button {
     color: var(--primary-color);
 }
 
+/* Contact section primary CTA — `Send an Inquiry` button.
+   Added 2026-07-06 in the Homepage Conversion Polish pass. Opens the same
+   `showContactModal()` as the header `Inquire` button — never a duplicate form.
+   See docs/listings/TW2111/MASTER.md §12 for CTA rules. */
+.contact-cta-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.contact-cta-primary {
+    min-width: 220px;
+    padding: 0.9rem 2.25rem;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+/* Secondary email affordance — visually subordinate to the `Send an Inquiry`
+   button so guests default to the tracked, form-based flow. */
+.contact-email-secondary {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.contact-email-secondary a {
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.contact-email-secondary a:hover {
+    color: var(--primary-color);
+}
+
 /* Footer */
 .footer {
     background-color: var(--text-primary);
@@ -3527,6 +3564,21 @@ body.has-listing-sticky {
     margin-right: auto;
 }
 
+/* Direct-booking-section CTA row. `Book Direct & Save` was retired from the
+   homepage hero in the 2026-07-06 Homepage Conversion Polish pass and now
+   lives here — in-context, next to the OTA-fee value story. */
+.why-book-direct-cta-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.why-book-direct-cta {
+    min-width: 220px;
+    padding: 0.85rem 2rem;
+    letter-spacing: 0.02em;
+}
+
 @media (max-width: 900px) {
     .why-book-direct-grid {
         grid-template-columns: 1fr;
@@ -3535,6 +3587,11 @@ body.has-listing-sticky {
 
     .why-book-direct-section {
         padding: 3rem 0 3.5rem;
+    }
+
+    .why-book-direct-cta {
+        width: 100%;
+        max-width: 320px;
     }
 }
 
@@ -4332,6 +4389,21 @@ body.has-listing-sticky {
     color: var(--primary-dark, #1E5BA8);
 }
 
+/* Distinct action button inside a stay-logistics item (e.g., `Register with the Resort` under
+   the Resort Registration Fee bullet). Introduced 2026-07-06 (Pricing/Logistics cleanup) so the
+   fee CTA reads as an action, not another sentence. Rendered on its own line beneath the body
+   for a clear tap target. Understated outline style (`.btn-outline`) — never a loud primary. */
+.stay-logistics-cta {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
 @media (max-width: 600px) {
     .stay-logistics-section {
         padding: 2.25rem 0;
@@ -4353,19 +4425,23 @@ body.has-listing-sticky {
     .stay-logistics-item-body {
         font-size: 0.875rem;
     }
+    .stay-logistics-cta {
+        margin-top: 0.75rem;
+        padding: 0.6rem 1.1rem;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        align-self: stretch;
+    }
 }
 
 /* ==========================================
-   Resort Registration Fee line + Price Calculator polish
-   Fee renamed from "Community registration fee" 2026-07-02 (Final Polish pass).
-   Rules from BRAND_GUIDELINES.md (legal/factual guardrails): never hidden, never footnoted,
-   never re-styled to look like a sales note.
+   Price Calculator — line-item polish
+   Resort Registration Fee was removed from the price calculator on 2026-07-06 (Pricing/Logistics
+   cleanup) per owner directive; the `.price-line-registration` block that lived here previously
+   is retired. The fee now surfaces only in Before You Arrive with a `Register with the Resort`
+   button. `.price-line-note` (below) remains — still used by the Nightly Rate `N nights` sub-label.
    ========================================== */
-.price-line-registration .price-label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
 
 .price-line-note {
     display: block;
