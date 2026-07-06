@@ -268,11 +268,25 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         bedrooms: 3,
         bathrooms: 3,
         baseNightlyRate: 225,
-        // Cleaning fee held at $250. A short-lived $250 → $200 reduction was staged on 2026-07-06
-        // (Pricing/Logistics cleanup) but reverted the same session before publishing — owner
-        // decided to keep the fee at $250 rather than absorb the ~$50/stay revenue hit. Do not
-        // re-reduce without a fresh owner directive. See docs/listings/TW2111/MASTER.md §21 + Changelog.
-        cleaningFee: 250,
+        // Cleaning fee reduced to $200 on 2026-07-06 (afternoon pass) per owner directive.
+        // History: original value $250 · staged reduction to $200 in the same-day
+        // Pricing/Logistics cleanup then reverted pre-publish · this pass ships the
+        // reduction alongside an extended-stay uplift (see below). Business intent:
+        // discount 1–2 night stays to fill gap nights AND capture a small revenue
+        // increase on 3+ night stays. See MASTER.md §21 Fee Schedule + Changelog.
+        cleaningFee: 200,
+        // Extended-stay uplift: flat $100 added to the lodging total on bookings of 3+
+        // nights. Sized at $100 (not $50) so that after the $50 cleaning-fee reduction
+        // above, 3+ night stays net **+$50 pre-tax / +$56 post-tax revenue vs. the prior
+        // $250-cleaning pricing** — the "add $50 to bookings > 2 days" owner directive
+        // applies on top of the cleaning reduction, not as an offset for it. Baked into
+        // the price calculator's "Nightly Rate" row (no separate line item) per the
+        // same owner directive. All four pricing sites in `app.js` —
+        // getSelectedStayPricing, contact-modal setup, email-body setup, and
+        // renderPriceCalculator — call `applyExtendedStayUplift()` so the calculator,
+        // the email preview, and the emailed request all agree. Impact table for
+        // TW2111 stays: 1-night -$56 · 2-night -$56 · 3-night +$56 · 7-night +$56.
+        extendedStayUplift: { thresholdNights: 3, amount: 100 },
         taxRate: 0.12,
         refundableDamageDeposit: 300,
         featured: false,
@@ -689,6 +703,11 @@ Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant 
         bathrooms: 2,
         baseNightlyRate: 300,
         cleaningFee: 250,
+        // Flat extended-stay uplift added to the lodging total when a booking meets or
+        // exceeds `thresholdNights`. Baked into the price calculator's "Nightly Rate" row
+        // (no separate line item) per owner directive 2026-07-06 (afternoon pass). Same
+        // policy as TW2111 — see the TW2111 property record for the full comment.
+        extendedStayUplift: { thresholdNights: 3, amount: 50 },
         taxRate: 0.12,
         refundableDamageDeposit: 300,
         featured: false,

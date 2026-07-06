@@ -603,6 +603,28 @@ function getDaysBetweenDates(start, end) {
     return Math.round(Math.abs((end - start) / oneDay));
 }
 
+/**
+ * Apply the extended-stay uplift policy. When a property carries an
+ * `extendedStayUplift` config and the stay is at or above the threshold,
+ * add the flat amount to the lodging total (`nightlyTotal`). Baked into
+ * the price calculator's "Nightly Rate" row rather than shown as a
+ * distinct line item per owner directive 2026-07-06 (afternoon pass).
+ *
+ * IMPORTANT: this helper must be called at every price-computation site
+ * to keep the calculator, the contact-modal booking summary, and the
+ * emailed request in agreement. Four sites today: `getSelectedStayPricing`,
+ * the contact-modal HTML setup, the email-body setup, and
+ * `renderPriceCalculator`. See `docs/listings/TW2111/MASTER.md` §21 Fee
+ * Schedule and `docs/brand/BRAND_GUIDELINES.md` pricing-transparency rule.
+ */
+function applyExtendedStayUplift(nightlyTotal, nights, property) {
+    if (typeof nightlyTotal !== 'number' || !nights || !property) return nightlyTotal;
+    const cfg = property.extendedStayUplift;
+    if (!cfg || typeof cfg.amount !== 'number' || typeof cfg.thresholdNights !== 'number') return nightlyTotal;
+    if (nights >= cfg.thresholdNights) return nightlyTotal + cfg.amount;
+    return nightlyTotal;
+}
+
 /** When check-in/out are selected, returns pricing breakdown; otherwise null. */
 function getSelectedStayPricing(property) {
     if (!property || !selectedStartDate || !selectedEndDate) return null;
@@ -615,6 +637,7 @@ function getSelectedStayPricing(property) {
         nightlyTotal += getAdjustedRate(currentDate, property);
         currentDate.setDate(currentDate.getDate() + 1);
     }
+    nightlyTotal = applyExtendedStayUplift(nightlyTotal, nights, property);
     const cleaningFee = property.cleaningFee;
     const subtotal = nightlyTotal + cleaningFee;
     const tax = subtotal * property.taxRate;
@@ -849,6 +872,7 @@ function showContactModal() {
             nightlyTotal += getAdjustedRate(currentDate, currentProperty);
             currentDate.setDate(currentDate.getDate() + 1);
         }
+        nightlyTotal = applyExtendedStayUplift(nightlyTotal, nights, currentProperty);
         const cleaningFee = currentProperty.cleaningFee;
         const subtotal = nightlyTotal + cleaningFee;
         const tax = subtotal * currentProperty.taxRate;
@@ -1009,6 +1033,7 @@ async function submitContactForm(event) {
             nightlyTotal += getAdjustedRate(currentDate, currentProperty);
             currentDate.setDate(currentDate.getDate() + 1);
         }
+        nightlyTotal = applyExtendedStayUplift(nightlyTotal, nights, currentProperty);
         const cleaningFee = currentProperty.cleaningFee;
         const subtotal = nightlyTotal + cleaningFee;
         const tax = subtotal * currentProperty.taxRate;
@@ -2685,6 +2710,12 @@ function renderPriceCalculator(property) {
         nightlyTotal += getAdjustedRate(currentDate, property);
         currentDate.setDate(currentDate.getDate() + 1);
     }
+    
+    // Apply extended-stay uplift (baked into the "Nightly Rate" row per owner directive
+    // 2026-07-06 afternoon — no separate line item). Must run BEFORE cleaning fee / tax
+    // so the tax base includes the uplift and the "Nightly Rate" value shown to the
+    // guest matches the amount that flows into the total.
+    nightlyTotal = applyExtendedStayUplift(nightlyTotal, nights, property);
     
     const cleaningFee = property.cleaningFee;
     const subtotal = nightlyTotal + cleaningFee;

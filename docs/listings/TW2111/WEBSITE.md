@@ -131,13 +131,13 @@ Rendered by `app.js#renderPriceCalculator`. Structure:
 
 **Panel heading:** `Your Stay` *(was `Price Calculator`)*
 
-**Line items in order (updated 2026-07-06 — Pricing/Logistics cleanup):**
+**Line items in order (updated 2026-07-06 — afternoon pricing pass):**
 
 | Line label | Amount | Notes |
 |---|---|---|
-| Nightly Rate | Sum of nightly rates × seasonalAdjustments | Sub-label: `N nights` (renders below the label) |
-| Cleaning Fee | $250 | Fixed. *(A $250 → $200 reduction was staged on 2026-07-06 during the Pricing/Logistics cleanup pass, then reverted the same session before publishing. Held at $250.)* |
-| Taxes | (Nightly + Cleaning) × 12% | Percentage moved off the label to keep the line clean |
+| Nightly Rate | (Sum of nightly rates × seasonalAdjustments) **+ $100 uplift on stays of 3+ nights** | Sub-label: `N nights` (renders below the label). The extended-stay uplift is **baked into this line's value** — no separate row. See MASTER §21 Extended-stay uplift disclosure rule. |
+| Cleaning Fee | **$200** | Fixed. Reduced from $250 → $200 on 2026-07-06 (afternoon pass) per owner directive. Paired with the extended-stay uplift above so 3+ night stays are +$56 net vs. prior pricing while 1–2 night stays are $56 cheaper. |
+| Taxes | (Nightly + Cleaning) × 12% | Percentage moved off the label to keep the line clean. Nightly line includes the uplift on 3+ night stays, so tax base grows accordingly. |
 | *— separator —* | | A hairline rule between the last cost line and the total row |
 | **Estimated Total** | Sum | `Total` heading upgraded to `Estimated Total` for accuracy |
 
@@ -151,13 +151,14 @@ Rendering rules for the trust note:
 - Sits directly below the `Estimated Total` row and above the `Email to Reserve These Dates` button.
 - Never re-word to `Save 15% booking direct!` or similar — the note is factual, not promotional.
 
-**Calculation rules (unchanged):**
+**Calculation rules (updated 2026-07-06 afternoon):**
 - Nightly total: sum of `getAdjustedRate(date, property)` across the stay.
-- Cleaning fee: fixed from `property.cleaningFee`.
-- Tax: `(nightlyTotal + cleaningFee) × property.taxRate`. Registration fee is **not** re-taxed by our calculator (it's already tax-inclusive from the community).
-- Total: `nightly + cleaning + tax + registrationFee`.
+- Extended-stay uplift: if `nights >= 3`, add `property.extendedStayUplift.amount` ($100 for TW2111) to the nightly total. Applied inside `app.js#applyExtendedStayUplift` — same helper called at all four pricing sites so the calculator, the contact-modal booking summary, and the emailed request stay in sync.
+- Cleaning fee: fixed from `property.cleaningFee` (now $200 for TW2111).
+- Tax: `(nightlyTotalWithUplift + cleaningFee) × property.taxRate`.
+- Total: `nightlyTotalWithUplift + cleaningFee + tax`. **Resort Registration Fee is NOT in this sum** — it's paid directly to the resort HOA and lives on the `Before You Arrive` card.
 
-**Trust rule (from MASTER §21):** The Resort Registration Fee must always be visible. Never move it to a footnote, never hide it behind a "See fees" toggle.
+**Extended-stay uplift transparency (updated 2026-07-06 afternoon):** The $100 uplift is baked into the `Nightly Rate` row value — not a separate line item. This is a pricing policy, not a hidden fee: the row shows exactly what the guest will pay for lodging, and the total below matches. See MASTER §21 Extended-stay uplift disclosure rule for the canonical policy statement.
 
 ## Why Book Direct with StayAtFlorida — property-page trust panel (new — Final Polish 2026-07-02)
 
