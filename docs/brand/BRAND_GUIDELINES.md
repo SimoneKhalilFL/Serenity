@@ -327,7 +327,7 @@ Rejected:
 
 ### Reviews on the direct site
 
-Two hard rules, enforced by every reviewer role (Chief Growth Officer, Brand Director, SEO Expert, QA Agent) and by the operating-system's honesty guarantee:
+Non-negotiable rules for anything that renders inside the property-page reviews section, enforced by every reviewer role (Chief Growth Officer, Brand Director, SEO Expert, QA Agent) and by the operating-system's honesty guarantee:
 
 #### No rating manipulation
 
@@ -347,8 +347,37 @@ Two hard rules, enforced by every reviewer role (Chief Growth Officer, Brand Dir
 
 #### Aggregate rating display
 
-- If a property record sets `hideReviewAggregate: true`, the site suppresses the aggregate rating chip in the reviews section but continues to render individual `Review` markup. This is a presentation choice, not a data change — the underlying ratings are real and the JSON-LD reviews still carry their honest per-review rating values.
-- If the aggregate chip is shown, its `ratingValue` and `reviewCount` must derive directly from the published `REVIEWS` array — no rounding, no hand-tuning. See `app.js#getReviewAggregate` for the canonical computation.
+- **Default: aggregate is shown**, rendered in the "featured reviews" format: `★★★★★ 5.0 · Average Rating · N Featured Reviews · Verified Guests`. This is the standing TW2111 pattern as of 2026-07-06 evening (see MASTER §23 for policy-decision history).
+- The aggregate `ratingValue` and `reviewCount` must derive **directly and only** from the published `REVIEWS` array on the property. No rounding, no hand-tuning, no averaging in numbers that aren't in the published set. See `app.js#getReviewAggregate` for the canonical computation.
+- **Scope discipline (linked to `No rating manipulation`).** Do NOT claim an aggregate scoped to reviews that are NOT in the published set. Example: TW2111 has 25 published reviews (all real 5-star) drawn from a 33-review OTA archive (which averages 4.74). The site may claim `5.0 from 25 featured reviews`. The site may NOT claim `5.0 from 33 verified reviews` (over-scopes the aggregate onto the 8 excluded sub-perfect reviews). If a future pass wants to surface the broader archive on the site (e.g., "curated from 33 verified reviews across VRBO, Airbnb, Booking.com"), use the honest **4.7 aggregate** for any statement scoped to those 33, and keep the 5.0 aggregate scoped to the published set. Two separate facts, honestly attributed. Never merge.
+- A property record MAY set `hideReviewAggregate: true` to suppress the aggregate chip while still rendering individual `Review` markup — kept as an escape hatch, but not the default. As of 2026-07-06 evening, no property currently sets it.
+- `AggregateRating` in JSON-LD follows the same discipline: `ratingValue` and `reviewCount` mirror what's rendered on the page; `AggregateRating` is omitted if `hideReviewAggregate` is set.
+
+#### Highlighted phrases in reviews
+
+- Reviews may render 1–3 short **key-phrase highlights** per review body — bold-wrapped substrings that improve scanability without changing the meaning of the review. Config: `highlights: ["..."]` on each entry in `config.js#REVIEWS[<propertyId>]`.
+- Each highlight must be an **exact substring of the review body** (case-insensitive match at render time). If the phrase isn't literally in the body, it can't be highlighted — no rewording the review to make a marketing phrase highlightable.
+- Highlights are for **honest scannable trust signals** — "extremely clean", "great host", "easy beach access", "definitely recommend", "kitchen had everything". Not for hyperbole, not for creating claims the guest didn't make.
+- Cap: max 3 highlights per review. Above that the section starts to feel busy and the trust signal weakens. Prefer 1–2 for shorter reviews.
+- Rendered as `<strong class="review-highlight">` via a non-overlapping match-range emitter in `app.js#renderReviewComment`. Overlapping phrases resolve longest-wins (so `great host` beats `host`).
+
+#### Featured "Guest Favorite" review card
+
+- At most **one** review per property may carry `guestFavorite: true` — that review is pinned above the review list as a "Guest Favorite" featured card.
+- Must be a **real review** from the published `REVIEWS` array. No fabrication, no rewriting, no compositing across multiple reviews. Same body verbatim as anywhere else on the site.
+- Rotate the pin manually only, with owner sign-off. Do not automate rotation — the editorial curation signal is part of the trust delivered.
+- The "Guest Favorite" badge and card style live in `styles.css` (`.review-featured*`); do not apply the badge to any element that isn't gated by `guestFavorite: true` on a real config-driven review record.
+
+#### Section heading and CTA
+
+- Canonical section heading: **`What Our Guests Are Saying`** (with `Loved by Our Guests` retained as an approved alternative for future style rotations only — do not use both simultaneously). Applies to both TW2111 and MS811. Previous heading `Guest Reviews` is retired.
+- Post-reviews conversion CTA is a soft prompt (`Ready to experience it yourself?` / `Check Availability`) linking to `#property-availability` and reusing the same `scrollToPropertyCalendar()` handler as the hero-level CTA. Do not replace the CTA copy with urgency language (`Book now before dates disappear`) — see `Urgency / scarcity messaging` guardrail below.
+
+#### Long-review preview and expand
+
+- Reviews whose raw comment length exceeds the threshold in `app.js#REVIEW_PREVIEW_CHAR_LIMIT` (currently 250 chars) render with a CSS `-webkit-line-clamp: 5` preview and a `Read more` / `Show less` toggle button. Toggle uses `aria-expanded` so screen readers announce state transitions.
+- Do NOT truncate the review body in `config.js` — always store the full text. Truncation is presentational, applied at render.
+- The threshold may be tuned in one place (`app.js#REVIEW_PREVIEW_CHAR_LIMIT`), but any change must be tested on mobile widths (320px minimum) to ensure the preview still shows ~4–5 lines.
 
 ### 404 / error page
 

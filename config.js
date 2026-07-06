@@ -180,14 +180,29 @@ const PROPERTIES = [
     {
         id: 4,
         title: "Twenty First",
-        // Owner directive 2026-07-06: suppress the aggregate rating chip on the TW2111
-        // property page. Individual review markup still renders (25 real 5-star reviews from
-        // VRBO + Airbnb + Booking.com); `AggregateRating` is intentionally omitted from
-        // JSON-LD. Consumed by `renderReviews()` in `app.js` and by the JSON-LD generator
-        // in `scripts/lib/listing-schema.cjs`. Do NOT flip to `false` without an owner
-        // directive — the honest 5.0 aggregate is not the concern; the concern is the
-        // brand-level operating-system rule to keep review presentation understated.
-        hideReviewAggregate: true,
+        // Owner directive 2026-07-06 (evening pass): aggregate rating chip is now
+        // SHOWN on the TW2111 property page using the "featured reviews" format
+        // ("5.0 Average Rating · 25 Featured Reviews · Verified Guests"). The
+        // earlier same-day `hideReviewAggregate: true` decision was reversed as part
+        // of the Phase 3 Sprint 1 review-section improvement pass. The JSON-LD
+        // `AggregateRating` is also re-emitted with `ratingValue: 5.0, reviewCount: 25`
+        // (aggregate scoped to the published set — honest against the 25 real
+        // max-rating reviews; the broader 33-review archive averages 4.74 and
+        // is NOT claimed as an aggregate here). See MASTER §23 and BRAND_GUIDELINES
+        // "Baked-in pricing adjustments"-adjacent "Aggregate rating display" rule.
+        // A short scannable "Loved For" chip strip renders below the aggregate.
+        // Chips are curated from the Airbnb `Loved for` category-signal capture
+        // (Hospitality 7 · View 6 · Cleanliness 3 · Beach 2 · Access 2) plus
+        // review-body themes (kitchen, family-friendly). Do not add chips that
+        // aren't supported by the review archive.
+        lovedFor: [
+            "Beachfront Views",
+            "Spotlessly Clean",
+            "Family Friendly",
+            "Exceptional Host",
+            "Fully Equipped Kitchen",
+            "Easy Beach Access"
+        ],
         listingHeadline: "Twenty First",
         listingBrandSubtitle: "A StayAtFlorida Signature Property",
         listingTagline: "Above the Gulf. Beyond Expectations.",
@@ -984,7 +999,9 @@ const REVIEWS = {
             sourceName: "Michelle B.",
             date: "2026-06-15",
             rating: 5,
-            comment: "This place was extremely clean and well maintained! It was very roomy and cozy! The front door was right in front of the elevator, which was convenient. Kitchen was fully with everything you need to if you want to stay in and cook. The host is amazing! Easy to reach and responds very quickly. We will definitely be back!!!"
+            guestFavorite: true,
+            comment: "This place was extremely clean and well maintained! It was very roomy and cozy! The front door was right in front of the elevator, which was convenient. Kitchen was fully with everything you need to if you want to stay in and cook. The host is amazing! Easy to reach and responds very quickly. We will definitely be back!!!",
+            highlights: ["extremely clean", "host is amazing"]
         },
         {
             id: 2,
@@ -993,7 +1010,8 @@ const REVIEWS = {
             sourceName: "Daphne H.",
             date: "2026-05-15",
             rating: 5,
-            comment: "Simone was awesome — she was so thorough and gave us everything we needed for easy parking instructions and check in! We were also able to extend a day and she was great to work with us on that! Great view — easy beach access, beautiful pool! Definitely recommend this host and property!"
+            comment: "Simone was awesome — she was so thorough and gave us everything we needed for easy parking instructions and check in! We were also able to extend a day and she was great to work with us on that! Great view — easy beach access, beautiful pool! Definitely recommend this host and property!",
+            highlights: ["easy beach access", "Definitely recommend"]
         },
         {
             id: 3,
@@ -1002,7 +1020,8 @@ const REVIEWS = {
             sourceName: "Candice",
             date: "2026-04-22",
             rating: 5,
-            comment: "Absolutely loved the room. It exceeded my expectations. I was very impressed with the layout and decor. The kitchen had everything needed for anything thought of. I've stayed at other condos that I had to go buy kitchen appliances just to cook the meals I wanted either due to not even having it or what was there was missing something or damaged. Loved that there was a coffee shop and souvenir shop there. Loved how close it was to the ocean and the umbrellas and chairs that were set up wasn't so many no one else who didn't rent one could have a view or sit close to the water."
+            comment: "Absolutely loved the room. It exceeded my expectations. I was very impressed with the layout and decor. The kitchen had everything needed for anything thought of. I've stayed at other condos that I had to go buy kitchen appliances just to cook the meals I wanted either due to not even having it or what was there was missing something or damaged. Loved that there was a coffee shop and souvenir shop there. Loved how close it was to the ocean and the umbrellas and chairs that were set up wasn't so many no one else who didn't rent one could have a view or sit close to the water.",
+            highlights: ["exceeded my expectations", "kitchen had everything"]
         },
         {
             id: 4,
@@ -1011,7 +1030,8 @@ const REVIEWS = {
             sourceName: "Shirley",
             date: "2025-05-15",
             rating: 5,
-            comment: "This 3 bedroom condo is great! Very clean. Plenty of seating. Great view. Well stocked kitchen. Check in and out processes were easy. Host is very friendly and responds quickly!! Would stay here again!!!"
+            comment: "This 3 bedroom condo is great! Very clean. Plenty of seating. Great view. Well stocked kitchen. Check in and out processes were easy. Host is very friendly and responds quickly!! Would stay here again!!!",
+            highlights: ["Very clean", "Well stocked kitchen"]
         },
         {
             id: 5,
@@ -1020,7 +1040,8 @@ const REVIEWS = {
             sourceName: "Joan W H.",
             date: "2026-04-15",
             rating: 5,
-            comment: "My husband and I went with two friends to see the airshow on Panama City Beach. The condo was perfect with the planes flying right in front of us. The condo was extra clean and never have I been in a condo that was so well equipped in the kitchen. Simone, the host, was wonderful with helping us — every time I text her with a question, she answered me immediately. We certainly will consider this unit for the next airshow."
+            comment: "My husband and I went with two friends to see the airshow on Panama City Beach. The condo was perfect with the planes flying right in front of us. The condo was extra clean and never have I been in a condo that was so well equipped in the kitchen. Simone, the host, was wonderful with helping us — every time I text her with a question, she answered me immediately. We certainly will consider this unit for the next airshow.",
+            highlights: ["extra clean", "so well equipped in the kitchen"]
         },
         {
             id: 6,
@@ -1029,7 +1050,8 @@ const REVIEWS = {
             sourceName: "Jenny",
             date: "2024-06-15",
             rating: 5,
-            comment: "Simone was always available for questions or concerns. Responded quickly to messages. Condo was clean and comfortable with an amazing view of the beach. Check in and check out was easy and convenient. We would definitely stay at her properties again."
+            comment: "Simone was always available for questions or concerns. Responded quickly to messages. Condo was clean and comfortable with an amazing view of the beach. Check in and check out was easy and convenient. We would definitely stay at her properties again.",
+            highlights: ["always available", "amazing view of the beach"]
         },
         {
             id: 7,
@@ -1038,7 +1060,8 @@ const REVIEWS = {
             sourceName: "Rebecca & Eric",
             date: "2025-04-15",
             rating: 5,
-            comment: "Simone's place was very nice. Beautiful view of the beach. Simone was a great host. Anything we need she was available and helped when needed. We would definitely stay with her again in the future."
+            comment: "Simone's place was very nice. Beautiful view of the beach. Simone was a great host. Anything we need she was available and helped when needed. We would definitely stay with her again in the future.",
+            highlights: ["Beautiful view of the beach", "great host"]
         },
         {
             id: 8,
@@ -1047,7 +1070,8 @@ const REVIEWS = {
             sourceName: "Jesika W.",
             date: "2026-06-15",
             rating: 5,
-            comment: "Very clean room with an awesome beach view. Was a perfect stay for family of 6. The host was very welcoming and helpful with any questions we had. Would definitely stay again."
+            comment: "Very clean room with an awesome beach view. Was a perfect stay for family of 6. The host was very welcoming and helpful with any questions we had. Would definitely stay again.",
+            highlights: ["Very clean", "awesome beach view"]
         },
         {
             id: 9,
@@ -1056,7 +1080,8 @@ const REVIEWS = {
             sourceName: "Robbilyn",
             date: "2025-10-15",
             rating: 5,
-            comment: "We loved everything about the condo. The view was beautiful and quiet. Simone was great to work with and always responded! We will definitely come back!"
+            comment: "We loved everything about the condo. The view was beautiful and quiet. Simone was great to work with and always responded! We will definitely come back!",
+            highlights: ["loved everything", "definitely come back"]
         },
         {
             id: 10,
@@ -1065,7 +1090,8 @@ const REVIEWS = {
             sourceName: "Debbie F.",
             date: "2025-06-15",
             rating: 5,
-            comment: "Over all this was a great place to stay. Host is friendly and very helpful through the whole process. (If I read thru everything that was sent I would not have needed to contact her.)"
+            comment: "Over all this was a great place to stay. Host is friendly and very helpful through the whole process. (If I read thru everything that was sent I would not have needed to contact her.)",
+            highlights: ["great place to stay", "Host is friendly and very helpful"]
         },
         {
             id: 11,
@@ -1074,7 +1100,8 @@ const REVIEWS = {
             sourceName: "Samantha",
             date: "2024-04-15",
             rating: 5,
-            comment: "Simone was lovely to work with! The view was definitely worth it. We walked to Pier Park and it was a fun place to be right in the middle of everything!"
+            comment: "Simone was lovely to work with! The view was definitely worth it. We walked to Pier Park and it was a fun place to be right in the middle of everything!",
+            highlights: ["view was definitely worth it", "walked to Pier Park"]
         },
         {
             id: 12,
@@ -1083,7 +1110,8 @@ const REVIEWS = {
             sourceName: "Ashley F.",
             date: "2026-04-15",
             rating: 5,
-            comment: "Loved this condo! Beautiful view and the host was exceptional."
+            comment: "Loved this condo! Beautiful view and the host was exceptional.",
+            highlights: ["Beautiful view", "host was exceptional"]
         },
         {
             id: 13,
@@ -1092,7 +1120,8 @@ const REVIEWS = {
             sourceName: "Anita P.",
             date: "2025-03-15",
             rating: 5,
-            comment: "Perfect getaway for my husband, mom, daughter and her friend. Will definitely come back. Host was super responsive!"
+            comment: "Perfect getaway for my husband, mom, daughter and her friend. Will definitely come back. Host was super responsive!",
+            highlights: ["Perfect getaway", "super responsive"]
         },
         {
             id: 14,
@@ -1101,7 +1130,8 @@ const REVIEWS = {
             sourceName: "Todd T.",
             date: "2024-05-15",
             rating: 5,
-            comment: "Clean condo, fully equipped, with quick access to the beach."
+            comment: "Clean condo, fully equipped, with quick access to the beach.",
+            highlights: ["fully equipped", "quick access to the beach"]
         },
         {
             id: 15,
@@ -1110,7 +1140,8 @@ const REVIEWS = {
             sourceName: "Tara",
             date: "2024-07-15",
             rating: 5,
-            comment: "The Airbnb was great in all ways."
+            comment: "The Airbnb was great in all ways.",
+            highlights: ["great in all ways"]
         },
         {
             id: 16,
@@ -1119,7 +1150,8 @@ const REVIEWS = {
             sourceName: "Danielle B.",
             date: "2025-05-15",
             rating: 5,
-            comment: "We had a great time and the host was excellent to work with. The condo was in perfect condition with plenty of room."
+            comment: "We had a great time and the host was excellent to work with. The condo was in perfect condition with plenty of room.",
+            highlights: ["host was excellent", "perfect condition"]
         },
         {
             id: 17,
@@ -1128,7 +1160,8 @@ const REVIEWS = {
             sourceName: "Megan O.",
             date: "2026-06-15",
             rating: 5,
-            comment: "We had a blast. A few things were messed up in the room but the host jumped right on having someone come check it and fix it! It was a good choice for my family!"
+            comment: "We had a blast. A few things were messed up in the room but the host jumped right on having someone come check it and fix it! It was a good choice for my family!",
+            highlights: ["had a blast", "good choice for my family"]
         },
         {
             id: 18,
@@ -1137,7 +1170,8 @@ const REVIEWS = {
             sourceName: "Stephanie",
             date: "2026-02-23",
             rating: 5,
-            comment: "Right on the water! So easy for a family to enjoy the beach. All the other guests were exceptionally kind. We stopped on a road trip during the off season, so the indoor pool was a bonus."
+            comment: "Right on the water! So easy for a family to enjoy the beach. All the other guests were exceptionally kind. We stopped on a road trip during the off season, so the indoor pool was a bonus.",
+            highlights: ["Right on the water", "easy for a family"]
         },
         {
             id: 19,
@@ -1146,7 +1180,8 @@ const REVIEWS = {
             sourceName: "Darlene T.",
             date: "2026-03-15",
             rating: 5,
-            comment: "Beach view was absolutely beautiful from our balcony."
+            comment: "Beach view was absolutely beautiful from our balcony.",
+            highlights: ["Beach view was absolutely beautiful"]
         },
         {
             id: 20,
@@ -1155,7 +1190,8 @@ const REVIEWS = {
             sourceName: "Estefania",
             date: "2025-04-15",
             rating: 5,
-            comment: "Great place and great view toward the beach! Place was clean. Enough space for our group of 7!"
+            comment: "Great place and great view toward the beach! Place was clean. Enough space for our group of 7!",
+            highlights: ["great view", "Enough space for our group of 7"]
         },
         {
             id: 21,
@@ -1164,7 +1200,8 @@ const REVIEWS = {
             sourceName: "John",
             date: "2025-05-15",
             rating: 5,
-            comment: "Great place with a great host! Would recommend to all."
+            comment: "Great place with a great host! Would recommend to all.",
+            highlights: ["great host", "recommend"]
         },
         {
             id: 22,
@@ -1173,7 +1210,8 @@ const REVIEWS = {
             sourceName: "Brandon",
             date: "2025-06-15",
             rating: 5,
-            comment: "It was a great stay and we're looking forward to coming back again."
+            comment: "It was a great stay and we're looking forward to coming back again.",
+            highlights: ["great stay", "coming back again"]
         },
         {
             id: 23,
@@ -1182,7 +1220,8 @@ const REVIEWS = {
             sourceName: "JESSICA R.",
             date: "2026-05-15",
             rating: 5,
-            comment: "Very nice condo. Directly on the beach. Easy check in."
+            comment: "Very nice condo. Directly on the beach. Easy check in.",
+            highlights: ["Directly on the beach", "Easy check in"]
         },
         {
             id: 24,
@@ -1191,7 +1230,8 @@ const REVIEWS = {
             sourceName: "Diana",
             date: "2024-07-15",
             rating: 5,
-            comment: "Very good host, very attentive."
+            comment: "Very good host, very attentive.",
+            highlights: ["Very good host", "very attentive"]
         },
         {
             id: 25,
@@ -1200,7 +1240,8 @@ const REVIEWS = {
             sourceName: "carrie g.",
             date: "2025-07-15",
             rating: 5,
-            comment: "Everything went great."
+            comment: "Everything went great.",
+            highlights: ["Everything went great"]
         }
     ],
     5: [

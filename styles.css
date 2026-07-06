@@ -2343,20 +2343,31 @@ button {
 }
 
 /*
- * Small understated "Verified guest" badge rendered between the author name and the
- * date. Owner directive 2026-07-06: unified attribution across all source platforms
- * (VRBO / Airbnb / Booking.com). Kept muted so it reads as a trust marker, not a shout.
+ * Small understated verified-guest badge rendered between the author name and the
+ * date. Owner directive 2026-07-06 (evening pass, reversing that morning's
+ * unified label): per-platform attribution — "Verified VRBO Guest", "Verified
+ * Airbnb Guest", "Verified Booking.com Guest", with a generic "Verified Guest"
+ * fallback when `platform` is missing (legacy MS811 reviews). Kept muted so it
+ * reads as a trust marker, not a shout. Optional per-platform tint modifiers
+ * below let us add subtle brand-color hints without loud badges.
  */
 .review-item-verified {
     display: inline-block;
     align-self: flex-start;
     font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    font-weight: 600;
+    letter-spacing: 0.03em;
     color: var(--text-secondary);
     text-transform: uppercase;
     padding: 0.05rem 0.4rem 0.05rem 0;
-    opacity: 0.75;
+    opacity: 0.85;
+}
+
+.review-item-verified--vrbo,
+.review-item-verified--airbnb,
+.review-item-verified--booking {
+    color: var(--text-primary);
+    opacity: 0.9;
 }
 
 .review-item-date {
@@ -2423,6 +2434,315 @@ button {
 .review-rating svg {
     width: 16px;
     height: 16px;
+}
+
+/* ==========================================
+ * Reviews section — Phase 3 Sprint 1 improvements (2026-07-06 evening)
+ *
+ * This block covers the new aggregate summary format, Loved For chip strip,
+ * Guest Favorite pinned card, per-review expand/collapse ("Read more"),
+ * bold highlight styling, and post-reviews conversion CTA. It sits with the
+ * rest of the reviews styles above so all review UI stays co-located.
+ * See renderReviews() and renderReviewListItem() in app.js.
+ * ========================================== */
+
+/* Featured aggregate summary — replaces the legacy `.reviews-summary--grouped`
+ * chip format for properties that opt in (currently TW2111). Composes a large
+ * star row, headline rating, and count/verified meta on a subtly-elevated card. */
+.reviews-summary--featured {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.65rem 1rem;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.02));
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: var(--radius-md, 8px);
+    flex-shrink: 0;
+}
+
+.reviews-summary--featured .reviews-summary-stars {
+    display: inline-flex;
+    gap: 0.15rem;
+    flex-shrink: 0;
+}
+
+.reviews-summary--featured .reviews-summary-stars svg {
+    width: 18px;
+    height: 18px;
+}
+
+.reviews-summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.25;
+}
+
+.reviews-summary-headline {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.reviews-summary-rating {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1;
+}
+
+.reviews-summary-rating-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.reviews-summary-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.reviews-summary-separator {
+    opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+    .reviews-summary--featured {
+        align-self: flex-start;
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Loved For chip strip — quick-scan trust chips derived from the review archive.
+ * Rendered between the section header and the review list. Subtle, premium; not
+ * loud badges. Each chip is a static <li> — no interaction, purely marketing. */
+.reviews-loved-for {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 1.25rem;
+    padding: 0.85rem 1rem;
+    background: var(--bg-alt, #f8fafc);
+    border-radius: var(--radius-md, 8px);
+}
+
+.reviews-loved-for-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    padding-right: 0.4rem;
+}
+
+.reviews-loved-for-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.reviews-loved-for-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    background: var(--bg-white, #fff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .reviews-loved-for {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .reviews-loved-for-chip {
+        font-size: 0.78rem;
+        padding: 0.3rem 0.65rem;
+    }
+}
+
+/* Guest Favorite featured card — pinned real review, opt-in via `guestFavorite`
+ * on the review record. Adds a small badge above a slightly-elevated review card.
+ * Card reuses `.review-list-item` internally, so text/highlight styles stay
+ * consistent with the rest of the list. */
+.review-featured {
+    margin-bottom: 1.5rem;
+}
+
+.review-featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+}
+
+.review-featured-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.review-featured-card {
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-white, #fff);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--radius-md, 8px);
+    box-shadow: 0 4px 12px rgba(17, 24, 39, 0.04);
+}
+
+.review-featured-card .review-list-item {
+    padding: 0;
+    border-bottom: none;
+}
+
+@media (max-width: 640px) {
+    .review-featured-card {
+        padding: 1rem 1.1rem;
+    }
+}
+
+/* Long-review preview + expand/collapse — reviews whose raw comment length
+ * exceeds REVIEW_PREVIEW_CHAR_LIMIT (see app.js) get a `.review-list-item--truncatable`
+ * container with a body/text/button structure. The `.review-item-text--clamped`
+ * class enables a CSS -webkit-line-clamp preview; toggling `.review-item-text--expanded`
+ * removes the clamp. Deterministic (character-based), so it works even when
+ * the review is inside an initially-hidden `.reviews-more-panel`. */
+.review-list-item--truncatable .review-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.review-item-text--clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* Line-clamp requires block/box display and cancels white-space: pre-wrap.
+     * Long reviews rarely contain hard newlines from the OTAs (they collapse
+     * whitespace at export), so this is a non-issue for the archive we have. */
+    white-space: normal;
+}
+
+.review-item-text--expanded {
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    overflow: visible;
+    white-space: pre-wrap;
+}
+
+.review-read-more-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    margin-left: -0.65rem;
+    background: transparent;
+    border: none;
+    color: var(--primary-color, #2563eb);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: var(--radius-sm, 4px);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.review-read-more-btn:hover,
+.review-read-more-btn:focus-visible {
+    background-color: rgba(37, 99, 235, 0.06);
+    outline: none;
+}
+
+.review-read-more-btn:focus-visible {
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+.review-read-more-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.review-read-more-btn.expanded svg {
+    transform: rotate(180deg);
+}
+
+/* Highlighted phrases inside review bodies — bold + subtle color lift, no
+ * background box or underline (keeps the tone premium, not clickbait-y). */
+.review-highlight {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Post-reviews conversion CTA — soft prompt below the review list. Uses the
+ * shared `.btn.btn-primary` style so it inherits any button-hover system
+ * changes automatically. */
+.reviews-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 2rem;
+    padding: 1.75rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(37, 99, 235, 0.01));
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    border-radius: var(--radius-md, 8px);
+}
+
+.reviews-cta-headline {
+    margin: 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+}
+
+.reviews-cta-btn {
+    min-width: 220px;
+}
+
+@media (max-width: 640px) {
+    .reviews-cta {
+        padding: 1.5rem 0.85rem;
+        margin-top: 1.5rem;
+    }
+    .reviews-cta-headline {
+        font-size: 1.1rem;
+    }
+    .reviews-cta-btn {
+        width: 100%;
+        min-width: 0;
+    }
 }
 
 /* Contact Section */

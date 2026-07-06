@@ -284,12 +284,18 @@ function buildVacationRentalSchema(property) {
 
     if (contact.phoneTel) schema.telephone = contact.phoneTel;
 
-    // Aggregate rating suppression — set `hideReviewAggregate: true` on the property record
-    // in `config.js` to omit `AggregateRating` from JSON-LD. Individual `Review` items still
-    // ship so per-review rich-snippets remain eligible. Owner directive 2026-07-06 for TW2111
-    // (§23 hybrid naming policy + BRAND_GUIDELINES `No rating manipulation` rule); MS811
-    // continues to emit the aggregate. Per-review ratings in `schema.review[].reviewRating`
-    // are always the real values from the source OTA — never altered.
+    // Aggregate rating — emitted when the property has at least one review AND
+    // does not opt out via `hideReviewAggregate: true` in `config.js`. The
+    // 2026-07-06 morning decision to hide TW2111's aggregate was REVERSED that
+    // evening as part of the Phase 3 Sprint 1 review-section improvement pass;
+    // the flag is retained as an escape hatch but is not active on any property.
+    // IMPORTANT: `ratingValue` is scoped to the PUBLISHED review set (the
+    // `reviews[]` array on the property), not the broader OTA archive. For
+    // TW2111 this means `5.0` from 25 published max-rating reviews — a true
+    // aggregate over that set. Do NOT claim `5.0 from 33` or similar: the
+    // 33-review archive averages 4.74. Individual `Review` items in
+    // `schema.review[]` always carry the real per-review ratings (never altered).
+    // See BRAND_GUIDELINES "Aggregate rating display" + "No rating manipulation".
     if (reviews.length > 0 && !property.hideReviewAggregate) {
         const avg = (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1);
         schema.aggregateRating = {

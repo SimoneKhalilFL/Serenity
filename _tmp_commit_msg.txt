@@ -1,0 +1,72 @@
+Review section rebuild v2: aggregate + chips + highlights + featured card + CTA
+
+Phase 3 Sprint 1 review-section improvement pass for TW2111. Reverses two of
+the morning ship's decisions (unified verified-guest label and hidden aggregate)
+and adds five new features. See docs/listings/TW2111/MASTER.md section 23 for
+policy history and BRAND_GUIDELINES.md for the standing rules.
+
+Reversals:
+- Per-platform attribution restored: "Verified VRBO Guest" / "Verified Airbnb
+  Guest" / "Verified Booking.com Guest" (fallback "Verified Guest" when
+  platform is missing -- protects legacy MS811 reviews).
+- Aggregate rating chip re-enabled in a new "featured reviews" format:
+  5.0 Average Rating - 25 Featured Reviews - Verified Guests. Aggregate scope
+  stays strictly on the 25 published reviews (does NOT claim 5.0 over the
+  broader 33-review OTA archive, which averages 4.74).
+
+New features:
+- Loved For chip strip below the aggregate -- six curated chips supported by
+  the Airbnb Loved-for signal capture and review-body themes.
+- Bold key-phrase highlights (1-3 per review) via a new renderReviewComment
+  helper that builds a non-overlapping match-range mask so overlapping phrases
+  never create nested <strong> tags.
+- Guest Favorite featured card pinned above the list (review id=1 Michelle B.),
+  with an amber-tinted card style and a Guest Favorite badge.
+- Section heading changed from "Guest Reviews" to "What Our Guests Are Saying".
+- Per-review long-body expand/collapse (deterministic 250-char threshold, CSS
+  line-clamp preview + aria-expanded toggle) -- works even inside the initially
+  hidden more-reviews panel.
+- Post-reviews conversion CTA "Ready to experience it yourself? Check
+  Availability" linking to #property-availability with scrollToPropertyCalendar.
+- Read-more button copy generic-ized: "Read 22 more reviews" to "Read more
+  reviews" (no running count, per owner directive).
+
+Code:
+- config.js: REVIEWS[4] gains highlights[] on all 25 entries + guestFavorite:
+  true on id=1; TW2111 property record gains lovedFor: [...] and drops
+  hideReviewAggregate: true (retained as escape hatch in the schema).
+- app.js: new REVIEW_PREVIEW_CHAR_LIMIT + REVIEW_PLATFORM_LABELS constants,
+  renderReviewComment() helper, toggleReviewText() global; renderReviewListItem
+  and renderReviews rewritten.
+- styles.css: .reviews-summary--featured, .reviews-loved-for(-chip),
+  .review-featured(-badge|-card), .review-item-text--(clamped|expanded),
+  .review-item-body, .review-read-more-btn, .review-highlight, .reviews-cta,
+  per-platform verified-badge tint modifiers, responsive breakpoints.
+- scripts/lib/listing-schema.cjs: comment rewrite documenting the reversal +
+  the "scope to published set" discipline. AggregateRating block automatically
+  re-emits now that hideReviewAggregate is absent from TW2111 --
+  ratingValue: "5.0", reviewCount: 25.
+- listing-4.html regenerated (JSON-LD verified); listing-5.html unchanged
+  (byte-identical for MS811); sitemap.xml unchanged.
+
+Docs:
+- MASTER section 23 rewritten (per-platform attribution now standing; aggregate
+  scope discipline formalized; highlights[] + guestFavorite rules added;
+  historical mapping in <details> gets a fourth entry).
+- MASTER section 24 open items (a) and (b) both marked RESOLVED.
+- BRAND_GUIDELINES.md: Aggregate rating display rule rewritten; new subsections
+  for Highlighted phrases, Guest Favorite card, section heading + CTA, and
+  long-review preview.
+- QA_CHECKLIST.md: legacy verified-guest check replaced with new critical
+  rows for the aggregate, chips, featured card, expand/collapse, highlights,
+  post-CTA, generic expand-button copy.
+
+QA:
+- node --check config.js clean.
+- node --check app.js clean.
+- Regenerated listing-4.html JSON-LD parsed and verified:
+  aggregateRating.ratingValue "5.0", aggregateRating.reviewCount 25,
+  review[0].author.name "Michelle" (Guest Favorite pin), all 20 inline
+  Review.reviewRating.ratingValue = 5.
+
+No MS811 property-content changes. No OTA-derivative files touched.

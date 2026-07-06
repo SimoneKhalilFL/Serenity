@@ -2993,6 +2993,24 @@ function renderExploreCards(property) {
 // ==========================================
 const REVIEWS_PREVIEW_COUNT = 3;
 const HOMEPAGE_REVIEWS_COUNT = 6;
+// Long-review truncation threshold (raw characters incl. spaces & punctuation).
+// Reviews whose `comment` exceeds this render with a CSS line-clamped preview
+// (~4-5 lines on both mobile and desktop) plus a per-item `Read more` toggle.
+// Reviews at or below this render fully with no toggle. Threshold chosen so the
+// 4 longest TW2111 reviews (Michelle, Daphne, Candice, Joan) get the treatment
+// while short one-liners stay clean. See renderReviewListItem() + toggleReviewText().
+const REVIEW_PREVIEW_CHAR_LIMIT = 250;
+// Per-platform "Verified X Guest" attribution — reverses the same-day 2026-07-06
+// morning "unified Verified guest" decision. Reasoning: each OTA badge is an
+// independent trust signal (VRBO/Airbnb/Booking.com each verify guest identity +
+// stay); collapsing them loses discriminative value. Fallback: legacy MS811
+// reviews have no `platform` field and gracefully degrade to `Verified Guest`.
+// See MASTER §23 for policy-decision history.
+const REVIEW_PLATFORM_LABELS = {
+    vrbo: 'Verified VRBO Guest',
+    airbnb: 'Verified Airbnb Guest',
+    booking: 'Verified Booking.com Guest'
+};
 
 /**
  * Score a single review for homepage display. Higher = more likely to feature.
@@ -3131,70 +3149,260 @@ function renderHomepageReviews() {
     section.hidden = false;
 }
 
+/**
+ * Bold-wrap key phrases from `highlights[]` inside a review comment, preserving
+ * escapeHtml safety and avoiding nested <strong> tags when phrases overlap.
+ *
+ * Strategy: match all highlight phrases (case-insensitive) against the raw text
+ * to build a sorted, non-overlapping list of match ranges, then emit HTML in a
+ * single pass — escapeHtml-ing the surrounding text and each matched range.
+ * Longer phrases claim overlap regions first, so "great host" beats "host".
+ *
+ * Highlights are curated per-review in config.js; keep to 1-3 short phrases per
+ * review (see BRAND_GUIDELINES.md "Reviews on the direct site").
+ */
+function renderReviewComment(text, highlights) {
+    const raw = String(text == null ? '' : text);
+    if (!raw) return '';
+    const list = Array.isArray(highlights) ? highlights.filter(h => typeof h === 'string' && h.length > 0) : [];
+    if (list.length === 0) return escapeHtml(raw);
+
+    const lowerRaw = raw.toLowerCase();
+    const ranges = [];
+    const sorted = list.slice().sort((a, b) => b.length - a.length);
+    sorted.forEach(phrase => {
+        const lowerPhrase = phrase.toLowerCase();
+        let idx = 0;
+        while (idx <= lowerRaw.length - lowerPhrase.length) {
+            const found = lowerRaw.indexOf(lowerPhrase, idx);
+            if (found === -1) break;
+            const start = found;
+            const end = found + lowerPhrase.length;
+            const overlaps = ranges.some(r => start < r.end && end > r.start);
+            if (!overlaps) ranges.push({ start, end });
+            idx = end;
+        }
+    });
+    if (ranges.length === 0) return escapeHtml(raw);
+    ranges.sort((a, b) => a.start - b.start);
+
+    let out = '';
+    let cursor = 0;
+    ranges.forEach(r => {
+        out += escapeHtml(raw.slice(cursor, r.start));
+        out += `<strong class="review-highlight">${escapeHtml(raw.slice(r.start, r.end))}</strong>`;
+        cursor = r.end;
+    });
+    out += escapeHtml(raw.slice(cursor));
+    return out;
+}
+
+/**
+ * Per-review expand/collapse handler. Wired via inline onclick from
+ * renderReviewListItem() and kept globally accessible (matches the existing
+ * `toggleDescription` pattern). Uses aria-expanded on the button so screen
+ * readers announce the state transition. Toggles a `--expanded` class on the
+ * text element, which pairs with the CSS `-webkit-line-clamp` reset.
+ */
+function toggleReviewText(button) {
+    const body = button.closest('.review-item-body');
+    if (!body) return;
+    const text = body.querySelector('.review-item-text');
+    const labelSpan = button.querySelector('.review-read-more-text');
+    if (!text) return;
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+        text.classList.remove('review-item-text--expanded');
+        button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('expanded');
+        if (labelSpan) labelSpan.textContent = button.getAttribute('data-label-more') || 'Read more';
+    } else {
+        text.classList.add('review-item-text--expanded');
+        button.setAttribute('aria-expanded', 'true');
+        button.classList.add('expanded');
+        if (labelSpan) labelSpan.textContent = button.getAttribute('data-label-less') || 'Show less';
+    }
+}
+
 function renderReviewListItem(review, index) {
-    // Attribution string: unified `Verified guest` label across all platforms per owner
-    // directive 2026-07-06. The `platform` field on each review is preserved for internal
-    // audit but drives no user-visible copy. If the multi-platform attribution rule is
-    // ever reversed (`Verified VRBO guest` / `Verified Airbnb guest` / `Verified Booking.com
-    // guest`), branch here on `review.platform`. See MASTER §23 Review Author Naming Policy.
-    const verifiedLabel = 'Verified guest';
-    return `
-        <div class="review-list-item" id="review-item-${index}">
+    // Per-platform attribution — see REVIEW_PLATFORM_LABELS. Legacy reviews
+    // without a `platform` field (currently MS811) gracefully fall back to
+    // the generic `Verified Guest` label. Do NOT invent a platform for a
+    // review that lacks the field (violates BRAND_GUIDELINES review rules).
+    const verifiedLabel = (review.platform && REVIEW_PLATFORM_LABELS[review.platform]) || 'Verified Guest';
+    const platformClass = review.platform ? ` review-item-verified--${review.platform}` : '';
+
+    const commentText = String(review.comment == null ? '' : review.comment);
+    const commentHtml = renderReviewComment(commentText, review.highlights);
+    const isLong = commentText.length > REVIEW_PREVIEW_CHAR_LIMIT;
+
+    // Truncatable long-review path: full comment HTML is emitted (so highlights
+    // apply consistently in both preview and expanded states) and CSS clamps
+    // the visible preview via `-webkit-line-clamp` when `.review-item-text--clamped`
+    // is set. The `--expanded` class removes the clamp. This keeps the DOM
+    // simple and avoids re-rendering on toggle. See toggleReviewText().
+    const idSuffix = `review-item-${index}`;
+    if (isLong) {
+        return `
+        <div class="review-list-item review-list-item--truncatable" id="${idSuffix}">
             <div class="review-list-item-head">
                 <div class="review-list-item-meta">
                     <span class="review-item-author">${escapeHtml(review.author)}</span>
-                    <span class="review-item-verified" aria-label="${verifiedLabel}">${verifiedLabel}</span>
+                    <span class="review-item-verified${platformClass}" aria-label="${verifiedLabel}">${verifiedLabel}</span>
                     <span class="review-item-date">${formatDate(review.date)}</span>
                 </div>
                 <div class="review-rating" aria-label="${review.rating} out of 5 stars">
                     ${renderStars(review.rating)}
                 </div>
             </div>
-            <div class="review-item-text">${escapeHtml(review.comment)}</div>
+            <div class="review-item-body">
+                <div class="review-item-text review-item-text--clamped" id="${idSuffix}-text">${commentHtml}</div>
+                <button type="button" class="review-read-more-btn"
+                    aria-expanded="false" aria-controls="${idSuffix}-text"
+                    data-label-more="Read more" data-label-less="Show less"
+                    onclick="toggleReviewText(this)">
+                    <span class="review-read-more-text">Read more</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
+    }
+    return `
+        <div class="review-list-item" id="${idSuffix}">
+            <div class="review-list-item-head">
+                <div class="review-list-item-meta">
+                    <span class="review-item-author">${escapeHtml(review.author)}</span>
+                    <span class="review-item-verified${platformClass}" aria-label="${verifiedLabel}">${verifiedLabel}</span>
+                    <span class="review-item-date">${formatDate(review.date)}</span>
+                </div>
+                <div class="review-rating" aria-label="${review.rating} out of 5 stars">
+                    ${renderStars(review.rating)}
+                </div>
+            </div>
+            <div class="review-item-text">${commentHtml}</div>
         </div>
     `;
 }
 
 function renderReviews(reviews, avgRating, property) {
-    const previewCount = Math.min(REVIEWS_PREVIEW_COUNT, reviews.length);
-    const previewReviews = reviews.slice(0, previewCount);
-    const restReviews = reviews.slice(previewCount);
+    // Guest Favorite pinning — one review may opt in via `guestFavorite: true`
+    // in config.js. When present it's hoisted OUT of the preview + more-reviews
+    // lists (so it doesn't render twice) and pinned above them as a featured
+    // card with a "Guest Favorite" badge. See item #8 of the Phase 3 Sprint 1
+    // review-section improvement pass (2026-07-06 evening).
+    const favIndex = reviews.findIndex(r => r && r.guestFavorite === true);
+    const featuredReview = favIndex >= 0 ? reviews[favIndex] : null;
+    const listReviews = favIndex >= 0
+        ? reviews.slice(0, favIndex).concat(reviews.slice(favIndex + 1))
+        : reviews.slice();
+
+    const previewCount = Math.min(REVIEWS_PREVIEW_COUNT, listReviews.length);
+    const previewReviews = listReviews.slice(0, previewCount);
+    const restReviews = listReviews.slice(previewCount);
     const hasMoreReviews = restReviews.length > 0;
-    const moreCount = restReviews.length;
-    const moreLabel = `Read ${moreCount} more ${moreCount === 1 ? 'review' : 'reviews'}`;
-    // Aggregate rating chip suppression — set `hideReviewAggregate: true` on a property
-    // record in `config.js` to hide the `X.X ★★★★★ · N reviews` block from that
-    // property's reviews section. Individual reviews still render, and JSON-LD still
-    // emits per-review `Review` markup (see `scripts/lib/listing-schema.cjs`). Owner
-    // directive 2026-07-06 for TW2111. Do NOT hide unconditionally — MS811 and any
-    // future properties may want the aggregate visible.
+    // Generic label per owner directive 2026-07-06 (evening): drop the running
+    // count from the expand button. Was `Read 22 more reviews`; now `Read more
+    // reviews`. Keeps the button copy stable regardless of how many reviews
+    // are curated/added to the archive.
+    const moreLabel = 'Read more reviews';
+
+    // Aggregate rating chip — the earlier same-day `hideReviewAggregate: true`
+    // decision was REVERSED by the owner (2026-07-06 evening) for TW2111. This
+    // property now emits a "featured reviews" aggregate summary:
+    //     ★★★★★ 5.0 · Average Rating · 25 Featured Reviews · Verified Guests
+    // The `hideReviewAggregate` flag is retained as an escape hatch (still
+    // suppresses the block when set) but is not active on any property. Do NOT
+    // claim an aggregate scoped to more than the published `reviews` set —
+    // the 33-review archive averages 4.74, not 5.0. See BRAND_GUIDELINES
+    // "Aggregate rating display".
     const hideAggregate = !!(property && property.hideReviewAggregate === true);
-    // Privacy / anonymization disclosure — rendered only when the property record explicitly
-    // opts in via `reviewsPrivacyNote`. Kept as an optional hook for future use, but as of the
-    // 2026-07-02 Final Polish pass NO property currently sets it: TW2111 reverted to the
-    // platform-generic `Verified Airbnb guest` author string per MASTER §23 (Review Author Naming
-    // Policy REVERTED), and MS811 uses real Airbnb-supplied first names. If pseudonymous or
-    // otherwise privacy-anonymized authors are ever reintroduced, populate `reviewsPrivacyNote`
-    // on the property and this block will render the disclosure.
+    const totalReviews = reviews.length;
+    const roundedAvg = Math.round(avgRating * 10) / 10;
+    const aggregateBlock = hideAggregate ? '' : `
+                        <div class="reviews-summary reviews-summary--featured" role="group" aria-label="Overall guest rating">
+                            <div class="reviews-summary-stars" aria-hidden="true">${renderStars(Math.round(roundedAvg))}</div>
+                            <div class="reviews-summary-content">
+                                <div class="reviews-summary-headline">
+                                    <span class="reviews-summary-rating">${roundedAvg.toFixed(1)}</span>
+                                    <span class="reviews-summary-rating-label">Average Rating</span>
+                                </div>
+                                <div class="reviews-summary-meta">
+                                    <span class="reviews-summary-count">${totalReviews} Featured ${totalReviews === 1 ? 'Review' : 'Reviews'}</span>
+                                    <span class="reviews-summary-separator" aria-hidden="true">·</span>
+                                    <span class="reviews-summary-verified">Verified Guests</span>
+                                </div>
+                            </div>
+                        </div>`;
+
+    // Loved For chip strip — opt-in per property via `lovedFor: [...]` in
+    // config.js. Chips must be supported by review-body themes and/or the
+    // Airbnb `Loved for` category-signal capture (see TW2111 reviews archive).
+    // Do NOT invent chips. Falsy/empty renders nothing.
+    const lovedForList = Array.isArray(property && property.lovedFor)
+        ? property.lovedFor.filter(c => typeof c === 'string' && c.trim().length > 0)
+        : [];
+    const lovedForBlock = lovedForList.length > 0 ? `
+                        <div class="reviews-loved-for" role="group" aria-label="What guests love about this property">
+                            <span class="reviews-loved-for-label">Loved for</span>
+                            <ul class="reviews-loved-for-list">
+                                ${lovedForList.map(chip => `<li class="reviews-loved-for-chip">${escapeHtml(chip)}</li>`).join('')}
+                            </ul>
+                        </div>` : '';
+
+    // Featured "Guest Favorite" card — pinned above the list. Uses a real,
+    // opt-in review only (guestFavorite flag on the review record). The index
+    // `-1` on the featured item keeps DOM ids from colliding with the list.
+    const featuredBlock = featuredReview ? `
+                        <div class="review-featured" aria-labelledby="review-featured-badge">
+                            <div class="review-featured-badge" id="review-featured-badge">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <span>Guest Favorite</span>
+                            </div>
+                            <div class="review-featured-card">
+                                ${renderReviewListItem(featuredReview, -1)}
+                            </div>
+                        </div>` : '';
+
+    // Post-reviews CTA — soft conversion prompt below the review list. Links
+    // to the same `#property-availability` anchor as the hero-level "Check
+    // Availability" button (see line ~1843) and uses the same click handler
+    // (`scrollToPropertyCalendar`) so the scroll+focus behavior stays consistent.
+    // Uses the standard primary button style for hierarchy consistency.
+    const ctaBlock = `
+                        <div class="reviews-cta">
+                            <p class="reviews-cta-headline">Ready to experience it yourself?</p>
+                            <a href="#property-availability" class="btn btn-primary reviews-cta-btn" onclick="scrollToPropertyCalendar(event)">Check Availability</a>
+                        </div>`;
+
+    // Privacy / anonymization disclosure — retained hook for future use, but
+    // as of the 2026-07-06 review section rebuild, NO property sets it: TW2111
+    // uses hybrid first-name-only attribution per-platform (see MASTER §23),
+    // and MS811 uses legacy names. If pseudonymous authors are reintroduced,
+    // set `reviewsPrivacyNote` on the property and this block will render.
     const privacyNote = property && typeof property.reviewsPrivacyNote === 'string' && property.reviewsPrivacyNote.trim()
         ? `<p class="reviews-privacy-note">${escapeHtml(property.reviewsPrivacyNote.trim())}</p>`
         : '';
+
     const expandBlock = hasMoreReviews ? `
-                <div class="description-full reviews-more-panel" style="display: none;">
-                    <div class="review-list">
-                        ${restReviews.map((r, i) => renderReviewListItem(r, previewCount + i)).join('')}
-                    </div>
-                </div>
-                <button type="button" class="read-more-btn reviews-expand-btn" onclick="toggleDescription(this)"
-                    data-read-more="${moreLabel.replace(/"/g, '&quot;')}"
-                    data-show-less="Show fewer reviews">
-                    <span class="read-more-text">${moreLabel}</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-            ` : '';
-    
+                        <div class="description-full reviews-more-panel" style="display: none;">
+                            <div class="review-list">
+                                ${restReviews.map((r, i) => renderReviewListItem(r, previewCount + i)).join('')}
+                            </div>
+                        </div>
+                        <button type="button" class="read-more-btn reviews-expand-btn" onclick="toggleDescription(this)"
+                            data-read-more="${moreLabel.replace(/"/g, '&quot;')}"
+                            data-show-less="Show fewer reviews">
+                            <span class="read-more-text">${moreLabel}</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>` : '';
+
     return `
         <div class="reviews-section" id="property-reviews">
             <div class="container">
@@ -3206,29 +3414,21 @@ function renderReviews(reviews, avgRating, property) {
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                                 </svg>
                             </div>
-                            <h2 class="reviews-group-title">Guest Reviews</h2>
+                            <h2 class="reviews-group-title">What Our Guests Are Saying</h2>
                         </div>
-                        ${hideAggregate ? '' : `
-                        <div class="reviews-summary reviews-summary--grouped">
-                            <div class="reviews-rating">
-                                <span class="rating-number">${avgRating}</span>
-                                <div>
-                                    <div class="rating-stars">
-                                        ${renderStars(Math.round(avgRating))}
-                                    </div>
-                                    <div class="rating-count">${reviews.length} ${reviews.length === 1 ? 'review' : 'reviews'}</div>
-                                </div>
-                            </div>
-                        </div>`}
+                        ${aggregateBlock}
                     </div>
                     <div class="section-content reviews-group-content">
                         ${privacyNote}
+                        ${lovedForBlock}
+                        ${featuredBlock}
                         <div class="description-preview">
                             <div class="review-list">
                                 ${previewReviews.map((r, i) => renderReviewListItem(r, i)).join('')}
                             </div>
                         </div>
                         ${expandBlock}
+                        ${ctaBlock}
                     </div>
                 </div>
             </div>
