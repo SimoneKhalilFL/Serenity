@@ -3160,11 +3160,52 @@ function renderHomepageReviews() {
         const list = (typeof REVIEWS === 'object' && REVIEWS && REVIEWS[p.id]) ? REVIEWS[p.id] : [];
         if (list.length === 0) return '';
         const shortName = getPropertyShortName(p);
-        return `<a class="home-reviews-cta-link" href="${getListingRelativePath(p.id)}#property-reviews" onclick="event.preventDefault(); navigateToProperty(${p.id}, { scrollToSectionId: 'property-reviews' });">Read all ${list.length} ${escapeHtml(shortName)} reviews<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>`;
+        // Copy refinement 2026-07-06 late-evening: dropped the running count
+        // ("Read all 25 Twenty First reviews") in favor of a compact `View All`
+        // label. The count feels marketing-forward and shifts with every added
+        // review; `View All` is timeless and consistent with premium
+        // convention (Ritz-Carlton, Aman, etc.). Property name kept in the
+        // aria-label so screen readers still get the disambiguating context
+        // when both property CTAs render side-by-side. See BRAND_GUIDELINES
+        // "No running counts in CTA labels".
+        const ariaLabel = `View all ${escapeHtml(shortName)} reviews`;
+        return `<a class="home-reviews-cta-link" href="${getListingRelativePath(p.id)}#property-reviews" onclick="event.preventDefault(); navigateToProperty(${p.id}, { scrollToSectionId: 'property-reviews' });" aria-label="${ariaLabel}">View All<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg></a>`;
     }).filter(Boolean).join('');
     ctaRow.innerHTML = ctaLinks;
 
     section.hidden = false;
+}
+
+/**
+ * Build the sources-based trust line for the aggregate summary. Returns a
+ * copy-ready string like `Verified Reviews from Airbnb & VRBO` when review
+ * platforms are known, or the generic `Verified Guest Reviews` when they
+ * aren't. Never invents a source that isn't present in the array.
+ *
+ * Platform display order is FIXED (Airbnb → VRBO → Booking.com) to match the
+ * user-facing example format from the 2026-07-06 late-evening copy refinement
+ * directive; ordering by review count would rearrange the header every time
+ * a review is added and hurts brand-consistent typography. Two-source case
+ * joins with `&`, three-source case with `,` + `&` (Oxford-comma-less).
+ */
+function buildReviewSourcesLabel(reviews) {
+    const platformLabelMap = { vrbo: 'VRBO', airbnb: 'Airbnb', booking: 'Booking.com' };
+    const preferredOrder = ['airbnb', 'vrbo', 'booking'];
+    const present = new Set();
+    if (Array.isArray(reviews)) {
+        reviews.forEach(r => {
+            if (r && typeof r.platform === 'string' && platformLabelMap[r.platform]) {
+                present.add(r.platform);
+            }
+        });
+    }
+    const ordered = preferredOrder.filter(p => present.has(p));
+    if (ordered.length === 0) return 'Verified Guest Reviews';
+    const labels = ordered.map(p => platformLabelMap[p]);
+    if (labels.length === 1) return `Verified Reviews from ${labels[0]}`;
+    if (labels.length === 2) return `Verified Reviews from ${labels[0]} & ${labels[1]}`;
+    const last = labels.pop();
+    return `Verified Reviews from ${labels.join(', ')} & ${last}`;
 }
 
 /**
@@ -3368,16 +3409,23 @@ function renderReviews(reviews, avgRating, property) {
 
     // Aggregate rating chip — the earlier same-day `hideReviewAggregate: true`
     // decision was REVERSED by the owner (2026-07-06 evening) for TW2111. This
-    // property now emits a "featured reviews" aggregate summary:
-    //     ★★★★★ 5.0 · Average Rating · 25 Featured Reviews · Verified Guests
+    // property now emits a premium-toned aggregate summary:
+    //     ★★★★★ 5.0 · Average Rating · Verified Reviews from Airbnb, VRBO & Booking.com
+    // Copy refinement 2026-07-06 late-evening: dropped the "25 Featured Reviews"
+    // count in favor of a sources-based trust line ("Verified Reviews from
+    // Airbnb & VRBO" style). The count-driven line felt marketing-forward;
+    // the sources line is timeless and self-updating (adding a review doesn't
+    // change the copy) while doubling as a legitimacy signal — three distinct
+    // major OTAs verifying the same property. Fall back to "Verified Guest
+    // Reviews" when no `platform` is set on any review (currently MS811).
     // The `hideReviewAggregate` flag is retained as an escape hatch (still
     // suppresses the block when set) but is not active on any property. Do NOT
     // claim an aggregate scoped to more than the published `reviews` set —
     // the 33-review archive averages 4.74, not 5.0. See BRAND_GUIDELINES
     // "Aggregate rating display".
     const hideAggregate = !!(property && property.hideReviewAggregate === true);
-    const totalReviews = reviews.length;
     const roundedAvg = Math.round(avgRating * 10) / 10;
+    const sourcesLabel = buildReviewSourcesLabel(reviews);
     const aggregateBlock = hideAggregate ? '' : `
                         <div class="reviews-summary reviews-summary--featured" role="group" aria-label="Overall guest rating">
                             <div class="reviews-summary-stars" aria-hidden="true">${renderStars(Math.round(roundedAvg))}</div>
@@ -3387,9 +3435,7 @@ function renderReviews(reviews, avgRating, property) {
                                     <span class="reviews-summary-rating-label">Average Rating</span>
                                 </div>
                                 <div class="reviews-summary-meta">
-                                    <span class="reviews-summary-count">${totalReviews} Featured ${totalReviews === 1 ? 'Review' : 'Reviews'}</span>
-                                    <span class="reviews-summary-separator" aria-hidden="true">·</span>
-                                    <span class="reviews-summary-verified">Verified Guests</span>
+                                    <span class="reviews-summary-verified">${escapeHtml(sourcesLabel)}</span>
                                 </div>
                             </div>
                         </div>`;
