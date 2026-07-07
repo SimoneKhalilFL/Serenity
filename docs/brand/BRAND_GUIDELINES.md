@@ -267,6 +267,38 @@ Rejected:
 
 > BEACHFRONT!! Book NOW!! Amazing views, PERFECT for families, best rates, luxury paradise on the Gulf Coast!!!
 
+### OTA platform titles
+
+Introduced 2026-07-06 evening (Phase 3 initiatives #5 + #6). Non-negotiable rules for every OTA listing headline / title field. Enforced by Marketing Director + Brand Director on any OTA copy change. See `docs/listings/*/AIRBNB.md#title--locked-ship-string-phase-3-initiative-5-2026-07-06`, `docs/listings/*/VRBO.md#headline--locked-ship-string-phase-3-initiative-6-2026-07-06`, and MASTER §12 for the currently-shipping strings.
+
+#### Brand prefix identity
+
+- **The first ~29 characters of every OTA title must be identical across every platform.** Currently: `Twenty First · Gulf-Front 3BR`. This is a deliberate cross-platform recognition mechanism — a guest who cross-shops the same brand on Airbnb → VRBO → Booking.com → Houfy (a large share of high-consideration vacation-rental bookers do exactly this) reads the same brand+differentiator every time. Consistent prefix, platform-specific tails.
+- Never introduce a platform-specific title that breaks the prefix identity. If a future title change is needed on one platform, the change either applies to all platforms or the change is rejected.
+
+#### Middot separator
+
+- The separator glyph is `·` (U+00B7, middle dot). Do not substitute `•` (bullet), `.` (period), `-` (hyphen), or `|` (pipe). The same glyph is used on the direct site (hero trust strip, reviews aggregate summary) — one visual rhythm across every brand touchpoint.
+
+#### Platform limits and prime real estate
+
+- **Airbnb:** input field limit 50 chars; mobile search tiles truncate at ~35 chars. First 35 characters carry ~80% of the click decision on mobile. Keep the brand + differentiator inside that window. Do not include the city in the title — Airbnb already surfaces the city as a tile subtitle; duplicating it wastes prime real estate. (Verified 2026-07-06 via [Airbnb Resource Center](https://www.airbnb.com/resources/hosting-homes/a/guidelines-for-writing-your-listing-title-533).)
+- **VRBO:** input field range 20–80 chars for the headline; ≤40 chars is the soft-recommended threshold for search prominence. VRBO surfaces the city less prominently on tiles than Airbnb — include the city in the headline itself. Include `Sleeps N` because VRBO's core audience filters on guest count first. (Verified 2026-07-06 via [VRBO Help — About listing guidelines](https://help.vrbo.com/articles/What-are-the-listing-guidelines).)
+- **Booking.com:** title field limit varies by market; verify current limit in the extranet before locking. Rebrand-in-place pass pending in Phase 3 initiative #11.
+- **Houfy:** title field limit varies; verify in the host dashboard. Rebrand-in-place pass pending in Phase 3 initiative #12. Legacy Houfy title `Fun in the Sun` is a P1 forbidden-string violation until #12 ships.
+- Re-verify all limits once per quarter — platforms adjust silently, and a headline that read at 50 chars but exceeds an updated 45-char cap gets auto-truncated at the tail (killing whatever hook was engineered there).
+
+#### Never in an OTA title
+
+- Floor number (`21st`, `21st floor`, `Floor 21`, `8th floor`).
+- Unit number (`unit 2111`, `TW2111`, `condo 2111`).
+- Retired brand names (`Fun in the Sun`, `Serenity`, `Serenity Rentals`).
+- Resort name as a lead (`Tidewater Beach Resort · Twenty First …`) — the property brand leads, the resort is context (mentioned in the body copy where operationally required, never in the title).
+- Adjectives without proof (`Amazing`, `Stunning`, `Perfect`, `Beautiful`, `Dream`, `Paradise`).
+- Soft-positioning language in the title itself (`Luxury`, `Boutique`, `Signature`) — reserve for the description body where it can be substantiated; in the title it reads as filler that costs chars in a fixed budget. Exception: `Luxury` may appear on a case-by-case basis if it displaces a weaker word AND the chars fit AND the Brand Director signs off; default posture is to keep it out.
+- Marketing punctuation: `!`, `!!!`, all-caps, price claims (`Best rate`, `Book Direct & Save`), urgency language (`Book Now`, `Special offer`, `Ends today`).
+- Emoji.
+
 ### Primary CTA
 
 Approved (choose one for its context):

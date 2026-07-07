@@ -6,18 +6,41 @@
 >
 > **Purpose:** Platform-ready copy for the Twenty First VRBO listing. The owner copies each block into the matching VRBO editor field. **Cursor never publishes to VRBO.**
 >
-> **Platform limits:** Title ≤65 chars typical. Description supports long-form 800–1,500 words. Verify current VRBO limits before publishing.
+> **Platform limits (verified 2026-07-06 via [VRBO Help — About listing guidelines](https://help.vrbo.com/articles/What-are-the-listing-guidelines)):** Headline: minimum 20 chars, maximum 80 chars. Description: minimum 400 chars, maximum 10,000 chars. Some 2026 host guides recommend keeping the headline ≤40 chars for search prominence — treated as a soft guideline, not a hard limit. Verify current VRBO limits before publishing.
 
 ---
 
-## SEO Title (57 / 65 chars)
+## Headline — locked ship string *(Phase 3 initiative #6, 2026-07-06)*
 
-**`Twenty First — Luxury 3BR Beachfront in Panama City Beach`**
+**`Twenty First · Gulf-Front 3BR · Sleeps 8 · Panama City Beach`** *(60 / 80 chars)*
 
-Alternative approved options:
+**Copy this exact string into the VRBO listing editor's `Headline` field.** Middots are `·` (U+00B7), not periods. No trailing punctuation.
 
-- `Twenty First — Owner-Hosted 3BR/3BA on the Emerald Gulf` *(55 chars)*
-- `Twenty First — Panama City Beach Beachfront Family Retreat` *(58 chars)*
+**Ship rationale:**
+
+- **Same brand prefix as the Airbnb title.** The first 29 characters (`Twenty First · Gulf-Front 3BR`) match the Airbnb title exactly — deliberate. A guest who cross-shops the same brand across Airbnb and VRBO (which many do, especially for high-consideration bookings) reads the same brand+differentiator on both platforms and recognizes it as the same listing. Reduces the "are these the same place?" confusion that kills conversions.
+- **VRBO extension adds sleeps + city.** VRBO surfaces the city less prominently than Airbnb on search tiles, so we include `Panama City Beach` in the headline itself. `Sleeps 8` speaks to VRBO's core audience (families and groups booking a whole home, filtering by guest count) — the "who fits here" question VRBO users ask first.
+- **Middot separators throughout.** Consistent visual rhythm; same glyph as the Airbnb title.
+- **Under the 80-char hard limit, under the recommended 40-char soft limit for the first two segments.** The `Twenty First · Gulf-Front 3BR` opening runs 29 chars — under the soft 40-char threshold that keeps the brand + core differentiator visible on truncated tile views.
+- **No fluff, no adjectives.** `Luxury`, `Beautiful`, `Stunning`, `Family Retreat` — all deliberately absent. VRBO's search-signal weight is on specifics (bedroom count, sleeps, city, feature) not adjectives (per the [`Poor examples`](https://help.vrbo.com/articles/How-do-I-list-my-property) VRBO itself calls out in its listing guidance).
+
+**Owner sign-off:** 2026-07-06 evening. Working candidate from the Sprint 1 audit (`Twenty First — Beachfront 3BR · Gulf Views · Sleeps 8 · Panama City Beach`, 73 chars) was in the running but the owner picked a tighter formulation that matches the Airbnb prefix character-for-character. Recorded in [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #6.
+
+**Never use:** floor number, unit number, retired brand names (`Fun in the Sun`, `Serenity`), resort name as a lead (`Tidewater Beach Resort · Twenty First …`), all-caps, exclamation marks, or promotional language (`Book Now`, `Best rate`, `Special offer`).
+
+## Headline — alternates on file *(not shipping)*
+
+Retained for reference only. Do **not** paste these into the VRBO dashboard without a fresh owner-approval pass.
+
+| Candidate | Chars | Note |
+|---|---|---|
+| `Twenty First — Beachfront 3BR · Gulf Views · Sleeps 8 · Panama City Beach` | 73 | Sprint 1 working candidate. Ran on `Beachfront` (softer) vs. `Gulf-Front` (more specific — front-of-Gulf, not across-the-street-from-beach). Ship string keeps `Gulf-Front` for the honesty differentiator. |
+| `Twenty First — Gulf-Front 3BR · Panoramic Views · Sleeps 8 · Panama City Beach` | 78 | Near-limit variant. `Panoramic Views` beats `Gulf Views` for the emerald-water-view claim, but at 78 chars leaves no room for a future tweak and dies against the 80-char hard cap. |
+| `Twenty First — Luxury Gulf-Front 3BR · Sleeps 8 · Panama City Beach FL` | 70 | Adds `Luxury` (positioning) + `FL` (state suffix). Ruled out: `Luxury` in a VRBO headline is soft language ([VRBO guidance](https://help.vrbo.com/articles/How-do-I-list-my-property) prefers specifics over adjectives); `FL` is a US-only signal that reads odd for guests searching internationally. |
+| `Twenty First — Panama City Beach 3BR · Direct Gulf Views · Sleeps 8` | 67 | Puts city right after brand for search density. Ruled out for asymmetry with the Airbnb title, which keeps city in the tile subtitle. |
+| `Twenty First — Luxury 3BR Beachfront in Panama City Beach` | 57 | Pre-Sprint-1 recommended title. Deprecated 2026-07-06 in favor of the brand+differentiator+sleeps+city formula above. Reads slower on scan; `Luxury` is soft. |
+| `Twenty First — Owner-Hosted 3BR/3BA on the Emerald Gulf` | 55 | Pre-Sprint-1 alt. `Owner-Hosted` is a strong trust signal but a niche filter (few VRBO users search on that); relegated to the description body where it can be expanded. |
+| `Twenty First — Panama City Beach Beachfront Family Retreat` | 58 | Pre-Sprint-1 alt. `Family Retreat` narrows the audience beyond what MASTER §4 supports (target includes 2 couples + kids **or** small families **or** friend groups). |
 
 ## Short Description (382 chars)
 

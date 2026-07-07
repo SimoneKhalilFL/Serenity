@@ -6,23 +6,38 @@
 >
 > **Purpose:** Platform-ready copy for the Twenty First Airbnb listing. The owner copies each block into the matching Airbnb editor field. **Cursor never publishes to Airbnb.**
 >
-> **Platform limits:** Title ≤50 chars, Summary ≤500 chars. Verify current limits on Airbnb before publishing.
+> **Platform limits (verified 2026-07-06 via [Airbnb Resource Center](https://www.airbnb.com/resources/hosting-homes/a/guidelines-for-writing-your-listing-title-533)):** Title ≤50 chars *(input-field limit)*, mobile search tiles truncate at ~35 chars. Summary ≤500 chars. First 35 characters do ~80% of the click work — keep the brand + differentiator in that budget. Verify current limits on Airbnb before publishing.
 
 ---
 
-## Title Options
+## Title — locked ship string *(Phase 3 initiative #5, 2026-07-06)*
 
-Three approved candidates, all ≤50 characters.
+**`Twenty First · Gulf-Front 3BR`** *(29 / 50 chars — every character fits inside the mobile-tile-visible window)*
 
-1. **`Twenty First — Beachfront Luxury on the Gulf`** *(46 chars — recommended)*
-2. `Twenty First — 3BR Gulf-Front Family Retreat` *(45 chars)*
-3. `Twenty First — Panama City Beach Beachfront` *(43 chars)*
+**Copy this exact string into the Airbnb listing editor's `Title` field.** Middot is `·` (U+00B7), not a period. No trailing punctuation.
 
-Never a title with floor number, unit number, retired brand names, all-caps, or exclamation marks.
+**Ship rationale:**
 
-## Recommended Title
+- **Brand-first** — `Twenty First` occupies the first 12 characters. On the mobile tile scan, guests read the property brand before they read anything else. Reinforces the boutique-hospitality positioning against generic beach-title competition.
+- **Differentiator second** — `Gulf-Front 3BR` is the one-two punch of the two features guests actually filter on: "beachfront" (Gulf-Front, direct-front vs. across-the-street) and bedroom count (3BR). Both fit inside the tile-visible window.
+- **PCB dropped from the title** — Airbnb already surfaces the city ("Panama City Beach, FL") as a subtitle on tiles, so putting `PCB` in the title itself would duplicate what the platform is already showing for free. Trading that space for the differentiator is a win.
+- **No fluff, no filler tail hook** — a "curiosity hook" tail (per 2026 title-engineering conventions) was considered but deferred: the brand + differentiator is already doing the click work, and inserting a hook would push chars past the 32-char mark that older Airbnb tile UIs still occasionally truncate at.
 
-**`Twenty First — Beachfront Luxury on the Gulf`** *(46 / 50 chars)*
+**Owner sign-off:** 2026-07-06 evening. Working candidate from the Sprint 1 audit (`Twenty First · PCB Gulf-Front 3BR`) was rejected — it counted at 33 chars (over even the older 32-char cutoff, and PCB duplicated the tile subtitle). Recorded in [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #5.
+
+**Never use:** floor number (21st, 21st-floor, floor 21), unit number (unit 2111, TW2111, condo 2111), retired brand names (Fun in the Sun, Serenity), all-caps, exclamation marks, `Book Now`, `Best deal`, or the resort name as a lead (`Tidewater · Twenty First …`).
+
+## Title — alternates on file *(not shipping)*
+
+Retained for reference only. Do **not** paste these into the Airbnb dashboard without a fresh owner-approval pass.
+
+| Candidate | Chars | Note |
+|---|---|---|
+| `Twenty First — Beachfront Luxury on the Gulf` | 46 | Pre-Sprint-1 recommended title. Deprecated 2026-07-06 in favor of the brand+differentiator formula above. Reads slower on mobile scan; `Luxury` is soft language per the boutique-hospitality guardrails in [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md). |
+| `Twenty First — 3BR Gulf-Front Family Retreat` | 45 | `Family Retreat` narrows the audience beyond what MASTER §4 supports (the target is 2 couples + kids **or** small families **or** friend groups). |
+| `Twenty First — Panama City Beach Beachfront` | 43 | Adds `Panama City Beach` in the title — duplicates the tile subtitle Airbnb already surfaces. Wastes prime real estate. |
+| `Twenty First — Gulf-Front 3BR` (em-dash variant) | 29 | Equivalent character count, em-dash instead of middot. Reads slightly more editorial; middot chosen for consistency with the VRBO title separator pattern (single glyph across platforms). |
+| `Twenty First: PCB Gulf-Front 3BR` | 32 | At-limit variant that keeps PCB. Ruled out for the tile-subtitle-duplication reason above. |
 
 ## Listing Summary
 
