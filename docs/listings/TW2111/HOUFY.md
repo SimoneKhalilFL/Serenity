@@ -8,23 +8,34 @@
 >
 > **Platform tone:** Boutique-warm, closer to the direct site than to Booking.com's hotel-style. Houfy is an owner-direct platform (no OTA commission), so the audience expects an owner voice — not a corporate one.
 >
-> **Live listing URL:** *(to be captured — legacy slug is `/lodging/fun-in-the-sun/` per Phase 3 initiative #12 tracker row; paste the full live URL here when next in the Houfy dashboard).*
+> **Live listing URL:** [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) *(slug retargeted from `/lodging/fun-in-the-sun/` → `/h/twentyfirst` — legacy slug retired 2026-07-07 evening, verified by live-page fetch)*.
 >
-> **Status: rebrand-in-place (in progress).** Title shipped 2026-07-07 evening; Overview paste-ready; remaining fields to follow. See [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #12 for ship rationale.
+> **Status: rebrand-in-place (SHIPPED except for 3 QA follow-up items).** Title + description + slug all live 2026-07-07 evening. Post-ship QA identified one HIGH-priority operational issue + one MEDIUM-priority H1 gap + one LOW-priority soft-language pass — see `Post-ship QA findings` section below. See [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #12 for full ship rationale.
 
 ---
 
-## Current live state *(rebrand-in-place baseline)*
+## Current live state *(post-rebrand, verified 2026-07-07 evening via live-page fetch)*
 
-Baseline reconstructed from Phase 3 initiative #12 tracker context (not from a live capture — the Houfy dashboard was not scraped during the July 6 audit). Refresh this table with a live capture the next time the Houfy dashboard is open.
+Verified against a live-page fetch of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) after the rebrand paste completed.
 
-| Field | Legacy live value *(pre-rebrand)* | Rebrand target |
+| Field | Live value | Notes |
 |---|---|---|
-| **Title** | `Fun in the Sun` *(P1 forbidden-string violation)* | New locked ship string in the next section — **shipped 2026-07-07 per owner confirmation** |
-| **URL slug** | `/lodging/fun-in-the-sun/` | **Confirm in the Houfy dashboard whether slug can be edited.** If yes → `/lodging/twenty-first/`. If no → accept the legacy-slug trade-off (same posture as Booking.com), rebrand every user-visible copy field, leave the slug alone |
-| **Description opener** | *"dream beach getaway at Tidewater unit 2111"* *(three P1 violations in one clause: `dream getaway` soft language, `Tidewater` as lead noun, `unit 2111` unit number)* | Rewrite from the paste-ready Overview below |
-| **Review count** | 0 *(a finding, not a capture gap — Houfy content dashboard is empty vs. 19 VRBO + 11 Airbnb + 3 Booking.com)* | Grow via Phase 3 initiative #44 (post-checkout review-solicitation email). Houfy is the biggest single-platform review-volume gap in the portfolio. |
-| **Sister listing (MS811)** | `Serenity at Majestic Sun` *(P1 forbidden-string violation)* | **Deferred to initiative #1 (MS811 full rebrand pass)** per owner directive 2026-07-06 evening. |
+| **Page H1** | `Twenty First - Panama City Beach` *(34 chars, hyphen)* | Houfy's short display name — separate field from the title/H3 below. **This is the H1 Google indexes and Houfy search tiles surface.** Missing the `Gulf-Front 3BR` differentiator. See `Post-ship QA findings` § MEDIUM. |
+| **Description title (H3)** | `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` *(64 chars, middots)* | The Booking.com-variant with `/3BA` bath count. First 29 characters match Airbnb + VRBO + Booking.com character-for-character (brand-prefix identity holds). ✓ |
+| **URL slug** | `/h/twentyfirst` | **Legacy `/lodging/fun-in-the-sun/` slug retired.** Big win — the "single most damaging brand asset on the internet" per the Phase 3 audit is gone. |
+| **Description body** | Live, ~4,300 chars, verbatim per owner paste 2026-07-07 evening | See `Overview — actually shipped (verbatim)` section below. Verbatim archived so we have a version-controlled record of what's live. |
+| **Registration URL** | **`[Removed]` on the live page** — Houfy silently strips external URLs from listing descriptions | See `Post-ship QA findings` § HIGH. |
+| **Review count** | 0 | Recovery lever: Phase 3 initiative #44 (post-checkout review-solicitation email). Rebrand unblocks the copy story; #44 unblocks the volume story. |
+| **Host tenure line on Houfy** | `6 years hosting on Houfy` *(rendered by Houfy in the host card)* + `For more than six years, I've been welcoming guests to Florida's Emerald Coast` *(in the description body)* | Consistent tenure signal — trust anchor is intact. |
+| **Sister listing (MS811)** | `Serenity at Majestic Sun` still live under legacy name *(P1 forbidden-string violation)* | Deferred to initiative #1 (MS811 full rebrand pass) per owner directive 2026-07-06 evening. Confirmed on the Houfy `Other Listings by Simone` sidebar of the TW2111 page. |
+
+## Historical baseline *(pre-rebrand, retained for audit trail)*
+
+| Field | Legacy value *(pre-2026-07-07)* |
+|---|---|
+| **Title** | `Fun in the Sun` *(P1 forbidden-string violation)* |
+| **URL slug** | `/lodging/fun-in-the-sun/` |
+| **Description opener** | *"dream beach getaway at Tidewater unit 2111"* *(three P1 violations in one clause: `dream getaway` soft language, `Tidewater` as lead noun, `unit 2111` unit number)* |
 
 **What triggered the rebrand:**
 
@@ -37,13 +48,13 @@ Baseline reconstructed from Phase 3 initiative #12 tracker context (not from a l
 
 ## Title — locked ship string *(Phase 3 initiative #12, 2026-07-07)*
 
-**`Twenty First · Gulf-Front 3BR · Sleeps 8 · Panama City Beach`** *(60 chars)*
+**`Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach`** *(64 chars — Booking.com variant, `/3BA` bath count included)*
 
-**Shipped 2026-07-07 evening per owner confirmation.** Copy this exact string into the Houfy listing editor's `Title` field. Middots are `·` (U+00B7), not periods. No trailing punctuation.
+**Shipped 2026-07-07 evening — verified live via page fetch of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) where it renders as the description H3.** Middots are `·` (U+00B7), not periods.
 
 **Ship rationale:**
 
-- **Identical to the VRBO headline** (initiative #6). Houfy and VRBO are the two platforms where the audience most closely resembles the direct-site audience — high-consideration, family-and-group bookers who filter by guest count and city. The same title works on both.
+- **Owner selected the Booking.com variant** (with `/3BA` bath count) over the VRBO-identical alternate (`Twenty First · Gulf-Front 3BR · Sleeps 8 · Panama City Beach`, 60 chars). Same-choice-different-platform: the `/3BA` extension picks up on the fact that Houfy's search interface actually surfaces bathroom count as a filter more prominently than VRBO's does. Two of four TW2111 platforms now share the `/3BA` extension (Booking.com + Houfy); the other two (Airbnb + VRBO) keep the simpler bedroom-only tail.
 - **First 29 characters (`Twenty First · Gulf-Front 3BR`) match Airbnb + VRBO + Booking.com** character-for-character (brand-prefix identity per [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md) § "OTA platform titles → Brand prefix identity"). A guest cross-shopping the brand across all four platforms reads the same brand+differentiator every time.
 - **`Sleeps 8` retained** — Houfy's search interface leads with guest count as a filter, same as VRBO's.
 - **`Panama City Beach` included** — Houfy does not surface the city on search cards the way Airbnb does; include the city in the title itself to keep search density strong.
@@ -55,16 +66,198 @@ Baseline reconstructed from Phase 3 initiative #12 tracker context (not from a l
 
 | Candidate | Chars | Note |
 |---|---|---|
-| `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` | 64 | Booking.com-style with `/3BA` bath count. Ruled out — Houfy's audience overlaps VRBO's more than Booking.com's; bath-count filter is less prominent on Houfy. |
+| `Twenty First · Gulf-Front 3BR · Sleeps 8 · Panama City Beach` | 60 | VRBO-identical variant (no bath count). Originally the doc-recommended default; owner chose the `/3BA` variant above for Houfy-specific bath-count filter benefit. |
 | `Twenty First · Gulf-Front 3BR · Panama City Beach` | 50 | Drops `Sleeps 8`. Ruled out — Houfy leads with guest count in its search UI, `Sleeps N` is a valuable filter signal. |
-| `Twenty First — Gulf-Front 3BR on the Emerald Coast` | 51 | Em-dash instead of middot, swaps city for regional signal. Ruled out — regional signal loses direct-search precision for `Panama City Beach`. Breaks the middot-separator convention just locked across platforms. |
+| `Twenty First — Gulf-Front 3BR on the Emerald Coast` | 51 | Em-dash instead of middot, swaps city for regional signal. Ruled out — regional signal loses direct-search precision for `Panama City Beach`. Breaks the middot-separator convention locked across platforms. |
 | `Fun in the Sun` | 14 | **Legacy live title. Deprecated 2026-07-07.** P1 forbidden-string violation. Retained only as the pre-rebrand baseline audit trail. |
 
 ---
 
-## Overview *(≤2000 chars, paste-ready — 1944 chars)*
+## Overview — actually shipped (verbatim)
 
-Copy this block verbatim into the Houfy listing editor's `Overview` / `Description` field. Structured with section labels (`The Home`, `The View & Beach`, etc.) that mirror the VRBO Long Description — Houfy's rich-text editor treats these as natural paragraph breaks.
+The following is the exact copy the owner pasted into Houfy 2026-07-07 evening, verified against a live-page fetch of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst). Version-controlled here so any future rewrite has a clean starting point.
+
+```
+Twenty First – Gulf-Front 3BR Retreat in Panama City Beach
+
+Wake up to panoramic Gulf views, spend your days on Panama City Beach's sugar-white sand, and end each evening watching the sunset from your private beachfront balcony.
+
+Twenty First is a thoughtfully designed 3-bedroom, 3-bath Gulf-front condo at Tidewater Beach Resort, created for families and friends seeking comfort, space, and unforgettable beach memories on Florida's Emerald Coast.
+
+⭐ Guests consistently praise Twenty First for its cleanliness, responsive owner, fully equipped kitchen, and breathtaking Gulf-front views.
+
+The Home
+
+Three separate sleeping areas give everyone room to spread out comfortably.
+
+Sleeping Arrangements
+
+Primary Suite
+
+King bed
+Private en-suite bathroom
+Direct balcony access with Gulf views
+
+Guest Bedroom
+
+Queen bed
+Adjacent full bathroom
+
+Bunk Room
+
+Twin bunk beds
+Private bathroom
+
+Living Room
+
+Queen sleeper sofa for 1–2 additional guests
+
+Sleeps up to 8 guests comfortably.
+
+Inside you'll enjoy:
+
+Fully equipped kitchen
+Dishwasher
+Full-size refrigerator
+Coffee maker
+Dining table for family meals
+In-unit washer & dryer
+Smart TVs with streaming in every bedroom and the living room
+High-speed Wi-Fi throughout
+
+Whether you're preparing breakfast before heading to the beach or enjoying a quiet evening indoors, everything has been designed to make your stay comfortable.
+
+The View & Beach
+
+The private Gulf-front balcony is where many guests spend their favorite moments.
+
+Start the morning watching dolphins with a cup of coffee.
+
+Spend the afternoon relaxing while listening to the waves.
+
+End the evening with one of Panama City Beach's spectacular sunsets.
+
+Direct beach access is just downstairs from the resort deck.
+
+Complimentary beach chairs and a beach umbrella are provided inside the condo for guests to enjoy during their stay. Guests who prefer a full-service setup can also rent chairs and umbrellas directly on the beach.
+
+Tidewater Beach Resort Amenities
+
+Beyond your front door you'll enjoy one of Panama City Beach's most complete beachfront resorts.
+
+Resort amenities include:
+
+Two Gulf-front outdoor pools
+Indoor heated pool
+Multiple hot tubs
+Sauna
+Steam room
+Large fitness center
+Splash pad for younger guests
+Arcade
+Grill areas
+Direct beach access
+On-site restaurant & tiki bar
+Convenient elevator access to the beach deck
+
+Tidewater offers the amenities of a full-service beachfront resort while maintaining a quieter, more relaxed atmosphere than many of the busier boardwalk properties.
+
+The Neighborhood
+
+Located on the desirable west end of Panama City Beach, you're close to everything while still enjoying a quieter stretch of beach.
+
+Nearby attractions include:
+
+Pier Park
+Russell-Fields Pier
+Panama City Beach Conservation Park
+Shipwreck Island Waterpark
+Gulf World Marine Park
+St. Andrews State Park & Shell Island shuttle
+Frank Brown Park
+
+Dining favorites include:
+
+Dusty's Oyster Bar
+Runaway Island
+Diego's Burrito Factory
+Back Beach Barbecue
+Sharky's Beachfront Restaurant
+
+Shopping is easy with Publix less than a mile away, along with Target, Walmart, and numerous local shops.
+
+Northwest Florida Beaches International Airport (ECP) is approximately 35 minutes away.
+
+About Your Host
+
+Twenty First is personally owned and hosted by Simone.
+
+For more than six years, I've been welcoming guests to Florida's Emerald Coast. Every reservation, every message, and every arrival detail is personally managed by me—not a large management company.
+
+I typically respond within two hours and provide detailed arrival instructions about one week before check-in.
+
+You'll have direct access to me before, during, and after your stay if you need anything, while still enjoying complete privacy throughout your vacation.
+
+Good to Know
+
+Check-in: 4:00 PM
+
+Check-out: 10:00 AM
+
+Tidewater Beach Resort requires a registration fee that includes parking passes and wristbands.
+
+Save approximately $10 by completing Tidewater registration online at least 24 hours before arrival.
+
+Registration can be completed at:
+
+[URL stripped by Houfy — see Post-ship QA findings § HIGH. Original paste: https://tidewaterhoa.com]
+
+Primary renter must be at least 25 years old.
+
+Maximum occupancy: 8 guests
+
+No smoking, vaping, pets, parties, or events.
+
+Quiet hours are observed in accordance with HOA guidelines.
+
+Please note that elevator wait times may be longer during Saturday check-in and check-out periods during peak season.
+
+Why Guests Love Twenty First
+
+✔ Direct Gulf-front balcony
+
+✔ Sleeps up to 8 guests
+
+✔ Three bedrooms and three bathrooms
+
+✔ Fully equipped kitchen
+
+✔ Complimentary beach chairs & umbrella
+
+✔ Owner-managed with fast communication
+
+✔ Family-friendly layout
+
+✔ Full resort amenities
+
+✔ Minutes from Pier Park
+
+✔ Beautiful sunsets every evening
+
+Whether you're planning a family beach vacation, a relaxing couples' getaway, or a trip with friends, we'd love to welcome you to Twenty First and help make your Panama City Beach stay one to remember.
+```
+
+**How the shipped Overview differs from the initial paste-ready draft (recorded in git history as commit `a930ca7`, 1944 chars):**
+
+- **Length:** shipped ~4,300 chars vs. draft 1944 chars. Owner chose to run the longer, more scannable format Houfy's rich-text editor renders well.
+- **Structure:** shipped uses more inline bullet lists and sub-headers (`Sleeping Arrangements`, `Sleeping Arrangements → Primary Suite`, `Why Guests Love Twenty First`) — reads more like a resort brochure than a boutique-hotel description. Appropriate for Houfy's marketplace tone.
+- **New content:** shipped adds an explicit `Sleeping Arrangements` breakdown, an expanded amenities list (Two Gulf-front outdoor pools · Indoor heated pool · Sauna · Steam room · Arcade · On-site restaurant & tiki bar), an expanded dining list (Dusty's Oyster Bar, Runaway Island, etc.), and a `Why Guests Love Twenty First` scannable checkmark list.
+- **Preserved:** brand voice (Gulf-front leads), 6+ years hosting tenure, owner-hosted messaging, no legacy strings, no floor number, no unit number, Tidewater kept in context.
+- **Trade-offs flagged in `Post-ship QA findings` below.**
+
+## Overview — original paste-ready draft *(1944 chars)*
+
+Retained for reference only. Do NOT re-paste — the shipped version above is what's live. This 1944-char version is documented so we have a "tighter alternative" on file if we ever want to A/B-test a shorter description or split copy across multiple placements.
 
 ```
 Wake up above the emerald Gulf and spend the day on sugar-white sand. Twenty First is a 3-bedroom, 3-bath Gulf-front retreat in Panama City Beach, Florida — designed for families who want to slow down, watch the water, and reconnect.
@@ -87,11 +280,51 @@ Twenty First is owner-hosted by Simone. I've been hosting Gulf-front stays on Fl
 Check-in 4:00 PM, check-out 10:00 AM. Wristbands and parking pass provided at check-in.
 ```
 
-*Character count: 1944 / 2000 — 56 chars of headroom for a future tweak.*
+---
 
-**Framing rationale:** `Gulf-front` leads in the opener (once), then relaxes into `beachfront` in the balcony paragraph for readability variation. Same pattern used across every other TW2111 platform (Airbnb + VRBO + Booking.com + direct site). The `6+ years hosting` tenure line surfaces here because Houfy has no Superhost / Premier Host badge equivalent — the trust signal has to live in the copy body, not a platform-provided pill.
+## Post-ship QA findings *(2026-07-07 evening — 3 items)*
 
-**Never include in the Overview:** legacy brand names (`Fun in the Sun`, `Serenity`), floor number (`21st floor`, `Floor 21`), unit number (`unit 2111`, `TW2111`), soft-positioning adjectives (`luxury`, `dream`, `paradise`, `stunning`), cross-OTA references by name (`Airbnb`, `VRBO`, `Booking.com`, `Superhost`, `Premier Host`), or channel-steering language (`book direct`, `save fees`, `no service fees`) — Houfy allows an owner-friendly voice but Houfy's own value proposition is "no commission," so re-litigating that in the description body is redundant.
+Identified via live-page verification of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) after the paste completed. None block the fact of the ship (rebrand happened, legacy strings retired); all three are follow-up work.
+
+### 🚨 HIGH — Houfy silently strips external URLs from listing descriptions
+
+**Finding:** The owner pasted `Registration can be completed at: https://tidewaterhoa.com` into the Overview. On the live page, the URL renders as `[Removed]`. Houfy's platform automatically strips external URLs from listing descriptions — probably to prevent channel steering, though the rule catches operational URLs like HOA-registration links as collateral damage.
+
+**Impact:** Guests reading the live Houfy description literally cannot see the Tidewater HOA registration URL and therefore cannot complete pre-arrival registration from the Houfy page.
+
+**Recommended fix:**
+
+- **Option A (recommended):** Delete the two lines `Registration can be completed at:` and `[Removed]` from the Houfy Overview entirely. The owner already commits to sending detailed arrival instructions one week before check-in in the `About Your Host` section; the URL belongs in that arrival-instructions message (it's already there via the direct-site "Before You Arrive" content). Nothing in the Overview implies the URL should be visible in the listing itself.
+- **Option B:** Replace the URL with a text description: *"Registration can be completed on the Tidewater HOA website — a direct link is included in your arrival email."*
+
+**Portfolio-level rule (to be codified in BRAND_GUIDELINES):** never paste external URLs into Houfy listing bodies. URLs get stripped and the resulting `[Removed]` string looks like a broken link.
+
+### 🟡 MEDIUM — Page H1 does not include the Gulf-Front differentiator
+
+**Finding:** The live Houfy page has two distinct title-like elements:
+
+- **Page H1 (top-of-page, what Google indexes and Houfy search tiles surface):** `Twenty First - Panama City Beach` *(34 chars, hyphen)*
+- **Description title (H3, "About this place"):** `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` *(64 chars, middots)*
+
+Houfy has a "short listing name" / "display name" field separate from the description title. The current H1 is missing the `Gulf-Front 3BR` differentiator that does the search-CTR work on all our other platforms.
+
+**Impact:** Houfy's own search tiles and Google's search result snippets both use the H1. Losing the differentiator here loses cross-platform brand-prefix identity on the two surfaces most likely to be seen by a first-time visitor.
+
+**Recommended fix:** Look for a "Listing Name" / "Property Name" / "Display Name" field in the Houfy dashboard *(separate from the description title field the owner already updated)*. If it exists and is editable, update to something like `Twenty First · Gulf-Front 3BR · Panama City Beach` (50 chars) or `Twenty First · Gulf-Front 3BR` (29 chars). If no such field exists — i.e., Houfy auto-derives the H1 from the slug or from a non-editable source — accept the trade-off (same posture as Booking.com's stuck slug) and move on.
+
+### 🟢 LOW — Soft-language pass on the description body (optional)
+
+**Finding:** Four phrases in the shipped Overview lean toward BRAND_GUIDELINES "soft language without proof" territory. None are P1 forbidden strings; all are candidates for a tightening pass if the owner wants tighter brand voice on the Houfy body.
+
+| # | Current wording | Suggested alternative | Reason |
+|---|---|---|---|
+| 1 | `thoughtfully designed 3-bedroom, 3-bath Gulf-front condo` | `3-bedroom, 3-bath Gulf-front condo` | `thoughtfully designed` is soft-positioning language without a specific proof point (which room? which piece of furniture? what design decision?). Drops cleanly. |
+| 2 | `breathtaking Gulf-front views` | `panoramic Gulf-front views` | `Breathtaking` is on the BRAND_GUIDELINES soft-adjective list; `panoramic` is the direct-site's canonical descriptor and does the same work with more specificity. |
+| 3 | `Beautiful sunsets every evening` | `Sunsets over the Gulf` | `Beautiful` is on the BRAND_GUIDELINES `Never in an OTA title` list; extends to descriptions too. Also `every evening` is a factual overreach — sunsets are visible daily but weather-dependent. |
+| 4 | `Guests consistently praise Twenty First for its cleanliness, responsive owner, fully equipped kitchen, and breathtaking Gulf-front views.` | `Twenty First is known for its cleanliness, responsive owner, and fully equipped kitchen — with panoramic Gulf-front views from every main room.` | The current wording implies a review volume on Houfy specifically (which has 0 reviews on file). "Is known for" makes the same claim without implying Houfy-specific review evidence — a claim we can defend. |
+| 5 | `one of Panama City Beach's most complete beachfront resorts` | `one of Panama City Beach's most well-equipped beachfront resorts` | `most complete` is a superlative that could be challenged (what is "complete"?); `most well-equipped` is more defensible without losing the point. |
+
+**Owner discretion:** the Overview is on-brand and shipping. These are polish items, not blockers. Owner can batch-fix in a single Houfy-dashboard edit pass or leave for a future refresh.
 
 ---
 
