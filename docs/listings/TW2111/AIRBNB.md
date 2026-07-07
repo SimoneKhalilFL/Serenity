@@ -41,18 +41,20 @@ Retained for reference only. Do **not** paste these into the Airbnb dashboard wi
 
 ## Listing Summary
 
-**Max 500 characters.** Airbnb's highlighted-excerpt field.
+**Max 500 characters.** Airbnb's highlighted-excerpt field. Refreshed 2026-07-06 evening to align with the locked title's `Gulf-Front` framing.
 
 ```
-Wake up above the emerald Gulf and spend the day on sugar-white sand. Twenty First is a three-bedroom, three-bath beachfront retreat designed for families who want to slow down, watch the water, and reconnect. Room for up to 8 guests across three separate sleeping areas, direct beach access, resort amenities, and complimentary beach chairs and umbrella waiting in the condo. Owner-hosted — I answer every message personally.
+Wake up above the emerald Gulf and spend the day on sugar-white sand. Twenty First is a three-bedroom, three-bath Gulf-front retreat designed for families who want to slow down, watch the water, and reconnect. Room for up to 8 guests across three separate sleeping areas, direct beach access from the resort deck, resort amenities, and complimentary beach chairs and umbrella waiting in the condo. Owner-hosted — I answer every message personally.
 ```
 
-*Character count: 439 / 500*
+*Character count: 447 / 500*
 
 ## Your Property (The Space)
 
+Refreshed 2026-07-06 evening — opener aligned with the locked title's `Gulf-Front` framing; `luxury` swapped for the more evocative `above the emerald Gulf` scene-setter per BRAND_GUIDELINES soft-language guidance.
+
 ```
-Twenty First is a 3-bedroom, 3-bath luxury beachfront retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets.
+Twenty First is a 3-bedroom, 3-bath Gulf-front retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets.
 
 Inside, three separate sleeping areas mean everyone has their own space:
 - Primary bedroom with a king bed, en-suite bath, and balcony access

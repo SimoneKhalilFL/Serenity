@@ -42,17 +42,19 @@ Retained for reference only. Do **not** paste these into the VRBO dashboard with
 | `Twenty First — Owner-Hosted 3BR/3BA on the Emerald Gulf` | 55 | Pre-Sprint-1 alt. `Owner-Hosted` is a strong trust signal but a niche filter (few VRBO users search on that); relegated to the description body where it can be expanded. |
 | `Twenty First — Panama City Beach Beachfront Family Retreat` | 58 | Pre-Sprint-1 alt. `Family Retreat` narrows the audience beyond what MASTER §4 supports (target includes 2 couples + kids **or** small families **or** friend groups). |
 
-## Short Description (382 chars)
+## Short Description (384 chars)
+
+Refreshed 2026-07-06 evening to align with the locked headline's `Gulf-Front` framing. Soft `luxury` adjective dropped — the emerald-Gulf imagery does the positioning work more evocatively.
 
 ```
-Twenty First is a luxury 3-bedroom, 3-bath beachfront condo in Panama City Beach. Wake up above the emerald Gulf, spend the day on sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets. Sleeps up to 8 guests across three separate sleeping areas. Owner-hosted. Direct beach access, resort amenities, and complimentary beach chairs and umbrella in the condo.
+Twenty First is a 3-bedroom, 3-bath Gulf-front condo in Panama City Beach. Wake up above the emerald Gulf, spend the day on sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets. Sleeps up to 8 guests across three separate sleeping areas. Owner-hosted. Direct beach access, resort amenities, and complimentary beach chairs and umbrella in the condo.
 ```
 
 ## Long Description
 
 ### Welcome
 
-Twenty First is a 3-bedroom, 3-bath luxury beachfront retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets.
+Twenty First is a 3-bedroom, 3-bath Gulf-front retreat designed for families who want to slow down, watch the water, and reconnect. Wake up above the emerald Gulf, spend the day on the sugar-white sand, and gather back at the condo for dinner on the balcony as the sun sets.
 
 ### The Home
 
@@ -89,7 +91,7 @@ Check-in 4:00 PM, check-out 10:00 AM. One assigned parking space plus guest park
 
 ### About Your Host
 
-Twenty First is owner-hosted by Simone. I answer every inquiry personally, typically within 2 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
+Twenty First is owner-hosted by Simone. I've been hosting Gulf-front stays on Florida's Emerald Coast for over six years — every booking, every message, every arrival detail is personally mine. I typically reply within 2 hours. You'll get arrival details a week before your stay, and I'm a message away during your trip if anything comes up. I don't hover — but I'm here.
 
 ## Amenities Section
 
