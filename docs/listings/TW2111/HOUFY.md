@@ -10,7 +10,7 @@
 >
 > **Live listing URL:** [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) *(slug retargeted from `/lodging/fun-in-the-sun/` → `/h/twentyfirst` — legacy slug retired 2026-07-07 evening, verified by live-page fetch)*.
 >
-> **Status: rebrand-in-place (SHIPPED except for 3 QA follow-up items).** Title + description + slug all live 2026-07-07 evening. Post-ship QA identified one HIGH-priority operational issue + one MEDIUM-priority H1 gap + one LOW-priority soft-language pass — see `Post-ship QA findings` section below. See [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #12 for full ship rationale.
+> **Status: rebrand-in-place (SHIPPED — HIGH QA item resolved, 2 lower-priority items pending).** Title + description + slug all live 2026-07-07 evening. Post-ship QA identified one HIGH-priority operational issue (resolved 2026-07-07 evening) + one MEDIUM-priority H1 gap (open) + one LOW-priority soft-language pass (open, priority-downgraded) — see `Post-ship QA findings` section below. See [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #12 for full ship rationale.
 
 ---
 
@@ -24,7 +24,7 @@ Verified against a live-page fetch of [`https://houfy.com/h/twentyfirst`](https:
 | **Description title (H3)** | `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` *(64 chars, middots)* | The Booking.com-variant with `/3BA` bath count. First 29 characters match Airbnb + VRBO + Booking.com character-for-character (brand-prefix identity holds). ✓ |
 | **URL slug** | `/h/twentyfirst` | **Legacy `/lodging/fun-in-the-sun/` slug retired.** Big win — the "single most damaging brand asset on the internet" per the Phase 3 audit is gone. |
 | **Description body** | Live, ~4,300 chars, verbatim per owner paste 2026-07-07 evening | See `Overview — actually shipped (verbatim)` section below. Verbatim archived so we have a version-controlled record of what's live. |
-| **Registration URL** | **`[Removed]` on the live page** — Houfy silently strips external URLs from listing descriptions | See `Post-ship QA findings` § HIGH. |
+| **Registration URL handling** | **Resolved 2026-07-07 evening** — the stripped `[Removed]` line and its `Registration can be completed at:` predecessor were deleted from the Overview; a single consolidated sentence now reads *"Save approximately $10 by completing Tidewater registration online at least 24 hours before arrival. I'll send you the direct registration link in your arrival email one week before check-in."* Verified via live-page fetch. | See `Post-ship QA findings` § HIGH (RESOLVED). |
 | **Native review count** | 0 Houfy-native reviews. **4 imported reviews** on display via Houfy's platform-level review-import feature (Megan O. · Michelle B. · Jesika W. · JESSICA R. — all sourced from the Airbnb + VRBO archives at [`reviews/2026-07-06-airbnb.md`](reviews/2026-07-06-airbnb.md) and [`reviews/2026-07-06-vrbo.md`](reviews/2026-07-06-vrbo.md)) | Success Metric on #12 remains scoped to **Houfy-native** reviews only (guests who book through Houfy and review on Houfy) — imported OTA reviews mirror trust from other platforms but don't count as Houfy-native trust signals. Recovery lever: Phase 3 initiative #44 (post-checkout review-solicitation email) — customize the Houfy-arrival-flow variant to explicitly ask for a Houfy-native review since guests may otherwise assume their prior Airbnb/VRBO review already counts. |
 | **Host tenure line on Houfy** | `6 years hosting on Houfy` *(rendered by Houfy in the host card)* + `For more than six years, I've been welcoming guests to Florida's Emerald Coast` *(in the description body)* | Consistent tenure signal — trust anchor is intact. |
 | **Sister listing (MS811)** | `Serenity at Majestic Sun` still live under legacy name *(P1 forbidden-string violation)* | Deferred to initiative #1 (MS811 full rebrand pass) per owner directive 2026-07-06 evening. Confirmed on the Houfy `Other Listings by Simone` sidebar of the TW2111 page. |
@@ -206,11 +206,7 @@ Check-out: 10:00 AM
 
 Tidewater Beach Resort requires a registration fee that includes parking passes and wristbands.
 
-Save approximately $10 by completing Tidewater registration online at least 24 hours before arrival.
-
-Registration can be completed at:
-
-[URL stripped by Houfy — see Post-ship QA findings § HIGH. Original paste: https://tidewaterhoa.com]
+Save approximately $10 by completing Tidewater registration online at least 24 hours before arrival. I'll send you the direct registration link in your arrival email one week before check-in.
 
 Primary renter must be at least 25 years old.
 
@@ -282,22 +278,22 @@ Check-in 4:00 PM, check-out 10:00 AM. Wristbands and parking pass provided at ch
 
 ---
 
-## Post-ship QA findings *(2026-07-07 evening — 3 items)*
+## Post-ship QA findings *(2026-07-07 evening — 3 items: 1 RESOLVED, 2 open)*
 
-Identified via live-page verification of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) after the paste completed. None block the fact of the ship (rebrand happened, legacy strings retired); all three are follow-up work.
+Identified via live-page verification of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) after the paste completed. None block the fact of the ship (rebrand happened, legacy strings retired); the three items are follow-up work.
 
-### 🚨 HIGH — Houfy silently strips external URLs from listing descriptions
+### ✅ HIGH — Houfy silently strips external URLs from listing descriptions *(RESOLVED 2026-07-07 evening)*
 
-**Finding:** The owner pasted `Registration can be completed at: https://tidewaterhoa.com` into the Overview. On the live page, the URL renders as `[Removed]`. Houfy's platform automatically strips external URLs from listing descriptions — probably to prevent channel steering, though the rule catches operational URLs like HOA-registration links as collateral damage.
+**Original finding:** The owner pasted `Registration can be completed at: https://tidewaterhoa.com` into the Overview. On the live page, the URL rendered as `[Removed]` (Houfy's platform automatically strips external URLs from listing descriptions — probably to prevent channel steering, though the rule catches operational URLs like HOA-registration links as collateral damage). Guests reading the live Houfy description literally could not see the Tidewater HOA registration URL and therefore could not complete pre-arrival registration from the Houfy page.
 
-**Impact:** Guests reading the live Houfy description literally cannot see the Tidewater HOA registration URL and therefore cannot complete pre-arrival registration from the Houfy page.
+**Resolution *(2026-07-07 evening, two-step paste by owner)*:**
 
-**Recommended fix:**
+1. **Step 1** — owner added a consolidated sentence redirecting the guest to the arrival-instructions email: *"Save approximately $10 by completing Tidewater registration online at least 24 hours before arrival. I'll send you the direct registration link in your arrival email one week before check-in."*
+2. **Step 2** — owner deleted the now-redundant `Registration can be completed at:` and stripped `[Removed]` lines.
 
-- **Option A (recommended):** Delete the two lines `Registration can be completed at:` and `[Removed]` from the Houfy Overview entirely. The owner already commits to sending detailed arrival instructions one week before check-in in the `About Your Host` section; the URL belongs in that arrival-instructions message (it's already there via the direct-site "Before You Arrive" content). Nothing in the Overview implies the URL should be visible in the listing itself.
-- **Option B:** Replace the URL with a text description: *"Registration can be completed on the Tidewater HOA website — a direct link is included in your arrival email."*
+**Verified via live-page fetch 2026-07-07 after step 2**: the section now reads cleanly as a single sentence handing off the URL to the arrival email flow — no stripped-URL artifact, no operational gap for the guest, and the arrival email path is now the canonical channel for the registration URL (aligns with `About Your Host` section which already commits to arrival instructions "one week before check-in").
 
-**Portfolio-level rule (to be codified in BRAND_GUIDELINES):** never paste external URLs into Houfy listing bodies. URLs get stripped and the resulting `[Removed]` string looks like a broken link.
+**Portfolio-level rule codified in [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md)** `OTA platform titles → Platform limits and prime real estate → Houfy` bullet: **never paste external URLs into Houfy listing bodies.** URLs get stripped and the resulting `[Removed]` string looks like a broken link. Communicate operational URLs via the arrival-instructions email instead.
 
 ### 🟡 MEDIUM — Page H1 does not include the Gulf-Front differentiator
 
