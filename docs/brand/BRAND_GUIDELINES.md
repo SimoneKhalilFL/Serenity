@@ -375,9 +375,38 @@ Non-negotiable rules for anything that renders inside the property-page reviews 
 
 #### Long-review preview and expand
 
-- Reviews whose raw comment length exceeds the threshold in `app.js#REVIEW_PREVIEW_CHAR_LIMIT` (currently 250 chars) render with a CSS `-webkit-line-clamp: 5` preview and a `Read more` / `Show less` toggle button. Toggle uses `aria-expanded` so screen readers announce state transitions.
+- Reviews whose raw comment length exceeds the threshold in `app.js#REVIEW_PREVIEW_CHAR_LIMIT` (currently 250 chars) render with a JavaScript-produced preview (`truncateReviewText` helper, word-boundary trim, target ~220 chars) and a `Read more` / `Show less` toggle. The toggle swaps the `hidden` attribute between preview and full-content `<span>` elements, so screen readers always announce the current visible copy. `aria-expanded` mirrors state transitions.
 - Do NOT truncate the review body in `config.js` — always store the full text. Truncation is presentational, applied at render.
-- The threshold may be tuned in one place (`app.js#REVIEW_PREVIEW_CHAR_LIMIT`), but any change must be tested on mobile widths (320px minimum) to ensure the preview still shows ~4–5 lines.
+- The threshold may be tuned in one place (`app.js#REVIEW_PREVIEW_CHAR_LIMIT`), but any change must be tested on mobile widths (320px minimum) to ensure the preview still shows ~4–5 lines. Previous CSS-based `-webkit-line-clamp` approach retired 2026-07-06 evening after debugging revealed the clamp was not activating on flex children.
+
+### Host trust badges
+
+Verified badges awarded to Simone by OTA platforms — surfaced on the direct site to close the "who's hosting this?" trust gap that OTAs solve for free but direct sites often ignore. Introduced 2026-07-06 evening (Phase 3 initiative #40). Rules are as strict as the `Reviews on the direct site` rules above — a Superhost badge is the same class of external verification as a five-star review, and demands the same honesty discipline.
+
+#### Publish only badges we can prove
+
+- Every entry in `config.js#SITE_CONTACT.hostTrustBadges` must be tied to a **captured, dated, on-file screenshot or Markdown-archived source**. Current on-file sources:
+  - **Airbnb Superhost:** `docs/listings/TW2111/reviews/2026-07-06-airbnb.md` line 12 — the Airbnb host card literally reads "Superhost, 6 years hosting".
+  - **VRBO Premier Host:** `docs/listings/TW2111/reviews/2026-07-06-vrbo.md` line 195 — Simone's owner-response byline reads "VrboOwner, Premier Host" across multiple 2024–2025 responses.
+- If a claim cannot be paired with a source in the repo, it does not go on the site. Full stop.
+- Never invent a badge (`Booking.com Genius Host`, `Trusted Host`, etc.) that the platform does not actually award.
+
+#### Attribution is mandatory
+
+- Every badge rendered on the site names the **platform that awards it** (`Airbnb Superhost`, `VRBO Premier Host`). Do not shorten to `Superhost` alone — without the platform prefix the claim reads as our own invented rank.
+- Icons/marks on the chips are decorative; they never substitute for the platform name.
+- Never mimic the platform's own badge coloring (Airbnb's Rausch red, VRBO's blue) so precisely that a user could mistake the direct site for the platform. The current chip styling (site-primary tint at low opacity) is deliberately restrained.
+
+#### Re-verification cadence
+
+- Airbnb reviews Superhost status quarterly. VRBO reviews Premier Host annually. If either badge lapses, flip `active: false` on that entry in `config.js` — do **not** delete the entry. The audit trail (with the `verifiedOn` date and the archive path) is what protects us against a future "why did we ever claim this?" question, whether from the FTC, Google's rich-results team, or an OTA compliance email.
+- QA checklist item: at every quarterly Phase 3 review pass, spot-check that each active badge in `hostTrustBadges` still appears on the corresponding OTA host profile. Update the `verifiedOn` date on any badge re-verified in-cadence.
+
+#### Placement rules
+
+- **Hero trust strip** (`renderListingHeroTrustStrip` in `app.js`): the first active `airbnb-superhost` badge renders as a compact chip immediately after the aggregate-rating chip. Ordering rationale: rating and Superhost are the two strongest single trust signals — they belong side-by-side. Additional active badges are NOT surfaced in the hero strip (mobile-width budget); they live in the sidebar detail.
+- **Sidebar trust card** (`renderListingTrustSidebar` in `app.js`): a `Verified host` block beneath the reply-time promise renders all active badges as a small bulleted list, with each badge's `secondary` line ("6+ years hosting") in muted text.
+- Do NOT re-surface Superhost claims in the `Why Book Direct` bullets, the `Before You Arrive` card, the FAQ, or the homepage hero. Two placements is the ceiling; more starts to feel like protesting too much and undermines the exact trust the badge is supposed to signal.
 
 ### 404 / error page
 

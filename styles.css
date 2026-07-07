@@ -3454,6 +3454,53 @@ a.reviews-cta-btn:focus-visible {
     font-style: italic;
 }
 
+/* Verified-host block inside the sidebar trust card (Phase 3 initiative #40).
+   Placed beneath the reply promise. Restrained styling — this is trust
+   supporting evidence, not a hero element. Bullet mark reuses the same ◆
+   glyph as the hero chip so the two placements read as one system. */
+.listing-host-trust {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border-color);
+}
+.listing-host-trust-heading {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin: 0 0 0.4rem;
+}
+.listing-host-trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.listing-host-trust-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.8125rem;
+    color: var(--text-primary, #1f2937);
+    font-style: normal;
+}
+.listing-host-trust-mark {
+    color: var(--primary-color, #b8874f);
+    font-size: 0.85em;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.listing-host-trust-label {
+    font-weight: 600;
+}
+.listing-host-trust-secondary {
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
 .property-booking-links {
     margin-top: 0.75rem;
     display: flex;
@@ -4465,6 +4512,27 @@ body.has-listing-sticky {
 .hero-trust-chip-muted {
     color: var(--text-secondary, #64748b);
     font-weight: 400;
+}
+
+/* Superhost chip variant (Phase 3 initiative #40 — Website).
+   Deliberately restrained: we want to signal "verified premium host" without
+   mimicking Airbnb's own pink Superhost pill (that would read as impersonation).
+   Approach: keep the pill shape identical to the other trust chips, tint the
+   background with the site's primary color at low opacity, and use the primary
+   color for the mark + text so the chip pops from the neutral chip row without
+   shouting.  Attribution text ("Airbnb Superhost") is what actually does the
+   trust work — the styling is just meant to draw the eye. */
+.hero-trust-chip--superhost {
+    background: rgba(212, 165, 116, 0.14);
+    border-color: rgba(212, 165, 116, 0.55);
+    color: var(--primary-color, #b8874f);
+    font-weight: 600;
+}
+.hero-trust-chip-superhost-mark {
+    color: var(--primary-color, #b8874f);
+    font-size: 0.9em;
+    line-height: 1;
+    transform: translateY(-0.02em);
 }
 
 @media (max-width: 600px) {

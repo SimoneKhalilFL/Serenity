@@ -100,6 +100,7 @@
 
 *Pending — inherit from StayAtFlorida brand-level trust points, add property-specific once available:*
 
+- **Simone is a verified Airbnb Superhost** (6+ years hosting) and **VRBO Premier Host** — surfaced on the MS811 property page hero trust strip and sidebar (Phase 3 initiative #40, shipped 2026-07-06 evening). Host-level badges apply to both StayAtFlorida properties. Verification sources on file: `docs/listings/TW2111/reviews/2026-07-06-airbnb.md` and `docs/listings/TW2111/reviews/2026-07-06-vrbo.md` (captured on TW2111 host card; badge is host-level on Airbnb/VRBO so it applies wherever Simone hosts). Display rules: `docs/brand/BRAND_GUIDELINES.md` § "Host trust badges".
 - Owner-hosted — Simone replies within 2 hours
 - Transparent pricing on stayatflorida.com
 - Beach access at Seascape

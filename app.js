@@ -92,6 +92,16 @@ function getSiteContact() {
     };
 }
 
+// Host trust badges (Phase 3 initiative #40).
+// Returns only badges with `active: true`. Order is preserved from config so
+// the site owner controls prominence — the first active badge is what surfaces
+// in the compact hero chip; all active badges surface in the sidebar detail.
+function getActiveHostTrustBadges() {
+    const c = getSiteContact();
+    if (!c || !Array.isArray(c.hostTrustBadges)) return [];
+    return c.hostTrustBadges.filter(b => b && b.active === true);
+}
+
 /** Public profile URL(s) for Organization sameAs (footer / brand). */
 const ORGANIZATION_SAME_AS = ['https://www.facebook.com/FloridaRental2020'];
 
@@ -1742,16 +1752,54 @@ function renderListingTrustSidebar(property) {
     const c = getSiteContact();
     const emailHtml = `<p class="listing-trust-line"><span class="listing-trust-label">Email</span> <a class="listing-trust-email" href="mailto:${encodeURIComponent(c.email)}">${escapeHtml(c.email)}</a></p>`;
     const reply = `<p class="listing-reply-note">${escapeHtml(c.replyBlurb)}</p>`;
-    return `<div class="listing-sidebar-trust">${emailHtml}${reply}</div>`;
+    // Host trust badges block (Phase 3 initiative #40). Rendered beneath the
+    // reply promise so the sidebar reads:
+    //   1) how to reach us (email)
+    //   2) how fast we reply
+    //   3) who's hosting (verified OTA badges)
+    // Ordering matches how a booker mentally validates a direct-site host.
+    const badges = getActiveHostTrustBadges();
+    let hostTrust = '';
+    if (badges.length > 0) {
+        const items = badges.map(b => {
+            const label = escapeHtml(b.label);
+            const secondary = b.secondary ? ` <span class="listing-host-trust-secondary">${escapeHtml(b.secondary)}</span>` : '';
+            return `<li class="listing-host-trust-item"><span class="listing-host-trust-mark" aria-hidden="true">◆</span> <span class="listing-host-trust-label">${label}</span>${secondary}</li>`;
+        }).join('');
+        hostTrust = `
+            <div class="listing-host-trust" aria-label="Verified host status">
+                <p class="listing-host-trust-heading">Verified host</p>
+                <ul class="listing-host-trust-list">${items}</ul>
+            </div>
+        `;
+    }
+    return `<div class="listing-sidebar-trust">${emailHtml}${reply}${hostTrust}</div>`;
 }
 
 // Trust chip strip beneath the hero CTAs.
-// Renders rating (if any), sleeps count, response-time promise, and cancellation shorthand.
+// Renders rating (if any), Superhost badge (if any), sleeps count, response-time
+// promise, and cancellation shorthand.
 // Kept short so it fits under two buttons on mobile without pushing the CTAs below the fold.
+// Chip order is deliberate: rating first (strongest single trust signal), then
+// Superhost (second-strongest — external verification), then property specifics
+// (sleeps), then service promises (reply + refund). If the strip wraps to two
+// lines on mobile, the top-row chips are the ones we care most about.
 function renderListingHeroTrustStrip(property, avgRating, reviewCount) {
     const chips = [];
     if (reviewCount > 0 && avgRating > 0) {
         chips.push(`<span class="hero-trust-chip"><span class="hero-trust-chip-star" aria-hidden="true">★</span> ${escapeHtml(String(avgRating))} <span class="hero-trust-chip-muted">(${reviewCount} reviews)</span></span>`);
+    }
+    // Airbnb Superhost chip (Phase 3 initiative #40). Rendered right after the
+    // aggregate rating so the two strongest trust signals sit together at the
+    // start of the strip. Attribution ("Airbnb Superhost") is mandatory — the
+    // badge means nothing without naming the platform that awards it.
+    // BRAND_GUIDELINES.md § "Host trust badges" spells out the honesty rules.
+    const superhostBadge = getActiveHostTrustBadges().find(b => b.id === 'airbnb-superhost');
+    if (superhostBadge) {
+        const tooltipParts = [superhostBadge.label];
+        if (superhostBadge.secondary) tooltipParts.push(superhostBadge.secondary);
+        const tooltip = tooltipParts.join(' · ');
+        chips.push(`<span class="hero-trust-chip hero-trust-chip--superhost" title="${escapeHtml(tooltip)}" aria-label="${escapeHtml(tooltip + ' — verified')}"><span class="hero-trust-chip-superhost-mark" aria-hidden="true">◆</span> ${escapeHtml(superhostBadge.label)}</span>`);
     }
     if (property && property.maxGuests) {
         chips.push(`<span class="hero-trust-chip">Sleeps up to ${property.maxGuests}</span>`);

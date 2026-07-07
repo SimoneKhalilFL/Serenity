@@ -22,7 +22,47 @@ const SITE_CONTACT = {
     phoneTel: '',
     phoneDisplay: '',
     replyBlurb: 'Simone typically replies to inquiries within 2 hours. Email is the fastest way to reach us.',
-    cancellationNote: 'Full refund if you cancel 46 or more days before check-in. 50% refund 31–45 days out. Non-refundable within 30 days of check-in.'
+    cancellationNote: 'Full refund if you cancel 46 or more days before check-in. 50% refund 31–45 days out. Non-refundable within 30 days of check-in.',
+    // ------------------------------------------------------------------
+    // Host trust badges (Phase 3 initiative #40 — surface Superhost on Website)
+    // ------------------------------------------------------------------
+    // These attest to Simone's host performance across OTAs, not the individual
+    // property, so they live on SITE_CONTACT rather than on the property record —
+    // both TW2111 and MS811 inherit them automatically. See:
+    //   - `docs/brand/BRAND_GUIDELINES.md` § "Host trust badges" for the rules
+    //     (honesty, attribution, verified-on cadence).
+    //   - `docs/phase-3/revenue-impact-tracker.md` #40 for the ship rationale.
+    //
+    // Publish ONLY badges we can prove. Verification sources on file:
+    //   - Airbnb Superhost — visible on the Airbnb host card ("Superhost, 6 years
+    //     hosting"), captured 2026-07-06 in
+    //     `docs/listings/TW2111/reviews/2026-07-06-airbnb.md` line 12.
+    //   - VRBO Premier Host — visible on Simone's owner-response byline across
+    //     multiple 2024–2025 VRBO reviews ("VrboOwner, Premier Host"), captured
+    //     2026-07-06 in `docs/listings/TW2111/reviews/2026-07-06-vrbo.md` line 195.
+    //
+    // Airbnb reviews Superhost status quarterly; VRBO Premier Host is annual. If
+    // either badge lapses, flip `active: false` — DO NOT delete the entry. The
+    // audit trail (with the `verifiedOn` date) is what protects us against a
+    // future "why did we ever claim this?" question.
+    hostTrustBadges: [
+        {
+            id: 'airbnb-superhost',
+            label: 'Airbnb Superhost',
+            secondary: '6+ years hosting',
+            platform: 'airbnb',
+            verifiedOn: '2026-07-06',
+            active: true
+        },
+        {
+            id: 'vrbo-premier-host',
+            label: 'VRBO Premier Host',
+            secondary: null,
+            platform: 'vrbo',
+            verifiedOn: '2026-07-06',
+            active: true
+        }
+    ]
 };
 
 // ==========================================

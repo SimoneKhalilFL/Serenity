@@ -97,6 +97,10 @@ Run on every UI change.
 - `[ ]` **High.** Page scannable in 5 seconds — hero → value prop → primary CTA visible without scrolling on desktop.
 - `[ ]` **Standard.** No competing CTAs above the fold; secondary CTA is visually subordinate.
 - `[ ]` **Standard.** Sticky booking bar appears on the property page after scrolling past the hero and does not obscure content on mobile.
+- `[ ]` **Critical.** Property-page hero trust strip renders the Superhost chip (`Airbnb Superhost`) as the second chip (after the aggregate-rating chip). Chip label attributes the platform explicitly — never `Superhost` alone. If `SITE_CONTACT.hostTrustBadges` `airbnb-superhost` entry is `active: false`, the chip is absent (verify no orphan mark or empty pill).
+- `[ ]` **Critical.** Property-page sidebar trust card renders a `Verified host` block beneath the reply promise, listing every `active: true` entry in `SITE_CONTACT.hostTrustBadges` with platform attribution (`Airbnb Superhost`, `VRBO Premier Host`).
+- `[ ]` **High.** Superhost chip styling does not mimic Airbnb's own Rausch-red badge — uses site-primary tint at low opacity per [`BRAND_GUIDELINES.md`](BRAND_GUIDELINES.md#host-trust-badges). Prevents any user-visible impression that the direct site *is* an Airbnb page.
+- `[ ]` **High.** Every `SITE_CONTACT.hostTrustBadges` entry rendered on the site is paired with a captured archive source in the repo (`docs/listings/*/reviews/*.md` or equivalent). No claim without a source. Re-verify `verifiedOn` dates at every quarterly Phase 3 review pass.
 
 ---
 
