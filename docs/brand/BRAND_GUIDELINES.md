@@ -29,6 +29,56 @@ Future properties follow the same pattern: **Property Name → "A StayAtFlorida 
 
 ---
 
+## Logo system
+
+Three-tier canonical logo system — codified 2026-07-08 evening from owner-provided ChatGPT-generated source. Full file inventory + regeneration script + use-case cheat sheet in [`../../images/brand/README.md`](../../images/brand/README.md).
+
+### Tier definitions
+
+| Tier | File | What it contains | When to use |
+|---|---|---|---|
+| **PRIMARY** *(default)* | `images/brand/logo-primary-1024.png` | Icon (sun + palm + waves illustration) + `StayAtFlorida` wordmark. No tagline. | **Default for most external-brand contexts** — website nav *(pending initiative #54)*, external platform uploads (GBP, Booking.com, Airbnb/VRBO host photos where the frame is large enough for the wordmark to read), email signatures, business cards front. |
+| **ICON ONLY** | `images/brand/logo-icon-720.png` *(white bg)* + `logo-icon-720-transparent.png` *(transparent bg)* | Icon illustration only — no wordmark, no tagline. | Small square profile-pic slots where the wordmark won't render legibly at the target render size: Airbnb host avatar, Instagram profile picture, GBP small map-pack rendering, favicon replacement. Also the fallback if the primary logo gets rejected at a small-frame slot. |
+| **MARKETING LOCKUP** *(optional)* | `images/brand/logo-lockup-1024.png` | Full lockup — icon + wordmark + `BEACHFRONT STAYS • LASTING MEMORIES` tagline. | Wider contexts where tagline fits + adds value: website hero banners, promotional graphics, business-card back sides, direct-mail postcards, welcome-guide covers, social announcement graphics. Never use in small-frame slots — the tagline becomes illegible. |
+
+### The tagline is optional, not part of the primary logo
+
+`BEACHFRONT STAYS • LASTING MEMORIES` (with the yellow-dot separator matching our OTA middot title convention) is an **optional marketing lockup element**. Owner direction 2026-07-08 evening: this is treated as a marketing-context accent, not a required brand identifier.
+
+- **Never mandatory.** Any surface that renders the primary logo without the tagline is on-brand.
+- **Never partial.** If the tagline appears, use the exact string `BEACHFRONT STAYS • LASTING MEMORIES` (all caps, middot separator, no periods). Never truncate to `BEACHFRONT STAYS` alone; never abbreviate `LASTING MEMORIES` to `MEMORIES`.
+- **Soft-language flag noted.** `LASTING MEMORIES` is in the same soft-language family as `unforgettable` and `Beautiful sunsets every evening` (see [`§ Words we avoid`](#words-we-avoid) below) — but paired with the concrete `BEACHFRONT STAYS` factual anchor, and used as a *marketing accent* rather than *listing body copy*, it clears the bar. Do not port the tagline verbatim into listing descriptions or booking-page body copy — those surfaces stay under the "factual claims, no soft language" rule.
+
+### Color palette *(as-rendered — approximate hex readings from the source PNG)*
+
+The source is a raster PNG, not a vector; colors below are approximate reads from the AI-generated source, not brand-book-locked. If we ever commission a proper vector rebuild or a print run, a color-picking pass will formalize the exact values.
+
+- **Yellow-orange sun:** `#F4C430` (bright) / `#F5A623` (deep) — gradient
+- **Forest-green palm:** `#0F5D5A` (deep) / `#134E4A` (deeper shadow)
+- **Navy wave (deepest layer):** `#1E3A5F`
+- **Teal wave (middle):** `#0EA5E9`
+- **Light-teal wave (highlight):** `#5EEAD4`
+- **Wordmark navy:** `#0F1E3D` — deepest navy, one shade darker than the deepest wave, ensures wordmark reads as most prominent
+- **Tagline teal:** `#0F766E` — softer than the wave teal to visually recede vs. the wordmark
+- **Tagline middot accent:** `#F5A623` — deep sun-orange, ties the tagline visually back to the icon
+
+### Site header alignment — pending
+
+The current live-site header (across `index.html`, `tw2111.html`, `ms811.html`, etc.) uses an **inline hand-coded SVG icon** (simple sun/palm/waves — different execution from the new brand icon) alongside a plain `<span>StayAtFlorida</span>` wordmark styled by CSS. This does NOT match the new brand identity documented above. Guests who click through from an OTA (where they'll see the polished new logo) into the direct site (where they see the old handmade header) will experience visual whiplash.
+
+Realigning the site header + `favicon.svg` to the new brand identity is a separate follow-up initiative tracked at [phase-3 initiative #54](../phase-3/revenue-impact-tracker.md#54) — not blocking any current work. Options being weighed in that initiative include: (a) commissioning a proper horizontal-layout version from ChatGPT/designer (current source is vertically stacked, not ideal for a nav bar), (b) using `logo-icon-720.png` alongside a CSS-styled text wordmark, (c) hand-recoding the current inline SVG to match the new icon's color palette + palm-tree silhouette.
+
+### Public URLs *(active once next deploy lands)*
+
+- Primary: `https://stayatflorida.com/images/brand/logo-primary-1024.png`
+- Full lockup: `https://stayatflorida.com/images/brand/logo-lockup-1024.png`
+- Icon (white bg): `https://stayatflorida.com/images/brand/logo-icon-720.png`
+- Icon (transparent): `https://stayatflorida.com/images/brand/logo-icon-720-transparent.png`
+
+Raw GitHub URLs are useful for one-off uploads to platforms that need a downloadable PNG *(GBP, Booking extranet, etc.)* — full URL list in the assets [README](../../images/brand/README.md#public-urls-once-pushed-to-github-main).
+
+---
+
 ## Voice and tone
 
 Write like a **boutique hotel**. Never like a real estate listing or an OTA description.
