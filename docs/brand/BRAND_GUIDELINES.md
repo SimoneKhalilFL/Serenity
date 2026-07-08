@@ -440,6 +440,34 @@ Verified badges awarded to Simone by OTA platforms — surfaced on the direct si
 - **Sidebar trust card** (`renderListingTrustSidebar` in `app.js`): a `Verified host` block beneath the reply-time promise renders all active badges as a small bulleted list, with each badge's `secondary` line ("6+ years hosting") in muted text.
 - Do NOT re-surface Superhost claims in the `Why Book Direct` bullets, the `Before You Arrive` card, the FAQ, or the homepage hero. Two placements is the ceiling; more starts to feel like protesting too much and undermines the exact trust the badge is supposed to signal.
 
+### SMS voice + review-solicitation policy
+
+SMS is a distinct surface from email — different tone conventions, different length budget, different failure modes. Rules apply to every owner-outbound SMS but especially the review-solicitation flow *(Phase 3 initiative #44 shipped 2026-07-07 evening — see [`HOSPITALITY.md § Post-stay review-solicitation playbook`](HOSPITALITY.md#post-stay-review-solicitation-playbook) for full templates + cadence)*.
+
+#### Length + format
+
+- **Tap-friendly length.** Target ≤5 sentences, ≤400 characters. On iMessage that reads as one or two bubbles; on RCS/Android SMS it lands as a single readable message. Never split a single ask across multiple SMS bubbles.
+- **No bulleted lists in SMS.** Bullets read as email formatting; they break the conversational register that SMS depends on. Rewrite as short sentences or a single comma-separated clause.
+- **No headings, no bold, no italics.** The channel doesn't render them; readers see literal asterisks and pipes.
+- **URLs are last resort.** SMS with URLs read as spam and get filtered. Prefer to reference where the guest can find something (`the review link is in your Airbnb inbox`) rather than paste the URL. Exception: the direct-site Google-review SMS variant, which needs a `g.page/r/[ID]/review` short link because the guest has no other native review surface.
+
+#### Tone
+
+- **Warmer than email.** Email opens with `Hi [First name],` and a blank line; SMS opens with `Hi [First name],` and continues in the same paragraph. Skip the formal salutation-body-signature structure.
+- **Named human sign-off.** Every SMS signs with `Simone` — either as `— Simone`, `Warmly, Simone`, or the fuller `Warmly, Simone / StayAtFlorida.com` on review-request and repeat-direct SMSes where the brand URL adds value. Never `The Team`, `StayAtFlorida Support`, `Best regards`, or unsigned.
+- **One exclamation mark maximum** across the whole SMS. Reserve for genuine informal moments (`Safe travels home!`). The HOSPITALITY.md `Template rules` cap of three combined exclamations is the ceiling across a whole thread — not per message.
+- **No emoji in the review-solicitation flow.** No sunset, no wave, no smile. Reviews are transactional trust-building; emoji risk reading incentivized or manipulative. A single 🌊 in a genuinely warm reply after a positive review lands is acceptable, once, sparingly.
+
+#### Review-solicitation-specific rules
+
+Full playbook lives in `HOSPITALITY.md`. Cross-linked here because the rules are voice-and-brand rules, not just hospitality-ops rules — a violation on any of these hurts the brand:
+
+- **Never ask for a specific rating.** `5-star review`, `great review`, `top rating` — all forbidden. Airbnb + VRBO review policies explicitly prohibit soliciting specific ratings, and both platforms honor off-platform reports (guest-submitted screenshots of a coaching SMS). Use `an honest review` or just `a review`. This is a P0 platform-policy rule, not a preference.
+- **Fix-first invitation is mandatory in every review-ask.** Every review-solicitation SMS must include the "if anything about the stay wasn't right, tell me directly first — I'd rather fix it than see it in a review" line. This is our operating principle from HOSPITALITY.md § Handling issues, and it materially cuts negative-review rates (guests who feel heard privately are far less likely to complain publicly).
+- **No assumption the stay was perfect.** Never open a review-solicitation SMS with `so glad everything was perfect` or `hope you had an amazing time`. If the stay wasn't perfect, that opener reads tone-deaf and pushes the guest toward a negative review. Open with a specific action or observation (`Thank you for choosing Twenty First — hope your travel home was smooth`) that works regardless of stay quality.
+- **One review-ask per stay.** The review-request SMS asks for a review only. The direct-book pitch belongs in the separate `Repeat-direct SMS` (HOSPITALITY.md §9), which fires only after a positive review has landed. Sequencing keeps each ask singular AND lands the direct-book pitch when the guest is warmest toward you.
+- **One follow-up allowed.** If Send #1 (day +2) produces no review, Send #2 (day +7) is the follow-up — one time only, never a third. Send #3 (repeat-direct) is a different ask altogether, fired only after a positive review lands.
+
 ### 404 / error page
 
 Pattern: acknowledge → redirect → warmth. See [`404.html`](../../404.html).

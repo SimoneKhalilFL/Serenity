@@ -167,15 +167,26 @@ Photos convert more than copy on this brand. Follow the priority list from the b
 
 Reviews are the single largest conversion lever on this brand. Every stay ends with a review request.
 
-**Cadence:**
+**Channel (canonical, locked 2026-07-07):** SMS is the primary channel for the review-request touch. Email is the approved fallback for guests where SMS delivery fails. Full templates + rules live in [`HOSPITALITY.md`](HOSPITALITY.md#7-review-request-day-2-sms-primary) §7 + §8 + §9; per-platform variants + tracking log format live in [`HOSPITALITY.md`](HOSPITALITY.md#post-stay-review-solicitation-playbook) § Post-stay review-solicitation playbook.
 
-- **Check-out day:** Automated warm thank-you email; ask for a review only after check-out is complete.
-- **48 hours later:** Follow-up if no review yet — one time only.
-- **Never:** Third asks, incentivized reviews, or paid reviews.
+**Cadence (canonical, reconciled 2026-07-07 — supersedes prior "check-out day" and "day +3" versions):**
 
-**Placement:**
+- **Send #1 — Day +2** (48h after checkout): SMS review-request. Lands ~24h after the OTA-native review-request email in the guest's inbox — warm nudge on top of a link the guest already has.
+- **Send #2 — Day +7** (one week after checkout): SMS follow-up if no review yet. One time only.
+- **Send #3 — Post-positive-review**: SMS repeat-direct pitch invites future direct booking. Fires only after a positive review lands on any platform — sequencing keeps the review ask singular AND lands the direct-book pitch when the guest is warmest toward you.
+- **Never:** Third review asks, incentivized reviews, coached ratings, or paid reviews.
 
-- Aggregated 5-star rating on the homepage trust badge.
+**Per-platform ask discipline:**
+
+- **OTA-booked guests** get asked to review on the platform they booked on. Never ask an Airbnb guest to review on VRBO or Google — cross-platform review-cannibalization dilutes the property's review count on the platform of record.
+- **Houfy note:** guests who booked THROUGH Houfy get a Houfy-native ask *(the review-import feature already surfaces Airbnb + VRBO reviews on the Houfy listing page, so don't double-ask Airbnb/VRBO guests to review on Houfy)*. See [`../listings/TW2111/HOUFY.md#current-live-state-post-rebrand-verified-2026-07-07-evening-via-live-page-fetch`](../listings/TW2111/HOUFY.md) `Houfy-specific rules` for detail.
+- **Direct-site guests** get asked to review on Google *(pending Google Business Profile setup — tracker initiative #52; deferred until GBP is created + verified)*. Google reviews build map-pack SEO for `Panama City Beach vacation rental` searches without competing with any OTA review count.
+
+**Never ask for a specific rating** (`5-star`, `great review`, `top rating`). Airbnb + VRBO review policies explicitly prohibit soliciting specific ratings; both platforms honor off-platform reports. Use `an honest review` or just `a review`. Full rules in [`HOSPITALITY.md`](HOSPITALITY.md#template-rules) `Template rules`.
+
+**Placement on the Website:**
+
+- Aggregated rating on the homepage trust badge *(hidden for TW2111 per `MASTER.md §23 hybrid-review-display policy` — hero shows verified guest count only, not aggregate, until Phase 3 #4 measurement window resolves)*.
 - Per-property review section on the listing page (up to 20 shown, all shown in JSON-LD).
 - The "Loved by Guests" homepage section rotates real named reviews.
 

@@ -303,47 +303,102 @@ Warmly,
 Simone
 ```
 
-### 7. Review request (24–48 hours after check-out)
+### 7. Review request (day +2, SMS-primary)
 
-Trigger: 24–48 hours after check-out, if no review yet.
+**Channel:** SMS is the canonical channel for the review-request touch — owner's baseline as of 2026-07-07 evening. Email is an approved fallback for guests where SMS delivery fails (unlisted number, iMessage bounce) or where the guest has explicitly requested email-only. Never use both channels for the same ask; that reads as spam.
+
+**Trigger:** Day +2 (48 hours after checkout). Reason: the OTA-native review-request email typically lands in the guest's inbox ~24h after checkout — our SMS lands ~24h after theirs, acting as a warm nudge on top of a link the guest already has. It also gives the guest one day of "back home / settling" before we ask for anything.
+
+**Rules — non-negotiable:**
+
+- **Never ask for a specific rating** (`5-star review`, `great review`, `top rating`). Both Airbnb and VRBO review policies explicitly prohibit soliciting specific ratings — the platforms honor off-platform reports, so this rule applies to SMS too. Ask for `an honest review` or just `a review`.
+- **Fix-first invitation is mandatory.** Every review-ask must include the "if anything wasn't right, tell me directly first — I'd rather fix it than see it in a review" line. This is our operating principle from §Post-stay and it materially cuts negative-review rates — guests who feel heard privately are far less likely to complain publicly.
+- **No assumption the stay was perfect.** Never open with `so glad everything was perfect` — reads tone-deaf if the guest had a bad experience.
+- **The review-request SMS asks for a review only.** The `book direct` future-bookings pitch belongs in template §9 (Repeat-direct SMS), which fires only after a positive review lands. Sequencing keeps each ask singular and lands the direct-book pitch when the guest is warmest toward you.
+- **Personalize the first line.** Reference the property by name (`Twenty First` / `Serenity`). If you can naturally reference something specific from the stay (a repeat guest returning, a birthday celebration mentioned in inquiry, a note left in the guest book), it belongs in the first line.
+
+**Canonical SMS template:**
 
 ```
 Hi [First name],
 
-Hope your trip home was smooth. Thanks again for choosing Twenty First — it was a pleasure hosting you.
+Thank you for choosing [Property] — hope your travel home was smooth.
 
-If you have a minute, a review on [platform] helps other families find the home:
-[review link]
+If anything about the stay wasn't right, tell me directly first — I'd rather fix it than see it in a review. If your stay went well, an honest review on [Platform] would mean a lot; it takes a couple of minutes.
 
-If anything about the stay wasn't right, please tell me directly first — I'd rather fix it than see it in a review.
+Warmly,
+Simone
+StayAtFlorida.com
+```
+
+- `[Property]` — `Twenty First` for TW2111 · `Serenity` for MS811 *(will update to the locked new brand name after initiative #1 rebrand pass)*
+- `[Platform]` — see per-platform fill-in table in [`docs/brand/HOSPITALITY.md#post-stay-review-solicitation-playbook`](HOSPITALITY.md#post-stay-review-solicitation-playbook) below
+
+**Email fallback** *(for guests where SMS is unavailable — same rules apply):*
+
+```
+Hi [First name],
+
+Hope your trip home was smooth. Thanks again for choosing [Property] — it was a pleasure hosting you.
+
+If anything about the stay wasn't right, please tell me directly first — I'd rather fix it than see it in a review. If your stay went well, an honest review on [Platform] helps other families find the home:
+[review link — see playbook § URL lookup]
 
 Warmly,
 Simone
 ```
 
-### 8. Follow-up review request (one time, 5–7 days later)
+### 8. Follow-up review request (day +7, one time only, SMS-primary)
 
-Trigger: still no review after the first ask. Send once, never twice.
+**Trigger:** Day +7 (one week after checkout) if no review has landed yet. **Send once, never twice.** No third ask under any circumstance.
+
+**Canonical SMS template:**
 
 ```
 Hi [First name],
 
-Just a quick nudge in case my earlier note got buried — a short review on [platform] would mean a lot, and it takes about two minutes:
-[review link]
+Just a quick nudge in case my earlier note got buried — a short review on [Platform] would mean a lot; two minutes.
 
-Thanks again for staying.
+Thanks again for staying at [Property].
 
 — Simone
 ```
 
-### 9. Repeat-direct invitation (post-stay, after review)
-
-Trigger: after the guest leaves a positive review. Sent by owner, not automated.
+**Email fallback** *(if the day +2 review request went via email, follow up via email too):*
 
 ```
 Hi [First name],
 
-Thanks again for the kind review. If Twenty First comes up in your plans down the road, book directly at stayatflorida.com next time — you'll skip the platform service fees (usually 10–15% of the total) and I'll answer the email either way.
+Just a quick nudge in case my earlier note got buried — a short review on [Platform] would mean a lot, and it takes about two minutes:
+[review link — see playbook § URL lookup]
+
+Thanks again for staying at [Property].
+
+— Simone
+```
+
+### 9. Repeat-direct invitation (post-positive-review, SMS-primary)
+
+**Trigger:** After the guest leaves a positive review (owner-observed on the platform). Sent whenever a positive review is confirmed live — not automated. The point is to catch the guest at their warmest moment toward you AND after their review is banked, so the direct-book pitch can't influence their review content.
+
+**Canonical SMS template:**
+
+```
+Hi [First name],
+
+Thanks again for the kind review — really appreciate it. Whenever you're planning your next trip to the Emerald Coast, book directly at StayAtFlorida.com — you'll skip the platform fees (typically 10–15% of the total), and you'll get the same personal reply from me either way.
+
+Whenever you're ready.
+
+— Simone
+```
+
+**Email fallback** *(preserves the pre-2026-07-07 tone if the review-thread already lives in email):*
+
+```
+Hi [First name],
+
+Thanks again for the kind review. If Twenty First comes up in your plans down the road, book directly at StayAtFlorida.com next time — you'll skip the platform service fees (usually 10–15% of the total) and I'll answer the email either way.
 
 Whenever you're ready.
 
@@ -397,3 +452,71 @@ Never argue in a public reply. Never blame the cleaner, the platform, or the HOA
 - **The complimentary beach chairs / umbrella sentence appears in every pre-arrival message**, verbatim from [`BRAND_GUIDELINES.md`](BRAND_GUIDELINES.md#beach-chairs-and-umbrella).
 - **Never coach a review.** Ask honestly, don't script.
 - **Never incentivize a review.** No discounts, no gift cards, no swaps.
+- **Never ask for a specific rating.** `5-star review`, `great review`, `top rating` — all forbidden. Airbnb + VRBO review policies explicitly prohibit soliciting specific ratings, and both platforms honor off-platform reports. Use `an honest review` or just `a review`.
+
+---
+
+## Post-stay review-solicitation playbook
+
+> **Codified as Phase 3 initiative #44 ship 2026-07-07 evening.** Consolidates the review-request touch (§7), follow-up (§8), and repeat-direct pitch (§9) into a single operational playbook — per-platform variants, cadence, trigger discipline, and a tracking log for measuring baseline vs. lift.
+
+### Cadence — canonical (reconciled 2026-07-07)
+
+Prior state had three sources documenting three different cadences (`MARKETING.md` said checkout-day, `HOSPITALITY.md §7` said 24–48h, `phase-3/revenue-impact-tracker.md #44` said day +3). Reconciled to a single canonical schedule:
+
+| Touch | When | Trigger | Notes |
+|---|---|---|---|
+| **Send #1 — Review request SMS** | **Day +2** (48h after checkout) | Automatic per-guest, unless a review has already landed | The OTA-native review-request email typically lands in the guest's inbox ~24h after checkout — our SMS lands ~24h after theirs. Warm nudge on top of a link the guest already has. |
+| **Send #2 — Follow-up SMS** | **Day +7** (one week after checkout) | Only if no review yet AND day +2 SMS did not bounce | One time only. Never a third ask. |
+| **Send #3 — Repeat-direct SMS** | Whenever a positive review lands on any platform | Owner spots the positive review during regular OTA-dashboard sweep | Fires only after a positive review is banked — direct-book pitch can't influence review content this way |
+
+**Anti-duplication rules:**
+
+- Don't send Send #1 if the guest already left a review before day +2 (owner spot-checks the platform review page in the morning before sending).
+- Don't send Send #2 if a review landed between day +2 and day +7.
+- Don't send Send #3 unless the review is clearly positive (≥4/5 or a written review that reads warmly). If the review is neutral or critical, skip Send #3 entirely and either respond publicly per §11 (public review response) or reach out privately to address the issue.
+- Repeat guests get a fresh Send #1 + #2 cycle per stay — each stay is a separate review opportunity.
+
+### Per-platform `[Platform]` fill-in
+
+The OTAs' own systems handle actual review submission — their platforms send the guest an email with the submission link within 24–48h of checkout. Our SMS is a **warm nudge on top**, not a competing submission path. So for OTA guests we just name the platform in the SMS; the guest clicks the link already in their platform inbox.
+
+| Guest booked on | `[Platform]` fills in as | Actual review-submission path (informational — do not include in the SMS body) |
+|---|---|---|
+| **Airbnb** | `Airbnb` | Airbnb-sent email or **Trips → Past stays** in the app. Review window closes at 14 days post-checkout — Send #2 must land before that window closes. |
+| **VRBO** | `VRBO` | VRBO-sent email *(sender: `no-reply@vrbo.com`)* or **My Trips** in the app. Review window is much longer (~1 year), so Send #2 has more runway. |
+| **Booking.com** | `Booking.com` | Booking.com-sent email *(sender: `noreply@booking.com`)* or the confirmation email's `Rate your stay` link. Review window closes ~90 days post-checkout. |
+| **Houfy** | `Houfy` | **⚠ Verification pending — owner action.** Check the Houfy dashboard: does Houfy send booked guests a native review-request email/notification after checkout? If yes, mirror the OTA pattern (SMS names the platform, guest uses Houfy's own link). If no, the SMS needs to include a direct URL to the Houfy review-submission surface — capture the URL from the dashboard and add it to the URL lookup table below. Note: this is only relevant for **Houfy-booked guests** (guests who booked THROUGH Houfy). Airbnb/VRBO reviews get imported to Houfy automatically per the review-import feature — don't ask Airbnb/VRBO guests to also review on Houfy. |
+| **Direct-site (StayAtFlorida.com)** | `Google` **(deferred — see tracker #52)** | Once Google Business Profile is created + verified (initiative #52), the SMS gets a direct `g.page/r/[ID]/review` short link — one tap for the guest. Until then, direct-site guests default to whatever OTA the property has strongest visibility on *(TW2111: Airbnb — highest velocity + Superhost badge)*, framed as "Twenty First is also listed on Airbnb, and a quick review there would help other families find the home." |
+
+### URL lookup — review-submission paths per property × platform
+
+Fill in the actual links Simone can paste into the email fallback templates. **Owner action pending** — capture the URLs from each host dashboard and paste them here. The SMS body doesn't include URLs (guest uses the platform's own email link); the email fallback template needs the URL because email guests didn't get the SMS nudge.
+
+| Property × Platform | Review-submission URL |
+|---|---|
+| **TW2111 (Twenty First) — Airbnb** | *(hosts don't have a direct "leave review" URL — guests use the platform's Trips flow. Email fallback should reference the Airbnb review request email guest received.)* |
+| **TW2111 — VRBO** | *(same as Airbnb — VRBO's Trips flow. Reference the VRBO review email.)* |
+| **TW2111 — Booking.com** | *(same — Booking sends the review email; reference that.)* |
+| **TW2111 — Houfy** | **⚠ Owner action:** capture the Houfy review-submission URL from `https://houfy.com/h/twentyfirst` dashboard if it exists as a direct URL |
+| **TW2111 — Google** | **⚠ Deferred to initiative #52** — GBP not yet created. URL will be `https://g.page/r/[ID]/review` once verified. |
+| **MS811 (Serenity) — Airbnb / VRBO / Booking.com / Houfy** | Same pattern as TW2111. Populate after MS811 rebrand (#1). |
+
+### Tracking log
+
+Success Metric on #44 is **≥+50% review velocity portfolio-wide 90 days post-template-ship**. To measure lift we need baseline + post-ship data. Log lives at [`docs/hospitality/review-solicitation-log.md`](../hospitality/review-solicitation-log.md) — owner appends one row per Send #1. Schema:
+
+| Column | Value |
+|---|---|
+| `Checkout date` | YYYY-MM-DD |
+| `Property` | TW2111 · MS811 |
+| `Guest first name` | *(first name only — never last name in this log)* |
+| `Platform` | Airbnb · VRBO · Booking.com · Houfy · Direct |
+| `Send #1 date` | YYYY-MM-DD *(day +2 default)* |
+| `Follow-up (Send #2) date` | YYYY-MM-DD or `—` if not sent |
+| `Review received` | `—` or YYYY-MM-DD + rating (`2026-07-10 · 5`) |
+| `Repeat-direct sent` | YYYY-MM-DD or `—` |
+
+**Baseline window (pre-ship):** review velocity was untracked prior to 2026-07-07. Owner sent a single follow-up text consistently but without a log — we count that as "baseline behavior" for the purpose of the Success Metric comparison. Post-ship velocity will be measured by counting Send #1 rows against `Review received` completions over the 90-day window.
+
+**Simplicity discipline:** if the log takes more than 30 seconds per Send #1 to update, the log is broken. Shorten it before the owner stops using it. Do NOT extend to more columns without a specific reason.
