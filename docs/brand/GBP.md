@@ -229,17 +229,22 @@ Follow these to keep the profile healthy and compliant.
 
 ## Current live state
 
-*(updated on ship — currently empty because profile is not yet verified)*
+*(updated 2026-07-08 afternoon after owner ran the walkthrough — verification complete via instant path; URL fields pending owner capture from dashboard)*
 
 | Field | Value |
 |---|---|
-| Profile URL | *(fill on verification — will be `https://g.co/kgs/[SHORT_ID]` or a longer maps.google.com URL)* |
-| Review submission URL | *(fill on verification — `https://g.page/r/[REVIEW_CODE]/review`)* |
-| Verification date | *(fill on postcard code entry success)* |
-| Business ID / Place ID | *(fill on verification — visible in the dashboard)* |
-| Category (primary) | *(fill on verification — should be `Vacation home rental agency`)* |
-| Owner account | *(fill — Google account that owns the profile)* |
-| Reviews count on ship day | 0 *(brand-new profile)* |
+| Verification status | ✅ **Verified 2026-07-08 afternoon** *(instant verification)* |
+| Verification method | **Instant** — Google auto-verified because the owner's Google account already had verified ownership of `stayatflorida.com` (via Google Search Console or Google Analytics property ownership on the domain). Postcard step skipped entirely — best-case verification path. Saved 5-7 business days versus the walkthrough's default postcard assumption. |
+| Public Google Search indexing | ⏳ **Propagating (24-72h typical)** as of ship date — profile is live in Google's internal system but may not appear in `StayAtFlorida` brand-name search results yet. Test via Google Maps + incognito browser (see [walkthrough Phase 4 checks](#phase-4--capture-the-review-submission-link-5-min)). |
+| Profile URL | ⏳ **Pending owner capture** — Share button in `business.google.com` dashboard → paste back to Content Sync Agent. Format: `https://g.co/kgs/[SHORT_ID]` or `https://maps.google.com/?cid=[NUMERIC_ID]`. |
+| Review submission URL | ⏳ **Pending owner capture** — `Ask for reviews` or `Share your review form` section in dashboard → paste back to Content Sync Agent. Format: `https://g.page/r/[REVIEW_CODE]/review`. Once captured, wires into [`HOSPITALITY.md`](HOSPITALITY.md) URL lookup table (Google row) + [`../../email-signature.html`](../../email-signature.html) as `Leave us a Google review` line. |
+| Verification date | 2026-07-08 |
+| Business ID / Place ID | ⏳ **Pending owner capture** — visible in the dashboard details. |
+| Category (primary) | `Vacation home rental agency` *(locked per §Decisions — confirm no drift on the actual profile)* |
+| Owner account | ⏳ **Confirm which Google account owns the profile** — should be either `simone@stayatflorida.com` or the owner's primary Google account that already verified `stayatflorida.com` domain ownership. |
+| Reviews count on verification day | 0 *(brand-new profile — Success Metric target: 1+ Google review within 60 days, i.e. by 2026-09-06)* |
+| Profile completeness | ⏳ **Owner to confirm 100%** — description pasted, 6 services added, hours set (Mon-Sun 8 AM-10 PM CT), attributes set, 10+ photos uploaded (logo + cover + gallery), phone + website filled. See dashboard completion checklist. |
+| Google Ads exploration during this session | Owner briefly explored the Google Ads `New campaign → I want leads` flow after verification (Google's `$500 credit for $500 spend` cross-promotion nudge). Not scoped as an initiative — GA4 install spun out as new tracker row #53 (backlog) as the analytics foundation Google Ads would need. Ads decision deferred until GBP-driven organic traffic can be measured. |
 
 ---
 
@@ -256,3 +261,4 @@ The 60-day first-review window is measured from the postcard-code-entry date. Se
 | Date | Change | Author |
 |---|---|---|
 | 2026-07-08 | **Initial creation.** Scoped GBP setup as brand-level (rejecting per-property model per Google's SAB guidelines for vacation rentals). Locked 8 pre-signup decisions (business name, category, location model, service area, website, phone, hours, verification address). Drafted 614-char paste-ready description *(verified via `node _tmp_gbp_desc_count.cjs`; Google GBP compliant — no URLs, no phone, no promotional pricing language)*. Wrote 5-phase setup walkthrough. Documented ongoing management rules + watch-outs. Cross-referenced from [tracker #52](../phase-3/revenue-impact-tracker.md) + [HOSPITALITY.md URL lookup](HOSPITALITY.md#url-lookup--review-submission-paths-per-property--platform). | Content Sync Agent + owner request (`walk me thru setting up number 4`) |
+| 2026-07-08 | **Owner ran the walkthrough — instant-verified.** Owner completed Phase 1 signup 2026-07-08 afternoon. Verification landed at the best-case outcome: **Google instant-verified the profile** because the owner's Google account already had verified ownership of `stayatflorida.com` (via Google Search Console or Analytics property on the domain). Postcard step skipped entirely — saved 5-7 business days vs. the walkthrough's default assumption. Profile is now live in Google's internal system; public search indexing propagating within 24-72h. **`Current live state` table updated** — verification status flipped to ✅ Verified 2026-07-08, verification method noted as Instant, propagation window noted as ⏳ 24-72h. **URL fields still pending** (Profile URL, Review submission URL, Business ID) — owner to capture from dashboard and paste back for docs wiring. **Same-session finding:** owner explored the Google Ads `New campaign → I want leads` flow via Google's `$500 credit for $500 spend` post-verification cross-promotion nudge. GA4 not installed on the site (verified via codebase grep — site uses Cloudflare Insights + Microsoft Clarity + Web3Forms, no Google Analytics), so Google Ads would run blind without conversion tracking. GA4 install + inquiry-form event tracking spun out as new [tracker row #53](../phase-3/revenue-impact-tracker.md#53) → `⏸ Deferred (backlog)` per owner request `kip GA4 for now add to the backlog`. Ads not scoped; will revisit once GBP-driven organic traffic can be measured or a specific business reason justifies paid traffic. | Content Sync Agent + owner GBP setup session |
