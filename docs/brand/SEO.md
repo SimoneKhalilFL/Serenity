@@ -192,10 +192,11 @@ Never target adult, party, or spring-break intent.
 
 ## Local SEO
 
-- Both properties should eventually have Google Business Profiles pointing to `stayatflorida.com`.
+- **Google Business Profile: brand-level, not per-property.** A single GBP for `StayAtFlorida` (service-area business, hidden address, `Vacation home rental agency` primary category, service area = Panama City Beach + Miramar Beach) is the compliant model. Per-property GBPs are explicitly rejected — Google's vacation rental / SAB guidelines have historically flagged property-level accounts for mass suspension unless they're staffed like hotels (24/7 on-site staff, physical reception). See [`GBP.md`](GBP.md) for the full paste-ready profile + setup walkthrough + ongoing management rules. Status tracked at [phase-3 initiative #52](../phase-3/revenue-impact-tracker.md#52).
 - Structured data includes `PostalAddress` and `GeoCoordinates` per property — those must stay accurate.
 - Property pages mention the city name naturally at least once in the body.
 - Never spoof a location (never suggest a property is "in Destin" if it's in Panama City Beach and vice versa).
+- Once GBP is verified live, add the profile URL to the `Organization` JSON-LD `sameAs` array (currently deferred per [`../listings/TW2111/MASTER.md`](../listings/TW2111/MASTER.md) line 536).
 
 ---
 
