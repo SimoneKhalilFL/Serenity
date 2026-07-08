@@ -10,7 +10,7 @@
 >
 > **Live listing URL:** [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst) *(slug retargeted from `/lodging/fun-in-the-sun/` → `/h/twentyfirst` — legacy slug retired 2026-07-07 evening, verified by live-page fetch)*.
 >
-> **Status: rebrand-in-place (SHIPPED — HIGH QA item resolved, 2 lower-priority items pending).** Title + description + slug all live 2026-07-07 evening. Post-ship QA identified one HIGH-priority operational issue (resolved 2026-07-07 evening) + one MEDIUM-priority H1 gap (open) + one LOW-priority soft-language pass (open, priority-downgraded) — see `Post-ship QA findings` section below. See [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #12 for full ship rationale.
+> **Status: rebrand-in-place (SHIPPED — HIGH + MEDIUM QA items resolved, 1 optional low-priority item pending).** Title + description + slug all live 2026-07-07 evening. Post-ship QA identified one HIGH-priority operational issue (resolved 2026-07-07 evening) + one MEDIUM-priority H1 gap (**resolved 2026-07-08 afternoon** — owner updated Houfy's Listing Name field, brand-prefix identity restored) + one LOW-priority soft-language pass (open, priority-downgraded — optional) — see `Post-ship QA findings` section below. See [`../../phase-3/revenue-impact-tracker.md`](../../phase-3/revenue-impact-tracker.md) row #12 for full ship rationale.
 
 ---
 
@@ -20,7 +20,7 @@ Verified against a live-page fetch of [`https://houfy.com/h/twentyfirst`](https:
 
 | Field | Live value | Notes |
 |---|---|---|
-| **Page H1** | `Twenty First - Panama City Beach` *(34 chars, hyphen)* | Houfy's short display name — separate field from the title/H3 below. **This is the H1 Google indexes and Houfy search tiles surface.** Missing the `Gulf-Front 3BR` differentiator. See `Post-ship QA findings` § MEDIUM. |
+| **Page H1** | `Twenty First · Gulf-Front 3BR · Panama City Beach` *(50 chars, middots)* — **updated 2026-07-08 afternoon by owner via Houfy dashboard "Listing Name" field** | Houfy's short display name — separate field from the description title/H3 below. **This is the H1 Google indexes and Houfy search tiles surface.** Brand-prefix identity restored — first 29 chars `Twenty First · Gulf-Front 3BR` now match all four TW2111 OTA titles character-for-character. Verified via live-page fetch 2026-07-08 afternoon. See `Post-ship QA findings` § MEDIUM (RESOLVED). |
 | **Description title (H3)** | `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` *(64 chars, middots)* | The Booking.com-variant with `/3BA` bath count. First 29 characters match Airbnb + VRBO + Booking.com character-for-character (brand-prefix identity holds). ✓ |
 | **URL slug** | `/h/twentyfirst` | **Legacy `/lodging/fun-in-the-sun/` slug retired.** Big win — the "single most damaging brand asset on the internet" per the Phase 3 audit is gone. |
 | **Description body** | Live, ~4,300 chars, verbatim per owner paste 2026-07-07 evening | See `Overview — actually shipped (verbatim)` section below. Verbatim archived so we have a version-controlled record of what's live. |
@@ -295,18 +295,26 @@ Identified via live-page verification of [`https://houfy.com/h/twentyfirst`](htt
 
 **Portfolio-level rule codified in [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md)** `OTA platform titles → Platform limits and prime real estate → Houfy` bullet: **never paste external URLs into Houfy listing bodies.** URLs get stripped and the resulting `[Removed]` string looks like a broken link. Communicate operational URLs via the arrival-instructions email instead.
 
-### 🟡 MEDIUM — Page H1 does not include the Gulf-Front differentiator
+### ✅ MEDIUM — Page H1 does not include the Gulf-Front differentiator *(RESOLVED 2026-07-08 afternoon)*
 
-**Finding:** The live Houfy page has two distinct title-like elements:
+**Original finding *(2026-07-07 evening)*:** The live Houfy page had two distinct title-like elements:
 
 - **Page H1 (top-of-page, what Google indexes and Houfy search tiles surface):** `Twenty First - Panama City Beach` *(34 chars, hyphen)*
 - **Description title (H3, "About this place"):** `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` *(64 chars, middots)*
 
-Houfy has a "short listing name" / "display name" field separate from the description title. The current H1 is missing the `Gulf-Front 3BR` differentiator that does the search-CTR work on all our other platforms.
+Houfy has a "short listing name" / "display name" field separate from the description title. The prior H1 was missing the `Gulf-Front 3BR` differentiator that does the search-CTR work on all our other platforms.
 
-**Impact:** Houfy's own search tiles and Google's search result snippets both use the H1. Losing the differentiator here loses cross-platform brand-prefix identity on the two surfaces most likely to be seen by a first-time visitor.
+**Impact of the gap:** Houfy's own search tiles and Google's search result snippets both use the H1. Losing the differentiator here loses cross-platform brand-prefix identity on the two surfaces most likely to be seen by a first-time visitor.
 
-**Recommended fix:** Look for a "Listing Name" / "Property Name" / "Display Name" field in the Houfy dashboard *(separate from the description title field the owner already updated)*. If it exists and is editable, update to something like `Twenty First · Gulf-Front 3BR · Panama City Beach` (50 chars) or `Twenty First · Gulf-Front 3BR` (29 chars). If no such field exists — i.e., Houfy auto-derives the H1 from the slug or from a non-editable source — accept the trade-off (same posture as Booking.com's stuck slug) and move on.
+**Fix applied *(owner action 2026-07-08 afternoon)*:** Owner located the "Listing Name" field in the Houfy dashboard *(confirmed editable — separate from the description title)* and updated it. Owner chose the shorter variant.
+
+**Verified live *(2026-07-08 afternoon, via live-page fetch of [`https://houfy.com/h/twentyfirst`](https://houfy.com/h/twentyfirst))*:**
+
+- **New page title (browser tab / SEO):** `Twenty First · Gulf-Front 3BR · Panama City Beach - Panama City Beach` *(Houfy appends the city one extra time — that's platform-side auto-append, not owner input)*
+- **New page H1:** `Twenty First · Gulf-Front 3BR · Panama City Beach` *(50 chars, middots — the exact variant recommended in the original fix note)*
+- **Brand-prefix identity restored:** first 29 characters `Twenty First · Gulf-Front 3BR` now match Airbnb + VRBO + Booking.com + Houfy description H3 character-for-character across all four TW2111 OTA surfaces AND both Houfy title fields. Full portfolio-level brand-prefix identity locked.
+
+**Portfolio-level finding to codify:** **Houfy DOES have an editable "Listing Name" field separate from the description title, and it does update the H1** *(verified by owner action + live-page fetch 2026-07-08)*. This resolves the earlier open question in the [portfolio-level Houfy rules](#houfy-specific-rules-portfolio-level--codified-from-tw2111-rebrand-2026-07-07-08) about whether the H1 was editable. All future Houfy listings and rebrands should update this field explicitly rather than relying on auto-derivation from the slug.
 
 ### 🟢 LOW — Soft-language pass on the description body (optional)
 
@@ -417,5 +425,5 @@ Houfy photo order: view → lifestyle → bedrooms → living → kitchen → di
 - **Houfy strips external URLs from listing description bodies.** Any `http://` or `https://` link pasted into the Overview / description is silently replaced with `[Removed]` on the live page. Portfolio-level rule: never paste external URLs into Houfy listing bodies — communicate URLs (registration links, direct-site links, etc.) via arrival-instructions email instead. Discovered post-ship 2026-07-07 evening (see `Post-ship QA findings` § HIGH).
 - **Houfy imports reviews from Airbnb + VRBO via platform-level feature.** The Houfy `Guest Reviews` section on the listing page displays reviews aggregated from the listing's Airbnb + VRBO archives — these are **not** Houfy-native reviews (guests who booked through Houfy and reviewed on Houfy). Per owner 2026-07-07 evening. Portfolio implication: (1) success metrics that count Houfy reviews must scope to Houfy-**native** reviews only — imported OTA reviews mirror trust from other platforms but don't reflect Houfy-native booking volume; (2) description body copy that references reviews (e.g., "Guests consistently praise…") is defensible on aggregate cross-platform grounds, not just Houfy-native grounds; (3) source-of-truth for the actual review content stays in the Airbnb + VRBO archives ([`reviews/2026-07-06-airbnb.md`](reviews/2026-07-06-airbnb.md), [`reviews/2026-07-06-vrbo.md`](reviews/2026-07-06-vrbo.md)) — do not create a duplicate Houfy review archive since it would drift from source.
 - **Photo audit.** MASTER §18 photo set is canonical for the brand; the photos actually in the Houfy dashboard may differ if they were uploaded pre-rebrand. Verify the photo set + order + captions before publishing rather than assuming inheritance from MASTER.
-- **Two title-like fields need separate verification.** Houfy has (a) a short listing name / "display name" field that renders as the Page H1 and appears on Houfy search tiles + Google snippets, and (b) a description title (renders as the H3 above the description body). Both need brand-prefix identity; verifying the description title is insufficient. Discovered post-ship 2026-07-07 evening — the description title was updated correctly but the H1 still reads `Twenty First - Panama City Beach` (see `Post-ship QA findings` § MEDIUM).
+- **Two title-like fields — BOTH editable independently.** Houfy has (a) a short listing name / "display name" field that renders as the Page H1 and appears on Houfy search tiles + Google snippets, and (b) a description title (renders as the H3 above the description body). Both need brand-prefix identity; verifying the description title alone is insufficient. **Both fields are editable via the Houfy dashboard** — the Listing Name field was updated separately from the description title on 2026-07-08 afternoon, and the H1 immediately reflected the change on the live page (verified via fetch of `https://houfy.com/h/twentyfirst`). Any future Houfy rebrand or listing setup must update BOTH fields explicitly rather than assuming H1 auto-derives from the description or slug.
 - **Review-volume gap (Houfy-native).** Houfy TW2111 has **0 Houfy-native reviews** on file *(4 imported reviews from Airbnb + VRBO are visible on the listing page but don't count as Houfy-native — see above rule)*. Recovery lever is Phase 3 initiative #44 (post-checkout review-solicitation email), and the Houfy-arrival-flow variant of #44 must explicitly ask for a **Houfy-native** review since guests who already reviewed on Airbnb/VRBO may assume their prior review already counts. Success Metric on #12 depends on #44 shipping — a rebrand-in-place pass alone will not move Houfy's search rank without content-quality signals to back it up.
