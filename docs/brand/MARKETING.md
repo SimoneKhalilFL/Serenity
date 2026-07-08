@@ -169,11 +169,11 @@ Reviews are the single largest conversion lever on this brand. Every stay ends w
 
 **Channel (canonical, locked 2026-07-07):** SMS is the primary channel for the review-request touch. Email is the approved fallback for guests where SMS delivery fails. Full templates + rules live in [`HOSPITALITY.md`](HOSPITALITY.md#7-review-request-day-2-sms-primary) §7 + §8 + §9; per-platform variants + tracking log format live in [`HOSPITALITY.md`](HOSPITALITY.md#post-stay-review-solicitation-playbook) § Post-stay review-solicitation playbook.
 
-**Cadence (canonical, reconciled 2026-07-07 — supersedes prior "check-out day" and "day +3" versions):**
+**Cadence (canonical, owner-confirmed 2026-07-07 evening — supersedes prior "check-out day" and "day +3" versions):**
 
-- **Send #1 — Day +2** (48h after checkout): SMS review-request. Lands ~24h after the OTA-native review-request email in the guest's inbox — warm nudge on top of a link the guest already has.
-- **Send #2 — Day +7** (one week after checkout): SMS follow-up if no review yet. One time only.
-- **Send #3 — Post-positive-review**: SMS repeat-direct pitch invites future direct booking. Fires only after a positive review lands on any platform — sequencing keeps the review ask singular AND lands the direct-book pitch when the guest is warmest toward you.
+- **Send #1 — Day +2** (48h after checkout) — **STANDARD, send to every guest**: single SMS review-request with the direct-book pitch inline. Lands ~24h after the OTA-native review-request email in the guest's inbox — warm nudge on top of a link the guest already has. Matches owner's proven pre-2026-07-07 baseline (single consistent follow-up text).
+- **Send #2 — Day +7** (one week after checkout) — **OPTIONAL, use sparingly**: SMS follow-up if no review yet. One time only. Reserve for stays where a review would materially help; not standard cadence.
+- **Send #3 — Post-positive-review** — **OPTIONAL, alternative pattern**: only for the alternative sequencing where the direct-book pitch is stripped from Send #1. The canonical Send #1 already includes the pitch inline; Send #3 is a shelf template for specific high-value cases.
 - **Never:** Third review asks, incentivized reviews, coached ratings, or paid reviews.
 
 **Per-platform ask discipline:**

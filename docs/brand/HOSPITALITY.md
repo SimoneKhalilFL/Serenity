@@ -303,36 +303,47 @@ Warmly,
 Simone
 ```
 
-### 7. Review request (day +2, SMS-primary)
+### 7. Review request (day +2, single-message canonical — SMS-primary)
 
 **Channel:** SMS is the canonical channel for the review-request touch — owner's baseline as of 2026-07-07 evening. Email is an approved fallback for guests where SMS delivery fails (unlisted number, iMessage bounce) or where the guest has explicitly requested email-only. Never use both channels for the same ask; that reads as spam.
 
 **Trigger:** Day +2 (48 hours after checkout). Reason: the OTA-native review-request email typically lands in the guest's inbox ~24h after checkout — our SMS lands ~24h after theirs, acting as a warm nudge on top of a link the guest already has. It also gives the guest one day of "back home / settling" before we ask for anything.
 
-**Rules — non-negotiable:**
+**Shape (owner-confirmed 2026-07-07 evening):** ONE message per stay is the standard. The direct-book pitch stays inline in the same SMS — matches owner's proven baseline and delivers the pitch to every guest, not just positive-reviewers. Templates §8 (day +7 follow-up) and §9 (post-positive-review repeat-direct) exist as **optional levers** for when a specific stay warrants a second touch, not as standard cadence.
 
-- **Never ask for a specific rating** (`5-star review`, `great review`, `top rating`). Both Airbnb and VRBO review policies explicitly prohibit soliciting specific ratings — the platforms honor off-platform reports, so this rule applies to SMS too. Ask for `an honest review` or just `a review`.
-- **Fix-first invitation is mandatory.** Every review-ask must include the "if anything wasn't right, tell me directly first — I'd rather fix it than see it in a review" line. This is our operating principle from §Post-stay and it materially cuts negative-review rates — guests who feel heard privately are far less likely to complain publicly.
-- **No assumption the stay was perfect.** Never open with `so glad everything was perfect` — reads tone-deaf if the guest had a bad experience.
-- **The review-request SMS asks for a review only.** The `book direct` future-bookings pitch belongs in template §9 (Repeat-direct SMS), which fires only after a positive review lands. Sequencing keeps each ask singular and lands the direct-book pitch when the guest is warmest toward you.
+**Rules — non-negotiable regardless of message-count shape:**
+
+- **Never ask for a specific rating** (`5-star review`, `great review`, `top rating`). Both Airbnb and VRBO review policies explicitly prohibit soliciting specific ratings — the platforms honor off-platform reports, so this rule applies to SMS too. Ask for `an honest review` or just `a review`. **P0 platform-policy rule.**
+- **Fix-first invitation is mandatory.** Every review-ask must include the "if anything wasn't right, tell me directly first — I'd rather fix it than see it in a review" line. This is our operating principle from §Post-stay and it materially cuts negative-review rates — guests who feel heard privately are far less likely to complain publicly. **P1 tone rule.**
+- **No assumption the stay was perfect.** Never open with `so glad everything was perfect` — reads tone-deaf if the guest had a bad experience. **P1 tone rule.**
 - **Personalize the first line.** Reference the property by name (`Twenty First` / `Serenity`). If you can naturally reference something specific from the stay (a repeat guest returning, a birthday celebration mentioned in inquiry, a note left in the guest book), it belongs in the first line.
 
-**Canonical SMS template:**
+**Canonical SMS template — preserves owner's baseline voice with the two must-fix changes woven in:**
 
 ```
 Hi [First name],
 
-Thank you for choosing [Property] — hope your travel home was smooth.
+Thank you so much for choosing [Property] — hope your travel home was smooth. If anything about your stay wasn't right, please tell me directly first — I'd rather fix it than see it in a review.
 
-If anything about the stay wasn't right, tell me directly first — I'd rather fix it than see it in a review. If your stay went well, an honest review on [Platform] would mean a lot; it takes a couple of minutes.
+If you enjoyed your experience, an honest review on [Platform] would mean a lot; your feedback is invaluable to us.
 
-Warmly,
+If you're ever planning another trip to the Emerald Coast, booking directly at StayAtFlorida.com next time helps you save on platform fees, and I'm always happy to assist with any special requests. Please don't hesitate to reach out anytime — we'd love to host you again.
+
+Warm regards,
 Simone
 StayAtFlorida.com
 ```
 
 - `[Property]` — `Twenty First` for TW2111 · `Serenity` for MS811 *(will update to the locked new brand name after initiative #1 rebrand pass)*
-- `[Platform]` — see per-platform fill-in table in [`docs/brand/HOSPITALITY.md#post-stay-review-solicitation-playbook`](HOSPITALITY.md#post-stay-review-solicitation-playbook) below
+- `[Platform]` — see per-platform fill-in table in the [Post-stay review-solicitation playbook](#post-stay-review-solicitation-playbook) section below
+
+**Voice diff from the pre-2026-07-07 baseline** *(archived so any future rewrite can trace the changes):*
+
+- **Kept verbatim** from owner's original: `Thank you so much for choosing`, `Your feedback is invaluable to us`, `booking directly with us next time can help you save`, `we're always happy to assist you with any special requests`, `Please don't hesitate to reach out anytime`, `Warm regards`, `Simone`, `StayAtFlorida.com` sign-off.
+- **Fixed:** `5-star review` → `an honest review` *(P0 — Airbnb + VRBO reviews policies prohibit soliciting a specific rating)*.
+- **Fixed:** `I am so glad you had a wonderful time and that everything was perfect for your trip` → `If anything about your stay wasn't right, please tell me directly first — I'd rather fix it than see it in a review` *(P1 — removes tone-deaf assumption + adds fix-first invitation).*
+- **Added:** `[Property]` reference in the opener *(replaces generic `us`/`our home` — more personal, reinforces brand recall)*.
+- **Softened:** `we're always happy to assist you with any special requests to make your stay even better` → `I'm always happy to assist with any special requests` *(shifts from `we` corporate voice to `I` owner voice — matches the hosted-by-owner positioning; drops `to make your stay even better` as filler).*
 
 **Email fallback** *(for guests where SMS is unavailable — same rules apply):*
 
@@ -344,13 +355,17 @@ Hope your trip home was smooth. Thanks again for choosing [Property] — it was 
 If anything about the stay wasn't right, please tell me directly first — I'd rather fix it than see it in a review. If your stay went well, an honest review on [Platform] helps other families find the home:
 [review link — see playbook § URL lookup]
 
-Warmly,
+If you're ever planning another trip to the Emerald Coast, booking directly at StayAtFlorida.com next time helps you save on platform fees. Please don't hesitate to reach out anytime — we'd love to host you again.
+
+Warm regards,
 Simone
 ```
 
-### 8. Follow-up review request (day +7, one time only, SMS-primary)
+### 8. Follow-up review request (day +7, OPTIONAL — not standard cadence)
 
-**Trigger:** Day +7 (one week after checkout) if no review has landed yet. **Send once, never twice.** No third ask under any circumstance.
+> **Status: optional lever, not standard practice.** Owner-confirmed 2026-07-07 evening: the single-message §7 SMS is the canonical cadence. This §8 follow-up exists on the shelf for when you specifically want to push velocity on a guest who hasn't reviewed by day +7 — use it sparingly. If you send §8 as a default, you double your outbound message count per guest and risk reading pushy. Reserve for stays where a review would materially help (new listing catching up on volume, a landmark high-value stay, etc.).
+
+**Trigger (when used):** Day +7 (one week after checkout) if no review has landed yet. **Send once, never twice.** No third ask under any circumstance.
 
 **Canonical SMS template:**
 
@@ -377,9 +392,11 @@ Thanks again for staying at [Property].
 — Simone
 ```
 
-### 9. Repeat-direct invitation (post-positive-review, SMS-primary)
+### 9. Repeat-direct invitation (post-positive-review, OPTIONAL — alternative pattern)
 
-**Trigger:** After the guest leaves a positive review (owner-observed on the platform). Sent whenever a positive review is confirmed live — not automated. The point is to catch the guest at their warmest moment toward you AND after their review is banked, so the direct-book pitch can't influence their review content.
+> **Status: alternative pattern, not standard practice.** The canonical §7 SMS already includes the direct-book pitch inline — every guest hears it once, regardless of whether they review. Owner-confirmed 2026-07-07 evening. This §9 template exists on the shelf for the alternative sequencing pattern where §7 excludes the direct-book pitch and §9 fires after a positive review lands. Use §9 only if you specifically want to sequence the two asks separately for a particular guest (e.g., a very high-value guest where you'd rather send a separate warm thank-you after their positive review). Default: keep the direct-book line in §7 and skip §9.
+
+**Trigger (when used):** After the guest leaves a positive review (owner-observed on the platform). Sent whenever a positive review is confirmed live — not automated. The point is to catch the guest at their warmest moment toward you AND after their review is banked, so the direct-book pitch can't influence their review content.
 
 **Canonical SMS template:**
 
@@ -460,22 +477,28 @@ Never argue in a public reply. Never blame the cleaner, the platform, or the HOA
 
 > **Codified as Phase 3 initiative #44 ship 2026-07-07 evening.** Consolidates the review-request touch (§7), follow-up (§8), and repeat-direct pitch (§9) into a single operational playbook — per-platform variants, cadence, trigger discipline, and a tracking log for measuring baseline vs. lift.
 
-### Cadence — canonical (reconciled 2026-07-07)
+### Cadence — canonical (owner-confirmed 2026-07-07 evening)
 
-Prior state had three sources documenting three different cadences (`MARKETING.md` said checkout-day, `HOSPITALITY.md §7` said 24–48h, `phase-3/revenue-impact-tracker.md #44` said day +3). Reconciled to a single canonical schedule:
+Prior state had three sources documenting three different cadences (`MARKETING.md` said checkout-day, `HOSPITALITY.md §7` said 24–48h, `phase-3/revenue-impact-tracker.md #44` said day +3). Reconciled to a single canonical schedule; then re-refined 2026-07-07 evening per owner feedback ("do I need that many messages?") to make Send #1 the standard-and-only default, with Send #2 and Send #3 marked as optional levers.
 
-| Touch | When | Trigger | Notes |
-|---|---|---|---|
-| **Send #1 — Review request SMS** | **Day +2** (48h after checkout) | Automatic per-guest, unless a review has already landed | The OTA-native review-request email typically lands in the guest's inbox ~24h after checkout — our SMS lands ~24h after theirs. Warm nudge on top of a link the guest already has. |
-| **Send #2 — Follow-up SMS** | **Day +7** (one week after checkout) | Only if no review yet AND day +2 SMS did not bounce | One time only. Never a third ask. |
-| **Send #3 — Repeat-direct SMS** | Whenever a positive review lands on any platform | Owner spots the positive review during regular OTA-dashboard sweep | Fires only after a positive review is banked — direct-book pitch can't influence review content this way |
+| Touch | When | Status | Trigger | Notes |
+|---|---|---|---|---|
+| **Send #1 — Review request SMS** *(with direct-book pitch inline)* | **Day +2** (48h after checkout) | **✓ STANDARD — send this to every guest** | Automatic per-guest, unless a review has already landed by day +2 | The OTA-native review-request email typically lands in the guest's inbox ~24h after checkout — our SMS lands ~24h after theirs. Warm nudge on top of a link the guest already has. Direct-book pitch stays inline (owner-baseline pattern preserved). |
+| **Send #2 — Follow-up SMS** | **Day +7** (one week after checkout) | 🟡 OPTIONAL — use sparingly | Only if no review yet AND you specifically want to push velocity on this guest | One time only. Never a third ask. Not standard cadence — reserve for stays where a review would materially help. If you send Send #2 as a default, you double your outbound message count per guest and risk reading pushy. |
+| **Send #3 — Repeat-direct SMS** | Whenever a positive review lands on any platform | 🟡 OPTIONAL — alternative pattern | Only if you also removed the direct-book pitch from Send #1 (which is NOT the default) | The canonical §7 SMS already includes the direct-book pitch inline — every guest hears it once regardless of whether they review. §9 is the alternative pattern for when you want to sequence the two asks separately; use only for specific high-value cases. |
 
 **Anti-duplication rules:**
 
 - Don't send Send #1 if the guest already left a review before day +2 (owner spot-checks the platform review page in the morning before sending).
 - Don't send Send #2 if a review landed between day +2 and day +7.
-- Don't send Send #3 unless the review is clearly positive (≥4/5 or a written review that reads warmly). If the review is neutral or critical, skip Send #3 entirely and either respond publicly per §11 (public review response) or reach out privately to address the issue.
-- Repeat guests get a fresh Send #1 + #2 cycle per stay — each stay is a separate review opportunity.
+- Don't send Send #3 unless (a) you chose the alternative sequencing pattern that stripped the direct-book line from Send #1, AND (b) the review is clearly positive (≥4/5 or a written review that reads warmly). If the review is neutral or critical, skip Send #3 entirely and either respond publicly per §11 (public review response) or reach out privately to address the issue.
+- Repeat guests get a fresh Send #1 per stay — each stay is a separate review opportunity.
+
+**Escalation ladder for owner discretion:**
+
+- **Minimum (default, matches owner's pre-2026-07-07 baseline):** Send #1 only. Fix wording (P0 + P1), keep direct-book line inline. Zero increase in ops overhead. Modest velocity lift from the wording fixes alone (~5–10% typical based on hospitality-industry data).
+- **Minimum + follow-up (situational):** Send #1 default + Send #2 for specific stays where a review would materially help (new listing, landmark stay). Higher velocity lift (~20–30% recovery of "forgot to review" segment).
+- **Full sequencing (alternative pattern, not default):** Send #1 without direct-book line + Send #2 as default + Send #3 after positive reviews. Highest velocity potential, most outbound-message overhead. Reserve for a future scale point (>10 stays/month/property, or a dedicated review-recovery push).
 
 ### Per-platform `[Platform]` fill-in
 
