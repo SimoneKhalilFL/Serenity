@@ -67,9 +67,42 @@ Recorded before any rebrand paste so we have a clean "from → to" comparison. D
 
 ---
 
-## Short Description (359 chars)
+---
 
-Booking.com displays this as the summary paragraph beneath the property name on the search-result card and at the top of the property page. Front-load the differentiator, keep it factual.
+## ⚠ Editable vs. Booking-controlled fields *(discovered 2026-07-08 evening)*
+
+**Not every field in this document is directly pasteable into the extranet.** Booking.com is the outlier among our OTAs — the platform's content team owns the prose description surface. Hosts submit change requests but do not publish description text directly.
+
+### What you CAN directly edit *(paste-and-save workflow — like every other OTA)*
+
+- **Property Name** *(fully editable — the single biggest lever)* → §Property Name below
+- **Facilities & services amenity checkboxes** → cross-reference with §Amenities below
+- **Photos + individual photo captions** → §Photo Captions below
+- **House rules** *(check-in / check-out / smoking / pets / parties / quiet hours / min age)* → §Important Information below
+- **Beds & rooms configuration** *(bed types + counts, room labels)* → §Accommodation Description below
+- **Location fields** *(nearby attractions, distances)* → §Nearby Attractions below
+- **Host profile bio + response-time claim** → §Host Profile below
+
+### What requires Booking's content-review workflow *(submit + wait ~5-10 business days)*
+
+- **The main property description prose** *(the "About this property" section on the guest-facing page)* — Booking's content team owns this. Two submission paths:
+  - **Path A:** Extranet → Property → Property page → look for `Request a change to the description` / `Suggest a change` / `Edit description` (name varies by account age + property type)
+  - **Path B:** Extranet → Inbox → Compose → subject `Property description update request — [Property ID]` → paste the target text from §Long Description below
+- **Short summary paragraph** *(directly beneath property name on search-result cards)* — usually auto-generated from structured data + description; sometimes editable via the same request workflow, sometimes not
+- **Star rating** — Booking assigns from verified guest reviews; hosts do not control it
+- **Aggregate guest score / review category scores** — auto-computed from guest reviews
+
+### What Booking auto-generates from your structured data
+
+Booking's system pulls from amenity checkboxes, room configs, location fields, and property type to auto-generate chunks of the description. **Perfecting all structured fields is often the highest-ROI path to a better description** — Booking's system re-runs description generation periodically (1-2 weeks typical) and picks up structured-data changes without any prose-review submission needed.
+
+**Practical implication:** the §Short Description and §Long Description sections in this file are **target reference copy for the Path A/B submission workflow**, NOT paste-ready fields for direct extranet entry. Owner submits them via the review workflow; Booking's content team edits and publishes. Expect ~60-70% of the submitted phrasing to survive Booking's house-style edits — the strategic value is in getting the KEY facts (Gulf-front, 3BR/3BA, Sleeps 8, panoramic views, owner-hosted, tenure) onto the page, not in getting the exact prose verbatim.
+
+---
+
+## Short Description (359 chars) — REFERENCE / submit-for-review
+
+Booking.com displays this as the summary paragraph beneath the property name on the search-result card and at the top of the property page. **NOT directly editable in most extranet flows** — submit via the description-review workflow above. Front-load the differentiator, keep it factual.
 
 ```
 Twenty First is a 3-bedroom, 3-bath Gulf-front condo in Panama City Beach with panoramic emerald-water views from a private beachfront balcony. Direct beach access from the resort deck, resort amenities including multiple pools and a full fitness center, and complimentary beach chairs and umbrella in the condo. Sleeps up to 8. Owner-hosted.
@@ -77,7 +110,7 @@ Twenty First is a 3-bedroom, 3-bath Gulf-front condo in Panama City Beach with p
 
 *(Character count: 359 / ~500 typical Booking.com short-description budget.)*
 
-## Long Description (~395 words)
+## Long Description (~395 words) — REFERENCE / submit-for-review
 
 ### Overview
 
@@ -185,6 +218,8 @@ Booking photo order: exterior/view → living room → bedrooms → kitchen → 
 
 ## Booking.com-specific rules
 
+- **Description body is not directly editable by the host.** Booking.com's content team owns the prose description surface. Hosts submit change requests via the extranet's description-edit workflow (Path A) or Booking Inbox (Path B) — see § "Editable vs. Booking-controlled fields" above. Expect ~5-10 business day turnaround, and expect Booking to edit ~30-40% of the submitted phrasing to fit their house style. **Do not treat the §Long Description block in this file as a directly-pasteable field like Airbnb/VRBO/Houfy** — it's target reference copy for the submission workflow.
+- **Structured-data completeness is the highest-ROI description lever.** Booking auto-generates description chunks from amenity checkboxes, bed configurations, room types, property type, and location fields. Perfecting all structured inputs improves the auto-description without any prose-review submission needed — the auto-description re-runs every 1-2 weeks and picks up structured changes automatically.
 - **Tone is factual and hotel-style.** Less "boutique-hotel warmth," more "concise-informative." Booking.com's guest base skews toward business travelers, families booking cross-market comparisons, and international travelers — copy that reads too experiential loses conviction against the "clean, comfortable, close to the beach" hotel-style copy the platform's algorithm favors.
 - **Brand-prefix identity applies to the property name.** The first 29 characters of the Booking.com Property Name must be identical to the Airbnb title + VRBO headline. See [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md) § "OTA platform titles → Brand prefix identity". Current locked prefix (2026-07-06): `Twenty First · Gulf-Front 3BR`.
 - **Middot separator convention** (`·` U+00B7) — same as Airbnb + VRBO. Do not substitute `•`, `.`, `-`, or `|`.
