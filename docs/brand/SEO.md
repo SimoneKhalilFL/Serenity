@@ -143,7 +143,7 @@ Examples:
 
 - `Twenty First · Living room with Gulf view · Sunset light on the balcony`
 - `Twenty First · Primary bedroom · King bed facing the water`
-- `Majestic Sun 811 · Balcony · Emerald Gulf and sugar-white sand`
+- `Westlight · Balcony · Emerald Gulf and sugar-white sand`
 
 **Pattern for hero / OG images:**
 
@@ -245,7 +245,7 @@ Reflects what's actually on the site as of this doc's revision. When a value cha
 |---|---|---|
 | `index.html` | `StayAtFlorida | Luxury Beachfront Vacation Homes` | `Owner-hosted luxury beachfront homes in Panama City Beach & Destin, Florida. Book direct with StayAtFlorida — Gulf views, resort amenities, no OTA fees.` *(152 / 160 chars — trimmed 2026-07-02 from 197)* |
 | `listing-4.html` (Twenty First) | `Twenty First | StayAtFlorida` | `Book Twenty First by StayAtFlorida, a luxury beachfront condo in Panama City Beach with panoramic Gulf views, private balcony, resort amenities, and room for 8.` *(160 / 160 chars — at ceiling)* |
-| `listing-5.html` (Majestic Sun 811) | `Majestic Sun 811 | StayAtFlorida` | *needs refresh* — currently auto-generated feature list starting with `2 BR, sleeps 6. High-Speed WiFi, Full Kitchen…`. Should be replaced with a hand-written, brand-voiced sentence via `property.metaDescription` in `config.js`. |
+| `listing-5.html` (Westlight) | `Westlight \| StayAtFlorida — Gulf-Front 2BR in Miramar Beach` *(post-rebrand 2026-07-09; trimmed to 60 chars)* | `Book Westlight by StayAtFlorida, a Gulf-front 2BR condo in Miramar Beach with panoramic emerald views, resort amenities, and room for 6. Owner-hosted.` *(151 / 160 chars — hand-written via `config.js` #5 `metaDescription`)* |
 | `privacy.html` | `Privacy Policy | StayAtFlorida` | `How StayAtFlorida handles your information when you browse stayatflorida.com or submit the contact form.` |
 | `terms.html` | `Terms of Use | StayAtFlorida` | `Terms for using stayatflorida.com. Bookings are direct with the property owner and subject to the owner's rental agreement.` |
 | `gear.html` | `Gear We Use at Our Destin & PCB Condos | StayAtFlorida` | `The smart lock, blackout curtains, waterproof mattress protector, coffee gear and beach essentials we actually use at our Florida Gulf Coast luxury beachfront vacation homes.` |

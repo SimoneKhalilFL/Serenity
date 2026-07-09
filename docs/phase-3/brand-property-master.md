@@ -173,17 +173,19 @@ Draft placeholder — replace with real quotes:
 
 ---
 
-## 3. MS811 — Majestic Sun 811
+## 3. MS811 — Westlight
+
+> **⚠ STATUS BANNER (2026-07-09):** The MS811 property was rebranded from `Majestic Sun 811` (working label) to **`Westlight`** on 2026-07-09. Some `pending` / `TBD` lines in this section were closed during that rebrand and are now sourced from [`../listings/MS811/MASTER.md`](../listings/MS811/MASTER.md) (the SSoT). This planning document is preserved as an audit trail of the pre-rebrand baseline; canonical values below are updated to post-rebrand state. See [`../brand/PROPERTY_PORTFOLIO.md`](../brand/PROPERTY_PORTFOLIO.md) for the retired-name registry.
 
 ### Snapshot
 
 | Attribute | Value |
 |---|---|
 | Property ID | 5 (`config.js` property `id`) |
-| Public name | Majestic Sun 811 |
-| Subtitle | *A StayAtFlorida Property* *(homepage-card only, added 2026-07-06; property page hero copy still pending rebrand)* |
-| Tagline | **pending** *(current placeholder: `8th-Floor Gulf Views at Majestic Sun`)* |
-| Location | Majestic Sun at Seascape Resort, Miramar Beach, Destin, Florida |
+| Public name | **Westlight** *(rebrand shipped 2026-07-09; retired working label: `Majestic Sun 811`)* |
+| Subtitle | *A StayAtFlorida Signature Property* |
+| Tagline | **Where Every Evening Ends in Gold** |
+| Location | Majestic Sun at Seascape Resort, Miramar Beach, Florida *(operational address only — `Majestic Sun` is the resort/building, not the guest-facing property brand)* |
 | Configuration | 2 BR / 2 BA · Sleeps up to 6 |
 | Sleeping arrangement | Primary king · Guest queen · Queen sleeper sofa |
 | Base nightly rate | $300 (adjusted by season — Phase 3 to add per-day PriceLabs data) |
@@ -191,7 +193,7 @@ Draft placeholder — replace with real quotes:
 | Tax rate | 12% (Florida DOR) |
 | Resort Registration Fee | none — Seascape Resort does not charge a guest registration fee |
 | Refundable damage deposit | $300 |
-| Direct-site status | **Homepage merchandising updated (2026-07-06); property-page body still pending rebrand** |
+| Direct-site status | **Live — full rebrand shipped 2026-07-09** (`config.js` #5, `listing-5.html`, JSON-LD, WEBSITE.md, homepage card all reflect `Westlight`) |
 
 ### Property description (short — homepage card, added 2026-07-06)
 
@@ -297,7 +299,7 @@ Same framework as TW2111 §2 above — Phase 3 §3.2. Currently OTA stub files e
 
 The two properties overlap on the "Gulf-front condo" positioning but differ meaningfully. Phase 3 copy should lean into these differences so we don't cannibalize search:
 
-| Dimension | TW2111 (Twenty First) | MS811 (Majestic Sun 811) |
+| Dimension | TW2111 (Twenty First) | MS811 (Westlight) |
 |---|---|---|
 | **City** | Panama City Beach | Miramar Beach / Destin |
 | **Best for** | Multigenerational families, larger groups | Golf couples, walkable-resort families, retirees, smaller groups |

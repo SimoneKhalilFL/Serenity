@@ -39,22 +39,29 @@
 | Platforms | Website · Airbnb · VRBO · Booking.com |
 | Master document | [`../listings/TW2111/MASTER.md`](../listings/TW2111/MASTER.md) |
 
-### MS811 — Majestic Sun
+### MS811 — Westlight
 
 | Field | Value |
 |---|---|
 | Folder | [`../listings/MS811/`](../listings/MS811/) |
-| Current display name | **Majestic Sun** *(temporary — needs future branding)* |
-| Brand subtitle | *Pending — Future StayAtFlorida Signature Property* |
-| Property tagline | *Pending Brand Director sign-off* |
+| Display name | **Westlight** |
+| Brand subtitle | A StayAtFlorida Signature Property |
+| Property tagline | Where Every Evening Ends in Gold |
 | Market | Miramar Beach, Florida (Destin area) |
-| Community | Majestic Sun at Seascape Resort |
+| Community *(operational context only — not the brand)* | Majestic Sun at Seascape Resort |
 | Layout | 2 bedrooms, 2 bathrooms |
 | Sleeps | Up to 6 guests |
 | Status | **Active** |
-| Brand | **Pending** — do NOT rename yet |
-| Platforms | Website · Airbnb · VRBO · Booking.com |
+| Brand | **StayAtFlorida Signature Property** *(elevated 2026-07-09 — see [`../listings/MS811/MASTER.md#24-changelog`](../listings/MS811/MASTER.md#changelog))* |
+| Platforms | Website · Airbnb · VRBO · Booking.com · Houfy |
 | Master document | [`../listings/MS811/MASTER.md`](../listings/MS811/MASTER.md) |
+
+**Legacy names retired (for search-history disambiguation):**
+
+- `Majestic Sun 811` — the working folder label. Retired as guest-facing brand. Still surfaces in operational context (address, resort/building name, driving directions, HOA/legal surfaces).
+- `Serenity at Majestic Sun` — legacy Houfy title. P1 forbidden-string violation (`Serenity` is on the forbidden-adjective list). Retired 2026-07-09.
+- `Deluxe 2-Bedroom Beach Front at Majestic Sun Resort` — legacy Booking.com title. Retired 2026-07-09.
+- Emerald Horizon, The Miramar — working-name candidates considered during the 2026-07-09 rebrand deliberation. Never shipped.
 
 ---
 
@@ -67,7 +74,7 @@ Every property in the StayAtFlorida portfolio must meet four bars before it join
 3. **Owner-hosted.** A named host who answers the email personally.
 4. **Sustainable pricing.** Nightly rates that reward direct booking without racing to the bottom.
 
-MS811 currently ships with the "Signature Property" subtitle **pending** while the Brand Director works through positioning. Until sign-off, it's an active property but not yet a Signature Property in marketing copy.
+**Signature roster as of 2026-07-09:** Twenty First (TW2111) · Westlight (MS811). Both properties meet all four bars. Westlight was elevated from `Pending — Future Signature Property` to full `A StayAtFlorida Signature Property` status on 2026-07-09 in the full rebrand pass.
 
 ---
 
@@ -81,12 +88,18 @@ A StayAtFlorida Signature Property
 [One-line tagline · sentence case · no exclamation]
 ```
 
-Example:
+Examples:
 
 ```
 Twenty First
 A StayAtFlorida Signature Property
 Above the Gulf. Beyond Expectations.
+```
+
+```
+Westlight
+A StayAtFlorida Signature Property
+Where Every Evening Ends in Gold
 ```
 
 Naming rules:

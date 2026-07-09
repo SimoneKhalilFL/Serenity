@@ -104,7 +104,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 
 **Example feedback.**
 
-> "Adding a third property this quarter is exciting, but if it doesn't beat the Twenty First view standard, it dilutes the collection. Let's hold, publish a shoulder-season campaign for Majestic Sun 811, and revisit new properties in Q4 with the Signature Collection bar intact."
+> "Adding a third property this quarter is exciting, but if it doesn't beat the Twenty First view standard, it dilutes the collection. Let's hold, publish a shoulder-season campaign for Westlight, and revisit new properties in Q4 with the Signature Collection bar intact."
 
 > "A 40%-off flash sale would fill March, but it also teaches guests to wait us out. Move rates down 8% for the shoulder window in `config.js` and let the calculator do the selling. No banner, no timer."
 
@@ -143,7 +143,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 
 **Example feedback.**
 
-> "`Majestic Sun 811 — 8th-Floor Gulf Views` breaks the 'no floor numbers in marketing' rule. Options: `Majestic Sun 811 — Gulf Views in Miramar Beach` or `Majestic Sun 811 — Beachfront Retreat at Seascape`. My pick is the first — it leads with view and location, both search-friendly."
+> "`Majestic Sun 811 — 8th-Floor Gulf Views` breaks the 'no floor numbers in marketing' rule *and* the current guest-facing brand rule (post-2026-07-09, MS811 is `Westlight`, not `Majestic Sun 811`). Corrected examples: `Westlight — Gulf Views in Miramar Beach` or `Westlight · Gulf-Front 2BR`. Lead with the Signature Property name; `Majestic Sun` is retained only in operational context (address, resort amenities)."
 
 > "The proposed hero copy — 'Dream getaway on Florida's Gulf Coast!' — hits three don't-use words in seven. Try: 'Luxury beachfront homes on Florida's Gulf Coast. Owner-hosted. Book direct.' Same length, on-brand."
 
@@ -393,7 +393,7 @@ Anything not on this list defers to the CEO Agent + the nearest domain expert + 
 - Test the important pages after any change:
   - Homepage (`index.html`)
   - Twenty First property page (`listing-4.html` and the SPA route)
-  - Majestic Sun 811 property page (`listing-5.html`)
+  - Westlight property page (`listing-5.html`)
   - Booking / inquiry flow (calculator, contact form, `mailto` links)
   - Contact page / section
   - Photo gallery and lightbox

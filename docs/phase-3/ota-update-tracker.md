@@ -42,7 +42,7 @@
 
 ---
 
-## 2. MS811 — Majestic Sun 811
+## 2. MS811 — Westlight
 
 ### Matrix
 

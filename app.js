@@ -3158,7 +3158,7 @@ function getReviewAggregate() {
 function getPropertyShortName(property) {
     if (!property) return '';
     // "Tidewater Beach Resort - 3BR Beachfront Condo" -> "Tidewater Beach Resort"
-    // "Majestic Sun 811" -> "Majestic Sun 811"
+    // "Westlight" -> "Westlight" (post-2026-07-09 rebrand — legacy "Majestic Sun 811" retired)
     return String(property.title || '').split(/[-–—]/)[0].trim();
 }
 

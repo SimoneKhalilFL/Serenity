@@ -83,7 +83,7 @@ Total published pages: **10** (seven "guide types," but two are portfolio-double
   4. The pools — Gulf-front outdoor + heated indoor with cathedral ceilings + hot tubs
   5. Beach access via boardwalk
   6. What Seascape isn't — clarify (no all-inclusive, no kids' club, etc.)
-  7. CTA — *View Majestic Sun 811*
+  7. CTA — *View Westlight*
 - **Cross-links:** Miramar Beach Family Guide (§3.4), Restaurants (§3.5)
 - **Author asset requirements:** Seascape aerials, Town Center photos, golf-course shot if available.
 

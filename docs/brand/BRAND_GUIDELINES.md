@@ -17,7 +17,7 @@
 | Brand promise | Where unforgettable beach memories begin. |
 | Category | Owner-hosted luxury beachfront vacation homes on Florida's Gulf Coast |
 | Positioning | Premium boutique hospitality — not a generic vacation rental |
-| Current portfolio | Twenty First (Panama City Beach), Majestic Sun 811 (Miramar Beach / Destin) |
+| Current portfolio | Twenty First (Panama City Beach), Westlight (Miramar Beach) |
 
 **Signature property naming convention:**
 
@@ -156,8 +156,12 @@ Hard blocks. Reject any change that introduces these into brand-facing copy:
 |---|---|
 | Serenity Rentals | Retired legacy brand. Use StayAtFlorida. |
 | Serenity Rental | Same. |
+| Serenity at Majestic Sun | Retired 2026-07-09 (was legacy Houfy MS811 title). Replace with `Westlight`. |
 | Fun in the Sun | Retired legacy phrase; also on the generic-name block list. |
-| 21st floor / 21st-floor / floor 21 | Floor numbers are never disclosed. Elevator wait times are the reason. |
+| Majestic Sun 811 (as guest-facing brand) | Retired 2026-07-09. The property brand is `Westlight`. `Majestic Sun` is retained ONLY in operational context (address, resort/building name, driving directions, HOA/legal surfaces) — never as the guest-facing property brand. |
+| Deluxe 2-Bedroom / Deluxe (any variant, as title lead) | Retired 2026-07-09 (was legacy Booking.com MS811 title). `Deluxe` is soft language with no verifiable meaning. |
+| 21st floor / 21st-floor / floor 21 | Floor numbers are never disclosed for TW2111. Elevator wait times are the reason. |
+| 8th floor / 8th-floor / floor 8 | Floor numbers are never disclosed for MS811. Was a P1 violation in `config.js#listingHeadline` (`8th-Floor Gulf Views at Majestic Sun`) — retired 2026-07-09. |
 | Any phrase implying **we** provide beach service, chair delivery, or a beach setup crew | We do not provide beach service. On-beach vendors do — see the "Beach chairs and umbrella" section below for how to phrase it. |
 | Any phrase implying staff / concierge on the beach | Same reason — we are owner-hosted, not a resort concierge. |
 
@@ -168,6 +172,16 @@ Tidewater Beach Resort is the community that houses Twenty First. It is **operat
 - Do **not** lead with Tidewater in titles, meta, hero copy, or property card copy.
 - Mention Tidewater only where operationally required: the location paragraph (once), the registration/parking section, and the community registration link.
 - Never write "Tidewater 2111" or any unit number in guest-facing copy.
+
+## Majestic Sun / Seascape handling
+
+Majestic Sun is the building that houses Westlight; Seascape Resort is the master resort community Majestic Sun is inside of. Both are **operational context**, not the brand. Same discipline as Tidewater for TW2111.
+
+- Do **not** lead with `Majestic Sun` or `Seascape Resort` in titles, meta, hero copy, or property card copy. The property brand is `Westlight`.
+- Mention `Majestic Sun` only where operationally required: the location paragraph (once), the resort-amenity narrative in §14 paragraph 4 of MASTER, the address (private post-booking messaging), driving directions, and HOA/legal surfaces.
+- `Seascape Resort` follows the same operational-context rule — mentioned where relevant (golf course, tennis, town center) but never as the brand lead.
+- Never write `Majestic Sun 811`, `unit 811`, `MS811`, or `Serenity at Majestic Sun` in guest-facing copy. All are retired 2026-07-09.
+- Photo captions: `Majestic Sun` is allowed as the label for resort-amenity photos (pool, hot tub, pickleball, gym, building exterior) — those photos document the resort context. Interior and balcony photos always use `Westlight` as the label.
 
 ## Beach chairs and umbrella
 
@@ -282,9 +296,9 @@ Approved (Twenty First):
 
 > A three-bedroom beachfront retreat above the emerald Gulf, designed for families who want to slow down, watch the water, and reconnect.
 
-Approved (Majestic Sun 811):
+Approved (Westlight):
 
-> A Gulf-view retreat in Miramar Beach, steps to the sand and moments to Seascape's pools and dining.
+> Westlight is a luxury beachfront retreat in Miramar Beach where emerald waters, white-sand beaches, and unforgettable sunsets create the perfect setting for a relaxing Gulf Coast escape.
 
 Rejected:
 
@@ -555,7 +569,7 @@ For quick reuse. Every entry has been through the [Brand Director](AGENTS.md#2-b
 | Property | Tagline |
 |---|---|
 | Twenty First | `Above the Gulf. Beyond Expectations.` |
-| Majestic Sun 811 | *Pending — see [MS811 MASTER](../listings/MS811/MASTER.md#brand-director-follow-ups)* |
+| Westlight | `Where Every Evening Ends in Gold` |
 
 New properties: submit three tagline candidates to the Brand Director for review, following the property naming standard in [`PROPERTY_PORTFOLIO.md`](PROPERTY_PORTFOLIO.md#property-naming-standard) and the per-property `MASTER.md` template at [`../listings/TEMPLATE/MASTER.md`](../listings/TEMPLATE/MASTER.md).
 

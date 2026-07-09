@@ -30,7 +30,7 @@ Explicit exclusions so the workstreams stay focused:
 
 - **No full site redesign.** The current design system stays. Layout tweaks are allowed only inside a workstream deliverable (see §3.4).
 - **No large visual changes to the homepage.** Homepage was polished in Phase 2 (July 2026). Only surgical changes tied to a measured conversion problem.
-- **No new brand identities.** StayAtFlorida is the master brand. Property brands remain `Twenty First` and (once launched) `Majestic Sun 811`.
+- **No new brand identities.** StayAtFlorida is the master brand. Property brands are `Twenty First` and `Westlight` (both live as Signature Properties).
 - **No urgency / scarcity language.** *"3 people are looking at this stay"*, *"Only 2 left!"*, countdown timers — banned as long as the brand rules stand. See [`../brand/BRAND_GUIDELINES.md`](../brand/BRAND_GUIDELINES.md).
 - **No new OTA channels** until the four existing platforms are optimized. Do not add Houfy, Whimstay, Google Vacation Rentals, or any other channel before Phase 3 §3.2 exits.
 
@@ -95,7 +95,7 @@ Numbering follows the user's Phase 3 request verbatim.
 **Deliverables:**
 
 - [ ] Seven guide pages published (see [`seo-content-plan.md`](./seo-content-plan.md) for the full plan): Tidewater Beach Resort Guide, Majestic Sun Resort Guide, Panama City Beach family guide, Miramar Beach family guide, restaurant guides (2 — one per city), things-to-do guides (2), rainy-day guides (2).
-- [ ] Each guide ≥1,200 words, with property CTAs inline (`View Twenty First` / `View Majestic Sun 811`).
+- [ ] Each guide ≥1,200 words, with property CTAs inline (`View Twenty First` / `View Westlight`).
 - [ ] Internal linking pass — every guide links to at least one property + at least two other guides.
 - [ ] `sitemap.xml` regenerated + submitted to Search Console.
 - [ ] `robots.txt` audited (currently allow-all; verify no accidental disallows).

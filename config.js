@@ -674,18 +674,62 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
     },
     {
         id: 5,
-        title: "Majestic Sun 811",
-        listingHeadline: "8th-Floor Gulf Views at Majestic Sun",
-        listingTagline: "Boardwalk to the beach—Seascape pools, golf, and dining nearby.",
-        // Homepage property-card subtitle + blurb. Source of truth:
-        // docs/listings/MS811/MASTER.md §13a. Lighter twin of TW2111's Signature Property tag —
-        // MS811 is NOT elevated to Signature yet (gated on the full brand + photo re-shoot).
-        cardSubtitle: "A StayAtFlorida Property",
-        cardShortDescription: "Miramar Beach comfort with Gulf views, resort amenities, beach access, and a relaxing coastal setting.",
-        location: "Destin, Florida",
-        description: `Experience the best of Destin at Majestic Sun, where Gulf-front living meets comfort and convenience. This beautifully appointed 8th-floor beachfront condo offers breathtaking panoramic views of the emerald waters and sugar-white sands of the Gulf of Mexico. Step onto your private balcony to enjoy morning coffee, afternoon sea breezes, or unforgettable sunsets over the water.
+        title: "Westlight",
+        // Signature Property brand pass shipped 2026-07-09. Property renamed from
+        // the working label `Majestic Sun 811` to the Signature Property name
+        // `Westlight`. `Majestic Sun` is retained only in operational context
+        // (resort/building name, address, driving directions, HOA/legal surfaces)
+        // and appears in the description body's resort-amenity paragraph only,
+        // never as the guest-facing brand. Source of truth for the rebrand:
+        // docs/listings/MS811/MASTER.md §1 Brand + §24 Changelog 2026-07-09.
+        //
+        // Loved-for chips curated from the 59-review archive in REVIEWS[5]
+        // (2020-2025). Themes: view (most-cited), cleanliness, host responsiveness,
+        // kitchen, beach access. Do not add chips unsupported by the review archive.
+        lovedFor: [
+            "Beachfront Views",
+            "Spotlessly Clean",
+            "Exceptional Host",
+            "Fully Equipped Kitchen",
+            "Easy Beach Access",
+            "Sunset Balcony"
+        ],
+        listingHeadline: "Westlight",
+        listingBrandSubtitle: "A StayAtFlorida Signature Property",
+        listingTagline: "Where Every Evening Ends in Gold",
+        listingHeroCopy: "At Westlight, every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits on the west-facing edge of Miramar Beach — panoramic emerald views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door.",
+        cardSubtitle: "A StayAtFlorida Signature Property",
+        // Homepage property-card blurb. Source of truth: docs/listings/MS811/MASTER.md §13a
+        // "Homepage Card Copy". Kept short (one scannable sentence) — the long story lives on
+        // the property detail page. Do not swap for a longer aspirational line here.
+        cardShortDescription: "Panoramic Gulf views, direct beach access, and resort amenities on Florida's quieter Emerald Coast.",
+        metaTitle: "Westlight | Gulf-Front 2BR in Miramar Beach | StayAtFlorida",
+        metaDescription: "Book Westlight by StayAtFlorida, a Gulf-front 2BR condo in Miramar Beach with panoramic emerald views, resort amenities, and room for 6. Owner-hosted.",
+        coverImage: "images/lodging/ms-01-gulf-balcony.jpg",
+        location: "Miramar Beach, Florida",
+        description: `At Westlight, every evening ends in gold. This 2-bedroom, 2-bath Gulf-front retreat sits on the west-facing edge of Miramar Beach, where the emerald water meets sugar-white sand and the last light of the day pours across the balcony. It's a slower, quieter stretch of Florida's Emerald Coast — a place designed to be lived in barefoot, coffee in hand, sunset ahead.
 
-Inside, the condo features a spacious, light-filled living area, coastal-inspired dÃ©cor, and a kitchen made for real vacations — from quick breakfasts before the beach to slower family dinners with the sliding doors open. Thoughtful updates and comfortable furnishings make this a genuine home base for couples, families, and friends who want to relax without leaving anything behind.
+**Highlights**
+
+• Panoramic Gulf views from a west-facing private balcony
+• Direct beach access via a palm-lined boardwalk — no busy road to cross
+• Sleeps up to 6 across a king primary suite, queen guest bedroom, and queen sleeper sofa
+• 2 bedrooms / 2 bathrooms
+• Complimentary beach chairs and umbrella available in the condo
+• Full Seascape resort amenities — Gulf-front pool, indoor heated pool, hot tubs, fitness, tennis, golf
+• Walkable to Seascape Town Center and Whale's Tale Beach Bar & Grill
+• ~15 minutes to VPS airport
+
+**The Home**
+
+Westlight is a 2-bedroom, 2-bath condominium that comfortably sleeps up to 6. A king-bed primary suite opens toward the Gulf, a queen guest bedroom offers a quieter tucked-away room, and a queen sleeper sofa in the living room accommodates two additional guests. The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating — and the in-unit washer and dryer make longer stays effortless. Smart TVs with streaming live in every bedroom and the living room; high-speed Wi-Fi reaches every corner of the condo.
+
+**Where You'll Sleep**
+
+• Primary bedroom: king bed with Gulf-facing windows
+• Guest bedroom: queen bed with adjacent bath
+• Living room: queen sleeper sofa for 1–2 additional guests
+• Sleeps up to 6 guests across 2 bedrooms and 2 bathrooms
 
 **The Kitchen**
 
@@ -697,62 +741,58 @@ What's on hand:
 • Coffee maker, toaster, blender, ice maker, freezer
 • Slow cooker, air fryer, food processor, toaster oven
 • Countertop grills (large and small), popcorn maker, veggie chopper
-• Kitchen island, dining table, wine glasses, baking sheets, pizza pan, spices
+• Kitchen island, dining table for six, wine glasses, baking sheets, pizza pan, spices
 
-**Where You'll Sleep**
+**The View & Beach**
 
-Drift off with the sound of the Gulf outside and wake up refreshed for another day at the beach.
-
-• 2 bedrooms — sleeps up to 6 guests
-• Primary bedroom: king bed
-• Second bedroom: queen bed
-• Living room: queen sleeper sofa
+The private Gulf-front balcony is why guests come back. Mornings begin with coffee, dolphins in the surf line, and the Emerald Coast turning pale green in the early light. Afternoons drift by to the sound of waves. Evenings are the payoff — west-facing sunsets that saturate the sky and give the property its name. Direct beach access is a palm-lined boardwalk downstairs; no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
 
 **Location**
 
-Located directly on the beach in Miramar Beach, Destin, Majestic Sun offers one of the most convenient and walkable locations on the Emerald Coast. Guests enjoy direct beach access via a palm-lined boardwalk, along with elevator access and on-site parking for easy arrivals and departures.
+Westlight is in Miramar Beach on Florida's Emerald Coast — a quieter, greener stretch of coast than the boardwalk destinations of Panama City Beach, closer than the boutique communities further east. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Silver Sands Premium Outlets, the Village of Baytowne Wharf, and Henderson Beach State Park are all a short drive. Destin–Fort Walton Beach Regional Airport (VPS) is approximately 15 minutes by car.
 
-You're just steps away from dining, coffee, ice cream, shopping, and entertainment at Seascape Destin Town Center, while still being only minutes from Destin's most popular attractions. The iconic Whale's Tale Beach Bar & Grill is a short walk down the beach, making sunset dinners and beachfront cocktails effortless.
+**Resort Amenities**
 
-**Majestic Sun & Seascape Resort Amenities**
+Westlight lives inside the Majestic Sun building at Seascape Resort, a full-service beachfront community that layers a full suite of resort-style amenities onto a quieter, greener stretch of coast:
 
-Guests have access to a full suite of resort-style amenities designed for both relaxation and recreation:
 • Gulf-front outdoor pool with sundeck
-• Heated indoor pool with cathedral ceilings and Gulf views
+• Heated indoor pool with cathedral ceilings
 • Multiple hot tubs
-• State-of-the-art fitness center
-• Direct beach access via boardwalk
-• Elevator access and convenient parking
-• Over 50 resort grills throughout the property
-
-Beyond Majestic Sun, Seascape Resort offers world-class amenities including:
-• Championship golf course
+• Full fitness center
 • Tennis and pickleball courts
+• Championship golf course (Seascape Golf Club)
 • Bicycle and paddleboard rentals
-• Seasonal water sports
-• On-site fishing at Stewart Lake
-• Scenic walking paths and lush resort grounds
+• Multiple resort grills
+• Scenic walking paths
+• Elevator access and covered on-site parking
+
+Seascape offers the amenities of a full-service beachfront resort while maintaining a quieter, more relaxed atmosphere than many of the busier Panama City Beach or Destin harbor properties.
 
 **Things to Do**
 
-Majestic Sun places you in the heart of Destin's best activities and attractions:
+Westlight places you in the heart of the Emerald Coast's best activities and attractions:
 
-*Walkable Dining & Entertainment* - Located within Seascape Destin Town Center:
-• 2 Birds Coffee & CafÃ©
-• Acme Oyster House
-• Mezcal Cantina Mexican Grill & Tiki Bar (delivery available)
+*Walkable Dining & Entertainment* — Seascape Town Center:
+• 2 Birds Coffee & Café
+• Mezcal Cantina Mexican Grill & Tiki Bar
 • Moo La-La Ice Cream & Fudge
 • Village Door Restaurant (live music nightly)
-• Thrills Laser Tag & Arcade
 • Wine, spirits, and boutique shopping
 
-*Nearby Attractions* - Just minutes away:
+*Nearby Attractions* — Just minutes away:
 • Silver Sands Premium Outlets
 • Grand Boulevard shopping, dining, and entertainment
-• The Village of Baytowne Wharf
-• Additional beachfront restaurants, golf courses, and family-friendly attractions
+• The Village of Baytowne Wharf (seasonal fireworks)
+• Big Kahuna's Water & Adventure Park
+• Henderson Beach State Park
+• Topsail Hill Preserve State Park
+• Destin Harbor / HarborWalk Village
 
-Whether you're seeking lazy beach days, outdoor adventure, shopping, or vibrant nightlife, Majestic Sun at Seascape Resort offers something for everyone — all just steps or minutes from your front door.`,
+**About Your Host**
+
+Westlight is personally hosted by Simone. For more than six years, I've been welcoming guests to Florida's Emerald Coast. Every message, every check-in note, and every question routes to me directly — not to a management company. I typically reply within two hours and send detailed arrival instructions about a week before check-in. If you have a question during your stay, I'm a text away.
+
+Whether you're planning a family beach vacation, a relaxing couples' getaway, or a trip with friends, we'd love to welcome you to Westlight and help make your Emerald Coast stay one to remember.`,
         maxGuests: 6,
         bedrooms: 2,
         bathrooms: 2,
