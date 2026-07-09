@@ -20,7 +20,7 @@ Recorded before any rebrand paste so we have a clean "from → to" comparison. D
 
 | Field | Current live value | Rebrand target |
 |---|---|---|
-| **Property Title / Name** | `Oceanfront 3BR&3BA at Tidewater Resort - Pools - Sleeps 8` *(58 chars)* | New locked string in the next section |
+| **Property Title / Name** | `Oceanfront 3BR&3BA at Tidewater Resort - Pools - Sleeps 8` *(58 chars, was live pre-2026-07-08)* → **`Twenty First Gulf Front 3BR 3BA Sleeps 8 Panama City Beach`** *(58 chars, LIVE as of 2026-07-08 evening — Booking normalized submitted middots + hyphen + slash to spaces)* | Ship complete |
 | **URL slug** | `fun-in-the-sun-panama-city-beach1` | **Stuck** — Booking.com does not allow slug edits on live listings; accepted trade-off, we rebrand every user-visible copy field instead |
 | **Aggregate guest score** | **9.7 / 10 — Exceptional** *(3 reviews, all 9+)* | Preserve; grow review count via initiative #44 (post-checkout review-solicitation email) |
 | **Review count** | 3 *(vs. 19 VRBO + 11 Airbnb + 0 Houfy)* | Grow to 6+ within 90 days of #44 shipping; this is Booking.com's biggest content gap |
@@ -37,11 +37,13 @@ Recorded before any rebrand paste so we have a clean "from → to" comparison. D
 
 ---
 
-## Property Name — locked ship string *(Phase 3 initiative #11, 2026-07-06)*
+## Property Name — locked ship string *(Phase 3 initiative #11, 2026-07-06 · SHIPPED 2026-07-08 evening)*
 
-**`Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach`** *(64 chars)*
+**Submitted:** `Twenty First · Gulf-Front 3BR/3BA · Sleeps 8 · Panama City Beach` *(64 chars, middots + hyphen + slash)*
 
-**Copy this exact string into the Booking.com extranet `Property Name` field.** Middots are `·` (U+00B7), not periods or hyphens.
+**Live rendering after Booking normalization:** `Twenty First Gulf Front 3BR 3BA Sleeps 8 Panama City Beach` *(58 chars, spaces only)*
+
+**Portfolio-level discovery (2026-07-08 evening):** Booking.com **normalizes special characters in property names**. Middots (`·` U+00B7), hyphens in compound words (`Gulf-Front` → `Gulf Front`), and forward slashes (`3BR/3BA` → `3BR 3BA`) all get stripped/converted to spaces on publish. This is Booking-specific — Airbnb, VRBO, and Houfy all preserve middots + hyphens verbatim. The **word content** (brand-prefix identity) is intact and identical across all four OTAs; only the **visual rhythm** differs on Booking. Codified as a portfolio-level rule in [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md#platform-limits-and-prime-real-estate) → "Booking.com" bullet. **Copy the middot version into the extranet anyway** — if Booking ever loosens the normalization, our ship string is already in the "correct" form; and future property-name policy changes on Booking may make the special chars stick.
 
 **Ship rationale:**
 
@@ -97,6 +99,27 @@ Recorded before any rebrand paste so we have a clean "from → to" comparison. D
 Booking's system pulls from amenity checkboxes, room configs, location fields, and property type to auto-generate chunks of the description. **Perfecting all structured fields is often the highest-ROI path to a better description** — Booking's system re-runs description generation periodically (1-2 weeks typical) and picks up structured-data changes without any prose-review submission needed.
 
 **Practical implication:** the §Short Description and §Long Description sections in this file are **target reference copy for the Path A/B submission workflow**, NOT paste-ready fields for direct extranet entry. Owner submits them via the review workflow; Booking's content team edits and publishes. Expect ~60-70% of the submitted phrasing to survive Booking's house-style edits — the strategic value is in getting the KEY facts (Gulf-front, 3BR/3BA, Sleeps 8, panoramic views, owner-hosted, tenure) onto the page, not in getting the exact prose verbatim.
+
+---
+
+## Post-Track-A live state *(captured 2026-07-08 evening via Cursor browser MCP)*
+
+Snapshot of the live Booking.com page after owner completed the Track A direct-paste ship. Do NOT edit this section retroactively — it's the audit trail.
+
+| Surface | Live value after Track A | Notes |
+|---|---|---|
+| **Property title (browser tab + search card)** | `Twenty First Gulf Front 3BR 3BA Sleeps 8 Panama City Beach, Panama City Beach (updated prices 2026)` | 58 chars for the property-name portion. Middots + hyphen + slash stripped by Booking normalization (see § Property Name above). |
+| **Host section heading** | `Managed by StayAtFlorida` | Track A host-profile update landed. Subsections: Company info · Property info · Neighborhood info · Language Spoken. |
+| **"About this property" description** | *(Booking-auto-generated placeholder — 2 sentences)*: *"Prime Beachfront Location: Twenty First Gulf Front 3BR 3BA Sleeps 8 Panama City Beach offers direct beachfront access with a private beach area. Guests enjoy stunning sea views and a spacious balcony."* | This is Booking's auto-generated placeholder using the new property name — the full §Long Description target has NOT yet landed. Track B description-review submission required to replace this with the ~395-word target. |
+| **Most popular amenities chips** | `3 swimming pools` · `Beachfront` · `Private Parking` · `Free Wifi` · `Non-smoking rooms` · `Family rooms` · `Spa and wellness center` · `Restaurant` · `Bar` · `Private beach area` | Booking normalized owner's amenity checkboxes into its canonical taxonomy. All accurate. |
+| **Property highlights** | `Top Location: Highly rated by recent guests (10.0)` · `Private Parking Available On Site` | Auto-generated from category scores. |
+| **Aggregate guest score** | Preserved *(pre-Track-A baseline of 9.7 / 10 Exceptional intact)* | No review-count regression from the rebrand. |
+| **What's nearby (attraction listings)** | Russell-Fields Pier 3,250 ft · Museum of Man in the Sea 1.1 mi · Scotts Field Park 1.2 mi · Frank Brown Park 1.2 mi · Gulf World Marine Park 1.3 mi · B V Buchanan Park Boat Ramp 5 mi · Ripley's Believe it or Not! 6 mi · ZooWorld Zoological Conservatory 6 mi · Lake Powell Park 6 mi · Pete Edwards Field 8 mi | Booking's own OpenStreetMap-sourced attraction list — accurate. |
+| **FAQ auto-answers** | Check-in from 16:00 · Check-out until 10:00 · Bedrooms count reflected accurately · Beach 150 ft · 6 mi from PCB center · Hot tub confirmed · Balcony confirmed · Family-popular confirmed | Auto-generated from structured House Rules + Beds & Rooms + Location data. All accurate. |
+
+**What Track A shipped (direct-paste, ~20 min):** property name, amenity checkboxes, photos + captions, house rules, beds & rooms, location fields, host profile. ✅ All confirmed live.
+
+**What Track B still needs to ship (submit-for-review, ~5-10 business days turnaround):** the full ~395-word §Long Description prose. The Booking-auto-generated 2-sentence placeholder is thin and doesn't carry the tenure claim, the panoramic-view differentiator, the resort-amenity narrative, or the owner-hosted framing. Submit via Path A (extranet Property page → `Request a change to the description`) or Path B (extranet Inbox → Compose to Booking support) with the §Long Description text below.
 
 ---
 
@@ -222,7 +245,7 @@ Booking photo order: exterior/view → living room → bedrooms → kitchen → 
 - **Structured-data completeness is the highest-ROI description lever.** Booking auto-generates description chunks from amenity checkboxes, bed configurations, room types, property type, and location fields. Perfecting all structured inputs improves the auto-description without any prose-review submission needed — the auto-description re-runs every 1-2 weeks and picks up structured changes automatically.
 - **Tone is factual and hotel-style.** Less "boutique-hotel warmth," more "concise-informative." Booking.com's guest base skews toward business travelers, families booking cross-market comparisons, and international travelers — copy that reads too experiential loses conviction against the "clean, comfortable, close to the beach" hotel-style copy the platform's algorithm favors.
 - **Brand-prefix identity applies to the property name.** The first 29 characters of the Booking.com Property Name must be identical to the Airbnb title + VRBO headline. See [`../../brand/BRAND_GUIDELINES.md`](../../brand/BRAND_GUIDELINES.md) § "OTA platform titles → Brand prefix identity". Current locked prefix (2026-07-06): `Twenty First · Gulf-Front 3BR`.
-- **Middot separator convention** (`·` U+00B7) — same as Airbnb + VRBO. Do not substitute `•`, `.`, `-`, or `|`.
+- **Middot separator convention** (`·` U+00B7) — same as Airbnb + VRBO. Do not substitute `•`, `.`, `-`, or `|`. **Note:** Booking's live-rendering normalization strips middots (`·` → space), hyphens in compound words (`Gulf-Front` → `Gulf Front`), and forward slashes (`3BR/3BA` → `3BR 3BA`) — verified 2026-07-08 on TW2111 property-name paste. Word content is preserved; visual rhythm reverts to plain spaces. Continue to submit the middot version anyway — future property-name policy loosening may make the special chars stick, and the extranet field itself may store what was submitted even when the display normalizes.
 - **Never mention the direct-site URL (`stayatflorida.com`), `book direct`, or fee-comparison messaging.** Booking.com's marketplace policy flags channel-steering language, and violations can result in listing suspension. `StayAtFlorida` as a brand name (as in the Host Profile) is fine; the URL is not.
 - **Never reference competing OTA badges by name** (`Airbnb Superhost`, `VRBO Premier Host`, `Airbnb`, `VRBO`, `Airbnb Plus`, etc.). Cross-OTA references trip Booking.com's content-moderation flags. Host tenure and response speed are safe alternatives — surface those as general hospitality facts.
 - **Never promise "free cancellation"** unless the actual rate policy allows it. Refund windows are set at the rate-tier level in the extranet; the description must not contradict them.
