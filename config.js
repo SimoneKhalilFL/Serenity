@@ -683,15 +683,22 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         // never as the guest-facing brand. Source of truth for the rebrand:
         // docs/listings/MS811/MASTER.md §1 Brand + §24 Changelog 2026-07-09.
         //
-        // Loved-for chips curated from the 59-review archive in REVIEWS[5]
-        // (2020-2025). Themes: view (most-cited), cleanliness, host responsiveness,
-        // kitchen, beach access. Do not add chips unsupported by the review archive.
+        // Loved-for chips curated from the 86-review OTA archive captured 2026-07-10
+        // (64 VRBO + 22 Airbnb, see docs/listings/MS811/reviews/). Chip themes ranked
+        // by mention frequency across the archive:
+        //   - View / balcony / Gulf     — 55+ mentions
+        //   - Location / walk-to-beach  — 40+ mentions
+        //   - Simone / owner responsive — 30+ mentions
+        //   - Cleanliness               — 25+ mentions
+        //   - Return / rebook           — 20+ mentions
+        //   - Fully-stocked kitchen     — 10 mentions (Airbnb "Kitchen" chip 2 + VRBO AI summary highlights 8)
+        // Do not add chips unsupported by the review archive.
         lovedFor: [
-            "Beachfront Views",
+            "Panoramic Gulf Views",
+            "Steps to the Beach",
+            "Attentive Host",
             "Spotlessly Clean",
-            "Exceptional Host",
-            "Fully Equipped Kitchen",
-            "Easy Beach Access",
+            "Fully Stocked Kitchen",
             "Sunset Balcony"
         ],
         listingHeadline: "Westlight",
@@ -1363,66 +1370,320 @@ const REVIEWS = {
             highlights: ["Everything went great"]
         }
     ],
+    // Westlight (MS811) reviews — 2026-07-10 refresh: 28 real max-rating OTA reviews
+    // sourced from VRBO (17) + Airbnb (11). Curated in
+    // `docs/listings/MS811/reviews/CURATION_SHORTLIST.md` per portfolio parity with
+    // TW2111 (Option A: publish only real max-rating reviews; no rating manipulation).
+    //
+    // Naming policy (owner directive 2026-07-10, overrides MASTER §23 legacy full-name
+    // policy specifically for MS811): first name only.
+    //   - `author` field = first name as it appears publicly on the source OTA
+    //     (title-cased where source used lowercase, e.g., "maria b." → "Maria").
+    //   - `sourceName` preserves the full OTA-captured name (first + last initial)
+    //     for the audit trail. NEVER rendered by the site.
+    //   - `platform` field is for internal audit only; `renderReviews()` renders
+    //     the source badge based on this value.
+    //
+    // Rating policy: every `rating: 5` here is real max-rating on the source OTA
+    // (VRBO 10/10 → 5; Airbnb 5★ → 5). No aesthetic manipulation. Publish or
+    // exclude, never alter — see BRAND_GUIDELINES.md `No rating manipulation`.
+    //
+    // Aggregate policy: TW2111 parity — property #5 renders the aggregate rating chip
+    // ("5.0 · 28 Featured Reviews · Verified Guests") above the review section, and
+    // JSON-LD `AggregateRating` is emitted with `ratingValue: 5.0, reviewCount: 28`.
+    // Scoped to the published set (honest against the 28 real max-rating reviews).
+    // The broader 86-review archive (VRBO 9.8/10 + Airbnb 4.86/5) is NOT claimed
+    // as an aggregate here — see docs/listings/MS811/reviews/README.md for the
+    // separate archive that supports this scoping decision.
+    //
+    // Body policy: verbatim from the source OTA with editorial trims documented
+    // per-review in CURATION_SHORTLIST.md. Trims applied here cover only two
+    // categories: (1) forbidden-language removal per portfolio §21 (no floor/unit
+    // numbers; no "Gulf of America"; no competitor property references); and
+    // (2) minor punctuation cleanup for readability. No sentiment changes, no
+    // rewording, no synthesized language.
     5: [
-        { id: 1, author: "Christy Anderson", date: "2024-03-01", rating: 5, comment: "Beautiful, clean, great area. Great view of the ocean. Parking is easy. Will stay again." },
-        { id: 2, author: "Aiza Thompson", date: "2024-06-01", rating: 5, comment: "Great view. The condo was very clean and had a great view, we really enjoyed for a short stay and plenty of restaurants to eat nearby." },
-        { id: 3, author: "Sophia Williams", date: "2023-07-01", rating: 5, comment: "Family vacation. Nice facility." },
-        { id: 4, author: "Dominique Martinez", date: "2023-10-01", rating: 5, comment: "Great view. This property was great! The view of the beach was beautiful. The condo was nice and big. We would stay here again." },
-        { id: 5, author: "Andrew Robinson", date: "2024-07-01", rating: 5, comment: "Best location in Destin. Perfect place, on water and a good pool. Room very clean and has everything you may need. Will be going back soon." },
-        { id: 6, author: "Juliah Johnson", date: "2023-07-01", rating: 5, comment: "Awesome View!!! Amazing view and awesome location! The condo was clean, comfy, and had everything we needed." },
-        { id: 7, author: "Brittany Miller", date: "2023-05-01", rating: 5, comment: "Great Host and wonderful condo! This was a very nice condo! Had everything we needed! Simone was the best host ever! Always got a quick response!" },
-        { id: 8, author: "James Davis", date: "2023-05-01", rating: 5, comment: "Majestic Sun. 8th floor, great views. Room was close to elevators. This was our 3rd stay at Majestic Sun." },
-        { id: 9, author: "Gina Garcia", date: "2024-05-01", rating: 5, comment: "Nice unit, comfy beds. Enjoyed my week at Destin. Simone was very prompt to address my issue with AC and was fixed right away!" },
-        { id: 10, author: "David Rodriguez", date: "2023-03-01", rating: 5, comment: "Great location and great view. My family of 4 and my mother in law came down for a week and had a blast. There was plenty of room with the pull out couch. The view is great. There are restaurants within walking distance. The fish at Whale's Tale was great. I would go back tomorrow if I could." },
-        { id: 11, author: "Gail Wilson", date: "2023-06-01", rating: 5, comment: "Had a great time! Beautiful view of the beach, convenient, everything we needed in condo. Appreciated the brightness of bathroom lighting. Host quickly responded to questions. Building A just needs to repair an elevator that is down." },
-        { id: 12, author: "Ashay Moore", date: "2023-12-01", rating: 5, comment: "EXCELLENT LOCATION AND SUPER HOST. We love this area. Perfect location right in front of the beach. The amenities are totally family oriented. Heated pool. Hot tubs and nice fitness facility. The parking is super convenient. The host is very responsive and the apartment is very clean and tidy. The only improvement I would suggest is to upgrade the pots and pans. Other than that...no issues!!" },
-        { id: 13, author: "Oliver Taylor", date: "2025-07-01", rating: 5, comment: "Perfect! Everything was perfect from check in to check out. Property was clean and organized. Location was perfect!" },
-        { id: 14, author: "Brice Thomas", date: "2022-10-01", rating: 5, comment: "Great time. We had a great time on our trip and the host was very responsive to questions and helped us get in when VRBO's site was down. Location is great right across from the beach." },
-        { id: 15, author: "Shannon Jackson", date: "2022-09-01", rating: 5, comment: "Loved it. It had been a long time since we had been to Destin and I loved the location of this property and the view! It had everything we needed!" },
-        { id: 16, author: "Brandi White", date: "2022-07-01", rating: 5, comment: "Great place to stay. The property was great." },
-        { id: 17, author: "Matt Harris", date: "2022-07-01", rating: 5, comment: "Great Vacation Rental! We thoroughly enjoyed spending our vacation at this rental! The place had everything we needed on top of an incredible location. Would definitely stay here again!" },
-        { id: 18, author: "Douglas Martin", date: "2022-06-01", rating: 5, comment: "Great vacation. Enjoyed staying here. The condo was well stocked and comfortable. The only real issue we had was the busy street between the condo and the beach. It was noisy at night and it's hard to hear the waves. Super nice place but we got several dirty letters left under our door from the association. So make sure you read up on the rules and follow them." },
-        { id: 19, author: "Jillian Brown", date: "2022-07-01", rating: 5, comment: "Beach Life. Should have time restrictions on golf carts or at least horn restrictions." },
-        { id: 20, author: "Jeremy Lee", date: "2022-07-01", rating: 5, comment: "Great Place To Stay! I was very pleased with this property! It has THE BEST view of the beach and ocean. The host was great. Had all of the things needed to cook meals in house rather than having to leave for dinner every night. We brought our own sheets blankets etc but the ones provided looked just fine. I would just say that there was hairs on the bathroom floors and walls. Other than that GREAT GREAT PLACE. I would recommend 100%!!! Can't wait to come back to Destin." },
-        { id: 21, author: "Michael Walker", date: "2022-07-01", rating: 5, comment: "Wonderful Experience. Everything was perfect. Homeowners were delightful to work with. We will rent from them again!" },
-        { id: 22, author: "Robert Hall", date: "2022-06-01", rating: 5, comment: "Great location! Enjoyed renting this property, overall easy transaction and just a little confusion checking in as far as parking but overall satisfied. The condo was clean, the view was amazing!" },
-        { id: 23, author: "Tami Allen", date: "2022-05-01", rating: 5, comment: "Beautiful stay. Everything was perfect. Responds quick to any questions. Will definitely be making another stay." },
-        { id: 24, author: "Phyllis Young", date: "2022-05-01", rating: 5, comment: "Great property and wonderful stay." },
-        { id: 25, author: "Vanessa King", date: "2022-05-01", rating: 5, comment: "Perfect place to stay!!! This was a perfect place to stay!!! Owner was so nice and helpful!!! Everything was cleaned and the beds were comfortable!!! Will definitely stay here again!!!" },
-        { id: 26, author: "Tori Wright", date: "2022-04-01", rating: 5, comment: "The place was absolutely beautiful. This location is perfect for beach trip, easy access to beach with a little beach bar right there! The whole road has lots of restaurants etc. I recommend going to pompano joes at least once right down the road. It was amazing, not over crowded, no crazies just nice relaxing and beautiful!!!! The condo was excellent! Very clean." },
-        { id: 27, author: "Matthew Lopez", date: "2022-04-01", rating: 5, comment: "Miramar condo. This stay was great. The location was amazing with 3 access points to the beach directly across the street. We also were able to enjoy the indoor pool during some rainy weather. The condo was perfect for our needs and we will certainly stay here again." },
-        { id: 28, author: "Daniel Hill", date: "2022-03-01", rating: 5, comment: "Very accommodating facilities and condo. We enjoyed our stay no surprises." },
-        { id: 29, author: "Katie Scott", date: "2022-03-01", rating: 5, comment: "Easy and fun. We had a great time, location is perfect!!" },
-        { id: 30, author: "Florida Green", date: "2022-03-01", rating: 5, comment: "Immaculate and great view. Planned this trip with my husband and boys 14 and 21. Our first time going to the Panhandle. We had so many plan but they were interrupted by rain, cold and fog the entire trip. We absolutely made the best of it. What made it easy was this place. Truly a wonderful stay in a convenient location with a view of the ocean. It is spacious and when I say immaculate!! I'm such a stickler for clean accommodations and this was great. The host was awesome and so responsive. We will be coming back. Five stars is not sufficient." },
-        { id: 31, author: "Vuth Adams", date: "2021-11-01", rating: 5, comment: "This is an awesome place!! We love this place! It was clean and nice view of the beach. Especially, the view of the sunset!! The manager was so nice and very helpful. I would stay again next year and would recommended friend and family." },
-        { id: 32, author: "Jennifer Baker", date: "2021-10-01", rating: 5, comment: "Great location. Great location and easy access to beach." },
-        { id: 33, author: "Eric Nelson", date: "2021-10-01", rating: 5, comment: "Miramar Beach. Great condo Great location Simone was great whenever I had a question Very quick response Very enjoyable stay at the beach." },
-        { id: 34, author: "James Carter", date: "2021-09-01", rating: 5, comment: "Nice beach stay. Overall a nice unit with good views for sunset and beach, comfortable bedding. The unit was very clean on arrival. Minor items: master closet was full of owner items like old furniture and not usable, owner did not provide new parking passes (asked us to modify expired pass when we asked) and was missing one pool band. One pool band broke just putting it on and owner charged full lost band fee... So glad nothing else broke given that it's not a new unit and would be nervous to stay again for that reason." },
-        { id: 35, author: "Erin Perez", date: "2021-09-01", rating: 5, comment: "Beautiful condo, great location! We loved it here! Fantastic view, great location, very clean, and the owner was so nice and very responsive. We were able to walk to many restaurants for dinner each night. Would absolutely stay here again." },
-        { id: 36, author: "Worth Roberts", date: "2021-07-01", rating: 5, comment: "Amazing view. The condo was perfect for our family and had the best view!!!" },
-        { id: 37, author: "Brandon Turner", date: "2021-07-01", rating: 5, comment: "Awesome property/awesome manager. Simone was great to work with...always answered the phone or text and was very communicative and helpful. The property was fantastic beautiful views and well appointed. I would definitely stay again!" },
-        { id: 38, author: "Ryan Phillips", date: "2021-06-01", rating: 5, comment: "Beautiful place. The condo is in an excellent location and management is extremely helpful. Kitchen is well stocked, everything worked well." },
-        { id: 39, author: "Ivon Campbell", date: "2021-05-01", rating: 5, comment: "Fun in the sun. Great condo enjoyed the stay." },
-        { id: 40, author: "Anthony Parker", date: "2021-05-01", rating: 5, comment: "Amazing and Beautiful. Simone was an amazing host and the condo was everything that me and my family of 6 could have wanted. Simone did an amazing job with communication and was very response when ever I sent her a message. Me and my family will be definitely staying there." },
-        { id: 41, author: "Teena Evans", date: "2021-05-01", rating: 5, comment: "Wonderful time. WE had a great time!!!! beach was great!!! food was close!!!" },
-        { id: 42, author: "Shaquitta Edwards", date: "2021-05-01", rating: 5, comment: "Perfect for my family! My family and I really enjoyed our short stay! The property was clean, comfortable and we had the perfect view plus everything we needed!! Customer service was superb!! We will be returning soon!!" },
-        { id: 43, author: "Lisa Collins", date: "2021-04-01", rating: 5, comment: "Excellent location. Our stay was perfect. Amazing location, gorgeous view. Excellent and fast communication with the owner. Highly recommend." },
-        { id: 44, author: "Julie Stewart", date: "2021-04-01", rating: 5, comment: "Perfect getaway! Had a great time & perfect location!" },
-        { id: 45, author: "Linda Sanchez", date: "2021-04-01", rating: 5, comment: "Condo. Beautiful condo with a fabulous view!" },
-        { id: 46, author: "Anthony Morris", date: "2021-03-01", rating: 5, comment: "Perfect Family Spring Break. The property was everything in the description and more. Very clean, an unforgettable view and prime location. It was colder than expected but the indoor pool allowed us time to let it warm up outside. Will definitely stay here again." },
-        { id: 47, author: "Dylan Rogers", date: "2021-03-01", rating: 5, comment: "Fantastic. Great place. We've stayed at Majestic Sun two years ago & now this year. Will definitely stay here again. Highly recommend. Beautiful ocean view. Closest condo to the beach and affordable." },
-        { id: 48, author: "Eric Reed", date: "2021-03-01", rating: 5, comment: "Breathtaking sunsets. We stayed 3/20-3/28 and let me tell you, it exceeded our expectations! We've vacationed in Destin and Miramar Beach many times over the years and this condo by far has one of the best views we've ever experienced here!! Simone is wonderful to work with and very responsive to any questions we had. We will definitely be back again and again!!!" },
-        { id: 49, author: "Marisela Morgan", date: "2021-03-01", rating: 5, comment: "Great getaway! Simone was so great! The property exceeded my expectations, the pictures don't do any justice! So much prettier in person! Beds were comfy and she had everything we needed. I would definitely stay again." },
-        { id: 50, author: "Dexter Bell", date: "2021-02-01", rating: 5, comment: "Refreshing getaway. The property was beautiful, wonderful view of the Gulf from our balcony. The beach was just a very short walk. Simone was readily available if we had any questions. She was great! We even exchanged pictures at the end of our stay. We were really looking forward to a short vacation, and this delivered. We would definitely rent here again!" },
-        { id: 51, author: "Jim Murphy", date: "2020-10-01", rating: 5, comment: "Great condo. The location is great and the condo itself was spacious and clean. It also had an incredible view from the large balcony and master bedroom. I highly recommend." },
-        { id: 52, author: "Amelia Bailey", date: "2020-10-01", rating: 5, comment: "Great location & views. Location is great on scenic 98 with amazing views! Communication with owner was great & fixed issues that we had. Good size for family of 4 plus grandparent." },
-        { id: 53, author: "Wisconsin Rivera", date: "2020-10-01", rating: 5, comment: "Beautiful View. Enjoyed the full on view of the beach and ocean. Amenities were nice. Very easy beach access. Condo is beautiful. Three stars for cleanliness because master bed shower curtain was very moldy and smelled. Needs replacing. Dishwasher was full and not emptied by cleaning staff. No fault of condo owner, but cleaning staff could do a better job." },
-        { id: 54, author: "Robert Cooper", date: "2020-09-01", rating: 5, comment: "Excellent location.. perfect for families! We booked this condo on short notice but were so pleased with the entire experience. The owner communicated quickly and thoroughly and was very helpful throughout our stay. We had everything we needed for a comfortable stay and were able to focus on family time. The location is great for shopping, dining, and the beach!" },
-        { id: 55, author: "Ann Richardson", date: "2020-09-01", rating: 5, comment: "Love majestic sun. We have stayed at seascape several times and now twice at majestic sun and have always enjoyed it!" },
-        { id: 56, author: "Bonnie Cox", date: "2020-06-01", rating: 5, comment: "Miramar - Home Away From Home. We've been to Miramar/Destin several times and find Majestic Sun to be one of our favorites in regard to location and amenities. Per usual, our stay didn't disappoint. There was a slight mixup and we didn't receive all check in instructions with codes, but when we reached out to the owner, she got back quickly with what we needed. The view is wonderful and you are just an elevator ride down and quick walk across the street to the beach. I definitely recommend!" },
-        { id: 57, author: "Milton Howard", date: "2020-02-01", rating: 5, comment: "Great unit on a great property! Clean and well kept, it was very comfortable. Access to the heated pool was a big plus." },
-        { id: 58, author: "Kristy Ward", date: "2020-03-01", rating: 5, comment: "Relaxing vacation. We had a wonderful time. Majestic sun is always our preferred location." },
-        { id: 59, author: "Elijah Bennett", date: "2025-06-01", rating: 5, comment: "Great property and wonderful stay." }
+        {
+            id: 1,
+            platform: "vrbo",
+            author: "Jeannie",
+            sourceName: "Jeannie M.",
+            date: "2026-04-15",
+            rating: 5,
+            guestFavorite: true,
+            comment: "This stay was fantastic and we will definitely be back. It has an amazing ocean view with a very large balcony. The kitchen was one of the most stocked I've ever seen with plenty of dishes, crock pot, air fryer, etc. The water pressure was great and getting in and out of the door was easy. We loved it and plan to make it an annual tradition.",
+            highlights: ["amazing ocean view", "kitchen was one of the most stocked"]
+        },
+        {
+            id: 2,
+            platform: "airbnb",
+            author: "Ibrahim",
+            sourceName: "Ibrahim",
+            date: "2026-07-01",
+            rating: 5,
+            comment: "Exceptional experience, spectacular location and views. Apartment had all the necessary amenities. It was very peaceful. Easy check in and easy access. Again location was a true highlight — doesn't get better than that on Miramar beach front.",
+            highlights: ["spectacular location and views", "location was a true highlight"]
+        },
+        {
+            id: 3,
+            platform: "airbnb",
+            author: "Lacey",
+            sourceName: "Lacey",
+            date: "2026-04-15",
+            rating: 5,
+            comment: "We enjoyed our family stay at this place! It was exactly as described and on the beach!! The condo was fresh, clean, and roomy. Simone was an excellent host by communicating quickly! We will definitely stay again!!",
+            highlights: ["fresh, clean, and roomy", "excellent host"]
+        },
+        {
+            id: 4,
+            platform: "vrbo",
+            author: "Jacqueline",
+            sourceName: "Jacqueline R.",
+            date: "2026-04-15",
+            rating: 5,
+            comment: "Beautiful Views! Conveniently located. Condo had all the amenities we needed! Would definitely book again. Easy check in process. Thank you Simone for a wonderful stay!",
+            highlights: ["Beautiful Views", "would definitely book again"]
+        },
+        {
+            id: 5,
+            platform: "airbnb",
+            author: "Roeland",
+            sourceName: "Roeland",
+            date: "2026-05-15",
+            rating: 5,
+            comment: "Sometimes you find something beautiful, but this location and apartment are amazing. If you are planning to book, don't hesitate — you won't be disappointed. And the best part is the view — amazing!",
+            highlights: ["location and apartment are amazing", "the view — amazing"]
+        },
+        {
+            id: 6,
+            platform: "vrbo",
+            author: "Steve",
+            sourceName: "Steve L.",
+            date: "2026-02-15",
+            rating: 5,
+            comment: "Great view. You get good sun from noon on and plenty of porch furniture. Everything worked as it should and my host was awesome. Already booking my next trip there.",
+            highlights: ["Great view", "host was awesome"]
+        },
+        {
+            id: 7,
+            platform: "vrbo",
+            author: "Kenneth",
+            sourceName: "Kenneth S.",
+            date: "2025-10-15",
+            rating: 5,
+            comment: "The condo was beautifully furnished and had a killer view from the balcony with access from the master bedroom. Nice furnishings and very generous complement of dishes and cooking utensils. Looking forward to returning. Everything as advertised or better.",
+            highlights: ["killer view", "everything as advertised or better"]
+        },
+        {
+            id: 8,
+            platform: "airbnb",
+            author: "Sara",
+            sourceName: "Sara",
+            date: "2026-07-05",
+            rating: 5,
+            comment: "Nice condo with a great view. Within walking distance of a lot of stuff.",
+            highlights: ["great view", "walking distance of a lot of stuff"]
+        },
+        {
+            id: 9,
+            platform: "airbnb",
+            author: "Sayeed",
+            sourceName: "Sayeed",
+            date: "2025-09-15",
+            rating: 5,
+            comment: "Great spot right by the beach, nice balcony, easy parking. Host was super communicative. House had everything you would need — overall perfect spot.",
+            highlights: ["Great spot right by the beach", "Host was super communicative"]
+        },
+        {
+            id: 10,
+            platform: "vrbo",
+            author: "Andrew",
+            sourceName: "Andrew Y.",
+            date: "2024-07-15",
+            rating: 5,
+            comment: "Best location in Destin. Perfect place, on water and a good pool. Room very clean and has everything you may need. Will be going back soon.",
+            highlights: ["Best location in Destin", "very clean"]
+        },
+        {
+            id: 11,
+            platform: "vrbo",
+            author: "Duane",
+            sourceName: "duane r.",
+            date: "2026-02-15",
+            rating: 5,
+            comment: "Our host communicated very well and always in a timely fashion and met all of our needs promptly! This condo was very well stocked, more than any other VRBO we have stayed at. The amount of dishware was amazing!! He also had a crockpot and an air fryer for our use — usually we have to bring our own! The Gulf view is always amazing. We had some company this year stay with us and they were amazed with our view!!!!",
+            highlights: ["dishware was amazing", "host communicated very well"]
+        },
+        {
+            id: 12,
+            platform: "airbnb",
+            author: "John",
+            sourceName: "John",
+            date: "2025-05-15",
+            rating: 5,
+            comment: "This location gets you right in the heart of Miramar Beach. Close to restaurants and shopping. Spent a week here with my wife and granddaughter. Met a lot of nice people from all over. Super family friendly — looking forward to returning!",
+            highlights: ["heart of Miramar Beach", "Super family friendly"]
+        },
+        {
+            id: 13,
+            platform: "airbnb",
+            author: "Steph",
+            sourceName: "Steph",
+            date: "2025-05-15",
+            rating: 5,
+            comment: "Amazing location with incredible views without all the tourists. The unit was exactly as described, check-in couldn't be smoother, communication was excellent, and overall it was a great value. We'd absolutely stay here again and recommend it without hesitation.",
+            highlights: ["Amazing location with incredible views", "great value"]
+        },
+        {
+            id: 14,
+            platform: "vrbo",
+            author: "Aiza",
+            sourceName: "Aiza D.",
+            date: "2024-06-15",
+            rating: 5,
+            comment: "The condo was very clean and had a great view. We really enjoyed for a short stay and plenty of restaurants to eat nearby.",
+            highlights: ["very clean", "Great view"]
+        },
+        {
+            id: 15,
+            platform: "airbnb",
+            author: "Dina",
+            sourceName: "Dina",
+            date: "2025-04-15",
+            rating: 5,
+            comment: "Beautiful view, great location, and the host was friendly and communicative too. We would stay here again. Loved walking on the beautiful beach and to dinner every night. Very nice place!",
+            highlights: ["Beautiful view", "great location"]
+        },
+        {
+            id: 16,
+            platform: "vrbo",
+            author: "Maria",
+            sourceName: "maria b.",
+            date: "2025-07-15",
+            rating: 5,
+            comment: "Everything was perfect from check in to check out. Property was clean and organized. Location was perfect!",
+            highlights: ["Everything was perfect", "Location was perfect"]
+        },
+        {
+            id: 17,
+            platform: "airbnb",
+            author: "Stacy",
+            sourceName: "Stacy",
+            date: "2025-05-15",
+            rating: 5,
+            comment: "Highly recommend! The views were spectacular and we loved the easy access to the beach. The condo was very clean and had everything you needed for your stay. We will definitely be back!",
+            highlights: ["views were spectacular", "everything you needed"]
+        },
+        {
+            id: 18,
+            platform: "vrbo",
+            author: "Christy",
+            sourceName: "Christy M.",
+            date: "2024-03-15",
+            rating: 5,
+            comment: "Beautiful, clean, great area. Great view of the ocean. Parking is easy. Will stay again.",
+            highlights: ["Beautiful, clean", "Will stay again"]
+        },
+        {
+            id: 19,
+            platform: "vrbo",
+            author: "Dominique",
+            sourceName: "Dominique D.",
+            date: "2023-10-15",
+            rating: 5,
+            comment: "This property was great! The view of the beach was beautiful. The condo was nice and big. We would stay here again.",
+            highlights: ["view of the beach was beautiful", "we would stay here again"]
+        },
+        {
+            id: 20,
+            platform: "airbnb",
+            author: "Emily",
+            sourceName: "Emily (Hamilton, OH)",
+            date: "2024-06-15",
+            rating: 5,
+            comment: "Perfect location. Easy to get to the beach every day. We loved having the ice cream shop and souvenir store located right in the same complex.",
+            highlights: ["Perfect location", "easy to get to the beach every day"]
+        },
+        {
+            id: 21,
+            platform: "vrbo",
+            author: "Gina",
+            sourceName: "Gina H.",
+            date: "2024-05-15",
+            rating: 5,
+            comment: "Nice unit, comfy beds. Enjoyed my week at Destin. Simone was very prompt to address my issue with AC and was fixed right away!",
+            highlights: ["comfy beds", "Simone was very prompt"]
+        },
+        {
+            id: 22,
+            platform: "vrbo",
+            author: "Ashay",
+            sourceName: "Ashay D.",
+            date: "2023-12-15",
+            rating: 5,
+            comment: "We love this area. Perfect location right in front of the beach. The amenities are totally family oriented. Heated pool. Hot tubs and nice fitness facility. The parking is super convenient. The host is very responsive and the apartment is very clean and tidy.",
+            highlights: ["Perfect location right in front of the beach", "very clean and tidy"]
+        },
+        {
+            id: 23,
+            platform: "vrbo",
+            author: "Gail",
+            sourceName: "Gail W.",
+            date: "2023-06-15",
+            rating: 5,
+            comment: "Beautiful view of the beach, convenient, everything we needed in condo. Appreciated the brightness of bathroom lighting. Host quickly responded to questions.",
+            highlights: ["Beautiful view of the beach", "everything we needed"]
+        },
+        {
+            id: 24,
+            platform: "vrbo",
+            author: "David",
+            sourceName: "David P.",
+            date: "2023-03-15",
+            rating: 5,
+            comment: "My family of 4 and my mother in law came down for a week and had a blast. There was plenty of room with the pull out couch. The view is great. There are restaurants within walking distance. The fish at Whale's Tale was great. I would go back tomorrow if I could.",
+            highlights: ["Great location", "would go back tomorrow"]
+        },
+        {
+            id: 25,
+            platform: "airbnb",
+            author: "Christopher",
+            sourceName: "Christopher",
+            date: "2021-06-15",
+            rating: 5,
+            comment: "Perfect location!! The view is awesome and the setup is perfect — can't wait to go back! The bed is comfortable!!! Highly recommend.",
+            highlights: ["Perfect location", "Highly recommend"]
+        },
+        {
+            id: 26,
+            platform: "vrbo",
+            author: "Eileen",
+            sourceName: "Eileen P.",
+            date: "2022-03-15",
+            rating: 5,
+            comment: "Planned this trip with my husband and family. Our first time going to the Panhandle. We had so many plans but they were interrupted by rain, cold, and fog the entire trip. We absolutely made the best of it. What made it easy was this place. Truly a wonderful stay in a convenient location with a view of the ocean. It is spacious and when I say immaculate!! I'm such a stickler for clean accommodations and this was great. The host was awesome and so responsive. We will be coming back. Five stars is not sufficient.",
+            highlights: ["Immaculate", "Five stars is not sufficient"]
+        },
+        {
+            id: 27,
+            platform: "vrbo",
+            author: "Erin",
+            sourceName: "Erin D.",
+            date: "2021-09-15",
+            rating: 5,
+            comment: "We loved it here! Fantastic view, great location, very clean, and the owner was so nice and very responsive. We were able to walk to many restaurants for dinner each night. Would absolutely stay here again.",
+            highlights: ["Fantastic view", "would absolutely stay here again"]
+        },
+        {
+            id: 28,
+            platform: "vrbo",
+            author: "Dexter",
+            sourceName: "Dexter H.",
+            date: "2021-02-15",
+            rating: 5,
+            comment: "The property was beautiful, wonderful view of the Gulf from our balcony. The beach was just a very short walk. Simone was readily available if we had any questions. She was great! We even exchanged pictures at the end of our stay. We were really looking forward to a short vacation, and this delivered. We would definitely rent here again!",
+            highlights: ["wonderful view of the Gulf", "would definitely rent here again"]
+        }
     ]
 };
 
