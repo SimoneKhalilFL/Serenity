@@ -104,24 +104,24 @@ Booking's system pulls from amenity checkboxes, room configs, location fields, a
 Booking.com displays this as the summary paragraph beneath the property name on the search-result card and at the top of the property page. **NOT directly editable in most extranet flows** — submit via the description-review workflow above. Front-load the differentiator, keep it factual.
 
 ```
-Westlight is a 2-bedroom, 2-bath Gulf-front condo in Miramar Beach with panoramic emerald-water views from a private beachfront balcony. Direct beach access via a palm-lined boardwalk, full Seascape resort amenities including a Gulf-front pool and indoor heated pool, and complimentary beach chairs and umbrella in the condo. Sleeps up to 6. Owner-hosted.
+Welcome to Westlight, a 2-bedroom, 2-bath Gulf-front condo in Miramar Beach directly overlooking the Gulf of Mexico. Panoramic Gulf views from a private beachfront balcony, direct beach access via a palm-lined boardwalk, full Seascape resort amenities including a Gulf-front pool and indoor heated pool, and complimentary beach chairs and umbrella in the condo. Sleeps up to 6. Owner-hosted.
 ```
 
-*(Character count: 351 / ~500 typical Booking.com short-description budget.)*
+*(Character count: 386 / ~500 typical Booking.com short-description budget.)*
 
 ## Long Description (~380 words) — REFERENCE / submit-for-review
 
 ### Overview
 
-Westlight is a Gulf-front 2-bedroom, 2-bath condo in Miramar Beach, Florida, located within the Majestic Sun building at Seascape Resort. The condo sleeps up to 6 guests and features panoramic Gulf views from a private beachfront balcony, direct beach access via a palm-lined boardwalk from the resort deck, and full Seascape resort amenities.
+Welcome to Westlight, a Gulf-front 2-bedroom, 2-bath condo in Miramar Beach, Florida, located within the Majestic Sun building at Seascape Resort. Westlight sits directly overlooking the Gulf of Mexico and sleeps up to 6 guests, with panoramic Gulf views from a private beachfront balcony, direct beach access via a palm-lined boardwalk from the resort deck, and full Seascape resort amenities. Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast.
 
 ### Accommodation
 
-The condo offers two separate sleeping areas: a primary bedroom with a king bed and Gulf-facing windows, and a guest bedroom with a queen bed. A queen sleeper sofa in the living room accommodates one to two additional guests. In-unit amenities include a full kitchen with dishwasher, in-unit washer and dryer, smart TVs with streaming in the living room and every bedroom, high-speed Wi-Fi throughout, and a laptop-friendly workspace.
+The condo offers two separate sleeping areas: a primary bedroom with a king bed and Gulf-facing windows, and a guest bedroom with a queen bed. A queen sleeper sofa in the living room accommodates one to two additional guests. In-unit amenities include a full kitchen with dishwasher, in-unit washer and dryer, Smart TVs with popular streaming apps available in the living room and every bedroom, high-speed Wi-Fi throughout, and a laptop-friendly workspace.
 
 ### Location
 
-Miramar Beach on Florida's Emerald Coast, in the Destin area. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Silver Sands Premium Outlets, the Village of Baytowne Wharf, and Henderson Beach State Park are all a short drive. Destin–Fort Walton Beach Regional Airport (VPS) is approximately 15 minutes by car.
+Miramar Beach on Florida's Emerald Coast, in the Destin area. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Silver Sands Premium Outlets (~1 mile east), the Village of Baytowne Wharf, and Henderson Beach State Park are all a short drive. Publix at Grand Boulevard is the nearest grocery (~5 min drive); Winn-Dixie on Poinciana Blvd is closer (~1 mile). Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
 
 ### Amenities
 
@@ -138,9 +138,9 @@ Miramar Beach on Florida's Emerald Coast, in the Destin area. Direct beach acces
 - Hot tubs
 - Full fitness center
 - Tennis and pickleball courts (shared / resort)
-- Championship golf course (Seascape Golf Club, shared / resort)
+- Seascape Golf Club (9-hole, par 35 — shared / resort)
 - Elevator access
-- Covered on-site parking
+- Complimentary covered parking for registered guests
 
 ## Accommodation Description
 
@@ -174,13 +174,15 @@ Westlight is part of StayAtFlorida, an owner-hosted collection of Gulf-front vac
 | Beach | Direct access via palm-lined boardwalk from the resort |
 | Seascape Town Center (coffee, dining, shopping) | Short walk |
 | Whale's Tale Beach Bar & Grill | Short walk via beach |
-| Publix (Silver Sands Premium Outlets) | ~5 minutes by car |
-| Silver Sands Premium Outlets | ~5 minutes by car |
+| Publix at Grand Boulevard (725 Grand Blvd) | ~5 minutes by car |
+| Winn-Dixie (Poinciana Blvd) | ~1 mile |
+| Silver Sands Premium Outlets | ~1 mile east |
 | Village of Baytowne Wharf | ~15 minutes by car |
 | Henderson Beach State Park | ~15 minutes by car |
 | Destin Harbor / HarborWalk Village | ~15 minutes by car |
 | Big Kahuna's Water & Adventure Park | ~10 minutes by car |
-| VPS (Destin–Fort Walton Beach Regional Airport) | ~15 minutes by car |
+| VPS (Destin–Fort Walton Beach Airport) | ~40 minutes by car (24 miles) |
+| ECP (Northwest Florida Beaches International Airport) | ~1 hour by car (38 miles) |
 
 ## Important Information
 
@@ -194,35 +196,80 @@ Cancellation policy: See Booking.com's rate policy for exact terms. Refund windo
 
 Complimentary beach chairs and umbrella are available in the condo for use during your stay. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you prefer a full setup.
 
-Covered on-site parking is included.
+Complimentary covered parking is included for registered guests.
 ```
 
 ## Photo Captions
 
-Booking captions ~150 chars each. Factual, no lifestyle framing. Updated 2026-07-09 for the Westlight rebrand — full 57-photo library captioned in MASTER §18.
+**Max ~250 chars per photo.** Booking.com captions match the guest-facing caption column in `MASTER.md §18` verbatim. Booking.com photo captions are a **directly editable extranet field** (Track A — one of the few surfaces on Booking that hosts control fully). Updated 2026-07-10 with the owner-final 46-slot Westlight photo library.
 
-**Recommended Booking.com photo order** (first 14 slots — the "above the fold" carousel):
+**Recommended cover image:** `ms-09-living-room.png` (slot #13) — matches `config.js#coverImage` as of 2026-07-10. On Booking's Extranet, set this file as the "main photo" even though it appears at slot #13 in the upload order. Slot #1 (`MS-FullView-1.png`) still leads the on-page carousel.
+
+**Full Booking.com photo upload order** (40 published slots; 6 slots owner-removed):
 
 | Slot | File | Caption |
-|---|---|---|
-| 1 | `ms-01-gulf-balcony.jpg` | Private Gulf-front balcony |
-| 2 | `ms-01-living-room.jpg` | Living room with Gulf view |
-| 3 | `ms-02-master-bedroom.jpg` | Primary bedroom with king bed |
-| 4 | `ms-01-guest-bedroom.jpg` | Guest bedroom with queen bed |
-| 5 | `ms-01-kitchen.jpg` | Full kitchen |
-| 6 | `ms-02-dining-room.jpg` | Dining area with Gulf view |
-| 7 | `ms-01-master-bath.jpg` | Primary bathroom |
-| 8 | `ms-01-guest-bath.jpg` | Guest bathroom |
-| 9 | `ms-10-sunset-view.jpg` | Sunset from the balcony |
-| 10 | `ms-beach-view.jpg` | Beach access and Gulf view |
-| 11 | `ms-01-pool.jpg` | Gulf-front outdoor pool |
-| 12 | `ms-08-pool-indoor.jpg` | Indoor heated pool |
-| 13 | `ms-02-hottub.jpg` | Resort hot tub |
-| 14 | `ms-02-gym.jpg` | Fitness center |
+|---:|---|---|
+| 1 | `MS-FullView-1.png` | Floor-to-ceiling Gulf views welcome you the moment you walk in. |
+| 2 | `MS-Balcony-1.png` | Start every morning with coffee overlooking the Emerald Coast. |
+| 3 | `MS_Balcony_Dinner_Setup.png` | Enjoy dinner on your private balcony while the sun sets over the Gulf. |
+| 4 | `MS_Balcony_Coffee_person.png` | A peaceful spot for sunrise coffee or an afternoon drink with an endless view. |
+| 5 | `MS-MasterBedroomFuture-2.png` | Wake up just steps from the Gulf in the comfortable king primary suite. |
+| 6 | `MS-MasterBath-1.png` | Spacious primary bathroom with plenty of room to get ready for the beach. |
+| 7 | `ms-01-building-view.jpg` | Majestic Sun at Seascape Resort sits directly across from one of the Emerald Coast's most beautiful beaches. |
+| 8 | `MS-GuestBedroom-1.png` | Cozy queen guest bedroom designed for a restful night's sleep. |
+| 9 | `MS_Guest_Bath.png` | Second full bathroom conveniently located next to the guest bedroom. |
+| 10 | `MS-Kitchen-1.png` | Fully equipped kitchen with everything you need for family meals or quick breakfasts. |
+| 11 | `MS_dinner_setup.png` | Open-concept living space designed for gathering after a day at the beach. |
+| 12 | `MS_Dinner_sunset.png` | Golden hour fills the living room with unforgettable Gulf sunsets. |
+| 13 | `ms-09-living-room.png` | Comfortable seating with breathtaking Gulf views from almost every seat. |
+| 14 | `ms-08-pool-indoor.jpg` | Enjoy the indoor heated pool year-round, rain or shine. |
+| 15 | `MS-DiningRoom-3.png` | Plenty of space for everyone to relax, dine, and enjoy the view together. |
+| 16 | `ms-02-kitchen.jpg` | The open kitchen keeps everyone connected while meals are prepared. |
+| 17 | `MS-LivingRoom-5.png` | Relax with smart TV streaming after a day on the beach. |
+| 18 | `ms-01-kitchen.jpg` | Breakfast bar seating makes casual meals easy. |
+| 19 | *(entry detail — owner-removed 2026-07-10)* | — |
+| 20 | `ms-01-pool.jpg` | Beautiful Gulf-front resort pool just steps from the beach. |
+| 21 | *(entry foyer — owner-removed 2026-07-10)* | — |
+| 22 | `ms-02-pickleball.jpg` | Enjoy complimentary tennis and pickleball courts within the resort. |
+| 23 | *(hallway — owner-removed)* | — |
+| 24 | `ms-01-laundry.jpg` | Full-size washer and dryer inside the condo for your convenience. |
+| 25 | `ms-beach-view.jpg` | Sugar-white sand and emerald water are just an elevator ride away. |
+| 26 | `MS-Balcony-Future-5.png` | Relax on your private balcony with panoramic Gulf views. |
+| 27 | `ms-10-sunset-view.jpg` | End every day with spectacular sunsets over the Gulf of Mexico. |
+| 28 | `MS-MasterBedroomFuture-1.png` | Comfortable king bedroom with a relaxing coastal design. |
+| 29 | `MS-GuestBedroom-2.png` | Bright and inviting guest bedroom with plenty of storage. |
+| 30 | `MS-GuestBedroom-3.png` | Clean, modern bathroom stocked and ready for your stay. |
+| 31 | `ms-01-outdoor-lake.jpg` | Views of the resort and surrounding lagoon from the property. |
+| 32 | *(front door — owner-removed)* | — |
+| 33 | `ms-01-pool-outdoor.jpg` | Multiple pools and resort amenities for every season. |
+| 34 | *(owner-removed 2026-07-10 — duplicate of slot #20)* | — |
+| 35 | `ms-02-hottub.jpg` | Relax in the hot tub after a day in the sun. |
+| 36 | *(beach sunset drone — owner-removed 2026-07-10)* | — |
+| 37 | `ms-02-gym.jpg` | Stay active with the resort's well-equipped fitness center. |
+| 38 | `MS_Coffee_cup.png` | Fresh coffee is always within reach. |
+| 39 | `ms-06-kitchen.jpg` | Kitchen includes everyday essentials for easy breakfasts. |
+| 40 | *(local map — owner-removed)* | — |
+| 41 | `MS-LivingRoom-7.png` | Relax in comfort while enjoying the Gulf views. |
+| 42 | `ms-01-beachy-decor.jpg` | Coastal-inspired décor throughout the condo. |
+| 43 | `ms-07-kitchen.jpg` | Kitchen includes an air fryer for quick and easy meals. |
+| 44 | `ms-08-kitchen.jpg` | Perfect for preparing dinner while enjoying a day at the beach. |
+| 45 | `ms-11-living-room.png` | The perfect place to unwind after sunset. |
+| 46 | `MS-FullView-2.png` | Open, bright, and designed around the stunning Gulf view. |
+| 47 | `MS-DiningRoom-2.png` | Family-style dining with a view of the Gulf. |
+| 48 | `MS-DiningRoom-4.png` | Coastal-inspired dining space set for meals with family. |
+| 49 | `MS-DiningRoom-5.png` | Bright dining area ready to gather everyone together. |
+| 50 | `MS-LivingRoom-4.png` | Additional living-room angle showcasing the coastal flow. |
+| 51 | `MS-MasterBedroomFuture-3.png` | Peaceful primary bedroom detail with a coastal touch. |
+| 52 | `MS-MasterBedroomFuture-4.png` | King primary bedroom with warm, restful styling. |
+| 53 | `MS_Balcony_coffee.png` | The balcony coffee setup ready for a slow morning. |
+| 54 | `ms-06-gulf-balcony.png` | Another angle of the private Gulf-front balcony. |
+| 55 | `ms-08-living-room.png` | Living room bathed in warm sunset light. |
+| 56 | `ms-10-living-room.png` | Living-room detail from another comfortable seating angle. |
+| 57 | `ms-02-building-view.jpg` | The resort setting on Scenic Gulf Drive. |
+| 58 | `ms-05-kitchen.jpg` | Kitchen prep area with everyday essentials. |
+| 59 | `ms-01-living-room.jpg` | Living room with Gulf-facing sightlines — the everyday gathering space. |
 
-Slots 15–57: remaining photos in the order they appear in `config.js#properties[id=5].images`, using MASTER §18 short captions.
-
-**Booking photo order:** exterior/view → living room → bedrooms → kitchen → dining → bathrooms → sunset/lifestyle → beach → resort amenities.
+**Booking photo order:** view/lifestyle → balcony → primary bedroom & bath → building setting → guest bedroom → kitchen → dining → living → pool → resort amenities → beach & sunset → detail shots. Booking's algorithm rewards a strong first 4 photos on search-result cards; slot #1 (living-room-with-Gulf) is deliberately conversion-optimized. Bonus slots #47–#59 are additional room-variant frames — upload these after the primary 46 in the same slot order to preserve the conversion-optimized top-of-carousel.
 
 ---
 

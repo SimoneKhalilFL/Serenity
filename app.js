@@ -172,6 +172,27 @@ function getAllImages(images) {
     return [];
 }
 
+// Returns the guest-facing caption for a photo URL from property.photoCaptions.
+// Falls back to an empty string when no caption is present (property has no
+// caption map, or the URL is not in the map). Website gallery + lightbox render
+// this caption below/beside the image when non-empty.
+// Source of truth: MASTER.md §18 (per-property).
+function getPhotoCaption(property, imageUrl) {
+    if (!property || !property.photoCaptions || typeof property.photoCaptions !== 'object') return '';
+    if (!imageUrl) return '';
+    return property.photoCaptions[imageUrl] || '';
+}
+
+function getPhotoCaptionByIndex(property, index) {
+    if (!property) return '';
+    // Prefer the categorized-gallery flat list (with category context) if present.
+    if (window.categorizedImages && window.categorizedImages[index]) {
+        return getPhotoCaption(property, window.categorizedImages[index].url);
+    }
+    const flat = getAllImages(property.images);
+    return getPhotoCaption(property, flat[index] || '');
+}
+
 function extractCity(location) {
     // Extract city name from location string (e.g., "Panama City Beach, Florida" -> "Panama City Beach")
     return location.split(',')[0].trim();
@@ -1991,6 +2012,7 @@ function renderPropertyDetail(property) {
             <div class="lightbox-content" onclick="event.stopPropagation()">
                 <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">×</button>
                 <img id="lightbox-image" class="lightbox-image" src="" alt="Enlarged property photo">
+                <div id="lightbox-caption" class="lightbox-caption" aria-live="polite"></div>
                 <div id="lightbox-counter" class="lightbox-counter" aria-live="polite"></div>
             </div>
             <button type="button" class="lightbox-nav lightbox-nav-next" aria-label="Next photo" onclick="event.stopPropagation(); lightboxNext();">
@@ -2022,6 +2044,7 @@ function renderGallery(property) {
     // Legacy flat array format
     const mainAlt = generateImageAlt(property, 0);
     const galleryFallback = getFirstImage(property.images);
+    const initialCaption = getPhotoCaption(property, property.images[0]);
     
     return `
         <div class="gallery-container">
@@ -2043,6 +2066,7 @@ function renderGallery(property) {
                     <span id="gallery-indicator-text">${currentGalleryIndex + 1} / ${property.images.length}</span>
                 </div>
             </div>
+            ${initialCaption ? `<div id="gallery-caption" class="gallery-caption" aria-live="polite">${escapeHtml(initialCaption)}</div>` : `<div id="gallery-caption" class="gallery-caption" aria-live="polite" hidden></div>`}
             <div class="gallery-thumbnails">
                 ${property.images.map((img, idx) => `
                     <div class="gallery-thumbnail ${idx === 0 ? 'active' : ''}" onclick="selectGalleryImage(${idx})">
@@ -2107,6 +2131,12 @@ function renderCategorizedGallery(property) {
                     <span id="gallery-indicator-text">1 / ${allImages.length}</span>
                 </div>
             </div>
+            ${(() => {
+                const cap = getPhotoCaption(property, allImages[0]?.url || '');
+                return cap
+                    ? `<div id="gallery-caption" class="gallery-caption" aria-live="polite">${escapeHtml(cap)}</div>`
+                    : `<div id="gallery-caption" class="gallery-caption" aria-live="polite" hidden></div>`;
+            })()}
             <div class="gallery-thumbnails" id="gallery-thumbnails">
                 ${allImages.map((img, idx) => `
                     <div class="gallery-thumbnail ${idx === 0 ? 'active' : ''}" data-category="${escapeHtml(img.category)}" onclick="selectGalleryImage(${idx})">
@@ -2886,6 +2916,19 @@ function selectGalleryImage(index) {
             `${index + 1} / ${currentProperty.images.length}`;
     }
     
+    // Update caption if the property has a photoCaptions map.
+    const captionEl = document.getElementById('gallery-caption');
+    if (captionEl) {
+        const cap = getPhotoCaptionByIndex(currentProperty, index);
+        if (cap) {
+            captionEl.textContent = cap;
+            captionEl.hidden = false;
+        } else {
+            captionEl.textContent = '';
+            captionEl.hidden = true;
+        }
+    }
+    
     // Update thumbnails
     document.querySelectorAll('.gallery-thumbnail').forEach((thumb, idx) => {
         thumb.classList.toggle('active', idx === index);
@@ -2924,6 +2967,7 @@ function updateLightboxImage(index) {
     if (!currentProperty) return;
     const lightboxImage = document.getElementById('lightbox-image');
     const counter = document.getElementById('lightbox-counter');
+    const captionEl = document.getElementById('lightbox-caption');
     const hasCategories = window.categorizedImages && window.categorizedImages.length > 0;
     const total = getGalleryTotal();
     if (hasCategories) {
@@ -2935,6 +2979,16 @@ function updateLightboxImage(index) {
         lightboxImage.src = currentProperty.images[index];
         lightboxImage.alt = generateImageAlt(currentProperty, index);
         if (counter) counter.textContent = `${index + 1} / ${total}`;
+    }
+    if (captionEl) {
+        const cap = getPhotoCaptionByIndex(currentProperty, index);
+        if (cap) {
+            captionEl.textContent = cap;
+            captionEl.hidden = false;
+        } else {
+            captionEl.textContent = '';
+            captionEl.hidden = true;
+        }
     }
 }
 

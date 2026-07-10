@@ -78,9 +78,9 @@ The following is the paste-ready description body for the Houfy dashboard's Over
 ```
 Westlight – Gulf-Front 2BR Retreat in Miramar Beach
 
-At Westlight, every evening ends in gold. Wake up to panoramic Gulf views, spend your days on Miramar Beach's sugar-white sand, and end each evening watching the sunset from your private beachfront balcony.
+Welcome to Westlight, where every evening ends in gold. Wake up to panoramic Gulf views, spend your days on Miramar Beach's sugar-white sand, and end each evening watching the sunset from your private beachfront balcony.
 
-Westlight is a thoughtfully designed 2-bedroom, 2-bath Gulf-front condo on the west-facing edge of Miramar Beach — created for couples and small families seeking comfort, space, and unforgettable beach memories on Florida's Emerald Coast.
+Westlight is a thoughtfully designed 2-bedroom, 2-bath Gulf-front condo directly overlooking the Gulf of Mexico. Westlight was created for guests seeking the comforts of home paired with a true beachfront experience on Florida's Emerald Coast — a full kitchen, real bedrooms, in-unit laundry, and a private Gulf-front balcony, only with the Gulf a boardwalk away.
 
 ⭐ Guests consistently praise Westlight for its cleanliness, responsive owner, fully equipped kitchen, and breathtaking Gulf-front views.
 
@@ -115,7 +115,7 @@ Full-size refrigerator
 Coffee maker
 Dining table for family meals
 In-unit washer & dryer
-Smart TVs with streaming in every bedroom and the living room
+Smart TVs with popular streaming apps available in every bedroom and the living room
 High-speed Wi-Fi throughout
 Laptop-friendly workspace
 
@@ -123,9 +123,9 @@ Whether you're preparing breakfast before heading to the beach or enjoying a qui
 
 The View & Beach
 
-The private Gulf-front balcony is where many guests spend their favorite moments.
+The private Gulf-front balcony is the heart of Westlight.
 
-Start the morning watching dolphins with a cup of coffee.
+Start the morning with coffee overlooking the Gulf.
 
 Spend the afternoon relaxing while listening to the waves.
 
@@ -146,12 +146,12 @@ Indoor heated pool
 Hot tubs
 Full fitness center
 Tennis and pickleball courts
-Championship golf course (Seascape Golf Club)
+Seascape Golf Club (9-hole, par 35 — Emerald Bay Golf Club ~3 miles away for an 18-hole round)
 Bicycle and paddleboard rentals
 Multiple resort grills
 Direct beach access via palm-lined boardwalk
 Elevator access
-Covered on-site parking
+Complimentary covered parking for registered guests
 
 Seascape offers the amenities of a full-service beachfront resort while maintaining a quieter, more relaxed atmosphere than many of the busier Panama City Beach or Destin harbor properties.
 
@@ -179,9 +179,9 @@ Boshamps Seafood & Oyster House
 Diego's Burrito Factory
 Back Beach Barbecue
 
-Shopping is easy with Silver Sands Premium Outlets ~5 minutes away.
+Grocery is convenient: Publix at Grand Boulevard (725 Grand Blvd) is ~5 minutes by car; Winn-Dixie on Poinciana Blvd is closer (~1 mile) for a quick run. Shopping is easy — Silver Sands Premium Outlets is ~1 mile east.
 
-Destin–Fort Walton Beach Regional Airport (VPS) is approximately 15 minutes by car.
+Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car. Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles) by car — an alternative for guests routing through Panama City.
 
 About Your Host
 
@@ -235,7 +235,7 @@ Check the boxes matching MASTER §6. Verify against Houfy's current amenity pick
 - Coffee maker
 - Dishwasher
 - Washer / dryer (in unit)
-- Smart TVs with streaming
+- Smart TVs with popular streaming apps
 - Laptop-friendly workspace
 - Pool (Gulf-front outdoor)
 - Pool (indoor heated)
@@ -264,34 +264,79 @@ Check the boxes matching MASTER §6. Verify against Houfy's current amenity pick
 - Primary booker must be 25 or older
 - Max 6 guests
 - Quiet hours per HOA *(⚠ verify exact hours — currently stated as 10 PM – 8 AM)*
-- Covered on-site parking is included
+- Complimentary covered parking is included for registered guests
 
 ## Photo Captions
 
-Houfy captions ~150 chars each. Boutique-warm, closer to Airbnb / VRBO tone than Booking.com's factual style. From MASTER §18 short-caption column. Updated 2026-07-09 for the Westlight rebrand — full 57-photo library captioned in MASTER §18.
+**Max ~250 chars per photo.** Houfy captions match the guest-facing caption column in `MASTER.md §18` verbatim. Boutique-warm tone, closer to Airbnb / VRBO than Booking.com's factual style. Updated 2026-07-10 with the owner-final 46-slot Westlight photo library.
 
-**Recommended Houfy photo order** (first 14 slots — mirrors the Airbnb hero-carousel):
+**Recommended cover image:** `ms-09-living-room.png` (slot #13) — matches `config.js#coverImage` as of 2026-07-10. On the Houfy dashboard, set this file as the "featured" photo even though it appears at slot #13 in the upload order. The gallery carousel still opens with slot #1 (`MS-FullView-1.png`) — Houfy separates the cover-tile image from the carousel-first image, so this is fine.
+
+**Full Houfy photo upload order** (52 published slots — 46 owner-curated + 13 bonus room-variant slots − 7 owner-removed slots not uploaded (#19, #21, #23, #32, #34, #36, #40)):
 
 | Slot | File | Caption |
-|---|---|---|
-| 1 | `ms-01-gulf-balcony.jpg` | Gulf-front balcony · panoramic emerald views |
-| 2 | `ms-10-sunset-view.jpg` | Sunset — where every evening ends in gold |
-| 3 | `ms-08-gulf-balcony.jpg` | Golden hour on the balcony |
-| 4 | `ms-01-living-room.jpg` | Gulf-front living room with panoramic views |
-| 5 | `ms-02-master-bedroom.jpg` | Primary bedroom · king bed with Gulf views |
-| 6 | `ms-01-kitchen.jpg` | Full kitchen · fully stocked for six |
-| 7 | `ms-02-dining-room.jpg` | Dining table seating for six with Gulf views |
-| 8 | `ms-01-guest-bedroom.jpg` | Queen guest bedroom with coastal decor |
-| 9 | `ms-beach-view.jpg` | Emerald water and sugar-white sand outside the door |
-| 10 | `ms-01-pool.jpg` | Gulf-front outdoor pool with sundeck |
-| 11 | `ms-08-pool-indoor.jpg` | Indoor heated pool with cathedral ceilings |
-| 12 | `ms-01-master-bath.jpg` | Primary bathroom |
-| 13 | `ms-02-hottub.jpg` | Resort hot tub with Gulf-side deck |
-| 14 | `ms-01-building-view.jpg` | Building setting on Scenic Gulf Drive |
+|---:|---|---|
+| 1 | `MS-FullView-1.png` | Floor-to-ceiling Gulf views welcome you the moment you walk in. |
+| 2 | `MS-Balcony-1.png` | Start every morning with coffee overlooking the Emerald Coast. |
+| 3 | `MS_Balcony_Dinner_Setup.png` | Enjoy dinner on your private balcony while the sun sets over the Gulf. |
+| 4 | `MS_Balcony_Coffee_person.png` | A peaceful spot for sunrise coffee or an afternoon drink with an endless view. |
+| 5 | `MS-MasterBedroomFuture-2.png` | Wake up just steps from the Gulf in the comfortable king primary suite. |
+| 6 | `MS-MasterBath-1.png` | Spacious primary bathroom with plenty of room to get ready for the beach. |
+| 7 | `ms-01-building-view.jpg` | Majestic Sun at Seascape Resort sits directly across from one of the Emerald Coast's most beautiful beaches. |
+| 8 | `MS-GuestBedroom-1.png` | Cozy queen guest bedroom designed for a restful night's sleep. |
+| 9 | `MS_Guest_Bath.png` | Second full bathroom conveniently located next to the guest bedroom. |
+| 10 | `MS-Kitchen-1.png` | Fully equipped kitchen with everything you need for family meals or quick breakfasts. |
+| 11 | `MS_dinner_setup.png` | Open-concept living space designed for gathering after a day at the beach. |
+| 12 | `MS_Dinner_sunset.png` | Golden hour fills the living room with unforgettable Gulf sunsets. |
+| 13 | `ms-09-living-room.png` | Comfortable seating with breathtaking Gulf views from almost every seat. |
+| 14 | `ms-08-pool-indoor.jpg` | Enjoy the indoor heated pool year-round, rain or shine. |
+| 15 | `MS-DiningRoom-3.png` | Plenty of space for everyone to relax, dine, and enjoy the view together. |
+| 16 | `ms-02-kitchen.jpg` | The open kitchen keeps everyone connected while meals are prepared. |
+| 17 | `MS-LivingRoom-5.png` | Relax with smart TV streaming after a day on the beach. |
+| 18 | `ms-01-kitchen.jpg` | Breakfast bar seating makes casual meals easy. |
+| 19 | *(entry detail — owner-removed 2026-07-10)* | — |
+| 20 | `ms-01-pool.jpg` | Beautiful Gulf-front resort pool just steps from the beach. |
+| 21 | *(entry foyer — owner-removed 2026-07-10)* | — |
+| 22 | `ms-02-pickleball.jpg` | Enjoy complimentary tennis and pickleball courts within the resort. |
+| 23 | *(hallway — owner-removed)* | — |
+| 24 | `ms-01-laundry.jpg` | Full-size washer and dryer inside the condo for your convenience. |
+| 25 | `ms-beach-view.jpg` | Sugar-white sand and emerald water are just an elevator ride away. |
+| 26 | `MS-Balcony-Future-5.png` | Relax on your private balcony with panoramic Gulf views. |
+| 27 | `ms-10-sunset-view.jpg` | End every day with spectacular sunsets over the Gulf of Mexico. |
+| 28 | `MS-MasterBedroomFuture-1.png` | Comfortable king bedroom with a relaxing coastal design. |
+| 29 | `MS-GuestBedroom-2.png` | Bright and inviting guest bedroom with plenty of storage. |
+| 30 | `MS-GuestBedroom-3.png` | Clean, modern bathroom stocked and ready for your stay. |
+| 31 | `ms-01-outdoor-lake.jpg` | Views of the resort and surrounding lagoon from the property. |
+| 32 | *(front door — owner-removed)* | — |
+| 33 | `ms-01-pool-outdoor.jpg` | Multiple pools and resort amenities for every season. |
+| 34 | *(owner-removed 2026-07-10 — duplicate of slot #20)* | — |
+| 35 | `ms-02-hottub.jpg` | Relax in the hot tub after a day in the sun. |
+| 36 | *(beach sunset drone — owner-removed 2026-07-10)* | — |
+| 37 | `ms-02-gym.jpg` | Stay active with the resort's well-equipped fitness center. |
+| 38 | `MS_Coffee_cup.png` | Fresh coffee is always within reach. |
+| 39 | `ms-06-kitchen.jpg` | Kitchen includes everyday essentials for easy breakfasts. |
+| 40 | *(local map — owner-removed)* | — |
+| 41 | `MS-LivingRoom-7.png` | Relax in comfort while enjoying the Gulf views. |
+| 42 | `ms-01-beachy-decor.jpg` | Coastal-inspired décor throughout the condo. |
+| 43 | `ms-07-kitchen.jpg` | Kitchen includes an air fryer for quick and easy meals. |
+| 44 | `ms-08-kitchen.jpg` | Perfect for preparing dinner while enjoying a day at the beach. |
+| 45 | `ms-11-living-room.png` | The perfect place to unwind after sunset. |
+| 46 | `MS-FullView-2.png` | Open, bright, and designed around the stunning Gulf view. |
+| 47 | `MS-DiningRoom-2.png` | Family-style dining with a view of the Gulf. |
+| 48 | `MS-DiningRoom-4.png` | Coastal-inspired dining space set for meals with family. |
+| 49 | `MS-DiningRoom-5.png` | Bright dining area ready to gather everyone together. |
+| 50 | `MS-LivingRoom-4.png` | Additional living-room angle showcasing the coastal flow. |
+| 51 | `MS-MasterBedroomFuture-3.png` | Peaceful primary bedroom detail with a coastal touch. |
+| 52 | `MS-MasterBedroomFuture-4.png` | King primary bedroom with warm, restful styling. |
+| 53 | `MS_Balcony_coffee.png` | The balcony coffee setup ready for a slow morning. |
+| 54 | `ms-06-gulf-balcony.png` | Another angle of the private Gulf-front balcony. |
+| 55 | `ms-08-living-room.png` | Living room bathed in warm sunset light. |
+| 56 | `ms-10-living-room.png` | Living-room detail from another comfortable seating angle. |
+| 57 | `ms-02-building-view.jpg` | The resort setting on Scenic Gulf Drive. |
+| 58 | `ms-05-kitchen.jpg` | Kitchen prep area with everyday essentials. |
+| 59 | `ms-01-living-room.jpg` | Living room with Gulf-facing sightlines — the everyday gathering space. |
 
-Slots 15–57: remaining photos in the order they appear in `config.js#properties[id=5].images`, using MASTER §18 short captions.
-
-**Houfy photo order priority:** view → lifestyle → primary bedroom with view → living room → other bedrooms → kitchen → dining → beach → resort amenities → bathrooms → building/utility. Mirrors the Airbnb priority.
+**Houfy photo order priority:** mirrors Airbnb (view → lifestyle → primary bedroom → building context → guest bedroom → kitchen → dining → living → resort amenities → beach → utility → detail shots). Houfy's carousel is very similar to Airbnb's in guest scanning behavior, so the same first-4-photo conversion story applies. Bonus slots #47–#59 are additional room-variant frames — upload these after the primary 46 in the same slot order.
 
 ---
 

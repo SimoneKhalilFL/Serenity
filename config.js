@@ -697,17 +697,19 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         listingHeadline: "Westlight",
         listingBrandSubtitle: "A StayAtFlorida Signature Property",
         listingTagline: "Where Every Evening Ends in Gold",
-        listingHeroCopy: "At Westlight, every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits on the west-facing edge of Miramar Beach — panoramic emerald views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door.",
+        listingHeroCopy: "Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door.",
         cardSubtitle: "A StayAtFlorida Signature Property",
         // Homepage property-card blurb. Source of truth: docs/listings/MS811/MASTER.md §13a
         // "Homepage Card Copy". Kept short (one scannable sentence) — the long story lives on
         // the property detail page. Do not swap for a longer aspirational line here.
         cardShortDescription: "Panoramic Gulf views, direct beach access, and resort amenities on Florida's quieter Emerald Coast.",
         metaTitle: "Westlight | Gulf-Front 2BR in Miramar Beach | StayAtFlorida",
-        metaDescription: "Book Westlight by StayAtFlorida, a Gulf-front 2BR condo in Miramar Beach with panoramic emerald views, resort amenities, and room for 6. Owner-hosted.",
-        coverImage: "images/lodging/ms-01-gulf-balcony.jpg",
+        metaDescription: "Book Westlight by StayAtFlorida, a Gulf-front 2BR condo in Miramar Beach with panoramic Gulf views, resort amenities, and room for 6. Owner-hosted.",
+        coverImage: "images/lodging/ms-09-living-room.png",
         location: "Miramar Beach, Florida",
-        description: `At Westlight, every evening ends in gold. This 2-bedroom, 2-bath Gulf-front retreat sits on the west-facing edge of Miramar Beach, where the emerald water meets sugar-white sand and the last light of the day pours across the balcony. It's a slower, quieter stretch of Florida's Emerald Coast — a place designed to be lived in barefoot, coffee in hand, sunset ahead.
+        description: `Welcome to Westlight, where every evening ends in gold. This 2-bedroom, 2-bath Gulf-front retreat sits directly overlooking the Gulf of Mexico, where the emerald water meets sugar-white sand and the last light of the day pours across the balcony. It's a slower, quieter stretch of Florida's Emerald Coast — a place designed to be lived in barefoot, coffee in hand, sunset ahead.
+
+Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast. A full kitchen, real bedrooms, in-unit laundry, and a private Gulf-front balcony — the everyday rhythm of home, only with the Gulf a boardwalk away.
 
 **Highlights**
 
@@ -716,13 +718,13 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
 • Sleeps up to 6 across a king primary suite, queen guest bedroom, and queen sleeper sofa
 • 2 bedrooms / 2 bathrooms
 • Complimentary beach chairs and umbrella available in the condo
-• Full Seascape resort amenities — Gulf-front pool, indoor heated pool, hot tubs, fitness, tennis, golf
+• Full Seascape resort amenities — Gulf-front pool, indoor heated pool, hot tubs, fitness, tennis, pickleball, Seascape Golf Club
 • Walkable to Seascape Town Center and Whale's Tale Beach Bar & Grill
-• ~15 minutes to VPS airport
+• ~40 minutes / 24 miles to VPS airport · ~1 hour / 38 miles to ECP airport
 
 **The Home**
 
-Westlight is a 2-bedroom, 2-bath condominium that comfortably sleeps up to 6. A king-bed primary suite opens toward the Gulf, a queen guest bedroom offers a quieter tucked-away room, and a queen sleeper sofa in the living room accommodates two additional guests. The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating — and the in-unit washer and dryer make longer stays effortless. Smart TVs with streaming live in every bedroom and the living room; high-speed Wi-Fi reaches every corner of the condo.
+Westlight is a 2-bedroom, 2-bath condominium that comfortably sleeps up to 6. A king-bed primary suite opens toward the Gulf, a queen guest bedroom offers a quieter tucked-away room, and a queen sleeper sofa in the living room accommodates two additional guests. The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating — and the in-unit washer and dryer make longer stays effortless. Smart TVs with popular streaming apps available in every bedroom and the living room; high-speed Wi-Fi reaches every corner of the condo.
 
 **Where You'll Sleep**
 
@@ -745,11 +747,11 @@ What's on hand:
 
 **The View & Beach**
 
-The private Gulf-front balcony is why guests come back. Mornings begin with coffee, dolphins in the surf line, and the Emerald Coast turning pale green in the early light. Afternoons drift by to the sound of waves. Evenings are the payoff — west-facing sunsets that saturate the sky and give the property its name. Direct beach access is a palm-lined boardwalk downstairs; no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
+The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight. Direct beach access is a palm-lined boardwalk downstairs; no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
 
 **Location**
 
-Westlight is in Miramar Beach on Florida's Emerald Coast — a quieter, greener stretch of coast than the boardwalk destinations of Panama City Beach, closer than the boutique communities further east. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Silver Sands Premium Outlets, the Village of Baytowne Wharf, and Henderson Beach State Park are all a short drive. Destin–Fort Walton Beach Regional Airport (VPS) is approximately 15 minutes by car.
+Westlight is in Miramar Beach on Florida's Emerald Coast — a quieter, greener stretch of coast than the boardwalk destinations of Panama City Beach, closer than the boutique communities further east. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Publix at Grand Boulevard (725 Grand Blvd) is the nearest grocery — about 5 minutes by car; Winn-Dixie on Poinciana Blvd is closer (~1 mile) for a quick run. Silver Sands Premium Outlets is ~1 mile east; the Village of Baytowne Wharf and Henderson Beach State Park are a short drive further. Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
 
 **Resort Amenities**
 
@@ -760,11 +762,11 @@ Westlight lives inside the Majestic Sun building at Seascape Resort, a full-serv
 • Multiple hot tubs
 • Full fitness center
 • Tennis and pickleball courts
-• Championship golf course (Seascape Golf Club)
+• Seascape Golf Club (9-hole, par 35 — Emerald Bay Golf Club ~3 miles away for an 18-hole round)
 • Bicycle and paddleboard rentals
 • Multiple resort grills
 • Scenic walking paths
-• Elevator access and covered on-site parking
+• Elevator access and complimentary covered parking for registered guests
 
 Seascape offers the amenities of a full-service beachfront resort while maintaining a quieter, more relaxed atmosphere than many of the busier Panama City Beach or Destin harbor properties.
 
@@ -790,7 +792,7 @@ Westlight places you in the heart of the Emerald Coast's best activities and att
 
 **About Your Host**
 
-Westlight is personally hosted by Simone. For more than six years, I've been welcoming guests to Florida's Emerald Coast. Every message, every check-in note, and every question routes to me directly — not to a management company. I typically reply within two hours and send detailed arrival instructions about a week before check-in. If you have a question during your stay, I'm a text away.
+Westlight is personally hosted by Simone. For more than six years, I've been welcoming guests to Florida's Emerald Coast. I personally handle every booking, every guest message, and every arrival detail — never a third-party management company. I typically reply within two hours and send detailed arrival instructions about a week before check-in. If you have a question during your stay, I'm a text away.
 
 Whether you're planning a family beach vacation, a relaxing couples' getaway, or a trip with friends, we'd love to welcome you to Westlight and help make your Emerald Coast stay one to remember.`,
         maxGuests: 6,
@@ -806,95 +808,132 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
         taxRate: 0.12,
         refundableDamageDeposit: 300,
         featured: false,
-        coverImage: "images/lodging/ms-01-gulf-balcony.jpg",
+        coverImage: "images/lodging/ms-09-living-room.png",
         coordinates: { lat: 30.3759919, lng: -86.3686236 },
         googleMapsUrl: "https://www.google.com/maps/place/Majestic+Sun/@30.3797734,-86.388212,15z/data=!4m10!1m2!2m1!1smajestic+sun+miramar+beach!3m6!1s0x88915b85c1712a1b:0x52984811f11ae7cb!8m2!3d30.3759919!4d-86.3686236",
         mapImage: "https://maps.googleapis.com/maps/api/staticmap?center=30.3759919,-86.3686236&zoom=15&size=600x400&maptype=roadmap&markers=color:red%7C30.3759919,-86.3686236",
         webcam: "https://www.youtube.com/embed/TyX02EtQcYI",
-        images: {
-            "Living Room": [
-                "images/lodging/ms-01-living-room.jpg",
-                "images/lodging/ms-02-living-room.jpg",
-                "images/lodging/ms-03-living-room.jpg",
-                "images/lodging/ms-04-living-room.jpg",
-                "images/lodging/ms-05-living-room.jpg",
-                "images/lodging/ms-06-living-room.jpg",
-                "images/lodging/ms-07-living-room.jpg",
-                "images/lodging/ms-08-living-room.jpg",
-                "images/lodging/ms-09-living-room.jpg",
-                "images/lodging/ms-10-living-room.jpg",
-                "images/lodging/ms-11-living-room.jpg",
-                "images/lodging/ms-12-living-room.jpg"
-            ],
-            "Master Bedroom": [
-                "images/lodging/ms-02-master-bedroom.jpg",
-                "images/lodging/ms-03-master-bedroom.jpg",
-                "images/lodging/ms-04-master-bedroom.jpg",
-                "images/lodging/ms-05-master-bedroom.jpg"
-            ],
-            "Guest Bedroom": [
-                "images/lodging/ms-01-guest-bedroom.jpg",
-                "images/lodging/ms-02-guest-bedroom.jpg",
-                "images/lodging/ms-05-guest-bedroom.jpg"
-            ],
-            "Master Bath": [
-                "images/lodging/ms-01-master-bath.jpg"
-            ],
-            "Guest Bath": [
-                "images/lodging/ms-01-guest-bath.jpg",
-                "images/lodging/ms-02-guest-bath.jpg"
-            ],
-            "Kitchen": [
-                "images/lodging/ms-01-kitchen.jpg",
-                "images/lodging/ms-02-kitchen.jpg",
-                "images/lodging/ms-03-kitchen.jpg",
-                "images/lodging/ms-04-kitchen.jpg",
-                "images/lodging/ms-05-kitchen.jpg",
-                "images/lodging/ms-06-kitchen.jpg",
-                "images/lodging/ms-07-kitchen.jpg",
-                "images/lodging/ms-08-kitchen.jpg"
-            ],
-            "Dining": [
-                "images/lodging/ms-02-dining-room.jpg",
-                "images/lodging/ms-03-dining-room.jpg",
-                "images/lodging/ms-04-dining-room.jpg",
-                "images/lodging/ms-05-dining-room.jpg"
-            ],
-            "Balcony": [
-                "images/lodging/ms-01-gulf-balcony.jpg",
-                "images/lodging/ms-02-gulf-balcony.jpg",
-                "images/lodging/ms-03-gulf-balcony.jpg",
-                "images/lodging/ms-04-gulf-balcony.jpg",
-                "images/lodging/ms-05-gulf-balcony.jpg",
-                "images/lodging/ms-06-gulf-balcony.jpg",
-                "images/lodging/ms-07-gulf-balcony.jpg",
-                "images/lodging/ms-08-gulf-balcony.jpg"
-            ],
-            "Beach View": [
-                "images/lodging/ms-beach-view.jpg",
-                "images/lodging/ms-10-sunset-view.jpg"
-            ],
-            "Pool": [
-                "images/lodging/ms-01-pool.jpg",
-                "images/lodging/ms-01-pool-outdoor.jpg",
-                "images/lodging/ms-08-pool-indoor.jpg",
-                "images/lodging/ms-01-outdoor-lake.jpg"
-            ],
-            "Building": [
-                "images/lodging/ms-01-building-view.jpg",
-                "images/lodging/ms-02-building-view.jpg",
-                "images/lodging/ms-02-condo-view.jpg"
-            ],
-            "Amenities": [
-                "images/lodging/ms-02-gym.jpg",
-                "images/lodging/ms-02-pickleball.jpg",
-                "images/lodging/ms-02-hottub.jpg"
-            ],
-            "More": [
-                "images/lodging/ms-01-beachy-decor.jpg",
-                "images/lodging/ms-01-hallway.jpg",
-                "images/lodging/ms-01-laundry.jpg"
-            ]
+        // Photo library — locked 2026-07-10 (owner-final Westlight curation · post-owner-fills pass).
+        // Flat carousel-ordered array. Source of truth: MASTER.md §18 Photo Caption Library.
+        // 40 published slots (46 planned; 6 owner-removed: #19, #21, #23, #32, #36, #40).
+        // Captions in `photoCaptions` (below) match `MASTER.md §18` verbatim — do NOT edit either in isolation.
+        // Slot #34 was owner-removed 2026-07-10 evening as a duplicate of slot #20 — see MASTER §18.
+        images: [
+            "images/lodging/MS-FullView-1.png",             // slot #1 — Cover
+            "images/lodging/MS-Balcony-1.png",              // slot #2
+            "images/lodging/MS_Balcony_Dinner_Setup.png",   // slot #3
+            "images/lodging/MS_Balcony_Coffee_person.png",  // slot #4
+            "images/lodging/MS-MasterBedroomFuture-2.png",  // slot #5
+            "images/lodging/MS-MasterBath-1.png",            // slot #6
+            "images/lodging/ms-01-building-view.jpg",       // slot #7
+            "images/lodging/MS-GuestBedroom-1.png",     // slot #8
+            "images/lodging/MS_Guest_Bath.png",             // slot #9
+            "images/lodging/MS-Kitchen-1.png",              // slot #10
+            "images/lodging/MS_dinner_setup.png",           // slot #11
+            "images/lodging/MS_Dinner_sunset.png",          // slot #12
+            "images/lodging/ms-09-living-room.png",         // slot #13
+            "images/lodging/ms-08-pool-indoor.jpg",         // slot #14
+            "images/lodging/MS-DiningRoom-3.png",          // slot #15
+            "images/lodging/ms-02-kitchen.jpg",             // slot #16
+            "images/lodging/MS-LivingRoom-5.png",           // slot #17
+            "images/lodging/ms-01-kitchen.jpg",             // slot #18
+            "images/lodging/ms-01-pool.jpg",                // slot #20 (⚠ same as #34)
+            "images/lodging/ms-02-pickleball.jpg",          // slot #22
+            "images/lodging/ms-01-laundry.jpg",             // slot #24
+            "images/lodging/ms-beach-view.jpg",             // slot #25
+            "images/lodging/MS-Balcony-Future-5.png",       // slot #26
+            "images/lodging/ms-10-sunset-view.jpg",         // slot #27
+            "images/lodging/MS-MasterBedroomFuture-1.png",  // slot #28
+            "images/lodging/MS-GuestBedroom-2.png",         // slot #29
+            "images/lodging/MS-GuestBedroom-3.png",         // slot #30
+            "images/lodging/ms-01-outdoor-lake.jpg",        // slot #31
+            "images/lodging/ms-01-pool-outdoor.jpg",        // slot #33
+            // slot #34 owner-removed 2026-07-10 evening — was `ms-01-pool.jpg` (dup of slot #20)
+            "images/lodging/ms-02-hottub.jpg",              // slot #35
+            "images/lodging/ms-02-gym.jpg",                 // slot #37
+            "images/lodging/MS_Coffee_cup.png",             // slot #38
+            "images/lodging/ms-06-kitchen.jpg",             // slot #39 (⚠ verify — toaster crop)
+            "images/lodging/MS-LivingRoom-7.png",           // slot #41
+            "images/lodging/ms-01-beachy-decor.jpg",        // slot #42
+            "images/lodging/ms-07-kitchen.jpg",             // slot #43 (⚠ verify — air fryer crop)
+            "images/lodging/ms-08-kitchen.jpg",             // slot #44 (⚠ verify — crockpot crop)
+            "images/lodging/ms-11-living-room.png",         // slot #45
+            "images/lodging/MS-FullView-2.png",             // slot #46
+            // --- Bonus slots #47–#58 (2026-07-10 owner-fills pass, second wave) ---
+            // Owner directive: "make sure all photos that are not marked skip are used".
+            // These files exist on disk but weren't part of the initial owner-curated
+            // 46-slot library. Appended here as gallery extras so no photo is wasted.
+            "images/lodging/MS-DiningRoom-2.png",            // slot #47
+            "images/lodging/MS-DiningRoom-4.png",           // slot #48
+            "images/lodging/MS-DiningRoom-5.png",           // slot #49
+            "images/lodging/MS-LivingRoom-4.png",             // slot #50
+            "images/lodging/MS-MasterBedroomFuture-3.png",    // slot #51
+            "images/lodging/MS-MasterBedroomFuture-4.png",    // slot #52
+            "images/lodging/MS_Balcony_coffee.png",           // slot #53
+            "images/lodging/ms-06-gulf-balcony.png",          // slot #54
+            "images/lodging/ms-08-living-room.png",           // slot #55
+            "images/lodging/ms-10-living-room.png",           // slot #56
+            "images/lodging/ms-02-building-view.jpg",         // slot #57
+            "images/lodging/ms-05-kitchen.jpg",               // slot #58
+            "images/lodging/ms-01-living-room.jpg"            // slot #59
+        ],
+        // Guest-facing captions displayed under each photo in the site gallery + lightbox.
+        // Keyed by image URL exactly. Rendered by app.js when property.photoCaptions is present.
+        // Source of truth: MASTER.md §18 (must match verbatim).
+        photoCaptions: {
+            "images/lodging/MS-FullView-1.png": "Floor-to-ceiling Gulf views welcome you the moment you walk in.",
+            "images/lodging/MS-Balcony-1.png": "Start every morning with coffee overlooking the Emerald Coast.",
+            "images/lodging/MS_Balcony_Dinner_Setup.png": "Enjoy dinner on your private balcony while the sun sets over the Gulf.",
+            "images/lodging/MS_Balcony_Coffee_person.png": "A peaceful spot for sunrise coffee or an afternoon drink with an endless view.",
+            "images/lodging/MS-MasterBedroomFuture-2.png": "Wake up just steps from the Gulf in the comfortable king primary suite.",
+            "images/lodging/MS-MasterBath-1.png": "Spacious primary bathroom with plenty of room to get ready for the beach.",
+            "images/lodging/ms-01-building-view.jpg": "Majestic Sun at Seascape Resort sits directly across from one of the Emerald Coast's most beautiful beaches.",
+            "images/lodging/MS-GuestBedroom-1.png": "Cozy queen guest bedroom designed for a restful night's sleep.",
+            "images/lodging/MS_Guest_Bath.png": "Second full bathroom conveniently located next to the guest bedroom.",
+            "images/lodging/MS-Kitchen-1.png": "Fully equipped kitchen with everything you need for family meals or quick breakfasts.",
+            "images/lodging/MS_dinner_setup.png": "Open-concept living space designed for gathering after a day at the beach.",
+            "images/lodging/MS_Dinner_sunset.png": "Golden hour fills the living room with unforgettable Gulf sunsets.",
+            "images/lodging/ms-09-living-room.png": "Comfortable seating with breathtaking Gulf views from almost every seat.",
+            "images/lodging/ms-08-pool-indoor.jpg": "Enjoy the indoor heated pool year-round, rain or shine.",
+            "images/lodging/MS-DiningRoom-3.png": "Plenty of space for everyone to relax, dine, and enjoy the view together.",
+            "images/lodging/ms-02-kitchen.jpg": "The open kitchen keeps everyone connected while meals are prepared.",
+            "images/lodging/MS-LivingRoom-5.png": "Relax with smart TV streaming after a day on the beach.",
+            "images/lodging/ms-01-kitchen.jpg": "Breakfast bar seating makes casual meals easy.",
+            "images/lodging/ms-01-pool.jpg": "Beautiful Gulf-front resort pool just steps from the beach.",
+            "images/lodging/ms-02-pickleball.jpg": "Enjoy complimentary tennis and pickleball courts within the resort.",
+            "images/lodging/ms-01-laundry.jpg": "Full-size washer and dryer inside the condo for your convenience.",
+            "images/lodging/ms-beach-view.jpg": "Sugar-white sand and emerald water are just an elevator ride away.",
+            "images/lodging/MS-Balcony-Future-5.png": "Relax on your private balcony with panoramic Gulf views.",
+            "images/lodging/ms-10-sunset-view.jpg": "End every day with spectacular sunsets over the Gulf of Mexico.",
+            "images/lodging/MS-MasterBedroomFuture-1.png": "Comfortable king bedroom with a relaxing coastal design.",
+            "images/lodging/MS-GuestBedroom-2.png": "Bright and inviting guest bedroom with plenty of storage.",
+            "images/lodging/MS-GuestBedroom-3.png": "Clean, modern bathroom stocked and ready for your stay.",
+            "images/lodging/ms-01-outdoor-lake.jpg": "Views of the resort and surrounding lagoon from the property.",
+            "images/lodging/ms-01-pool-outdoor.jpg": "Multiple pools and resort amenities for every season.",
+            "images/lodging/ms-02-hottub.jpg": "Relax in the hot tub after a day in the sun.",
+            "images/lodging/ms-02-gym.jpg": "Stay active with the resort's well-equipped fitness center.",
+            "images/lodging/MS_Coffee_cup.png": "Fresh coffee is always within reach.",
+            "images/lodging/ms-06-kitchen.jpg": "Kitchen includes everyday essentials for easy breakfasts.",
+            "images/lodging/MS-LivingRoom-7.png": "Relax in comfort while enjoying the Gulf views.",
+            "images/lodging/ms-01-beachy-decor.jpg": "Coastal-inspired décor throughout the condo.",
+            "images/lodging/ms-07-kitchen.jpg": "Kitchen includes an air fryer for quick and easy meals.",
+            "images/lodging/ms-08-kitchen.jpg": "Perfect for preparing dinner while enjoying a day at the beach.",
+            "images/lodging/ms-11-living-room.png": "The perfect place to unwind after sunset.",
+            "images/lodging/MS-FullView-2.png": "Open, bright, and designed around the stunning Gulf view.",
+            // Bonus slots #47–#58 — captions match MASTER §18.
+            "images/lodging/MS-DiningRoom-2.png": "Family-style dining with a view of the Gulf.",
+            "images/lodging/MS-DiningRoom-4.png": "Coastal-inspired dining space set for meals with family.",
+            "images/lodging/MS-DiningRoom-5.png": "Bright dining area ready to gather everyone together.",
+            "images/lodging/MS-LivingRoom-4.png": "Additional living-room angle showcasing the coastal flow.",
+            "images/lodging/MS-MasterBedroomFuture-3.png": "Peaceful primary bedroom detail with a coastal touch.",
+            "images/lodging/MS-MasterBedroomFuture-4.png": "King primary bedroom with warm, restful styling.",
+            "images/lodging/MS_Balcony_coffee.png": "The balcony coffee setup ready for a slow morning.",
+            "images/lodging/ms-06-gulf-balcony.png": "Another angle of the private Gulf-front balcony.",
+            "images/lodging/ms-08-living-room.png": "Living room bathed in warm sunset light.",
+            "images/lodging/ms-10-living-room.png": "Living-room detail from another comfortable seating angle.",
+            "images/lodging/ms-02-building-view.jpg": "The resort setting on Scenic Gulf Drive.",
+            "images/lodging/ms-05-kitchen.jpg": "Kitchen prep area with everyday essentials.",
+            "images/lodging/ms-01-living-room.jpg": "Living room with Gulf-facing sightlines — the everyday gathering space."
         },
         amenities: [
             { icon: "wifi", name: "High-Speed WiFi" },

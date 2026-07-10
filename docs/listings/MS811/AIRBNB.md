@@ -43,20 +43,22 @@ Retained for reference only. Do **not** paste these into the Airbnb dashboard wi
 
 ## Listing Summary
 
-**Max 500 characters.** Airbnb's highlighted-excerpt field. Shipped 2026-07-09 evening — locked title's `Gulf-Front` framing echoed here + the golden-hour brand story surfaced.
+**Max 500 characters.** Airbnb's highlighted-excerpt field. Shipped 2026-07-09 evening; owner-revision pass 2026-07-09 late afternoon (opening reframed, Gulf-of-Mexico language, `panoramic Gulf views`).
 
 ```
-At Westlight, every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits on the west-facing edge of Miramar Beach — panoramic emerald views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door. Sleeps 6 across a king primary suite, a queen guest bedroom, and a queen sleeper sofa. Complimentary beach chairs and umbrella waiting in the condo. Owner-hosted — I answer every message personally.
+Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door. Sleeps 6 across a king primary suite, a queen guest bedroom, and a queen sleeper sofa. Complimentary beach chairs and umbrella waiting in the condo. Owner-hosted — I answer every message personally.
 ```
 
-*Character count: 494 / 500*
+*Character count: 496 / 500*
 
 ## Your Property (The Space)
 
-Shipped 2026-07-09 evening — opener aligned with the locked title's `Gulf-Front` framing; boutique-hotel voice; six-paragraph MASTER structure trimmed to Airbnb's mobile-scan cadence.
+Shipped 2026-07-09; owner-revision pass 2026-07-09 late afternoon. New audience-positioning paragraph inserted; Gulf-of-Mexico + panoramic-Gulf-views language throughout; golf course description fact-corrected (9-hole, par 35, per seascape-resort.com); parking wording tightened to `Complimentary covered parking is included for registered guests`; VPS/ECP times fact-corrected via Travelmath + Uber avg; Publix reference corrected from Silver Sands to Grand Boulevard.
 
 ```
-At Westlight, every evening ends in gold. This 2-bedroom, 2-bath Gulf-front condo sits on the west-facing edge of Miramar Beach, where the Emerald Coast turns copper each evening and the Gulf's last light slides across the balcony.
+Welcome to Westlight, where every evening ends in gold. This 2-bedroom, 2-bath Gulf-front condo sits directly overlooking the Gulf of Mexico, where the Emerald Coast turns copper each evening and the Gulf's last light slides across the balcony.
+
+Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast. A full kitchen, real bedrooms, in-unit laundry, and a private Gulf-front balcony — the everyday rhythm of home, only with the Gulf a boardwalk away.
 
 The home is designed to be lived in barefoot:
 
@@ -65,17 +67,17 @@ The home is designed to be lived in barefoot:
 - Queen sleeper sofa in the living room fits 1–2 more
 - Sleeps up to 6 guests comfortably
 
-The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating. In-unit washer and dryer for longer stays. Smart TVs in every bedroom and the living room; high-speed Wi-Fi throughout.
+The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating. In-unit washer and dryer for longer stays. Smart TVs with popular streaming apps available in every bedroom and the living room; high-speed Wi-Fi throughout.
 
-The Gulf-front balcony is why guests come back. Morning coffee with dolphins in the surf line. Afternoons to the sound of waves. Golden hour that gives the property its name. Direct beach access is a palm-lined boardwalk downstairs — no crossing a road. Complimentary beach chairs and umbrella available in the condo.
+The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons to the sound of waves. Golden hour that gives the property its name. Direct beach access is a palm-lined boardwalk downstairs — no crossing a road. Complimentary beach chairs and umbrella available in the condo.
 
-Beyond the front door, the Majestic Sun / Seascape Resort community layers a Gulf-front pool, an indoor heated pool, hot tubs, a fitness center, tennis, pickleball, and a championship golf course onto a quieter, greener stretch of coast. Seascape Town Center is a short walk. Whale's Tale Beach Bar & Grill is right on the beach.
+Beyond the front door, the Majestic Sun / Seascape Resort community layers a Gulf-front pool, an indoor heated pool, hot tubs, a fitness center, tennis and pickleball courts, and Seascape Golf Club onto a quieter, greener stretch of coast. Seascape Town Center is a short walk. Whale's Tale Beach Bar & Grill is right on the beach.
 ```
 
 ## Guest Access
 
 ```
-Guests have full access to the condo and all Majestic Sun / Seascape Resort amenities: the Gulf-front outdoor pool, indoor heated pool, hot tubs, fitness center, tennis and pickleball courts, walking paths, and direct beach access via the palm-lined boardwalk. Covered on-site parking is included.
+Guests have full access to the condo and all Majestic Sun / Seascape Resort amenities: the Gulf-front outdoor pool, indoor heated pool, hot tubs, fitness center, tennis and pickleball courts, walking paths, and direct beach access via the palm-lined boardwalk. Complimentary covered parking is included for registered guests.
 
 Complimentary beach chairs and umbrella are available in the condo for you to bring down each morning. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you'd prefer a full setup.
 ```
@@ -92,41 +94,84 @@ I'm the owner and I answer every message personally, typically within 2 hours. Y
 - Check-in 4:00 PM, check-out 10:00 AM.
 - Primary booker must be 25 or older; max 6 guests.
 - Cleaning fee covers a standard turn. On departure, please run the dishwasher, take trash to the chute, and leave used towels in the tub.
-- Covered on-site parking is included.
-- The nearest grocery is Publix at Silver Sands Premium Outlets, ~5 minutes by car.
+- Complimentary covered parking is included for registered guests.
+- The nearest grocery is Publix at Grand Boulevard (725 Grand Blvd), about 5 minutes by car. Winn-Dixie on Poinciana Blvd is closer still (~1 mile) for a quick run.
 - Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door.
 - No smoking, no vaping, no pets, no parties. Quiet hours per HOA (typically 10 PM – 8 AM).
-- VPS airport is ~15 minutes by car.
+- Airports: Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
 ```
 
 ## Photo Captions
 
-**Max ~250 chars per photo.** Adapted from MASTER §18 short-caption column. Updated 2026-07-09 for the Westlight rebrand — full 57-photo library captioned in MASTER §18.
+**Max ~250 chars per photo.** Airbnb captions match the guest-facing caption column in `MASTER.md §18` verbatim. Updated 2026-07-10 with the owner-final 46-slot Westlight photo library.
 
-**Recommended cover image:** `ms-01-gulf-balcony.jpg` — matches `config.js#coverImage`. Once a dedicated golden-hour frame is shot (see MASTER §18 Missing photos), rotate the cover to the sunset frame.
+**Recommended cover image:** `ms-09-living-room.png` (slot #13) — matches `config.js#coverImage` as of 2026-07-10. On the Airbnb dashboard, set this file as the "cover" photo even though it appears at slot #13 in the upload order. Slot #1 (`MS-FullView-1.png`) still leads the on-page carousel. Once a dedicated golden-hour frame is shot (see MASTER §18 Missing photos), rotate the cover to the sunset frame.
 
-**Recommended Airbnb photo order** (first 14 slots — the "above the fold" carousel scan):
+**Full Airbnb photo upload order** (40 published slots; 6 slots owner-removed):
 
 | Slot | File | Caption |
-|---|---|---|
-| 1 | `ms-01-gulf-balcony.jpg` | Gulf-front balcony · panoramic emerald views |
-| 2 | `ms-10-sunset-view.jpg` | Sunset — where every evening ends in gold |
-| 3 | `ms-08-gulf-balcony.jpg` | Golden hour on the balcony |
-| 4 | `ms-01-living-room.jpg` | Gulf-front living room with panoramic views |
-| 5 | `ms-02-master-bedroom.jpg` | Primary bedroom · king bed with Gulf views |
-| 6 | `ms-01-kitchen.jpg` | Full kitchen · fully stocked for six |
-| 7 | `ms-02-dining-room.jpg` | Dining table seating for six with Gulf views |
-| 8 | `ms-01-guest-bedroom.jpg` | Queen guest bedroom with coastal decor |
-| 9 | `ms-beach-view.jpg` | Emerald water and sugar-white sand outside the door |
-| 10 | `ms-01-pool.jpg` | Gulf-front outdoor pool with sundeck |
-| 11 | `ms-08-pool-indoor.jpg` | Indoor heated pool with cathedral ceilings |
-| 12 | `ms-01-master-bath.jpg` | Primary bathroom |
-| 13 | `ms-02-hottub.jpg` | Resort hot tub with Gulf-side deck |
-| 14 | `ms-01-building-view.jpg` | Building setting on Scenic Gulf Drive |
+|---:|---|---|
+| 1 | `MS-FullView-1.png` | Floor-to-ceiling Gulf views welcome you the moment you walk in. |
+| 2 | `MS-Balcony-1.png` | Start every morning with coffee overlooking the Emerald Coast. |
+| 3 | `MS_Balcony_Dinner_Setup.png` | Enjoy dinner on your private balcony while the sun sets over the Gulf. |
+| 4 | `MS_Balcony_Coffee_person.png` | A peaceful spot for sunrise coffee or an afternoon drink with an endless view. |
+| 5 | `MS-MasterBedroomFuture-2.png` | Wake up just steps from the Gulf in the comfortable king primary suite. |
+| 6 | `MS-MasterBath-1.png` | Spacious primary bathroom with plenty of room to get ready for the beach. |
+| 7 | `ms-01-building-view.jpg` | Majestic Sun at Seascape Resort sits directly across from one of the Emerald Coast's most beautiful beaches. |
+| 8 | `MS-GuestBedroom-1.png` | Cozy queen guest bedroom designed for a restful night's sleep. |
+| 9 | `MS_Guest_Bath.png` | Second full bathroom conveniently located next to the guest bedroom. |
+| 10 | `MS-Kitchen-1.png` | Fully equipped kitchen with everything you need for family meals or quick breakfasts. |
+| 11 | `MS_dinner_setup.png` | Open-concept living space designed for gathering after a day at the beach. |
+| 12 | `MS_Dinner_sunset.png` | Golden hour fills the living room with unforgettable Gulf sunsets. |
+| 13 | `ms-09-living-room.png` | Comfortable seating with breathtaking Gulf views from almost every seat. |
+| 14 | `ms-08-pool-indoor.jpg` | Enjoy the indoor heated pool year-round, rain or shine. |
+| 15 | `MS-DiningRoom-3.png` | Plenty of space for everyone to relax, dine, and enjoy the view together. |
+| 16 | `ms-02-kitchen.jpg` | The open kitchen keeps everyone connected while meals are prepared. |
+| 17 | `MS-LivingRoom-5.png` | Relax with smart TV streaming after a day on the beach. |
+| 18 | `ms-01-kitchen.jpg` | Breakfast bar seating makes casual meals easy. |
+| 19 | *(entry detail — owner-removed 2026-07-10)* | — |
+| 20 | `ms-01-pool.jpg` | Beautiful Gulf-front resort pool just steps from the beach. |
+| 21 | *(entry foyer — owner-removed 2026-07-10)* | — |
+| 22 | `ms-02-pickleball.jpg` | Enjoy complimentary tennis and pickleball courts within the resort. |
+| 23 | *(hallway — owner-removed)* | — |
+| 24 | `ms-01-laundry.jpg` | Full-size washer and dryer inside the condo for your convenience. |
+| 25 | `ms-beach-view.jpg` | Sugar-white sand and emerald water are just an elevator ride away. |
+| 26 | `MS-Balcony-Future-5.png` | Relax on your private balcony with panoramic Gulf views. |
+| 27 | `ms-10-sunset-view.jpg` | End every day with spectacular sunsets over the Gulf of Mexico. |
+| 28 | `MS-MasterBedroomFuture-1.png` | Comfortable king bedroom with a relaxing coastal design. |
+| 29 | `MS-GuestBedroom-2.png` | Bright and inviting guest bedroom with plenty of storage. |
+| 30 | `MS-GuestBedroom-3.png` | Clean, modern bathroom stocked and ready for your stay. |
+| 31 | `ms-01-outdoor-lake.jpg` | Views of the resort and surrounding lagoon from the property. |
+| 32 | *(front door — owner-removed)* | — |
+| 33 | `ms-01-pool-outdoor.jpg` | Multiple pools and resort amenities for every season. |
+| 34 | *(owner-removed 2026-07-10 — duplicate of slot #20)* | — |
+| 35 | `ms-02-hottub.jpg` | Relax in the hot tub after a day in the sun. |
+| 36 | *(beach sunset drone — owner-removed 2026-07-10)* | — |
+| 37 | `ms-02-gym.jpg` | Stay active with the resort's well-equipped fitness center. |
+| 38 | `MS_Coffee_cup.png` | Fresh coffee is always within reach. |
+| 39 | `ms-06-kitchen.jpg` | Kitchen includes everyday essentials for easy breakfasts. |
+| 40 | *(local map — owner-removed)* | — |
+| 41 | `MS-LivingRoom-7.png` | Relax in comfort while enjoying the Gulf views. |
+| 42 | `ms-01-beachy-decor.jpg` | Coastal-inspired décor throughout the condo. |
+| 43 | `ms-07-kitchen.jpg` | Kitchen includes an air fryer for quick and easy meals. |
+| 44 | `ms-08-kitchen.jpg` | Perfect for preparing dinner while enjoying a day at the beach. |
+| 45 | `ms-11-living-room.png` | The perfect place to unwind after sunset. |
+| 46 | `MS-FullView-2.png` | Open, bright, and designed around the stunning Gulf view. |
+| 47 | `MS-DiningRoom-2.png` | Family-style dining with a view of the Gulf. |
+| 48 | `MS-DiningRoom-4.png` | Coastal-inspired dining space set for meals with family. |
+| 49 | `MS-DiningRoom-5.png` | Bright dining area ready to gather everyone together. |
+| 50 | `MS-LivingRoom-4.png` | Additional living-room angle showcasing the coastal flow. |
+| 51 | `MS-MasterBedroomFuture-3.png` | Peaceful primary bedroom detail with a coastal touch. |
+| 52 | `MS-MasterBedroomFuture-4.png` | King primary bedroom with warm, restful styling. |
+| 53 | `MS_Balcony_coffee.png` | The balcony coffee setup ready for a slow morning. |
+| 54 | `ms-06-gulf-balcony.png` | Another angle of the private Gulf-front balcony. |
+| 55 | `ms-08-living-room.png` | Living room bathed in warm sunset light. |
+| 56 | `ms-10-living-room.png` | Living-room detail from another comfortable seating angle. |
+| 57 | `ms-02-building-view.jpg` | The resort setting on Scenic Gulf Drive. |
+| 58 | `ms-05-kitchen.jpg` | Kitchen prep area with everyday essentials. |
+| 59 | `ms-01-living-room.jpg` | Living room with Gulf-facing sightlines — the everyday gathering space. |
 
-Slots 15–57: remaining photos in the order they appear in `config.js#properties[id=5].images` (Living Room secondary → other bedrooms → additional balcony frames → additional kitchen → dining → remaining amenities → detail/utility). Each carries the short caption from MASTER §18.
-
-**Airbnb photo order priority:** view → lifestyle → primary bedroom with view → living room → other bedrooms → kitchen → dining → beach → resort amenities → bathrooms → building/utility. The order above reflects this priority.
+**Airbnb photo order rationale:** the slot order above places the cover (living-room-with-Gulf) first, followed by the two hero balcony frames (panoramic + dinner), then rotates through bedrooms → bathroom → kitchen → dining → living → resort amenities → beach → utility. Slots 38–46 are close-up detail shots that reinforce specific caption claims (kitchen appliances, TV, decor). Bonus slots #47–#59 are additional room-variant frames (dining, primary bedroom, living, balcony, and legacy building/kitchen shots) — upload these after the primary 46 in the same slot order. Owner-verify items (⚠) in the mapping table are still uploaded to Airbnb; the confidence flag applies only to the file→subject match, not the caption itself.
 
 ## Platform-specific CTA
 

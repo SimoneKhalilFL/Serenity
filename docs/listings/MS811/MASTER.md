@@ -23,7 +23,7 @@
 
 ## 2. Property Story
 
-Westlight sits on the west-facing edge of Miramar Beach, where the Emerald Coast turns copper each evening and the Gulf's last light slides across the balcony. A two-bedroom retreat inside the Majestic Sun building at Seascape Resort — quieter than Panama City Beach, closer than the boutique communities further east, and unmistakably owner-hosted. The name is a promise: at Westlight, every evening ends in gold.
+Westlight sits directly overlooking the Gulf of Mexico on the west end of Miramar Beach, where the Emerald Coast turns copper each evening and the Gulf's last light slides across the balcony. A two-bedroom retreat inside the Majestic Sun building at Seascape Resort — quieter than Panama City Beach, closer than the boutique communities further east, and unmistakably owner-hosted. The name is a promise: at Westlight, every evening ends in gold.
 
 ## 3. Positioning
 
@@ -83,7 +83,7 @@ Grouped into four categories for the property page. The categories below are the
 - Hot Tubs
 - Full Fitness Center
 - Tennis and Pickleball Courts
-- Championship Golf Course (Seascape Golf Club)
+- Seascape Golf Course (9-hole, par 35) — for an 18-hole round, Emerald Bay Golf Club is ~3 miles away
 - Bicycle and Paddleboard Rentals
 - Multiple Resort Grills
 
@@ -93,7 +93,7 @@ Grouped into four categories for the property page. The categories below are the
 - Covered On-Site Parking
 - Walking Distance to Seascape Town Center (dining, coffee, shopping)
 - Short Walk to Whale's Tale Beach Bar & Grill
-- ~15 min to VPS (Destin–Fort Walton Beach Regional Airport)
+- VPS (Destin–Fort Walton Beach Airport) — ~40 min / 24 miles by car · ECP (Northwest Florida Beaches International) — ~1 hour / 38 miles by car
 
 **Not provided**
 - Any claim that **we** provide beach service or a beach setup crew (chairs come from the condo, or from third-party vendors on the beach — never from us)
@@ -113,13 +113,15 @@ Bed inventory total: 1 king · 1 queen · 1 queen sleeper sofa. This is the cano
 ## 8. Nearby Attractions
 
 - **Beach:** Direct access via palm-lined boardwalk from the resort
-- **Grocery:** Publix at Silver Sands Premium Outlets — ~5 min drive · ⚠ verify walking-vs-driving distance
+- **Beach:** Direct access via palm-lined boardwalk from the resort
+- **Grocery:** Publix at Grand Boulevard (725 Grand Blvd, Miramar Beach) — ~5 min drive · Winn-Dixie on Poinciana Blvd is closer still (~1 mile) for a quick run
 - **Coffee:** 2 Birds Coffee & Café at Seascape Town Center — walkable
-- **Dinner (casual):** Whale's Tale Beach Bar & Grill (walkable via beach), Marlin Grill, Boshamps Seafood & Oyster House
+- **Dinner (casual):** Whale's Tale Beach Bar & Grill (walkable via beach), Boshamps Seafood & Oyster House, Diego's Burrito Factory
 - **Dinner (upscale):** Marlin Grill, Baytowne Wharf area restaurants
-- **Family activity:** Village of Baytowne Wharf (evening events, seasonal fireworks), Big Kahuna's Water & Adventure Park, Silver Sands Premium Outlets
+- **Family activity:** Village of Baytowne Wharf (evening events, seasonal fireworks), Big Kahuna's Water & Adventure Park, Silver Sands Premium Outlets (~1 mile east)
 - **Nature:** Henderson Beach State Park, Topsail Hill Preserve State Park
-- **Airport:** VPS (Destin–Fort Walton Beach Regional) — ~15 minutes by car. Uber and Lyft are widely available.
+- **Airport (VPS):** Destin–Fort Walton Beach Airport — **approximately 40 minutes (24 miles)** by car. Uber and Lyft are widely available at VPS.
+- **Airport (ECP):** Northwest Florida Beaches International Airport — **approximately 1 hour (38 miles)** by car. Alternative option; typically the option for guests routing through Panama City rather than Fort Walton. *⚠ verify exact drive time from the property before publishing.*
 
 ## 9. Selling Points
 
@@ -130,7 +132,7 @@ Ranked. What actually makes a guest book Westlight over a comparable Emerald Coa
 3. Miramar Beach location — quieter and greener than Panama City Beach, closer than the smaller boutique communities further east
 4. Walk to Seascape Town Center — coffee, dining, and shopping without the car
 5. Owner-hosted — a named human (Simone) replies to every inquiry, typically within 2 hours
-6. Full Seascape resort amenities (Gulf-front pool, indoor heated pool, hot tubs, fitness, tennis, golf)
+6. Full Seascape resort amenities (Gulf-front pool, indoor heated pool, hot tubs, fitness, tennis, pickleball, Seascape Golf Course)
 7. Book direct at stayatflorida.com and skip the OTA service fees (typically 10–15% of the total)
 8. Complimentary beach chairs and umbrella available in the condo
 
@@ -187,7 +189,7 @@ Canonical text lives in the platform-derived files; MASTER surfaces the strings 
 
 **Alt compact variant (for VRBO short description, ≤~200 chars):**
 
-> Westlight is a Gulf-front 2-bedroom retreat in Miramar Beach — panoramic emerald views, direct beach access, and Seascape resort amenities on Florida's Emerald Coast. Sleeps 6, owner-hosted.
+> Westlight is a Gulf-front 2-bedroom retreat in Miramar Beach — panoramic Gulf views, direct beach access, and Seascape resort amenities on Florida's Emerald Coast. Sleeps 6, owner-hosted.
 
 ### 13a. Homepage Card Copy *(updated 2026-07-09 — Westlight rebrand)*
 
@@ -211,27 +213,31 @@ Six paragraphs, tuned for the property page. Airbnb / VRBO / Booking.com / Houfy
 
 **Paragraph 1 — the feel.**
 
-At Westlight, every evening ends in gold. This two-bedroom Gulf-front retreat sits on the west-facing edge of Miramar Beach, where the emerald water meets sugar-white sand and the last light of the day pours across the balcony. It's a slower, quieter stretch of Florida's Emerald Coast — a place designed to be lived in barefoot, coffee in hand, sunset ahead.
+Welcome to Westlight, where every evening ends in gold. This two-bedroom Gulf-front retreat sits directly overlooking the Gulf of Mexico, where the emerald water meets sugar-white sand and the last light of the day pours across the balcony. It's a slower, quieter stretch of Florida's Emerald Coast — a place designed to be lived in barefoot, coffee in hand, sunset ahead.
+
+**Paragraph 1a — who Westlight is for.**
+
+Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast. A full kitchen, real bedrooms, in-unit laundry, and a private Gulf-front balcony — the everyday rhythm of home, only with the Gulf a boardwalk away.
 
 **Paragraph 2 — the home.**
 
-Westlight is a 2-bedroom, 2-bath condominium that comfortably sleeps up to 6. A king-bed primary suite opens toward the Gulf, a queen guest bedroom offers a quieter tucked-away room, and a queen sleeper sofa in the living room accommodates two additional guests. The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating — and the in-unit washer and dryer make longer stays effortless. Smart TVs with streaming live in every bedroom and the living room; high-speed Wi-Fi reaches every corner of the condo. The layout is deliberate: it's the comfort of a home, tuned for a vacation.
+Westlight is a 2-bedroom, 2-bath condominium that comfortably sleeps up to 6. A king-bed primary suite opens toward the Gulf, a queen guest bedroom offers a quieter tucked-away room, and a queen sleeper sofa in the living room accommodates two additional guests. The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating — and the in-unit washer and dryer make longer stays effortless. Smart TVs with popular streaming apps available in every bedroom and the living room; high-speed Wi-Fi reaches every corner of the condo. The layout is deliberate: it's the comfort of a home, tuned for a vacation.
 
 **Paragraph 3 — the view and the beach.**
 
-The Gulf-front balcony is the reason guests come back. Mornings begin with coffee, dolphins in the surf line, and the Emerald Coast turning pale green in the early light. Afternoons drift by to the sound of waves. Evenings are the payoff — west-facing sunsets that saturate the sky and give the property its name. Direct beach access is a palm-lined boardwalk downstairs; no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
+The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight. Direct beach access is a palm-lined boardwalk downstairs; no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
 
 **Paragraph 4 — the resort.**
 
-Westlight lives inside the Majestic Sun building at Seascape Resort, a full-service beachfront community that layers a Gulf-front pool, an indoor heated pool, hot tubs, a fitness center, tennis and pickleball courts, and a championship golf course onto a quieter, greener stretch of coast. Seascape Town Center — coffee, casual dining, shopping — is a short walk from the front door. Whale's Tale Beach Bar & Grill is right on the beach. Downtown Destin, Silver Sands Premium Outlets, and Baytowne Wharf are all a short drive.
+Westlight lives inside the Majestic Sun building at Seascape Resort, a full-service beachfront community that layers a Gulf-front pool, an indoor heated pool, hot tubs, a fitness center, tennis and pickleball courts, and Seascape Golf Club onto a quieter, greener stretch of coast. The result is a relaxed resort atmosphere with exceptional amenities while maintaining the quieter feel that makes Miramar Beach so popular. Seascape Town Center — coffee, casual dining, shopping — is a short walk from the front door. Whale's Tale Beach Bar & Grill is right on the beach. Downtown Destin, Silver Sands Premium Outlets, and Baytowne Wharf are all a short drive.
 
 **Paragraph 5 — practicalities.**
 
-Check-in is 4:00 PM and check-out is 10:00 AM. Covered on-site parking. Elevator access. Primary booker must be 25 or older. No smoking, no vaping, no parties, no pets. Complimentary beach chairs and umbrella available in the condo — beach chair and umbrella rental is also available for purchase directly on the beach from local vendors. VPS (Destin–Fort Walton Beach) is roughly 15 minutes away.
+Check-in is 4:00 PM and check-out is 10:00 AM. Complimentary covered parking is included for registered guests. Elevator access. Primary booker must be 25 or older. No smoking, no vaping, no parties, no pets. Complimentary beach chairs and umbrella available in the condo — beach chair and umbrella rental is also available for purchase directly on the beach from local vendors. Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles) — verify exact drive time from the property before publishing.
 
 **Paragraph 6 — the host.**
 
-Westlight is personally hosted by Simone. She has been welcoming guests to Florida's Emerald Coast for more than six years — every message, every check-in note, and every question routes to her directly, not to a management company. She typically replies within two hours and sends detailed arrival instructions about a week before check-in. If you have a question during your stay, she's a text away.
+Westlight is personally hosted by Simone. She has been welcoming guests to Florida's Emerald Coast for more than six years — she personally handles every booking, every guest message, and every arrival detail, never a third-party management company. She typically replies within two hours and sends detailed arrival instructions about a week before check-in. If you have a question during your stay, she's a text away.
 
 ### 14a. Before You Arrive
 
@@ -314,131 +320,127 @@ Full cross-platform cancellation policy language is in [`../../brand/HOSPITALITY
 
 ## 18. Photo Caption Library
 
-Every MS811 photo on disk (57 files, verified 2026-07-09) is captioned here. Website alt text = the Long caption. Airbnb / Booking image captions = the Short caption. VRBO uses the Long caption trimmed to ~65 chars where the platform truncates.
+**Owner-final photo library — locked 2026-07-10.** The owner curated a new 46-slot caption library replacing the earlier 57-file placeholder set. This table is now the single source of truth for photo order, filename mapping, and captions across all six surfaces:
+
+- **Website (stayatflorida.com)** — hero-carousel order + on-image caption + alt text
+- **Airbnb** — photo-upload order + short caption per photo
+- **VRBO** — photo-upload order + short caption per photo
+- **Booking.com** — photo-upload order + short caption per photo
+- **Houfy** — photo-upload order + short caption per photo
+- **`config.js#properties[id=5].images`** (flat array) + **`config.js#properties[id=5].photoCaptions`** (URL→caption map)
 
 **Caption rules** (portfolio-level):
 
-- Brand prefix `Westlight ·` on every long caption. Short captions omit the brand prefix.
+- Captions are guest-facing and voice-consistent with the Westlight brand ("Where every evening ends in gold"). No brand prefix on short captions.
 - No floor numbers, no unit numbers, no "Deluxe", no `Majestic Sun 811`.
-- `Majestic Sun` may appear in operational-context photos (resort amenities: pool, hot tub, pickleball, gym, building exterior) as the resort/community name — never as the property brand.
-- Sunset / balcony / Gulf-view captions lean into the golden-hour brand story ("Where every evening ends in gold").
+- `Majestic Sun / Seascape Resort` appears only in operational-context photos (resort amenities: pool, hot tub, tennis, gym, building exterior) — never as the guest-facing property brand.
+- Slots with `⚠ MISSING PHOTO` are captioned-and-ready — waiting on owner upload. Do NOT publish those slots to OTAs / website until a file lands on disk.
+- Slots marked `(removed per owner)` are intentionally suppressed from the published set — the caption is retained here for future reference only.
 
-### Interior — Living Room *(12 photos)*
+### Full 46-slot Photo Order + Caption Table
 
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-living-room.jpg` | Westlight · Gulf-front living room with panoramic emerald views | Gulf-front living room |
-| `ms-02-living-room.jpg` | Westlight · Open living area flowing onto the Gulf-front balcony | Living room · Gulf views |
-| `ms-03-living-room.jpg` | Westlight · Coastal-inspired living room seating for six | Living room |
-| `ms-04-living-room.jpg` | Westlight · Sunlit living area with beach-view windows | Living room · morning light |
-| `ms-05-living-room.jpg` | Westlight · Living room set for evening with the Gulf ahead | Living room · evening |
-| `ms-06-living-room.jpg` | Westlight · Reading nook overlooking the Emerald Coast | Living area |
-| `ms-07-living-room.jpg` | Westlight · Family-friendly living space with Smart TV | Living room |
-| `ms-08-living-room.jpg` | Westlight · Comfortable seating tuned for Gulf-view sunsets | Living room |
-| `ms-09-living-room.jpg` | Westlight · Living room detail — coastal decor throughout | Living room detail |
-| `ms-10-living-room.jpg` | Westlight · Wide-angle living room and balcony sightline | Living room · wide view |
-| `ms-11-living-room.jpg` | Westlight · Queen sleeper sofa in the living room | Queen sleeper sofa |
-| `ms-12-living-room.jpg` | Westlight · Living room finishings and Gulf-front windows | Living room finish |
+| Slot # | Room / Subject | File on disk | Caption (guest-facing) | Confidence |
+|---:|---|---|---|:-:|
+| 1 | Cover — Living room & Gulf view | `MS-FullView-1.png` | Floor-to-ceiling Gulf views welcome you the moment you walk in. | H |
+| 2 | Balcony panoramic view | `MS-Balcony-1.png` | Start every morning with coffee overlooking the Emerald Coast. | H |
+| 3 | Balcony dinner | `MS_Balcony_Dinner_Setup.png` | Enjoy dinner on your private balcony while the sun sets over the Gulf. | H |
+| 4 | Morning coffee setup | `MS_Balcony_Coffee_person.png` | A peaceful spot for sunrise coffee or an afternoon drink with an endless view. | H |
+| 5 | Primary bedroom | `MS-MasterBedroomFuture-2.png` | Wake up just steps from the Gulf in the comfortable king primary suite. | H |
+| 6 | Primary bathroom | `MS-MasterBath-1.png` | Spacious primary bathroom with plenty of room to get ready for the beach. | H |
+| 7 | Building aerial | `ms-01-building-view.jpg` | Majestic Sun at Seascape Resort sits directly across from one of the Emerald Coast's most beautiful beaches. | H |
+| 8 | Guest bedroom | `MS-GuestBedroom-1.png` | Cozy queen guest bedroom designed for a restful night's sleep. | H |
+| 9 | Guest bathroom | `MS_Guest_Bath.png` | Second full bathroom conveniently located next to the guest bedroom. | H |
+| 10 | Kitchen | `MS-Kitchen-1.png` | Fully equipped kitchen with everything you need for family meals or quick breakfasts. | H |
+| 11 | Dining & living room | `MS_dinner_setup.png` | Open-concept living space designed for gathering after a day at the beach. | H |
+| 12 | Living room at sunset | `MS_Dinner_sunset.png` | Golden hour fills the living room with unforgettable Gulf sunsets. | H |
+| 13 | Living room alternate angle | `ms-09-living-room.png` | Comfortable seating with breathtaking Gulf views from almost every seat. | H |
+| 14 | Indoor pool | `ms-08-pool-indoor.jpg` | Enjoy the indoor heated pool year-round, rain or shine. | H |
+| 15 | Dining/living alternate | `MS-DiningRoom-3.png` | Plenty of space for everyone to relax, dine, and enjoy the view together. | H |
+| 16 | Kitchen view | `ms-02-kitchen.jpg` | The open kitchen keeps everyone connected while meals are prepared. | M |
+| 17 | TV/Living detail | `MS-LivingRoom-5.png` | Relax with smart TV streaming after a day on the beach. | M |
+| 18 | Kitchen breakfast bar | `ms-01-kitchen.jpg` | Breakfast bar seating makes casual meals easy. | M |
+| 19 | Entry detail | *(removed per owner 2026-07-10)* | A warm welcome awaits from the moment you arrive. | — |
+| 20 | Resort pool | `ms-01-pool.jpg` | Beautiful Gulf-front resort pool just steps from the beach. | H ⚠ same file as #34 |
+| 21 | Entry foyer | *(removed per owner 2026-07-10)* | Easy self check-in with detailed arrival instructions before your stay. | — |
+| 22 | Tennis courts | `ms-02-pickleball.jpg` | Enjoy complimentary tennis and pickleball courts within the resort. | H |
+| 23 | Hallway | *(removed per owner)* | Thoughtfully designed layout with privacy between bedrooms and living spaces. | — |
+| 24 | Laundry | `ms-01-laundry.jpg` | Full-size washer and dryer inside the condo for your convenience. | H |
+| 25 | Beach view | `ms-beach-view.jpg` | Sugar-white sand and emerald water are just an elevator ride away. | H |
+| 26 | Balcony ocean view | `MS-Balcony-Future-5.png` | Relax on your private balcony with panoramic Gulf views. | H |
+| 27 | Sunset Gulf | `ms-10-sunset-view.jpg` | End every day with spectacular sunsets over the Gulf of Mexico. | H |
+| 28 | Primary bedroom alternate | `MS-MasterBedroomFuture-1.png` | Comfortable king bedroom with a relaxing coastal design. | H |
+| 29 | Guest bedroom alternate | `MS-GuestBedroom-2.png` | Bright and inviting guest bedroom with plenty of storage. | H |
+| 30 | Guest bathroom alternate | `MS-GuestBedroom-3.png` | Clean, modern bathroom stocked and ready for your stay. | M ⚠ owner-mentioned both `MS-GuestBedroom-3` (missing-section) and `MS-MasterBath-1.png` (formerly `MS-MaterBath-1.png` before the 2026-07-10 rename pass — swaps-section) for this slot; using `MS-GuestBedroom-3` per the first mention. If `MS-MasterBath-1.png` was correct, swap on next pass — noting that it would duplicate with slot #6. |
+| 31 | Lagoon view | `ms-01-outdoor-lake.jpg` | Views of the resort and surrounding lagoon from the property. | H |
+| 32 | Front door | *(removed per owner)* | Your private entrance to Westlight. | — |
+| 33 | Resort pool aerial | `ms-01-pool-outdoor.jpg` | Multiple pools and resort amenities for every season. | H |
+| 34 | Outdoor pool *(owner-removed 2026-07-10 evening)* | — | *(slot removed — was duplicate of slot #20; caption preserved in this table for future reference: "Spend the afternoon poolside just steps from the beach.")* | — |
+| 35 | Hot tub | `ms-02-hottub.jpg` | Relax in the hot tub after a day in the sun. | H |
+| 36 | Beach sunset drone | *(removed per owner 2026-07-10)* | Evenings along Miramar Beach are unforgettable. | — |
+| 37 | Gym | `ms-02-gym.jpg` | Stay active with the resort's well-equipped fitness center. | H |
+| 38 | Coffee maker | `MS_Coffee_cup.png` | Fresh coffee is always within reach. | H |
+| 39 | Toaster | `ms-06-kitchen.jpg` | Kitchen includes everyday essentials for easy breakfasts. | L ⚠ verify — small kitchen crop; confirm toaster is the subject |
+| 40 | Local map | *(removed per owner)* | Close to restaurants, shopping, golf, and local attractions. | — |
+| 41 | Living room detail | `MS-LivingRoom-7.png` | Relax in comfort while enjoying the Gulf views. | M |
+| 42 | Decorative detail | `ms-01-beachy-decor.jpg` | Coastal-inspired décor throughout the condo. | H |
+| 43 | Air fryer | `ms-07-kitchen.jpg` | Kitchen includes an air fryer for quick and easy meals. | L ⚠ verify |
+| 44 | Crockpot | `ms-08-kitchen.jpg` | Perfect for preparing dinner while enjoying a day at the beach. | L ⚠ verify |
+| 45 | TV/Living alternate | `ms-11-living-room.png` | The perfect place to unwind after sunset. | M |
+| 46 | Living room wide | `MS-FullView-2.png` | Open, bright, and designed around the stunning Gulf view. | H |
 
-### Bedrooms *(7 photos)*
+### Bonus slots #47–#59 *(gallery extras — 2026-07-10 evening pass)*
 
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-02-master-bedroom.jpg` | Westlight · Primary bedroom with king bed and Gulf views | Primary bedroom · king |
-| `ms-03-master-bedroom.jpg` | Westlight · King-bed primary suite, Gulf-facing | Primary bedroom |
-| `ms-04-master-bedroom.jpg` | Westlight · Primary bedroom detail with balcony access | Primary bedroom detail |
-| `ms-05-master-bedroom.jpg` | Westlight · Primary suite tuned for Emerald Coast mornings | Primary bedroom · morning |
-| `ms-01-guest-bedroom.jpg` | Westlight · Queen guest bedroom with coastal decor | Guest bedroom · queen |
-| `ms-02-guest-bedroom.jpg` | Westlight · Guest bedroom with queen bed and Smart TV | Guest bedroom |
-| `ms-05-guest-bedroom.jpg` | Westlight · Guest bedroom quiet corner | Guest bedroom detail |
+Owner directive `make sure all photos that are not marked skip are used` appended these 13 additional slots to the gallery. Files exist on disk but were not part of the initial 46-slot owner-curated library. They render in the site gallery / lightbox with the captions below and are indexed for SEO via JSON-LD like every other slot. No OTA priority order is implied — for Airbnb / VRBO / Booking / Houfy uploads, these slots go at the end of the carousel after slot #46.
 
-### Bathrooms *(3 photos)*
+| Slot # | Room / Subject | File on disk | Caption (guest-facing) | Confidence |
+|---:|---|---|---|:-:|
+| 47 | Dining room primary | `MS-DiningRoom-2.png` | Family-style dining with a view of the Gulf. | H |
+| 48 | Dining room variant | `MS-DiningRoom-4.png` | Coastal-inspired dining space set for meals with family. | H |
+| 49 | Dining room variant | `MS-DiningRoom-5.png` | Bright dining area ready to gather everyone together. | H |
+| 50 | Living room variant | `MS-LivingRoom-4.png` | Additional living-room angle showcasing the coastal flow. | H |
+| 51 | Primary bedroom variant | `MS-MasterBedroomFuture-3.png` | Peaceful primary bedroom detail with a coastal touch. | H |
+| 52 | Primary bedroom variant | `MS-MasterBedroomFuture-4.png` | King primary bedroom with warm, restful styling. | H |
+| 53 | Balcony coffee — still life | `MS_Balcony_coffee.png` | The balcony coffee setup ready for a slow morning. | H |
+| 54 | Gulf balcony variant | `ms-06-gulf-balcony.png` | Another angle of the private Gulf-front balcony. | H |
+| 55 | Living room at sunset (variant) | `ms-08-living-room.png` | Living room bathed in warm sunset light. | H |
+| 56 | Living room detail | `ms-10-living-room.png` | Living-room detail from another comfortable seating angle. | H |
+| 57 | Building / resort setting | `ms-02-building-view.jpg` | The resort setting on Scenic Gulf Drive. | H |
+| 58 | Kitchen prep area | `ms-05-kitchen.jpg` | Kitchen prep area with everyday essentials. | H |
+| 59 | Living room (legacy set) | `ms-01-living-room.jpg` | Living room with Gulf-facing sightlines — the everyday gathering space. | H |
 
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-master-bath.jpg` | Westlight · Primary bathroom with vanity and full shower | Primary bathroom |
-| `ms-01-guest-bath.jpg` | Westlight · Guest bathroom with tub and modern finishes | Guest bathroom |
-| `ms-02-guest-bath.jpg` | Westlight · Guest bathroom detail | Guest bathroom detail |
+**Slot summary** *(as of 2026-07-10 · post-cleanup evening pass — rename + dedupe applied)*:
 
-### Kitchen *(8 photos)*
+- Total slots: **59** *(46 owner-curated + 13 bonus gallery extras)*
+- Slots with mapped file: **52** *(published)*
+- Slots removed by owner: **7** — #19 entry detail, #21 entry foyer, #23 hallway, #32 front door, **#34 outdoor pool** *(deduped from #20 on 2026-07-10 evening — was `ms-01-pool.jpg`)*, #36 beach sunset drone, #40 local map
+- Slots missing a photo: **0**
+- High-confidence mappings: **44**
+- Medium-confidence mappings: **5**
+- Low-confidence mappings (owner verify): **3** *(#39, #43, #44 — the small `ms-06/07/08-kitchen.jpg` appliance-detail crops)*
+- Duplicate-file usage: **0 slots** *(the prior slot #20 + #34 duplicate was resolved by dropping slot #34)*
+- **Cover image**: `ms-09-living-room.png` — updated 2026-07-10 (was `MS-FullView-1.png`). Rendered on homepage card, OG / Twitter share previews, JSON-LD hero image, and the property-page hero. `ms-09-living-room.png` also appears at slot #13 in the gallery — the same photo is intentionally visible in both the hero and gallery contexts.
 
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-kitchen.jpg` | Westlight · Full kitchen fully stocked for six | Full kitchen |
-| `ms-02-kitchen.jpg` | Westlight · Kitchen island with barstool seating | Kitchen island |
-| `ms-03-kitchen.jpg` | Westlight · Coastal kitchen with granite counters | Kitchen detail |
-| `ms-04-kitchen.jpg` | Westlight · Full kitchen — coffee maker, dishwasher, oven | Kitchen |
-| `ms-05-kitchen.jpg` | Westlight · Kitchen and dining area open plan | Kitchen · open plan |
-| `ms-06-kitchen.jpg` | Westlight · Kitchen with pantry storage and prep counter | Kitchen · prep counter |
-| `ms-07-kitchen.jpg` | Westlight · Kitchen appliance detail | Kitchen appliances |
-| `ms-08-kitchen.jpg` | Westlight · Kitchen finishings and cookware ready to use | Kitchen · fully stocked |
+### File-hygiene follow-ups
 
-### Dining *(4 photos)*
+- ✅ **Typo renames shipped 2026-07-10 evening**: `MS-DinningRomm-3.png` → `MS-DiningRoom-3.png` · `MS-DinningRoom-4.png` → `MS-DiningRoom-4.png` · `MS-DinningRoom-5.png` → `MS-DiningRoom-5.png` · `MS-MaterBath-1.png` → `MS-MasterBath-1.png`. All references in `config.js`, MASTER §18, AIRBNB.md / VRBO.md / BOOKING.md / HOUFY.md, `listing-5.html`, and `index.html` JSON-LD updated in the same pass.
+- ✅ **Parens rename shipped 2026-07-10 evening**: `MS-GuestBedroom-1 (2).png` → `MS-GuestBedroom-1.png`. Removes the URL-encoding risk on OTA CDNs and cleans up the filename.
+- ✅ **Duplicate files deleted 2026-07-10 evening**: three `- Copy.png` byte-identical duplicates (`MS-MasterBedroomFuture-1 - Copy.png`, `MS-MasterBedroomFuture-2 - Copy.png`, `MS-MasterBedroomFuture-4 - Copy.png`) removed from disk. Confirmed byte-identical to their base files via SHA-256 comparison before deletion.
+- **Pending: nothing at the file-name level.** All MS811 files on disk now follow consistent naming (`MS-` PascalCase for staged photos, `ms-` lowercase for legacy shots).
 
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-02-dining-room.jpg` | Westlight · Dining table seating for six with Gulf views | Dining · seats six |
-| `ms-03-dining-room.jpg` | Westlight · Dining area open to living room and balcony | Dining area |
-| `ms-04-dining-room.jpg` | Westlight · Family-style dining with coastal light | Dining table |
-| `ms-05-dining-room.jpg` | Westlight · Dining area detail | Dining detail |
+### Unused files on disk *(2026-07-10 evening — post cleanup pass)*
 
-### Gulf-Front Balcony *(8 photos)*
+**Zero unused files.** Every file on disk is mapped to exactly one slot in the 59-slot library. The three `- Copy.png` duplicates were deleted on 2026-07-10 evening (see File-hygiene follow-ups above), and slot #34 was owner-removed the same evening to eliminate the `ms-01-pool.jpg` duplicate with slot #20.
 
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-gulf-balcony.jpg` | Westlight · Gulf-front balcony — where every evening ends in gold | Gulf-front balcony |
-| `ms-02-gulf-balcony.jpg` | Westlight · Private balcony facing the emerald water | Private balcony |
-| `ms-03-gulf-balcony.jpg` | Westlight · Balcony seating with panoramic Gulf views | Balcony · Gulf views |
-| `ms-04-gulf-balcony.jpg` | Westlight · West-facing balcony for sunset viewing | Sunset balcony |
-| `ms-05-gulf-balcony.jpg` | Westlight · Balcony and beach sightline | Balcony sightline |
-| `ms-06-gulf-balcony.jpg` | Westlight · Morning coffee spot with dolphins in the surf line | Morning balcony |
-| `ms-07-gulf-balcony.jpg` | Westlight · Balcony detail — the property's namesake view | Balcony detail |
-| `ms-08-gulf-balcony.jpg` | Westlight · Golden-hour balcony over the Emerald Coast | Golden hour |
-
-### Beach & View *(2 photos)*
-
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-beach-view.jpg` | Westlight · Emerald water and sugar-white sand outside the door | Beach view |
-| `ms-10-sunset-view.jpg` | Westlight · The sunset that gives the property its name | Sunset |
-
-### Resort Amenities *(via Majestic Sun / Seascape — operational context)* *(7 photos)*
-
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-pool.jpg` | Majestic Sun · Gulf-front outdoor pool with sundeck | Gulf-front pool |
-| `ms-01-pool-outdoor.jpg` | Majestic Sun · Outdoor pool complex facing the Gulf | Outdoor pool |
-| `ms-08-pool-indoor.jpg` | Majestic Sun · Indoor heated pool with cathedral ceilings | Indoor pool |
-| `ms-01-outdoor-lake.jpg` | Seascape Resort · Stewart Lake — on-site walking paths and fishing | Resort lake |
-| `ms-02-gym.jpg` | Majestic Sun · Full fitness center | Fitness center |
-| `ms-02-pickleball.jpg` | Seascape Resort · Tennis and pickleball courts | Pickleball courts |
-| `ms-02-hottub.jpg` | Majestic Sun · Hot tub with Gulf-side deck | Hot tub |
-
-### Building & Access *(3 photos)*
-
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-building-view.jpg` | Westlight · Majestic Sun building exterior on Scenic Gulf Drive | Building exterior |
-| `ms-02-building-view.jpg` | Westlight · The resort setting from Scenic Gulf Drive | Resort setting |
-| `ms-02-condo-view.jpg` | Westlight · Approach to the condo from the corridor | Condo approach |
-
-### Detail & Utility *(3 photos)*
-
-| File | Long caption | Short caption |
-|---|---|---|
-| `ms-01-beachy-decor.jpg` | Westlight · Coastal decor detail throughout the condo | Coastal decor |
-| `ms-01-hallway.jpg` | Westlight · Entry hallway with clean, coastal finishings | Entry hallway |
-| `ms-01-laundry.jpg` | Westlight · In-unit washer and dryer | Washer & dryer |
+**Coverage: 100% of unique photos on disk are published in the gallery** — 52 flat-array entries, 52 unique URLs, 1:1 file-to-slot mapping.
 
 ### Missing photos *(gap-analysis vs. TW2111 target parity)*
 
-TW2111 has these coverage areas that MS811 currently does not — recommended for a future re-shoot before elevating to a paid photography commit:
+All 59 slots are now resolved (0 pending owner upload). TW2111 still has these coverage areas that MS811 does not — recommended for a future re-shoot to lift photo library depth further:
 
-- **Dedicated hero sunset frame** — golden-hour horizontal, west-facing, no interior visible in frame (this is the single most important photo for the "Where every evening ends in gold" brand story). `ms-10-sunset-view.jpg` and `ms-08-gulf-balcony.jpg` partially fill this but neither is a dedicated hero-quality sunset.
-- **Bathroom detail (fixtures / vanity close-up)** — currently 3 bathroom photos, all rooms-level. TW2111 has 6.
-- **Kitchen island / breakfast bar close-up** — currently 8 kitchen photos, all rooms-level.
-- **Beach walk / boardwalk lifestyle photo** — a guest walking from the boardwalk onto the sand. TW2111 has this.
-- **Balcony dining scene** — table set on the balcony at sunset. TW2111 has this.
+- **Dedicated hero sunset frame** — golden-hour horizontal, west-facing, no interior visible in frame (single most important photo for the "Where every evening ends in gold" brand story). `ms-10-sunset-view.jpg` partially fills this at slot #27 but is not a dedicated hero-quality sunset.
+- **Bathroom detail (fixtures / vanity close-up)** — 1 bathroom photo currently. TW2111 has 6.
+- **Kitchen island / breakfast bar close-up** — no dedicated close-up.
+- **Beach walk / boardwalk lifestyle photo** — a guest walking from the boardwalk onto the sand.
 - **Wide-angle floorplan-establishing shot** — from the front door, looking through the living room to the balcony.
 
 Prioritize the hero sunset frame first — it unlocks the strongest Airbnb/VRBO/Booking cover image swap.
@@ -500,7 +502,7 @@ Ten FAQ items on the Westlight property page. Same structure as TW2111 §22.
 7. **What's the check-in and check-out?** Check-in is 4:00 PM. Check-out is 10:00 AM.
 8. **Is parking included?** Yes — covered on-site parking is included. *(⚠ Verify assigned-space vs. guest-parking mechanics with owner.)*
 9. **Are pets allowed?** No — Westlight is pet-free.
-10. **How far is the airport?** VPS (Destin–Fort Walton Beach Regional) is roughly 15 minutes by car.
+10. **How far is the airport?** Destin–Fort Walton Beach Airport (VPS) is the closest — approximately 40 minutes (24 miles) by car. Northwest Florida Beaches International Airport (ECP) is an alternative — approximately 1 hour (38 miles) by car.
 
 FAQ SEO note: 10 items in FAQPage JSON-LD is inside Google's guidance ceiling. Full schema: [SEO §5](../../brand/SEO.md#5-faqpage-schema).
 
@@ -530,7 +532,7 @@ Same policy as TW2111 §23.
 
 ### Marketing Director follow-ups
 
-- Photo hero recommendation: currently `ms-01-gulf-balcony.jpg` (config.js coverImage). Reasonable choice — Gulf-front balcony fits the brand story. Consider swapping to a dedicated golden-hour frame once one exists.
+- Photo hero recommendation: currently `ms-09-living-room.png` (config.js coverImage) as of 2026-07-10 late-evening cover-change pass. Owner-chosen — floor-to-ceiling Gulf-view from the living room, strong conversion frame. Consider swapping to a dedicated golden-hour frame once one exists.
 - OTA listing content: AIRBNB.md / VRBO.md / BOOKING.md / HOUFY.md all being rewritten in this same 2026-07-09 rebrand pass.
 
 ### SEO Expert follow-ups
@@ -555,4 +557,10 @@ Same policy as TW2111 §23.
 | 2026-07-06 | §12 CTA alignment + §13a Homepage Card Copy (Phase 2 Homepage Polish) | Homepage-only merchandising update — **not a rebrand.** (1) §12 Approved CTAs re-pointed to the canonical StayAtFlorida CTA hierarchy defined in TW2111 §12; property-page primary CTA working draft aligned to `Check Availability` for future consistency (still pending owner confirmation for MS811). (2) New §13a Homepage Card Copy: *"Miramar Beach comfort with Gulf views, resort amenities, beach access, and a relaxing coastal setting."* Wired into `config.js#properties[id=5].cardShortDescription`. (3) New homepage card subtitle `A StayAtFlorida Property` wired into `config.js#properties[id=5].cardSubtitle` — lighter twin of TW2111's Signature Property tag; MS811 does **not** carry `Signature Property` yet (gated on the full brand + photo re-shoot per §21). Body copy, long description, meta title/description, and OTA listings unchanged. | Content Sync Agent + Phase 2 Homepage Polish |
 | 2026-07-06 | Extended-stay uplift added (pricing policy) | New pricing policy shared with TW2111: flat **$50** added to the lodging total on bookings of **3+ nights**. Config: `PROPERTIES[id=5].extendedStayUplift = { thresholdNights: 3, amount: 50 }`. Baked into the price calculator's "Nightly Rate" row — not shown as a separate line item, per the same brand-guideline transparency rule that applies to TW2111 (baked-in ≠ hidden, because the calculator's displayed lodging total = what the guest actually pays). All four `app.js` pricing sites (`getSelectedStayPricing`, contact-modal HTML, email body, `renderPriceCalculator`) call `applyExtendedStayUplift()`. MS811 uplift is $50 (not $100 like TW2111) because MS811's cleaning fee is unchanged at $250 — the uplift here is pure revenue capture on longer stays, not an offset for a cleaning-fee cut. **Impact:** 1-night $616 (unchanged) · 2-night $952 (unchanged) · 3-night $1,344 (+$56 vs. before) · 7-night $2,688 (+$56 vs. before) · 14-night $5,040 (+$56 vs. before). See `../TW2111/MASTER.md#21-fee-schedule-canonical` for the paired change on TW2111 (which pairs a cleaning-fee cut with a $100 uplift for net +$56 on 3+ night stays and −$56 on 1-2 night stays). | Content Sync Agent + Pricing policy pass |
 | 2026-07-09 | **Full rebrand — Westlight · Signature Property elevation** | Property renamed from working label `Majestic Sun` to Signature Property **`Westlight`**. Subtitle elevated: `A StayAtFlorida Property` → **`A StayAtFlorida Signature Property`** (Phase 3 initiative #1). Tagline locked: **`Where Every Evening Ends in Gold`**. Positioning statement + elevator pitch adopted verbatim from owner brief (see §3). Full rewrite across §1 Brand / §2 Property Story / §3 Positioning / §4 Target Guest / §5 Property Facts (address + view descriptor + parking + pet policy + check-in/out committed) / §6 Amenities (4-group canonical order, matching TW2111 pattern) / §7 Sleeping Arrangements (King + Queen + Queen sleeper) / §8 Nearby Attractions / §9 Selling Points / §10 SEO Keywords / §11 Guest Trust Points / §12 CTAs (OTA title strings locked for all four platforms: `Westlight · Gulf-Front 2BR` prefix, tail per platform) / §13 Short Description (locked · positioning verbatim) / §13a Homepage Card (subtitle elevated + copy refreshed) / §14 Long Description (six paragraphs boutique-hotel copy — replaces prior placeholder) / §14a Before You Arrive (⚠ pending resort registration verify) / §14b A Day at Westlight (6 lifestyle beats) / §14c During Your Stay / §14d Why Book Direct (canonical 7-bullet, TW2111-parity). §15 Approved Amenities Language (P1 forbidden-phrasing list added: no `Deluxe`, no `8th-Floor`, no `Fun in the Sun`, no `Majestic Sun 811` as guest-facing brand). §16 House Rules committed (No pets, min-age 25). §17 Cancellation posture — TW2111-parity working canonical (⚠ verify current OTA rate-plan settings). §18 Photo Caption Library — every one of the 57 MS811 photos on disk captioned; missing-photo gap analysis added. §21 Fee Schedule §22 Website FAQ §23 Review Author Naming Policy added (all mirror TW2111 canonical structure). §21 Internal Notes renumbered to §24. Operational-only usage of `Majestic Sun` — appears in §5 (community/address), §14 paragraph 4 (resort setting), §18 resort-amenity captions, and §21 fee-schedule notes. Never guest-facing as brand. TW2111 was **not** modified in this pass except for shared portfolio references in `docs/brand/PROPERTY_PORTFOLIO.md`. | Brand Director + Content Sync Agent |
+| 2026-07-09 | **VRBO production-polish pass — Westlight** | Third polish pass on 2026-07-09, VRBO-lead. **11 items shipped**: (1) Headline unchanged (`Westlight · Gulf-Front 2BR · Sleeps 6 · Miramar Beach`). (2) Short description already updated in prior pass — verified `panoramic Gulf views` in place. (3) Welcome section already had `directly overlooking the Gulf of Mexico` from prior pass — verified. (4) §14 P3 sensory triplet rewritten: `Afternoons to the sound of waves. Golden hour that gives the property its name.` → `Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight.` Cascaded to VRBO.md + WEBSITE.md + config.js #5 description. (5) §14 P4 resort amenities: `Seascape Golf Course (9-hole, par 35)` (guest-facing prose position) → **`Seascape Golf Club`** in VRBO body per owner directive. The 9-hole/par-35 technical spec preserved in §6 Amenities canonical checklist for factsheet contexts. Closing sentence rewritten: `It's a full-service resort setting — but with a boutique-community rhythm rather than a boardwalk one.` → `The result is a relaxed resort atmosphere with exceptional amenities while maintaining the quieter feel that makes Miramar Beach so popular.` Cascaded to MASTER §14 P4 + config.js #5 description body. (6) Airport times restated with explicit numbers per owner directive: **VPS 40 min / 24 miles** (was `30–40 min / ~25 miles`) · **ECP 1 hour / 38 miles** (was `55–60 min / ~42 miles`). Original Travelmath data supported the wider ranges; owner-supplied numbers land inside those ranges and read cleaner. `⚠ verify exact ECP drive time from the property before publishing` flag added per owner directive. Cascaded to §6 + §8 + §14 P5 + §22 FAQ + VRBO Location table + WEBSITE.md + config.js #5 description highlights. Publix location re-verified — Grand Boulevard (725 Grand Blvd) confirmed as nearest Publix (unchanged from prior pass; user verification directive completed). (7) §14 P6 About Your Host verb tightening: `every booking, every message, every arrival detail is personally mine, not a management company's.` → `she personally handles every booking, every guest message, and every arrival detail, never a third-party management company.` More active-voice; the `third-party` qualifier reads as a stronger differentiator. Cascaded to VRBO body. (8) **Quick Facts** scannable checklist added to VRBO body immediately after the Welcome section (8 bullets: Gulf-front balcony, Sleeps 6, 2BR/2BA, direct beach access, complimentary beach chairs & umbrella, covered parking, indoor & outdoor pools, walk to Seascape Town Center). VRBO-only for this pass — evaluate for cascade to Airbnb / Booking / Houfy in a subsequent polish pass. (9) Duplicate-content audit: verified single Welcome / Home / View sections in VRBO.md — no duplicates present. (10) **Streaming services claim tightened for accuracy**: `Smart TVs in every bedroom and the living room with streaming (Netflix, Prime, Disney+).` → `Smart TVs with popular streaming apps available in every bedroom and the living room.` Rationale: without owner confirmation that Netflix/Prime/Disney+ subscriptions are actually included in the condo, claiming specific paid subscription services would be false advertising. The safer wording accurately reflects that the Smart TV hardware ships with streaming apps preinstalled; guests use their own account credentials. Cascaded to MASTER §14 P2 + VRBO body + Family Section table + WEBSITE.md + config.js #5 description body. (11) Full Sync QA sweep confirmed no residual `Emerald Horizon` / `Fun in the Sun` / `Serenity Rentals` / `Championship golf course (Seascape ...)` / `Publix at Silver Sands` / `panoramic emerald views` / `dolphins in the surf line` / `~15 min to VPS` strings in any guest-facing surface. All remaining occurrences are audit-trail entries in the retired-name registry (BRAND_GUIDELINES, PROPERTY_PORTFOLIO), changelog rows, or MASTER changelog documentation. **Cascade scope**: MASTER.md (SSoT) + VRBO.md + WEBSITE.md + config.js #5 description body + listing-5.html regenerated + index.html JSON-LD regenerated. AIRBNB.md + BOOKING.md + HOUFY.md received the fact-parity updates for streaming/airports/golf/parking that MASTER now reflects; body-copy sensory-triplet cascade (item 4) applied to WEBSITE.md and config.js only (Airbnb / Booking / Houfy body-copy re-scan is a P2 polish pass — VRBO is the P1 platform for this ship). | Brand Director + Content Sync Agent |
+| 2026-07-09 | **Owner-copy revision pass — Airbnb-lead + fact-verified corrections** | Second-pass copy refinement after the initial rebrand ship. **10 owner-requested changes shipped across §6, §8, §9, §14, and §22.** (1) Opening line reframed: `At Westlight, every evening ends in gold.` → `Welcome to Westlight, where every evening ends in gold.` (stronger direct address, better first-sentence hook for OTA short-copy tiles). (2) `west-facing edge of Miramar Beach` → `directly overlooking the Gulf of Mexico` (more literal, less abstract, better SEO for the `Gulf of Mexico` search family). (3) `panoramic emerald views` → `panoramic Gulf views` across §14 P1, VRBO short description, and Airbnb summary (retiring the `emerald` adjective in the panoramic-views phrase; kept it in `emerald water` where the color reference is literal). (4) §14 P3 opener: `The Gulf-front balcony is the reason guests come back.` → `The private Gulf-front balcony is the heart of Westlight.` (retires the review-language pattern in favor of a possessive brand-anchor). (5) §14 P3 sensory line: `Mornings begin with coffee, dolphins in the surf line, …` → `Morning coffee overlooking the Gulf.` (drops the dolphin claim we cannot substantiate for every stay; keeps the sensory but ties it to something universally true). (6) **Golf-course description fact-verified against seascape-resort.com 2026-07-09 web search**: `championship golf course` → `Seascape Golf Course (9-hole, par 35)` across §6 Amenities, §9 Selling Points, and §14 P4. The Seascape resort site explicitly describes the course as a `9-hole layout with a par of 35` and says `for an 18-hole experience, visit our sister course Emerald Bay just a short 3 miles away`. The course was historically 18 holes but is transitioning to an executive par-3 layout under Osborn Investment Group's 2023–ongoing redevelopment — so `championship` is neither current nor how the resort itself markets the course. (7) §14 P5 parking line: `Covered on-site parking.` → `Complimentary covered parking is included for registered guests.` (adds the `Complimentary` value signal and the `registered guests` operational qualifier per Seascape's HOA wristband workflow). (8) **Airport drive times fact-verified against Travelmath + Uber avg + destinmiramar.com 2026-07-09**: `~15 minutes to VPS` → `**VPS: ~30–40 min drive** (~25 miles) · **ECP: ~55–60 min drive** (~42 miles)` across §6 Amenities, §8 Nearby Attractions, §14 P5, and §22 FAQ Q10. The previous `~15 minutes to VPS` was materially wrong (would only be accurate to Fort Walton Beach city itself, not Miramar Beach 25 miles east). New times sourced from Travelmath (42 min VPS · 55 min ECP), Uber-app historical average (42 min VPS · 59 min ECP), and destinmiramar.com VPS airport guide (30–40 min to Miramar Beach in normal traffic). (9) **Nearest Publix fact-verified 2026-07-09**: `Publix at Silver Sands Premium Outlets` → `Publix at Grand Boulevard (725 Grand Blvd, Miramar Beach)`. Silver Sands Premium Outlets is a shopping mall, not a Publix location — the actual Publix serving the Majestic Sun area is at 725 Grand Boulevard in the Grand Boulevard town center (verified via Apple Maps, MapQuest, and storeopeninghours.com). Winn-Dixie on Poinciana Blvd is closer still (~1 mile) and now flagged as the "quick run" option. (10) **New §14 P1a inserted** — a short 2-sentence paragraph after the opening: *"Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast. A full kitchen, real bedrooms, in-unit laundry, and a private Gulf-front balcony — the everyday rhythm of home, only with the Gulf a boardwalk away."* Bridges the emotional opener (P1) to the practical home tour (P2) with an explicit positioning-audience beat (per owner brief 2026-07-09 afternoon). **Cascade scope**: change #6–#9 are property facts, so they propagated to WEBSITE.md, AIRBNB.md, VRBO.md, BOOKING.md, HOUFY.md, config.js #5 description body, listing-5.html regenerated. Changes #1–#5 + #10 are §14 Long Description edits, so they propagated to AIRBNB.md `The Space` body + VRBO.md long-description + WEBSITE.md hero copy + config.js #5 description body. Homepage card copy (§13a) and OTA titles were not touched by this pass. | Brand Director + Content Sync Agent |
+| 2026-07-10 | **§18 File-hygiene cleanup + slot #20/#34 dedupe** *(late evening cleanup pass)* | Fourth §18 pass same day — owner directive `Delete the 3 - Copy.png · Rename typo filenames · remove duplication between slot 20 and 34`. **File deletions**: 3 byte-identical `- Copy.png` duplicates deleted from disk after SHA-256 confirmation (`MS-MasterBedroomFuture-1 - Copy.png`, `MS-MasterBedroomFuture-2 - Copy.png`, `MS-MasterBedroomFuture-4 - Copy.png`). **File renames** (5 files, collision-checked): `MS-DinningRomm-3.png` → `MS-DiningRoom-3.png` (double typo — extra `n` and `Romm`) · `MS-DinningRoom-4.png` → `MS-DiningRoom-4.png` · `MS-DinningRoom-5.png` → `MS-DiningRoom-5.png` · `MS-MaterBath-1.png` → `MS-MasterBath-1.png` (typo — missing `s`) · `MS-GuestBedroom-1 (2).png` → `MS-GuestBedroom-1.png` (removes parens and space — cleaner URL, no encoding risk on OTA CDNs). All references updated in one pass across: `config.js` (10 occurrences), MASTER.md §18 (13 occurrences), AIRBNB.md / VRBO.md / BOOKING.md / HOUFY.md (5 each), `listing-5.html` (2 occurrences), `index.html` JSON-LD (2 occurrences). Historical changelog references to the old filenames preserved for audit-trail accuracy — they described the state at the time of prior passes. **Slot #34 dedupe**: slot #34 (Outdoor pool) was mapped to `ms-01-pool.jpg` — identical file to slot #20 (Resort pool). Owner directive `remove duplication between slot 20 and 34` interpreted as: drop slot #34 from the published set (no other distinct outdoor-pool photo exists on disk to reassign it to). Slot #34 marked as `owner-removed 2026-07-10 evening` in the §18 caption library table, config.js images array, and the four OTA platform files. Slot #34's caption preserved in the table row for future reference (in case a new outdoor-pool photo is added and slot #34 is reactivated). **Slot summary updated**: 59 total · **52 published** (was 53) · **7 owner-removed** (was 6; added #34) · 0 missing · 44 high-confidence (was 45; #34 dropped) · 5 medium · 3 low · **0 duplicate-file slots** (was 2; the #20+#34 duplicate is resolved). **Coverage**: 100% of unique photos on disk are now published in the gallery — 1:1 file-to-slot mapping, no wasted files, no duplicated URLs. **File-hygiene section rewritten** in MASTER §18: all three typo/paren/duplicate items marked `✅ shipped 2026-07-10 evening`. Nothing outstanding at the file-name level. **Cascade shipped**: (1) 3 disk-file deletions. (2) 5 disk-file renames. (3) `config.js` — images array trimmed 53→52 entries; photoCaptions map still 52 unique entries (URLs updated for the 5 renames); reordering-safety comment near the images array updated. (4) MASTER §18 — slot #34 row rewritten as `owner-removed`; slot summary + File-hygiene section + Unused-files section rewritten to reflect the completed cleanup. (5) AIRBNB.md / VRBO.md / BOOKING.md / HOUFY.md — slot #34 rows rewritten as `owner-removed`; filename references updated for the 5 renames; Houfy summary line updated `53 → 52 published slots`. (6) `listing-5.html` — regenerated (image URLs updated for the 5 renames; JSON-LD `image` array now emits 52 URLs). (7) `index.html` — JSON-LD image references updated for the 5 renames. **TW2111 not modified.** | Content Sync Agent + File-Hygiene Cleanup Pass |
+| 2026-07-10 | **§18 Photo Caption Library — extend-to-59-slots + cover change** *(late evening)* | Third §18 pass same day — owner directive `have ms-09-living-room be the cover photo · make sure all photos that are not marked skip are used`. **Cover image change**: `config.js#properties[id=5].coverImage` and `coverImage` (redundant second declaration further down the property block, both updated for safety) `MS-FullView-1.png` → `ms-09-living-room.png`. Cascade: homepage card, OG / Twitter share previews, JSON-LD hero image, and property-page hero all now surface `ms-09-living-room.png` via `app.js#getCoverImage`. `ms-09-living-room.png` also appears at slot #13 in the gallery — the same photo intentionally serves both hero and gallery-slot roles. Slot #1 (`MS-FullView-1.png`) stays first in the gallery carousel; hero-vs-carousel-start divergence is acceptable per current UX pattern. **59-slot library extension**: 12 files that existed on disk but weren't part of the owner-curated 46-slot library were appended as bonus slots #47–#58 with new captions; a 13th file (`ms-01-living-room.jpg`) was caught by the automated file-vs-gallery audit and added as slot #59. All 13 bonus slots are high-confidence subject matches and use the same brand voice as slots #1–#46. Slot list: #47 `MS-DiningRoom-2.png` · #48 `MS-DiningRoom-4.png` · #49 `MS-DiningRoom-5.png` · #50 `MS-LivingRoom-4.png` · #51 `MS-MasterBedroomFuture-3.png` · #52 `MS-MasterBedroomFuture-4.png` · #53 `MS_Balcony_coffee.png` · #54 `ms-06-gulf-balcony.png` · #55 `ms-08-living-room.png` · #56 `ms-10-living-room.png` · #57 `ms-02-building-view.jpg` · #58 `ms-05-kitchen.jpg` · #59 `ms-01-living-room.jpg`. **Slot summary now**: 59 total · 53 published · 6 owner-removed (#19 #21 #23 #32 #36 #40) · 0 missing · 45 high-confidence · 5 medium · 3 low. **Cascade shipped**: (1) `config.js` — flat `images` array extended 40→52 URLs (still 51 unique — the `ms-01-pool.jpg` duplicate at slots #20/#34 persists per owner-confirmed intent); `photoCaptions` map extended 39→51 unique captions; both `coverImage` refs updated. (2) MASTER §18 — new "Bonus slots #47–#59" table appended after the 46-row owner-curated table; slot summary + unused-files section + missing-photos section rewritten. Unused-files section now lists only the 3 `- Copy.png` byte-identical duplicates (safe to delete) — **coverage is 100% of unique photos on disk**. (3) AIRBNB.md / VRBO.md / BOOKING.md / HOUFY.md — 46-row tables extended to 59 rows with the same caption strings; upload-order note updated to reflect that bonus slots #47–#59 go at the end of each platform's carousel. (4) `listing-5.html` regenerated — JSON-LD `image` array now emits 52 URLs (dedupe drops the shared pool file, so 51 unique in schema output). (5) `sitemap.xml` `listing-5.html` lastmod bumped to 2026-07-10 (already at that date from prior passes — no-op). **Files remaining unused on disk**: `MS-MasterBedroomFuture-1 - Copy.png`, `MS-MasterBedroomFuture-2 - Copy.png`, `MS-MasterBedroomFuture-4 - Copy.png` — byte-identical duplicates of their base files. Safe to delete in the next file-hygiene sweep. **TW2111 not modified in this pass.** | Content Sync Agent + Photo Library Extend-and-Cover Pass |
+| 2026-07-10 | **§18 Photo Caption Library — owner-fills pass** *(evening)* | Second §18 pass same day — owner delivered 7 new photo files + 11 file swaps + 3 additional slot removals. **New files added to disk**: `MS_Balcony_coffee.png`, `MS_Balcony_Coffee_person.png`, `MS_Balcony_Dinner_Setup.png`, `MS_Coffee_cup.png`, `MS_dinner_setup.png`, `MS_Dinner_sunset.png`, `MS_Guest_Bath.png`. **Slot assignments changed**: (1) Slot #3 balcony dinner: `MS-Balcony-Future-5.png` → `MS_Balcony_Dinner_Setup.png` (dedicated dinner-setup frame — retires the low-confidence placeholder). (2) Slot #4 morning coffee: `ms-06-gulf-balcony.png` → `MS_Balcony_Coffee_person.png` (adds human-scale element to the morning-coffee frame). (3) Slot #5 primary bedroom: `MS-MasterBedroomFuture-1.png` → `MS-MasterBedroomFuture-2.png` (owner-preferred variant as hero). (4) Slot #9 guest bathroom: MISSING → `MS_Guest_Bath.png` (dedicated bathroom frame). (5) Slot #11 dining & living room: `MS-DiningRoom-2.png` → `MS_dinner_setup.png`. (6) Slot #12 living room at sunset: `ms-08-living-room.png` → `MS_Dinner_sunset.png` (dinner-scene at sunset — better sunset framing than the plain living room). (7) Slot #13 living room alternate: `MS-LivingRoom-4.png` → `ms-09-living-room.png`. (8) Slot #26 balcony ocean view: `ms-09-living-room.png` (placeholder) → `MS-Balcony-Future-5.png` (freed from slot #3). (9) Slot #28 primary bedroom alt: `MS-MasterBedroomFuture-2.png` → `MS-MasterBedroomFuture-1.png` (paired swap with slot #5 above — the two bedroom variants trade positions). (10) Slot #30 guest bathroom alt: MISSING → `MS-GuestBedroom-3.png` (owner also mentioned `MS-MaterBath-1` in the swaps section; using `MS-GuestBedroom-3` per the first mention — `MS-MaterBath-1` is already slot #6, would have created a duplicate). (11) Slot #33 resort pool aerial: `ms-02-building-view.jpg` (low-confidence placeholder) → `ms-01-pool-outdoor.jpg` (actual pool photo). (12) Slot #34 outdoor pool: `ms-01-pool-outdoor.jpg` (now moved to #33) → `ms-01-pool.jpg` — interpreted from owner's "Slot #33 swap with ms-01-pool" second line as a typo for slot #34. **This creates a duplicate: slots #20 and #34 both use `ms-01-pool.jpg`** — flagged; owner to confirm on next pass whether they want distinct files or one slot dropped. (13) Slot #38 coffee maker: `ms-05-kitchen.jpg` → `MS_Coffee_cup.png`. **Slots newly owner-removed** *(3 slots; captions retained for future reference but no file mapped)*: #19 entry detail, #21 entry foyer, #36 beach sunset drone. **Updated slot summary**: 46 total → **40 published** · 6 owner-removed (was 3 + 3 new) · 0 missing (was 5) · 32 high-confidence (was 22) · 5 medium · 3 low. **Cascade shipped**: MASTER §18 rewritten in full; `config.js#properties[id=5].images` (flat array, 40 entries — the extra file over Aug pre-pass count reflects 2 slots newly filled — #9 and #30 — offsetting 3 newly-removed slots against 5 previously-missing) + `photoCaptions` map (39 unique captions since slots #20 and #34 collapse on the shared URL); AIRBNB.md / VRBO.md / BOOKING.md / HOUFY.md all 46-row tables patched with 16 row swaps + updated summary counts; `listing-5.html` regenerated (JSON-LD `image` array now emits 39 unique URLs — the schema generator's `Set` dedupes the shared pool file); `sitemap.xml` lastmod already at 2026-07-10 from morning pass, unchanged. **Files freed on disk** *(now unused — available for future slot backfill)*: `MS-Balcony-Future-5.png` no longer wait — it moved to slot #26. Actual freed set: `MS-DiningRoom-2.png` (was #11), `MS-LivingRoom-4.png` (was #13), `ms-06-gulf-balcony.png` (was #4), `ms-08-living-room.png` (was #12), `ms-02-building-view.jpg` (was #33), `ms-05-kitchen.jpg` (was #38), plus the alternate `MS_Balcony_coffee.png` that wasn't slotted. | Content Sync Agent + Photo Library Owner-Fills Pass |
+| 2026-07-10 | **§18 Photo Caption Library — owner-final 46-slot library shipped** | Owner delivered a curated 46-slot photo caption library replacing the earlier 57-file placeholder set. §18 fully rewritten as a single 46-row table (slot → file → caption → confidence) — this is now the single source of truth for photo order, filename mapping, and caption text across all six surfaces (website + Airbnb + VRBO + Booking + Houfy + config.js). **File-mapping outcome:** 38 slots mapped to files on disk (published); 5 slots awaiting owner upload (`⚠ MISSING` — #9 guest bathroom, #19 entry detail, #21 entry foyer, #30 guest bathroom alt, #36 beach sunset drone); 3 slots owner-removed (#23 hallway, #32 front door, #40 local map). **Confidence breakdown:** 22 high-confidence · 8 medium-confidence · 7 low-confidence (owner-verify — flagged with `⚠` in the mapping column, mostly file→subject match ambiguity on small appliance-crop shots and the balcony-ocean/aerial slots). **Cascade shipped**: (1) MASTER §18 rewritten. (2) `config.js#properties[id=5]` — `coverImage` updated `ms-01-gulf-balcony.jpg` (broken — file did not exist on disk) → `MS-FullView-1.png` (slot #1); grouped `images` object (~57 URL entries, most referencing non-existent files) replaced with a flat 38-URL array in exact caption-slot order (slots 1→46 with missing/removed slots omitted); new `photoCaptions` field added — URL-keyed map matching MASTER §18 caption column verbatim. (3) `app.js` — new helpers `getPhotoCaption(property, url)` + `getPhotoCaptionByIndex(property, index)`; gallery main image now renders an on-image caption bar (`#gallery-caption`) below the image, wired to `property.photoCaptions` and updated on every thumbnail select; lightbox renders a caption row (`#lightbox-caption`) beneath the enlarged image. Graceful fallback: when a property has no `photoCaptions` (TW2111 and all others), the caption element renders hidden — no UI regression. (4) `styles.css` — new `.gallery-caption` (subtle warm-tone caption bar with left border in brand primary) and `.lightbox-caption` (light overlay text below lightbox image) rules added. (5) AIRBNB.md, VRBO.md, BOOKING.md, HOUFY.md — Photo Captions section rewritten with the full 46-row upload table replacing the prior 14-row hero-carousel excerpts. Each platform's rationale block re-explained. (6) WEBSITE.md — Alt Text section rewritten to reflect that captions render on three surfaces (gallery caption bar, lightbox caption, `<img alt>`) plus emit into `image` array in JSON-LD; MASTER §18 explicitly named as the single source of truth with a same-commit propagation rule. (7) `listing-5.html` regenerated — JSON-LD `image` array now lists the 38 new hero-carousel URLs in slot order (previously listed 57 mostly-broken URL entries); OG image reference (`images/og/listing-5.jpg`) unchanged and still valid. **Slot-slot substitutions worth flagging for owner review:** #26 balcony ocean view uses `ms-09-living-room.png` (a window-through-to-Gulf frame) as a placeholder — swap when a dedicated balcony-ocean frame is available; #33 resort pool aerial uses `ms-02-building-view.jpg` (wide resort setting) in lieu of a dedicated aerial; #38/#39/#43/#44 use the small `ms-05/06/07/08-kitchen.jpg` crops (34–51 KB each — appear to be appliance-detail shots but owner-verify recommended before publishing to Airbnb / VRBO / Booking / Houfy). **File-hygiene follow-ups noted** (non-blocking, deferred): typo filenames on disk (`Dinning*`, `MaterBath`), `MS-GuestBedroom-1.png` parens, three `- Copy.png` byte-identical duplicates. **TW2111 not modified in this pass.** | Brand Director + Content Sync Agent + Photo Library Pass |
 | 2026-07-09 | **Sync QA pass — post-rebrand full-repo sweep** | Post-rebrand consistency audit shipped after the Westlight full rebrand landed. **Scope**: full-repo grep for retired names (`Majestic Sun 811`, `Serenity`, `Fun in the Sun`, `Deluxe 2-Bedroom`, `Emerald Horizon`, `The Miramar`) + P1 forbidden strings (`8th-Floor`, `8th Floor`, `floor 8`, `unit 811`). **Fixes shipped**: (1) `email-signature.html` — property link label `Majestic Sun 811` → `Westlight`. (2) `gear.html` — page-body copy `products we've bought and used ourselves at Majestic Sun 811 or Twenty First` → `... at Westlight or Twenty First`. (3) `app.js` — inline code comment updated to reflect the rebrand (legacy note preserved for audit). (4) `sitemap.xml` — `listing-5.html` lastmod bumped to 2026-07-09. (5) `docs/brand/AGENTS.md` — three occurrences updated: portfolio-hold example, title-critique example (turned into an explicit rebrand-teaching example), and the sitemap-of-guest-facing-surfaces list (`Majestic Sun 811 property page` → `Westlight property page`). (6) `docs/brand/SEO.md` — alt-text example (`Majestic Sun 811 · Balcony …` → `Westlight · Balcony …`) + Meta Titles + Descriptions table row for `listing-5.html` (now shows the shipped 60-char meta title + 151-char meta description). (7) `docs/phase-3/phase-3-roadmap.md` — property-brand list line + guide-page CTA (`View Majestic Sun 811` → `View Westlight`). (8) `docs/phase-3/seo-content-plan.md` — Seascape / Majestic Sun Resort Guide CTA line (`View Majestic Sun 811` → `View Westlight`). (9) `docs/phase-3/ota-update-tracker.md` — section-2 header (`## 2. MS811 — Majestic Sun 811` → `## 2. MS811 — Westlight`). (10) `docs/phase-3/brand-property-master.md` — section-3 header + snapshot table (public name, subtitle, tagline, location, direct-site-status rows) + Portfolio Cross-Property Framing table header. Post-rebrand status banner added at the top of section 3 clarifying that `pending` / `TBD` values in the section have since been closed and canonical values now live in this MASTER file. (11) `docs/listings/TW2111/HOUFY.md` — one shared-portfolio reference row: pre-rebrand `Serenity at Majestic Sun` state on the Houfy sister-listing tracker updated to reflect the shipped `Westlight` rebrand + cross-link to the new `MS811/HOUFY.md`. **Guest-review handling**: MS811 legacy Airbnb review author James Davis's 2023 review body contains `Majestic Sun. 8th floor …` — per MASTER §23 Review Author Naming Policy, guest review text is NEVER edited. Match confined to `config.js#REVIEWS[5]`, `index.html` JSON-LD, and `listing-5.html` JSON-LD (all the same review string, rendered three ways). **Remaining hits are intentional**: (a) BRAND_GUIDELINES `Words we never use` + retired-name registry entries, (b) PROPERTY_PORTFOLIO `Legacy names retired` section, (c) `docs/phase-3/revenue-impact-tracker.md` changelog of the rebrand initiative, (d) MASTER + platform files' own changelog / audit-trail rows documenting what changed and why. TW2111 was left unmodified except for the one shared-portfolio HOUFY row. Full compliance verified. | Brand Director + QA Agent |
