@@ -812,7 +812,7 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
         coordinates: { lat: 30.3759919, lng: -86.3686236 },
         googleMapsUrl: "https://www.google.com/maps/place/Majestic+Sun/@30.3797734,-86.388212,15z/data=!4m10!1m2!2m1!1smajestic+sun+miramar+beach!3m6!1s0x88915b85c1712a1b:0x52984811f11ae7cb!8m2!3d30.3759919!4d-86.3686236",
         mapImage: "https://maps.googleapis.com/maps/api/staticmap?center=30.3759919,-86.3686236&zoom=15&size=600x400&maptype=roadmap&markers=color:red%7C30.3759919,-86.3686236",
-        webcam: "https://www.youtube.com/embed/TyX02EtQcYI",
+        webcam: "https://www.youtube-nocookie.com/embed/TyX02EtQcYI",
         // Photo library — locked 2026-07-10 (owner-final Westlight curation · post-owner-fills pass).
         // Flat carousel-ordered array. Source of truth: MASTER.md §18 Photo Caption Library.
         // 40 published slots (46 planned; 6 owner-removed: #19, #21, #23, #32, #36, #40).
