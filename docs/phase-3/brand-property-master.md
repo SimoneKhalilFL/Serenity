@@ -303,7 +303,7 @@ The two properties overlap on the "Gulf-front condo" positioning but differ mean
 |---|---|---|
 | **City** | Panama City Beach | Miramar Beach / Destin |
 | **Best for** | Multigenerational families, larger groups | Golf couples, walkable-resort families, retirees, smaller groups |
-| **Beach access** | Elevator + resort deck | Palm-lined boardwalk |
+| **Beach access** | Elevator + resort deck | Direct beach access from the resort |
 | **Resort brand** | Tidewater Beach Resort | Seascape Resort |
 | **Signature amenity** | Roman spa + sauna + steam room | Championship golf, tennis + pickleball |
 | **Dining nearby** | Pier Park (~1 mi) | Seascape Town Center (walkable) |

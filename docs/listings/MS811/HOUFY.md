@@ -131,7 +131,7 @@ Spend the afternoon relaxing while listening to the waves.
 
 End the evening with one of Miramar Beach's spectacular west-facing sunsets — the moment the property is named for.
 
-Direct beach access is a palm-lined boardwalk downstairs from the resort — no crossing a busy road, no waiting for a shuttle.
+Direct beach access from the resort — no crossing a busy road, no waiting for a shuttle.
 
 Complimentary beach chairs and a beach umbrella are provided inside the condo for guests to enjoy during their stay. Guests who prefer a full-service setup can also rent chairs and umbrellas directly on the beach.
 
@@ -149,7 +149,7 @@ Tennis and pickleball courts
 Seascape Golf Club (9-hole, par 35 — Emerald Bay Golf Club ~3 miles away for an 18-hole round)
 Bicycle and paddleboard rentals
 Multiple resort grills
-Direct beach access via palm-lined boardwalk
+Direct beach access
 Elevator access
 Complimentary covered parking for registered guests
 

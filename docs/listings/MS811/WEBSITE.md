@@ -40,7 +40,7 @@ Rendered by `index.html` shared nav. Present on every page: homepage, property d
 | Brand subtitle | A StayAtFlorida Signature Property | `listingBrandSubtitle` |
 | Tagline | Where Every Evening Ends in Gold | `listingTagline` |
 | Location | Miramar Beach, Florida | `location` |
-| Hero copy | Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door. | `listingHeroCopy` |
+| Hero copy | Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access, and full Seascape resort amenities steps from the front door. | `listingHeroCopy` |
 | **Primary CTA (FROZEN)** | **Check Availability** | *(button — `app.js#renderPropertyDetail` primary CTA)* |
 | **Secondary CTA (FROZEN)** | **View Photos** | *(button)* |
 | Trust chip strip *(beneath CTAs)* | 5.0★ · Sleeps up to 6 · Simone replies within 2 hours · Full refund 60+ days out | *(rendered by `app.js#renderListingHeroTrustStrip` — ⚠ verify aggregate rating from JSON-LD before publish)* |
@@ -52,7 +52,7 @@ Rendered by `index.html` shared nav. Present on every page: homepage, property d
 Five short bullets. Pulled from MASTER §9 Selling Points. Rendered as a compact strip above the amenities block on the property detail page.
 
 - Panoramic Gulf views and west-facing sunsets from the private balcony
-- Direct beach access via a palm-lined boardwalk — no busy road to cross
+- Direct beach access — no busy road to cross
 - 2 bedrooms + queen sleeper sofa · sleeps up to 6
 - Complimentary beach chairs and umbrella available in the condo
 - Owner-hosted — book direct and save the OTA service fees
@@ -67,7 +67,7 @@ Rendered by `app.js#renderGroupedAmenities`. Four canonical categories in order 
 
 **Resort Amenities** — Gulf-Front Outdoor Pool with Sundeck · Indoor Heated Pool · Hot Tubs · Full Fitness Center · Tennis and Pickleball Courts · Seascape Golf Club (9-hole, par 35) · Bicycle and Paddleboard Rentals · Resort Grills
 
-**Location & Access** — Direct Beach Access via Palm-Lined Boardwalk · Elevator Access · Complimentary Covered Parking for Registered Guests · Walking Distance to Seascape Town Center · Short Walk to Whale's Tale Beach Bar & Grill · ~40 min / 24 miles to VPS Airport · ~1 hour / 38 miles to ECP Airport
+**Location & Access** — Direct Beach Access · Elevator Access · Complimentary Covered Parking for Registered Guests · Walking Distance to Seascape Town Center · Short Walk to Whale's Tale Beach Bar & Grill · ~40 min / 24 miles to VPS Airport · ~1 hour / 38 miles to ECP Airport
 
 ## A Day at Westlight (lifestyle module)
 
@@ -122,7 +122,7 @@ Source: MASTER §14a. ⚠ **This card is contingent on verifying whether Majesti
 Source: MASTER §14c. Four items in order.
 
 - **Complimentary beach chairs and umbrella (in the condo)** — Complimentary beach chairs and umbrella available in the condo — bring them down each morning. If you'd prefer a full setup on the sand, beach chair and umbrella rental is available for purchase directly on the beach from local vendors.
-- **Beach access** — Direct beach access via a palm-lined boardwalk from the resort — elevator down, cross the resort deck, and you're on the sand. No busy road to cross.
+- **Beach access** — Direct beach access from the resort — elevator down, cross the resort deck, and you're on the sand. No busy road to cross.
 - **Resort amenities** — Gulf-front outdoor pool, indoor heated pool, hot tubs, full fitness center, tennis and pickleball courts, and the Seascape golf course. Follow the resort's posted rules at each amenity.
 - **Check-out reminders** — Check-out by 10:00 AM. Run the dishwasher, take trash to the chute, leave used towels in the tub. The cleaning fee covers the standard turn — no other pre-departure work.
 
@@ -178,11 +178,11 @@ Rendered as an accordion on the property page and emitted as `FAQPage` JSON-LD b
 | # | Question | Answer |
 |---|---|---|
 | 1 | How many guests can Westlight accommodate? | Up to 6 guests. Two bedrooms (king + queen) plus a queen sleeper sofa in the living room. |
-| 2 | Is Westlight really Gulf-front? | Yes — the balcony faces the Gulf, and direct beach access is a palm-lined boardwalk downstairs. No busy road to cross. |
+| 2 | Is Westlight really Gulf-front? | Yes — the balcony faces the Gulf, and beach access is right downstairs. No busy road to cross. |
 | 3 | Are beach chairs and an umbrella provided? | Yes — complimentary beach chairs and umbrella are available in the condo. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors. |
 | 4 | What's included in the kitchen? | Full kitchen with coffee maker, dishwasher, oven, stove, microwave, and refrigerator, plus a slow cooker, air fryer, food processor, toaster oven, George Foreman countertop grills (large and small), popcorn maker, blender, and veggie chopper. Cookware and dishes for six, plus glassware for 12 or more. Set up for real cooking, not just reheating. |
 | 5 | What resort amenities can we use? | Gulf-front outdoor pool, indoor heated pool, hot tubs, fitness center, tennis and pickleball courts, Seascape golf course, and walking paths — all part of the Majestic Sun / Seascape Resort community that Westlight is inside of. |
-| 6 | How do we get to the beach? | Direct beach access via a palm-lined boardwalk downstairs. No shuttle, no crossing a road. |
+| 6 | How do we get to the beach? | Direct beach access from the resort — right downstairs. No shuttle, no crossing a road. |
 | 7 | What's the check-in and check-out? | Check-in is 4:00 PM. Check-out is 10:00 AM. |
 | 8 | Is parking included? | Yes — covered on-site parking is included. *(⚠ Verify assigned-space vs. guest-parking mechanics with owner.)* |
 | 9 | Are pets allowed? | No — Westlight is pet-free. |

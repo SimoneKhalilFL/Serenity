@@ -706,7 +706,7 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
         listingHeadline: "Westlight",
         listingBrandSubtitle: "A StayAtFlorida Signature Property",
         listingTagline: "Where Every Evening Ends in Gold",
-        listingHeroCopy: "Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door.",
+        listingHeroCopy: "Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access, and full Seascape resort amenities steps from the front door.",
         cardSubtitle: "A StayAtFlorida Signature Property",
         // Homepage property-card blurb. Source of truth: docs/listings/MS811/MASTER.md §13a
         // "Homepage Card Copy". Kept short (one scannable sentence) — the long story lives on
@@ -723,7 +723,7 @@ Westlight was created for guests who want the comforts of home paired with a tru
 **Highlights**
 
 • Panoramic Gulf views from a west-facing private balcony
-• Direct beach access via a palm-lined boardwalk — no busy road to cross
+• Direct beach access — no busy road to cross
 • Sleeps up to 6 across a king primary suite, queen guest bedroom, and queen sleeper sofa
 • 2 bedrooms / 2 bathrooms
 • Complimentary beach chairs and umbrella available in the condo
@@ -756,11 +756,11 @@ What's on hand:
 
 **The View & Beach**
 
-The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight. Direct beach access is a palm-lined boardwalk downstairs; no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
+The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight. Direct beach access from the resort — no crossing a busy road, no waiting for a shuttle. Complimentary beach chairs and umbrella available in the condo.
 
 **Location**
 
-Westlight is in Miramar Beach on Florida's Emerald Coast — a quieter, greener stretch of coast than the boardwalk destinations of Panama City Beach, closer than the boutique communities further east. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Publix at Grand Boulevard (725 Grand Blvd) is the nearest grocery — about 5 minutes by car; Winn-Dixie on Poinciana Blvd is closer (~1 mile) for a quick run. Silver Sands Premium Outlets is ~1 mile east; the Village of Baytowne Wharf and Henderson Beach State Park are a short drive further. Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
+Westlight is in Miramar Beach on Florida's Emerald Coast — a quieter, greener stretch of coast than the boardwalk destinations of Panama City Beach, closer than the boutique communities further east. Direct beach access from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Publix at Grand Boulevard (725 Grand Blvd) is the nearest grocery — about 5 minutes by car; Winn-Dixie on Poinciana Blvd is closer (~1 mile) for a quick run. Silver Sands Premium Outlets is ~1 mile east; the Village of Baytowne Wharf and Henderson Beach State Park are a short drive further. Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
 
 **Resort Amenities**
 
@@ -994,7 +994,7 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
             },
             {
                 q: "Is Westlight really Gulf-front?",
-                a: "Yes — the balcony faces the Gulf, and direct beach access is a palm-lined boardwalk downstairs. No busy road to cross."
+                a: "Yes — the balcony faces the Gulf, and beach access is right downstairs. No busy road to cross."
             },
             {
                 q: "Are beach chairs and umbrella included?",
@@ -1010,7 +1010,7 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
             },
             {
                 q: "How do we get to the beach?",
-                a: "Direct beach access via a palm-lined boardwalk downstairs. No shuttle, no crossing a road."
+                a: "Direct beach access from the resort — right downstairs. No shuttle, no crossing a road."
             },
             {
                 q: "What's the check-in and check-out?",
