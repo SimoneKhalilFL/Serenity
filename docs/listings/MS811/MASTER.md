@@ -146,7 +146,7 @@ Full keyword rules: [`../../brand/SEO.md`](../../brand/SEO.md).
 
 ## 11. Guest Trust Points
 
-- **Multiple verified 5-star reviews** across Airbnb, VRBO, and the direct site — 59 reviews on file in `config.js#REVIEWS[5]` spanning 2020–2025, aggregate 5.0 (per direct-site JSON-LD; OTA-side aggregates vary by platform and are managed under initiative #11 Track B for Booking.com)
+- **Multiple verified 5-star reviews** across Airbnb, VRBO, and the direct site — **28 curated max-rating reviews on file** in `config.js#REVIEWS[5]` (17 VRBO + 11 Airbnb, published set post-2026-07-10 refresh; raw 86-review archive at `docs/listings/MS811/reviews/`), aggregate 5.0 (per direct-site JSON-LD; OTA-side aggregates vary by platform — VRBO 9.8/10 Exceptional across 67 reviews, Airbnb 4.86/5 across 22 reviews; Booking.com aggregate managed under initiative #11 Track B)
 - **Simone is a verified Airbnb Superhost** (6+ years hosting) and **VRBO Premier Host** — surfaced on the Westlight property page hero trust strip and sidebar (Phase 3 initiative #40, shipped 2026-07-06 evening). Host-level badges apply to both StayAtFlorida properties. Verification sources on file: `docs/listings/TW2111/reviews/2026-07-06-airbnb.md` and `docs/listings/TW2111/reviews/2026-07-06-vrbo.md` (captured on TW2111 host card; badge is host-level on Airbnb/VRBO so it applies wherever Simone hosts). Display rules: `docs/brand/BRAND_GUIDELINES.md` § "Host trust badges".
 - Owner-hosted — Simone replies to every inquiry personally, typically within 2 hours
 - Transparent pricing — the calculator on stayatflorida.com shows nightly rate, cleaning, and taxes before you email

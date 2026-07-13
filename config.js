@@ -942,23 +942,29 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
             "images/lodging/ms-05-kitchen.jpg": "Kitchen prep area with everyday essentials.",
             "images/lodging/ms-01-living-room.jpg": "Living room with Gulf-facing sightlines — the everyday gathering space."
         },
+        // MASTER §6 canonical groups: "Inside the Condo", "Beach Convenience",
+        // "Resort Amenities", "Location & Access". Same 4-group structure as
+        // TW2111 (property #4). Rendered by app.js#renderGroupedAmenities using
+        // the AMENITY_GROUP_ORDER canonical ordering.
         amenities: [
-            { icon: "wifi", name: "High-Speed WiFi" },
-            { icon: "kitchen", name: "Full Kitchen" },
-            { icon: "ac", name: "Air Conditioning" },
-            { icon: "heating", name: "Central Heating" },
-            { icon: "washer", name: "Washer & Dryer" },
-            { icon: "tv", name: "Smart TV" },
-            { icon: "movie", name: "DVD & Entertainment" },
-            { icon: "workspace", name: "Laptop-Friendly Workspace" },
-            { icon: "pool", name: "Gulf-Front & Outdoor Pools" },
-            { icon: "indoor-pool", name: "Indoor Heated Pool" },
-            { icon: "hottub", name: "Hot Tubs" },
-            { icon: "gym", name: "Fitness Center" },
-            { icon: "beach", name: "Direct Beach Access" },
-            { icon: "elevator", name: "Elevator Access" },
-            { icon: "parking", name: "Covered Parking (On-Site)" },
-            { icon: "grill", name: "Outdoor Grilling (Resort)" }
+            { icon: "kitchen", name: "Full Kitchen", group: "Inside the Condo" },
+            { icon: "wifi", name: "High-Speed WiFi", group: "Inside the Condo" },
+            { icon: "tv", name: "Smart TV", group: "Inside the Condo" },
+            { icon: "washer", name: "Washer & Dryer", group: "Inside the Condo" },
+            { icon: "ac", name: "Air Conditioning", group: "Inside the Condo" },
+            { icon: "heating", name: "Central Heating", group: "Inside the Condo" },
+            { icon: "workspace", name: "Laptop-Friendly Workspace", group: "Inside the Condo" },
+            { icon: "movie", name: "DVD & Entertainment", group: "Inside the Condo" },
+            { icon: "beach", name: "Complimentary Beach Chairs & Umbrella (in condo)", group: "Beach Convenience" },
+            { icon: "beach", name: "On-Beach Vendor Rentals Available for Purchase", group: "Beach Convenience" },
+            { icon: "pool", name: "Gulf-Front & Outdoor Pools", group: "Resort Amenities" },
+            { icon: "indoor-pool", name: "Indoor Heated Pool", group: "Resort Amenities" },
+            { icon: "hottub", name: "Hot Tubs", group: "Resort Amenities" },
+            { icon: "gym", name: "Fitness Center", group: "Resort Amenities" },
+            { icon: "grill", name: "Outdoor Grilling (Resort)", group: "Resort Amenities" },
+            { icon: "beach", name: "Direct Beach Access", group: "Location & Access" },
+            { icon: "elevator", name: "Elevator Access", group: "Location & Access" },
+            { icon: "parking", name: "Covered Parking (On-Site)", group: "Location & Access" }
         ],
         houseRules: [
             { icon: "no-smoking", name: "No Smoking" },
@@ -973,6 +979,53 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
             "2 Bedrooms 2 Bath",
             "Wheelchair accessible",
             "Occupancy: 6"
+        ],
+        // Property-page FAQ. Renders in-page (see app.js#renderPropertyFAQ) and
+        // emits FAQPage JSON-LD (see scripts/lib/listing-schema.cjs#buildFaqPageSchema).
+        // Canonical order + content: docs/listings/MS811/MASTER.md §22 Website FAQ.
+        // Ordered by inquiry frequency (highest first). Never reorder without owner sign-off.
+        // Edit MASTER first, regenerate listing-5.html, then this array.
+        faqs: [
+            {
+                q: "How many guests can Westlight accommodate?",
+                a: "Up to 6 guests. Two bedrooms (king + queen) plus a queen sleeper sofa in the living room."
+            },
+            {
+                q: "Is Westlight really Gulf-front?",
+                a: "Yes — the balcony faces the Gulf, and direct beach access is a palm-lined boardwalk downstairs. No busy road to cross."
+            },
+            {
+                q: "Are beach chairs and umbrella included?",
+                a: "Yes — complimentary beach chairs and umbrella are available in the condo. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors."
+            },
+            {
+                q: "What's included in the kitchen?",
+                a: "Full kitchen with coffee maker, dishwasher, oven, stove, microwave, refrigerator, cookware, dishes, and glassware for six. Set up for real cooking, not just reheating."
+            },
+            {
+                q: "What resort amenities can we use?",
+                a: "Gulf-front outdoor pool, indoor heated pool, hot tubs, fitness center, tennis and pickleball courts, Seascape golf course, and walking paths — all part of the Majestic Sun / Seascape Resort community that Westlight is inside of."
+            },
+            {
+                q: "How do we get to the beach?",
+                a: "Direct beach access via a palm-lined boardwalk downstairs. No shuttle, no crossing a road."
+            },
+            {
+                q: "What's the check-in and check-out?",
+                a: "Check-in is 4:00 PM. Check-out is 10:00 AM."
+            },
+            {
+                q: "Is parking included?",
+                a: "Yes — covered on-site parking is included for registered guests."
+            },
+            {
+                q: "Are pets allowed?",
+                a: "No — Westlight is pet-free."
+            },
+            {
+                q: "How far is the airport?",
+                a: "Destin–Fort Walton Beach Airport (VPS) is the closest — approximately 40 minutes (24 miles) by car. Northwest Florida Beaches International Airport (ECP) is an alternative — approximately 1 hour (38 miles) by car."
+            }
         ],
         seasonalAdjustments: [
             // Mirrors PriceLabs daily prices, averaged into seasonal buckets (base $300).
