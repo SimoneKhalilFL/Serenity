@@ -46,7 +46,7 @@ Retained for reference only. Do **not** paste these into the Airbnb dashboard wi
 **Max 500 characters.** Airbnb's highlighted-excerpt field. Shipped 2026-07-09 evening; owner-revision pass 2026-07-09 late afternoon (opening reframed, Gulf-of-Mexico language, `panoramic Gulf views`).
 
 ```
-Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, steps to the beach across a quiet residential street, and full Seascape resort amenities right at the front door. Sleeps 6 across a king primary suite, a queen guest bedroom, and a queen sleeper sofa. Complimentary beach chairs and umbrella waiting in the condo. Owner-hosted — I answer every message personally.
+Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door. Sleeps 6 across a king primary suite, a queen guest bedroom, and a queen sleeper sofa. Complimentary beach chairs and umbrella waiting in the condo. Owner-hosted — I answer every message personally.
 ```
 
 *Character count: 496 / 500*
@@ -69,7 +69,7 @@ The home is designed to be lived in barefoot:
 
 The kitchen is fully stocked for six — coffee maker, cookware, and dinnerware for real cooking, not just reheating. In-unit washer and dryer for longer stays. Smart TVs with popular streaming apps available in every bedroom and the living room; high-speed Wi-Fi throughout.
 
-The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons to the sound of waves. Golden hour that gives the property its name. Beach access is a short walk downstairs — cross Scenic Gulf Drive, the quiet residential street in front of the resort, and a palm-lined walkway takes you right down to the sand. Complimentary beach chairs and umbrella available in the condo.
+The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons to the sound of waves. Golden hour that gives the property its name. Direct beach access is a palm-lined boardwalk downstairs — no crossing a road. Complimentary beach chairs and umbrella available in the condo.
 
 Beyond the front door, the Majestic Sun / Seascape Resort community layers a Gulf-front pool, an indoor heated pool, hot tubs, a fitness center, tennis and pickleball courts, and Seascape Golf Club onto a quieter, greener stretch of coast. Seascape Town Center is a short walk. Whale's Tale Beach Bar & Grill is right on the beach.
 ```
@@ -77,7 +77,7 @@ Beyond the front door, the Majestic Sun / Seascape Resort community layers a Gul
 ## Guest Access
 
 ```
-Guests have full access to the condo and all Majestic Sun / Seascape Resort amenities: the Gulf-front outdoor pool, indoor heated pool, hot tubs, fitness center, tennis and pickleball courts, walking paths, and steps-to-the-beach access — cross Scenic Gulf Drive (a quiet residential street) to the palm-lined walkway that leads down to the sand. Complimentary covered parking is included for registered guests.
+Guests have full access to the condo and all Majestic Sun / Seascape Resort amenities: the Gulf-front outdoor pool, indoor heated pool, hot tubs, fitness center, tennis and pickleball courts, walking paths, and direct beach access via the palm-lined boardwalk. Complimentary covered parking is included for registered guests.
 
 Complimentary beach chairs and umbrella are available in the condo for you to bring down each morning. Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors, if you'd prefer a full setup.
 ```

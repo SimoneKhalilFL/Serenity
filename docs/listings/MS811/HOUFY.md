@@ -131,7 +131,7 @@ Spend the afternoon relaxing while listening to the waves.
 
 End the evening with one of Miramar Beach's spectacular west-facing sunsets — the moment the property is named for.
 
-Beach access is a short walk downstairs — cross Scenic Gulf Drive, the quiet residential street in front of the resort, and a palm-lined walkway takes you right down to the sand. No shuttle, no long walk, no highway to cross.
+Direct beach access is a palm-lined boardwalk downstairs from the resort — no crossing a busy road, no waiting for a shuttle.
 
 Complimentary beach chairs and a beach umbrella are provided inside the condo for guests to enjoy during their stay. Guests who prefer a full-service setup can also rent chairs and umbrellas directly on the beach.
 
@@ -149,7 +149,7 @@ Tennis and pickleball courts
 Seascape Golf Club (9-hole, par 35 — Emerald Bay Golf Club ~3 miles away for an 18-hole round)
 Bicycle and paddleboard rentals
 Multiple resort grills
-Steps to the beach — crosswalk over Scenic Gulf Drive to a palm-lined walkway down to the sand
+Direct beach access via palm-lined boardwalk
 Elevator access
 Complimentary covered parking for registered guests
 

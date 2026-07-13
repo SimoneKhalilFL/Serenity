@@ -47,7 +47,7 @@ Retained for reference only. Do **not** paste these into the VRBO dashboard with
 Shipped 2026-07-09; owner-revision pass 2026-07-09 late afternoon; VRBO production-polish pass 2026-07-09 evening (Quick Facts scannable section added after Welcome, new View & Beach sensory triplet, streaming-app claim tightened for accuracy, golf-course descriptor set to `Seascape Golf Club`, About Your Host verb tightening, airport times set to explicit `~40 min / 24 miles` for VPS and `~1 hour / 38 miles` for ECP). Soft `luxury` adjective still absent — the Gulf imagery does the positioning work more evocatively.
 
 ```
-Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, steps to the beach across a quiet residential street, and full Seascape resort amenities right at the front door. Sleeps up to 6 across a king primary suite, a queen guest bedroom, and a queen sleeper sofa. Owner-hosted with fast, personal communication. Complimentary beach chairs and umbrella in the condo.
+Welcome to Westlight, where every evening ends in gold. This Gulf-front 2-bedroom, 2-bath retreat sits directly overlooking the Gulf of Mexico — panoramic Gulf views from the balcony, direct beach access via a palm-lined boardwalk, and full Seascape resort amenities steps from the front door. Sleeps up to 6 across a king primary suite, a queen guest bedroom, and a queen sleeper sofa. Owner-hosted with fast, personal communication. Complimentary beach chairs and umbrella in the condo.
 ```
 
 ## Long Description
@@ -63,7 +63,7 @@ Westlight was created for guests who want the comforts of home paired with a tru
 - ✓ Gulf-front balcony
 - ✓ Sleeps 6
 - ✓ 2 Bedrooms | 2 Bathrooms
-- ✓ Steps to the beach (short crosswalk over Scenic Gulf Drive)
+- ✓ Direct beach access
 - ✓ Complimentary beach chairs & umbrella
 - ✓ Covered parking
 - ✓ Indoor & outdoor pools
@@ -82,7 +82,7 @@ Inside, the kitchen is fully stocked for six — coffee maker, cookware, and din
 
 ### The View & Beach
 
-The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight. Beach access is a short walk downstairs — cross Scenic Gulf Drive, the quiet residential street in front of the resort, and a palm-lined walkway takes you right down to the sand. No shuttle, no long walk. Complimentary beach chairs and umbrella are available in the condo — bring them down with you each morning. Prefer the full setup? Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
+The private Gulf-front balcony is the heart of Westlight. Morning coffee overlooking the Gulf. Afternoons listening to the waves. Evenings watching unforgettable sunsets that inspired the name Westlight. Direct beach access is a palm-lined boardwalk downstairs — no crossing a road. Complimentary beach chairs and umbrella are available in the condo — bring them down with you each morning. Prefer the full setup? Beach chair and umbrella rental is also available for purchase directly on the beach from local vendors.
 
 ### Resort Amenities
 
@@ -158,7 +158,7 @@ Check the boxes matching MASTER §6. Verify against VRBO's current amenity picke
 | City / State | Miramar Beach, Florida |
 | Region | Emerald Coast (Destin area) |
 | Nearest airport | VPS (Destin–Fort Walton Beach) — ~40 min / 24 miles by car · ECP alt — ~1 hour / 38 miles by car (⚠ verify from property before publishing) |
-| Distance to beach | Steps to the beach — short crosswalk over Scenic Gulf Drive (a quiet residential street) to a palm-lined walkway down to the sand |
+| Distance to beach | Direct beach access via palm-lined boardwalk from resort |
 | Nearby attractions | Seascape Town Center, Village of Baytowne Wharf, Silver Sands Premium Outlets, Henderson Beach State Park |
 
 ## House Rules Summary

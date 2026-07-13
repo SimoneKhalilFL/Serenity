@@ -104,7 +104,7 @@ Booking's system pulls from amenity checkboxes, room configs, location fields, a
 Booking.com displays this as the summary paragraph beneath the property name on the search-result card and at the top of the property page. **NOT directly editable in most extranet flows** — submit via the description-review workflow above. Front-load the differentiator, keep it factual.
 
 ```
-Welcome to Westlight, a 2-bedroom, 2-bath Gulf-front condo in Miramar Beach directly overlooking the Gulf of Mexico. Panoramic Gulf views from a private beachfront balcony, steps to the beach across a quiet residential street, full Seascape resort amenities including a Gulf-front pool and indoor heated pool, and complimentary beach chairs and umbrella in the condo. Sleeps up to 6. Owner-hosted.
+Welcome to Westlight, a 2-bedroom, 2-bath Gulf-front condo in Miramar Beach directly overlooking the Gulf of Mexico. Panoramic Gulf views from a private beachfront balcony, direct beach access via a palm-lined boardwalk, full Seascape resort amenities including a Gulf-front pool and indoor heated pool, and complimentary beach chairs and umbrella in the condo. Sleeps up to 6. Owner-hosted.
 ```
 
 *(Character count: 386 / ~500 typical Booking.com short-description budget.)*
@@ -113,7 +113,7 @@ Welcome to Westlight, a 2-bedroom, 2-bath Gulf-front condo in Miramar Beach dire
 
 ### Overview
 
-Welcome to Westlight, a Gulf-front 2-bedroom, 2-bath condo in Miramar Beach, Florida, located within the Majestic Sun building at Seascape Resort. Westlight sits directly overlooking the Gulf of Mexico and sleeps up to 6 guests, with panoramic Gulf views from a private beachfront balcony, steps-to-the-beach access (short crosswalk over Scenic Gulf Drive, a quiet residential street, to a palm-lined walkway down to the sand), and full Seascape resort amenities. Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast.
+Welcome to Westlight, a Gulf-front 2-bedroom, 2-bath condo in Miramar Beach, Florida, located within the Majestic Sun building at Seascape Resort. Westlight sits directly overlooking the Gulf of Mexico and sleeps up to 6 guests, with panoramic Gulf views from a private beachfront balcony, direct beach access via a palm-lined boardwalk from the resort deck, and full Seascape resort amenities. Westlight was created for guests who want the comforts of home paired with a true beachfront experience on the Emerald Coast.
 
 ### Accommodation
 
@@ -121,13 +121,13 @@ The condo offers two separate sleeping areas: a primary bedroom with a king bed 
 
 ### Location
 
-Miramar Beach on Florida's Emerald Coast, in the Destin area. Beach access is steps away — cross Scenic Gulf Drive (a quiet residential street) to a palm-lined walkway down to the sand. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Silver Sands Premium Outlets (~1 mile east), the Village of Baytowne Wharf, and Henderson Beach State Park are all a short drive. Publix at Grand Boulevard is the nearest grocery (~5 min drive); Winn-Dixie on Poinciana Blvd is closer (~1 mile). Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
+Miramar Beach on Florida's Emerald Coast, in the Destin area. Direct beach access via a palm-lined boardwalk from the resort. Seascape Town Center (coffee, casual dining, shopping) is a short walk from the front door. Whale's Tale Beach Bar & Grill is walkable along the beach. Silver Sands Premium Outlets (~1 mile east), the Village of Baytowne Wharf, and Henderson Beach State Park are all a short drive. Publix at Grand Boulevard is the nearest grocery (~5 min drive); Winn-Dixie on Poinciana Blvd is closer (~1 mile). Destin–Fort Walton Beach Airport (VPS) is approximately 40 minutes (24 miles) by car; Northwest Florida Beaches International Airport (ECP) is approximately 1 hour (38 miles).
 
 ### Amenities
 
 - Panoramic Gulf views
 - Private beachfront balcony (west-facing)
-- Steps to the beach — crosswalk over Scenic Gulf Drive to a palm-lined walkway down to the sand
+- Direct beach access via palm-lined boardwalk
 - Complimentary beach chairs and umbrella in the condo
 - Full kitchen with dishwasher
 - Washer and dryer in unit
@@ -171,7 +171,7 @@ Westlight is part of StayAtFlorida, an owner-hosted collection of Gulf-front vac
 
 | Attraction | Distance |
 |---|---|
-| Beach | Steps away — crosswalk over Scenic Gulf Drive (a quiet residential street) to a palm-lined walkway down to the sand |
+| Beach | Direct access via palm-lined boardwalk from the resort |
 | Seascape Town Center (coffee, dining, shopping) | Short walk |
 | Whale's Tale Beach Bar & Grill | Short walk via beach |
 | Publix at Grand Boulevard (725 Grand Blvd) | ~5 minutes by car |
