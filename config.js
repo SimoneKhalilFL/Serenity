@@ -362,11 +362,13 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
             ],
             "Kitchen & Dining": [
                 "images/lodging/tw-dining-sunset.png",
+                "images/lodging/tw-balcony-dinner.png",
                 "images/lodging/tw-dining-01.png",
                 "images/lodging/tw-01-kitchen.jpg",
                 "images/lodging/tw-02-kitchen.jpg",
                 "images/lodging/tw-03-kitchen.jpg",
-                "images/lodging/tw-02-dining.jpg"
+                "images/lodging/tw-02-dining.jpg",
+                "images/lodging/tw-01-dining.jpg"
             ],
             "Master Bedroom": [
                 "images/lodging/tw-master-01.png",
