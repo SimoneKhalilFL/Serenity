@@ -10,8 +10,8 @@
  *   Shape (see scripts/pricelabs-feeds.config.example.json):
  *   {
  *     "listings": {
- *       "4": { "pricelabsListingId": "abc123", "pms": "optional" },
- *       "5": { "pricelabsListingId": "def456" }
+ *       "4": { "pricelabsListingId": "abc123", "pms": "airbnb" },
+ *       "5": { "pricelabsListingId": "def456", "pms": "airbnb" }
  *     }
  *   }
  *
@@ -27,6 +27,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
+const PRICELABS_PRICES_URL = 'https://api.pricelabs.co/v1/listing_prices';
 
 function loadConfig() {
     const raw = process.env.PRICELABS_FEEDS_JSON;
@@ -60,58 +61,83 @@ function writePricingFile(listingId, payload) {
 }
 
 /**
- * STUB — replace with the real PriceLabs Customer API call once your account has
- * API access enabled and you have the docs URL from Settings → API Details.
- *
- * Expected real behavior:
- *   - GET (or POST) the PriceLabs prices endpoint with X-API-Key: <PRICELABS_API_KEY>
- *   - Pass the pricelabsListingId, and a date range covering at least 12 months ahead
- *   - Receive a list of { date, price, min_stay? } objects
- *
- * Return shape this function MUST produce:
- *   {
- *     prices:  { "YYYY-MM-DD": <number USD>, ... },
- *     minStay: { "YYYY-MM-DD": <number>, ... }   // optional, empty {} if not used
- *   }
- *
- * Throw on any HTTP / parse error so the caller can preserve the last-good file.
+ * Pick the nightly rate guests should see.
+ * PriceLabs returns `price` (final) and `user_price` (manual override; -1 = none).
  */
-async function fetchPriceLabsForListing(apiKey, pricelabsListingId /* , entry */) {
+function pickNightlyPrice(row) {
+    if (!row || typeof row !== 'object') return null;
+    const user = row.user_price;
+    if (typeof user === 'number' && Number.isFinite(user) && user > 0) {
+        return Math.round(user);
+    }
+    const price = row.price;
+    if (typeof price === 'number' && Number.isFinite(price) && price > 0) {
+        return Math.round(price);
+    }
+    return null;
+}
+
+/**
+ * POST https://api.pricelabs.co/v1/listing_prices
+ * Headers: X-API-Key, Content-Type: application/json
+ * Body: { listings: [{ id, pms }] }
+ */
+async function fetchPriceLabsForListing(apiKey, pricelabsListingId, entry = {}) {
     if (!apiKey || !apiKey.trim()) {
         throw new Error('PRICELABS_API_KEY is empty');
     }
     if (!pricelabsListingId || !String(pricelabsListingId).trim()) {
         throw new Error('pricelabsListingId is empty');
     }
+    const pms = entry.pms && String(entry.pms).trim();
+    if (!pms) {
+        throw new Error('pms is required (e.g. "airbnb") — set it in PRICELABS_FEEDS_JSON');
+    }
 
-    // ---------------------------------------------------------------------
-    // TODO: Implement the actual API call once support@pricelabs.co enables
-    // your Customer API and the docs URL is available under your account's
-    // Settings → API Details → "How to use PriceLabs API" button.
-    //
-    // Sketch (adjust to match the actual spec PriceLabs provides):
-    //
-    //   const start = new Date();
-    //   const end   = new Date(start.getTime() + 86400000 * 365);
-    //   const url = `https://api.pricelabs.co/v1/listing_prices?listing_id=${encodeURIComponent(pricelabsListingId)}&date_from=${ymd(start)}&date_to=${ymd(end)}`;
-    //   const res = await fetch(url, { headers: { 'X-API-Key': apiKey, 'Accept': 'application/json' } });
-    //   if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-    //   const body = await res.json();
-    //   const prices  = {};
-    //   const minStay = {};
-    //   for (const row of body.data || []) {
-    //       if (row.date && typeof row.price === 'number') prices[row.date] = row.price;
-    //       if (row.date && typeof row.min_stay === 'number') minStay[row.date] = row.min_stay;
-    //   }
-    //   return { prices, minStay };
-    // ---------------------------------------------------------------------
+    const res = await fetch(PRICELABS_PRICES_URL, {
+        method: 'POST',
+        headers: {
+            'X-API-Key': apiKey,
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            listings: [{ id: String(pricelabsListingId), pms }]
+        })
+    });
 
-    throw new Error(
-        'PriceLabs API call is not implemented yet. Enable Customer API at ' +
-        'https://app.pricelabs.co (email support@pricelabs.co), then fill in ' +
-        'fetchPriceLabsForListing() in scripts/sync-pricelabs.cjs using the ' +
-        'docs from your account\'s Settings → API Details.'
-    );
+    if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(`HTTP ${res.status} ${res.statusText}${text ? `: ${text.slice(0, 300)}` : ''}`);
+    }
+
+    const body = await res.json();
+    const rows = Array.isArray(body) ? body : body.data || body.listings || [];
+    const match =
+        rows.find((r) => String(r.id) === String(pricelabsListingId)) ||
+        rows[0];
+
+    if (!match) {
+        throw new Error('API returned no listing rows');
+    }
+    if (match.error || match.error_status) {
+        throw new Error(
+            `PriceLabs error for ${pricelabsListingId}: ${match.error_status || ''} ${match.error || ''}`.trim()
+        );
+    }
+
+    const prices = {};
+    const minStay = {};
+    for (const row of match.data || []) {
+        if (!row || !row.date) continue;
+        const nightly = pickNightlyPrice(row);
+        if (nightly != null) prices[row.date] = nightly;
+        if (typeof row.min_stay === 'number' && Number.isFinite(row.min_stay) && row.min_stay > 0) {
+            minStay[row.date] = Math.round(row.min_stay);
+        }
+    }
+
+    return { prices, minStay, currency: match.currency || 'USD' };
 }
 
 async function main() {
@@ -135,7 +161,7 @@ async function main() {
     for (const id of Object.keys(config.listings)) {
         const entry = config.listings[id] || {};
         const plId = entry.pricelabsListingId;
-        console.log(`Listing ${id} (PriceLabs id: ${plId || 'MISSING'})`);
+        console.log(`Listing ${id} (PriceLabs id: ${plId || 'MISSING'}, pms: ${entry.pms || 'MISSING'})`);
 
         if (!plId) {
             console.error('  Skipped: pricelabsListingId missing in config');
@@ -144,7 +170,7 @@ async function main() {
         }
 
         try {
-            const { prices, minStay } = await fetchPriceLabsForListing(apiKey, plId, entry);
+            const { prices, minStay, currency } = await fetchPriceLabsForListing(apiKey, plId, entry);
             const dateCount = Object.keys(prices || {}).length;
             if (dateCount === 0) {
                 throw new Error('API returned 0 prices (refusing to overwrite last-good file)');
@@ -152,8 +178,9 @@ async function main() {
             writePricingFile(id, {
                 listingId: Number(id),
                 pricelabsListingId: String(plId),
+                pms: entry.pms || null,
                 generatedAt: new Date().toISOString(),
-                currency: 'USD',
+                currency: currency || 'USD',
                 source: 'pricelabs',
                 prices,
                 minStay: minStay || {}

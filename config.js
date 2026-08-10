@@ -1030,10 +1030,8 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
             }
         ],
         seasonalAdjustments: [
-            // Mirrors PriceLabs daily prices, averaged into seasonal buckets (base $300).
-            // Until the PriceLabs Customer API sync is enabled (scripts/sync-pricelabs.cjs),
-            // these are hand-maintained. When data/pricing-5.json arrives, those daily
-            // prices will override these per-day via app.js getAdjustedRate().
+            // Fallback only. Per-day PriceLabs prices in data/pricing-5.json take precedence
+            // (synced via scripts/sync-pricelabs.cjs). These ranges cover gaps / API failures.
             { startDate: "2026-06-01", endDate: "2026-06-30", adjustment: 1.43 },   // June: ~$429/night
             { startDate: "2026-07-01", endDate: "2026-07-07", adjustment: 2.07 },   // July 4th week: ~$621/night
             { startDate: "2026-07-08", endDate: "2026-07-31", adjustment: 1.82 },   // Mid-Late July: ~$546/night

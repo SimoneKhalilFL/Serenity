@@ -1,13 +1,13 @@
 {
-  "_comment": "Copy this file to pricelabs-feeds.config.json for local runs, OR paste the same JSON shape into the PRICELABS_FEEDS_JSON GitHub Actions secret. Keys are stayatflorida.com listing IDs (matching config.js PROPERTIES[].id). 'pricelabsListingId' is the listing ID inside your PriceLabs account (visible in the URL when viewing a listing in PriceLabs).",
+  "_comment": "Copy this file to pricelabs-feeds.config.json for local runs, OR paste the same JSON shape into the PRICELABS_FEEDS_JSON GitHub Actions secret. Keys are stayatflorida.com listing IDs (matching config.js PROPERTIES[].id). 'pricelabsListingId' + 'pms' must match a connected channel in PriceLabs (GET /v1/listings_minimal). Airbnb is the usual source of truth when multiple OTAs are connected.",
   "listings": {
     "4": {
-      "pricelabsListingId": "YOUR_PRICELABS_LISTING_ID_FOR_TIDEWATER",
-      "pms": "OPTIONAL_PMS_NAME_IF_REQUIRED_BY_API"
+      "pricelabsListingId": "YOUR_AIRBNB_OR_PRICELABS_LISTING_ID_FOR_TWENTY_FIRST",
+      "pms": "airbnb"
     },
     "5": {
-      "pricelabsListingId": "YOUR_PRICELABS_LISTING_ID_FOR_MAJESTIC_SUN",
-      "pms": "OPTIONAL_PMS_NAME_IF_REQUIRED_BY_API"
+      "pricelabsListingId": "YOUR_AIRBNB_OR_PRICELABS_LISTING_ID_FOR_WESTLIGHT",
+      "pms": "airbnb"
     }
   }
 }

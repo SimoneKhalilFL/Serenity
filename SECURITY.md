@@ -35,6 +35,8 @@ Optional: run `bash scripts/apply-branch-protection.sh` after `gh auth login` (r
 |--------|-----------|---------|
 | `WEB3FORMS_ACCESS_KEY` | Optional (rotation) | Web3Forms access key. A working key is committed to `config.js` so local `npx serve` and PR previews work out of the box (Web3Forms keys are per-domain frontend tokens — safe to commit when the allowed origins are locked in the Web3Forms dashboard). Set this secret only when you want to **rotate** the key without a code commit — the deploy workflow will overwrite the committed literal with the secret value. Missing secret = deploy still ships the committed key. |
 | `CALENDAR_FEEDS_JSON` | Required | iCal URLs for **Sync iCal availability** workflow |
+| `PRICELABS_API_KEY` | Required for pricing sync | PriceLabs Customer API key from **Account Settings → API Details**. Used by **Sync PriceLabs pricing** (`scripts/sync-pricelabs.cjs`). Never commit this key. |
+| `PRICELABS_FEEDS_JSON` | Required for pricing sync | JSON mapping stayatflorida.com listing IDs → PriceLabs `{ pricelabsListingId, pms }`. Shape: `scripts/pricelabs-feeds.config.example.json`. |
 | `CLOUDFLARE_BEACON_TOKEN` | Optional | Cloudflare Web Analytics beacon token. When present, `scripts/inject-cf-beacon.cjs` injects the tracking snippet into all HTML pages during deploy. When absent, the snippet is **stripped** and no analytics ship. |
 | `CLARITY_PROJECT_ID` | Optional | Microsoft Clarity project ID for session recordings + heatmaps. When present, `scripts/inject-clarity.cjs` injects the Clarity tag into all HTML pages during deploy. When absent, the block is **stripped** and Clarity does not load. Runs cookieless by default. |
 
