@@ -53,6 +53,23 @@ Platform files may **only** differ from MASTER.md for one of these five reasons.
 
 ---
 
+## Platform-inserted text *(not owner-editable — skip on audits)*
+
+Every OTA auto-appends or auto-inserts certain strings around the host-authored content. These strings show up on live listings but are **not present in the host dashboard** and **cannot be removed by the owner**. When running a live-vs-doc audit, log these to a "not-actionable" list and never flag them as drift.
+
+Known platform-inserted strings *(as of 2026-07-14 — verify on future audits):*
+
+| Platform | Trigger | Auto-inserted string | Notes |
+|---|---|---|---|
+| VRBO | Pet policy set to `No pets` with a pet-violation fee | `Evidance of pets results in $500 fee + cleaning` *(exact fee amount varies by host setting; misspelling is platform-side)* | Appears appended to the "No pets allowed" line under House Rules. Confirmed 2026-07-14 owner cannot edit. Escalation: VRBO Partner Support as a platform content bug. |
+| VRBO | Any check-out instructions are set | `Failure to complete these may result in a negative review from the host.` | Auto-appended after the owner-authored check-out task list. Confirmed 2026-07-14 owner cannot edit. Off-brand for boutique voice, but out of scope for owner action. |
+
+When Cursor discovers a new platform-inserted string during an audit, add a row here so the next audit pass does not re-flag it. The owner is the authoritative source for confirming "this is not editable in the dashboard."
+
+Related audit reports: [`../listings/MS811/audits/`](../listings/MS811/audits/).
+
+---
+
 ## Standard platform character / length limits
 
 Confirm on the platform before publishing — these are current-generation guidelines and can drift.
