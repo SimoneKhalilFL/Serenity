@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://*.clarity.ms; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://*.clarity.ms https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://*.clarity.ms https://www.facebook.com https://connect.facebook.net; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Privacy Policy | StayAtFlorida</title>
@@ -14,6 +14,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1622218782745631');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1622218782745631&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <nav class="navbar">
@@ -40,7 +57,7 @@
 
     <main class="legal-page" id="main">
         <h1>Privacy Policy</h1>
-        <p class="legal-updated">Last updated: April 20, 2026</p>
+        <p class="legal-updated">Last updated: August 31, 2026</p>
 
         <p>StayAtFlorida ("we", "us") operates <strong>stayatflorida.com</strong> to list owner-hosted Florida Gulf Coast luxury beachfront vacation homes. This page explains what information we collect and how we use it.</p>
 
@@ -66,11 +83,12 @@
             <li><strong>OpenStreetMap</strong> &mdash; provides the map tiles shown on property pages.</li>
             <li><strong>Cloudflare Web Analytics</strong> &mdash; measures aggregate page traffic. It does not use cookies, does not fingerprint visitors, and does not collect personal data. See <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare&rsquo;s privacy policy</a> for details.</li>
             <li><strong>Microsoft Clarity</strong> &mdash; records anonymized session behavior (clicks, scrolls, mouse movement) and produces aggregate heatmaps so we can understand which parts of the site are confusing or hard to use. We run Clarity in <em>cookieless</em> mode, meaning no persistent identifier is stored in your browser and sessions cannot be joined across visits. Form fields and text inputs are automatically masked in recordings. See <a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener" target="_blank">Microsoft&rsquo;s privacy statement</a> and the <a href="https://learn.microsoft.com/en-us/clarity/faq" rel="noopener" target="_blank">Clarity FAQ</a> for details.</li>
+            <li><strong>Meta Pixel</strong> &mdash; measures visits and ad results for Facebook and Instagram. It may set cookies or similar identifiers so we can see which ads led to a visit or inquiry. See <a href="https://www.facebook.com/privacy/policy/" rel="noopener" target="_blank">Meta&rsquo;s privacy policy</a>.</li>
         </ul>
         <p>These services process data only as needed to deliver their service.</p>
 
         <h2>Cookies and tracking</h2>
-        <p>This site does not set advertising cookies and does not sell your data. We use <strong>Cloudflare Web Analytics</strong> (cookie-less) to count page views and <strong>Microsoft Clarity</strong> (configured cookie-less) to record anonymized session behavior for site improvement. Neither identifies you personally, and neither is used for advertising. Our contact form and availability integrations may cause your browser to connect to the third parties listed above when you use those features.</p>
+        <p>We do not sell your data. We use <strong>Cloudflare Web Analytics</strong> (cookie-less) to count page views and <strong>Microsoft Clarity</strong> (configured cookie-less) to record anonymized session behavior for site improvement. We also use the <strong>Meta Pixel</strong> to measure Facebook and Instagram ads; that pixel may store advertising cookies or similar identifiers in your browser. You can block or clear cookies in your browser settings, or use Meta&rsquo;s ad preferences. Our contact form and availability integrations may cause your browser to connect to the third parties listed above when you use those features.</p>
 
         <h2>Your choices</h2>
         <p>You can contact us anytime at <a href="mailto:FloridaVacationRental2020@gmail.com">FloridaVacationRental2020@gmail.com</a> to ask what information we have about you from prior inquiries, or to request its deletion.</p>

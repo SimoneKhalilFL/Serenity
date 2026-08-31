@@ -6,7 +6,7 @@
     <!-- Content Security Policy: limits what resources the page can load.
          Allows self, inline scripts/styles (current app uses onclick/style attrs), Web3Forms submit, OSM tiles,
          Unsplash/media.scurto.net images, Google Fonts, and Leaflet from unpkg. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://static.cloudflareinsights.com https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https://media.scurto.net; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://static.cloudflareinsights.com https://unpkg.com https://*.clarity.ms; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; base-uri 'self'; object-src 'none'; form-action https://api.web3forms.com">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://static.cloudflareinsights.com https://*.clarity.ms https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https://media.scurto.net; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://static.cloudflareinsights.com https://unpkg.com https://*.clarity.ms https://www.facebook.com https://connect.facebook.net; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; base-uri 'self'; object-src 'none'; form-action https://api.web3forms.com">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="favicon.svg">
@@ -85,6 +85,23 @@
         if (og) og.setAttribute('content', url);
     })();
     </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1622218782745631');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1622218782745631&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <a class="skip-link" href="#properties">Skip to vacation rental listings</a>

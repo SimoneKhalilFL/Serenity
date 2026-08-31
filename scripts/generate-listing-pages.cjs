@@ -73,7 +73,8 @@ function buildPage(property) {
     // Web3Forms, no media.scurto.net). Kept in sync with other static pages.
     // Microsoft Clarity (www.clarity.ms + *.clarity.ms) allowlisted for session
     // recordings & heatmaps; runs cookieless via clarity("consent", false).
-    const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://*.clarity.ms; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; base-uri 'self'; object-src 'none'";
+    // Meta Pixel (connect.facebook.net + www.facebook.com) for ad attribution.
+    const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://*.clarity.ms https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://*.clarity.ms https://www.facebook.com https://connect.facebook.net; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; base-uri 'self'; object-src 'none'";
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -135,6 +136,23 @@ function buildPage(property) {
         a { color: #38bdf8; text-decoration: underline; text-underline-offset: 2px; }
         a:hover, a:focus { color: #7dd3fc; }
     </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1622218782745631');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1622218782745631&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <main>

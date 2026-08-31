@@ -66,6 +66,12 @@ function getListingIdFromUrl() {
     return null;
 }
 
+function trackMetaPageView() {
+    if (typeof fbq === 'function') {
+        fbq('track', 'PageView');
+    }
+}
+
 function pushListingHistoryState(propertyId) {
     // Use the clean, share-friendly path so URL bar matches canonical and
     // crawlers scraping a copy-pasted URL get the static listing-<id>.html page.
@@ -744,6 +750,7 @@ function navigateHome(event, options = {}) {
     setCanonicalAndSocial(null);
     if (!options.skipHistory) {
         pushHomeHistoryState();
+        trackMetaPageView();
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -772,6 +779,7 @@ async function navigateToProperty(propertyId, options = {}) {
     setCanonicalAndSocial(property);
     if (!options.skipHistory) {
         pushListingHistoryState(propertyId);
+        trackMetaPageView();
     }
 
     document.getElementById('home-page').classList.remove('active');
@@ -3858,5 +3866,6 @@ window.addEventListener('popstate', () => {
         } else {
             navigateHome(null, { skipHistory: true });
         }
+        trackMetaPageView();
     })();
 });
