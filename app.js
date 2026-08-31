@@ -72,6 +72,63 @@ function trackMetaPageView() {
     }
 }
 
+/** Meta Pixel standard events: https://www.facebook.com/business/help/402791146561655 */
+function trackMetaEvent(eventName, params) {
+    if (typeof fbq !== 'function' || !eventName) return;
+    if (params && Object.keys(params).length) {
+        fbq('track', eventName, params);
+    } else {
+        fbq('track', eventName);
+    }
+}
+
+function toMetaIsoDate(date) {
+    if (!(date instanceof Date) || Number.isNaN(date.getTime())) return '';
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
+function getMetaContentParams(property) {
+    const params = {
+        content_type: 'product',
+        content_category: 'Vacation Rental',
+        currency: 'USD'
+    };
+    if (!property) return params;
+    params.content_ids = [String(property.id)];
+    params.content_name = property.title;
+    const loc = String(property.location || '');
+    const [city, region] = loc.split(',').map((part) => part.trim());
+    if (city) params.city = city;
+    if (region) params.region = region;
+    params.country = 'United States';
+    return params;
+}
+
+function trackMetaViewContent(property) {
+    if (!property) return;
+    trackMetaEvent('ViewContent', getMetaContentParams(property));
+}
+
+function trackMetaLead() {
+    const params = getMetaContentParams(currentProperty);
+    const pricing = currentProperty ? getSelectedStayPricing(currentProperty) : null;
+    if (pricing && typeof pricing.total === 'number') {
+        params.value = Number(pricing.total.toFixed(2));
+        const checkIn = toMetaIsoDate(selectedStartDate);
+        const checkOut = toMetaIsoDate(selectedEndDate);
+        if (checkIn) params.checkin_date = checkIn;
+        if (checkOut) params.checkout_date = checkOut;
+    }
+    trackMetaEvent('Lead', params);
+}
+
+function trackMetaContact() {
+    trackMetaEvent('Contact', getMetaContentParams(currentProperty));
+}
+
 function pushListingHistoryState(propertyId) {
     // Use the clean, share-friendly path so URL bar matches canonical and
     // crawlers scraping a copy-pasted URL get the static listing-<id>.html page.
@@ -781,6 +838,7 @@ async function navigateToProperty(propertyId, options = {}) {
         pushListingHistoryState(propertyId);
         trackMetaPageView();
     }
+    trackMetaViewContent(property);
 
     document.getElementById('home-page').classList.remove('active');
     document.getElementById('property-detail-page').classList.add('active');
@@ -1144,6 +1202,7 @@ async function submitContactForm(event) {
         const ok = res.ok && data && (data.success === true || data.success === 'true');
         if (ok) {
             submissionSucceeded = true;
+            trackMetaLead();
             const c = getSiteContact();
             if (statusEl) {
                 statusEl.className = 'form-submit-status form-submit-status--success';
@@ -3856,6 +3915,13 @@ document.addEventListener('keydown', (event) => {
             else lightboxNext();
         }
     }
+});
+
+document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!target || typeof target.closest !== 'function') return;
+    if (!target.closest('a[href^="mailto:"]')) return;
+    trackMetaContact();
 });
 
 window.addEventListener('popstate', () => {

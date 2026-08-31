@@ -41,6 +41,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1622218782745631');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {content_name: 'Gear We Use', content_category: 'Gear', content_type: 'product', currency: 'USD'});
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1622218782745631&ev=PageView&noscript=1"
@@ -144,6 +145,12 @@
 
     <script>
     (function () {
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            if (!target || typeof target.closest !== 'function') return;
+            if (!target.closest('a[href^="mailto:"]')) return;
+            if (typeof fbq === 'function') fbq('track', 'Contact');
+        });
         // Standalone mobile menu toggle (this page doesn't load app.js).
         window.toggleMobileMenu = function (btn) {
             var navLinks = document.getElementById('primary-nav');
