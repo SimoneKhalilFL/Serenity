@@ -31,7 +31,10 @@ const SEO_CONFIG = {
     defaultOgImage: 'images/og/default.jpg?v=postcard-v1'
 };
 
-const ORGANIZATION_SAME_AS = ['https://www.facebook.com/FloridaRental2020'];
+const ORGANIZATION_SAME_AS = [
+  'https://www.facebook.com/StayAtFlorida',
+  'https://www.instagram.com/stayatflorida/',
+];
 
 function baseUrl() {
     return SITE_BASE_URL.replace(/\/$/, '');

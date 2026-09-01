@@ -18,7 +18,7 @@ const SITE_BASE_URL = 'https://stayatflorida.com';
 const WEB3FORMS_ACCESS_KEY = 'd1ccaac2-d8a0-43d6-8615-5551586541d4';
 
 const SITE_CONTACT = {
-    email: 'FloridaVacationRental2020@gmail.com',
+    email: 'floridarental2020@gmail.com',
     phoneTel: '',
     phoneDisplay: '',
     replyBlurb: 'Simone typically replies to inquiries within 2 hours. Email is the fastest way to reach us.',

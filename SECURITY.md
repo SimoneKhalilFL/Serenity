@@ -39,6 +39,10 @@ Optional: run `bash scripts/apply-branch-protection.sh` after `gh auth login` (r
 | `PRICELABS_FEEDS_JSON` | Required for pricing sync | JSON mapping stayatflorida.com listing IDs → PriceLabs `{ pricelabsListingId, pms }`. Shape: `scripts/pricelabs-feeds.config.example.json`. |
 | `CLOUDFLARE_BEACON_TOKEN` | Optional | Cloudflare Web Analytics beacon token. When present, `scripts/inject-cf-beacon.cjs` injects the tracking snippet into all HTML pages during deploy. When absent, the snippet is **stripped** and no analytics ship. |
 | `CLARITY_PROJECT_ID` | Optional | Microsoft Clarity project ID for session recordings + heatmaps. When present, `scripts/inject-clarity.cjs` injects the Clarity tag into all HTML pages during deploy. When absent, the block is **stripped** and Clarity does not load. Runs cookieless by default. |
+| `META_PAGE_ACCESS_TOKEN` | Required for social posting | Long-lived Facebook Page token used by **Post social openings** (`scripts/social-post.cjs`). Never commit this token. Setup: [`docs/brand/SOCIAL.md`](docs/brand/SOCIAL.md). |
+| `META_PAGE_ID` | Required for social posting | Numeric Facebook Page id for `StayAtFlorida` (was FloridaRental2020). |
+| `META_IG_USER_ID` | Optional (Instagram) | Instagram Business account id linked to the Page. Missing = Facebook-only posts. |
+| `SOCIAL_POST_ENABLED` | Optional | Set to `false` to pause publishing without deleting tokens. |
 
 Add them under **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
 

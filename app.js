@@ -147,7 +147,7 @@ function getSiteContact() {
         return SITE_CONTACT;
     }
     return {
-        email: 'FloridaVacationRental2020@gmail.com',
+        email: 'floridarental2020@gmail.com',
         phoneTel: '',
         phoneDisplay: '',
         replyBlurb: 'Simone typically replies to inquiries within 2 hours. Email is the fastest way to reach us.',
@@ -166,7 +166,10 @@ function getActiveHostTrustBadges() {
 }
 
 /** Public profile URL(s) for Organization sameAs (footer / brand). */
-const ORGANIZATION_SAME_AS = ['https://www.facebook.com/FloridaRental2020'];
+const ORGANIZATION_SAME_AS = [
+    'https://www.facebook.com/StayAtFlorida',
+    'https://www.instagram.com/stayatflorida/',
+];
 
 function amPmToIsoTime(hourStr, minuteStr, ampm) {
     let h = parseInt(hourStr, 10);
