@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "slot": "openings",
+      "weekOf": "2026-08-31",
+      "publishedAt": "2026-08-31T22:17:00Z",
+      "channels": ["facebook", "instagram"],
+      "page": "Florida Rental 2020",
+      "instagram": "majestic_sun_florida",
+      "listing": "TW2111",
+      "captionFocus": "Twenty First September 7–30 openings",
+      "metaPostId": "122243493380295768",
+      "method": "business-suite-manual",
+      "photo": "tw-balcony-sunset.png",
+      "note": "Published without caption (Customize left FB text empty). Superseded by republish 122243574176295768."
+    },
+    {
+      "slot": "openings-repost",
+      "weekOf": "2026-08-31",
+      "publishedAt": "2026-09-01T16:23:00Z",
+      "channels": ["facebook", "instagram"],
+      "page": "Florida Rental 2020",
+      "instagram": "majestic_sun_florida",
+      "listing": "TW2111",
+      "captionFocus": "Twenty First September 7–30 openings (repost with caption)",
+      "metaPostId": "122243574176295768",
+      "instagramPermalink": "https://www.instagram.com/p/DcwFQ06oEem/",
+      "method": "business-suite-manual",
+      "photo": "tw-balcony-sunset.png",
+      "story": true,
+      "customizeOff": true,
+      "captionFixedAt": "2026-09-01T16:38:00Z",
+      "captionFix": "instagram-edit-manual",
+      "groups": [
+        "Panama City Beach, Florida Locals and Visitors",
+        "Tidewater Beach Resort Condo Rentals by Owners"
+      ]
+    },
+    {
+      "slot": "lifestyle",
+      "weekOf": "2026-08-31",
+      "scheduledFor": "2026-09-01T22:00:00-05:00",
+      "scheduledAt": "2026-08-31T22:40:00Z",
+      "channels": ["facebook", "instagram"],
+      "page": "Florida Rental 2020",
+      "instagram": "majestic_sun_florida",
+      "listing": "TW2111",
+      "captionFocus": "Twenty First balcony / beach walk lifestyle",
+      "method": "business-suite-scheduled",
+      "photo": "pool-beach-aerial",
+      "story": true,
+      "groups": [
+        "Panama City Beach, Florida Locals and Visitors",
+        "Florida Vacation Rentals (AirBnb/VRBO/Direct)",
+        "Tidewater Beach Resort Condo Rentals by Owners"
+      ]
+    }
+  ]
+}

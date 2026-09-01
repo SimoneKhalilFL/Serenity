@@ -7,6 +7,7 @@ Desktop.ini
 node_modules/
 scripts/calendar-feeds.config.json
 scripts/pricelabs-feeds.config.json
+scripts/social-meta.config.json
 
 # Ephemeral commit-message scratch file used to build git commit -F on PowerShell
 # (which doesn't heredoc). Should never be committed.

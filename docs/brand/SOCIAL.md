@@ -116,7 +116,7 @@ Old `facebook.com/FloridaRental2020` and `instagram.com/majestic_sun_florida` do
 
 | Item | Status |
 |---|---|
-| Domain `stayatflorida.com` in Business Manager | Added; meta-tag in `index.html` (`facebook-domain-verification`). Click **Verify domain** in Business Suite after the tag is live on production. |
+| Domain `stayatflorida.com` in Business Manager | **Verified** 2026-09-01 (meta-tag in `index.html`). |
 | Content monetization | On Meta waitlist (beta). |
 | Stars | Notify me on. Needs **500 followers** (now ~59) held for **30 consecutive days**. |
 | Subscriptions | Notify me on. Same audience growth path; eligibility incomplete. |
@@ -125,7 +125,28 @@ Old `facebook.com/FloridaRental2020` and `instagram.com/majestic_sun_florida` do
 
 Creator payouts are locked until audience grows. Near-term revenue path remains direct bookings via consistent posts, Story sharing, and group distribution (see cadence above).
 
-**API token status (2026-08-31):** Facebook + Instagram are linked and usable in Meta Business Suite. Unattended Graph API posting is blocked until Simone finishes **Meta for Developers** account verification (SMS code to the Accounts Center phone). Local Page ID is saved in gitignored `scripts/social-meta.config.json`. After developer verification: create a Business app → Graph API Explorer → long-lived Page token + Instagram business account id → GitHub secrets `META_PAGE_ACCESS_TOKEN`, `META_PAGE_ID`, `META_IG_USER_ID`.
+**API token status (2026-09-01):** Facebook + Instagram are linked and usable in Meta Business Suite. Local IDs are saved in gitignored `scripts/social-meta.config.json`:
+
+| ID | Value |
+|---|---|
+| Facebook Page ID | `274457265757585` |
+| Instagram user id (from public profile) | `62203541066` — confirm in Graph Explorer after SMS (`/{page-id}?fields=instagram_business_account`) |
+
+**Blocked only on Meta for Developers SMS** to `(281) 706-1652`. Until that clears, publish daily from Business Suite (packs under [`docs/social/packs/`](../social/packs/)).
+
+**After SMS succeeds (do in order):**
+
+1. Finish Developers registration (Contact info → About you).
+2. [developers.facebook.com/apps](https://developers.facebook.com/apps) → **Create app** → **Business** → name `StayAtFlorida Social`.
+3. Add **Facebook Login for Business** + **Instagram**.
+4. Graph API Explorer → user token with `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `instagram_basic`, `instagram_content_publish`, `business_management`.
+5. `GET /me/accounts` → copy StayAtFlorida **Page access token**.
+6. Prefer never-expiring token: Business Settings → **System users** → generate token for this Page with the same permissions.
+7. GitHub → **Settings → Secrets and variables → Actions** → set:
+   - `META_PAGE_ACCESS_TOKEN` = Page token
+   - `META_PAGE_ID` = `274457265757585`
+   - `META_IG_USER_ID` = confirmed Instagram business id
+8. Run workflow **Post social openings** once with `dry_run=true`, then a live `lifestyle` or `openings` dispatch.
 
 ### 2. Create a Meta app and a long-lived Page token
 

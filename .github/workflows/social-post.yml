@@ -1,0 +1,90 @@
+# Publishes an on-brand Facebook + Instagram post from live availability.
+# Requires secrets (see docs/brand/SOCIAL.md):
+#   - META_PAGE_ACCESS_TOKEN
+#   - META_PAGE_ID
+#   - META_IG_USER_ID (optional — Facebook-only if missing)
+# Optional: SOCIAL_POST_ENABLED=false pauses publishing.
+name: Post social openings
+
+on:
+  schedule:
+    # Tue / Thu / Sat 14:00 UTC ≈ 9:00 AM Central
+    - cron: '0 14 * * 2,4,6'
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Post slot'
+        type: choice
+        options:
+          - auto
+          - openings
+          - lifestyle
+          - proof
+        default: auto
+      dry_run:
+        description: 'Compose only — do not publish'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compose and publish
+        env:
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          SOCIAL_POST_ENABLED: ${{ secrets.SOCIAL_POST_ENABLED }}
+          SOCIAL_SLOT: ${{ github.event.inputs.slot || 'auto' }}
+          SOCIAL_DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
+        run: node scripts/social-post.cjs
+
+      - name: Commit post log if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/social-post-log.json
+          if git diff --staged --quiet; then
+            echo "No social log changes to commit."
+          else
+            git commit -m "chore(data): log social post"
+            for i in 1 2 3 4 5; do
+              git fetch origin main
+              if ! git rebase -X theirs origin/main; then
+                echo "::warning::Rebase failed unexpectedly; aborting and retrying."
+                git rebase --abort || true
+                sleep 3
+                continue
+              fi
+              if git push origin main; then
+                echo "Pushed social post log."
+                break
+              fi
+              if [ "$i" -eq 5 ]; then
+                echo "::error::git push failed after 5 attempts (remote kept moving)."
+                exit 1
+              fi
+              echo "Push rejected, retrying ($i/5)..."
+              sleep 3
+            done
+          fi
