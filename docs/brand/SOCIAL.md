@@ -31,7 +31,7 @@ TikTok is out of scope until an account exists.
 | Rotation | Slot | What it does |
 |---|---|---|
 | ~every other day / when gaps exist | `openings` | Current-month bookable windows (3+ nights). If nothing worth promoting, falls back to `lifestyle`. |
-| Between openings | `lifestyle` | Place and home — Gulf, balcony, PCB or Miramar. Builds audience that is not shopping yet. |
+| Between openings | `lifestyle` | Westlight morning-balcony emotion creative (clean 4:5 crop + no-emoji caption). Builds audience that is not shopping yet. Assets: [`docs/social/ads/ms-morning-balcony/`](../social/ads/ms-morning-balcony/). |
 | ~1–2× / week | `proof` | A real guest quote plus a quiet owner-hosted line. |
 
 **Interim (until Meta developer SMS / Graph token):** publish or schedule from Meta Business Suite using the weekly pack under [`docs/social/packs/`](../social/packs/). Prefer one post per day.

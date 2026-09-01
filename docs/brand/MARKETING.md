@@ -68,7 +68,8 @@ Guest profile detail lives in [`HOSPITALITY.md`](HOSPITALITY.md).
 | VRBO | Discovery + reviews. Send to direct site on repeat bookings. | Same as Airbnb. |
 | Booking.com | Discovery only. Rate parity where required. | Lower priority. |
 | Email signature | Every host email links to `stayatflorida.com`. | See [`email-signature.html`](../../email-signature.html). |
-| Facebook page | Photo-first social proof, seasonal posts. | Linked in footer + JSON-LD `sameAs`. |
+| Facebook page | Photo-first social proof, seasonal posts. | Linked in footer + JSON-LD `sameAs`. Unattended posts: [`SOCIAL.md`](SOCIAL.md). |
+| Instagram | Same posts as Facebook (photo + caption), via Meta Graph API. | Business/Creator account linked to the Facebook Page. |
 
 **Rule:** OTA channels exist to feed the direct site. All OTA copy links (where allowed) to `stayatflorida.com` and encourages repeat bookings direct.
 
@@ -211,6 +212,20 @@ Reviews are the single largest conversion lever on this brand. Every stay ends w
 
 - Trigger: A new property joins the collection.
 - Action: New property card on the homepage, new listing page, new OG image, new sitemap entry, new social post. Meta descriptions and hero copy follow the [property naming pattern](BRAND_GUIDELINES.md#core-identity).
+
+### Current-month openings (social)
+
+- Trigger: Scheduled Tuesday / Thursday / Saturday run in [SOCIAL.md](SOCIAL.md).
+- Action: Unattended Facebook + Instagram photo post. Tuesday promotes 3+ night openings in the current sell window; Thursday is lifestyle; Saturday is a real guest quote. No approval step. No discount or urgency copy.
+- Pause: set GitHub secret `SOCIAL_POST_ENABLED` to `false`.
+
+### Meta morning-balcony creative (organic now; paid later)
+
+- Locked emotion creative for Westlight morning balcony: [`docs/social/ads/ms-morning-balcony/`](../social/ads/ms-morning-balcony/).
+- **Organic:** daily `lifestyle` posts for Westlight use the clean crops via [`scripts/social-post.cjs`](../../scripts/social-post.cjs) (no burned-in text).
+- Clean photo only — no burned-in headlines, amenity icons, pricing, or “BOOK NOW” graphics.
+- First **paid** test when approved: **emotion vs. offer** (different image for offer), not micro copy variants.
+- Status as of 2026-09-01: organic on; **not running paid ads**.
 
 ---
 

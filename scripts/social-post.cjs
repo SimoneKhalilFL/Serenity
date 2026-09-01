@@ -32,22 +32,38 @@ const LOG_KEEP = 40;
 
 const LISTING_IDS = [4, 5];
 
+/** Slot-aware pools. Lifestyle prefers the clean morning-balcony crops. */
 const PHOTO_POOL = {
-    4: [
-        'images/lodging/tw-hero-view.png',
-        'images/lodging/tw-balcony-sunset.png',
-        'images/lodging/tw-balcony-coffee.png',
-        'images/lodging/tw-01-beach-view.jpg',
-        'images/lodging/tw-dining-sunset.png'
-    ],
-    5: [
-        'images/lodging/MS-FullView-1.png',
-        'images/lodging/MS-Balcony-1.png',
-        'images/lodging/MS_Balcony_Dinner_Setup.png',
-        'images/lodging/ms-beach-view.jpg',
-        'images/lodging/ms-10-sunset-view.jpg',
-        'images/lodging/ms-06-gulf-balcony.png'
-    ]
+    4: {
+        lifestyle: [
+            'images/lodging/tw-balcony-coffee.png',
+            'images/lodging/tw-balcony-sunset.png',
+            'images/lodging/tw-hero-view.png',
+            'images/lodging/tw-dining-sunset.png',
+            'images/lodging/tw-01-beach-view.jpg'
+        ],
+        default: [
+            'images/lodging/tw-hero-view.png',
+            'images/lodging/tw-balcony-sunset.png',
+            'images/lodging/tw-balcony-coffee.png',
+            'images/lodging/tw-01-beach-view.jpg',
+            'images/lodging/tw-dining-sunset.png'
+        ]
+    },
+    5: {
+        // Locked feed crop for daily lifestyle (emotion creative).
+        lifestyle: ['images/lodging/ms-morning-balcony-4x5.jpg'],
+        default: [
+            'images/lodging/ms-morning-balcony-4x5.jpg',
+            'images/lodging/MS_Balcony_Coffee_person.png',
+            'images/lodging/MS-FullView-1.png',
+            'images/lodging/MS-Balcony-1.png',
+            'images/lodging/MS_Balcony_Dinner_Setup.png',
+            'images/lodging/ms-beach-view.jpg',
+            'images/lodging/ms-10-sunset-view.jpg',
+            'images/lodging/ms-06-gulf-balcony.png'
+        ]
+    }
 };
 
 const HASHTAGS = '#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast';
@@ -248,24 +264,13 @@ function composeOpenings(site, listing, openings, campaign) {
 function composeLifestyle(site, listing, campaign) {
     const url = listingUrl(site, listing.id, campaign);
     const market = marketName(listing);
-    const variants = [
-        [
-            `Morning coffee above the Gulf at ${listing.title}.`,
-            `${market}. Owner-hosted. Room to slow down.`,
-            url
-        ],
-        [
-            `${listing.title}, a StayAtFlorida Signature Property in ${market}.`,
-            `The balcony faces the water. The beach is a short walk from the door.`,
-            url
-        ],
-        [
-            `Gulf light, a private balcony, and a home that is actually yours for the week.`,
-            `${listing.title} · ${market}`,
-            url
-        ]
-    ];
-    return joinCaption(hashPick(campaign + listing.id, variants));
+    // Emotion caption locked to the morning-balcony creative (emoji stripped).
+    // See docs/social/ads/ms-morning-balcony/README.md.
+    return joinCaption([
+        `No alarm clock needed. Just coffee, Gulf views, and nowhere you need to be.`,
+        `Escape to ${market} and spend your mornings overlooking turquoise water from your own private balcony.`,
+        `${listing.title}. Owner-hosted. ${url}`
+    ]);
 }
 
 function fiveStarQuotes(site, listingId) {
@@ -301,9 +306,13 @@ function publicImageUrl(site, relPath) {
     return `${site.baseUrl}/${relPath.replace(/^\//, '')}`;
 }
 
-function pickPhoto(listingId, seed) {
-    const pool = PHOTO_POOL[listingId];
-    if (!pool) throw new Error(`No photo pool for listing ${listingId}`);
+function pickPhoto(listingId, seed, slot = 'default') {
+    const entry = PHOTO_POOL[listingId];
+    if (!entry) throw new Error(`No photo pool for listing ${listingId}`);
+    const pool = Array.isArray(entry)
+        ? entry
+        : entry[slot] || entry.lifestyle || entry.default;
+    if (!pool || !pool.length) throw new Error(`Empty photo pool for listing ${listingId} slot ${slot}`);
     return hashPick(seed, pool);
 }
 
@@ -390,17 +399,22 @@ function buildPost({ site, slot, todayYmd, log }) {
             .map((r) => r.listingId);
         if (eligible.length === 0) {
             effectiveSlot = 'lifestyle';
-            listingId = pickListing(LISTING_IDS, lastFeaturedListing(log, 'lifestyle'));
+            // Lifestyle defaults to Westlight morning-balcony creative.
+            listingId = 5;
         } else {
             listingId = pickListing(eligible, lastFeaturedListing(log, 'openings'));
         }
+    } else if (slot === 'lifestyle') {
+        // Locked emotion creative: Westlight morning balcony crops + caption.
+        listingId = 5;
     } else {
         listingId = pickListing(LISTING_IDS, lastFeaturedListing(log, slot));
     }
 
     const listing = propertyById(site, listingId);
     const openings = byId.get(listingId);
-    const photoRel = pickPhoto(listingId, `${week}-${effectiveSlot}-${listingId}`);
+    const photoSlot = effectiveSlot === 'lifestyle' ? 'lifestyle' : 'default';
+    const photoRel = pickPhoto(listingId, `${week}-${effectiveSlot}-${listingId}`, photoSlot);
     const imageUrl = publicImageUrl(site, photoRel);
 
     let caption;
