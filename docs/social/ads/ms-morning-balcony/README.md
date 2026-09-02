@@ -5,6 +5,7 @@
 > **Property:** Westlight (MS811), Miramar Beach.
 > **Source photo:** [`images/lodging/MS_Balcony_Coffee_person.png`](../../../../images/lodging/MS_Balcony_Coffee_person.png) — clean frame, no overlays.
 > **Live site copies (Graph / Business Suite):** `images/lodging/ms-morning-balcony-4x5.jpg`, `-1x1.jpg`, `-9x16.jpg`.
+> **Sister shelves:** Twenty First PCB hooks [`../tw-pcb-hooks/`](../tw-pcb-hooks/); Westlight hook graphics [`../ms-miramar-hooks/`](../ms-miramar-hooks/); dual calendar [`../../packs/2026-09-30-day-calendar.md`](../../packs/2026-09-30-day-calendar.md).
 
 ---
 

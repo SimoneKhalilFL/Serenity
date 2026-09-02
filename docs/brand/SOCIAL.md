@@ -26,15 +26,26 @@ TikTok is out of scope until an account exists.
 
 ## Cadence
 
-**Daily** posts, Facebook and Instagram together (same photo, same caption), at 9:00 AM Central when automated. Rotate slots so openings stay frequent without flooding.
+**Two posts per day**, same property, Facebook + Instagram together. **Alternate** properties day to day:
 
-| Rotation | Slot | What it does |
+| Slot | Time (America/Chicago) | Format |
 |---|---|---|
-| ~every other day / when gaps exist | `openings` | Current-month bookable windows (3+ nights). If nothing worth promoting, falls back to `lifestyle`. |
-| Between openings | `lifestyle` | Westlight morning-balcony emotion creative (clean 4:5 crop + no-emoji caption). Builds audience that is not shopping yet. Assets: [`docs/social/ads/ms-morning-balcony/`](../social/ads/ms-morning-balcony/). |
-| ~1–2× / week | `proof` | A real guest quote plus a quiet owner-hosted line. |
+| AM | **9:00 AM** | Still photo (existing calendar) |
+| PM | **5:00 PM** | **Reel** (Ken Burns stills for now) |
 
-**Interim (until Meta developer SMS / Graph token):** publish or schedule from Meta Business Suite using the weekly pack under [`docs/social/packs/`](../social/packs/). Prefer one post per day.
+| Pattern | Property |
+|---|---|
+| Day A | **Twenty First** (Panama City Beach) |
+| Day B | **Westlight** (Miramar Beach) |
+
+Still pack: [`docs/social/packs/2026-09-02-dual-daily.md`](../social/packs/2026-09-02-dual-daily.md).  
+Reels pack + MP4s: [`docs/social/packs/2026-09-reels.md`](../social/packs/2026-09-reels.md) · [`docs/social/schedule-ready/reels/`](../social/schedule-ready/reels/).  
+Strategy source: [`docs/social/packs/2026-09-30-day-calendar.md`](../social/packs/2026-09-30-day-calendar.md).  
+Creative shelves: [`docs/social/ads/tw-pcb-hooks/`](../social/ads/tw-pcb-hooks/), [`docs/social/ads/ms-miramar-hooks/`](../social/ads/ms-miramar-hooks/), [`docs/social/ads/ms-morning-balcony/`](../social/ads/ms-morning-balcony/). Photos: [`docs/social/schedule-ready/`](../social/schedule-ready/).
+
+Openings / guest-proof rotate into the daily slots (not a third post). Automated Graph posting uses GitHub secrets (`META_PAGE_ACCESS_TOKEN`, `META_PAGE_ID`, `META_IG_USER_ID`) via `npm run social-post` / Actions.
+
+**Manual backlog:** schedule dual-daily stills/reels from Meta Business Suite when you want Story or Facebook-group shares Graph does not cover yet.
 
 **Business Suite defaults (every post):**
 

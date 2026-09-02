@@ -37,6 +37,7 @@ Every doc in `/docs` has a primary owner (the agent whose word is final on that 
 | [`BRAND_GUIDELINES.md`](BRAND_GUIDELINES.md) | Brand Director | Marketing Director, CGO Agent, QA Agent |
 | [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md) | UX Director | Brand Director, Software Architect, QA Agent |
 | [`MARKETING.md`](MARKETING.md) | Marketing Director | Brand Director, CGO Agent, QA Agent |
+| [`SOCIAL.md`](SOCIAL.md) | Marketing Director | Brand Director, CGO Agent, QA Agent |
 | [`HOSPITALITY.md`](HOSPITALITY.md) | Hospitality Expert | Brand Director, QA Agent |
 | [`PROPERTY_PORTFOLIO.md`](PROPERTY_PORTFOLIO.md) | Brand Director | CEO Agent, CGO Agent (on new properties), QA Agent |
 | [`../listings/{PROPERTY}/MASTER.md`](../listings/) | Brand Director | CEO Agent, Hospitality Expert, SEO Expert, CGO Agent, Content Synchronization Agent, QA Agent |
@@ -63,6 +64,7 @@ For non-doc files, the primary owner is the agent whose review is required befor
 | `index.html` (hero, sections, JSON-LD) | Brand Director + Software Architect | SEO Expert, CGO Agent |
 | `listing-<id>.html` (generated) | Software Architect | Never hand-edited — regenerate via `scripts/generate-listing-pages.cjs` |
 | `scripts/*.cjs` | Software Architect | SEO Expert |
+| `scripts/social-*.cjs` | Marketing Director | Brand Director, Software Architect, CGO Agent, QA Agent |
 | `sitemap.xml`, `robots.txt` | SEO Expert | Software Architect |
 | `email-signature.html` | Brand Director | Hospitality Expert, Marketing Director |
 | `gear.html` | Marketing Director | Brand Director, Hospitality Expert |

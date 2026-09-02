@@ -18,6 +18,7 @@ docs/
 │   ├── DESIGN_SYSTEM.md       # Colors, type, components, accessibility
 │   ├── HOSPITALITY.md         # Guest journey, amenity standards, message templates
 │   ├── MARKETING.md           # Positioning, channels, campaigns, Growth Strategy
+│   ├── SOCIAL.md              # Unattended Facebook + Instagram openings poster
 │   ├── PROPERTY_PORTFOLIO.md  # Roster of every property + naming standard
 │   ├── QA_CHECKLIST.md        # Pre-ship QA gate incl. Sync QA
 │   └── SEO.md                 # Meta, JSON-LD, alt text, sitemap
@@ -48,6 +49,7 @@ docs/
 - [`docs/brand/BRAND_GUIDELINES.md`](docs/brand/BRAND_GUIDELINES.md) — voice, tone, approved and forbidden language
 - [`docs/brand/DESIGN_SYSTEM.md`](docs/brand/DESIGN_SYSTEM.md) — colors, type, components, motion, accessibility
 - [`docs/brand/MARKETING.md`](docs/brand/MARKETING.md) — positioning, channels, campaigns, **[Growth Strategy](docs/brand/MARKETING.md#growth-strategy)**
+- [`docs/brand/SOCIAL.md`](docs/brand/SOCIAL.md) — unattended Facebook + Instagram openings poster
 - [`docs/brand/HOSPITALITY.md`](docs/brand/HOSPITALITY.md) — guest journey, amenity standards, message templates
 - [`docs/brand/PROPERTY_PORTFOLIO.md`](docs/brand/PROPERTY_PORTFOLIO.md) — the Signature Collection roster, naming standard, add/retire workflow
 - [`docs/brand/SEO.md`](docs/brand/SEO.md) — meta, JSON-LD, alt text, sitemap, Core Web Vitals
