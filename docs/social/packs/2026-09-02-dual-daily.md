@@ -1,13 +1,14 @@
 # Daily alternating schedule — Sep 2 → Oct 1, 2026
 
-> **Cadence (updated 2026-09-01):** **Two posts per day** for **one property**, then alternate the next day. Each post goes to **Facebook Page StayAtFlorida + Instagram @stayatflorida**.
+> **Cadence (updated 2026-09-02):** **Three unique pieces per day** for **one property**, then alternate the next day. Live posting is the catalog + Graph — this pack is caption history, not the scheduler.
 >
-> | Slot | Time (America/Chicago) | Format |
+> | Slot | Time (America/Chicago) | Surface |
 > |---|---|---|
-> | AM | **9:00 AM** | Still photo (this pack) |
-> | PM | **5:00 PM** | Reel — see [`2026-09-reels.md`](2026-09-reels.md) |
+> | AM | **9:00 AM** | Unique feed still (open nights allowed) |
+> | Midday | **12:00 PM** | Unique Story |
+> | PM | **5:00 PM** | Unique Reel |
 >
-> Alternate **Twenty First** ↔ **Westlight** day to day. Same property for that day’s still + Reel.
+> Alternate **Twenty First** ↔ **Westlight** day to day. Same property for that day’s feed + Story + Reel. Never reuse an image.
 >
 > **Do not** feature both homes in the same day’s posts going forward (owner direction 2026-09-01), except rare brand/engagement days.
 >
@@ -266,7 +267,8 @@ Continue **9:00 AM daily**, alternating Twenty First ↔ Westlight. Rotate remai
 
 ## Checklist
 
-- [ ] At most one new post per calendar day
+- [ ] Three unique surfaces per calendar day (feed + Story + Reel)
 - [ ] Alternate Twenty First / Westlight
+- [ ] Prefer unused media; generate if empty; recycle oldest only if needed
 - [ ] Captions lead with property brand name (not Tidewater / Majestic Sun as the brand)
-- [ ] Spot-check Scheduled after each batch
+- [ ] Spot-check the post log after each Action run

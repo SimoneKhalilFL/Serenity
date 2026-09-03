@@ -13,10 +13,10 @@ An unattended poster. It does **not** wait for Simone to approve a pack.
 | Piece | Where |
 |---|---|
 | Openings | [`data/availability-4.json`](../../data/availability-4.json) (Twenty First) and [`data/availability-5.json`](../../data/availability-5.json) (Westlight), refreshed by the iCal sync |
-| Captions | Locked templates in [`scripts/social-post.cjs`](../../scripts/social-post.cjs) — no freeform model writes live copy |
-| Publish | Meta Graph API → Facebook Page `StayAtFlorida` + the linked Instagram Business account |
-| Schedule | Target: **daily** at 9:00 AM Central once Graph API secrets work. Interim: Meta Business Suite (manual / scheduled). Workflow still lists Tue/Thu/Sat until secrets exist. |
-| Audit | [`data/social-post-log.json`](../../data/social-post-log.json) — what went live, so we do not repeat the same post |
+| Captions | Locked templates on each asset in [`scripts/social-catalog.json`](../../scripts/social-catalog.json) — no freeform model writes live copy |
+| Publish | Meta Graph API → Facebook Page `StayAtFlorida` + the linked Instagram Business account (feed, Story, Reel) |
+| Schedule | **Daily** America/Chicago: 9:00 AM feed, 12:00 PM Story, 5:00 PM Reel |
+| Audit | [`data/social-post-log.json`](../../data/social-post-log.json) + [`data/social-used-media.json`](../../data/social-used-media.json) — never reuse an image, video, or visual family |
 
 TikTok is out of scope until an account exists.
 
@@ -26,26 +26,29 @@ TikTok is out of scope until an account exists.
 
 ## Cadence
 
-**Two posts per day**, same property, Facebook + Instagram together. **Alternate** properties day to day:
+**Three unique pieces every day**, same property, Facebook + Instagram together. **Alternate** properties day to day. Prefer unused catalog media. If a surface is empty, generate from unused lodging stills (Ken Burns for Reels). Recycle the oldest asset only when nothing unused is left.
 
-| Slot | Time (America/Chicago) | Format |
-|---|---|---|
-| AM | **9:00 AM** | Still photo (existing calendar) |
-| PM | **5:00 PM** | **Reel** (Ken Burns stills for now) |
+| Slot | Time (America/Chicago) | Surface | What |
+|---|---|---|---|
+| AM | **9:00 AM** | **Feed** | Unique still. Open nights (3+ nights) are added to the caption when that home has them. Saturday feed uses an unused guest quote when one remains. |
+| Midday | **12:00 PM** | **Story** | Unique 9:16 still. Expires in 24 hours. |
+| PM | **5:00 PM** | **Reel** | Unique MP4. Ken Burns stills until phone clips exist. |
 
 | Pattern | Property |
 |---|---|
 | Day A | **Twenty First** (Panama City Beach) |
 | Day B | **Westlight** (Miramar Beach) |
 
-Still pack: [`docs/social/packs/2026-09-02-dual-daily.md`](../social/packs/2026-09-02-dual-daily.md).  
-Reels pack + MP4s: [`docs/social/packs/2026-09-reels.md`](../social/packs/2026-09-reels.md) · [`docs/social/schedule-ready/reels/`](../social/schedule-ready/reels/).  
-Strategy source: [`docs/social/packs/2026-09-30-day-calendar.md`](../social/packs/2026-09-30-day-calendar.md).  
-Creative shelves: [`docs/social/ads/tw-pcb-hooks/`](../social/ads/tw-pcb-hooks/), [`docs/social/ads/ms-miramar-hooks/`](../social/ads/ms-miramar-hooks/), [`docs/social/ads/ms-morning-balcony/`](../social/ads/ms-morning-balcony/). Photos: [`docs/social/schedule-ready/`](../social/schedule-ready/).
+Catalog (source of truth for unused media): [`scripts/social-catalog.json`](../../scripts/social-catalog.json).  
+Still / Reel files: [`docs/social/schedule-ready/`](../social/schedule-ready/).  
+Story stills: [`docs/social/media/clips/family-beach/`](../social/media/clips/family-beach/).  
+Strategy source: [`docs/social/packs/2026-09-30-day-calendar.md`](../social/packs/2026-09-30-day-calendar.md).
 
-Openings / guest-proof rotate into the daily slots (not a third post). Automated Graph posting uses GitHub secrets (`META_PAGE_ACCESS_TOKEN`, `META_PAGE_ID`, `META_IG_USER_ID`) via `npm run social-post` / Actions.
+If a surface has no unused catalog asset left for that day’s home, the run **generates** new media from unused `images/lodging/` stills (a Ken Burns MP4 for Reels) and adds it to the catalog. If lodging is exhausted too, it **recycles** the oldest asset for that home and surface — never the same file twice on the same calendar day. Preview: `npm run social-post:plan`.
 
-**Manual backlog:** schedule dual-daily stills/reels from Meta Business Suite when you want Story or Facebook-group shares Graph does not cover yet.
+Automated Graph posting uses GitHub secrets (`META_PAGE_ACCESS_TOKEN`, `META_PAGE_ID`, `META_IG_USER_ID`) via `npm run social-post` / Actions.
+
+**Manual backlog:** Facebook-group shares (Graph does not post to groups). In Business Suite, share the day’s feed to the groups below. Stories and Reels go out from Graph.
 
 **Business Suite defaults (every post):**
 
@@ -92,9 +95,9 @@ Hashtags stay short, after a blank line:
 
 ---
 
-## One-time Meta setup (required before anything posts)
+## One-time Meta setup (done 2026-09-02)
 
-The workflow is a no-op until these GitHub Actions secrets exist. Create them once.
+Secrets exist. This section is the rebuild path if a token is revoked.
 
 ### 1. Link Instagram to the Facebook Page
 
@@ -136,28 +139,16 @@ Old `facebook.com/FloridaRental2020` and `instagram.com/majestic_sun_florida` do
 
 Creator payouts are locked until audience grows. Near-term revenue path remains direct bookings via consistent posts, Story sharing, and group distribution (see cadence above).
 
-**API token status (2026-09-01):** Facebook + Instagram are linked and usable in Meta Business Suite. Local IDs are saved in gitignored `scripts/social-meta.config.json`:
+**API token status (2026-09-02):** Graph is live. System-user token + GitHub secrets are set. First live feed post: Westlight morning balcony.
 
 | ID | Value |
 |---|---|
 | Facebook Page ID | `274457265757585` |
-| Instagram user id (from public profile) | `62203541066` — confirm in Graph Explorer after SMS (`/{page-id}?fields=instagram_business_account`) |
+| Instagram business id | `17841462311985442` (`@stayatflorida`) — not the public profile id `62203541066` |
+| App | StayAtFlorida Poster (`1053402664152580`) |
+| System user | stayatflorida poster bot |
 
-**Blocked only on Meta for Developers SMS** to `(281) 706-1652`. Until that clears, publish daily from Business Suite (packs under [`docs/social/packs/`](../social/packs/)).
-
-**After SMS succeeds (do in order):**
-
-1. Finish Developers registration (Contact info → About you).
-2. [developers.facebook.com/apps](https://developers.facebook.com/apps) → **Create app** → **Business** → name `StayAtFlorida Social`.
-3. Add **Facebook Login for Business** + **Instagram**.
-4. Graph API Explorer → user token with `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `instagram_basic`, `instagram_content_publish`, `business_management`.
-5. `GET /me/accounts` → copy StayAtFlorida **Page access token**.
-6. Prefer never-expiring token: Business Settings → **System users** → generate token for this Page with the same permissions.
-7. GitHub → **Settings → Secrets and variables → Actions** → set:
-   - `META_PAGE_ACCESS_TOKEN` = Page token
-   - `META_PAGE_ID` = `274457265757585`
-   - `META_IG_USER_ID` = confirmed Instagram business id
-8. Run workflow **Post social openings** once with `dry_run=true`, then a live `lifestyle` or `openings` dispatch.
+Local IDs live in gitignored `scripts/social-meta.config.json`. Do not use the leftover Login-only app **StayAtFlorida Social**.
 
 ### 2. Create a Meta app and a long-lived Page token
 
@@ -185,7 +176,10 @@ Local dry run (no publish):
 
 ```bash
 npm run social-openings
+npm run social-post:plan
 npm run social-post:dry
+npm run social-post -- --dry-run --surface story
+npm run social-post -- --dry-run --surface reel
 ```
 
 Local live post (uses `.env` or `scripts/social-meta.config.json` — both gitignored):
@@ -198,14 +192,14 @@ npm run social-post
 
 ## How a run works
 
-1. GitHub Action fires (schedule or **Run workflow**).
-2. `scripts/social-post.cjs` reads availability JSON + `config.js`.
-3. It picks the slot (weekday, or the `slot` input on a manual run).
-4. It composes caption + public photo URL on `stayatflorida.com`.
+1. GitHub Action fires (daily 9:00 / 12:00 / 17:00 CT, or **Run workflow**).
+2. `scripts/social-post.cjs` reads the unique catalog, used-media burn list, availability JSON, and `config.js`.
+3. It keeps today’s property (alternate Twenty First ↔ Westlight) and picks the next unused asset for that surface. Empty surface → generate from unused lodging → recycle oldest.
+4. Feed captions add **Open nights:** when that home has 3+ night openings. Story and Reel stay lifestyle.
 5. A forbidden-language scan rejects the caption if it drifts.
-6. It publishes the photo to Facebook, then Instagram (Instagram needs a public HTTPS image URL — we use the live site).
-7. If Instagram fails (aspect ratio, token scope), Facebook still publishes and the log records the Instagram error.
-8. The run appends `data/social-post-log.json` and commits it so the next run can de-dupe.
+6. It publishes that surface to Facebook, then Instagram. Lodging photos use `stayatflorida.com`. Pack / clip files use the public GitHub raw URL.
+7. If Instagram fails, Facebook can still publish and the log records the error. A Story needs at least one channel.
+8. The run appends `data/social-post-log.json` and `data/social-used-media.json` (and any newly generated catalog/Reel files) and commits them. Unused media stays unused until generate/recycle needs it.
 
 **Kill the loop:** set `SOCIAL_POST_ENABLED=false`, or disable the **Post social openings** workflow in the Actions tab.
 
@@ -219,7 +213,7 @@ Followers are not the score. For 30 days after go-live, watch:
 - Inquiries that mention Facebook or Instagram
 - Whether promoted date windows actually booked
 
-If a month of posts produces no inquiries, change the openings angle or drop the Tuesday slot — do not post more often.
+If a month of posts produces no inquiries, change the openings angle — do not add a fourth daily surface.
 
 ---
 

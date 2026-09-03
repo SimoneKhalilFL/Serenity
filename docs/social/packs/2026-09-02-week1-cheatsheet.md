@@ -1,8 +1,8 @@
-# Week 1 cheat sheet — **1 post/day, alternating**
+# Week 1 cheat sheet — **3 unique surfaces/day, alternating**
 
-**Rule (2026-09-01):** One post per day at **9:00 AM** CT. Alternate **Twenty First** ↔ **Westlight**.  
-**Account:** Stayatflorida + stayatflorida · Share to Story  
-**Photos:** `docs/social/schedule-ready/`  
+**Rule (2026-09-02):** Daily **feed 9:00 AM**, **Story 12:00 PM**, **Reel 5:00 PM** CT. Alternate **Twenty First** ↔ **Westlight**. Never reuse an image.  
+**Account:** Stayatflorida + stayatflorida  
+**Scheduler:** [`scripts/social-catalog.json`](../../../scripts/social-catalog.json) + Graph. This table is history / fallback copy.  
 **Full captions:** [`2026-09-02-dual-daily.md`](2026-09-02-dual-daily.md)
 
 | Date | Property | Photo | First line |

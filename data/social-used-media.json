@@ -1,0 +1,17 @@
+{
+  "paths": [
+    "images/lodging/ms-morning-balcony-4x5.jpg",
+    "images/lodging/ms-morning-balcony-9x16.jpg",
+    "images/lodging/ms-morning-balcony-1x1.jpg",
+    "docs/social/ads/ms-morning-balcony/ms-morning-balcony-4x5-feed.jpg",
+    "docs/social/ads/ms-morning-balcony/ms-morning-balcony-9x16-stories.jpg",
+    "docs/social/ads/ms-morning-balcony/ms-morning-balcony-1x1-square.jpg",
+    "docs/social/schedule-ready/01-pm-ms-morning.jpg",
+    "images/lodging/tw-balcony-sunset.png",
+    "docs/social/ads/tw-pcb-hooks/tw-balcony-sunset-clean.png"
+  ],
+  "families": [
+    "ms-morning-balcony",
+    "tw-sunset"
+  ]
+}

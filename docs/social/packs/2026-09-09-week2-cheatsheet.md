@@ -1,6 +1,7 @@
-# Week 2 cheat sheet — 1 post/day, alternating (Sep 9–15)
+# Week 2 cheat sheet — 3 unique surfaces/day, alternating (Sep 9–15)
 
-**9:00 AM CT** · Stayatflorida + stayatflorida · photos in `docs/social/schedule-ready/`  
+**9:00 AM feed · 12:00 PM Story · 5:00 PM Reel** CT · Stayatflorida + stayatflorida  
+**Scheduler:** unique catalog — do not reuse these photos on another surface.  
 **Captions:** [`2026-09-02-dual-daily.md`](2026-09-02-dual-daily.md)
 
 | Date | Property | Photo | First line |

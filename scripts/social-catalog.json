@@ -1,0 +1,2696 @@
+{
+  "repo": "SimoneKhalilFL/Serenity",
+  "assets": [
+    {
+      "id": "feed-tw-movie-morning",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-morning-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-morning-4x5.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee, then the water. Twenty First sits above this stretch of Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-morning"
+    },
+    {
+      "id": "feed-tw-movie-view",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-view-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-view-4x5.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "The Gulf under Twenty First. A real living room when you come back inside."
+      ],
+      "pairReel": "reel-tw-movie-view"
+    },
+    {
+      "id": "feed-tw-movie-evening",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-evening-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Cook in, linger, then sleep by the water. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-evening"
+    },
+    {
+      "id": "feed-tw-movie-stay",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-stay-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-stay-4x5.jpg",
+      "hook": "Come inside.",
+      "lines": [
+        "A real bedroom and bunks after the beach. Twenty First is built for lingering."
+      ],
+      "pairReel": "reel-tw-movie-stay"
+    },
+    {
+      "id": "feed-tw-movie-day",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-day-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-day-4x5.jpg",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Your condo is only part of the vacation. Twenty First sits in the middle of both."
+      ],
+      "pairReel": "reel-tw-movie-day"
+    },
+    {
+      "id": "feed-wl-movie-morning",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-morning-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Gulf in front of you. Coffee on the balcony. Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-morning"
+    },
+    {
+      "id": "feed-wl-movie-view",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-view-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-view-4x5.jpg",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ],
+      "pairReel": "reel-wl-movie-view"
+    },
+    {
+      "id": "feed-wl-movie-evening",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-evening-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-evening-4x5.jpg",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-evening"
+    },
+    {
+      "id": "feed-wl-movie-stay",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-stay-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-stay-4x5.jpg",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-stay"
+    },
+    {
+      "id": "feed-wl-movie-day",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-day-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-day-4x5.jpg",
+      "hook": "What a beach condo should actually feel like",
+      "lines": [
+        "A real kitchen. Room to linger. Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-day"
+    },
+    {
+      "id": "feed-tw-movie-balcony",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-balcony-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-balcony-4x5.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee on the balcony. The Gulf does the rest. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-balcony"
+    },
+    {
+      "id": "feed-tw-movie-gulf",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-gulf-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-gulf-4x5.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "Sugar-white sand under Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-gulf"
+    },
+    {
+      "id": "feed-tw-movie-rooms",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-rooms-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-rooms-4x5.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Come inside. Then go straight to the balcony."
+      ],
+      "pairReel": "reel-tw-movie-rooms"
+    },
+    {
+      "id": "feed-tw-movie-dinner",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-dinner-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-dinner-4x5.jpg",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Dinner with the Gulf on the side. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-dinner"
+    },
+    {
+      "id": "feed-tw-movie-pool",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-pool-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-pool-4x5.jpg",
+      "hook": "Beach. Pool. Repeat.",
+      "lines": [
+        "Your condo is only part of the vacation. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-pool"
+    },
+    {
+      "id": "feed-tw-movie-sleep",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-sleep-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-sleep-4x5.jpg",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "A real bedroom after the beach. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-sleep"
+    },
+    {
+      "id": "feed-tw-movie-arrive",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-arrive-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-arrive-4x5.jpg",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot."
+      ],
+      "pairReel": "reel-tw-movie-arrive"
+    },
+    {
+      "id": "feed-tw-movie-kitchen",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-kitchen-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-kitchen-4x5.jpg",
+      "hook": "Vacation breakfast, Gulf on the side.",
+      "lines": [
+        "Pajamas are acceptable attire. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-kitchen"
+    },
+    {
+      "id": "feed-wl-movie-gulf",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-gulf-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-gulf-4x5.jpg",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ],
+      "pairReel": "reel-wl-movie-gulf"
+    },
+    {
+      "id": "feed-wl-movie-sunset",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-sunset-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-sunset-4x5.jpg",
+      "hook": "Tonight's entertainment.",
+      "lines": [
+        "No reservations required. Westlight looks west for a reason."
+      ],
+      "pairReel": "reel-wl-movie-sunset"
+    },
+    {
+      "id": "feed-wl-movie-coffee",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-coffee-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-coffee-4x5.jpg",
+      "hook": "A much better morning routine",
+      "lines": [
+        "Step 1: Make coffee. Step 2: Open the balcony door."
+      ],
+      "pairReel": "reel-wl-movie-coffee"
+    },
+    {
+      "id": "feed-wl-movie-living",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-living-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-living-4x5.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ],
+      "pairReel": "reel-wl-movie-living"
+    },
+    {
+      "id": "feed-wl-movie-pool",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-pool-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-pool-4x5.jpg",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Vacation does not need to be complicated. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-pool"
+    },
+    {
+      "id": "feed-wl-movie-sleep2",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-sleep2-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-sleep2-4x5.jpg",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting."
+      ],
+      "pairReel": "reel-wl-movie-sleep2"
+    },
+    {
+      "id": "feed-wl-movie-resort",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-resort-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-resort-4x5.jpg",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-resort"
+    },
+    {
+      "id": "feed-tw-movie-hook-morning",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-morning-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-morning-4x5.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A walk on the sand, then the balcony. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-hook-morning"
+    },
+    {
+      "id": "feed-tw-movie-hook-wait",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-wait-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-wait-4x5.jpg",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "The best room reveal ends with the Gulf."
+      ],
+      "pairReel": "reel-tw-movie-hook-wait"
+    },
+    {
+      "id": "feed-tw-movie-hook-pov",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-pov-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-pov-4x5.jpg",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "Vacation starts when the shoreline is yours."
+      ],
+      "pairReel": "reel-tw-movie-hook-pov"
+    },
+    {
+      "id": "feed-tw-movie-hook-evening",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-evening-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-evening-4x5.jpg",
+      "hook": "This could be your evening.",
+      "lines": [
+        "Stay for the gold hour. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-hook-evening"
+    },
+    {
+      "id": "feed-tw-movie-hook-living",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-living-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-living-4x5.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. The Gulf a few steps away."
+      ],
+      "pairReel": "reel-tw-movie-hook-living"
+    },
+    {
+      "id": "feed-tw-movie-hook-reasons",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-reasons-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-reasons-4x5.jpg",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views, a balcony, the beach, resort amenities, Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-hook-reasons"
+    },
+    {
+      "id": "feed-tw-movie-hook-direct",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-direct-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-direct-4x5.jpg",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "You are booking with the people who actually know the home."
+      ],
+      "pairReel": "reel-tw-movie-hook-direct"
+    },
+    {
+      "id": "feed-tw-movie-hook-moment",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-moment-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-moment-4x5.jpg",
+      "hook": "The moment vacation starts",
+      "lines": [
+        "The trip they will keep talking about. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-hook-moment"
+    },
+    {
+      "id": "feed-tw-movie-hook-proof",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-proof-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-proof-4x5.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "No filter needed when the Gulf looks like this."
+      ],
+      "pairReel": "reel-tw-movie-hook-proof"
+    },
+    {
+      "id": "feed-tw-movie-hook-living-alt",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-hook-living-alt-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-living-alt-4x5.jpg",
+      "hook": "Come inside.",
+      "lines": [
+        "Then go back out for sunset. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-hook-living-alt"
+    },
+    {
+      "id": "feed-wl-movie-hook-morning",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-morning-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-morning-4x5.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A shoreline walk, then coffee on the Westlight balcony."
+      ],
+      "pairReel": "reel-wl-movie-hook-morning"
+    },
+    {
+      "id": "feed-wl-movie-hook-wait",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-wait-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-wait-4x5.jpg",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "Westlight. The reveal is the Gulf."
+      ],
+      "pairReel": "reel-wl-movie-hook-wait"
+    },
+    {
+      "id": "feed-wl-movie-hook-pov",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-pov-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-pov-4x5.jpg",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "You know that moment when vacation actually starts?"
+      ],
+      "pairReel": "reel-wl-movie-hook-pov"
+    },
+    {
+      "id": "feed-wl-movie-hook-living",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-living-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-living-4x5.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ],
+      "pairReel": "reel-wl-movie-hook-living"
+    },
+    {
+      "id": "feed-wl-movie-hook-reasons",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-reasons-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-reasons-4x5.jpg",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views, a balcony, the beach, resort amenities, Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-hook-reasons"
+    },
+    {
+      "id": "feed-wl-movie-hook-direct",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-direct-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-direct-4x5.jpg",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "Miramar Beach or Panama City Beach \u2014 book with the people who know the home."
+      ],
+      "pairReel": "reel-wl-movie-hook-direct"
+    },
+    {
+      "id": "feed-wl-movie-hook-moment",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-moment-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-moment-4x5.jpg",
+      "hook": "The moment vacation starts",
+      "lines": [
+        "Miramar Beach days look like this. Westlight is the quiet place you return to."
+      ],
+      "pairReel": "reel-wl-movie-hook-moment"
+    },
+    {
+      "id": "feed-wl-movie-hook-beachfront",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-beachfront-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-beachfront-4x5.jpg",
+      "hook": "Beachfront mornings begin here.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-hook-beachfront"
+    },
+    {
+      "id": "feed-wl-movie-hook-fullview",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-fullview-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-fullview-4x5.jpg",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ],
+      "pairReel": "reel-wl-movie-hook-fullview"
+    },
+    {
+      "id": "feed-wl-movie-hook-dinner",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-hook-dinner-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-dinner-4x5.jpg",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-hook-dinner"
+    },
+    {
+      "id": "feed-tw-movie-bath",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-bath-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-bath-4x5.jpg",
+      "hook": "A real home after the beach.",
+      "lines": [
+        "Not a hotel stall. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-bath"
+    },
+    {
+      "id": "feed-tw-movie-bath2",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "post-tw-movie-bath2-feed",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-bath2-4x5.jpg",
+      "hook": "Come inside.",
+      "lines": [
+        "Then go back out for the gold hour. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-bath2"
+    },
+    {
+      "id": "feed-wl-movie-bath",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-bath-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-bath-4x5.jpg",
+      "hook": "A real home after the beach.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-bath"
+    },
+    {
+      "id": "feed-wl-movie-extras",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "post-wl-movie-extras-feed",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-extras-4x5.jpg",
+      "hook": "Built for a real week.",
+      "lines": [
+        "Laundry. A court. The Gulf downstairs. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-extras"
+    },
+    {
+      "id": "feed-tw-morning",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-morning",
+      "burns": [
+        "tw-morning-reel"
+      ],
+      "path": "docs/social/schedule-ready/01-am-tw-morning.png",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee in hand. Gulf in front of you. Nowhere you need to be."
+      ]
+    },
+    {
+      "id": "feed-tw-gulf",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-gulf",
+      "burns": [
+        "tw-gulf-reel",
+        "tw-morning-reel",
+        "tw-evening-reel",
+        "tw-pov-reel"
+      ],
+      "path": "docs/social/schedule-ready/02-am-tw-gulf.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "No filter needed when the Gulf looks like this. Your own private balcony, sugar-white sand below, and sunsets waiting every evening."
+      ]
+    },
+    {
+      "id": "feed-tw-wait",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-wait",
+      "burns": [
+        "tw-gulf-reel",
+        "tw-pov-reel"
+      ],
+      "path": "docs/social/schedule-ready/03-am-tw-wait-view.png",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "The best room reveal is the one that ends with the Gulf."
+      ]
+    },
+    {
+      "id": "feed-tw-living",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-living",
+      "burns": [
+        "tw-gulf-reel"
+      ],
+      "path": "docs/social/schedule-ready/04-am-tw-living.png",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Afternoon naps here. Sunset watching here. Shoes optional."
+      ]
+    },
+    {
+      "id": "feed-tw-florida-mornings",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-florida-mornings",
+      "path": "docs/social/schedule-ready/05-am-tw-florida-mornings.jpg",
+      "hook": "Florida mornings over ordinary mornings.",
+      "lines": [
+        "Sunrise walks, warm sand, quiet water, and absolutely no commute."
+      ]
+    },
+    {
+      "id": "feed-tw-evening",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-evening",
+      "burns": [
+        "tw-evening-reel"
+      ],
+      "path": "docs/social/schedule-ready/07-am-tw-evening.png",
+      "hook": "This could be your evening.",
+      "lines": [
+        "Sit on the balcony. Pour something cold. Watch the Gulf turn gold."
+      ]
+    },
+    {
+      "id": "feed-tw-pov",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-pov",
+      "burns": [
+        "tw-pov-reel"
+      ],
+      "path": "docs/social/schedule-ready/08-am-tw-pov.png",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "You know that moment when vacation actually starts? Coffee in hand. Gulf in front of you. Nowhere you need to be."
+      ]
+    },
+    {
+      "id": "feed-tw-5reasons",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-5reasons",
+      "path": "docs/social/schedule-ready/09-am-tw-5reasons.png",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views from the living room. A private balcony. Direct beach access. Resort amenities. Panama City Beach outside your door."
+      ]
+    },
+    {
+      "id": "feed-tw-book-direct",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-book-direct",
+      "path": "docs/social/schedule-ready/10-am-tw-book-direct.png",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "When you book directly with StayAtFlorida, you are booking with the people who actually know the home."
+      ]
+    },
+    {
+      "id": "feed-tw-hero",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-hero",
+      "path": "images/lodging/tw-hero-view.png",
+      "hook": "The view does the talking.",
+      "lines": [
+        "Gulf-front mornings from Twenty First. Panama City Beach stays this quiet if you want them to."
+      ]
+    },
+    {
+      "id": "feed-tw-beach-view",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-beach-view",
+      "path": "images/lodging/tw-01-beach-view.jpg",
+      "hook": "Sugar-white sand. Your balcony.",
+      "lines": [
+        "This is the stretch of Panama City Beach waiting under Twenty First."
+      ]
+    },
+    {
+      "id": "feed-tw-coffee",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-coffee",
+      "path": "images/lodging/tw-balcony-coffee.png",
+      "hook": "The meeting has been moved.",
+      "lines": [
+        "New location: Gulf-front balcony. Dress code: barefoot. Agenda: nothing."
+      ]
+    },
+    {
+      "id": "feed-tw-dining-sunset",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-dining",
+      "path": "images/lodging/tw-dining-sunset.png",
+      "hook": "Dinner with this on the side.",
+      "lines": [
+        "The Gulf does not ask you to dress up. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "feed-tw-living-photo",
+      "listingId": 4,
+      "surface": "feed",
+      "family": "tw-living-photo",
+      "path": "images/lodging/tw-living-01.png",
+      "hook": "Come inside. Then go straight to the balcony.",
+      "lines": [
+        "A real living room, then that Gulf view. Twenty First is built for lingering."
+      ]
+    },
+    {
+      "id": "feed-ms-living",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-living",
+      "burns": [
+        "ms-living-reel",
+        "ms-wait-reel",
+        "ms-morning-reel"
+      ],
+      "path": "docs/social/schedule-ready/02-pm-ms-living.png",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Afternoon naps here. Sunset watching here. Shoes optional."
+      ]
+    },
+    {
+      "id": "feed-ms-5reasons",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-5reasons",
+      "path": "docs/social/schedule-ready/03-pm-ms-5reasons.png",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views from the living room. A private balcony. Direct beach access. Resort amenities. Miramar Beach right outside."
+      ]
+    },
+    {
+      "id": "feed-ms-living-week",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-living-week",
+      "path": "docs/social/schedule-ready/04-pm-ms-living-week.png",
+      "hook": "This could be your morning \u2014 Miramar Beach.",
+      "lines": [
+        "No alarm clock needed. Coffee, Gulf views, and nowhere you need to be."
+      ]
+    },
+    {
+      "id": "feed-ms-florida-mornings",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-florida-mornings",
+      "path": "docs/social/schedule-ready/05-pm-ms-florida-mornings.jpg",
+      "hook": "A much better morning routine",
+      "lines": [
+        "Step 1: Make coffee. Step 2: Open the balcony door. Step 3: Remember you booked the right place."
+      ]
+    },
+    {
+      "id": "feed-ms-beaches",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "both-beaches",
+      "path": "docs/social/schedule-ready/06-pm-ms-ab-beaches.png",
+      "hook": "Miramar Beach or Panama City Beach?",
+      "lines": [
+        "You get one Florida beach trip. Where are you going? A) Miramar Beach  B) Panama City Beach"
+      ]
+    },
+    {
+      "id": "feed-ms-feel",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-feel",
+      "path": "docs/social/schedule-ready/07-pm-ms-feel.png",
+      "hook": "What a beach condo should actually feel like",
+      "lines": [
+        "Comfortable enough to feel like home. Different enough to remind you that you are on vacation."
+      ]
+    },
+    {
+      "id": "feed-ms-wait",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-wait",
+      "burns": [
+        "ms-wait-reel"
+      ],
+      "path": "docs/social/schedule-ready/08-pm-ms-view.png",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "The best room reveal is the one that ends with the Gulf."
+      ]
+    },
+    {
+      "id": "feed-ms-fullview",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-fullview",
+      "burns": [
+        "ms-living-reel"
+      ],
+      "path": "docs/social/schedule-ready/09-pm-ms-fullview.png",
+      "hook": "This is the living room view.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ]
+    },
+    {
+      "id": "feed-ms-pov",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-pov",
+      "burns": [
+        "ms-pov-reel"
+      ],
+      "path": "docs/social/schedule-ready/10-pm-ms-pov.png",
+      "hook": "The moment you realize the listing photos were accurate.",
+      "lines": [
+        "The goal is not clever photography. The goal is for the real view to be even better."
+      ]
+    },
+    {
+      "id": "feed-ms-fullview-photo",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-fullview-photo",
+      "path": "images/lodging/MS-FullView-1.png",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight. Miramar Beach. The water stays in every room that matters."
+      ]
+    },
+    {
+      "id": "feed-ms-dinner",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-dinner",
+      "path": "images/lodging/MS_Balcony_Dinner_Setup.png",
+      "hook": "Reserved for you.",
+      "lines": [
+        "Morning coffee. A quiet dinner. This corner becomes the most-used seat in the condo."
+      ]
+    },
+    {
+      "id": "feed-ms-sunset",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-sunset",
+      "path": "images/lodging/ms-10-sunset-view.jpg",
+      "hook": "Tonight's entertainment.",
+      "lines": [
+        "No reservations required. Westlight looks west for a reason."
+      ]
+    },
+    {
+      "id": "feed-ms-gulf-balcony",
+      "listingId": 5,
+      "surface": "feed",
+      "family": "ms-gulf-balcony",
+      "path": "images/lodging/ms-06-gulf-balcony.png",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "story-tw-movie-morning",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-morning-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-morning-9x16.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee, then the water. Twenty First sits above this stretch of Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-morning"
+    },
+    {
+      "id": "story-tw-movie-view",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-view-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-view-9x16.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "The Gulf under Twenty First. A real living room when you come back inside."
+      ],
+      "pairReel": "reel-tw-movie-view"
+    },
+    {
+      "id": "story-tw-movie-evening",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-evening-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-evening-9x16.jpg",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Cook in, linger, then sleep by the water. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-evening"
+    },
+    {
+      "id": "story-tw-movie-stay",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-stay-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-stay-9x16.jpg",
+      "hook": "Come inside.",
+      "lines": [
+        "A real bedroom and bunks after the beach. Twenty First is built for lingering."
+      ],
+      "pairReel": "reel-tw-movie-stay"
+    },
+    {
+      "id": "story-tw-movie-day",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-day-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-day-9x16.jpg",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Your condo is only part of the vacation. Twenty First sits in the middle of both."
+      ],
+      "pairReel": "reel-tw-movie-day"
+    },
+    {
+      "id": "story-wl-movie-morning",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-morning-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-morning-9x16.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Gulf in front of you. Coffee on the balcony. Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-morning"
+    },
+    {
+      "id": "story-wl-movie-view",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-view-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-view-9x16.jpg",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ],
+      "pairReel": "reel-wl-movie-view"
+    },
+    {
+      "id": "story-wl-movie-evening",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-evening-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-evening-9x16.jpg",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-evening"
+    },
+    {
+      "id": "story-wl-movie-stay",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-stay-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-stay-9x16.jpg",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-stay"
+    },
+    {
+      "id": "story-wl-movie-day",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-day-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-day-9x16.jpg",
+      "hook": "What a beach condo should actually feel like",
+      "lines": [
+        "A real kitchen. Room to linger. Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-day"
+    },
+    {
+      "id": "story-tw-movie-balcony",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-balcony-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-balcony-9x16.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee on the balcony. The Gulf does the rest. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-balcony"
+    },
+    {
+      "id": "story-tw-movie-gulf",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-gulf-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-gulf-9x16.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "Sugar-white sand under Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-gulf"
+    },
+    {
+      "id": "story-tw-movie-rooms",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-rooms-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-rooms-9x16.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Come inside. Then go straight to the balcony."
+      ],
+      "pairReel": "reel-tw-movie-rooms"
+    },
+    {
+      "id": "story-tw-movie-dinner",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-dinner-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-dinner-9x16.jpg",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Dinner with the Gulf on the side. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-dinner"
+    },
+    {
+      "id": "story-tw-movie-pool",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-pool-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-pool-9x16.jpg",
+      "hook": "Beach. Pool. Repeat.",
+      "lines": [
+        "Your condo is only part of the vacation. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-pool"
+    },
+    {
+      "id": "story-tw-movie-sleep",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-sleep-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-sleep-9x16.jpg",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "A real bedroom after the beach. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-sleep"
+    },
+    {
+      "id": "story-tw-movie-arrive",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-arrive-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-arrive-9x16.jpg",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot."
+      ],
+      "pairReel": "reel-tw-movie-arrive"
+    },
+    {
+      "id": "story-tw-movie-kitchen",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-kitchen-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-kitchen-9x16.jpg",
+      "hook": "Vacation breakfast, Gulf on the side.",
+      "lines": [
+        "Pajamas are acceptable attire. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-kitchen"
+    },
+    {
+      "id": "story-wl-movie-gulf",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-gulf-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-gulf-9x16.jpg",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ],
+      "pairReel": "reel-wl-movie-gulf"
+    },
+    {
+      "id": "story-wl-movie-sunset",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-sunset-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-sunset-9x16.jpg",
+      "hook": "Tonight's entertainment.",
+      "lines": [
+        "No reservations required. Westlight looks west for a reason."
+      ],
+      "pairReel": "reel-wl-movie-sunset"
+    },
+    {
+      "id": "story-wl-movie-coffee",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-coffee-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-coffee-9x16.jpg",
+      "hook": "A much better morning routine",
+      "lines": [
+        "Step 1: Make coffee. Step 2: Open the balcony door."
+      ],
+      "pairReel": "reel-wl-movie-coffee"
+    },
+    {
+      "id": "story-wl-movie-living",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-living-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-living-9x16.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ],
+      "pairReel": "reel-wl-movie-living"
+    },
+    {
+      "id": "story-wl-movie-pool",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-pool-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-pool-9x16.jpg",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Vacation does not need to be complicated. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-pool"
+    },
+    {
+      "id": "story-wl-movie-sleep2",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-sleep2-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-sleep2-9x16.jpg",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting."
+      ],
+      "pairReel": "reel-wl-movie-sleep2"
+    },
+    {
+      "id": "story-wl-movie-resort",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-resort-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-resort-9x16.jpg",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-resort"
+    },
+    {
+      "id": "story-tw-movie-hook-morning",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-morning-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-morning-9x16.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A walk on the sand, then the balcony. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-hook-morning"
+    },
+    {
+      "id": "story-tw-movie-hook-wait",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-wait-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-wait-9x16.jpg",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "The best room reveal ends with the Gulf."
+      ],
+      "pairReel": "reel-tw-movie-hook-wait"
+    },
+    {
+      "id": "story-tw-movie-hook-pov",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-pov-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-pov-9x16.jpg",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "Vacation starts when the shoreline is yours."
+      ],
+      "pairReel": "reel-tw-movie-hook-pov"
+    },
+    {
+      "id": "story-tw-movie-hook-evening",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-evening-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-evening-9x16.jpg",
+      "hook": "This could be your evening.",
+      "lines": [
+        "Stay for the gold hour. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-hook-evening"
+    },
+    {
+      "id": "story-tw-movie-hook-living",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-living-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-living-9x16.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. The Gulf a few steps away."
+      ],
+      "pairReel": "reel-tw-movie-hook-living"
+    },
+    {
+      "id": "story-tw-movie-hook-reasons",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-reasons-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-reasons-9x16.jpg",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views, a balcony, the beach, resort amenities, Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-hook-reasons"
+    },
+    {
+      "id": "story-tw-movie-hook-direct",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-direct-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-direct-9x16.jpg",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "You are booking with the people who actually know the home."
+      ],
+      "pairReel": "reel-tw-movie-hook-direct"
+    },
+    {
+      "id": "story-tw-movie-hook-moment",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-moment-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-moment-9x16.jpg",
+      "hook": "The moment vacation starts",
+      "lines": [
+        "The trip they will keep talking about. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-hook-moment"
+    },
+    {
+      "id": "story-tw-movie-hook-proof",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-proof-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-proof-9x16.jpg",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "No filter needed when the Gulf looks like this."
+      ],
+      "pairReel": "reel-tw-movie-hook-proof"
+    },
+    {
+      "id": "story-tw-movie-hook-living-alt",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-hook-living-alt-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-hook-living-alt-9x16.jpg",
+      "hook": "Come inside.",
+      "lines": [
+        "Then go back out for sunset. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-hook-living-alt"
+    },
+    {
+      "id": "story-wl-movie-hook-morning",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-morning-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-morning-9x16.jpg",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A shoreline walk, then coffee on the Westlight balcony."
+      ],
+      "pairReel": "reel-wl-movie-hook-morning"
+    },
+    {
+      "id": "story-wl-movie-hook-wait",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-wait-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-wait-9x16.jpg",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "Westlight. The reveal is the Gulf."
+      ],
+      "pairReel": "reel-wl-movie-hook-wait"
+    },
+    {
+      "id": "story-wl-movie-hook-pov",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-pov-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-pov-9x16.jpg",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "You know that moment when vacation actually starts?"
+      ],
+      "pairReel": "reel-wl-movie-hook-pov"
+    },
+    {
+      "id": "story-wl-movie-hook-living",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-living-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-living-9x16.jpg",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ],
+      "pairReel": "reel-wl-movie-hook-living"
+    },
+    {
+      "id": "story-wl-movie-hook-reasons",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-reasons-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-reasons-9x16.jpg",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views, a balcony, the beach, resort amenities, Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-hook-reasons"
+    },
+    {
+      "id": "story-wl-movie-hook-direct",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-direct-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-direct-9x16.jpg",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "Miramar Beach or Panama City Beach \u2014 book with the people who know the home."
+      ],
+      "pairReel": "reel-wl-movie-hook-direct"
+    },
+    {
+      "id": "story-wl-movie-hook-moment",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-moment-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-moment-9x16.jpg",
+      "hook": "The moment vacation starts",
+      "lines": [
+        "Miramar Beach days look like this. Westlight is the quiet place you return to."
+      ],
+      "pairReel": "reel-wl-movie-hook-moment"
+    },
+    {
+      "id": "story-wl-movie-hook-beachfront",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-beachfront-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-beachfront-9x16.jpg",
+      "hook": "Beachfront mornings begin here.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-hook-beachfront"
+    },
+    {
+      "id": "story-wl-movie-hook-fullview",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-fullview-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-fullview-9x16.jpg",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ],
+      "pairReel": "reel-wl-movie-hook-fullview"
+    },
+    {
+      "id": "story-wl-movie-hook-dinner",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-hook-dinner-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-hook-dinner-9x16.jpg",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-hook-dinner"
+    },
+    {
+      "id": "story-tw-movie-bath",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-bath-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-bath-9x16.jpg",
+      "hook": "A real home after the beach.",
+      "lines": [
+        "Not a hotel stall. Twenty First. Panama City Beach."
+      ],
+      "pairReel": "reel-tw-movie-bath"
+    },
+    {
+      "id": "story-tw-movie-bath2",
+      "listingId": 4,
+      "surface": "story",
+      "family": "post-tw-movie-bath2-story",
+      "path": "docs/social/schedule-ready/posts/post-tw-movie-bath2-9x16.jpg",
+      "hook": "Come inside.",
+      "lines": [
+        "Then go back out for the gold hour. Twenty First."
+      ],
+      "pairReel": "reel-tw-movie-bath2"
+    },
+    {
+      "id": "story-wl-movie-bath",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-bath-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-bath-9x16.jpg",
+      "hook": "A real home after the beach.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ],
+      "pairReel": "reel-wl-movie-bath"
+    },
+    {
+      "id": "story-wl-movie-extras",
+      "listingId": 5,
+      "surface": "story",
+      "family": "post-wl-movie-extras-story",
+      "path": "docs/social/schedule-ready/posts/post-wl-movie-extras-9x16.jpg",
+      "hook": "Built for a real week.",
+      "lines": [
+        "Laundry. A court. The Gulf downstairs. Westlight."
+      ],
+      "pairReel": "reel-wl-movie-extras"
+    },
+    {
+      "id": "story-tw-kids-sand",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-kids-sand",
+      "path": "docs/social/media/clips/family-beach/tw-kids-sand-dig.png",
+      "hook": "This is the week they will talk about.",
+      "lines": [
+        "Panama City Beach days get long in the best way."
+      ]
+    },
+    {
+      "id": "story-tw-kids-wave",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-kids-wave",
+      "path": "docs/social/media/clips/family-beach/tw-kids-wave-hit.png",
+      "hook": "Let the Gulf handle the itinerary.",
+      "lines": [
+        "Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "story-tw-family-run",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-family-run",
+      "path": "docs/social/media/clips/family-beach/tw-family-run-shore.png",
+      "hook": "Morning plans: the shoreline.",
+      "lines": [
+        "Twenty First sits above this stretch of Panama City Beach."
+      ]
+    },
+    {
+      "id": "story-tw-family-fun",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-family-fun",
+      "path": "docs/social/media/clips/family-beach/tw-family-beach-fun.png",
+      "hook": "Bring the people you actually want to share this with.",
+      "lines": [
+        "Twenty First. Owner-hosted on the Gulf."
+      ]
+    },
+    {
+      "id": "story-tw-family-chairs",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-family-chairs",
+      "path": "docs/social/media/clips/family-beach/tw-family-chairs.png",
+      "hook": "A slower afternoon.",
+      "lines": [
+        "The Gulf in front of you. Twenty First above you."
+      ]
+    },
+    {
+      "id": "story-tw-family-sunset",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-family-sunset",
+      "path": "docs/social/media/clips/family-beach/tw-family-sunset.png",
+      "hook": "Stay for the gold hour.",
+      "lines": [
+        "Panama City Beach does this most evenings."
+      ]
+    },
+    {
+      "id": "story-tw-family-sunset-play",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-family-sunset-play",
+      "path": "docs/social/media/clips/family-beach/tw-family-sunset-play.png",
+      "hook": "The day does not have to end at dinner.",
+      "lines": [
+        "Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "story-tw-surf-walk",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-surf-walk",
+      "path": "docs/social/media/clips/family-beach/tw-family-surf-walk.png",
+      "hook": "A walk, then the balcony.",
+      "lines": [
+        "That is a full day at Twenty First."
+      ]
+    },
+    {
+      "id": "story-tw-wave-play",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-wave-play",
+      "path": "docs/social/media/clips/family-beach/tw-family-wave-play.png",
+      "hook": "The only schedule: the tide.",
+      "lines": [
+        "Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "story-tw-waves",
+      "listingId": 4,
+      "surface": "story",
+      "family": "tw-waves",
+      "path": "docs/social/media/clips/family-beach/tw-waves-shore.png",
+      "hook": "Leave the phone in the condo.",
+      "lines": [
+        "The Gulf is louder anyway."
+      ]
+    },
+    {
+      "id": "story-ms-kids-castle",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-kids-castle",
+      "path": "docs/social/media/clips/family-beach/wl-kids-sandcastle.png",
+      "hook": "Miramar Beach days look like this.",
+      "lines": [
+        "Westlight is the quiet place you come back to."
+      ]
+    },
+    {
+      "id": "story-ms-kids-splash",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-kids-splash",
+      "path": "docs/social/media/clips/family-beach/wl-kids-wave-splash.png",
+      "hook": "The trip they will keep talking about.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "story-ms-family-fun",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-family-fun",
+      "path": "docs/social/media/clips/family-beach/wl-family-fun-sunset.png",
+      "hook": "This could be your evening.",
+      "lines": [
+        "Westlight looks west. The Gulf does the rest."
+      ]
+    },
+    {
+      "id": "story-ms-family-sit",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-family-sit",
+      "path": "docs/social/media/clips/family-beach/wl-family-sand-sit.png",
+      "hook": "Nowhere you need to be.",
+      "lines": [
+        "Miramar Beach. Westlight upstairs."
+      ]
+    },
+    {
+      "id": "story-ms-family-sunset",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-family-sunset",
+      "path": "docs/social/media/clips/family-beach/wl-family-sunset.png",
+      "hook": "Stay out a little later.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "story-ms-family-walk",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-family-walk",
+      "path": "docs/social/media/clips/family-beach/wl-family-walk-morning.png",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A shoreline walk, then coffee on the Westlight balcony."
+      ]
+    },
+    {
+      "id": "story-ms-water-play",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-water-play",
+      "path": "docs/social/media/clips/family-beach/wl-family-water-play.png",
+      "hook": "The Gulf is the amenity.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "story-ms-wave-chase",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-wave-chase",
+      "path": "docs/social/media/clips/family-beach/wl-family-wave-chase.png",
+      "hook": "Pack less. Stay longer.",
+      "lines": [
+        "Westlight is the home base."
+      ]
+    },
+    {
+      "id": "story-ms-wide-shore",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-wide-shore",
+      "path": "docs/social/media/clips/family-beach/wl-family-wide-shore.png",
+      "hook": "Room to wander.",
+      "lines": [
+        "Miramar Beach has space like this in front of Westlight."
+      ]
+    },
+    {
+      "id": "story-ms-waves",
+      "listingId": 5,
+      "surface": "story",
+      "family": "ms-waves",
+      "path": "docs/social/media/clips/family-beach/wl-waves-close.png",
+      "hook": "Turn the sound on later. For now, look.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-morning",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-morning",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-morning.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee, then the water. Twenty First sits above this stretch of Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-view",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-view",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "The Gulf under Twenty First. A real living room when you come back inside."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-evening",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-evening",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-evening.mp4",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Cook in, linger, then sleep by the water. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-stay",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-stay",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-stay.mp4",
+      "hook": "Come inside.",
+      "lines": [
+        "A real bedroom and bunks after the beach. Twenty First is built for lingering."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-day",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-day",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-day.mp4",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Your condo is only part of the vacation. Twenty First sits in the middle of both."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-morning",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-morning",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Gulf in front of you. Coffee on the balcony. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-view",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-view",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-view.mp4",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-evening",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-evening",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-stay",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-stay",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-stay.mp4",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting. Westlight."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-day",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-day",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-day.mp4",
+      "hook": "What a beach condo should actually feel like",
+      "lines": [
+        "A real kitchen. Room to linger. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-balcony",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-balcony",
+      "burns": [
+        "tw-coffee",
+        "tw-balcony-day-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-balcony.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee on the balcony. The Gulf does the rest. Twenty First."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-gulf",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-gulf",
+      "burns": [
+        "tw-hero",
+        "tw-beach-view",
+        "tw-beach-only-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-gulf.mp4",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "Sugar-white sand under Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-rooms",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-rooms",
+      "burns": [
+        "tw-living-photo",
+        "tw-rooms-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-rooms.mp4",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Come inside. Then go straight to the balcony."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-dinner",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-dinner",
+      "burns": [
+        "tw-dining",
+        "tw-dinner-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-dinner.mp4",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Dinner with the Gulf on the side. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-pool",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-pool",
+      "burns": [
+        "tw-pool-day-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-pool.mp4",
+      "hook": "Beach. Pool. Repeat.",
+      "lines": [
+        "Your condo is only part of the vacation. Twenty First."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-sleep",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-sleep",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-sleep.mp4",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "A real bedroom after the beach. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-arrive",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-arrive",
+      "burns": [
+        "tw-beach-only-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-arrive.mp4",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-kitchen",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-kitchen",
+      "burns": [
+        "tw-dinner-reel",
+        "tw-rooms-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-kitchen.mp4",
+      "hook": "Vacation breakfast, Gulf on the side.",
+      "lines": [
+        "Pajamas are acceptable attire. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-gulf",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-gulf",
+      "burns": [
+        "ms-fullview-photo",
+        "ms-gulf-balcony",
+        "ms-west-gold-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-gulf.mp4",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-sunset",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-sunset",
+      "burns": [
+        "ms-sunset",
+        "ms-west-gold-reel",
+        "ms-dinner-night-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-sunset.mp4",
+      "hook": "Tonight's entertainment.",
+      "lines": [
+        "No reservations required. Westlight looks west for a reason."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-coffee",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-coffee",
+      "burns": [
+        "ms-west-gold-reel",
+        "ms-dinner-night-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-coffee.mp4",
+      "hook": "A much better morning routine",
+      "lines": [
+        "Step 1: Make coffee. Step 2: Open the balcony door."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-living",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-living",
+      "burns": [
+        "ms-rooms-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-living.mp4",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-pool",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-pool",
+      "burns": [
+        "ms-pool-day-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-pool.mp4",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Vacation does not need to be complicated. Westlight."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-sleep2",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-sleep2",
+      "burns": [
+        "ms-bedrooms-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-sleep2.mp4",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-resort",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-resort",
+      "burns": [
+        "ms-building-reel"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-resort.mp4",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot. Westlight."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-morning",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-morning",
+      "burns": [
+        "tw-morning",
+        "tw-surf-walk"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-morning.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A walk on the sand, then the balcony. Twenty First."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-wait",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-wait",
+      "burns": [
+        "tw-wait",
+        "tw-waves"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-wait.mp4",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "The best room reveal ends with the Gulf."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-pov",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-pov",
+      "burns": [
+        "tw-pov",
+        "tw-family-run"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-pov.mp4",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "Vacation starts when the shoreline is yours."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-evening",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-evening",
+      "burns": [
+        "tw-evening",
+        "tw-family-sunset"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-evening.mp4",
+      "hook": "This could be your evening.",
+      "lines": [
+        "Stay for the gold hour. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-living",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-living",
+      "burns": [
+        "tw-living",
+        "tw-family-chairs"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-living.mp4",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. The Gulf a few steps away."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-reasons",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-reasons",
+      "burns": [
+        "tw-5reasons",
+        "tw-family-fun"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-reasons.mp4",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views, a balcony, the beach, resort amenities, Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-direct",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-direct",
+      "burns": [
+        "tw-book-direct",
+        "tw-wave-play"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-direct.mp4",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "You are booking with the people who actually know the home."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-moment",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-moment",
+      "burns": [
+        "tw-kids-sand"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-moment.mp4",
+      "hook": "The moment vacation starts",
+      "lines": [
+        "The trip they will keep talking about. Twenty First."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-proof",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-proof",
+      "burns": [
+        "tw-gulf",
+        "tw-kids-wave"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-proof.mp4",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "No filter needed when the Gulf looks like this."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-hook-living-alt",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-hook-living-alt",
+      "burns": [
+        "tw-family-sunset-play"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-hook-living-alt.mp4",
+      "hook": "Come inside.",
+      "lines": [
+        "Then go back out for sunset. Twenty First."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-morning",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-morning",
+      "burns": [
+        "ms-family-walk"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-morning.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "A shoreline walk, then coffee on the Westlight balcony."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-wait",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-wait",
+      "burns": [
+        "ms-wait",
+        "ms-waves"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-wait.mp4",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "Westlight. The reveal is the Gulf."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-pov",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-pov",
+      "burns": [
+        "ms-pov",
+        "ms-wave-chase"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-pov.mp4",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "You know that moment when vacation actually starts?"
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-living",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-living",
+      "burns": [
+        "ms-living",
+        "ms-family-sit"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-living.mp4",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-reasons",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-reasons",
+      "burns": [
+        "ms-5reasons",
+        "ms-family-fun"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-reasons.mp4",
+      "hook": "5 reasons you will want to stay here",
+      "lines": [
+        "Gulf views, a balcony, the beach, resort amenities, Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-direct",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-direct",
+      "burns": [
+        "both-beaches",
+        "ms-wide-shore"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-direct.mp4",
+      "hook": "Book direct. Stay better.",
+      "lines": [
+        "Miramar Beach or Panama City Beach \u2014 book with the people who know the home."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-moment",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-moment",
+      "burns": [
+        "ms-kids-castle"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-moment.mp4",
+      "hook": "The moment vacation starts",
+      "lines": [
+        "Miramar Beach days look like this. Westlight is the quiet place you return to."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-beachfront",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-beachfront",
+      "burns": [
+        "ms-kids-splash"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-beachfront.mp4",
+      "hook": "Beachfront mornings begin here.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-fullview",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-fullview",
+      "burns": [
+        "ms-fullview",
+        "ms-water-play"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-fullview.mp4",
+      "hook": "Keep the Gulf in the frame.",
+      "lines": [
+        "Westlight looks out over Miramar Beach like this all week."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-hook-dinner",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-hook-dinner",
+      "burns": [
+        "ms-dinner-night-reel",
+        "ms-family-sunset"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-hook-dinner.mp4",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-bath",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-bath",
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-bath.mp4",
+      "hook": "A real home after the beach.",
+      "lines": [
+        "Not a hotel stall. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-movie-bath2",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-movie-bath2",
+      "burns": [
+        "tw-sunset"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-movie-bath2.mp4",
+      "hook": "Come inside.",
+      "lines": [
+        "Then go back out for the gold hour. Twenty First."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-bath",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-bath",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-bath.mp4",
+      "hook": "A real home after the beach.",
+      "lines": [
+        "Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-wl-movie-extras",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "wl-movie-extras",
+      "path": "docs/social/schedule-ready/reels/reel-wl-movie-extras.mp4",
+      "hook": "Built for a real week.",
+      "lines": [
+        "Laundry. A court. The Gulf downstairs. Westlight."
+      ]
+    },
+    {
+      "id": "reel-tw-family-beach",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-family-beach-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-family-beach.mp4",
+      "hook": "The trip they will keep talking about.",
+      "lines": [
+        "Some vacations become family stories. The beach tends to do that."
+      ]
+    },
+    {
+      "id": "reel-tw-kids-play",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-kids-play-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-kids-play.mp4",
+      "hook": "Let the Gulf set the pace.",
+      "lines": [
+        "Twenty First. Panama City Beach. A week above this shoreline."
+      ]
+    },
+    {
+      "id": "reel-tw-gulf",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-gulf-reel",
+      "burns": [
+        "tw-gulf",
+        "tw-wait",
+        "tw-living",
+        "tw-sunset"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-wait-for-the-view.mp4",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "The best room reveal ends with the Gulf."
+      ]
+    },
+    {
+      "id": "reel-tw-evening",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-evening-reel",
+      "burns": [
+        "tw-evening",
+        "tw-gulf",
+        "tw-sunset"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-evening.mp4",
+      "hook": "The 7 PM plans:",
+      "lines": [
+        "Sit on the balcony. Pour something cold. Watch the Gulf turn gold."
+      ]
+    },
+    {
+      "id": "reel-tw-pov",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-pov-reel",
+      "burns": [
+        "tw-pov",
+        "tw-gulf",
+        "tw-wait"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-pov.mp4",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "Vacation starts when the balcony door opens."
+      ]
+    },
+    {
+      "id": "reel-tw-morning",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-morning-reel",
+      "burns": [
+        "tw-morning",
+        "tw-gulf",
+        "tw-sunset"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-tw-morning.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "Coffee in hand. Gulf in front of you. Nowhere you need to be."
+      ]
+    },
+    {
+      "id": "reel-ms-family-beach",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-family-beach-reel",
+      "path": "docs/social/schedule-ready/reels/reel-wl-family-beach.mp4",
+      "hook": "The trip they will keep talking about.",
+      "lines": [
+        "Westlight. Miramar Beach. Come back sandy."
+      ]
+    },
+    {
+      "id": "reel-ms-kids-play",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-kids-play-reel",
+      "path": "docs/social/schedule-ready/reels/reel-wl-kids-play.mp4",
+      "hook": "Miramar Beach days look like this.",
+      "lines": [
+        "Westlight is the quiet place you return to."
+      ]
+    },
+    {
+      "id": "reel-ms-living",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-living-reel",
+      "burns": [
+        "ms-living",
+        "ms-fullview",
+        "ms-morning-balcony"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-ms-living.mp4",
+      "hook": "Your living room for the week.",
+      "lines": [
+        "Coffee here. Sunset watching here. Shoes optional."
+      ]
+    },
+    {
+      "id": "reel-ms-wait",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-wait-reel",
+      "burns": [
+        "ms-wait",
+        "ms-living",
+        "ms-morning-balcony"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-ms-wait-for-the-view.mp4",
+      "hook": "Wait for the view\u2026",
+      "lines": [
+        "Westlight. The reveal is the Gulf."
+      ]
+    },
+    {
+      "id": "reel-ms-pov",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-pov-reel",
+      "burns": [
+        "ms-pov",
+        "ms-morning-balcony"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-ms-pov.mp4",
+      "hook": "POV: you finally booked the beach trip.",
+      "lines": [
+        "You know that moment when vacation actually starts?"
+      ]
+    },
+    {
+      "id": "reel-ms-morning",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-morning-reel",
+      "burns": [
+        "ms-living",
+        "ms-morning-balcony"
+      ],
+      "path": "docs/social/schedule-ready/reels/reel-ms-morning.mp4",
+      "hook": "This could be your morning.",
+      "lines": [
+        "No alarm clock needed. Just the balcony and the Gulf."
+      ]
+    },
+    {
+      "id": "reel-tw-balcony-day",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-balcony-day-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-balcony-day.mp4",
+      "hook": "Start on the balcony.",
+      "lines": [
+        "Twenty First. Panama City Beach. The Gulf is the first thing you see."
+      ]
+    },
+    {
+      "id": "reel-tw-pool-day",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-pool-day-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-pool-day.mp4",
+      "hook": "Your condo is only part of the vacation.",
+      "lines": [
+        "Pools, then the Gulf. Twenty First sits in the middle of both."
+      ]
+    },
+    {
+      "id": "reel-tw-rooms",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-rooms-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-rooms.mp4",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "A real bedroom waiting after the beach. Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-dinner",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-dinner-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-dinner.mp4",
+      "hook": "Vacation rule: dinner tastes better near the water.",
+      "lines": [
+        "Twenty First. Panama City Beach."
+      ]
+    },
+    {
+      "id": "reel-ms-rooms",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-rooms-reel",
+      "path": "docs/social/schedule-ready/reels/reel-ms-rooms.mp4",
+      "hook": "What a beach condo should actually feel like",
+      "lines": [
+        "Comfortable enough to feel like home. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-ms-pool-day",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-pool-day-reel",
+      "path": "docs/social/schedule-ready/reels/reel-ms-pool-day.mp4",
+      "hook": "Beach. Pool. Balcony. Repeat.",
+      "lines": [
+        "Vacation does not need to be complicated. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-ms-west-gold",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-west-gold-reel",
+      "path": "docs/social/schedule-ready/reels/reel-ms-west-gold.mp4",
+      "hook": "Westlight looks west for a reason.",
+      "lines": [
+        "Keep the Gulf in the frame all week."
+      ]
+    },
+    {
+      "id": "reel-ms-dinner-night",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-dinner-night-reel",
+      "path": "docs/social/schedule-ready/reels/reel-ms-dinner-night.mp4",
+      "hook": "Reserved for you.",
+      "lines": [
+        "A quiet dinner, then the water again. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-ms-bedrooms",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-bedrooms-reel",
+      "path": "docs/social/schedule-ready/reels/reel-ms-bedrooms.mp4",
+      "hook": "Sleep here. Wake up by the Gulf.",
+      "lines": [
+        "Beach days are better when a real bedroom is waiting. Westlight."
+      ]
+    },
+    {
+      "id": "reel-ms-building",
+      "listingId": 5,
+      "surface": "reel",
+      "family": "ms-building-reel",
+      "path": "docs/social/schedule-ready/reels/reel-ms-building.mp4",
+      "hook": "How far is the beach?",
+      "lines": [
+        "The kind of distance you will happily walk barefoot. Westlight. Miramar Beach."
+      ]
+    },
+    {
+      "id": "reel-tw-beach-only",
+      "listingId": 4,
+      "surface": "reel",
+      "family": "tw-beach-only-reel",
+      "path": "docs/social/schedule-ready/reels/reel-tw-beach-only.mp4",
+      "hook": "This is why we came to Florida.",
+      "lines": [
+        "The Gulf under Twenty First. Panama City Beach."
+      ]
+    }
+  ]
+}

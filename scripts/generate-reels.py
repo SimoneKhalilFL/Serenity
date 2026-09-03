@@ -155,9 +155,77 @@ def main() -> None:
             lodging / "ms-morning-balcony-4x5.jpg",
             ads_ms / "ms-fullview-westlight.png",
         ],
+        # Unique lodging sequences — do not reuse hook stills already in the feed catalog
+        "reel-tw-balcony-day": [
+            lodging / "tw-01-balcony.jpg",
+            lodging / "tw-02-balcony.jpg",
+            lodging / "tw-balcony-coffee.png",
+        ],
+        "reel-tw-pool-day": [
+            lodging / "tw-01-pool.jpg",
+            lodging / "tw-02-pool.jpg",
+            lodging / "tw-01-outdoor.jpg",
+        ],
+        "reel-tw-rooms": [
+            lodging / "tw-living-02.png",
+            lodging / "tw-living-03.png",
+            lodging / "tw-master-01.png",
+        ],
+        "reel-tw-dinner": [
+            lodging / "tw-balcony-dinner.png",
+            lodging / "tw-dining-01.png",
+            lodging / "tw-02-dining.jpg",
+        ],
+        "reel-ms-rooms": [
+            lodging / "MS-LivingRoom-5.png",
+            lodging / "ms-01-living-room.jpg",
+            lodging / "ms-08-living-room.png",
+        ],
+        "reel-ms-pool-day": [
+            lodging / "ms-01-pool-outdoor.jpg",
+            lodging / "ms-01-pool.jpg",
+            lodging / "ms-08-pool-indoor.jpg",
+        ],
+        "reel-ms-west-gold": [
+            lodging / "MS-FullView-2.png",
+            lodging / "MS-Balcony-1.png",
+            lodging / "MS_Balcony_coffee.png",
+        ],
+        "reel-ms-dinner-night": [
+            lodging / "MS_Dinner_sunset.png",
+            lodging / "MS-DiningRoom-2.png",
+            lodging / "MS-LivingRoom-7.png",
+        ],
+        "reel-ms-bedrooms": [
+            lodging / "MS-MasterBedroomFuture-1.png",
+            lodging / "MS-GuestBedroom-1.png",
+            lodging / "MS-GuestBedroom-2.png",
+        ],
+        "reel-ms-building": [
+            lodging / "ms-01-building-view.jpg",
+            lodging / "ms-02-building-view.jpg",
+            lodging / "ms-01-outdoor-lake.jpg",
+        ],
+        "reel-tw-beach-only": [
+            lodging / "tw-02-beach-view.jpg",
+            lodging / "tw-01-building.jpg",
+            lodging / "tw-02-outdoor.jpg",
+        ],
     }
 
+    if len(sys.argv) >= 5 and sys.argv[1] == "--from":
+        name = sys.argv[2]
+        srcs = [Path(p) for p in sys.argv[3:]]
+        present = [p for p in srcs if p.exists()]
+        if len(present) < 2:
+            raise SystemExit(f"{name}: need ≥2 stills, have {len(present)}")
+        build_reel(name, present[:4])
+        return
+
+    only = set(sys.argv[1:])
     for name, srcs in reels.items():
+        if only and name not in only:
+            continue
         # Drop missing optional lodging crops gracefully
         present = [p for p in srcs if p.exists()]
         if len(present) < 2:

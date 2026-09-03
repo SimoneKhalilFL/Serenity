@@ -9,6 +9,7 @@
     "social-openings": "node scripts/social-openings.cjs",
     "social-post": "node scripts/social-post.cjs",
     "social-post:dry": "node scripts/social-post.cjs --dry-run",
+    "social-post:plan": "node scripts/social-post.cjs --plan 14",
     "generate-sitemap": "node scripts/generate-sitemap.cjs",
     "generate-listing-schema": "node scripts/generate-listing-schema.cjs",
     "generate-listing-pages": "node scripts/generate-listing-pages.cjs",

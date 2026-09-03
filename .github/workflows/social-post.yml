@@ -8,12 +8,23 @@ name: Post social openings
 
 on:
   schedule:
-    # Tue / Thu / Sat 14:00 UTC ≈ 9:00 AM Central
-    - cron: '0 14 * * 2,4,6'
+    # America/Chicago CDT (UTC-5). Winter CST drifts one hour — accept for now.
+    - cron: '0 14 * * *'   # 9:00 AM CT  feed
+    - cron: '0 17 * * *'   # 12:00 PM CT story
+    - cron: '0 22 * * *'   # 5:00 PM CT  reel
   workflow_dispatch:
     inputs:
+      surface:
+        description: 'Surface'
+        type: choice
+        options:
+          - auto
+          - feed
+          - story
+          - reel
+        default: auto
       slot:
-        description: 'Post slot'
+        description: 'Caption slot (feed only; story/reel stay lifestyle)'
         type: choice
         options:
           - auto
@@ -49,13 +60,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
       - name: Compose and publish
         env:
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
           SOCIAL_POST_ENABLED: ${{ secrets.SOCIAL_POST_ENABLED }}
+          SOCIAL_SURFACE: ${{ github.event.inputs.surface || 'auto' }}
           SOCIAL_SLOT: ${{ github.event.inputs.slot || 'auto' }}
+          SOCIAL_SCHEDULE_CRON: ${{ github.event.schedule }}
           SOCIAL_DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
         run: node scripts/social-post.cjs
 
@@ -63,7 +79,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/social-post-log.json
+          git add data/social-post-log.json data/social-used-media.json scripts/social-catalog.json docs/social/schedule-ready/reels/
           if git diff --staged --quiet; then
             echo "No social log changes to commit."
           else

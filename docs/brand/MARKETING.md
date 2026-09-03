@@ -215,17 +215,17 @@ Reviews are the single largest conversion lever on this brand. Every stay ends w
 
 ### Current-month openings (social)
 
-- Trigger: Scheduled Tuesday / Thursday / Saturday run in [SOCIAL.md](SOCIAL.md).
-- Action: Unattended Facebook + Instagram photo post. Tuesday promotes 3+ night openings in the current sell window; Thursday is lifestyle; Saturday is a real guest quote. No approval step. No discount or urgency copy.
+- Trigger: Daily 9:00 AM CT feed in [SOCIAL.md](SOCIAL.md).
+- Action: Unattended Facebook + Instagram post from a **never-reused** catalog image. When that day’s home has 3+ night openings, the caption includes `Open nights:` plus the date ranges. Saturday feed uses an unused guest quote when one remains. Story (12:00 PM) and Reel (5:00 PM) stay unique lifestyle. No approval step. No discount or urgency copy.
 - Pause: set GitHub secret `SOCIAL_POST_ENABLED` to `false`.
 
 ### Meta morning-balcony creative (organic now; paid later)
 
 - Locked emotion creative for Westlight morning balcony: [`docs/social/ads/ms-morning-balcony/`](../social/ads/ms-morning-balcony/).
-- **Organic:** daily `lifestyle` posts for Westlight use the clean crops via [`scripts/social-post.cjs`](../../scripts/social-post.cjs) (no burned-in text).
+- **Organic:** that crop ran once (2026-09-02). It is burned and will not repeat. Later Westlight days use other unused catalog images.
 - Clean photo only — no burned-in headlines, amenity icons, pricing, or “BOOK NOW” graphics.
 - First **paid** test when approved: **emotion vs. offer** (different image for offer), not micro copy variants.
-- Status as of 2026-09-01: organic on; **not running paid ads**.
+- Status as of 2026-09-02: organic on; **not running paid ads**.
 
 ---
 
