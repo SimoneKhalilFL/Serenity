@@ -78,6 +78,21 @@
       "facebookPostId": "274457265757585_122243712884295768",
       "instagramMediaId": "18140311195585997",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-03",
+      "postedAt": "2026-09-03T17:29:59.315Z",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "fingerprint": "lifestyle|5|2026-W36|2026-09-08_2026-09-11,2026-09-19_2026-09-23",
+      "campaign": "lifestyle-2026-09",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-morning-balcony-4x5.jpg",
+      "caption": "No alarm clock needed. Just coffee, Gulf views, and nowhere you need to be.\n\nEscape to Miramar Beach and spend your mornings overlooking turquoise water from your own private balcony.\n\nWestlight. Owner-hosted. https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "facebookPostId": "274457265757585_122243791304295768",
+      "instagramMediaId": "17947466835322808",
+      "instagramError": null
     }
   ]
 }
