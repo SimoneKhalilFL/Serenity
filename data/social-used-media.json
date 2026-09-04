@@ -6,6 +6,7 @@
     "docs/social/ads/tw-pcb-hooks/tw-balcony-sunset-clean.png",
     "docs/social/schedule-ready/01-pm-ms-morning.jpg",
     "docs/social/schedule-ready/posts/post-tw-movie-morning-4x5.jpg",
+    "docs/social/schedule-ready/posts/post-tw-movie-morning-9x16.jpg",
     "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
     "images/lodging/ms-morning-balcony-1x1.jpg",
     "images/lodging/ms-morning-balcony-4x5.jpg",
@@ -15,6 +16,7 @@
   "families": [
     "ms-morning-balcony",
     "post-tw-movie-morning-feed",
+    "post-tw-movie-morning-story",
     "tw-sunset",
     "wl-movie-morning"
   ]
