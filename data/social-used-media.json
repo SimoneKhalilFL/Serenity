@@ -11,6 +11,7 @@
     "docs/social/schedule-ready/posts/post-wl-movie-morning-9x16.jpg",
     "docs/social/schedule-ready/reels/reel-tw-movie-morning.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
+    "docs/social/schedule-ready/reels/reel-wl-movie-view.mp4",
     "images/lodging/ms-morning-balcony-1x1.jpg",
     "images/lodging/ms-morning-balcony-4x5.jpg",
     "images/lodging/ms-morning-balcony-9x16.jpg",
@@ -24,6 +25,7 @@
     "post-wl-movie-morning-story",
     "tw-movie-morning",
     "tw-sunset",
-    "wl-movie-morning"
+    "wl-movie-morning",
+    "wl-movie-view"
   ]
 }
