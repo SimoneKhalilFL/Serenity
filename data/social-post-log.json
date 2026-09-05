@@ -212,6 +212,35 @@
       "facebookError": null,
       "instagramMediaId": "18139560349588588",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-05",
+      "postedAt": "2026-09-05T16:42:29.927Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-morning",
+      "family": "post-wl-movie-morning-feed",
+      "burns": [
+        "post-wl-movie-morning-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-morning|docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
+      "campaign": "feed-proof-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
+      "videoRel": null,
+      "caption": "\"Exceptional experience, spectacular location and views. Apartment had all the necessary amenities. It was very peaceful. Easy check in and easy access. Again location was a…\" — Ibrahim, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "5:Exceptional experience, spectacular location and views. Apartment had all the necessary amenities. It was very peaceful. Easy check in and easy access. Again location was a…",
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122244000254295768",
+      "facebookError": null,
+      "instagramMediaId": "18124660732888034",
+      "instagramError": null
     }
   ]
 }
