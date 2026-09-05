@@ -241,6 +241,35 @@
       "facebookError": null,
       "instagramMediaId": "18124660732888034",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-05",
+      "postedAt": "2026-09-05T18:45:03.655Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "story-wl-movie-morning",
+      "family": "post-wl-movie-morning-story",
+      "burns": [
+        "post-wl-movie-morning-story"
+      ],
+      "fingerprint": "story|story-wl-movie-morning|docs/social/schedule-ready/posts/post-wl-movie-morning-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-morning-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-morning-9x16.jpg",
+      "videoRel": null,
+      "caption": "This could be your morning.\n\nGulf in front of you. Coffee on the balcony. Westlight. Miramar Beach.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "2524457401361874",
+      "facebookError": null,
+      "instagramMediaId": "18076885223382409",
+      "instagramError": null
     }
   ]
 }
