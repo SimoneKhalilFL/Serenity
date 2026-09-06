@@ -360,6 +360,35 @@
       "facebookError": null,
       "instagramMediaId": "17904596802328959",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-06",
+      "postedAt": "2026-09-06T23:22:04.512Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-view",
+      "family": "tw-movie-view",
+      "burns": [
+        "tw-movie-view"
+      ],
+      "fingerprint": "reel|reel-tw-movie-view|docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
+      "caption": "This is why we came to Florida.\n\nThe Gulf under Twenty First. A real living room when you come back inside.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "27801745896188537",
+      "facebookError": null,
+      "instagramMediaId": "18064826609781060",
+      "instagramError": null
     }
   ]
 }
