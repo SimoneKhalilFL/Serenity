@@ -450,6 +450,35 @@
       "facebookError": null,
       "instagramMediaId": "18341021014282060",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-07",
+      "postedAt": "2026-09-07T23:53:03.002Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-evening",
+      "family": "wl-movie-evening",
+      "burns": [
+        "wl-movie-evening"
+      ],
+      "fingerprint": "reel|reel-wl-movie-evening|docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
+      "caption": "Reserved for you.\n\nA quiet dinner, then the water again. Westlight. Miramar Beach.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "4407573052889878",
+      "facebookError": null,
+      "instagramMediaId": "18410111491081576",
+      "instagramError": null
     }
   ]
 }
