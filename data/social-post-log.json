@@ -479,6 +479,38 @@
       "facebookError": null,
       "instagramMediaId": "18410111491081576",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-08",
+      "postedAt": "2026-09-08T17:52:30.689Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-movie-evening",
+      "family": "post-tw-movie-evening-feed",
+      "burns": [
+        "post-tw-movie-evening-feed"
+      ],
+      "fingerprint": "feed|feed-tw-movie-evening|docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
+      "videoRel": null,
+      "caption": "The 7 PM plans:\n\nCook in, linger, then sleep by the water. Twenty First. Panama City Beach.\n\nOpen nights: September 8–23; September 27 – October 8.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "September 8–23",
+        "September 27 – October 8"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122244319586295768",
+      "facebookError": null,
+      "instagramMediaId": "18139730932607329",
+      "instagramError": null
     }
   ]
 }
