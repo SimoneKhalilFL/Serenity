@@ -540,6 +540,35 @@
       "facebookError": null,
       "instagramMediaId": "18620544337019180",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-08",
+      "postedAt": "2026-09-08T23:46:14.911Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-evening",
+      "family": "tw-movie-evening",
+      "burns": [
+        "tw-movie-evening"
+      ],
+      "fingerprint": "reel|reel-tw-movie-evening|docs/social/schedule-ready/reels/reel-tw-movie-evening.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-evening.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-evening.mp4",
+      "caption": "The 7 PM plans:\n\nCook in, linger, then sleep by the water. Twenty First. Panama City Beach.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1429733595752288",
+      "facebookError": null,
+      "instagramMediaId": "17970511056150597",
+      "instagramError": null
     }
   ]
 }
