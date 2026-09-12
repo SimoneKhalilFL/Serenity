@@ -28,6 +28,7 @@
     "docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-day.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
+    "docs/social/schedule-ready/reels/reel-wl-movie-gulf.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-stay.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-view.mp4",
@@ -37,7 +38,10 @@
     "images/lodging/tw-balcony-sunset.png"
   ],
   "families": [
+    "ms-fullview-photo",
+    "ms-gulf-balcony",
     "ms-morning-balcony",
+    "ms-west-gold-reel",
     "post-tw-movie-evening-feed",
     "post-tw-movie-evening-story",
     "post-tw-movie-morning-feed",
@@ -62,6 +66,7 @@
     "tw-sunset",
     "wl-movie-day",
     "wl-movie-evening",
+    "wl-movie-gulf",
     "wl-movie-morning",
     "wl-movie-stay",
     "wl-movie-view"
