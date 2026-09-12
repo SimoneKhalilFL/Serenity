@@ -806,6 +806,35 @@
       "facebookError": null,
       "instagramMediaId": "17975661098915767",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-12",
+      "postedAt": "2026-09-12T16:54:20.433Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-stay",
+      "family": "post-wl-movie-stay-feed",
+      "burns": [
+        "post-wl-movie-stay-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-stay|docs/social/schedule-ready/posts/post-wl-movie-stay-4x5.jpg",
+      "campaign": "feed-proof-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-stay-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-stay-4x5.jpg",
+      "videoRel": null,
+      "caption": "\"We enjoyed our family stay at this place! It was exactly as described and on the beach!! The condo was fresh, clean, and roomy. Simone was an excellent host by communicating…\" — Lacey, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "5:We enjoyed our family stay at this place! It was exactly as described and on the beach!! The condo was fresh, clean, and roomy. Simone was an excellent host by communicating…",
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122244696134295768",
+      "facebookError": null,
+      "instagramMediaId": "18108120320594756",
+      "instagramError": null
     }
   ]
 }
