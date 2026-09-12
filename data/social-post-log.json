@@ -835,6 +835,35 @@
       "facebookError": null,
       "instagramMediaId": "18108120320594756",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-12",
+      "postedAt": "2026-09-12T18:54:50.318Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "story-wl-movie-day",
+      "family": "post-wl-movie-day-story",
+      "burns": [
+        "post-wl-movie-day-story"
+      ],
+      "fingerprint": "story|story-wl-movie-day|docs/social/schedule-ready/posts/post-wl-movie-day-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-day-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-day-9x16.jpg",
+      "videoRel": null,
+      "caption": "What a beach condo should actually feel like\n\nA real kitchen. Room to linger. Westlight. Miramar Beach.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1690369058730290",
+      "facebookError": null,
+      "instagramMediaId": "17905204614557019",
+      "instagramError": null
     }
   ]
 }
