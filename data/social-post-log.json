@@ -928,6 +928,35 @@
       "facebookError": null,
       "instagramMediaId": "18102818276610724",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-13",
+      "postedAt": "2026-09-13T19:11:08.288Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "story-tw-movie-day",
+      "family": "post-tw-movie-day-story",
+      "burns": [
+        "post-tw-movie-day-story"
+      ],
+      "fingerprint": "story|story-tw-movie-day|docs/social/schedule-ready/posts/post-tw-movie-day-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-day-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-day-9x16.jpg",
+      "videoRel": null,
+      "caption": "Beach. Pool. Balcony. Repeat.\n\nYour condo is only part of the vacation. Twenty First sits in the middle of both.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1596259841901450",
+      "facebookError": null,
+      "instagramMediaId": "17907908730307386",
+      "instagramError": null
     }
   ]
 }
