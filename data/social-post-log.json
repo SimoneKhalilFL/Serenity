@@ -1017,6 +1017,35 @@
       "facebookError": null,
       "instagramMediaId": "18021763793873500",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-14",
+      "postedAt": "2026-09-14T20:43:24.377Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "story-wl-movie-gulf",
+      "family": "post-wl-movie-gulf-story",
+      "burns": [
+        "post-wl-movie-gulf-story"
+      ],
+      "fingerprint": "story|story-wl-movie-gulf|docs/social/schedule-ready/posts/post-wl-movie-gulf-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-gulf-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-gulf-9x16.jpg",
+      "videoRel": null,
+      "caption": "Keep the Gulf in the frame.\n\nWestlight looks out over Miramar Beach like this all week.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1065656512923485",
+      "facebookError": null,
+      "instagramMediaId": "18151159030555015",
+      "instagramError": null
     }
   ]
 }
