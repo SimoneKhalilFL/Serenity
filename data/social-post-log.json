@@ -1137,6 +1137,37 @@
       "facebookError": null,
       "instagramMediaId": "18105623833919585",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-15",
+      "postedAt": "2026-09-15T23:52:10.690Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-balcony",
+      "family": "tw-movie-balcony",
+      "burns": [
+        "tw-movie-balcony",
+        "tw-coffee",
+        "tw-balcony-day-reel"
+      ],
+      "fingerprint": "reel|reel-tw-movie-balcony|docs/social/schedule-ready/reels/reel-tw-movie-balcony.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-balcony.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-balcony.mp4",
+      "caption": "This could be your morning.\n\nCoffee on the balcony. The Gulf does the rest. Twenty First.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1074070108765612",
+      "facebookError": null,
+      "instagramMediaId": "18096593762549838",
+      "instagramError": null
     }
   ]
 }
