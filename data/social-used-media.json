@@ -41,6 +41,7 @@
     "docs/social/schedule-ready/reels/reel-wl-movie-gulf.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-living.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
+    "docs/social/schedule-ready/reels/reel-wl-movie-pool.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-stay.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-view.mp4",
     "images/lodging/ms-morning-balcony-1x1.jpg",
@@ -52,6 +53,7 @@
     "ms-fullview-photo",
     "ms-gulf-balcony",
     "ms-morning-balcony",
+    "ms-pool-day-reel",
     "ms-rooms-reel",
     "ms-west-gold-reel",
     "post-tw-movie-balcony-feed",
@@ -93,6 +95,7 @@
     "wl-movie-gulf",
     "wl-movie-living",
     "wl-movie-morning",
+    "wl-movie-pool",
     "wl-movie-stay",
     "wl-movie-view"
   ]
