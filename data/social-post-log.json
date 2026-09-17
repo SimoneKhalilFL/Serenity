@@ -1258,6 +1258,38 @@
       "facebookError": null,
       "instagramMediaId": "18139548802612529",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-17",
+      "postedAt": "2026-09-17T18:05:36.431Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-movie-gulf",
+      "family": "post-tw-movie-gulf-feed",
+      "burns": [
+        "post-tw-movie-gulf-feed"
+      ],
+      "fingerprint": "feed|feed-tw-movie-gulf|docs/social/schedule-ready/posts/post-tw-movie-gulf-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-gulf-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-gulf-4x5.jpg",
+      "videoRel": null,
+      "caption": "This is why we came to Florida.\n\nSugar-white sand under Twenty First. Panama City Beach.\n\nOpen nights: September 17–21; October 4–9.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "September 17–21",
+        "October 4–9"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122245164188295768",
+      "facebookError": null,
+      "instagramMediaId": "17901531405579486",
+      "instagramError": null
     }
   ]
 }
