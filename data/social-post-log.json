@@ -1411,6 +1411,36 @@
       "facebookError": null,
       "instagramMediaId": "18058034522572892",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-18",
+      "postedAt": "2026-09-18T23:45:59.294Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-sleep2",
+      "family": "wl-movie-sleep2",
+      "burns": [
+        "wl-movie-sleep2",
+        "ms-bedrooms-reel"
+      ],
+      "fingerprint": "reel|reel-wl-movie-sleep2|docs/social/schedule-ready/reels/reel-wl-movie-sleep2.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-sleep2.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-sleep2.mp4",
+      "caption": "Sleep here. Wake up by the Gulf.\n\nBeach days are better when a real bedroom is waiting.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1433486618688252",
+      "facebookError": null,
+      "instagramMediaId": "18106032809239895",
+      "instagramError": null
     }
   ]
 }
