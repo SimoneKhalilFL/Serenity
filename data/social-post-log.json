@@ -1351,6 +1351,37 @@
       "facebookError": null,
       "instagramMediaId": "17900129271665118",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-18",
+      "postedAt": "2026-09-18T17:37:15.960Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-sunset",
+      "family": "post-wl-movie-sunset-feed",
+      "burns": [
+        "post-wl-movie-sunset-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-sunset|docs/social/schedule-ready/posts/post-wl-movie-sunset-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-sunset-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-sunset-4x5.jpg",
+      "videoRel": null,
+      "caption": "Tonight's entertainment.\n\nNo reservations required. Westlight looks west for a reason.\n\nOpen nights: September 19–23.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "September 19–23"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122245284182295768",
+      "facebookError": null,
+      "instagramMediaId": "18110451449144843",
+      "instagramError": null
     }
   ]
 }
