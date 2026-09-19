@@ -1441,6 +1441,35 @@
       "facebookError": null,
       "instagramMediaId": "18106032809239895",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-19",
+      "postedAt": "2026-09-19T17:06:50.282Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-movie-rooms",
+      "family": "post-tw-movie-rooms-feed",
+      "burns": [
+        "post-tw-movie-rooms-feed"
+      ],
+      "fingerprint": "feed|feed-tw-movie-rooms|docs/social/schedule-ready/posts/post-tw-movie-rooms-4x5.jpg",
+      "campaign": "feed-proof-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-rooms-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-rooms-4x5.jpg",
+      "videoRel": null,
+      "caption": "\"This place was extremely clean and well maintained! It was very roomy and cozy! The front door was right in front of the elevator, which was convenient. Kitchen was fully with…\" — Michelle, on Twenty First.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "4:This place was extremely clean and well maintained! It was very roomy and cozy! The front door was right in front of the elevator, which was convenient. Kitchen was fully with…",
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122245431212295768",
+      "facebookError": null,
+      "instagramMediaId": "18223536334326510",
+      "instagramError": null
     }
   ]
 }
