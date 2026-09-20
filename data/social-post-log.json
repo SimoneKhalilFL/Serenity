@@ -1530,6 +1530,38 @@
       "facebookError": null,
       "instagramMediaId": "17983845510096312",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-20",
+      "postedAt": "2026-09-20T17:22:55.231Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-coffee",
+      "family": "post-wl-movie-coffee-feed",
+      "burns": [
+        "post-wl-movie-coffee-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-coffee|docs/social/schedule-ready/posts/post-wl-movie-coffee-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-coffee-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-coffee-4x5.jpg",
+      "videoRel": null,
+      "caption": "A much better morning routine\n\nStep 1: Make coffee. Step 2: Open the balcony door.\n\nOpen nights: September 20–23; October 17–20.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "September 20–23",
+        "October 17–20"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122245557530295768",
+      "facebookError": null,
+      "instagramMediaId": "18132001771735725",
+      "instagramError": null
     }
   ]
 }
