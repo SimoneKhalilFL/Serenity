@@ -54,6 +54,7 @@
     "docs/social/schedule-ready/reels/reel-wl-movie-day.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-gulf.mp4",
+    "docs/social/schedule-ready/reels/reel-wl-movie-hook-morning.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-living.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-pool.mp4",
@@ -69,6 +70,7 @@
   "families": [
     "ms-bedrooms-reel",
     "ms-building-reel",
+    "ms-family-walk",
     "ms-fullview-photo",
     "ms-gulf-balcony",
     "ms-morning-balcony",
@@ -134,6 +136,7 @@
     "wl-movie-day",
     "wl-movie-evening",
     "wl-movie-gulf",
+    "wl-movie-hook-morning",
     "wl-movie-living",
     "wl-movie-morning",
     "wl-movie-pool",
