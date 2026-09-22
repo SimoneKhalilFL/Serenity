@@ -1744,6 +1744,35 @@
       "facebookError": null,
       "instagramMediaId": "18122748295841895",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-22",
+      "postedAt": "2026-09-22T20:00:03.332Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "story-wl-movie-pool",
+      "family": "post-wl-movie-pool-story",
+      "burns": [
+        "post-wl-movie-pool-story"
+      ],
+      "fingerprint": "story|story-wl-movie-pool|docs/social/schedule-ready/posts/post-wl-movie-pool-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-pool-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-pool-9x16.jpg",
+      "videoRel": null,
+      "caption": "Beach. Pool. Balcony. Repeat.\n\nVacation does not need to be complicated. Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1606582588150417",
+      "facebookError": null,
+      "instagramMediaId": "18114055813810976",
+      "instagramError": null
     }
   ]
 }
