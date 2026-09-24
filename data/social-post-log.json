@@ -1894,6 +1894,37 @@
       "facebookError": null,
       "instagramMediaId": "18015253328954567",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-24",
+      "postedAt": "2026-09-24T18:22:17.536Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-pool",
+      "family": "post-wl-movie-pool-feed",
+      "burns": [
+        "post-wl-movie-pool-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-pool|docs/social/schedule-ready/posts/post-wl-movie-pool-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-pool-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-pool-4x5.jpg",
+      "videoRel": null,
+      "caption": "Beach. Pool. Balcony. Repeat.\n\nVacation does not need to be complicated. Westlight.\n\nOpen nights: October 17–24.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 17–24"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122246065274295768",
+      "facebookError": null,
+      "instagramMediaId": "17962905945193321",
+      "instagramError": null
     }
   ]
 }
