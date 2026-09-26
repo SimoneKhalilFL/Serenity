@@ -2046,6 +2046,35 @@
       "facebookError": null,
       "instagramMediaId": "18115419746111498",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-25",
+      "postedAt": "2026-09-26T00:16:49.232Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-sleep",
+      "family": "tw-movie-sleep",
+      "burns": [
+        "tw-movie-sleep"
+      ],
+      "fingerprint": "reel|reel-tw-movie-sleep|docs/social/schedule-ready/reels/reel-tw-movie-sleep.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-sleep.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-sleep.mp4",
+      "caption": "Sleep here. Wake up by the Gulf.\n\nA real bedroom after the beach. Twenty First. Panama City Beach.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1105968048596353",
+      "facebookError": null,
+      "instagramMediaId": "17921432235440513",
+      "instagramError": null
     }
   ]
 }
