@@ -2104,6 +2104,35 @@
       "facebookError": null,
       "instagramMediaId": "18137993749623170",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-26",
+      "postedAt": "2026-09-26T19:31:13.563Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "story-wl-movie-resort",
+      "family": "post-wl-movie-resort-story",
+      "burns": [
+        "post-wl-movie-resort-story"
+      ],
+      "fingerprint": "story|story-wl-movie-resort|docs/social/schedule-ready/posts/post-wl-movie-resort-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-resort-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-resort-9x16.jpg",
+      "videoRel": null,
+      "caption": "How far is the beach?\n\nThe kind of distance you will happily walk barefoot. Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1729861532476221",
+      "facebookError": null,
+      "instagramMediaId": "18158713918501098",
+      "instagramError": null
     }
   ]
 }
