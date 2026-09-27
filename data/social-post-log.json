@@ -2196,6 +2196,35 @@
       "facebookError": null,
       "instagramMediaId": "18065534984716639",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-27",
+      "postedAt": "2026-09-27T19:57:38.814Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "story-tw-movie-arrive",
+      "family": "post-tw-movie-arrive-story",
+      "burns": [
+        "post-tw-movie-arrive-story"
+      ],
+      "fingerprint": "story|story-tw-movie-arrive|docs/social/schedule-ready/posts/post-tw-movie-arrive-9x16.jpg",
+      "campaign": "story-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-arrive-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-arrive-9x16.jpg",
+      "videoRel": null,
+      "caption": "How far is the beach?\n\nThe kind of distance you will happily walk barefoot.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "2179986909250294",
+      "facebookError": null,
+      "instagramMediaId": "18143480530578423",
+      "instagramError": null
     }
   ]
 }
