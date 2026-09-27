@@ -2133,6 +2133,37 @@
       "facebookError": null,
       "instagramMediaId": "18158713918501098",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-26",
+      "postedAt": "2026-09-27T00:04:35.620Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-hook-pov",
+      "family": "wl-movie-hook-pov",
+      "burns": [
+        "wl-movie-hook-pov",
+        "ms-pov",
+        "ms-wave-chase"
+      ],
+      "fingerprint": "reel|reel-wl-movie-hook-pov|docs/social/schedule-ready/reels/reel-wl-movie-hook-pov.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-hook-pov.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-hook-pov.mp4",
+      "caption": "POV: you finally booked the beach trip.\n\nYou know that moment when vacation actually starts?\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "4530096730580415",
+      "facebookError": null,
+      "instagramMediaId": "18117856264756638",
+      "instagramError": null
     }
   ]
 }
