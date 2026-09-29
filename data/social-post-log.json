@@ -2316,6 +2316,37 @@
       "facebookError": null,
       "instagramMediaId": "18120298270822125",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-28",
+      "postedAt": "2026-09-29T01:23:05.337Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-hook-living",
+      "family": "wl-movie-hook-living",
+      "burns": [
+        "wl-movie-hook-living",
+        "ms-living",
+        "ms-family-sit"
+      ],
+      "fingerprint": "reel|reel-wl-movie-hook-living|docs/social/schedule-ready/reels/reel-wl-movie-hook-living.mp4",
+      "campaign": "reel-lifestyle-2026-09",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-hook-living.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-hook-living.mp4",
+      "caption": "Your living room for the week.\n\nCoffee here. Sunset watching here. Shoes optional.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "4807836216128727",
+      "facebookError": null,
+      "instagramMediaId": "17915866755259872",
+      "instagramError": null
     }
   ]
 }
