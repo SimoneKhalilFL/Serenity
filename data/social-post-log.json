@@ -2439,6 +2439,37 @@
       "facebookError": null,
       "instagramMediaId": "18119654924474471",
       "instagramError": null
+    },
+    {
+      "date": "2026-09-30",
+      "postedAt": "2026-09-30T19:01:57.682Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-hook-morning",
+      "family": "post-wl-movie-hook-morning-feed",
+      "burns": [
+        "post-wl-movie-hook-morning-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-hook-morning|docs/social/schedule-ready/posts/post-wl-movie-hook-morning-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-09",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-hook-morning-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-hook-morning-4x5.jpg",
+      "videoRel": null,
+      "caption": "This could be your morning.\n\nA shoreline walk, then coffee on the Westlight balcony.\n\nOpen nights: October 21–30.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 21–30"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122247170726295768",
+      "facebookError": null,
+      "instagramMediaId": "17945125077346193",
+      "instagramError": null
     }
   ]
 }
