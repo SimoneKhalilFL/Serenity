@@ -2562,6 +2562,35 @@
       "facebookError": null,
       "instagramMediaId": "18107107718590071",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-01",
+      "postedAt": "2026-10-01T21:33:31.911Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "story-tw-movie-hook-morning",
+      "family": "post-tw-movie-hook-morning-story",
+      "burns": [
+        "post-tw-movie-hook-morning-story"
+      ],
+      "fingerprint": "story|story-tw-movie-hook-morning|docs/social/schedule-ready/posts/post-tw-movie-hook-morning-9x16.jpg",
+      "campaign": "story-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-hook-morning-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-hook-morning-9x16.jpg",
+      "videoRel": null,
+      "caption": "This could be your morning.\n\nA walk on the sand, then the balcony. Twenty First.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1615959810080224",
+      "facebookError": null,
+      "instagramMediaId": "18095970023452012",
+      "instagramError": null
     }
   ]
 }
