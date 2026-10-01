@@ -77,6 +77,7 @@
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-living.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-morning.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-pov.mp4",
+    "docs/social/schedule-ready/reels/reel-wl-movie-hook-reasons.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-wait.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-living.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-morning.mp4",
@@ -91,8 +92,10 @@
     "images/lodging/tw-balcony-sunset.png"
   ],
   "families": [
+    "ms-5reasons",
     "ms-bedrooms-reel",
     "ms-building-reel",
+    "ms-family-fun",
     "ms-family-sit",
     "ms-family-walk",
     "ms-fullview-photo",
@@ -193,6 +196,7 @@
     "wl-movie-hook-living",
     "wl-movie-hook-morning",
     "wl-movie-hook-pov",
+    "wl-movie-hook-reasons",
     "wl-movie-hook-wait",
     "wl-movie-living",
     "wl-movie-morning",
