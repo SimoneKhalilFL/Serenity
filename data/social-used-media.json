@@ -79,6 +79,7 @@
     "docs/social/schedule-ready/reels/reel-wl-movie-day.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-evening.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-gulf.mp4",
+    "docs/social/schedule-ready/reels/reel-wl-movie-hook-direct.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-living.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-morning.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-hook-pov.mp4",
@@ -97,6 +98,7 @@
     "images/lodging/tw-balcony-sunset.png"
   ],
   "families": [
+    "both-beaches",
     "ms-5reasons",
     "ms-bedrooms-reel",
     "ms-building-reel",
@@ -114,6 +116,7 @@
     "ms-wave-chase",
     "ms-waves",
     "ms-west-gold-reel",
+    "ms-wide-shore",
     "post-tw-movie-arrive-feed",
     "post-tw-movie-arrive-story",
     "post-tw-movie-balcony-feed",
@@ -205,6 +208,7 @@
     "wl-movie-day",
     "wl-movie-evening",
     "wl-movie-gulf",
+    "wl-movie-hook-direct",
     "wl-movie-hook-living",
     "wl-movie-hook-morning",
     "wl-movie-hook-pov",

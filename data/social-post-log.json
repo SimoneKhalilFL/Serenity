@@ -2682,6 +2682,37 @@
       "facebookError": null,
       "instagramMediaId": "18629274079038524",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-02",
+      "postedAt": "2026-10-03T00:50:28.237Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-hook-direct",
+      "family": "wl-movie-hook-direct",
+      "burns": [
+        "wl-movie-hook-direct",
+        "both-beaches",
+        "ms-wide-shore"
+      ],
+      "fingerprint": "reel|reel-wl-movie-hook-direct|docs/social/schedule-ready/reels/reel-wl-movie-hook-direct.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-hook-direct.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-hook-direct.mp4",
+      "caption": "Book direct. Stay better.\n\nMiramar Beach or Panama City Beach — book with the people who know the home.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1396690692666053",
+      "facebookError": null,
+      "instagramMediaId": "18126866641882710",
+      "instagramError": null
     }
   ]
 }
