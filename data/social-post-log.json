@@ -2771,6 +2771,37 @@
       "facebookError": null,
       "instagramMediaId": "17915676441263554",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-03",
+      "postedAt": "2026-10-04T00:15:07.768Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-hook-evening",
+      "family": "tw-movie-hook-evening",
+      "burns": [
+        "tw-movie-hook-evening",
+        "tw-evening",
+        "tw-family-sunset"
+      ],
+      "fingerprint": "reel|reel-tw-movie-hook-evening|docs/social/schedule-ready/reels/reel-tw-movie-hook-evening.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-hook-evening.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-hook-evening.mp4",
+      "caption": "This could be your evening.\n\nStay for the gold hour. Twenty First. Panama City Beach.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1607679517503295",
+      "facebookError": null,
+      "instagramMediaId": "18106393643265746",
+      "instagramError": null
     }
   ]
 }
