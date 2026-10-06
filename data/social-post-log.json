@@ -2953,6 +2953,37 @@
       "facebookError": null,
       "instagramMediaId": "18159876079451980",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-05",
+      "postedAt": "2026-10-06T02:00:26.690Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-hook-living",
+      "family": "tw-movie-hook-living",
+      "burns": [
+        "tw-movie-hook-living",
+        "tw-living",
+        "tw-family-chairs"
+      ],
+      "fingerprint": "reel|reel-tw-movie-hook-living|docs/social/schedule-ready/reels/reel-tw-movie-hook-living.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-hook-living.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-hook-living.mp4",
+      "caption": "Your living room for the week.\n\nCoffee here. The Gulf a few steps away.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1121541896929369",
+      "facebookError": null,
+      "instagramMediaId": "18132850933658378",
+      "instagramError": null
     }
   ]
 }
