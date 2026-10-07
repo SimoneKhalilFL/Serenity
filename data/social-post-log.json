@@ -3044,6 +3044,36 @@
       "facebookError": null,
       "instagramMediaId": "18108405371212866",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-06",
+      "postedAt": "2026-10-07T01:09:47.206Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-hook-beachfront",
+      "family": "wl-movie-hook-beachfront",
+      "burns": [
+        "wl-movie-hook-beachfront",
+        "ms-kids-splash"
+      ],
+      "fingerprint": "reel|reel-wl-movie-hook-beachfront|docs/social/schedule-ready/reels/reel-wl-movie-hook-beachfront.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-hook-beachfront.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-hook-beachfront.mp4",
+      "caption": "Beachfront mornings begin here.\n\nWestlight. Miramar Beach.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "2035960593729810",
+      "facebookError": null,
+      "instagramMediaId": "18103559744346654",
+      "instagramError": null
     }
   ]
 }
