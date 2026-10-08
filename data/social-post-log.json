@@ -3165,6 +3165,37 @@
       "facebookError": null,
       "instagramMediaId": "18062972132534760",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-08",
+      "postedAt": "2026-10-08T19:46:01.677Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-hook-reasons",
+      "family": "post-wl-movie-hook-reasons-feed",
+      "burns": [
+        "post-wl-movie-hook-reasons-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-hook-reasons|docs/social/schedule-ready/posts/post-wl-movie-hook-reasons-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-hook-reasons-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-hook-reasons-4x5.jpg",
+      "videoRel": null,
+      "caption": "5 reasons you will want to stay here\n\nGulf views, a balcony, the beach, resort amenities, Miramar Beach.\n\nOpen nights: October 21 – November 7.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 21 – November 7"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122248717400295768",
+      "facebookError": null,
+      "instagramMediaId": "18380057047233183",
+      "instagramError": null
     }
   ]
 }
