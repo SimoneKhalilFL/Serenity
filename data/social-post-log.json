@@ -3347,6 +3347,35 @@
       "facebookError": null,
       "instagramMediaId": "17888179137619585",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-10",
+      "postedAt": "2026-10-10T18:23:31.830Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-hook-direct",
+      "family": "post-wl-movie-hook-direct-feed",
+      "burns": [
+        "post-wl-movie-hook-direct-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-hook-direct|docs/social/schedule-ready/posts/post-wl-movie-hook-direct-4x5.jpg",
+      "campaign": "feed-proof-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-hook-direct-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-hook-direct-4x5.jpg",
+      "videoRel": null,
+      "caption": "\"Great view. You get good sun from noon on and plenty of porch furniture. Everything worked as it should and my host was awesome. Already booking my next trip there.\" — Steve, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "5:Great view. You get good sun from noon on and plenty of porch furniture. Everything worked as it should and my host was awesome. Already booking my next trip there.",
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122248984640295768",
+      "facebookError": null,
+      "instagramMediaId": "18113654137855475",
+      "instagramError": null
     }
   ]
 }
