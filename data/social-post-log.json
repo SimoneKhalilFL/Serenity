@@ -3316,6 +3316,37 @@
       "facebookError": null,
       "instagramMediaId": "17977219614068527",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-09",
+      "postedAt": "2026-10-10T01:31:39.808Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-hook-direct",
+      "family": "tw-movie-hook-direct",
+      "burns": [
+        "tw-movie-hook-direct",
+        "tw-book-direct",
+        "tw-wave-play"
+      ],
+      "fingerprint": "reel|reel-tw-movie-hook-direct|docs/social/schedule-ready/reels/reel-tw-movie-hook-direct.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-hook-direct.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-hook-direct.mp4",
+      "caption": "Book direct. Stay better.\n\nYou are booking with the people who actually know the home.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1422583569202637",
+      "facebookError": null,
+      "instagramMediaId": "17888179137619585",
+      "instagramError": null
     }
   ]
 }
