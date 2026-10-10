@@ -3376,6 +3376,35 @@
       "facebookError": null,
       "instagramMediaId": "18113654137855475",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-10",
+      "postedAt": "2026-10-10T20:26:57.273Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "story-wl-movie-hook-moment",
+      "family": "post-wl-movie-hook-moment-story",
+      "burns": [
+        "post-wl-movie-hook-moment-story"
+      ],
+      "fingerprint": "story|story-wl-movie-hook-moment|docs/social/schedule-ready/posts/post-wl-movie-hook-moment-9x16.jpg",
+      "campaign": "story-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-hook-moment-9x16.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-hook-moment-9x16.jpg",
+      "videoRel": null,
+      "caption": "The moment vacation starts\n\nMiramar Beach days look like this. Westlight is the quiet place you return to.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1124260113368960",
+      "facebookError": null,
+      "instagramMediaId": "18081194204524311",
+      "instagramError": null
     }
   ]
 }
