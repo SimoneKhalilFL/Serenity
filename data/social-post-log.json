@@ -3405,6 +3405,37 @@
       "facebookError": null,
       "instagramMediaId": "18081194204524311",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-10",
+      "postedAt": "2026-10-11T00:35:41.501Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "reel-wl-movie-hook-dinner",
+      "family": "wl-movie-hook-dinner",
+      "burns": [
+        "wl-movie-hook-dinner",
+        "ms-dinner-night-reel",
+        "ms-family-sunset"
+      ],
+      "fingerprint": "reel|reel-wl-movie-hook-dinner|docs/social/schedule-ready/reels/reel-wl-movie-hook-dinner.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-wl-movie-hook-dinner.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-wl-movie-hook-dinner.mp4",
+      "caption": "Reserved for you.\n\nA quiet dinner, then the water again. Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1084791901203017",
+      "facebookError": null,
+      "instagramMediaId": "18115195022118412",
+      "instagramError": null
     }
   ]
 }
