@@ -3436,6 +3436,37 @@
       "facebookError": null,
       "instagramMediaId": "18115195022118412",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-11",
+      "postedAt": "2026-10-11T18:44:26.366Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-movie-hook-reasons",
+      "family": "post-tw-movie-hook-reasons-feed",
+      "burns": [
+        "post-tw-movie-hook-reasons-feed"
+      ],
+      "fingerprint": "feed|feed-tw-movie-hook-reasons|docs/social/schedule-ready/posts/post-tw-movie-hook-reasons-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-hook-reasons-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-hook-reasons-4x5.jpg",
+      "videoRel": null,
+      "caption": "5 reasons you will want to stay here\n\nGulf views, a balcony, the beach, resort amenities, Panama City Beach.\n\nOpen nights: October 17 – November 10.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 17 – November 10"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122249114804295768",
+      "facebookError": null,
+      "instagramMediaId": "17904468354354546",
+      "instagramError": null
     }
   ]
 }
