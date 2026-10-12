@@ -3496,6 +3496,36 @@
       "facebookError": null,
       "instagramMediaId": "18115330817519689",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-11",
+      "postedAt": "2026-10-12T00:51:11.144Z",
+      "surface": "reel",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "reel-tw-movie-hook-moment",
+      "family": "tw-movie-hook-moment",
+      "burns": [
+        "tw-movie-hook-moment",
+        "tw-kids-sand"
+      ],
+      "fingerprint": "reel|reel-tw-movie-hook-moment|docs/social/schedule-ready/reels/reel-tw-movie-hook-moment.mp4",
+      "campaign": "reel-lifestyle-2026-10",
+      "imageUrl": null,
+      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-hook-moment.mp4",
+      "photoRel": null,
+      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-hook-moment.mp4",
+      "caption": "The moment vacation starts\n\nThe trip they will keep talking about. Twenty First.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "1445987780950191",
+      "facebookError": null,
+      "instagramMediaId": "17913224457531996",
+      "instagramError": null
     }
   ]
 }
