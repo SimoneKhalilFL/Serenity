@@ -3526,6 +3526,37 @@
       "facebookError": null,
       "instagramMediaId": "17913224457531996",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-12",
+      "postedAt": "2026-10-12T22:02:15.454Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-hook-moment",
+      "family": "post-wl-movie-hook-moment-feed",
+      "burns": [
+        "post-wl-movie-hook-moment-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-hook-moment|docs/social/schedule-ready/posts/post-wl-movie-hook-moment-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-hook-moment-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-hook-moment-4x5.jpg",
+      "videoRel": null,
+      "caption": "The moment vacation starts\n\nMiramar Beach days look like this. Westlight is the quiet place you return to.\n\nOpen nights: October 21 – November 11.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 21 – November 11"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122249256668295768",
+      "facebookError": null,
+      "instagramMediaId": "18067709654788016",
+      "instagramError": null
     }
   ]
 }
