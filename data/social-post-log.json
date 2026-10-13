@@ -3615,6 +3615,38 @@
       "facebookError": null,
       "instagramMediaId": "18137469322643600",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-13",
+      "postedAt": "2026-10-13T20:09:46.725Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-movie-hook-direct",
+      "family": "post-tw-movie-hook-direct-feed",
+      "burns": [
+        "post-tw-movie-hook-direct-feed"
+      ],
+      "fingerprint": "feed|feed-tw-movie-hook-direct|docs/social/schedule-ready/posts/post-tw-movie-hook-direct-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-hook-direct-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-hook-direct-4x5.jpg",
+      "videoRel": null,
+      "caption": "Book direct. Stay better.\n\nYou are booking with the people who actually know the home.\n\nOpen nights: October 17 – November 4; November 8–12.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 17 – November 4",
+        "November 8–12"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122249370620295768",
+      "facebookError": null,
+      "instagramMediaId": "18013764881969423",
+      "instagramError": null
     }
   ]
 }
