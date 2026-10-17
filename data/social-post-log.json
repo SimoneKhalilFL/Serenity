@@ -3976,6 +3976,35 @@
       "facebookError": null,
       "instagramMediaId": "18218363737357921",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-17",
+      "postedAt": "2026-10-17T16:57:00.513Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-movie-hook-proof",
+      "family": "post-tw-movie-hook-proof-feed",
+      "burns": [
+        "post-tw-movie-hook-proof-feed"
+      ],
+      "fingerprint": "feed|feed-tw-movie-hook-proof|docs/social/schedule-ready/posts/post-tw-movie-hook-proof-4x5.jpg",
+      "campaign": "feed-proof-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-hook-proof-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-hook-proof-4x5.jpg",
+      "videoRel": null,
+      "caption": "\"Absolutely loved the room. It exceeded my expectations. I was very impressed with the layout and decor. The kitchen had everything needed for anything thought of. I've stayed…\" — Candice, on Twenty First.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "4:Absolutely loved the room. It exceeded my expectations. I was very impressed with the layout and decor. The kitchen had everything needed for anything thought of. I've stayed…",
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122249810630295768",
+      "facebookError": null,
+      "instagramMediaId": "18133727302670081",
+      "instagramError": null
     }
   ]
 }
