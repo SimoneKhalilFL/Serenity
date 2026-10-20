@@ -4243,6 +4243,38 @@
       "facebookError": null,
       "instagramMediaId": "18136898566634314",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-20",
+      "postedAt": "2026-10-20T18:25:55.668Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-wl-movie-bath",
+      "family": "post-wl-movie-bath-feed",
+      "burns": [
+        "post-wl-movie-bath-feed"
+      ],
+      "fingerprint": "feed|feed-wl-movie-bath|docs/social/schedule-ready/posts/post-wl-movie-bath-4x5.jpg",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-bath-4x5.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-bath-4x5.jpg",
+      "videoRel": null,
+      "caption": "A real home after the beach.\n\nWestlight. Miramar Beach.\n\nOpen nights: October 26 – November 1; November 14–19.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 26 – November 1",
+        "November 14–19"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122250144332295768",
+      "facebookError": null,
+      "instagramMediaId": "18569504539076049",
+      "instagramError": null
     }
   ]
 }
