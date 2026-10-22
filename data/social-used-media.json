@@ -149,6 +149,7 @@
     "docs/social/schedule-ready/reels/reel-wl-movie-sleep2.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-stay.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-view.mp4",
+    "images/lodging/MS_Balcony_Coffee_person.png",
     "images/lodging/ms-morning-balcony-1x1.jpg",
     "images/lodging/ms-morning-balcony-4x5.jpg",
     "images/lodging/ms-morning-balcony-9x16.jpg",
@@ -156,6 +157,7 @@
   ],
   "families": [
     "both-beaches",
+    "gen-ms-balcony-coffee-person",
     "ms-5reasons",
     "ms-bedrooms-reel",
     "ms-building-reel",

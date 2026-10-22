@@ -4426,6 +4426,37 @@
       "facebookError": null,
       "instagramMediaId": "17889309240477516",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-22",
+      "postedAt": "2026-10-22T20:23:12.985Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-story-5-ms-balcony-coffee-person",
+      "family": "gen-ms-balcony-coffee-person",
+      "burns": [
+        "gen-ms-balcony-coffee-person"
+      ],
+      "fingerprint": "story|gen-story-5-ms-balcony-coffee-person|images/lodging/MS_Balcony_Coffee_person.png",
+      "campaign": "story-lifestyle-2026-10",
+      "imageUrl": "https://stayatflorida.com/images/lodging/MS_Balcony_Coffee_person.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/MS_Balcony_Coffee_person.png",
+      "videoRel": null,
+      "caption": "Stay for this.\n\nOwner-hosted on Florida's Gulf Coast.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/MS_Balcony_Coffee_person.png"
+      ],
+      "facebookPostId": "2258388754723357",
+      "facebookError": null,
+      "instagramMediaId": "17866699047677483",
+      "instagramError": null
     }
   ]
 }
