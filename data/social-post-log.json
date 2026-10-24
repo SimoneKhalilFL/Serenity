@@ -4518,6 +4518,35 @@
       "facebookError": null,
       "instagramMediaId": "17979665562135752",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-24",
+      "postedAt": "2026-10-24T17:18:20.568Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-ms-living-week",
+      "family": "ms-living-week",
+      "burns": [
+        "ms-living-week"
+      ],
+      "fingerprint": "feed|feed-ms-living-week|docs/social/schedule-ready/04-pm-ms-living-week.png",
+      "campaign": "feed-proof-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/04-pm-ms-living-week.png",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/04-pm-ms-living-week.png",
+      "videoRel": null,
+      "caption": "\"The condo was beautifully furnished and had a killer view from the balcony with access from the master bedroom. Nice furnishings and very generous complement of dishes and…\" — Kenneth, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "5:The condo was beautifully furnished and had a killer view from the balcony with access from the master bedroom. Nice furnishings and very generous complement of dishes and…",
+      "openings": [],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122250590696295768",
+      "facebookError": null,
+      "instagramMediaId": "18138380260636224",
+      "instagramError": null
     }
   ]
 }
