@@ -158,12 +158,14 @@
     "images/lodging/ms-morning-balcony-1x1.jpg",
     "images/lodging/ms-morning-balcony-4x5.jpg",
     "images/lodging/ms-morning-balcony-9x16.jpg",
+    "images/lodging/tw-01-balcony.jpg",
     "images/lodging/tw-balcony-sunset.png"
   ],
   "families": [
     "both-beaches",
     "gen-ms-balcony-coffee",
     "gen-ms-balcony-coffee-person",
+    "gen-tw-01-balcony",
     "ms-5reasons",
     "ms-bedrooms-reel",
     "ms-building-reel",
