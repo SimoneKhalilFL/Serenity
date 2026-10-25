@@ -4578,6 +4578,38 @@
       "facebookError": null,
       "instagramMediaId": "17911915020487282",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-25",
+      "postedAt": "2026-10-25T17:32:34.296Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "feed-tw-florida-mornings",
+      "family": "tw-florida-mornings",
+      "burns": [
+        "tw-florida-mornings"
+      ],
+      "fingerprint": "feed|feed-tw-florida-mornings|docs/social/schedule-ready/05-am-tw-florida-mornings.jpg",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/05-am-tw-florida-mornings.jpg",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/05-am-tw-florida-mornings.jpg",
+      "videoRel": null,
+      "caption": "Florida mornings over ordinary mornings.\n\nSunrise walks, warm sand, quiet water, and absolutely no commute.\n\nOpen nights: October 25 – November 4; November 8–24.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 25 – November 4",
+        "November 8–24"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122250699752295768",
+      "facebookError": null,
+      "instagramMediaId": "18015406310972703",
+      "instagramError": null
     }
   ]
 }
