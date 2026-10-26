@@ -652,12 +652,13 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
             { startDate: "2026-10-01", endDate: "2026-10-03", adjustment: 3.5 },   // PCB BikeFest weekend (peak events)
             { startDate: "2026-10-04", endDate: "2026-10-08", adjustment: 1.6 },   // Post-event lull
             { startDate: "2026-10-09", endDate: "2026-10-17", adjustment: 2.2 },   // Columbus Day / second event weekend
-            { startDate: "2026-10-18", endDate: "2026-10-31", adjustment: 1.5 },   // Late October: ~$335/night
-            { startDate: "2026-11-01", endDate: "2026-11-21", adjustment: 1.4 },   // Early Nov: ~$315/night
-            { startDate: "2026-11-22", endDate: "2026-11-28", adjustment: 1.9 },   // Thanksgiving: ~$428-484/night
-            { startDate: "2026-11-29", endDate: "2026-12-23", adjustment: 1.3 },   // Dec off-peak: ~$280/night
-            { startDate: "2026-12-24", endDate: "2026-12-27", adjustment: 1.4 },   // Christmas week: ~$285-330
-            { startDate: "2026-12-28", endDate: "2026-12-31", adjustment: 1.7 },   // NYE run-up: ~$330-422
+            { startDate: "2026-10-18", endDate: "2026-10-20", adjustment: 1.01 },  // Late October shoulder: ~$228
+            { startDate: "2026-10-21", endDate: "2026-10-25", adjustment: 1.17 },  // Fair vs Tidewater 3BRs: ~$264
+            { startDate: "2026-10-26", endDate: "2026-10-31", adjustment: 1.01 },  // Late October shoulder: ~$228
+            { startDate: "2026-11-01", endDate: "2026-11-23", adjustment: 0.91 },  // Early Nov market: ~$205
+            { startDate: "2026-11-24", endDate: "2026-11-29", adjustment: 1.33 },  // Thanksgiving mid-building: ~$280-328
+            { startDate: "2026-11-30", endDate: "2026-12-21", adjustment: 0.91 },  // Dec off-peak: ~$205
+            { startDate: "2026-12-22", endDate: "2026-12-31", adjustment: 1.42 },  // Christmas / NYE mid-building: ~$290-360
             // 2027 fallbacks (extend for advance bookings past PriceLabs coverage)
             { startDate: "2027-01-01", endDate: "2027-01-03", adjustment: 2.0 },   // NYE weekend: ~$422-465
             { startDate: "2027-01-04", endDate: "2027-01-31", adjustment: 1.5 },   // January: ~$340/night
@@ -665,7 +666,15 @@ You're a short drive — or an easy walk — from the best of Panama City Beach:
             { startDate: "2027-03-01", endDate: "2027-03-31", adjustment: 2.1 },   // March Spring Break: ~$468/night
             { startDate: "2027-04-01", endDate: "2027-04-30", adjustment: 2.3 },   // April Bike Week / Spring peak: ~$520/night
             { startDate: "2027-05-01", endDate: "2027-05-15", adjustment: 2.0 },   // Early May: ~$450/night
-            { startDate: "2027-05-16", endDate: "2027-05-31", adjustment: 2.4 }    // Memorial Day: ~$540/night
+            { startDate: "2027-05-16", endDate: "2027-05-31", adjustment: 2.4 },   // Memorial Day: ~$540/night
+            { startDate: "2027-10-01", endDate: "2027-10-03", adjustment: 3.5 },   // PCB BikeFest — copy each year; PriceLabs rows do not recur
+            { startDate: "2027-10-04", endDate: "2027-10-08", adjustment: 1.6 },   // Post-event lull
+            { startDate: "2027-10-09", endDate: "2027-10-17", adjustment: 2.2 },   // Columbus Day / second event weekend
+            { startDate: "2027-10-18", endDate: "2027-10-20", adjustment: 1.01 },  // Late October shoulder: ~$228
+            { startDate: "2027-10-21", endDate: "2027-10-25", adjustment: 1.17 },  // Fair vs Tidewater 3BRs: ~$264
+            { startDate: "2027-10-26", endDate: "2027-10-31", adjustment: 1.01 },  // Late October shoulder: ~$228
+            { startDate: "2027-11-24", endDate: "2027-11-29", adjustment: 1.33 },  // Thanksgiving mid-building: ~$280-328
+            { startDate: "2027-12-22", endDate: "2027-12-31", adjustment: 1.42 }   // Christmas / NYE mid-building: ~$290-360
         ],
         // Booked/blocked nights: data/availability-4.json (iCal from VRBO/Airbnb/Booking). Block on the OTA calendar—no need to list dates here unless a rare edge case is not on any feed.
         unavailableDates: [],
@@ -1044,10 +1053,22 @@ Whether you're planning a family beach vacation, a relaxing couples' getaway, or
             { startDate: "2027-01-01", endDate: "2027-01-31", adjustment: 1.13 },   // January: ~$339/night
             { startDate: "2027-02-01", endDate: "2027-02-28", adjustment: 1.20 },   // February: ~$360/night
             { startDate: "2027-03-01", endDate: "2027-03-31", adjustment: 1.57 },   // March / Spring Break: ~$471/night
-            { startDate: "2027-04-01", endDate: "2027-04-09", adjustment: 1.57 },   // Early April: ~$471/night
-            { startDate: "2027-04-10", endDate: "2027-04-18", adjustment: 2.27 },   // Easter peak: ~$681/night
-            { startDate: "2027-04-19", endDate: "2027-04-30", adjustment: 1.40 },   // Late April: ~$420/night
-            { startDate: "2027-05-01", endDate: "2027-05-31", adjustment: 1.25 }    // May: ~$375/night
+            { startDate: "2027-04-01", endDate: "2027-04-07", adjustment: 1.57 },   // Early April: ~$471/night
+            { startDate: "2027-04-08", endDate: "2027-04-08", adjustment: 1.67 },   // Bonamassa arrival: $500
+            { startDate: "2027-04-09", endDate: "2027-04-11", adjustment: 1.87 },   // Joe Bonamassa Sound Wave: $562
+            { startDate: "2027-04-12", endDate: "2027-04-14", adjustment: 1.67 },   // Topeka bridge / SSS arrival: $500
+            { startDate: "2027-04-15", endDate: "2027-04-17", adjustment: 1.87 },   // Sun, Sand and Soul: $562
+            { startDate: "2027-04-18", endDate: "2027-04-21", adjustment: 1.40 },   // Late April shoulder (no departure premium)
+            { startDate: "2027-04-22", endDate: "2027-04-22", adjustment: 1.67 },   // Pink Moon / JJ Grey arrival: $500
+            { startDate: "2027-04-23", endDate: "2027-04-25", adjustment: 1.87 },   // Moon Crush Pink Moon: $562
+            { startDate: "2027-04-26", endDate: "2027-04-30", adjustment: 1.40 },   // Late April (no departure premium)
+            { startDate: "2027-05-01", endDate: "2027-05-31", adjustment: 1.25 },   // May: ~$375/night
+            { startDate: "2027-10-05", endDate: "2027-10-06", adjustment: 1.67 },   // Rockin' arrival: $500
+            { startDate: "2027-10-07", endDate: "2027-10-09", adjustment: 1.87 },   // Rockin' in Paradise: $562
+            { startDate: "2027-10-20", endDate: "2027-10-20", adjustment: 1.67 },   // Odies arrival: $500
+            { startDate: "2027-10-21", endDate: "2027-10-23", adjustment: 1.87 },   // Moon Crush Odies: $562
+            { startDate: "2027-11-04", endDate: "2027-11-04", adjustment: 1.67 },   // Lunatic Ball arrival: $500
+            { startDate: "2027-11-05", endDate: "2027-11-07", adjustment: 1.87 }    // Shinedown Lunatic Ball: $562
         ],
         // Booked/blocked nights: data/availability-5.json (iCal from VRBO/Airbnb/Booking). Block on the OTA calendar—no need to list dates here unless a rare edge case is not on any feed.
         unavailableDates: [],
