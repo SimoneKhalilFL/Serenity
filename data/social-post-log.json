@@ -4769,6 +4769,38 @@
       "facebookError": null,
       "instagramMediaId": "18015100698002494",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-28",
+      "postedAt": "2026-10-28T19:25:08.428Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-ms-feel",
+      "family": "ms-feel",
+      "burns": [
+        "ms-feel"
+      ],
+      "fingerprint": "feed|feed-ms-feel|docs/social/schedule-ready/07-pm-ms-feel.png",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/07-pm-ms-feel.png",
+      "videoUrl": null,
+      "photoRel": "docs/social/schedule-ready/07-pm-ms-feel.png",
+      "videoRel": null,
+      "caption": "What a beach condo should actually feel like\n\nComfortable enough to feel like home. Different enough to remind you that you are on vacation.\n\nOpen nights: October 28 – November 1; November 14–27.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 28 – November 1",
+        "November 14–27"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122251152836295768",
+      "facebookError": null,
+      "instagramMediaId": "17996670365840587",
+      "instagramError": null
     }
   ]
 }
