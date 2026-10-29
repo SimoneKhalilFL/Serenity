@@ -4832,6 +4832,40 @@
       "facebookError": null,
       "instagramMediaId": "18120051227087371",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-29",
+      "postedAt": "2026-10-29T19:29:08.333Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-balcony-dinner",
+      "family": "gen-tw-balcony-dinner",
+      "burns": [
+        "gen-tw-balcony-dinner"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-balcony-dinner|images/lodging/tw-balcony-dinner.png",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-balcony-dinner.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-balcony-dinner.png",
+      "videoRel": null,
+      "caption": "Keep the balcony door open.\n\nCoffee, then the water. That is the morning.\n\nOpen nights: October 29 – November 4; November 8–28.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 29 – November 4",
+        "November 8–28"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-balcony-dinner.png"
+      ],
+      "facebookPostId": "274457265757585_122251261682295768",
+      "facebookError": null,
+      "instagramMediaId": "17865243744694695",
+      "instagramError": null
     }
   ]
 }

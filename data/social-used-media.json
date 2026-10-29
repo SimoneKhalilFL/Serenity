@@ -165,6 +165,7 @@
     "images/lodging/tw-01-balcony.jpg",
     "images/lodging/tw-02-balcony.jpg",
     "images/lodging/tw-02-beach-view.jpg",
+    "images/lodging/tw-balcony-dinner.png",
     "images/lodging/tw-balcony-sunset.png"
   ],
   "families": [
@@ -176,6 +177,7 @@
     "gen-tw-01-balcony",
     "gen-tw-02-balcony",
     "gen-tw-02-beach-view",
+    "gen-tw-balcony-dinner",
     "ms-5reasons",
     "ms-bedrooms-reel",
     "ms-building-reel",
