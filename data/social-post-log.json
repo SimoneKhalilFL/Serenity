@@ -4897,6 +4897,38 @@
       "facebookError": null,
       "instagramMediaId": "18424189561153365",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-30",
+      "postedAt": "2026-10-30T19:06:27.446Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-ms-dinner",
+      "family": "ms-dinner",
+      "burns": [
+        "ms-dinner"
+      ],
+      "fingerprint": "feed|feed-ms-dinner|images/lodging/MS_Balcony_Dinner_Setup.png",
+      "campaign": "feed-lifestyle-2026-10",
+      "imageUrl": "https://stayatflorida.com/images/lodging/MS_Balcony_Dinner_Setup.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/MS_Balcony_Dinner_Setup.png",
+      "videoRel": null,
+      "caption": "Reserved for you.\n\nMorning coffee. A quiet dinner. This corner becomes the most-used seat in the condo.\n\nOpen nights: October 30 – November 1; November 14–29.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "October 30 – November 1",
+        "November 14–29"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122251382492295768",
+      "facebookError": null,
+      "instagramMediaId": "18169810585494419",
+      "instagramError": null
     }
   ]
 }
