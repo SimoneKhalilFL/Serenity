@@ -4960,6 +4960,37 @@
       "facebookError": null,
       "instagramMediaId": "18128195398804283",
       "instagramError": null
+    },
+    {
+      "date": "2026-10-31",
+      "postedAt": "2026-10-31T18:23:50.894Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-01-living",
+      "family": "gen-tw-01-living",
+      "burns": [
+        "gen-tw-01-living"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-01-living|images/lodging/tw-01-living.jpg",
+      "campaign": "feed-proof-2026-10",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-01-living.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-01-living.jpg",
+      "videoRel": null,
+      "caption": "\"This 3 bedroom condo is great! Very clean. Plenty of seating. Great view. Well stocked kitchen. Check in and out processes were easy. Host is very friendly and responds…\" — Shirley, on Twenty First.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-10\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "4:This 3 bedroom condo is great! Very clean. Plenty of seating. Great view. Well stocked kitchen. Check in and out processes were easy. Host is very friendly and responds…",
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-01-living.jpg"
+      ],
+      "facebookPostId": "274457265757585_122251594904295768",
+      "facebookError": null,
+      "instagramMediaId": "17867668287679999",
+      "instagramError": null
     }
   ]
 }
