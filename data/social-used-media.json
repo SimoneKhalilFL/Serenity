@@ -155,6 +155,7 @@
     "docs/social/schedule-ready/reels/reel-wl-movie-sleep2.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-stay.mp4",
     "docs/social/schedule-ready/reels/reel-wl-movie-view.mp4",
+    "images/lodging/MS-Balcony-1.png",
     "images/lodging/MS_Balcony_Coffee_person.png",
     "images/lodging/MS_Balcony_Dinner_Setup.png",
     "images/lodging/MS_Balcony_coffee.png",
@@ -177,6 +178,7 @@
   "families": [
     "both-beaches",
     "gen-ms-01-beachy-decor",
+    "gen-ms-balcony-1",
     "gen-ms-balcony-coffee",
     "gen-ms-balcony-coffee-person",
     "gen-ms-coffee-cup",

@@ -5053,6 +5053,37 @@
       "facebookError": null,
       "instagramMediaId": "18129777314489133",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-01",
+      "postedAt": "2026-11-01T20:55:49.495Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-story-5-ms-balcony-1",
+      "family": "gen-ms-balcony-1",
+      "burns": [
+        "gen-ms-balcony-1"
+      ],
+      "fingerprint": "story|gen-story-5-ms-balcony-1|images/lodging/MS-Balcony-1.png",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/MS-Balcony-1.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/MS-Balcony-1.png",
+      "videoRel": null,
+      "caption": "Stay for this.\n\nOwner-hosted on Florida's Gulf Coast.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/MS-Balcony-1.png"
+      ],
+      "facebookPostId": "1591191755579029",
+      "facebookError": null,
+      "instagramMediaId": "18088649948311875",
+      "instagramError": null
     }
   ]
 }
