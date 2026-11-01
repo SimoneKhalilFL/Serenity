@@ -5022,6 +5022,37 @@
       "facebookError": null,
       "instagramMediaId": "18016541771956634",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-01",
+      "postedAt": "2026-11-01T18:49:25.725Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "feed-ms-sunset",
+      "family": "ms-sunset",
+      "burns": [
+        "ms-sunset"
+      ],
+      "fingerprint": "feed|feed-ms-sunset|images/lodging/ms-10-sunset-view.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-10-sunset-view.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-10-sunset-view.jpg",
+      "videoRel": null,
+      "caption": "Tonight's entertainment.\n\nNo reservations required. Westlight looks west for a reason.\n\nOpen nights: November 14 – December 1.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 14 – December 1"
+      ],
+      "origin": "catalog",
+      "sources": [],
+      "facebookPostId": "274457265757585_122251761116295768",
+      "facebookError": null,
+      "instagramMediaId": "18129777314489133",
+      "instagramError": null
     }
   ]
 }
