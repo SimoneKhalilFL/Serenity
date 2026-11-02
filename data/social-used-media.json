@@ -173,6 +173,7 @@
     "images/lodging/tw-01-pool.jpg",
     "images/lodging/tw-02-balcony.jpg",
     "images/lodging/tw-02-beach-view.jpg",
+    "images/lodging/tw-02-building.jpg",
     "images/lodging/tw-balcony-dinner.png",
     "images/lodging/tw-balcony-sunset.png"
   ],
@@ -191,6 +192,7 @@
     "gen-tw-01-pool",
     "gen-tw-02-balcony",
     "gen-tw-02-beach-view",
+    "gen-tw-02-building",
     "gen-tw-balcony-dinner",
     "ms-5reasons",
     "ms-bedrooms-reel",
