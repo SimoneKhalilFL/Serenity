@@ -5182,6 +5182,37 @@
       "facebookError": null,
       "instagramMediaId": "18108163337263191",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-03",
+      "postedAt": "2026-11-03T22:13:15.416Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-story-5-ms-beach-view",
+      "family": "gen-ms-beach-view",
+      "burns": [
+        "gen-ms-beach-view"
+      ],
+      "fingerprint": "story|gen-story-5-ms-beach-view|images/lodging/ms-beach-view.jpg",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-beach-view.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-beach-view.jpg",
+      "videoRel": null,
+      "caption": "Nowhere you need to be.\n\nThe Gulf is the itinerary.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-beach-view.jpg"
+      ],
+      "facebookPostId": "1106941415575014",
+      "facebookError": null,
+      "instagramMediaId": "18095396984169344",
+      "instagramError": null
     }
   ]
 }
