@@ -5213,6 +5213,39 @@
       "facebookError": null,
       "instagramMediaId": "18095396984169344",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-04",
+      "postedAt": "2026-11-04T20:44:15.345Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-02-living",
+      "family": "gen-tw-02-living",
+      "burns": [
+        "gen-tw-02-living"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-02-living|images/lodging/tw-02-living.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-02-living.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-02-living.jpg",
+      "videoRel": null,
+      "caption": "The view does the talking.\n\nGulf-front, owner-hosted. The water stays in the frame.\n\nOpen nights: November 8 – December 4.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 8 – December 4"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-02-living.jpg"
+      ],
+      "facebookPostId": "274457265757585_122252262050295768",
+      "facebookError": null,
+      "instagramMediaId": "17912503893308992",
+      "instagramError": null
     }
   ]
 }
