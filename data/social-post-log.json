@@ -5277,6 +5277,39 @@
       "facebookError": null,
       "instagramMediaId": "18378416197208256",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-05",
+      "postedAt": "2026-11-05T20:58:48.879Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-fullview-2",
+      "family": "gen-ms-fullview-2",
+      "burns": [
+        "gen-ms-fullview-2"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-fullview-2|images/lodging/MS-FullView-2.png",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/MS-FullView-2.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/MS-FullView-2.png",
+      "videoRel": null,
+      "caption": "This is the stay.\n\nA real home above the Gulf, not a hotel hallway.\n\nOpen nights: November 14 – December 5.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 14 – December 5"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/MS-FullView-2.png"
+      ],
+      "facebookPostId": "274457265757585_122252397668295768",
+      "facebookError": null,
+      "instagramMediaId": "18152925382557574",
+      "instagramError": null
     }
   ]
 }
