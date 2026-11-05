@@ -164,6 +164,7 @@
     "images/lodging/MS_Coffee_cup.png",
     "images/lodging/MS_Dinner_sunset.png",
     "images/lodging/ms-01-beachy-decor.jpg",
+    "images/lodging/ms-01-building-view.jpg",
     "images/lodging/ms-10-sunset-view.jpg",
     "images/lodging/ms-beach-view.jpg",
     "images/lodging/ms-morning-balcony-1x1.jpg",
@@ -185,6 +186,7 @@
   "families": [
     "both-beaches",
     "gen-ms-01-beachy-decor",
+    "gen-ms-01-building-view",
     "gen-ms-balcony-1",
     "gen-ms-balcony-coffee",
     "gen-ms-balcony-coffee-person",
