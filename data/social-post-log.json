@@ -5341,6 +5341,39 @@
       "facebookError": null,
       "instagramMediaId": "18120168014047188",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-06",
+      "postedAt": "2026-11-06T20:20:02.425Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-02-pool",
+      "family": "gen-tw-02-pool",
+      "burns": [
+        "gen-tw-02-pool"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-02-pool|images/lodging/tw-02-pool.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-02-pool.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-02-pool.jpg",
+      "videoRel": null,
+      "caption": "This is the stay.\n\nA real home above the Gulf, not a hotel hallway.\n\nOpen nights: November 8 – December 6.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 8 – December 6"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-02-pool.jpg"
+      ],
+      "facebookPostId": "274457265757585_122252660030295768",
+      "facebookError": null,
+      "instagramMediaId": "17956144887292075",
+      "instagramError": null
     }
   ]
 }
