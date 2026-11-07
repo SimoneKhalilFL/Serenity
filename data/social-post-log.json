@@ -5405,6 +5405,37 @@
       "facebookError": null,
       "instagramMediaId": "18077122658728146",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-07",
+      "postedAt": "2026-11-07T18:35:54.777Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-01-living-room",
+      "family": "gen-ms-01-living-room",
+      "burns": [
+        "gen-ms-01-living-room"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-01-living-room|images/lodging/ms-01-living-room.jpg",
+      "campaign": "feed-proof-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-01-living-room.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-01-living-room.jpg",
+      "videoRel": null,
+      "caption": "\"Nice condo with a great view. Within walking distance of a lot of stuff.\" — Sara, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "5:Nice condo with a great view. Within walking distance of a lot of stuff.",
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-01-living-room.jpg"
+      ],
+      "facebookPostId": "274457265757585_122252933828295768",
+      "facebookError": null,
+      "instagramMediaId": "18107285528007239",
+      "instagramError": null
     }
   ]
 }
