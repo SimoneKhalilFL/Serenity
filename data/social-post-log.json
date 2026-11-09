@@ -5531,6 +5531,39 @@
       "facebookError": null,
       "instagramMediaId": "17916806970551200",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-09",
+      "postedAt": "2026-11-09T23:20:39.964Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-01-pool-outdoor",
+      "family": "gen-ms-01-pool-outdoor",
+      "burns": [
+        "gen-ms-01-pool-outdoor"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-01-pool-outdoor|images/lodging/ms-01-pool-outdoor.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-01-pool-outdoor.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-01-pool-outdoor.jpg",
+      "videoRel": null,
+      "caption": "Keep the balcony door open.\n\nCoffee, then the water. That is the morning.\n\nOpen nights: November 14 – December 9.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 14 – December 9"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-01-pool-outdoor.jpg"
+      ],
+      "facebookPostId": "274457265757585_122253449864295768",
+      "facebookError": null,
+      "instagramMediaId": "18000074312831186",
+      "instagramError": null
     }
   ]
 }
