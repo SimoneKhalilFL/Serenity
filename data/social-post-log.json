@@ -5595,6 +5595,37 @@
       "facebookError": null,
       "instagramMediaId": "18026133803714473",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-10",
+      "postedAt": "2026-11-10T22:07:10.751Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-story-4-tw-04-pool",
+      "family": "gen-tw-04-pool",
+      "burns": [
+        "gen-tw-04-pool"
+      ],
+      "fingerprint": "story|gen-story-4-tw-04-pool|images/lodging/tw-04-pool.jpg",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-04-pool.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-04-pool.jpg",
+      "videoRel": null,
+      "caption": "Nowhere you need to be.\n\nThe Gulf is the itinerary.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-04-pool.jpg"
+      ],
+      "facebookPostId": "40034497119529568",
+      "facebookError": null,
+      "instagramMediaId": "18146409337579534",
+      "instagramError": null
     }
   ]
 }
