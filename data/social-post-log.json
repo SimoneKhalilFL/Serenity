@@ -5659,6 +5659,37 @@
       "facebookError": null,
       "instagramMediaId": "18201146530389730",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-11",
+      "postedAt": "2026-11-11T23:16:25.427Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-story-4-tw-05-pool",
+      "family": "gen-tw-05-pool",
+      "burns": [
+        "gen-tw-05-pool"
+      ],
+      "fingerprint": "story|gen-story-4-tw-05-pool|images/lodging/tw-05-pool.jpg",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-05-pool.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-05-pool.jpg",
+      "videoRel": null,
+      "caption": "Stay for this.\n\nOwner-hosted on Florida's Gulf Coast.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-05-pool.jpg"
+      ],
+      "facebookPostId": "1452645736234972",
+      "facebookError": null,
+      "instagramMediaId": "18058057586659299",
+      "instagramError": null
     }
   ]
 }
