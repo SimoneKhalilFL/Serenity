@@ -194,7 +194,8 @@
     "images/lodging/tw-05-outdoor.jpg",
     "images/lodging/tw-05-pool.jpg",
     "images/lodging/tw-balcony-dinner.png",
-    "images/lodging/tw-balcony-sunset.png"
+    "images/lodging/tw-balcony-sunset.png",
+    "images/lodging/tw-living-02.png"
   ],
   "families": [
     "both-beaches",
@@ -232,6 +233,7 @@
     "gen-tw-05-outdoor",
     "gen-tw-05-pool",
     "gen-tw-balcony-dinner",
+    "gen-tw-living-02",
     "ms-5reasons",
     "ms-bedrooms-reel",
     "ms-building-reel",

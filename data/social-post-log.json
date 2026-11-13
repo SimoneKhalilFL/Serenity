@@ -5754,6 +5754,39 @@
       "facebookError": null,
       "instagramMediaId": "18113006669268784",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-13",
+      "postedAt": "2026-11-13T20:49:32.491Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-living-02",
+      "family": "gen-tw-living-02",
+      "burns": [
+        "gen-tw-living-02"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-living-02|images/lodging/tw-living-02.png",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-living-02.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-living-02.png",
+      "videoRel": null,
+      "caption": "Keep the balcony door open.\n\nCoffee, then the water. That is the morning.\n\nOpen nights: November 13 – December 13.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 13 – December 13"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-living-02.png"
+      ],
+      "facebookPostId": "274457265757585_122253888944295768",
+      "facebookError": null,
+      "instagramMediaId": "18136125050505267",
+      "instagramError": null
     }
   ]
 }
