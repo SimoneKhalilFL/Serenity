@@ -5818,6 +5818,37 @@
       "facebookError": null,
       "instagramMediaId": "18119827715087915",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-14",
+      "postedAt": "2026-11-14T18:59:58.598Z",
+      "surface": "feed",
+      "slot": "proof",
+      "requestedSlot": "proof",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-08-pool-indoor",
+      "family": "gen-ms-08-pool-indoor",
+      "burns": [
+        "gen-ms-08-pool-indoor"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-08-pool-indoor|images/lodging/ms-08-pool-indoor.jpg",
+      "campaign": "feed-proof-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-08-pool-indoor.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-08-pool-indoor.jpg",
+      "videoRel": null,
+      "caption": "\"Great spot right by the beach, nice balcony, easy parking. Host was super communicative. House had everything you would need — overall perfect spot.\" — Sayeed, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": "5:Great spot right by the beach, nice balcony, easy parking. Host was super communicative. House had everything you would need — overall perfect spot.",
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-08-pool-indoor.jpg"
+      ],
+      "facebookPostId": "274457265757585_122254055498295768",
+      "facebookError": null,
+      "instagramMediaId": "18151670176487686",
+      "instagramError": null
     }
   ]
 }
