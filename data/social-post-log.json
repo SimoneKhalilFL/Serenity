@@ -5913,6 +5913,37 @@
       "facebookError": null,
       "instagramMediaId": "18130236172919429",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-15",
+      "postedAt": "2026-11-15T21:26:36.510Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-story-4-tw-living-05",
+      "family": "gen-tw-living-05",
+      "burns": [
+        "gen-tw-living-05"
+      ],
+      "fingerprint": "story|gen-story-4-tw-living-05|images/lodging/tw-living-05.png",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-living-05.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-living-05.png",
+      "videoRel": null,
+      "caption": "The Gulf is the amenity.\n\nCome back sandy.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-living-05.png"
+      ],
+      "facebookPostId": "1653716556162227",
+      "facebookError": null,
+      "instagramMediaId": "18075787304785668",
+      "instagramError": null
     }
   ]
 }
