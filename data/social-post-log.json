@@ -5975,6 +5975,39 @@
       "facebookError": null,
       "instagramMediaId": "18506372116103240",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-17",
+      "postedAt": "2026-11-17T22:08:11.596Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-11-living-room",
+      "family": "gen-ms-11-living-room",
+      "burns": [
+        "gen-ms-11-living-room"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-11-living-room|images/lodging/ms-11-living-room.png",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-11-living-room.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-11-living-room.png",
+      "videoRel": null,
+      "caption": "The view does the talking.\n\nGulf-front, owner-hosted. The water stays in the frame.\n\nOpen nights: November 17 – December 17.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 17 – December 17"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-11-living-room.png"
+      ],
+      "facebookPostId": "274457265757585_122254401386295768",
+      "facebookError": null,
+      "instagramMediaId": "18086047163379211",
+      "instagramError": null
     }
   ]
 }
