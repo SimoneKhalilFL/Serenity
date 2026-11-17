@@ -5944,6 +5944,37 @@
       "facebookError": null,
       "instagramMediaId": "18075787304785668",
       "instagramError": null
+    },
+    {
+      "date": "2026-11-16",
+      "postedAt": "2026-11-17T00:37:31.206Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-story-5-ms-10-living-room",
+      "family": "gen-ms-10-living-room",
+      "burns": [
+        "gen-ms-10-living-room"
+      ],
+      "fingerprint": "story|gen-story-5-ms-10-living-room|images/lodging/ms-10-living-room.png",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-10-living-room.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-10-living-room.png",
+      "videoRel": null,
+      "caption": "The Gulf is the amenity.\n\nCome back sandy.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-10-living-room.png"
+      ],
+      "facebookPostId": "3426069374239180",
+      "facebookError": null,
+      "instagramMediaId": "18506372116103240",
+      "instagramError": null
     }
   ]
 }
