@@ -1,23 +1,6 @@
 {
   "posts": [
     {
-      "slot": "openings",
-      "weekOf": "2026-08-31",
-      "publishedAt": "2026-08-31T22:17:00Z",
-      "channels": [
-        "facebook",
-        "instagram"
-      ],
-      "page": "Florida Rental 2020",
-      "instagram": "majestic_sun_florida",
-      "listing": "TW2111",
-      "captionFocus": "Twenty First September 7–30 openings",
-      "metaPostId": "122243493380295768",
-      "method": "business-suite-manual",
-      "photo": "tw-balcony-sunset.png",
-      "note": "Published without caption (Customize left FB text empty). Superseded by republish 122243574176295768."
-    },
-    {
       "slot": "openings-repost",
       "weekOf": "2026-08-31",
       "publishedAt": "2026-09-01T16:23:00Z",
@@ -6038,6 +6021,39 @@
       "facebookPostId": "1673654567741857",
       "facebookError": null,
       "instagramMediaId": "18050416844819683",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-18",
+      "postedAt": "2026-11-18T22:04:06.968Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-01-amenities",
+      "family": "gen-tw-01-amenities",
+      "burns": [
+        "gen-tw-01-amenities"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-01-amenities|images/lodging/tw-01-amenities.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-01-amenities.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-01-amenities.jpg",
+      "videoRel": null,
+      "caption": "Keep the balcony door open.\n\nCoffee, then the water. That is the morning.\n\nOpen nights: November 18 – December 18.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 18 – December 18"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-01-amenities.jpg"
+      ],
+      "facebookPostId": "274457265757585_122254525772295768",
+      "facebookError": null,
+      "instagramMediaId": "18441272620195988",
       "instagramError": null
     }
   ]
