@@ -1,28 +1,6 @@
 {
   "posts": [
     {
-      "slot": "lifestyle",
-      "weekOf": "2026-08-31",
-      "scheduledFor": "2026-09-01T22:00:00-05:00",
-      "scheduledAt": "2026-08-31T22:40:00Z",
-      "channels": [
-        "facebook",
-        "instagram"
-      ],
-      "page": "Florida Rental 2020",
-      "instagram": "majestic_sun_florida",
-      "listing": "TW2111",
-      "captionFocus": "Twenty First balcony / beach walk lifestyle",
-      "method": "business-suite-scheduled",
-      "photo": "pool-beach-aerial",
-      "story": true,
-      "groups": [
-        "Panama City Beach, Florida Locals and Visitors",
-        "Florida Vacation Rentals (AirBnb/VRBO/Direct)",
-        "Tidewater Beach Resort Condo Rentals by Owners"
-      ]
-    },
-    {
       "date": "2026-09-02",
       "postedAt": "2026-09-02T22:15:21.737Z",
       "slot": "lifestyle",
@@ -6060,6 +6038,39 @@
       "facebookPostId": "1092980260438758",
       "facebookError": null,
       "instagramMediaId": "18215456623371915",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-19",
+      "postedAt": "2026-11-19T22:02:43.297Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-livingroom-5",
+      "family": "gen-ms-livingroom-5",
+      "burns": [
+        "gen-ms-livingroom-5"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-livingroom-5|images/lodging/MS-LivingRoom-5.png",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/MS-LivingRoom-5.png",
+      "videoUrl": null,
+      "photoRel": "images/lodging/MS-LivingRoom-5.png",
+      "videoRel": null,
+      "caption": "The view does the talking.\n\nGulf-front, owner-hosted. The water stays in the frame.\n\nOpen nights: November 19 – December 19.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 19 – December 19"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/MS-LivingRoom-5.png"
+      ],
+      "facebookPostId": "274457265757585_122254629302295768",
+      "facebookError": null,
+      "instagramMediaId": "18139294570631000",
       "instagramError": null
     }
   ]
