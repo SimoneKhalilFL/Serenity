@@ -2,21 +2,6 @@
   "posts": [
     {
       "date": "2026-09-03",
-      "postedAt": "2026-09-03T17:29:59.315Z",
-      "slot": "lifestyle",
-      "requestedSlot": "lifestyle",
-      "listingId": 5,
-      "propertyName": "Westlight",
-      "fingerprint": "lifestyle|5|2026-W36|2026-09-08_2026-09-11,2026-09-19_2026-09-23",
-      "campaign": "lifestyle-2026-09",
-      "imageUrl": "https://stayatflorida.com/images/lodging/ms-morning-balcony-4x5.jpg",
-      "caption": "No alarm clock needed. Just coffee, Gulf views, and nowhere you need to be.\n\nEscape to Miramar Beach and spend your mornings overlooking turquoise water from your own private balcony.\n\nWestlight. Owner-hosted. https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "facebookPostId": "274457265757585_122243791304295768",
-      "instagramMediaId": "17947466835322808",
-      "instagramError": null
-    },
-    {
-      "date": "2026-09-03",
       "postedAt": "2026-09-03T23:44:13.915Z",
       "surface": "reel",
       "slot": "lifestyle",
@@ -6087,6 +6072,39 @@
       "facebookPostId": "1704517711227835",
       "facebookError": null,
       "instagramMediaId": "18100869608465798",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-20",
+      "postedAt": "2026-11-20T21:44:22.396Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-01-bedroom-three",
+      "family": "gen-tw-01-bedroom-three",
+      "burns": [
+        "gen-tw-01-bedroom-three"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-01-bedroom-three|images/lodging/tw-01-bedroom-three.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-01-bedroom-three.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-01-bedroom-three.jpg",
+      "videoRel": null,
+      "caption": "This is the stay.\n\nA real home above the Gulf, not a hotel hallway.\n\nOpen nights: November 20 – December 20.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 20 – December 20"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-01-bedroom-three.jpg"
+      ],
+      "facebookPostId": "274457265757585_122254760084295768",
+      "facebookError": null,
+      "instagramMediaId": "18425996728152482",
       "instagramError": null
     }
   ]
