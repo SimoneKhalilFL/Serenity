@@ -2,35 +2,6 @@
   "posts": [
     {
       "date": "2026-09-04",
-      "postedAt": "2026-09-04T19:16:38.560Z",
-      "surface": "story",
-      "slot": "lifestyle",
-      "requestedSlot": "lifestyle",
-      "listingId": 4,
-      "propertyName": "Twenty First",
-      "assetId": "story-tw-movie-morning",
-      "family": "post-tw-movie-morning-story",
-      "burns": [
-        "post-tw-movie-morning-story"
-      ],
-      "fingerprint": "story|story-tw-movie-morning|docs/social/schedule-ready/posts/post-tw-movie-morning-9x16.jpg",
-      "campaign": "story-lifestyle-2026-09",
-      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-morning-9x16.jpg",
-      "videoUrl": null,
-      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-morning-9x16.jpg",
-      "videoRel": null,
-      "caption": "This could be your morning.\n\nCoffee, then the water. Twenty First sits above this stretch of Panama City Beach.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "quoteKey": null,
-      "openings": [],
-      "origin": "catalog",
-      "sources": [],
-      "facebookPostId": "2343413309801393",
-      "facebookError": null,
-      "instagramMediaId": "18127847947763587",
-      "instagramError": null
-    },
-    {
-      "date": "2026-09-04",
       "postedAt": "2026-09-04T23:35:20.322Z",
       "surface": "reel",
       "slot": "lifestyle",
@@ -6106,6 +6077,37 @@
       "facebookPostId": "274457265757585_122254874438295768",
       "facebookError": null,
       "instagramMediaId": "18110439680280394",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-21",
+      "postedAt": "2026-11-21T21:59:08.341Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-story-5-ms-01-kitchen",
+      "family": "gen-ms-01-kitchen",
+      "burns": [
+        "gen-ms-01-kitchen"
+      ],
+      "fingerprint": "story|gen-story-5-ms-01-kitchen|images/lodging/ms-01-kitchen.jpg",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-01-kitchen.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-01-kitchen.jpg",
+      "videoRel": null,
+      "caption": "The Gulf is the amenity.\n\nCome back sandy.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-01-kitchen.jpg"
+      ],
+      "facebookPostId": "1702280398240373",
+      "facebookError": null,
+      "instagramMediaId": "17877913266593571",
       "instagramError": null
     }
   ]
