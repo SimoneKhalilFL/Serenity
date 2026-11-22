@@ -1,35 +1,6 @@
 {
   "posts": [
     {
-      "date": "2026-09-04",
-      "postedAt": "2026-09-04T23:35:20.322Z",
-      "surface": "reel",
-      "slot": "lifestyle",
-      "requestedSlot": "lifestyle",
-      "listingId": 4,
-      "propertyName": "Twenty First",
-      "assetId": "reel-tw-movie-morning",
-      "family": "tw-movie-morning",
-      "burns": [
-        "tw-movie-morning"
-      ],
-      "fingerprint": "reel|reel-tw-movie-morning|docs/social/schedule-ready/reels/reel-tw-movie-morning.mp4",
-      "campaign": "reel-lifestyle-2026-09",
-      "imageUrl": null,
-      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-morning.mp4",
-      "photoRel": null,
-      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-morning.mp4",
-      "caption": "This could be your morning.\n\nCoffee, then the water. Twenty First sits above this stretch of Panama City Beach.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "quoteKey": null,
-      "openings": [],
-      "origin": "catalog",
-      "sources": [],
-      "facebookPostId": "955749326793517",
-      "facebookError": null,
-      "instagramMediaId": "18139560349588588",
-      "instagramError": null
-    },
-    {
       "date": "2026-09-05",
       "postedAt": "2026-09-05T16:42:29.927Z",
       "surface": "feed",
@@ -6108,6 +6079,39 @@
       "facebookPostId": "1702280398240373",
       "facebookError": null,
       "instagramMediaId": "17877913266593571",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-22",
+      "postedAt": "2026-11-22T20:38:59.085Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-feed-4-tw-01-dining",
+      "family": "gen-tw-01-dining",
+      "burns": [
+        "gen-tw-01-dining"
+      ],
+      "fingerprint": "feed|gen-feed-4-tw-01-dining|images/lodging/tw-01-dining.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-01-dining.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-01-dining.jpg",
+      "videoRel": null,
+      "caption": "Keep the balcony door open.\n\nCoffee, then the water. That is the morning.\n\nOpen nights: November 22 – December 22.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 22 – December 22"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-01-dining.jpg"
+      ],
+      "facebookPostId": "274457265757585_122254988702295768",
+      "facebookError": null,
+      "instagramMediaId": "17994129183116380",
       "instagramError": null
     }
   ]
