@@ -2,35 +2,6 @@
   "posts": [
     {
       "date": "2026-09-05",
-      "postedAt": "2026-09-05T16:42:29.927Z",
-      "surface": "feed",
-      "slot": "proof",
-      "requestedSlot": "proof",
-      "listingId": 5,
-      "propertyName": "Westlight",
-      "assetId": "feed-wl-movie-morning",
-      "family": "post-wl-movie-morning-feed",
-      "burns": [
-        "post-wl-movie-morning-feed"
-      ],
-      "fingerprint": "feed|feed-wl-movie-morning|docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
-      "campaign": "feed-proof-2026-09",
-      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
-      "videoUrl": null,
-      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-morning-4x5.jpg",
-      "videoRel": null,
-      "caption": "\"Exceptional experience, spectacular location and views. Apartment had all the necessary amenities. It was very peaceful. Easy check in and easy access. Again location was a…\" — Ibrahim, on Westlight.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-proof-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "quoteKey": "5:Exceptional experience, spectacular location and views. Apartment had all the necessary amenities. It was very peaceful. Easy check in and easy access. Again location was a…",
-      "openings": [],
-      "origin": "catalog",
-      "sources": [],
-      "facebookPostId": "274457265757585_122244000254295768",
-      "facebookError": null,
-      "instagramMediaId": "18124660732888034",
-      "instagramError": null
-    },
-    {
-      "date": "2026-09-05",
       "postedAt": "2026-09-05T18:45:03.655Z",
       "surface": "story",
       "slot": "lifestyle",
@@ -6112,6 +6083,37 @@
       "facebookPostId": "274457265757585_122254988702295768",
       "facebookError": null,
       "instagramMediaId": "17994129183116380",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-22",
+      "postedAt": "2026-11-22T22:16:41.932Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 4,
+      "propertyName": "Twenty First",
+      "assetId": "gen-story-4-tw-01-kitchen",
+      "family": "gen-tw-01-kitchen",
+      "burns": [
+        "gen-tw-01-kitchen"
+      ],
+      "fingerprint": "story|gen-story-4-tw-01-kitchen|images/lodging/tw-01-kitchen.jpg",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/tw-01-kitchen.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/tw-01-kitchen.jpg",
+      "videoRel": null,
+      "caption": "The Gulf is the amenity.\n\nCome back sandy.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/tw-01-kitchen.jpg"
+      ],
+      "facebookPostId": "1711982227169263",
+      "facebookError": null,
+      "instagramMediaId": "17933909460423271",
       "instagramError": null
     }
   ]
