@@ -1,35 +1,6 @@
 {
   "posts": [
     {
-      "date": "2026-09-06",
-      "postedAt": "2026-09-06T23:22:04.512Z",
-      "surface": "reel",
-      "slot": "lifestyle",
-      "requestedSlot": "lifestyle",
-      "listingId": 4,
-      "propertyName": "Twenty First",
-      "assetId": "reel-tw-movie-view",
-      "family": "tw-movie-view",
-      "burns": [
-        "tw-movie-view"
-      ],
-      "fingerprint": "reel|reel-tw-movie-view|docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
-      "campaign": "reel-lifestyle-2026-09",
-      "imageUrl": null,
-      "videoUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
-      "photoRel": null,
-      "videoRel": "docs/social/schedule-ready/reels/reel-tw-movie-view.mp4",
-      "caption": "This is why we came to Florida.\n\nThe Gulf under Twenty First. A real living room when you come back inside.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=reel-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "quoteKey": null,
-      "openings": [],
-      "origin": "catalog",
-      "sources": [],
-      "facebookPostId": "27801745896188537",
-      "facebookError": null,
-      "instagramMediaId": "18064826609781060",
-      "instagramError": null
-    },
-    {
       "date": "2026-09-07",
       "postedAt": "2026-09-07T18:40:53.065Z",
       "surface": "feed",
@@ -6123,6 +6094,39 @@
       "facebookPostId": "1153794357511115",
       "facebookError": null,
       "instagramMediaId": "18157545838534955",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-25",
+      "postedAt": "2026-11-25T23:00:25.616Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-06-kitchen",
+      "family": "gen-ms-06-kitchen",
+      "burns": [
+        "gen-ms-06-kitchen"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-06-kitchen|images/lodging/ms-06-kitchen.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-06-kitchen.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-06-kitchen.jpg",
+      "videoRel": null,
+      "caption": "This is the stay.\n\nA real home above the Gulf, not a hotel hallway.\n\nOpen nights: November 25 – December 25.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 25 – December 25"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-06-kitchen.jpg"
+      ],
+      "facebookPostId": "274457265757585_122255362988295768",
+      "facebookError": null,
+      "instagramMediaId": "18116135885188152",
       "instagramError": null
     }
   ]
