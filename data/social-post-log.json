@@ -2,38 +2,6 @@
   "posts": [
     {
       "date": "2026-09-07",
-      "postedAt": "2026-09-07T18:40:53.065Z",
-      "surface": "feed",
-      "slot": "lifestyle",
-      "requestedSlot": "lifestyle",
-      "listingId": 5,
-      "propertyName": "Westlight",
-      "assetId": "feed-wl-movie-view",
-      "family": "post-wl-movie-view-feed",
-      "burns": [
-        "post-wl-movie-view-feed"
-      ],
-      "fingerprint": "feed|feed-wl-movie-view|docs/social/schedule-ready/posts/post-wl-movie-view-4x5.jpg",
-      "campaign": "feed-lifestyle-2026-09",
-      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-wl-movie-view-4x5.jpg",
-      "videoUrl": null,
-      "photoRel": "docs/social/schedule-ready/posts/post-wl-movie-view-4x5.jpg",
-      "videoRel": null,
-      "caption": "Keep the Gulf in the frame.\n\nWestlight looks out over Miramar Beach like this all week.\n\nOpen nights: September 8–11; September 19–23.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "quoteKey": null,
-      "openings": [
-        "September 8–11",
-        "September 19–23"
-      ],
-      "origin": "catalog",
-      "sources": [],
-      "facebookPostId": "274457265757585_122244216842295768",
-      "facebookError": null,
-      "instagramMediaId": "18108909803140890",
-      "instagramError": null
-    },
-    {
-      "date": "2026-09-07",
       "postedAt": "2026-09-07T20:20:47.097Z",
       "surface": "story",
       "slot": "lifestyle",
@@ -6127,6 +6095,37 @@
       "facebookPostId": "274457265757585_122255362988295768",
       "facebookError": null,
       "instagramMediaId": "18116135885188152",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-25",
+      "postedAt": "2026-11-26T00:49:21.448Z",
+      "surface": "story",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-story-5-ms-07-kitchen",
+      "family": "gen-ms-07-kitchen",
+      "burns": [
+        "gen-ms-07-kitchen"
+      ],
+      "fingerprint": "story|gen-story-5-ms-07-kitchen|images/lodging/ms-07-kitchen.jpg",
+      "campaign": "story-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-07-kitchen.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-07-kitchen.jpg",
+      "videoRel": null,
+      "caption": "Nowhere you need to be.\n\nThe Gulf is the itinerary.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=story-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-07-kitchen.jpg"
+      ],
+      "facebookPostId": "1538299108138745",
+      "facebookError": null,
+      "instagramMediaId": "18041056808887048",
       "instagramError": null
     }
   ]
