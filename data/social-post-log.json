@@ -2,38 +2,6 @@
   "posts": [
     {
       "date": "2026-09-08",
-      "postedAt": "2026-09-08T17:52:30.689Z",
-      "surface": "feed",
-      "slot": "lifestyle",
-      "requestedSlot": "lifestyle",
-      "listingId": 4,
-      "propertyName": "Twenty First",
-      "assetId": "feed-tw-movie-evening",
-      "family": "post-tw-movie-evening-feed",
-      "burns": [
-        "post-tw-movie-evening-feed"
-      ],
-      "fingerprint": "feed|feed-tw-movie-evening|docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
-      "campaign": "feed-lifestyle-2026-09",
-      "imageUrl": "https://raw.githubusercontent.com/SimoneKhalilFL/Serenity/main/docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
-      "videoUrl": null,
-      "photoRel": "docs/social/schedule-ready/posts/post-tw-movie-evening-4x5.jpg",
-      "videoRel": null,
-      "caption": "The 7 PM plans:\n\nCook in, linger, then sleep by the water. Twenty First. Panama City Beach.\n\nOpen nights: September 8–23; September 27 – October 8.\n\nTwenty First. Panama City Beach.\n\nPlan your stay → https://stayatflorida.com/listing-4.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-09\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
-      "quoteKey": null,
-      "openings": [
-        "September 8–23",
-        "September 27 – October 8"
-      ],
-      "origin": "catalog",
-      "sources": [],
-      "facebookPostId": "274457265757585_122244319586295768",
-      "facebookError": null,
-      "instagramMediaId": "18139730932607329",
-      "instagramError": null
-    },
-    {
-      "date": "2026-09-08",
       "postedAt": "2026-09-08T19:42:57.498Z",
       "surface": "story",
       "slot": "lifestyle",
@@ -6132,6 +6100,39 @@
       "facebookPostId": "1709998580712974",
       "facebookError": null,
       "instagramMediaId": "18133435204872032",
+      "instagramError": null
+    },
+    {
+      "date": "2026-11-27",
+      "postedAt": "2026-11-27T22:35:59.704Z",
+      "surface": "feed",
+      "slot": "lifestyle",
+      "requestedSlot": "lifestyle",
+      "listingId": 5,
+      "propertyName": "Westlight",
+      "assetId": "gen-feed-5-ms-08-kitchen",
+      "family": "gen-ms-08-kitchen",
+      "burns": [
+        "gen-ms-08-kitchen"
+      ],
+      "fingerprint": "feed|gen-feed-5-ms-08-kitchen|images/lodging/ms-08-kitchen.jpg",
+      "campaign": "feed-lifestyle-2026-11",
+      "imageUrl": "https://stayatflorida.com/images/lodging/ms-08-kitchen.jpg",
+      "videoUrl": null,
+      "photoRel": "images/lodging/ms-08-kitchen.jpg",
+      "videoRel": null,
+      "caption": "Keep the balcony door open.\n\nCoffee, then the water. That is the morning.\n\nOpen nights: November 27 – December 27.\n\nWestlight. Miramar Beach.\n\nPlan your stay → https://stayatflorida.com/listing-5.html?utm_source=social&utm_medium=social&utm_campaign=feed-lifestyle-2026-11\n\n#StayAtFlorida #PanamaCityBeach #MiramarBeach #GulfCoast",
+      "quoteKey": null,
+      "openings": [
+        "November 27 – December 27"
+      ],
+      "origin": "generate",
+      "sources": [
+        "images/lodging/ms-08-kitchen.jpg"
+      ],
+      "facebookPostId": "274457265757585_122255651228295768",
+      "facebookError": null,
+      "instagramMediaId": "18105912203548291",
       "instagramError": null
     }
   ]
